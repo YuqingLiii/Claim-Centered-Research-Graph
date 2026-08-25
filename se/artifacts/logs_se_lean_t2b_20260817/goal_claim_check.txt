@@ -1,0 +1,32 @@
+# goal.Claim / Theorem B constant — unchanged check, SE tier 2b, 2026-08-17
+
+## 1. SE.goal.Claim, current working tree (se/lean/SE/goal.lean)
+def Claim : Prop :=
+  Tendsto (SE.epsB SE.rhoConst) atTop (𝓝 0) ∧
+    ∀ n : ℕ, 27 ≤ n →
+      (SE.Cconst - SE.epsB SE.rhoConst n) * (n : ℝ) ^ ((1 : ℝ) / 3) ≤ F.adv n
+
+## 2. SE.goal.Claim at tier 1 (git:f0d686a) — only `c` differs (carrier field -> SE.rhoConst = 4, tier 2a)
+def Claim : Prop :=
+  Tendsto (SE.epsB F.rhoConst) atTop (𝓝 0) ∧
+    ∀ n : ℕ, 27 ≤ n →
+      (SE.Cconst - SE.epsB F.rhoConst n) * (n : ℝ) ^ ((1 : ℝ) / 3) ≤ F.adv n
+
+## 3. SE.Cconst, current tree and tier 1 (git:f0d686a) — must be textually identical
+53:noncomputable def Cconst : ℝ := 9 / (18 + 4 * Real.sqrt 6 + 3 * Real.sqrt 10)
+54-
+55-/-! ## The envelope error functions
+53:noncomputable def Cconst : ℝ := 9 / (18 + 4 * Real.sqrt 6 + 3 * Real.sqrt 10)
+54-
+55-/-! ## The envelope error functions
+## 4. diff of goal.lean, br.lean, denom.lean, tame.lean, taper.lean and the four H-modules
+##    against tier 1 (git:f0d686a).  Tier 2b touched NONE of them; every hunk below is tier 2a's.
+  SE/goal.lean: 22 changed lines vs tier 1
+  SE/br.lean: 8 changed lines vs tier 1
+  SE/denom.lean: 9 changed lines vs tier 1
+  SE/denom/Phi/legal/tame.lean: 3 changed lines vs tier 1
+  SE/denom/taper.lean: 124 changed lines vs tier 1
+  SE/denom/Phi/legal/trace/t6.lean: 0 changed lines vs tier 1
+  SE/denom/Phi/legal/gram/interface.lean: 0 changed lines vs tier 1
+  SE/denom/Phi/legal/omega/interface.lean: 0 changed lines vs tier 1
+  SE/denom/Phi/legal/sect.lean: 0 changed lines vs tier 1

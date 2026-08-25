@@ -1,0 +1,83 @@
+id: KSUM.B4b.L2.FILT
+role: tool
+aliases:
+- B4bL2Filt
+claim: After symmetrization, every degree-d query polynomial on Z_q^N lies in the span of falling-factorial
+  joint occupancy statistics of total degree at most d.
+assessment:
+  level: CERTIFIED*
+  summary: '**CERTIFIED\* (with the frontmatter caveat)** — raised from CONJECTURED by the 2026-07-30
+    composition-layer review (§5.5), which applied the review-scope requirement and found the bridge
+    IS reviewed: the fresh hostile phase-2 M1 reviewer **re-derived the filtration itself** (`ksum/reviews/ksum_L2p2_review.md:74-83`:
+    the `S_N`-averaged one-hot monomial equals falling-factorial occupancy rows over `(N)_m`; repeated
+    positions reduce by idempotence; incompatible symbols vanish; no compressed-label degree substituted)
+    **and finitely verified it against raw one-hot rows** (`:95-106`: 1,526 rows at `(5,5,0)`, 22 at `(7,3,0)`,
+    every residual exactly zero in `Fraction` arithmetic). Single review, partial scope ⇒ CERTIFIED\*,
+    the honest tier. Full PROVED at this node''s own granularity awaits either itemized review or the
+    Lean formalization.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_lean_gapclose1_20260731.md
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    - node: KSUM.B4b.L2.M1
+      kind: node-evidence
+    - node: KSUM.LEAN.T3.obstruction-theorems
+      kind: node-evidence
+    reviews:
+    - path: ksum/reviews/ksum_composition_layer_review_20260730.md
+      kind: review
+      scope: Checks the factorial-filtration bridge at its load-bearing use inside M1 by tracing the independent
+        phase-2 derivation and finite gates; it does not provide a standalone review of every general
+        formulation of the filtration lemma.
+      locator: Section 5.5
+      reviewed_hash: sha256:255bacdab3755cf79ff7dc736f0c64f79d776ea54637d019f9f5bc6abb570b6e
+    - path: ksum/reviews/ksum_L2p2_review.md
+      kind: review
+      scope: Re-derives the factorial-row spanning bridge and checks it against raw one-hot query rows
+        at the phase-2 M1 use; broader standalone formulations remain outside this review.
+      locator: Section M1, especially the filtration derivation and fresh finite checks
+      reviewed_hash: sha256:255bacdab3755cf79ff7dc736f0c64f79d776ea54637d019f9f5bc6abb570b6e
+    runs:
+    - path: ksum/artifacts/logs_ksum_lean_gapclose1_20260731
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2.FILT at the exact finite, formal, or computational
+        scope stated in the linked output.
+  caveats:
+  - The claim is mechanized in Lean. Its current CERTIFIED* level remains because the formal-to-prose
+    correspondence has not received a dedicated node-level independent review.
+  - Text and digest synchronization does not by itself establish that the Lean proposition is equivalent
+    to the natural-language claim; that correspondence remains review-dependent.
+frontier:
+  task-002:
+    task: "**New, from the same batch:** the `thm:pair-tensor` NARROWER gap is NOT fully closed by this\n\
+      \  node. Two objects remain, both recorded on [KSUM.B4b.L2.M1](KSUM.B4b.L2.M1.yaml): the `Z_q`\n\
+      \  pair-orientation `Unit ⊕ (Fin r ⊕ Fin r) ≃ Z_q` for odd `q`, and the (non-injective)\n  labeled-slice\
+      \ → occupancy pushforward with its `ℓ¹` bookkeeping."
+    kind: task
+    since: '2026-08-16'
+  review-formal-mirror:
+    task: Commission an itemized independent review of the factorial-filtration theorem and its natural-language
+      claim before any promotion to PROVED.
+    kind: review
+    since: '2026-08-16'
+formalization:
+  lean:
+    module: KsumAudit.FactorialFiltration
+    file: ksum/lean/KsumAudit/FactorialFiltration.lean
+    claim: factorial_filtration
+    state: proved
+    claim_hash: sha256:255bacdab3755cf79ff7dc736f0c64f79d776ea54637d019f9f5bc6abb570b6e
+    sync_state: current
+    theorems:
+    - factorial_filtration
+    - sum_uniformLift_comp
+    - l1_uniformLift
+    - annihilates_query_of_occ_moments
+    rel:
+    - The Lean theorem proves both directions of the manuscript filtration and the uniform occupancy lift;
+      node-level promotion still requires review of the prose-to-Lean correspondence.
+    build: ksum/artifacts/logs_ksum_lean_gapclose1_20260731/
+    synced: '2026-08-19'
+    source_claim_hash: sha256:255bacdab3755cf79ff7dc736f0c64f79d776ea54637d019f9f5bc6abb570b6e

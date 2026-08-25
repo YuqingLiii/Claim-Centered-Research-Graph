@@ -1,0 +1,60 @@
+id: KSUM.B4b.L2.ALT.nonproduct.profile-lattice-core
+aliases:
+- B4bL2AltNonproductProfileLatticeCore
+claim: 'Construct a genuinely non-product dual witness on the occupancy-profile lattice (profiles in
+
+  `N^q` recording how much mass each alphabet value carries) with the sigma-pair structure
+
+  (NO = every involution pair `{a, t-a}` one-sided, fixed point at most once; YES = some pair
+
+  two-sided), globally supported on profile classes with EXACT CANCELLATION at the
+
+  one-sided/two-sided boundary (the collision-dual mechanism, not a tensor product over pairs or
+
+  orientations), followed by a mass-correction step to raise pure degree, targeting degree
+
+  `Omega(sqrt(N) q^(1/6+delta))` for some `delta > 0` at `q = Theta(N^(2/3))` after position
+
+  symmetrization.'
+assessment:
+  level: OPEN
+  summary: '**OPEN — main construction claim unresolved; the β1 scoped identities are now rule-7 REVIEWED
+    (2026-07-23, fresh independent reviewer, no MAJOR/GAP):** - **C2 (product decay) — PROVED-scoped.**
+    `2^(1-(q-1)/2)` exact; reviewer extended to q=17 by direct enumeration AND an independent closed-form
+    derivation. - **C4 (germ containment) — PROVED-scoped.** Reviewer''s OWN moment map: residual exactly
+    0, `l1=1`, corr `8/11...0.7104` matching the log; every atom in the ansatz support; cross-implementation
+    identity holds. - **C1 (q-independence of the restricted LP) — PROVED-scoped after the review''s relabeling.**
+    Verified by an independent row-space/kernel identity at q=5,7,9 AND q=11 (identical rationals `6/7,
+    9/16, 18/83, 20/57, 1296/2375`). Corrections adopted: the support class is properly "two one-sided
+    pairs, fixed-point coordinate zero" (not "single-active-pair"), and the rigorous ground is EXACT MOMENT-ROW-SPACE
+    (KERNEL) INVARIANCE — cite that, not the artifact''s heuristic identity-factor sentence. - **C3 (q=5
+    crossing at ~sqrt(N)) — stays NUMERICAL.** Crossing real (verified at N=9,12,16,20,25; N=64 headline
+    reproduced exactly: D6 = 6413/8205), but it is a finite observation, not a cap theorem — `D_crit/sqrt(N)`
+    wobbles in `0.75-1.0`; "clean Theta(sqrt(N)) cap" oversells and is hereby corrected.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_beta0_litverify_mechanism_card_20260723.md
+      kind: text
+    - path: ksum/artifacts/ksum_beta1_profile_lattice_ansatz_q5_20260723.md
+      kind: text
+    - node: KSUM.B4b.L2.ALT.nonproduct
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.two-orientation-shared-no-cascade
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.canonbasis
+      kind: node-evidence
+    - node: KSUM.B4b.L2.M2
+      kind: node-evidence
+    - node: KSUM.B4b.compcap
+      kind: node-evidence
+    reviews:
+    - path: ksum/reviews/ksum_beta1_obstruction_identities_rule7_review_20260723.md
+      kind: review
+frontier:
+  task-001:
+    task: "THE frontier obligation (invention-grade, zero-sample; do not commission without lead\n  approval\
+      \ per the boundary-stop directive): a multi-pair (`>=3` active pairs,\n  deeper-than-single-flip\
+      \ YES) NON-PRODUCT coefficient/weight law realizing the observed\n  super-threshold ceiling gain\
+      \ with non-collapsing correlation — the same object L3's M7\n  demands in SDP language."
+    kind: task
+    since: '2026-08-16'

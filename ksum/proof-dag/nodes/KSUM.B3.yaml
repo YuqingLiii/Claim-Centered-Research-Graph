@@ -1,0 +1,99 @@
+id: KSUM.B3
+aliases:
+- B3
+claim: A direct, analytic adversary argument proves the target small-alphabet lower bound for fixed k>=3
+  uniformly in the input length.
+routes:
+  KSUM.L32:
+    premises:
+    - KSUM.L32
+    implication: L32 (fresh unreduced direct Adv+- solver, exact values at reachable (n,q)) implies B3.
+    assessment:
+      level: REFUTED
+      summary: 'Constraint [[KSUM.G11]] (K-B3-1: now a registered node) — exact Adv+- values at finitely
+        many reachable (n,q) cannot establish a uniform asymptotic exponent; KSUM.L32a''s reviewed text
+        records the exponent as numerically undecidable, and the reviewer adds the independent ground
+        that L32 is a k=2 solver while the target is k>=3. The solver keeps its NUMERICAL value as evidence;
+        the ROUTE is dead (DEAD: no repair exists for a finite computation).'
+      basis:
+        reviews:
+        - path: ksum/reviews/ksum_composition_layer_review_20260730.md
+          kind: review
+        counterexamples:
+        - note: 'Constraint [[KSUM.G11]] (K-B3-1: now a registered node) — exact Adv+- values at finitely
+            many reachable (n,q) cannot establish a uniform asymptotic exponent; KSUM.L32a''s reviewed
+            text records the exponent as numerically undecidable, and the reviewer adds the independent
+            ground that L32 is a k=2 solver while the target is k>=3. The solver keeps its NUMERICAL value
+            as evidence; the ROUTE is dead (DEAD: no repair exists for a finite computation).'
+          kind: counterexample
+          path: ksum/reviews/ksum_composition_layer_review_20260730.md
+      caveats:
+      - The route is disabled because its premise is REFUTED.
+  KSUM.L33:
+    premises:
+    - KSUM.L33
+    implication: L33 (Wedderburn/isotypic-reduced Adv+- solver under S_n x C(sigma)) implies B3.
+    assessment:
+      level: REFUTED
+      summary: Same [[KSUM.G11]] obstruction as the L32 route — the Wedderburn/isotypic symmetry reduction
+        extends the reachable range; it does not change what a finite table can prove. Same k=2-vs-k>=3
+        second ground. Route DEAD.
+      basis:
+        reviews:
+        - path: ksum/reviews/ksum_composition_layer_review_20260730.md
+          kind: review
+        counterexamples:
+        - note: Same [[KSUM.G11]] obstruction as the L32 route — the Wedderburn/isotypic symmetry reduction
+            extends the reachable range; it does not change what a finite table can prove. Same k=2-vs-k>=3
+            second ground. Route DEAD.
+          kind: counterexample
+          path: ksum/reviews/ksum_composition_layer_review_20260730.md
+      caveats:
+      - The route is disabled because its premise is REFUTED.
+  KSUM.L31:
+    premises:
+    - KSUM.L31
+    implication: L31 implies B3.
+    assessment:
+      level: OPEN
+      summary: 'Moot: the child is already REFUTED/DEAD (reviewed — incumbent regular-rep ''reduction''
+        inflates the PSD block, zero numbers ever), so min(child, route) is REFUTED regardless of this
+        route claim.'
+      basis:
+        evidence:
+        - node: KSUM.L31
+          kind: node-evidence
+      caveats:
+      - The premise node is REFUTED, so this route is disabled; no evidence in this record refutes the
+        implication itself.
+assessment:
+  level: OPEN
+  summary: 'All three registered routes are dead: L32/L33 fall to constraint KSUM.G11 (finite exact Adv+-
+    values cannot establish a uniform asymptotic exponent) plus the reviewer''s independent second ground
+    (they are k=2 solvers, GOAL is k>=3); L31 is moot (child REFUTED/DEAD). Scoped kill: the finite-exact-computation
+    route class as registered, NOT adversary-method approaches in general (those live under B4b and stay
+    OPEN).'
+  basis:
+    reviews:
+    - path: ksum/reviews/ksum_composition_layer_review_20260730.md
+      kind: review
+disposition:
+  state: PARKED
+  reason: All currently registered finite-exact routes are refuted, but that does not refute the broader
+    direct-adversary strategy class.
+  revive: Register an analytic, uniform-in-n adversary argument for fixed k>=3 that is not a finite-table
+    extrapolation.
+  source:
+    path: ksum/reviews/ksum_composition_layer_review_20260730.md
+    kind: review
+events:
+  finite-route-scope-corrected-2026-08-16:
+    date: '2026-08-16'
+    type: level-change
+    from: REFUTED
+    to: OPEN
+    summary: The review refuted the registered finite routes, not the broader direct-adversary strategy;
+      the claim was therefore reopened and parked with a precise revival condition.
+    sources:
+    - path: ksum/reviews/ksum_composition_layer_review_20260730.md
+      kind: review

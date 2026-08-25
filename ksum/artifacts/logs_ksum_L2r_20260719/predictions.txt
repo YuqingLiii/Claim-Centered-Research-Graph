@@ -1,0 +1,23 @@
+KSUM.B4b.L2 corrected-threshold LP preregistration
+Date: 2026-07-19
+Frozen before creating or running any ksum/tools/ksum_l2r_* solver.
+
+Convention: F is -1 on NO and +1 on YES.  A T-query algorithm with
+error 1/3 has a degree-2T expected-sign polynomial with uniform error 2/3.
+Thus a unit-l1, pure-high-degree-d dual witness directly certifies
+Q_(1/3) >= d/2 only when its correlation is strictly greater than 2/3.
+
+Predictions for corrected certified-degree joint-vs-single gains:
+- (3,3,0): SURVIVE.  The reviewed old spectrum places the single optimum
+  exactly at the strict cutoff in its first bands, while joint has unit
+  correlation through degree 2.
+- (4,3,0): SURVIVE.  Raising the cutoff should lower both certified degrees,
+  but the reviewed joint spectrum has unit correlation through degree 2
+  while the single spectrum only reaches the cutoff, so the gap should remain.
+- (5,4,1): SURVIVE.  The reviewed joint degree-3 value is above 2/3 whereas
+  the single degree-3 value is below it, so the corrected convention should
+  turn the earlier maximum-degree tie into a one-degree joint gain.
+
+Kill criterion: if corrected certified-degree gains vanish at all three
+points, record the finite LP route kill per protocol.  Otherwise retain only
+the evidence tier licensed by the corrected runs and pending independent review.

@@ -1,0 +1,58 @@
+id: SE.denom.Phi.legal.trace.t3
+aliases:
+- T3
+claim: '**Route T3 (reduced-block spectra + von Neumann pairing):** the mixed-color
+
+  state space is the induced module
+
+  `Ind_H^{S_{n-1}}(Res_{S_a×S_b}^{S_j}V_theta ⊠ 1)`. Decompose its generally
+
+  noncommutative centralizer into isotypic reduced blocks, compute the spectra
+
+  of `D_h` and the fold/frame operators `A_gamma`, and prove the decreasing-
+
+  eigenvalue von Neumann pairing/majorization inequalities needed for
+
+  (T-a)/(T-b).'
+assessment:
+  level: REFUTED
+  summary: '**REFUTED / PARKED — independently reviewed.** The typed noncommutative reduction remains
+    valid, but the registered universal decreasing-spectrum von Neumann/majorization sufficient condition
+    is false. At the exact c=1 killer `(9,18,3,(2,1);2,(2);1,(1))`, physical T-a passes `408935/2744 <
+    1734/7`, while even the sharper isotype-respecting pairing fails: `867(5√57+1111)/3136 > 1734/7`.
+    The global pairing also fails `867(17√57+5365)/12544 > 1734/7`. Physical T-b passes `7633/24696 <
+    578/35`. Thus the counterexample kills only the eigenvalue-only T3 closure, not the reduced-block
+    typing, TRACE, physical T-a/T-b, or T2. The route is PARKED rather than DEAD because its exact block
+    construction is reusable by the direction-sensitive successor T5. c>=2 remains UNTESTED.'
+  basis:
+    evidence:
+    - node: SE.denom.Phi.legal.trace.t5
+      kind: node-evidence
+    counterexamples:
+    - node: SE.denom.Phi.legal.trace.t5
+      kind: counterexample
+      note: Sourced contradiction or counterexample supporting this scoped refutation.
+disposition:
+  state: PARKED
+  reason: '**REFUTED / PARKED — independently reviewed.** The typed noncommutative reduction remains valid,
+    but the registered universal decreasing-spectrum von Neumann/majorization sufficient condition is
+    false. At the exact c=1 killer `(9,18,3,(2,1);2,(2);1,(1))`, physical T-a passes `408935/2744 < 1734/7`,
+    while even the sharper isotype-respecting pairing fails: `867(5√57+1111)/3136 > 1734/7`. The global
+    pairing also fails `867(17√57+5365)/12544 > 1734/7`. Physical T-b passes `7633/24696 < 578/35`. Thus
+    the counterexample kills only the eigenvalue-only T3 closure, not the reduced-block typing, TRACE,
+    physical T-a/T-b, or T2. The route is PARKED rather than DEAD because its exact block construction
+    is reusable by the direction-sensitive successor T5. c>=2 remains UNTESTED.'
+  revive: Revive only with new evidence that overturns the exact decreasing-spectrum counterexample.
+  source:
+    node: SE.denom.Phi.legal.trace.t5
+    kind: text
+frontier:
+  task-001:
+    task: "Preserve the typed block construction as evidence for related route T5,\n  which must retain\
+      \ the carrier/intertwiner directions and bound the actual\n  pairings directly."
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "c>=2 stays UNTESTED until the `23296×1120` multiplicity-resolved embedding\n  exists."
+    kind: task
+    since: '2026-08-16'

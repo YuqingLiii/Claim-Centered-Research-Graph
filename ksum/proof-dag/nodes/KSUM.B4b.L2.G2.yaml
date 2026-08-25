@@ -1,0 +1,29 @@
+id: KSUM.B4b.L2.G2
+role: obstruction
+aliases:
+- B4bL2G2
+claim: 'For every named nontrivial `H=S_(N-1) x C(sigma)` satellite vector, direct lift through an irrep
+  frame followed by full-group Reynolds averaging is zero: Reynolds is projection onto the trivial isotypic
+  component and `R_G v=R_G R_H v=0` for a nontrivial H-satellite.'
+assessment:
+  level: PROVED
+  summary: '**PROVED** for direct nontrivial-satellite-vector Reynolds extraction.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L2_phase6.md
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    reviews:
+    - path: ksum/reviews/ksum_L2p6_review.md
+      kind: review
+      scope: Checks that full-group Reynolds averaging kills every named nontrivial H-satellite vector,
+        with the reviewed representation-theoretic scope.
+      locator: Rule-7 execution log and Target verdict T2
+      reviewed_hash: sha256:7dcd7e74456cf01c13d0ea722235aaa010239cd3435e829bf0772475b641871f
+frontier:
+  task-001:
+    task: Explore genuinely signed operator-derived maps not obtained by directly Reynolds-averaging a
+      satellite vector.
+    kind: task
+    since: '2026-08-16'

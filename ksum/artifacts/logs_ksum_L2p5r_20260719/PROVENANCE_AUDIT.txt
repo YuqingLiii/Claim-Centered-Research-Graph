@@ -1,0 +1,25 @@
+KSUM.B4b.L2 phase-5 proposer provenance audit
+Date: 2026-07-19
+
+All nine entries in ksum/artifacts/logs_ksum_L2p5_20260719/SHA256SUMS.txt
+were recomputed from current disk contents with Get-FileHash SHA256 and matched.
+
+Available on-disk UTC ordering:
+  predictions.txt created/last-written 22:30:26
+  averaged constructor created 22:32:16
+  exact verifier created 22:37:33
+  Fourier gate created/last-written 22:38:50
+  output logs created 22:39:34--22:39:49 and finalized 22:41:36--22:41:49
+  SHA256SUMS.txt created 22:40:17 and finalized 22:42:14
+  phase-5 report created/last-written 22:43:25
+
+The executor transcript codex_run.log also places the first prediction-file diff
+at line 4276, the first constructor diff at line 4704, and the first constructor
+execution at line 5442.  This establishes ordering on the available disk and
+transcript record, not unknowable off-record knowledge.
+
+The frozen BLOCKED definition required a precise new obstruction rather than a
+failed finite example.  L2P5-F supplies one for the repeated identical product
+family on every common-equal-total slice; those slices form an infinite required
+N subsequence at every fixed odd q.  The broader unequal/nonidentical/non-product
+space was frozen as an escape and remains open.

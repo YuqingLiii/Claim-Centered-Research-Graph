@@ -1,0 +1,71 @@
+id: SE.br.cor16
+role: outcome
+aliases:
+- COR
+claim: For every epsilon>0 there exists N(epsilon)>=8 such that, for every n>=N(epsilon), the explicit
+  legal witness Gamma_n at q=2n satisfies Adv+-(SE(n,2n)) >= (2/sqrt(6)-epsilon)n^(1/6). Consequently,
+  Q(SE(n,2n))=Omega(n^(1/6)).
+assessment:
+  level: PROVED
+  summary: The explicit Omega(n^(1/6)) witness and its quantified lower bound passed certification and
+    an independent re-review after the recorded mathematical correction. The linked reviews cover normalization,
+    numerator and denominator estimates, constants, symmetry, and quantifiers.
+  basis:
+    reviews:
+    - path: se/reviews/se_cor16_certification_20260723.md
+      kind: review
+      scope: Certifies the explicit Omega(n^{1/6}) adversary ratio using the final A.2 and A.4 identities,
+        including normalization, numerator, denominator, symmetry, constants, and quantifiers.
+      locator: Phase A, Phase B, Verdict, and Amendments
+      reviewed_hash: sha256:64c73e45aed6e2da1588506129d28c5e37530a1097ec3e96dd334d844eb3177a
+    - path: se/reviews/se_external_rereview2_20260730.md
+      kind: review
+      scope: Rechecks the complete repaired Theorem-A proof chain and confirms the explicit Omega(n^{1/6})
+        result without reservation; later findings concern notation and reproducibility metadata, not
+        this theorem.
+      locator: Section T3'.1
+      reviewed_hash: sha256:64c73e45aed6e2da1588506129d28c5e37530a1097ec3e96dd334d844eb3177a
+    routes:
+    - assembled-witness
+routes:
+  assembled-witness:
+    premises:
+    - SE.br.def
+    - SE.br.num
+    - SE.denom.decomp
+    - SE.denom.X
+    - SE.denom.Y
+    - SE.denom.Phi.ambient
+    - SE.denom.Phi.legal.diag
+    - SE.denom.crossk
+    - SE.denom.familysplit
+    - SE.denom.taper
+    implication: For q=2n, the witness definition, numerator bound, legal three-channel decomposition,
+      ambient and legal channel estimates, exact-defect regrouping, family identification, and taper arithmetic
+      establish ||Gamma_n o Delta_i|| <= (sqrt(6)/2+o(1))n^(1/6) uniformly in i. Together with ||Gamma_n||>=K,
+      this gives the quantified adversary lower bound stated by the parent node.
+    proof:
+      sketch: The repaired certification assembles the listed reviewed components into the uniform denominator
+        estimate and divides the numerator by that estimate.
+      sources:
+      - path: se/reviews/se_cor16_certification_20260723.md
+        kind: text
+      - path: se/reviews/se_external_rereview2_20260730.md
+        kind: text
+    assessment:
+      level: PROVED
+      summary: The assembled implication and all listed load-bearing inputs passed the certification and
+        independent re-review.
+      basis:
+        reviews:
+        - path: se/reviews/se_cor16_certification_20260723.md
+          kind: review
+          scope: Checks the assembled legal witness, numerator and denominator estimates, constants, uniformity,
+            and quantifiers after the recorded amendments.
+          locator: Phase A, Phase B, Verdict, and Amendments
+          reviewed_hash: sha256:ca1685b2c4d7095d6599b5f6247102d8254972e6dd1fb0b464dd42cebe674b71
+        - path: se/reviews/se_external_rereview2_20260730.md
+          kind: review
+          scope: Rechecks the repaired end-to-end Theorem-A implication and its load-bearing inputs.
+          locator: Section T3'.1
+          reviewed_hash: sha256:ca1685b2c4d7095d6599b5f6247102d8254972e6dd1fb0b464dd42cebe674b71

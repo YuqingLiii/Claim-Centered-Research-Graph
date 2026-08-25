@@ -1,0 +1,21 @@
+id: SE.denom.Y.ambient
+aliases:
+- YA
+claim: For every q>=2 and every relevant n and k, ||Ybar_k||<=sqrt(2)sqrt(k/n).
+assessment:
+  level: PROVED
+  summary: The claim is supported by the linked evidence and independent review.
+  basis:
+    reviews:
+    - path: se/reviews/se_phi_xbar_qfree_audit_20260717.md
+      kind: review
+      locator: Section 6, independent checker verdict
+      scope: Independent verdict on the q-free ambient Ybar norm bound; Sections 0--5 are proposer-side
+        analysis.
+      reviewed_hash: sha256:521af20a33e238dbecee9f80af0b8121d66bf23b243afeee06d51bbd8e6586c0
+    - path: se/reviews/se_stage2_py_verdict.md
+      kind: review
+      scope: Derives the q-free ambient stay-channel bound with explicit constant sqrt(2) from the positional
+        fraction and operator chain; finite computations are corroborating rather than load-bearing.
+      locator: Verdict and Sections 1--3
+      reviewed_hash: sha256:521af20a33e238dbecee9f80af0b8121d66bf23b243afeee06d51bbd8e6586c0

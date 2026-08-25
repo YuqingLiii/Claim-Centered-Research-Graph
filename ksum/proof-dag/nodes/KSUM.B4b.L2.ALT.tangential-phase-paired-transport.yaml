@@ -1,0 +1,54 @@
+id: KSUM.B4b.L2.ALT.tangential-phase-paired-transport
+aliases:
+- B4bL2AltTangentialPhasePairedTransport
+claim: 'Pair exposed tangential WKB phases across the `m=lambda D` transition and construct a uniformly
+
+  bounded right inverse through the exact birth edge `m=b+O(1)`, yielding bounded-total-variation
+
+  matching from minority transitions to bulk without losing exact finite moments.'
+assessment:
+  level: OPEN
+  summary: '**OPEN — canonical exposed-phase pairing is exponentially ill-conditioned.** The minimal pair
+    and continuous exposed-family variants fail scoped gates; the separately registered subexposed reservoir
+    remains untested.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L2_phase25_mesoscopic_minority_transition_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase26_tangential_phase_paired_transport_20260721.md
+      kind: text
+    - path: ksum/tools/ksum_l2p26_phase_pair_right_inverse_check.py
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.mesoscopic-minority-occupancy-transition
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.phase-subexposed-correlation-reservoir
+      kind: node-evidence
+    runs:
+    - path: ksum/artifacts/logs_ksum_L2p26_phase_pair_20260721/run.json
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2.ALT.tangential-phase-paired-transport at the exact
+        finite, formal, or computational scope stated in the linked output.
+frontier:
+  task-001:
+    task: Resolve the exact `m=b+O(1)` birth-edge kernel and its matching to interior `m=lambda D` WKB.
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "Avoid or exactly solve the exponentially ill-conditioned Pascal inverse; an `o(D^-3)` residual\n\
+      \  alone is not enough for bounded total variation."
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: Construct a global pairing of tangential exposed phases on legal orbit space.
+    kind: task
+    since: '2026-08-16'
+  task-004:
+    task: Prove a uniform right-inverse bound and exact finite moment correction.
+    kind: task
+    since: '2026-08-16'
+  task-005:
+    task: Prove unit total variation, correlation above `2/3`, and constant target tail.
+    kind: task
+    since: '2026-08-16'

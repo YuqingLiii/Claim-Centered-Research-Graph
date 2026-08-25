@@ -1,0 +1,180 @@
+{
+  "arithmetic": "exact rational (fractions.Fraction) and exact coefficient dictionaries",
+  "conditional_correctness": [
+    {
+      "n": 1,
+      "nodes": [
+        0,
+        1
+      ],
+      "rho": "1"
+    },
+    {
+      "n": 2,
+      "nodes": [
+        0,
+        1,
+        5
+      ],
+      "rho": "4/5"
+    },
+    {
+      "n": 3,
+      "nodes": [
+        0,
+        1,
+        5,
+        25
+      ],
+      "rho": "16/21"
+    },
+    {
+      "n": 4,
+      "nodes": [
+        0,
+        1,
+        5,
+        25,
+        125
+      ],
+      "rho": "992/1315"
+    },
+    {
+      "n": 5,
+      "nodes": [
+        0,
+        1,
+        5,
+        25,
+        125,
+        625
+      ],
+      "rho": "7936/10541"
+    },
+    {
+      "n": 6,
+      "nodes": [
+        0,
+        1,
+        5,
+        25,
+        125,
+        625,
+        3125
+      ],
+      "rho": "12396032/16471615"
+    }
+  ],
+  "correlation_identity": [
+    {
+      "basis_orientation": "Psi((-1)^m)=-1/2, hence correlation=product_j rho_j",
+      "identity": "correlation = -2*Psi((-1)^m)*product_j rho_j",
+      "inequality": "abs(correlation)<=product_j rho_j for ||Psi||_1=1",
+      "m": 1,
+      "result": "PASS",
+      "zero_sum_basis_gates": 1
+    },
+    {
+      "basis_orientation": "Psi((-1)^m)=-1/2, hence correlation=product_j rho_j",
+      "identity": "correlation = -2*Psi((-1)^m)*product_j rho_j",
+      "inequality": "abs(correlation)<=product_j rho_j for ||Psi||_1=1",
+      "m": 2,
+      "result": "PASS",
+      "zero_sum_basis_gates": 3
+    },
+    {
+      "basis_orientation": "Psi((-1)^m)=-1/2, hence correlation=product_j rho_j",
+      "identity": "correlation = -2*Psi((-1)^m)*product_j rho_j",
+      "inequality": "abs(correlation)<=product_j rho_j for ||Psi||_1=1",
+      "m": 3,
+      "result": "PASS",
+      "zero_sum_basis_gates": 7
+    }
+  ],
+  "imports_proposer_code_or_json": false,
+  "pattern_reconstruction": [
+    {
+      "band": 2,
+      "case": [
+        10,
+        5,
+        0,
+        2
+      ],
+      "correlation": "1",
+      "global_K_layers": [
+        0,
+        1
+      ],
+      "l1": "1",
+      "outer": "correlated_order_1",
+      "outer_degree": 1,
+      "result": "PASS",
+      "rows": 6,
+      "support": 12
+    },
+    {
+      "band": 4,
+      "case": [
+        10,
+        5,
+        0,
+        2
+      ],
+      "correlation": "1/2",
+      "global_K_layers": [
+        0,
+        1,
+        2
+      ],
+      "l1": "1",
+      "outer": "parity",
+      "outer_degree": 2,
+      "result": "PASS",
+      "rows": 56,
+      "support": 16
+    },
+    {
+      "band": 2,
+      "case": [
+        15,
+        7,
+        0,
+        3
+      ],
+      "correlation": "1",
+      "global_K_layers": [
+        0,
+        1
+      ],
+      "l1": "1",
+      "outer": "correlated_order_1",
+      "outer_degree": 1,
+      "result": "PASS",
+      "rows": 8,
+      "support": 32
+    },
+    {
+      "band": 6,
+      "case": [
+        15,
+        7,
+        0,
+        3
+      ],
+      "correlation": "1/4",
+      "global_K_layers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "l1": "1",
+      "outer": "parity",
+      "outer_degree": 3,
+      "result": "PASS",
+      "rows": 792,
+      "support": 64
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+Independent pre-report derivation (2026-07-19)
+
+Inputs read: the reviewed phase-3 component properties in ksum/artifacts/ksum_L2p3_review.md,
+plus the governing protocols and canonical node context. The phase-4 report and proposer
+scripts had not been opened when this note was written.
+
+Let the phase-3 outer support be T_n={0,1,5,...,5^(n-1)}, n>=1, with barycentric
+weights lambda_x=1/prod_{y in T_n,y!=x}(x-y), normalized in l1 and oriented so the
+x=0 (NO) layer is negative. Positive signed mass is supported only on YES. Since the
+total signed mass is zero and l1 is one, each sign has absolute mass 1/2. Therefore
+the correctness conditional on the negative sign is
+
+  rho_n = |mu|(K=0)/|mu|(sign(mu)<0)
+        = 2 |lambda_0| / sum_{x in T_n}|lambda_x|,
+
+which also equals the dual correlation.
+
+For a genuinely logarithmic block n>=2, the two ratios
+
+  |lambda_1|/|lambda_0| = prod_{d=1}^{n-1}(1-5^(-d))^(-1) >= 5/4,
+  |lambda_5|/|lambda_0| = (1/4) prod_{d=1}^{n-2}(1-5^(-d))^(-1) >= 1/4
+
+give sum_{x!=0}|lambda_x|/|lambda_0| >= 3/2. Hence rho_n<=2/(1+3/2)=4/5.
+Equality holds at n=2, T_2={0,1,5}, whose weights are (1/5,-1/4,1/20)
+up to common orientation. For n>2 the displayed inequalities and/or the additional
+nonzero nodes are strict, so rho_n<4/5. At n=1, T_1={0,1}, rho_1=1; thus 4/5 is
+not a bound for the degenerate one-pair/nonlogarithmic endpoint.
+
+If block j receives r_j whole complementary sigma-pairs and the allocations are
+pair-disjoint, the global supply r=(q-1)/2 forces sum_j r_j<=r. For equal blocks of
+r0 pairs this is m*r0<=(q-1)/2. Thus at fixed q the number of nonempty blocks is
+bounded independently of N (and for genuinely logarithmic blocks r0>=5).

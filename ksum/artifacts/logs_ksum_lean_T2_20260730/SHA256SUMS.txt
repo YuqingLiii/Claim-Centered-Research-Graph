@@ -1,0 +1,35 @@
+# SHA-256 ledger — KSUM.LEAN.T2 (Rosmanis barrier + k-floor cores), 2026-07-30
+# Convention: LF rows hash the file's bytes with CRLF normalized to LF (the convention of
+# ksum/artifacts/logs_ksum_lean_reorg_20260730/SHA256SUMS.txt); RAW rows hash the bytes exactly as
+# they sit on disk.  They differ only where a file still carries CRLF.
+
+LF   1550dc85bb00026cc586c6390f0af6d6b84c0aef210f4b8b44efdc6812ef6256  ksum/lean/lean-toolchain  (26 bytes)
+RAW  1550dc85bb00026cc586c6390f0af6d6b84c0aef210f4b8b44efdc6812ef6256  ksum/lean/lean-toolchain  (26 bytes)
+LF   3f98764780488580e3f3fc55b531b324107dbca350eac217a0ed583e8454068e  ksum/lean/lakefile.lean  (1305 bytes)
+RAW  3f98764780488580e3f3fc55b531b324107dbca350eac217a0ed583e8454068e  ksum/lean/lakefile.lean  (1305 bytes)
+LF   e284944ffb81a379b49ec2e3bb5b186e24369edc729312c0b3d787ce85f17e79  ksum/lean/KsumAudit.lean  (1520 bytes)
+RAW  e284944ffb81a379b49ec2e3bb5b186e24369edc729312c0b3d787ce85f17e79  ksum/lean/KsumAudit.lean  (1520 bytes)
+LF   583d6f0ccaedba90feb4f716c5385ef1f2900169f0de2201cc3faadb95c845cb  ksum/lean/KsumAudit/T2KFloor.lean  (27877 bytes)
+RAW  583d6f0ccaedba90feb4f716c5385ef1f2900169f0de2201cc3faadb95c845cb  ksum/lean/KsumAudit/T2KFloor.lean  (27877 bytes)
+LF   ca22b3fe3fa41dbcab58052eb200d6a1db2a6a376d5cc2cd776577cbd0776586  ksum/lean/KsumAudit/RosmanisBarrier.lean  (18465 bytes)
+RAW  ca22b3fe3fa41dbcab58052eb200d6a1db2a6a376d5cc2cd776577cbd0776586  ksum/lean/KsumAudit/RosmanisBarrier.lean  (18465 bytes)
+LF   8bc846146350b18028f8d40d7aaa9cf60fa55518b485c3ab780aa9364a9b759f  ksum/lean/KSUM/A1a.lean  (9472 bytes)
+RAW  8bc846146350b18028f8d40d7aaa9cf60fa55518b485c3ab780aa9364a9b759f  ksum/lean/KSUM/A1a.lean  (9472 bytes)
+LF   00bb74ef13e82eaf786bf43b59be3c88c6e40056c840e245b239eae2e82d55d8  ksum/lean/KSUM/A1b.lean  (3451 bytes)
+RAW  00bb74ef13e82eaf786bf43b59be3c88c6e40056c840e245b239eae2e82d55d8  ksum/lean/KSUM/A1b.lean  (3451 bytes)
+LF   e7b20984b8b64d558c8710c4a23bcb32b46caa5f08408a2905e94feb5dd44482  ksum/lean/KSUM/A1c.lean  (13902 bytes)
+RAW  e7b20984b8b64d558c8710c4a23bcb32b46caa5f08408a2905e94feb5dd44482  ksum/lean/KSUM/A1c.lean  (13902 bytes)
+LF   a828d022c5f14907e05f37d286c779b32ff2b3ab524653137b0be37ddbd697d4  ksum/lean/KSUM/Trust.lean  (15682 bytes)
+RAW  a828d022c5f14907e05f37d286c779b32ff2b3ab524653137b0be37ddbd697d4  ksum/lean/KSUM/Trust.lean  (15682 bytes)
+LF   ce269872f782a944430c8c879f6bdd48b107efd1ed5bd63d718a61fa17699d81  ksum/artifacts/ksum_lean_T2_rosmanis_kfloor_20260730.md  (24769 bytes)
+RAW  ce269872f782a944430c8c879f6bdd48b107efd1ed5bd63d718a61fa17699d81  ksum/artifacts/ksum_lean_T2_rosmanis_kfloor_20260730.md  (24769 bytes)
+LF   84d36bf509aaaa1d2dc2982b6822fa7f47b9f2d7fe595071e9104cac02bccf81  ksum/artifacts/logs_ksum_lean_T2_20260730/build.log  (22980 bytes)
+RAW  84d36bf509aaaa1d2dc2982b6822fa7f47b9f2d7fe595071e9104cac02bccf81  ksum/artifacts/logs_ksum_lean_T2_20260730/build.log  (22980 bytes)
+LF   80802e8be85a14ae144ffb1ead867188b7a72f13167585481f27e6d0848d0550  ksum/artifacts/logs_ksum_lean_T2_20260730/print_axioms.txt  (22749 bytes)
+RAW  80802e8be85a14ae144ffb1ead867188b7a72f13167585481f27e6d0848d0550  ksum/artifacts/logs_ksum_lean_T2_20260730/print_axioms.txt  (22749 bytes)
+
+# Rows: 12 files, 24 hash rows.
+# No file in this ledger carries CRLF: every LF row equals its RAW row.
+#
+# KSUM/A1b.lean is listed although this run did NOT edit it: the T2 commission required a
+# check of that module, and the hash is the evidence that the check changed nothing.

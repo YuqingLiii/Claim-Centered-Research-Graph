@@ -1,0 +1,68 @@
+id: KSUM.k3.donor
+aliases:
+- L2
+claim: For fixed k>=3, a donor construction with the stated alphabet and query parameters would imply
+  the target small-alphabet k-Sum lower bound through the registered route.
+routes:
+  KSUM.k3.donor.zhang-tani:
+    premises:
+    - KSUM.k3.donor.zhang-tani
+    implication: The existing Zhang/Tani-composable donors imply k3.donor (a walk-optimal small-range
+      k>=3 k-collision detection bound).
+    assessment:
+      level: OPEN
+      summary: The reviewed donor-cap L2d shows the existing donors compose to c <= min{1/2,(k-1)/(2*theta*(k+1))}
+        — NOT walk-optimal at small range; this route can only close if a stronger composition is found.
+  KSUM.k3.donor.dream:
+    premises:
+    - KSUM.k3.donor.dream
+    implication: A new walk-optimal small-range k-collision lower bound (the 'dream donor') implies k3.donor.
+    proof:
+      sketch: 'inline — immediate: the dream donor IS the claim of k3.donor specialized to an explicit
+        construction.'
+    assessment:
+      level: CONJECTURED
+      summary: No additional supporting evidence has been recorded for this route.
+      caveats:
+      - existence of the dream donor — the actual open problem; nothing on disk constructs it
+  KSUM.L2c:
+    premises:
+    - KSUM.L2c
+    implication: L2c (Belovs-2026 non-polynomial k-distinctness transfer) implies k3.donor.
+    assessment:
+      level: OPEN
+      summary: 'Moot: child REFUTED/DEAD (large-alphabet-only q>=Omega(n^2), non-range-symmetric; neither
+        Ambainis nor Tani transfer carries it), so min(child, route) is REFUTED regardless.'
+assessment:
+  level: OPEN
+  summary: 'Primary status: **OPEN**. Disposition: **PARKED**. Unchanged by the 2026-07-31 Claim rewrite
+    — turning a need-description into the proposition it was describing changes what can be *stated* (route
+    proofs into this node are now statable, unblocking R-B2-3''s precondition), not what is known. The
+    zhang-tani route entry carries a **proposed kill** (the reviewed donor-cap `L2d` shows the existing
+    donors compose below walk-optimal at small range) which the composition-layer review explicitly DECLINED
+    to confirm (out of its scope; `L2d`''s `θ` unaudited by it; rule 2) — it stays OPEN with the kill
+    argument frozen until a review with that scope runs.'
+  basis:
+    evidence:
+    - node: KSUM.L2d
+      kind: node-evidence
+    - node: KSUM.L2e
+      kind: node-evidence
+    - node: KSUM.L2f
+      kind: node-evidence
+    - node: KSUM.L2g
+      kind: node-evidence
+    routes:
+    - KSUM.k3.donor.zhang-tani
+    - KSUM.k3.donor.dream
+disposition:
+  state: PARKED
+  reason: 'Primary status: **OPEN**. Disposition: **PARKED**. Unchanged by the 2026-07-31 Claim rewrite
+    — turning a need-description into the proposition it was describing changes what can be *stated* (route
+    proofs into this node are now statable, unblocking R-B2-3''s precondition), not what is known. The
+    zhang-tani route entry carries a **proposed kill** (the reviewed donor-cap `L2d` shows the existing
+    donors compose below walk-optimal at small range) which the composition-layer review explicitly DECLINED
+    to confirm (out of its scope; `L2d`''s `θ` unaudited by it; rule 2) — it stays OPEN with the kill
+    argument frozen until a review with that scope runs.'
+  revive: Revive when a registered route proves the stated walk-optimal small-range donor proposition
+    for fixed k>=3.

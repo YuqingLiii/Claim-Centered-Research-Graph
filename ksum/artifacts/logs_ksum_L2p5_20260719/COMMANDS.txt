@@ -1,0 +1,6 @@
+python ksum/tools/ksum_l2p5_averaged_composition.py --output ksum/artifacts/logs_ksum_L2p5_20260719/averaged_composition_results.json
+python ksum/tools/ksum_l2p5_exact_verify.py --input ksum/artifacts/logs_ksum_L2p5_20260719/averaged_composition_results.json
+python ksum/tools/ksum_l2p5_fourier_obstruction.py
+python tools/proof_dag_check.py --problem ksum
+python tools/literature_check.py
+git diff --check

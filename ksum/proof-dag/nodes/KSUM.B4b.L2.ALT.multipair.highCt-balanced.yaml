@@ -1,0 +1,43 @@
+id: KSUM.B4b.L2.ALT.multipair.highCt-balanced
+role: obstruction
+aliases:
+- B4bL2AltMultipairHighCtBalanced
+claim: 'Scoped obstruction candidate: if all active complementary-pair totals lie in one dyadic occupancy
+
+  scale and total active occupancy is `O(N)`, then the resulting balanced split support has
+
+  `M_F/g_F=O(N)`, where `g_F` and `M_F` are its smallest positive and largest target-pair counts.
+
+  Consequently the restricted target has approximate query degree `O_tau(sqrt(N))`, independently of
+
+  the signed coefficient law.'
+assessment:
+  level: CONJECTURED
+  summary: '**CONJECTURED — pending independent review.** The web proposer supplied an explicit legal
+    orbit family and a gap-sensitive Chebyshev obstruction. No completion-tier status is claimed.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L2_phase9_highCt_balanced_web_feasibility_20260721.md
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.multiscale-splits
+      kind: node-evidence
+frontier:
+  task-001:
+    task: "Independently review the gap-sensitive Chebyshev degree, the full-group orbit coordinates,\
+      \ and\n  the stated `M/g=O(N)` hard boundary."
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "Resolve the phase-9 endpoint caveats recorded in the artifact: its displayed `q=5` parameter\n\
+      \  choice gives a stronger ceiling than the prose claims, and its crossover construction silently\n\
+      \  restricts `eta<=1/4`."
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: Do not design a coefficient kernel inside the single-scale class unless review breaks HB-0.
+    kind: task
+    since: '2026-08-16'

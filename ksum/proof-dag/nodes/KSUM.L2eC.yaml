@@ -1,0 +1,21 @@
+id: KSUM.L2eC
+role: outcome
+aliases:
+- L2eC
+claim: For N=kn, 2<=R<=n, the exact modulus q=q_k(R), and every target t, the W3E-2 composition gives
+  Omega_k(sqrt(N)q^(1/(6(k-1)))); this density-zero family is dominated throughout by W3E-1.
+assessment:
+  level: PROVED
+  summary: The claim is supported by the linked evidence and independent review.
+  basis:
+    evidence:
+    - node: KSUM.L2e
+      kind: node-evidence
+    reviews:
+    - path: ksum/reviews/ksum_composition_review.md
+      kind: review
+      scope: Checks the composition of L2e with W3E-2 for N=kn and the exact constructed modulus family,
+        including every-target transfer and constants; it explicitly excludes arbitrary N and interpolation
+        between moduli.
+      locator: Ruling, Exact chain check, and Constructed-moduli-only audit
+      reviewed_hash: sha256:050537dcece21c25aee9660992841292d0acc908911b0bb3f3988271fdf8f519

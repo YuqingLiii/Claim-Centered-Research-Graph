@@ -1,0 +1,37 @@
+# READ-ONLY trial run of tools/lean_dag_check.py against SE, 2026-08-17
+# The repo tool has REGISTRY['se'].enabled = False, so 'python3 tools/lean_dag_check.py --problem se'
+# exits 2 without checking. Enabling SE inside a shared tool is a repo-wide change outside this
+# commission, so the flip was made in a COPY under the session scratchpad and run from the repo
+# root with PYTHONPATH=tools. The tool is documented READ-ONLY (it never writes to any tree).
+# command: PYTHONPATH=tools python3 <copy-with-enabled=True> --problem se
+
+Traceback (most recent call last):
+  File "<machine-local-path-redacted>", line 958, in <module>
+    raise SystemExit(main())
+  File "<machine-local-path-redacted>", line 946, in main
+    run_checks(spec, Path(args.root), rep,
+  File "<machine-local-path-redacted>", line 440, in run_checks
+    n = Node(p)
+  File "<machine-local-path-redacted>", line 264, in __init__
+    self.front, self.body = parse_node(path)
+  File "<machine-local-path-redacted>", line 271, in parse_node
+    raw = parse_front_matter(text)
+  File "<machine-local-path-redacted>", line 174, in parse_front_matter
+    raise ValueError(f"invalid front matter line: {line!r}")
+ValueError: invalid front matter line: '- COR'
+TRIAL_EXIT=1
+
+# FINDING (2026-08-17).  The tool cannot read schema-v6 node records at all: it parses nodes with
+# `proof_dag_check.parse_front_matter`, i.e. the pre-v6 front-matter format, and dies on the first
+# v6 YAML node it meets (`ValueError: invalid front matter line: '- COR'`, the alias list of
+# se/proof-dag/nodes/SE.br.cor16.yaml).  So `enabled=False` for `se`/`ksum` in its REGISTRY
+# is not a scope choice that a session can simply flip: the tool predates the 2026-08-16 migration
+# and needs a v6 loader before its seven §7.6 anti-drift checks can run on SE at all.
+# Its checks are instead carried out here by hand and by the v6 validator:
+#   3  hash triple      -- tools/proof_dag_check.py --problem se enforces
+#                          lean.claim_hash == sha256(current claim) and (for sync_state: current)
+#                          warns unless the module quotes that hash; SE.denom.taper was resynced to
+#                          sha256:d181c0bd... in this session and the quote is verbatim.
+#   1  existence        -- enforced by the same validator (module/file/claim/theorems must exist).
+#   4/5/6/7            -- unchanged by this session except for SE.denom.taper's `rel` (7b), which
+#                          now records the FULL rendering instead of ruling R2's partial one.

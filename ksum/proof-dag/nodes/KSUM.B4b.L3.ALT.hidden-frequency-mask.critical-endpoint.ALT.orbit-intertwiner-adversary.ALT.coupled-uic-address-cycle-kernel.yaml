@@ -1,0 +1,76 @@
+id: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.orbit-intertwiner-adversary.ALT.coupled-uic-address-cycle-kernel
+aliases:
+- B4bL3AltCriticalCoupledUicAddressCycleKernel
+claim: 'Construct a formula-defined rectangular adversary kernel from the critical YES orbit to the NO
+
+  orbit whose coefficients couple the outer unique-intersection/collision sector nonseparably to the
+
+  relative hidden-address alternating-cycle type. Prove numerator `Omega(N^(2/3))` and every physical
+
+  query-masked norm at most one.'
+assessment:
+  level: OPEN
+  summary: '**OPEN — rectangular incidence is exact; all natural input-wise/two-matching and fixed-centered
+    full-position formulas tested so far fail; growing off-equality parent mixing is untested.** If `u=q-4a+1`,
+    every NO input has `C` addressed presentations and every YES input has `uC`. The normalized maps are
+    `R_0=C^(-1/2)Q_0` and `R_1=(uC)^(-1/2)Q_1`, so the full entry normalization is `1/(C sqrt(u))`; incidence
+    compression commutes exactly with every physical query mask. The first nonseparable coefficient lets
+    the outer unique-collision transition select an endpoint and applies the standard `[a-1,1]` hook coefficient
+    to the relative address cycle touching it. Its unmarked hook norm is exact, but a point-stabilizer
+    marked block retains at least `(a-1)/a` after unit normalization. Restoring arbitrary operator-valued
+    UIC coefficients and standard BHK inner blocks gives only `O(a^(2/3)sqrt(m))=O(N^(11/18))`. This FAIL
+    covers one/two pointed-hook factors and finite transition-sector sums, not growing higher Specht sectors,
+    full selected-cycle-length weights supplied by a growing outer selector, or joint multi-block occurrence
+    operators. The higher-Specht audit closes the apparent loophole of merely choosing a growing address
+    partition while retaining only one/two selected outer endpoints. Incidence compression performs an
+    exact Schur pairing: the selector module contains only trivial/hook sectors for one point and depth
+    at most two for two points, so every growing address sector has zero compressed numerator.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L3_critical_orbit_intertwiner_attempt_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_critical_signed_cycle_weight_attempt_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_critical_coupled_uic_address_cycle_attempt_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_critical_coupled_higher_specht_attempt_20260722.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_critical_coupled_multiblock_inner_attempt_20260722.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_critical_growing_selector_repaired_matching_attempt_20260722.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_critical_sparse_delocalized_multiblock_attempt_20260722.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_critical_full_position_incidence_orbit_classification_20260722.md
+      kind: text
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.orbit-intertwiner-adversary
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.orbit-intertwiner-adversary.ALT.signed-cycle-weight-law
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.orbit-intertwiner-adversary.ALT.coupled-uic-address-cycle-kernel.ALT.growing-selector-specht-branching-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.orbit-intertwiner-adversary.ALT.coupled-uic-address-cycle-kernel.ALT.delocalized-multiblock-occurrence-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.full-position-incidence-three-layer-word-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.noncommuting-parent-mixing-kernel
+      kind: node-evidence
+frontier:
+  task-001:
+    task: "Work only in the registered noncommuting parent-mixing successor for the next coupled\n  construction.\
+      \ Define explicit signed Fourier/orbital weights across a growing common parent\n  family; do not\
+      \ retry fixed-centered minors, trace words without coefficients, or dimension-only\n  arguments."
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "Prove that the post-incidence law lies outside both the constant-rank endpoint selector system\n\
+      \  and the independent `P/Q` occurrence algebra while retaining `Theta(a)` outer coordinates."
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: "For any candidate, use the now-frozen rectangular incidence normalization and prove every\n\
+      \  query-masked block, including all short/long remainder statuses, uniformly in `a,d,p`."
+    kind: task
+    since: '2026-08-16'

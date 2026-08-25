@@ -1,0 +1,45 @@
+KSUM L2 phase-6 independent derivation record — 2026-07-19
+
+The reviewer delivered the substance below to the user in commentary before opening
+ksum/artifacts/ksum_L2_phase6.md.  This disk copy was created later while assembling the review
+archive, so its filesystem timestamp alone is not offered as proof of the ordering.
+
+Let H=S_(N-1) x C(sigma), V=R^X, and write the real H-module as
+
+    V = direct_sum_lambda U_lambda tensor M_lambda,
+
+where dim U_lambda=d_lambda and dim M_lambda=m_lambda.  H acts as
+rho_lambda tensor I.  Therefore
+
+    End_H(V) = direct_sum_lambda I_(U_lambda) tensor End(M_lambda),
+
+and the symmetric PSD cone consists of blocks I tensor B_lambda with
+B_lambda in Sym_+(m_lambda).  If Q_(lambda,j):M_lambda->V are orthonormal
+frames for an orthonormal basis j=1,...,d_lambda of U_lambda, then
+
+    A_lambda = sum_j Q_(lambda,j) B_lambda Q_(lambda,j)^T.
+
+For every O_lambda in O(m_lambda), replacing
+
+    Q_(lambda,j) by Q_(lambda,j) O_lambda,
+    B_lambda by O_lambda^T B_lambda O_lambda
+
+leaves A_lambda unchanged.  Hence a coordinate vector in M_lambda is not an
+invariant of the irrep label lambda.  A Gelfand--Tsetlin chain for the symmetric
+group resolves a basis of U_lambda (up to conventions); group-algebra/Jucys--Murphy
+operators still act as the identity on M_lambda and do not resolve the copy space.
+A canonical multiplicity basis can be added using extra ambient branching,
+intertwiner, or joint-histogram harmonic data, but that is information beyond the
+terminal irrep label.
+
+For a finite group K, the Reynolds operator R_K=|K|^-1 sum_g rho(g) is the
+orthogonal projector onto the trivial isotypic component.  It vanishes on every
+nontrivial irreducible.  In the present use, if an H-satellite has no H-fixed
+vector, then R_G v=R_G R_H v=0 because H is a subgroup of G.
+
+Finally, if A is a nonzero PSD operator on R^X, diag(A) is entrywise nonnegative,
+sum_x diag(A)_x=tr(A)>0, and a permutation Reynolds average preserves both the
+sum and nonnegativity.  Thus mu=R_G(diag(A))/tr(A) has l1=1 and constant
+factorial moment sum_x mu_x=1.  It cannot have positive annihilation band.
+This conclusion applies to this diagonal/Reynolds transfer, not to centered,
+off-diagonal, nonlinear, or otherwise signed extractions from optimizer data.

@@ -1,0 +1,97 @@
+{
+  "gate_verdict": "NOT_DEFINED_BLOCKED_BEFORE_PROFILE_FIT",
+  "heldout": [
+    {
+      "case": [
+        4,
+        4,
+        0
+      ],
+      "closed_no_refit_capture": null,
+      "frozen_75pct_oracle_benchmark": true,
+      "heldout_refit_rank_one_oracle_capture": 0.9100998409758205,
+      "predicted_spine_label_match": true,
+      "spine_label": "[3] x C2_pair:+ x S2_fixed:+",
+      "spine_multiplicity_dim": 26,
+      "spine_sector_frobenius_share": 0.9120289763810389
+    },
+    {
+      "case": [
+        4,
+        5,
+        0
+      ],
+      "closed_no_refit_capture": null,
+      "frozen_75pct_oracle_benchmark": true,
+      "heldout_refit_rank_one_oracle_capture": 0.9177736353708448,
+      "predicted_spine_label_match": true,
+      "spine_label": "[3] x B2:bipartition((2),empty) x S1:triv",
+      "spine_multiplicity_dim": 33,
+      "spine_sector_frobenius_share": 0.9200828162298497
+    }
+  ],
+  "metric_warning": "The frozen phase-6 threshold used squared Frobenius capture. L1's 38.90-62.83% numbers are objective-value capture optimum/T, so they are not numerically interchangeable.",
+  "reason": "The deterministic L33 basis is defined only up to an independent orthogonal gauge on each multiplicity space. Exact irrep labels align sectors but not their internal coordinates, and the multiplicity dimensions change with N. Therefore no frozen cross-N internal weight profile exists to evaluate without adding new canonical multiplicity labels. The oracle values use each held-out top eigenvector and are diagnostics, not preregistered-family captures.",
+  "training_label_fit": [
+    {
+      "case": [
+        5,
+        4,
+        0
+      ],
+      "leading_satellite_labels": [
+        "[3,1] x C2_pair:+ x S2_fixed:+",
+        "[3,1] x C2_pair:+ x S2_fixed:-",
+        "[3,1] x C2_pair:- x S2_fixed:+"
+      ],
+      "spine_frobenius_share": 0.9335162492326942,
+      "spine_label": "[4] x C2_pair:+ x S2_fixed:+",
+      "spine_multiplicity_dim": 44
+    },
+    {
+      "case": [
+        5,
+        4,
+        1
+      ],
+      "leading_satellite_labels": [
+        "[4] x B2:bipartition((1),(1))",
+        "[3,1] x B2:bipartition((1),(1))",
+        "[3,1] x B2:bipartition((1,1),empty)"
+      ],
+      "spine_frobenius_share": 0.8532626453932846,
+      "spine_label": "[4] x B2:bipartition((2),empty)",
+      "spine_multiplicity_dim": 22
+    },
+    {
+      "case": [
+        6,
+        3,
+        0
+      ],
+      "leading_satellite_labels": [
+        "[4,1] x C2:triv",
+        "[4,1] x C2:sign",
+        "[5] x C2:sign"
+      ],
+      "spine_frobenius_share": 0.9656647808798339,
+      "spine_label": "[5] x C2:triv",
+      "spine_multiplicity_dim": 33
+    },
+    {
+      "case": [
+        7,
+        3,
+        0
+      ],
+      "leading_satellite_labels": [
+        "[5,1] x C2:triv",
+        "[5,1] x C2:sign",
+        "[4,2] x C2:triv"
+      ],
+      "spine_frobenius_share": 0.9787643288508354,
+      "spine_label": "[6] x C2:triv",
+      "spine_multiplicity_dim": 44
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+Run from repository root on 2026-07-19. No network.
+
+<machine-local-path-redacted>
+<machine-local-path-redacted> --skip-bs
+<machine-local-path-redacted> --skip-bs
+<machine-local-path-redacted>
+python ksum/tools/ksum_l2p6_fit_audit.py --json ksum/artifacts/logs_ksum_L2p6_20260719/fit_audit.json
+python ksum/tools/ksum_l2p6_obstruction.py --json ksum/artifacts/logs_ksum_L2p6_20260719/obstruction.json
+
+The label commands were captured with stderr/stdout in labels.log and heldout_labels.log.
+Each optimizer solve was captured in its same-stem .log. The final two exact/audit commands were
+captured in fit_audit.log and obstruction.log.

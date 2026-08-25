@@ -1,0 +1,17 @@
+id: SE.denom.bridge2.md.numerics
+role: outcome
+aliases:
+- MDN
+claim: SE.denom.bridge2.md.numerics — 40 rows, 0 viol, EQ at m=q; every k>=1 row off-spec
+assessment:
+  level: NUMERICAL
+  summary: NUMERICAL. Reproducible finite or mechanized evidence supports the scoped claim; the exact
+    run records are listed below and do not establish an asymptotic theorem beyond that scope.
+  basis:
+    evidence:
+    - node: SE.denom.bridge2.md
+      kind: node-evidence
+    runs:
+    - path: se/artifacts/logs_se_carrier_steps35_20260716/se_matched_degree_lemma_check.log
+      kind: run
+      result: 40 finite rows checked; no violations

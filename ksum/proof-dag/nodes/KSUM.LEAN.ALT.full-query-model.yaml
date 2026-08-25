@@ -1,0 +1,38 @@
+id: KSUM.LEAN.ALT.full-query-model
+role: tool
+aliases:
+- LeanAltQM
+claim: 'Instead of axiomatizing `Q` and the cited bounds as a `QueryModel` interface, build the bounded-error
+
+  quantum query model in Lean from first principles (Hilbert spaces, oracle unitaries, bounded-error
+
+  acceptance), formalize the negative-weight adversary method, and reprove `thm:abi` / `thm:tani`
+
+  inside Lean, yielding an *unconditional* machine-checked lower bound.'
+assessment:
+  level: OPEN
+  summary: Formalizing the bounded-error quantum query model, the adversary method, and a Lean reproof
+    of ABI/Zhang/BHK is a multi-person-year development with no Mathlib substrate; out of budget by orders
+    of magnitude, and the abstract-interface design of KSUM.LEAN achieves the audit's actual purpose without
+    it
+  basis:
+    evidence:
+    - node: KSUM.LEAN
+      kind: node-evidence
+disposition:
+  state: PARKED
+  reason: Formalizing the bounded-error quantum query model, the adversary method, and a Lean reproof
+    of ABI/Zhang/BHK is a multi-person-year development with no Mathlib substrate; out of budget by orders
+    of magnitude, and the abstract-interface design of KSUM.LEAN achieves the audit's actual purpose without
+    it
+  revive: Revive when a Mathlib-level quantum-query-complexity library provides the oracle model, query
+    complexity, and adversary interfaces as reusable API.
+  source:
+    node: KSUM.LEAN
+    kind: text
+frontier:
+  task-001:
+    task: "None while parked. If revived, it supersedes nothing: it would *discharge* the conditionality\
+      \ of\n  [KSUM.LEAN](KSUM.LEAN.yaml) rather than replace it."
+    kind: task
+    since: '2026-08-16'

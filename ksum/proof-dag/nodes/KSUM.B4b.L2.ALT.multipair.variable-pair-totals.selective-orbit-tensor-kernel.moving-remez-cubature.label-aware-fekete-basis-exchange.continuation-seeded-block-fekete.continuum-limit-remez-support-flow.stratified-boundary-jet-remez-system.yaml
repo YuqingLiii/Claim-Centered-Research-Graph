@@ -1,0 +1,77 @@
+id: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.moving-remez-cubature.label-aware-fekete-basis-exchange.continuation-seeded-block-fekete.continuum-limit-remez-support-flow.stratified-boundary-jet-remez-system
+aliases:
+- B4bL2AltMultipairStratifiedBoundaryJetRemez
+claim: 'Construct the `q=5`, `K=2`, `D=Theta(sqrt N)` dual object as a coupled generating functional on
+
+  four strata: macroscopic bulk, the normal layer `xi=D^2 C_t/N^2=Theta(1)`, the NO face, and
+
+  discrete `O(1)` corner occupancies. Derive exact falling-factorial limit kernels, matching and
+
+  degree-jump birth laws, and use them to obtain a legal finite annihilator with correlation above
+
+  `2/3` and constant `C_t=Theta(N)` residual tail.'
+assessment:
+  level: OPEN
+  summary: '**OPEN — the original four strata are not regime-complete.** Exact normal and corner kernels
+    and a typed finite/asymptotic dual bridge are now known, but intermediate query-visible scales and
+    a uniformly stable exactor are missing. No correlation/tail witness has been constructed.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L2_phase23_continuum_remez_support_flow_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase24_stratified_normal_kernel_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase24_discrete_corner_jets_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase24_stratified_feasibility_20260721.md
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.moving-remez-cubature.label-aware-fekete-basis-exchange.continuation-seeded-block-fekete.continuum-limit-remez-support-flow
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.mesoscopic-split-opening-cascade
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.iterated-multiscale-boundary-compactification
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.mesoscopic-minority-occupancy-transition
+      kind: node-evidence
+frontier:
+  task-001:
+    task: "Derive the sector-dependent limits of the exact falling-factorial kernels for all scaled query\n\
+      \  directions, including order-one WKB corrections."
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "Cover the newly exposed `m=Theta(D)`, `C_t=Theta(D)`, tangential-corner, and supernormal regimes;\n\
+      \  the original four-sector list is not exhaustive."
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: "Specify the bulk/normal-layer/NO-face/discrete-corner generating functionals with compatible\n\
+      \  types, finite total variation, and exact annihilation equations."
+    kind: task
+    since: '2026-08-16'
+  task-004:
+    task: "Derive complementarity/equioscillation, inter-stratum matching, and the source/birth law when\n\
+      \  integer `D` increases and `Theta(D^2)` feature dimensions appear."
+    kind: task
+    since: '2026-08-16'
+  task-005:
+    task: "Exhibit a formula-defined solution with normalized correlation strictly above `2/3` and constant\n\
+      \  residual-weighted mass at `C_t=Theta(N)`."
+    kind: task
+    since: '2026-08-16'
+  task-006:
+    task: "Prove a leading-order lattice realization, not post-hoc rounding, that preserves legality and\
+      \ all\n  moments below `D` for every sufficiently large odd `N`."
+    kind: task
+    since: '2026-08-16'
+  task-007:
+    task: "Supply a uniformly norm-controlled exactor or exact pre-limit identities; leading WKB\n  cancellation\
+      \ alone does not imply exact finite annihilation."
+    kind: task
+    since: '2026-08-16'
+  task-008:
+    task: State whether the system is endpoint-specific or has a compatible `q=N` analogue.
+    kind: task
+    since: '2026-08-16'

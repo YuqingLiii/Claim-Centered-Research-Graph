@@ -1,0 +1,49 @@
+id: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.hs-query-energy-law
+aliases:
+- B4bL3AltCriticalHsQueryEnergyLaw
+claim: 'Use the exact orthogonal-pinching identity for the literal masked query in Hilbert--Schmidt norm,
+
+  then prove that carrier multiplicities, coefficient normalization, and numerator scale make the
+
+  resulting operator-norm upper bound asymptotically sufficient for the critical k-Sum family.'
+assessment:
+  level: REFUTED
+  summary: HS->op conversion pays an intrinsic Schur carrier-multiplicity floor sqrt(f^lambda f^mu) =
+    Omega(q^(3/4)) against the q^(1/12) budget, and the position-trivial escape (including the sign rep,
+    closed via Young's rule) is capped at Theta(N^(1/3)); scoped to the HS-energy-only route — sibling
+    polar/range-reducing candidates unaffected
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L3_hs_loss_quantification_20260723.md
+      kind: text
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.literal-marked-query-polar-norm-interface
+      kind: node-evidence
+    reviews:
+    - path: ksum/reviews/ksum_L3_hs_loss_rule7_review_20260723.md
+      kind: review
+    counterexamples:
+    - path: ksum/reviews/ksum_L3_hs_loss_rule7_review_20260723.md
+      kind: counterexample
+      note: Sourced contradiction or counterexample supporting this scoped refutation.
+disposition:
+  state: DEAD
+  reason: HS->op conversion pays an intrinsic Schur carrier-multiplicity floor sqrt(f^lambda f^mu) = Omega(q^(3/4))
+    against the q^(1/12) budget, and the position-trivial escape (including the sign rep, closed via Young's
+    rule) is capped at Theta(N^(1/3)); scoped to the HS-energy-only route — sibling polar/range-reducing
+    candidates unaffected
+  source:
+    path: ksum/reviews/ksum_L3_hs_loss_rule7_review_20260723.md
+    kind: review
+frontier:
+  task-001:
+    task: Prove the exact energy identity with all normalizations.
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: Track the full carrier multiplicities at both `q=5` and `q=N`.
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: Compare the resulting bound with the reviewed outer numerator, once that interface exists.
+    kind: task
+    since: '2026-08-16'

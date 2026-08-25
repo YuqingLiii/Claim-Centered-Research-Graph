@@ -1,0 +1,322 @@
+COMMAND: cd ksum/proof-dag/lean && lake build
+DATE:    2026-07-31
+TOOLCHAIN: leanprover/lean4:v4.31.0   (Mathlib required at tag v4.31.0, reused from the machine-local prebuilt cache via the .lake/packages junction)
+NOTE:    the two project libraries were force-rebuilt (.lake/build/lib/lean/{KSUM,KsumAudit*} removed) so that every
+         '#print axioms' record is re-emitted into this transcript rather than replayed from cache.
+---- TRANSCRIPT ----
+✔ [2979/3015] Built KsumAudit.Defs (20s)
+✔ [2980/3015] Built KsumAudit.Smoke (22s)
+✔ [2981/3015] Built KsumAudit.ObstructionsCore (25s)
+✔ [2982/3015] Built KsumAudit.RosmanisBarrier (27s)
+✔ [2983/3015] Built KsumAudit.QueryModel (33s)
+ℹ [2984/3015] Built KsumAudit.FactorialFiltration (50s)
+info: KsumAudit/FactorialFiltration.lean:605:0: 'KsumAudit.Obstructions.Filtration.occ_total' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/FactorialFiltration.lean:606:0: 'KsumAudit.Obstructions.Filtration.annihilates_linear_combination' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: KsumAudit/FactorialFiltration.lean:607:0: 'KsumAudit.Obstructions.Filtration.card_valid' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/FactorialFiltration.lean:608:0: 'KsumAudit.Obstructions.Filtration.sum_hotMon' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/FactorialFiltration.lean:609:0: 'KsumAudit.Obstructions.Filtration.pair_hotMon_const' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/FactorialFiltration.lean:610:0: 'KsumAudit.Obstructions.Filtration.descFactorial_mul_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/FactorialFiltration.lean:611:0: 'KsumAudit.Obstructions.Filtration.exists_word' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/FactorialFiltration.lean:612:0: 'KsumAudit.Obstructions.Filtration.rowOrder_wordType' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/FactorialFiltration.lean:613:0: 'KsumAudit.Obstructions.Filtration.ffStr_eq_zero_of_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/FactorialFiltration.lean:614:0: 'KsumAudit.Obstructions.Filtration.factorial_filtration' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/FactorialFiltration.lean:615:0: 'KsumAudit.Obstructions.Filtration.occ_comp_perm' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/FactorialFiltration.lean:616:0: 'KsumAudit.Obstructions.Filtration.SNInvariant_of_occ' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/FactorialFiltration.lean:617:0: 'KsumAudit.Obstructions.Filtration.sum_uniformLift_comp' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/FactorialFiltration.lean:618:0: 'KsumAudit.Obstructions.Filtration.l1_uniformLift' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/FactorialFiltration.lean:619:0: 'KsumAudit.Obstructions.Filtration.annihilates_query_of_occ_moments' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [2985/3015] Built KsumAudit.ObstructionsBlock (51s)
+info: KsumAudit/ObstructionsBlock.lean:696:0: 'KsumAudit.Obstructions.Block.block_obstruction_corr' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsBlock.lean:697:0: 'KsumAudit.Obstructions.Block.block_obstruction_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsBlock.lean:698:0: 'KsumAudit.Obstructions.Block.block_obstruction_band' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsBlock.lean:699:0: 'KsumAudit.Obstructions.Block.block_obstruction_band_combination' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: KsumAudit/ObstructionsBlock.lean:700:0: 'KsumAudit.Obstructions.Block.rho_le_four_fifths' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsBlock.lean:701:0: 'KsumAudit.Obstructions.Block.two_block_corr_lt_two_thirds' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsBlock.lean:702:0: 'KsumAudit.Obstructions.Block.block_obstruction_two_blocks' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsBlock.lean:703:0: 'KsumAudit.Obstructions.Block.value_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsBlock.lean:704:0: 'KsumAudit.Obstructions.Block.value_budget_equal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsBlock.lean:705:0: 'KsumAudit.Obstructions.Block.block_count_bounded_by_q' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsBlock.lean:706:0: 'KsumAudit.Obstructions.Block.value_budget_q' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2986/3015] Built KsumAudit.ObstructionsProduct (51s)
+info: KsumAudit/ObstructionsProduct.lean:483:0: 'KsumAudit.Obstructions.Product.product_obstruction_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsProduct.lean:484:0: 'KsumAudit.Obstructions.Product.product_obstruction_ratio' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsProduct.lean:485:0: 'KsumAudit.Obstructions.Product.product_obstruction_normalized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: KsumAudit/ObstructionsProduct.lean:486:0: 'KsumAudit.Obstructions.Product.product_obstruction_q' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsProduct.lean:487:0: 'KsumAudit.Obstructions.Product.product_obstruction_mixture' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsProduct.lean:488:0: 'KsumAudit.Obstructions.Product.product_obstruction_mixture_normalized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: KsumAudit/ObstructionsProduct.lean:489:0: 'KsumAudit.Obstructions.Product.product_obstruction_mixture_q' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [2987/3015] Built KsumAudit.ObstructionsOrientation (52s)
+info: KsumAudit/ObstructionsOrientation.lean:164:0: 'KsumAudit.Obstructions.Orientation.card_coherent' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsOrientation.lean:165:0: 'KsumAudit.Obstructions.Orientation.orientation_coherence_factor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: KsumAudit/ObstructionsOrientation.lean:166:0: 'KsumAudit.Obstructions.Orientation.orientation_counts' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsOrientation.lean:167:0: 'KsumAudit.Obstructions.Orientation.orientation_bound_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsOrientation.lean:168:0: 'KsumAudit.Obstructions.Orientation.orientation_bound_odd_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsOrientation.lean:169:0: 'KsumAudit.Obstructions.Orientation.orientation_obstruction_half' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [2988/3015] Built KsumAudit.ObstructionsTiltedBand (52s)
+info: KsumAudit/ObstructionsTiltedBand.lean:90:0: 'KsumAudit.Obstructions.TiltedBand.one_sub_sum_le_prod_one_sub' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: KsumAudit/ObstructionsTiltedBand.lean:91:0: 'KsumAudit.Obstructions.TiltedBand.tilt_corr_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsTiltedBand.lean:92:0: 'KsumAudit.Obstructions.TiltedBand.tilt_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsTiltedBand.lean:93:0: 'KsumAudit.Obstructions.TiltedBand.tilt_corr_gt_three_quarters' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [2989/3015] Built KsumAudit.ObstructionsBandMult (52s)
+info: KsumAudit/ObstructionsBandMult.lean:435:0: 'KsumAudit.Obstructions.BandMult.push' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsBandMult.lean:436:0: 'KsumAudit.Obstructions.BandMult.genPoly' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsBandMult.lean:437:0: 'KsumAudit.Obstructions.BandMult.coeff_genPoly' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsBandMult.lean:438:0: 'KsumAudit.Obstructions.BandMult.genPoly_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsBandMult.lean:439:0: 'KsumAudit.Obstructions.BandMult.push_ne_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsBandMult.lean:440:0: 'KsumAudit.Obstructions.BandMult.push_conv_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsBandMult.lean:441:0: 'KsumAudit.Obstructions.BandMult.isValueInvariant_conv' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsBandMult.lean:442:0: 'KsumAudit.Obstructions.BandMult.isValueInvariant_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsBandMult.lean:443:0: 'KsumAudit.Obstructions.BandMult.moment_of_isValueInvariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsBandMult.lean:444:0: 'KsumAudit.Obstructions.BandMult.descFactorial_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsBandMult.lean:445:0: 'KsumAudit.Obstructions.BandMult.band_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsBandMult.lean:446:0: 'KsumAudit.Obstructions.BandMult.band_add_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsBandMult.lean:447:0: 'KsumAudit.Obstructions.BandMult.band_add_fin' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsBandMult.lean:448:0: 'KsumAudit.Obstructions.BandMult.moment_const_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsBandMult.lean:449:0: 'KsumAudit.Obstructions.BandMult.band_preserved_by_scaling' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2990/3015] Built KsumAudit.ObstructionsTransfer (52s)
+info: KsumAudit/ObstructionsTransfer.lean:531:0: 'KsumAudit.Obstructions.Transfer.InNontrivialSatellite' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsTransfer.lean:532:0: 'KsumAudit.Obstructions.Transfer.reynolds_of_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsTransfer.lean:533:0: 'KsumAudit.Obstructions.Transfer.reynolds_mem_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsTransfer.lean:534:0: 'KsumAudit.Obstructions.Transfer.inNontrivialSatellite_iff_mem_augment' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: KsumAudit/ObstructionsTransfer.lean:535:0: 'KsumAudit.Obstructions.Transfer.transfer_G2_of_satellite' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsTransfer.lean:536:0: 'KsumAudit.Obstructions.Transfer.gauge_term' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsTransfer.lean:537:0: 'KsumAudit.Obstructions.Transfer.gauge_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsTransfer.lean:538:0: 'KsumAudit.Obstructions.Transfer.reynolds_univ_comp' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsTransfer.lean:539:0: 'KsumAudit.Obstructions.Transfer.transfer_G2' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsTransfer.lean:540:0: 'KsumAudit.Obstructions.Transfer.reynolds_smul_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsTransfer.lean:541:0: 'KsumAudit.Obstructions.Transfer.reynolds_eq_zero_of_mem_augment' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: KsumAudit/ObstructionsTransfer.lean:542:0: 'KsumAudit.Obstructions.Transfer.mem_augment_of_reynolds_eq_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: KsumAudit/ObstructionsTransfer.lean:543:0: 'KsumAudit.Obstructions.Transfer.reynolds_eq_zero_iff_mem_augment' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: KsumAudit/ObstructionsTransfer.lean:544:0: 'KsumAudit.Obstructions.Transfer.transfer_G2_satellite' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsTransfer.lean:545:0: 'KsumAudit.Obstructions.Transfer.reynoldsFn_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsTransfer.lean:546:0: 'KsumAudit.Obstructions.Transfer.reynoldsFn_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsTransfer.lean:547:0: 'KsumAudit.Obstructions.Transfer.transfer_G3' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsTransfer.lean:548:0: 'KsumAudit.Obstructions.Transfer.psd_eq_zero_of_trace_eq_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: KsumAudit/ObstructionsTransfer.lean:549:0: 'KsumAudit.Obstructions.Transfer.psd_trace_pos_of_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsTransfer.lean:550:0: 'KsumAudit.Obstructions.Transfer.transfer_G3_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsTransfer.lean:551:0: 'KsumAudit.Obstructions.Transfer.transfer_G3_pure_high_degree_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [2991/3015] Built KsumAudit.ObstructionsPairTensor (52s)
+info: KsumAudit/ObstructionsPairTensor.lean:349:0: 'KsumAudit.Obstructions.PairTensor.kappa_annihilates' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsPairTensor.lean:350:0: 'KsumAudit.Obstructions.PairTensor.prodKappa_l1' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsPairTensor.lean:351:0: 'KsumAudit.Obstructions.PairTensor.prodKappa_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsPairTensor.lean:352:0: 'KsumAudit.Obstructions.PairTensor.slice_annihilation' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsPairTensor.lean:353:0: 'KsumAudit.Obstructions.PairTensor.prodKappa_endpoint_swap' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsPairTensor.lean:354:0: 'KsumAudit.Obstructions.PairTensor.prodKappa_perm' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsPairTensor.lean:355:0: 'KsumAudit.Obstructions.PairTensor.admissible_nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/ObstructionsPairTensor.lean:356:0: 'KsumAudit.Obstructions.PairTensor.mixture_l1_and_annihilation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: KsumAudit/ObstructionsPairTensor.lean:357:0: 'KsumAudit.Obstructions.PairTensor.pair_tensor' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2992/3015] Built KsumAudit.MainLine (35s)
+info: KsumAudit/MainLine.lean:1048:0: 'KsumAudit.twoSum_encode' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1049:0: 'KsumAudit.twoSum_encode_cyc' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1050:0: 'KsumAudit.twoSum_encode_cyc_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1051:0: 'KsumAudit.twoSum_snoc_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1052:0: 'KsumAudit.twoSum_encode_snoc' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1053:0: 'KsumAudit.twoSum_encode_snoc_cyc' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1054:0: 'KsumAudit.QueryModel.relabel_inj' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1055:0: 'KsumAudit.Q_claw_le_encode' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1056:0: 'KsumAudit.Q_claw_le_encode_odd' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1057:0: 'KsumAudit.Q_claw_le_twoSum_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1058:0: 'KsumAudit.twoSum_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1059:0: 'KsumAudit.Q_twoSum_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1060:0: 'KsumAudit.exists_half_odd' depends on axioms: [propext, Quot.sound]
+info: KsumAudit/MainLine.lean:1061:0: 'KsumAudit.combine_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1062:0: 'KsumAudit.main_odd' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1063:0: 'KsumAudit.main_odd_abi' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1064:0: 'KsumAudit.exists_repr_set' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1065:0: 'KsumAudit.main_general' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1066:0: 'KsumAudit.Q_zero_le_target' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1067:0: 'KsumAudit.threshold_large' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1068:0: 'KsumAudit.threshold_small' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1069:0: 'KsumAudit.threshold_small_abi' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1070:0: 'KsumAudit.threshold' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1071:0: 'KsumAudit.sqrt_mul_rpow_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1072:0: 'KsumAudit.ED_isIndexOne' does not depend on any axioms
+info: KsumAudit/MainLine.lean:1073:0: 'KsumAudit.oabarrier_ED' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1074:0: 'KsumAudit.oabarrier_ED_Q' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1075:0: 'KsumAudit.oabarrier_kSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1076:0: 'KsumAudit.demoModel' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [2993/3015] Built KsumAudit.Obstructions (23s)
+✔ [2994/3015] Built KSUM.Interface (20s)
+✔ [2995/3015] Built KSUM.Support.Freeze (27s)
+✔ [2996/3015] Built KSUM.Support.Embed (28s)
+✔ [2997/3015] Built KSUM.A1b (28s)
+✔ [2998/3015] Built KSUM.B4a (29s)
+✔ [2999/3015] Built KSUM.A1d (29s)
+✔ [3000/3015] Built KSUM.A2b (21s)
+✔ [3001/3015] Built KSUM.A2a (23s)
+✔ [3002/3015] Built KSUM.B4 (24s)
+✔ [3003/3015] Built KSUM.A2 (19s)
+✔ [3004/3015] Built KsumAudit.T2KFloor (111s)
+ℹ [3005/3015] Built KSUM.B2 (22s)
+info: KSUM/B2.lean:157:0: 'KSUM.B2.DonorClaim' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/B2.lean:158:0: 'KSUM.B2.Claim' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/B2.lean:159:0: 'KSUM.B2.composition' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/B2.lean:160:0: 'KSUM.B2.composition_with_donor' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/B2.lean:161:0: 'KSUM.B2.demoDonor' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [3006/3015] Built KSUM.SelfTest (23s)
+✔ [3007/3015] Built KSUM.A1a (22s)
+✔ [3008/3015] Built KsumAudit (25s)
+✔ [3010/3015] Built KSUM.A1c (25s)
+✔ [3011/3015] Built KSUM.A1 (26s)
+ℹ [3012/3015] Built KSUM.B1 (21s)
+info: KSUM/B1.lean:234:0: 'KSUM.B1.Claim' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/B1.lean:235:0: 'KSUM.B1.composition_via_A1_inputs' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/B1.lean:236:0: 'KSUM.B1.holds' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/B1.lean:237:0: 'KSUM.B1.composition_via_A1' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [3013/3015] Built KSUM.goal (19s)
+ℹ [3014/3015] Built KSUM.Trust (22s)
+info: KSUM/Trust.lean:238:0: 'KSUM.Support.frozen' does not depend on any axioms
+info: KSUM/Trust.lean:239:0: 'KSUM.Support.append_nil' depends on axioms: [propext, Quot.sound]
+info: KSUM/Trust.lean:240:0: 'KSUM.Support.frozen_eq_append' depends on axioms: [propext, Quot.sound]
+info: KSUM/Trust.lean:241:0: 'KSUM.Support.Q_frozen_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:242:0: 'KSUM.Support.blockPos' depends on axioms: [propext, Quot.sound]
+info: KSUM/Trust.lean:243:0: 'KSUM.Support.Coll' depends on axioms: [propext, Quot.sound]
+info: KSUM/Trust.lean:244:0: 'KSUM.Support.EmbedData.q_pos' depends on axioms: [propext]
+info: KSUM/Trust.lean:245:0: 'KSUM.Support.EmbedData.encodeInst' depends on axioms: [propext]
+info: KSUM/Trust.lean:248:0: 'KSUM.A1a.Claim' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:249:0: 'KSUM.A1a.holds' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:250:0: 'KSUM.A1a.holds_base' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:251:0: 'KSUM.A1a.frozen_form' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:252:0: 'KSUM.A1b.Claim' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:253:0: 'KSUM.A1b.holds' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:254:0: 'KSUM.A1c.kSum_translate' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:255:0: 'KSUM.A1c.Q_kSum_translate_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:256:0: 'KSUM.A1c.Q_window_cover_coset' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:257:0: 'KSUM.A1c.Q_window_cover' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:258:0: 'KSUM.A1c.Q_le_of_coprime' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:259:0: 'KSUM.A1c.not_reachable_k3_q21' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:260:0: 'KSUM.A1c.k3_q21_in_range' depends on axioms: [propext]
+info: KSUM/Trust.lean:261:0: 'KSUM.A1c.Claim' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:262:0: 'KSUM.A1c.ClaimAllPairs' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:263:0: 'KSUM.A1c.holds' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:264:0: 'KSUM.A1d.Claim' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:265:0: 'KSUM.A1.Claim' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:266:0: 'KSUM.A1.composition' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:267:0: 'KSUM.A1.holds' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:270:0: 'KSUM.A2a.Claim' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:271:0: 'KSUM.A2b.Claim' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:272:0: 'KSUM.A2.coprime_k_succ_of_dvd' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:273:0: 'KSUM.A2.coprime_k_MvSucc' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:274:0: 'KSUM.A2.coprime_k_q' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:275:0: 'KSUM.A2.nsmul_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:276:0: 'KSUM.A2.Claim' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:277:0: 'KSUM.A2.composition' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:280:0: 'KSUM.B1.Claim' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:281:0: 'KSUM.B1.composition_via_A1_inputs' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:282:0: 'KSUM.B1.holds' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:283:0: 'KSUM.B1.composition_via_A1' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:284:0: 'KSUM.B2.DonorClaim' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:285:0: 'KSUM.B2.demoDonor' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:286:0: 'KSUM.B2.Claim' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:287:0: 'KSUM.B2.composition' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:288:0: 'KSUM.B2.composition_with_donor' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:289:0: 'KSUM.B4a.Claim' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:290:0: 'KSUM.B4.B4bClaim' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:291:0: 'KSUM.B4.Claim' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:292:0: 'KSUM.B4.composition' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:295:0: 'KsumAudit.KFloor.sum_append_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:296:0: 'KsumAudit.KFloor.card_append_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:297:0: 'KsumAudit.KFloor.mem_coreIdx' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:298:0: 'KsumAudit.KFloor.card_coreIdx' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:299:0: 'KsumAudit.KFloor.sum_coreIdx' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:300:0: 'KsumAudit.KFloor.coreVecAt_zero' depends on axioms: [propext, Quot.sound]
+info: KSUM/Trust.lean:301:0: 'KsumAudit.KFloor.sum_coreIdxAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:302:0: 'KsumAudit.KFloor.core_wellformed' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:303:0: 'KsumAudit.KFloor.encode_cyc_eq_intCast' depends on axioms: [propext, Quot.sound]
+info: KSUM/Trust.lean:304:0: 'KsumAudit.KFloor.abs_signedVal_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:305:0: 'KsumAudit.KFloor.abs_live_sum_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:306:0: 'KsumAudit.KFloor.live_sum_cast' depends on axioms: [propext, Quot.sound]
+info: KSUM/Trust.lean:307:0: 'KsumAudit.KFloor.core_reduction_at' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:308:0: 'KsumAudit.KFloor.core_reduction' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:309:0: 'KsumAudit.KFloor.window_odd_length' depends on axioms: [propext, Quot.sound]
+info: KSUM/Trust.lean:310:0: 'KsumAudit.KFloor.window_even_length' depends on axioms: [propext, Quot.sound]
+info: KSUM/Trust.lean:311:0: 'KsumAudit.KFloor.exists_shift_into_window' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:312:0: 'KsumAudit.KFloor.witness_q0_three' depends on axioms: [propext]
+info: KSUM/Trust.lean:313:0: 'KsumAudit.KFloor.witness_coreUnit' does not depend on any axioms
+info: KSUM/Trust.lean:314:0: 'KsumAudit.KFloor.witness_even_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:315:0: 'KsumAudit.KFloor.witness_even_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:316:0: 'KsumAudit.KFloor.witness_odd_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:317:0: 'KsumAudit.KFloor.witness_odd_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:319:0: 'KsumAudit.KFloor.witness_coreVecAt_shifted' depends on axioms: [propext, Quot.sound]
+info: KSUM/Trust.lean:320:0: 'KsumAudit.KFloor.witness_even_pos_at' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:321:0: 'KsumAudit.KFloor.witness_even_neg_at' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:322:0: 'KsumAudit.KFloor.witness_odd_pos_at' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:323:0: 'KsumAudit.KFloor.witness_odd_neg_at' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:326:0: 'KSUM.Support.demoEmbed' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:327:0: 'KSUM.Support.demoEmbed_q' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:328:0: 'KSUM.B4.maxAlph' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:329:0: 'KSUM.B4.sandwichQ' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:330:0: 'KSUM.B4.sandwichModel' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:331:0: 'KSUM.B4.twoSum_nonconst' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:332:0: 'KSUM.B4.sandwich_B4a' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:333:0: 'KSUM.B4.sandwich_B4b' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:334:0: 'KSUM.B4.sandwich_nonvacuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:345:0: 'KsumAudit.Obstructions.Orientation.orientation_corr_le_half' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:346:0: 'KsumAudit.Obstructions.not_pureHighDegree_succ_of_moment_zero_ne_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: KSUM/Trust.lean:347:0: 'KsumAudit.Obstructions.PairTensor.exists_light_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:350:0: 'KsumAudit.Rosmanis.isNegative_iff_twoSum_false' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:351:0: 'KsumAudit.Rosmanis.isNegative_iff' does not depend on any axioms
+info: KSUM/Trust.lean:352:0: 'KsumAudit.Rosmanis.isNegative_act' depends on axioms: [Quot.sound]
+info: KSUM/Trust.lean:353:0: 'KsumAudit.Rosmanis.valueCount_act' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:354:0: 'KsumAudit.Rosmanis.not_same_orbit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:355:0: 'KsumAudit.Rosmanis.not_single_orbit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:356:0: 'KsumAudit.Rosmanis.valueCount_constStr' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:357:0: 'KsumAudit.Rosmanis.valueCount_oneOffStr' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:358:0: 'KsumAudit.Rosmanis.isNegative_constStr' does not depend on any axioms
+info: KSUM/Trust.lean:359:0: 'KsumAudit.Rosmanis.isNegative_oneOffStr' depends on axioms: [propext, Quot.sound]
+info: KSUM/Trust.lean:360:0: 'KsumAudit.Rosmanis.two_orbits_aux' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:361:0: 'KsumAudit.Rosmanis.two_orbits_of_two_cycles' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:362:0: 'KsumAudit.Rosmanis.two_orbits_of_one_cycle' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:363:0: 'KsumAudit.Rosmanis.positive_blocks_empty' does not depend on any axioms
+info: KSUM/Trust.lean:364:0: 'KsumAudit.Rosmanis.involutive_sub' depends on axioms: [propext, Quot.sound]
+info: KSUM/Trust.lean:365:0: 'KsumAudit.Rosmanis.twoSum_not_single_orbit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:366:0: 'KsumAudit.Rosmanis.existence_fails_q3' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:367:0: 'KsumAudit.Rosmanis.swapped_string_q3' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:368:0: 'KsumAudit.Rosmanis.uniqueness_fails_q5' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:369:0: 'KsumAudit.Rosmanis.q5_cycle_type' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KSUM/Trust.lean:370:0: 'KsumAudit.Rosmanis.witness_two_cycles_q5' depends on axioms: [propext, Quot.sound]
+info: KSUM/Trust.lean:371:0: 'KsumAudit.Rosmanis.witness_one_cycle_q3' depends on axioms: [propext, Quot.sound]
+Build completed successfully (3015 jobs).
+
+---- END TRANSCRIPT ----
+BUILD_RESULT: exit=0
+JOBS: 3015
+WARNINGS: 0
+ERRORS: 0
+SORRY: 0

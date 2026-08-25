@@ -1,0 +1,46 @@
+SE TRACE T1 INDEPENDENT EXACT AUDIT
+GATE_1 n=3 q=6 j=1 theta=(1,) a=1 alpha=(1,) b=0 beta=() c=1 admissible=True tame=True m=1 N_phys=2 N_query=5 B=6/5 T=2 delta_min=5
+  tail row=1 width=1 tau=(5,) delta=5 f_tau=1 eta=1/25 printed_ratio=1/5 printed=PASS
+  corrected_summed_ratio=1/5 summed=PASS
+GATE_2 n=3 q=6 j=1 theta=(1,) a=0 alpha=() b=1 beta=(1,) c=1 admissible=True tame=True m=1 N_phys=2 N_query=5 B=6/5 T=2 delta_min=5
+  tail row=1 width=1 tau=(5,) delta=5 f_tau=1 eta=1/25 printed_ratio=1/5 printed=PASS
+  corrected_summed_ratio=1/5 summed=PASS
+GATE_3 n=4 q=8 j=1 theta=(1,) a=1 alpha=(1,) b=0 beta=() c=1 admissible=True tame=True m=1 N_phys=3 N_query=7 B=8/7 T=3 delta_min=7
+  tail row=1 width=1 tau=(7,) delta=7 f_tau=1 eta=1/49 printed_ratio=1/7 printed=PASS
+  corrected_summed_ratio=1/7 summed=PASS
+GATE_4 n=4 q=8 j=1 theta=(1,) a=0 alpha=() b=1 beta=(1,) c=1 admissible=True tame=True m=1 N_phys=3 N_query=7 B=8/7 T=3 delta_min=7
+  tail row=1 width=1 tau=(7,) delta=7 f_tau=1 eta=1/49 printed_ratio=1/7 printed=PASS
+  corrected_summed_ratio=1/7 summed=PASS
+GATE_5 n=4 q=8 j=2 theta=(2,) a=0 alpha=() b=2 beta=(2,) c=1 admissible=True tame=False m=1 N_phys=3 N_query=21 B=7/5 T=3 delta_min=5
+  tail row=1 width=2 tau=(6, 1) delta=5 f_tau=6 eta=1/15 printed_ratio=2/7 printed=PASS
+  corrected_summed_ratio=2/7 summed=PASS
+GATE_6 n=4 q=8 j=2 theta=(2,) a=1 alpha=(1,) b=1 beta=(1,) c=1 admissible=True tame=False m=2 N_phys=3 N_query=21 B=7/5 T=6 delta_min=5
+  tail row=1 width=2 tau=(6, 1) delta=5 f_tau=6 eta=1/15 printed_ratio=4/7 printed=PASS
+  corrected_summed_ratio=2/7 summed=PASS
+GATE_7 n=4 q=8 j=2 theta=(1, 1) a=0 alpha=() b=2 beta=(1, 1) c=1 admissible=True tame=False m=1 N_phys=3 N_query=21 B=4/3 T=3 delta_min=7
+  tail row=2 width=1 tau=(6, 1) delta=7 f_tau=6 eta=1/21 printed_ratio=2/7 printed=PASS
+  corrected_summed_ratio=2/7 summed=PASS
+GATE_8 n=4 q=8 j=2 theta=(1, 1) a=1 alpha=(1,) b=1 beta=(1,) c=1 admissible=True tame=False m=2 N_phys=3 N_query=21 B=4/3 T=6 delta_min=7
+  tail row=2 width=1 tau=(6, 1) delta=7 f_tau=6 eta=1/21 printed_ratio=4/7 printed=PASS
+  corrected_summed_ratio=2/7 summed=PASS
+GATE_9 n=4 q=8 j=2 theta=(1, 1) a=2 alpha=(1, 1) b=0 beta=() c=1 admissible=True tame=False m=1 N_phys=3 N_query=21 B=4/3 T=3 delta_min=7
+  tail row=2 width=1 tau=(6, 1) delta=7 f_tau=6 eta=1/21 printed_ratio=2/7 printed=PASS
+  corrected_summed_ratio=2/7 summed=PASS
+KILLER n=9 q=18 j=3 theta=(2, 1) a=2 alpha=(2,) b=1 beta=(1,) c=1 admissible=True tame=True m=3 N_phys=56 N_query=680 B=17/14 T=168 delta_min=14
+  tail row=1 width=2 tau=(15, 1, 1) delta=14 f_tau=120 eta=1/70 printed_ratio=9/17 printed=PASS
+  tail row=2 width=1 tau=(15, 2) delta=16 f_tau=119 eta=1/80 printed_ratio=63/136 printed=PASS
+  corrected_summed_ratio=45/136 summed=PASS
+LARGER_MINIMAL_PRINTED_COUNTEREXAMPLE n=12 q=24 j=4 theta=(4,) a=2 alpha=(2,) b=2 beta=(2,) c=1 admissible=True tame=True m=6 N_phys=330 N_query=8855 B=21/17 T=1980 delta_min=17
+  tail row=1 width=4 tau=(20, 3) delta=17 f_tau=1518 eta=1/85 printed_ratio=36/35 printed=FAIL
+  corrected_summed_ratio=6/35 summed=PASS
+MINIMAL_CORRECTED_SUMMED_COUNTEREXAMPLE n=18 q=36 j=6 theta=(4, 2) a=2 alpha=(2,) b=4 beta=(4,) c=1 admissible=True tame=True m=15 N_phys=12376 N_query=1623160 B=496/405 T=185640 delta_min=27
+  tail row=1 width=4 tau=(30, 3, 2) delta=27 f_tau=1374450 eta=1/27 printed_ratio=1575/124 printed=FAIL
+  tail row=2 width=2 tau=(30, 4, 1) delta=30 f_tau=1095633 eta=2/75 printed_ratio=567/62 printed=FAIL
+  corrected_summed_ratio=903/620 summed=FAIL
+SCAN n=3..36 sectors=84937 c>=2_scalar_sectors=4377 printed_failures=198325 summed_failures=50594
+FIRST_STRICT_TAME_PRINTED_FAIL n=13 j=4 theta=(3, 1) a=1 alpha=(1,) b=3 beta=(3,) tail_tau=(22, 2, 1) ratio=14/11
+FIRST_STRICT_TAME_SUMMED_FAIL n=19 j=6 theta=(4, 2) a=2 alpha=(2,) b=4 beta=(4,) ratio=1035/748
+VERDICT printed universal branchwise scalar claim = REFUTED
+VERDICT corrected full-tail summed Holder sufficient condition = FALSE uniformly
+NOTE failure of either sufficient scalar condition does not refute T-b itself
+NOTE c>=2 identity-level carrier gate remains UNTESTED

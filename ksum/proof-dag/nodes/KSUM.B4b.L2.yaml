@@ -1,0 +1,696 @@
+id: KSUM.B4b.L2
+aliases:
+- B4bL2
+claim: Build a lower-bound witness in the multisymmetric joint-histogram basis that resolves complementary-pair
+  occupancy beyond scalar Hamming shells. ****
+assessment:
+  level: CONJECTURED
+  summary: '**Phase-6 current update (supersedes the phase-5-only summary immediately below):** Primary
+    status remains **CONJECTURED** and the cap-scale witness is open. Fresh hostile review proves three
+    scoped components: terminal H-irrep labels do not fix multiplicity coordinates; full-group Reynolds
+    kills a direct vector from every nontrivial H-satellite; and `Reynolds(diag A)/tr A` has constant
+    moment one/band zero for every nonzero PSD `A`. The exact finite gates and held-out numerical values
+    pass. MAJOR D14 withholds a completion tier from the aggregate L2P6-G because “optimizer-faithful,
+    irrep-label-only transfer” is not a formula-defined class and the two displayed extraction maps are
+    not exhaustive. A Gelfand–Tsetlin chain fixes the irrep factor, not the residual copy space; an ambient
+    canonical branching/harmonic basis plus a genuinely signed map remains open. See [the phase-6 report](../../artifacts/ksum_L2_phase6.md)
+    and [completed hostile review](../../../../ksum/reviews/ksum_L2p6_review.md). Primary status: **CONJECTURED
+    · cap-scale witness open; phase-5 components reviewed**. The D7-repaired canonical obligation has
+    the required odd-q/all-target scope and leaves even q optional. The independently reviewed phase-2
+    M1/M2, phase-3 L2P3, and scoped phase-4 T1/T2 components remain intact. Fresh rule-7 review proves
+    the phase-5 factorial/Vandermonde band-multiplication lemma for arbitrary nonzero block occupancy
+    measures: the `S_N`-averaged convolution annihilates below the sum of the block bands.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_expL_structure.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase7_web_feasibility_20260720.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase1.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase1_addendum.md
+      kind: text
+    - path: ksum/tools/ksum_l2r_exact_moment_lp.py
+      kind: text
+    - path: ksum/tools/ksum_l2r_exact_verify.py
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase2.md
+      kind: text
+    - path: ksum/tools/ksum_l2p2_pair_kernel.py
+      kind: text
+    - path: ksum/tools/ksum_l2p2_exact_verify.py
+      kind: text
+    - path: ksum/tools/ksum_l2p2r_exact_verify.py
+      kind: text
+    - path: ksum/tools/ksum_l2p2r_product_obstruction.py
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase3.md
+      kind: text
+    - path: ksum/tools/ksum_l2p3_tilted_outer.py
+      kind: text
+    - path: ksum/tools/ksum_l2p3_exact_verify.py
+      kind: text
+    - path: ksum/tools/ksum_l2p3r_finite_verify.py
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase4.md
+      kind: text
+    - path: ksum/tools/ksum_l2p4_block_composition.py
+      kind: text
+    - path: ksum/tools/ksum_l2p4_exact_verify.py
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase5.md
+      kind: text
+    - path: ksum/tools/ksum_l2p5_averaged_composition.py
+      kind: text
+    - path: ksum/tools/ksum_l2p5_exact_verify.py
+      kind: text
+    - path: ksum/tools/ksum_l2p5_fourier_obstruction.py
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase6.md
+      kind: text
+    - path: ksum/tools/ksum_l2p6_labels.py
+      kind: text
+    - path: ksum/tools/ksum_l2p6_obstruction.py
+      kind: text
+    - path: ksum/artifacts/ksum_L2_balanced_positive_split_scalar_selector_obstruction_20260722.md
+      kind: text
+    - node: KSUM.L33
+      kind: node-evidence
+    - node: KSUM.C0
+      kind: node-evidence
+    - node: KSUM.B4b.L2.M1
+      kind: node-evidence
+    - node: KSUM.B4b.L2.L2P3
+      kind: node-evidence
+    - node: KSUM.B4b.L2.BANDMULT
+      kind: node-evidence
+    - node: KSUM.B4b.L2.M2
+      kind: node-evidence
+    - node: KSUM.B4b.L2.T4
+      kind: node-evidence
+    - node: KSUM.B4b.L2.VBUD
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ORIENT
+      kind: node-evidence
+    - node: KSUM.B4b.L2.G1
+      kind: node-evidence
+    - node: KSUM.B4b.L2.G2
+      kind: node-evidence
+    - node: KSUM.B4b.L2.G3
+      kind: node-evidence
+    - node: KSUM.B4b.L2.L2P6G
+      kind: node-evidence
+    - node: KSUM.B4b.L2.P2ANSATZ
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.fewpair
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.bkt
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.nonidentical
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.nonproduct
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.canonbasis
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.altinner
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.tworay
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.highCt-balanced
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.multiscale-splits
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.variable-pair-totals
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.growing-rank-moment-design
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.moving-remez-cubature
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.multiscale-gapfree-base-measure
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.moving-remez-cubature.label-aware-fekete-basis-exchange
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.moving-remez-cubature.label-aware-fekete-basis-exchange.continuation-seeded-block-fekete
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.multiscale-gapfree-base-measure.critical-dense-palette-residual-window
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.moving-remez-cubature.label-aware-fekete-basis-exchange.continuation-seeded-block-fekete.continuum-limit-remez-support-flow
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.moving-remez-cubature.label-aware-fekete-basis-exchange.continuation-seeded-block-fekete.continuum-limit-remez-support-flow.stratified-boundary-jet-remez-system
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.mesoscopic-split-opening-cascade
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.iterated-multiscale-boundary-compactification
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.mesoscopic-minority-occupancy-transition
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.tangential-phase-paired-transport
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.two-orientation-shared-no-cascade
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.phase-subexposed-correlation-reservoir
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.correlation-tail-decoupled-two-reservoir
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multiscale-moment-bearing-neutral-ladder
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.near-zero-bridge-independent-parity-tail
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.weighted-activation-or-dual-composition
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.balanced-positive-split-weighted-dual-composition
+      kind: node-evidence
+    reviews:
+    - path: ksum/reviews/ksum_L2p1_review.md
+      kind: review
+    - path: ksum/reviews/ksum_L2r_review.md
+      kind: review
+    - path: ksum/reviews/ksum_L2p2_review.md
+      kind: review
+    - path: ksum/reviews/ksum_L2p3_review.md
+      kind: review
+    - path: ksum/reviews/ksum_L2p4_review.md
+      kind: review
+    - path: ksum/reviews/ksum_L2p5_review.md
+      kind: review
+    - path: ksum/reviews/ksum_L2p6_review.md
+      kind: review
+    - path: ksum/reviews/ksum_merge_review.md
+      kind: review
+    runs:
+    - path: ksum/artifacts/logs_ksum_L2p1_20260719/projection_test.log
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p1_20260719/exact_lp.log
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p1_20260719/SHA256SUMS.txt
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2r_20260719/predictions.txt
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2r_20260719/exact_lp_results.json
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2r_20260719/exact_lp.log
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2r_20260719/exact_verify.log
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2r_20260719/SHA256SUMS.txt
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2rr_20260719/SHA256SUMS.txt
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p2_20260719/predictions.txt
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p2_20260719/pair_kernel.log
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p2_20260719/exact_verify.log
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p2_20260719/SHA256SUMS.txt
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p2r_20260719
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p3_20260719/predictions.txt
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p3_20260719/tilted_outer.log
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p3_20260719/exact_verify.log
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p3_20260719/SHA256SUMS.txt
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p3r_20260719
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p4_20260719/predictions.txt
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p4_20260719/block_composition.log
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p4_20260719/exact_verify.log
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p4_20260719/SHA256SUMS.txt
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p4r_20260719
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p5_20260719/predictions.txt
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p5_20260719/averaged_composition.log
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p5_20260719/exact_verify.log
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p5_20260719/fourier_obstruction.log
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p5_20260719/SHA256SUMS.txt
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p5r_20260719
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p6_20260719/predictions.txt
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p6_20260719/labels.json
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p6_20260719/obstruction.json
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p6_20260719
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p6r_20260719
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+frontier:
+  task-001:
+    task: 'OPTIONAL STRENGTHENING (so labeled per D7; NOT required by the paper''s middle-gap problem):
+      the same statement for even (q) with constants uniform across cycle types (\tau\in\{0,2\}) — strictly
+      stronger; C7 does not identify those classes.'
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: Use the addendum's canonical sign/error convention. Strict correlation (>2/3), not equality,
+      is required for the direct (Q_{1/3}\ge d/2) certificate.
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: Supply a one-input or held-out discriminator if P2 is to support dual-polynomial expressiveness.
+      The verified P2 content is only that the two archived invariant matrices lose about 25--27% squared
+      Frobenius mass under the specified shell coarsening.
+    kind: task
+    since: '2026-08-16'
+  task-004:
+    task: 'NEXT OPEN STEP after phase 5: the standard composition map is now obstructed in three scoped
+      regimes: reviewed phase-4 T1 for fixed-allocation unaveraged sign-bit composition, reviewed phase-4
+      T2 for whole-pair value-disjoint allocation, and reviewed L2P5-F for identical shared-value phase-3
+      blocks with one common exact pair total and a product outer tensor after exact averaging. A live
+      D10 repair must use nonidentical blocks, deliberately unequal pair totals, a non-product outer coupling,
+      an inner other than L2P3, or a non-composition witness shape, and must suppress the exact cross-block
+      loss `2^{-r(m-1)}` while engaging the untouched `sqrt(N)` side. The unchanged canonical target requires
+      fixed eta in (1/6,1/4], c0>0, delta in (0,1/3), and N0 for every N>=N0, odd 5<=q<=N, and target,
+      with l1=1, full invariance, correlation at least 2/3+delta, and degree below c0 min{sqrt(N)q^eta,N^(2/3)}
+      annihilated.'
+    kind: task
+    since: '2026-08-16'
+  task-005:
+    task: 'Keep G11: degrees 3 and 4 at N <= 5 demonstrate finite machinery, not an exponent trend. The
+      broader kill remains live if the repaired asymptotic construction collapses to a shell algebra or
+      cannot satisfy exact moments.'
+    kind: task
+    since: '2026-08-16'
+  task-006:
+    task: 'Estimated difficulty: Very high; potentially a smaller analytic state space than the full SDP
+      route.'
+    kind: task
+    since: '2026-08-16'
+  task-007:
+    task: "NEXT OPEN STEP after phase 6: retain the reviewed phase-4/5 scoped composition obstructions\
+      \ and\n  the three reviewed phase-6 component facts. Construct, for every sufficiently large `N`,\
+      \ odd\n  `5<=q<=N`, and target, an exact ambiently defined multiplicity/branching basis with explicit\n\
+      \  phase/order/sign conventions and a cross-`N` coefficient law, together with a genuinely signed\n\
+      \  operator-to-measure map. It must output an `S_N x C(sigma)`-invariant unit-`l1` measure with\
+      \ zero\n  constant moment, correlation at least `2/3+delta`, and annihilation below\n  `c0 min{sqrt(N)q^eta,N^(2/3)}`\
+      \ for fixed `eta in (1/6,1/4]`, `c0,delta>0`. At `q=5` this demands\n  `Theta(sqrt(N))`; at `q=N`\
+      \ it is capped by `N^(2/3)`. This door survives G1 because it supplies\n  more than terminal irrep\
+      \ labels, G2 because it need not directly Reynolds-average a satellite\n  vector, and G3 because\
+      \ its output is signed rather than a positive normalized diagonal. Signed\n  sector recombinations,\
+      \ nonlinear/off-diagonal extractions, unequal/nonidentical/non-product\n  composition, and arbitrary\
+      \ joint-histogram witnesses remain open."
+    kind: task
+    since: '2026-08-16'
+  task-008:
+    task: "PHASE-7 DECISION: do not spend further work on the natural center/JM chain or on optimizing\
+      \ a\n  two-ray coefficient sequence. The former fails the proposer-tier `CB-1`/`CB-4` gates; the\
+      \ latter\n  is conjecturally capped at `O_tau(sqrt(N))` independently of `q`. The next registered\
+      \ frontier is\n  `KSUM.B4b.L2.ALT.multipair`: a genuinely global signed measure supported on profiles\
+      \ with several\n  simultaneously occupied complementary pairs. It remains OPEN with no coefficient\
+      \ law."
+    kind: task
+    since: '2026-08-16'
+  task-009:
+    task: "PHASE-10 DECISION: fixed two-scale and fixed geometric scale-ladder supports are conjecturally\n\
+      \  obstructed before coefficient design. Low-degree interpolation in pair total isolates every fixed\n\
+      \  scale, and the resulting OR of per-scale thresholds has degree\n  `O_epsilon((L+4) log(L+1) sum_l\
+      \ sqrt(K_l S_l))`, which is `o(N^(2/3))` for the tested geometric\n  ladders. The next registered\
+      \ frontier is `ALT.multipair.variable-pair-totals`: the totals must vary\n  over a large jointly\
+      \ coupled set so that low-degree scale selection itself fails."
+    kind: task
+    since: '2026-08-16'
+  task-010:
+    task: "PHASE-11 DECISION: the full variable-total partition/split histogram passes all attempted primal\n\
+      \  support gates. It contains `[1,N-K]` in its positive `C_t` set and balanced\n  `C_t=Theta(N^(4/3))`\
+      \ profiles for `K=Theta(N^(2/3))`; available query algorithms only match the\n  desired endpoint\
+      \ orders. Decision C leaves one explicit missing object: a nonseparable joint\n  histogram kernel\
+      \ with unit `l1`, correlation above `2/3`, the full factorial annihilation band,\n  and constant\
+      \ mass above `cD_*^2`."
+    kind: task
+    since: '2026-08-16'
+  task-011:
+    task: "PHASE-12 DECISION: an exact finite rational orbit-moment kernel is now available. Three natural\n\
+      \  joint-kernel lifts are conjecturally obstructed at explicit gates: affine differences lose\n\
+      \  correlation `2^(1-R)`, one alternant leaves a degree-two target moment, and the Bun–Thaler\n\
+      \  two-level lift has either an `M^2/k` moment or zero correlation. A preregistered 24-orbit\n \
+      \ `N=8,q=5,D=8` rank/LP experiment is the next discriminator."
+    kind: task
+    since: '2026-08-16'
+  task-012:
+    task: "PHASE-14 PROPOSER/REVIEW DECISION: the two-component and repeated-common-split identities pass,\n\
+      \  but fresh Rule-7 review refutes the broader bounded-collection claim with an exact three-component\n\
+      \  `N=10,q=5,K=2,D=5` kernel of correlation magnitude `1/7`. Distributed NO-boundary mass cannot\n\
+      \  change the reviewed cross rows; bounded rank three and higher remains live."
+    kind: task
+    since: '2026-08-16'
+  task-013:
+    task: "PHASE-14 NUMERICAL SWEEP: exact reconstruction confirms the Phase-13 finite certificate. For\n\
+      \  `N=6..12,q=5`, every sampled target-scale `D=floor/ceil(sqrt N)` instance retains correlation\n\
+      \  above `2/3` (also under attainable natural tail gates), whereas `ceil(2 sqrt N)` does not. No\n\
+      \  asymptotic inference is licensed."
+    kind: task
+    since: '2026-08-16'
+  task-014:
+    task: "PHASE-12/13 REVIEW: fresh Rule-7 review verifies the finite core and `m=K=2` printed moment\n\
+      \  formula, but caps the general formula below completion for missing regimes and leaves the\n \
+      \ alternant/BT obstructions CONJECTURED for undefined maps. The route and root statuses do not move."
+    kind: task
+    since: '2026-08-16'
+  task-015:
+    task: "PHASE-15 NUMERICS: exact `q=5` sweeps through `N=16` at constants `5/4,3/2,7/4` show strong\n\
+      \  integer-cutoff sawtooth and do not identify an asymptotic constant. The route remains unchanged."
+    kind: task
+    since: '2026-08-16'
+  task-016:
+    task: "PHASE-15 GROWING-RANK DECISION: the faithful determinant/OA family has exact complementary-minor\n\
+      \  cancellation but over-annihilates low-order cylinders, loses constant correlation through the\n\
+      \  induced AND dual, needs `N=Omega(L^2)` for faithful encoding, and cannot meet the `q=5` band.\n\
+      \  Its node is CONJECTURED; the preregistered selective-orbit-tensor kernel is the next OPEN frontier."
+    kind: task
+    since: '2026-08-16'
+  task-017:
+    task: "PHASE-15 REVIEW CAVEAT: the scoped algebra receives mathematical MINOR repair only, but the\n\
+      \  reviewer violated the pre-review anchoring rule anchoring order. The report is corroborating, never completion-tier;\n\
+      \  growing-rank remains CONJECTURED."
+    kind: task
+    since: '2026-08-16'
+  task-018:
+    task: "PHASE-16 SELECTIVE DECISION: weighted projection of the NO indicator against the exact orbit-row\n\
+      \  span gives a universal selective annihilator normal form and explicit correlation/tail formulas.\n\
+      \  Complementary slackness makes choosing the positive base measure equivalent to the original\n\
+      \  missing dual. The OPEN deliverable is now a formula-defined `pi_{N,q}` with uniform endpoint\n\
+      \  residual and high-`C_t` bounds."
+    kind: task
+    since: '2026-08-16'
+  task-019:
+    task: "PHASE-17 `q=N` DECISION: an explicit nonproduct beta-binomial activation/reservoir base law\
+      \ has\n  exact legality and the correct `C_t=Theta(N^(4/3))` base tail, but repeated `(1,1)` orbit\
+      \ rows\n  expose its scalar activation count. A degree-`O(sqrt K)` Chebyshev discriminator forces\n\
+      \  correlation at most `1/2`; one-parameter activation supports are out, not the selective route."
+    kind: task
+    since: '2026-08-16'
+  task-020:
+    task: "PHASE-17 `q=5` DECISION: the canonical symmetric Dirichlet--multinomial/Hahn base law has an\n\
+      \  analytic fixed-`D=3` correlation limit `0.6151883860...<2/3` while retaining constant residual\n\
+      \  high-`C_t` mass. Sampled target cutoffs through `N=64` also fail, but no target-scale asymptotic\n\
+      \  no-go is claimed."
+    kind: task
+    since: '2026-08-16'
+  task-021:
+    task: "PHASE-16 STRUCTURE DECISION: complete exact `D=5/6` blocks and two `D=7` jumps show basic\n\
+      \  selective optima with support `rank+1`, favorable recovery inside the `D=6` block, and destructive\n\
+      \  degree jumps. Support rank grows `8,10,16`; only a moving Remez/cubature ansatz is licensed,\
+      \ not\n  bounded support or recurrence. That ansatz is registered OPEN before analytic work."
+    kind: task
+    since: '2026-08-16'
+  task-022:
+    task: "PHASE-18 `q=N` DECISION: a genuinely multidimensional random-total/random-balanced-split law\n\
+      \  still leaves `min_YES C_t=Omega(N^(2/3))`; because actual orbit rows span low powers of `C_t`,\n\
+      \  a degree-`O(N^(1/3))` Chebyshev discriminator forces correlation at most `1/2`. A viable law\n\
+      \  must be genuinely multiscale in positive `C_t`, not merely multidimensional."
+    kind: task
+    since: '2026-08-16'
+  task-023:
+    task: "PHASE-18 `q=5` NUMERICS: formula-defined Dirichlet schedules, boundary/distance tilts, and\n\
+      \  Christoffel/leverage tilts all exhibit a correlation--tail tradeoff through `N=64`; no sampled\n\
+      \  grid point passes both gates for `N>=20`. This deprioritizes smooth radial full-support tuning\
+      \ but\n  proves no asymptotic no-go."
+    kind: task
+    since: '2026-08-16'
+  task-024:
+    task: "PHASE-18 ESCAPE REGISTRATION: the gap-free multiscale base-measure node is OPEN before work.\
+      \ It\n  must combine residual-relevant small positive `C_t` with constant `Theta(N^(4/3))` tail\
+      \ mass\n  without a scalar collapse."
+    kind: task
+    since: '2026-08-16'
+  task-025:
+    task: "PHASE-19 GAP-FREE DECISION: adding unit layers removes the total-`C_t` gap and a heavy-tailed\
+      \ law\n  keeps the high tail, but only `O(log N)` local product values let orbit rows interpolate\
+      \ activity.\n  The resulting NO approximant costs `O(N^(1/3)log N)` and caps correlation at `1/2`.\
+      \ Any live\n  successor needs local moment interpolation complexity at least `Omega(N^(1/3))`."
+    kind: task
+    since: '2026-08-16'
+  task-026:
+    task: "PHASE-20 RICH-PALETTE DECISION: `Omega(N^(1/3))` exact product types still fail if all positive\n\
+      \  bulk products stay in `[Theta(N^(1/3)),Theta(N^(2/3))]`. Approximate activity is Chebyshev-easy,\n\
+      \  giving an `O(N^(1/2)log N)` actual-query NO separator. Local moment types must accumulate near\n\
+      \  zero across enough scales."
+    kind: task
+    since: '2026-08-16'
+  task-027:
+    task: "PHASE-20 LABEL-AWARE DECISION: closed single-entry basis exchange fails all 21 exact gates;\
+      \ one\n  wide run nearly passes at `(17,6)` but collapses at `(23,6)`. The continuation-seeded coordinated\n\
+      \  block-exchange escape is registered OPEN before work."
+    kind: task
+    since: '2026-08-16'
+  task-028:
+    task: "PHASE-21 CRITICAL WINDOW: an explicit dense local/global `C_t` mixture raises every known scalar\n\
+      \  separator to `Theta(N^(2/3))`. The exact scalar threshold is\n  `c_*=(arcosh 3)/2`; `c>c_*` fails,\
+      \ while `0<c<c_*` is genuinely OPEN. Direct residual analysis\n  at `c=1/2` is preregistered in\
+      \ its own node."
+    kind: task
+    since: '2026-08-16'
+  task-029:
+    task: "PHASE-22 `c=1/2` NUMERICS: full-orbit projection correlations at `N=15,21,27,33` are\n  `0.6949,0.8042,0.5861,0.4705`;\
+      \ the two larger gates fail, and `N=27` fails only after adding\n  non-scalar rows beyond `C_t`.\
+      \ No asymptotic trend or typed non-scalar approximant is known."
+    kind: task
+    since: '2026-08-16'
+  task-030:
+    task: "PHASE-23 NON-SCALAR DECISION: the first decisive row at `(27,4)` is\n  `M1=sum_i s_i x_i`;\
+      \ the hierarchy continues with `M2` at `(33,5)`. In stable range the actual\n  orbit span is exactly\
+      \ the weighted multisymmetric algebra in `(s_i,x_i)`, so the open large-\n  endpoint problem is\
+      \ the inversion and absolute-value/tail sign control of an explicit growing\n  colored-partition\
+      \ Gram operator at `D=L/2`, not identification of another finite feature."
+    kind: task
+    since: '2026-08-16'
+  task-031:
+    task: "PHASE-21 CONTINUATION DECISION: exact nearest-neighbor transport preserves full circuits and\n\
+      \  stabilizes high-tail `D=5/6` paths, but every correlation and dual gate still fails. Expanding\n\
+      \  finite search is rejected as an LP restatement; the continuum-limit support-flow escape is\n\
+      \  registered OPEN before work."
+    kind: task
+    since: '2026-08-16'
+  task-032:
+    task: "PHASE-23 CONTINUUM DECISION: for `q=5,K=2`, the invariant ring has Hilbert series\n  `(1-t^6)/((1-t^2)^2(1-t^3)(1-t^4))`\
+      \ and rank `D^3/48+O(D^2)`. Every ordinary macroscopic exact\n  annihilator weakly vanishes; correlation\
+      \ lives in `xi=D^2 C_t/N^2` boundary layers and discrete\n  corner jets, where rounding is leading\
+      \ order. The stratified boundary-jet Remez escape is\n  registered OPEN before any construction."
+    kind: task
+    since: '2026-08-16'
+  task-033:
+    task: "PHASE-24 STRATIFIED DECISION: the regular normal kernel is exactly a tangential WKB factor\
+      \ times\n  `(1+t)^m`, and the `C_t=1` corner jump is exactly `-(z-w)^2`. Scalar `xi` is insufficient,\
+      \ while\n  direct constant-mass corner-to-macroscopic matching is exponentially ill-conditioned.\
+      \ A typed\n  strong-duality bridge additionally shows the four proposed strata omit query-visible\
+      \ mesoscopic\n  and supernormal scales and require a uniformly stable exactor. The four-stratum\
+      \ system receives\n  scoped Decision B; the finite `q=5` dual and three registered multiscale refinements\
+      \ remain OPEN."
+    kind: task
+    since: '2026-08-16'
+  task-034:
+    task: "PHASE-25 MULTISCALE DECISION: canonical minimal split-opening ladders face an exact norm/tail\n\
+      \  tradeoff; the `m=lambda D` interior transition kernel matches bulk but shallow single-fiber and\n\
+      \  positive-gap NO matching fail; and exact correction cost equals the canonical dual defect, with\n\
+      \  a linear Fekete exactor of norm at most `D^3/48+O(D^2)`. No candidate yet achieves defect\n \
+      \ `o(D^-3)` with both correlation and tail. The tangential phase-paired escape was registered\n\
+      \  before testing."
+    kind: task
+    since: '2026-08-16'
+  task-035:
+    task: "PHASE-26 OVERCOMPLETE DECISION: an overcomplete one-orientation cascade can simultaneously\
+      \ have\n  exact full-row cancellation, `l1<2.103`, and macro tail fraction `1/2`, so the Phase-25\
+      \ raw\n  norm/tail tradeoff was not universal. A schedule-independent Chebyshev dual nevertheless\
+      \ caps\n  its normalized correlation at `1/2+exp(-Omega(D))`. The two-orientation shared-NO escape\
+      \ was\n  registered before testing."
+    kind: task
+    since: '2026-08-16'
+  task-036:
+    task: "PHASE-26 PHASE-PAIR DECISION: the birth operator has a Pascal right inverse of norm at least\n\
+      \  `2^(cD)-1`; canonical exposed-phase pairing therefore needs exponentially small defect, not the\n\
+      \  polynomial Fekete gate. A fixed number of tangential phases in a fixed-width birth slab has only\n\
+      \  the zero exact kernel, and WKB phase equality does not imply small full-feature pseudometric.\n\
+      \  The subexposed-correlation reservoir was registered before testing."
+    kind: task
+    since: '2026-08-16'
+  task-037:
+    task: "PHASE-27 FINAL-MECHANISMS AUDIT: shared-NO merging does not change the moment equations and\
+      \ obeys\n  `corr<=2 sech(2 kappa)+o(1)`, hence fails for `kappa>(arcosh 3)/2`. A subexposed reservoir\
+      \ whose\n  correlation lies only at `C_t/N->infinity` has vanishing correlation by an actual scalar\n\
+      \  Chebyshev row. The only unexcluded architecture is an `O(N)` correlation bridge jointly coupled\n\
+      \  to sign-balanced YES/YES `omega(N)` tail mass; no candidate formula or next bounded test is known."
+    kind: task
+    since: '2026-08-16'
+  task-038:
+    task: "PHASE-27 `q=5` POSITIVE CANDIDATE: an explicit two-orientation shared-NO tail kernel, combined\n\
+      \  with a quadratic boundary bridge, gives `D=Theta(sqrt N)`, exact orbit-row annihilation, unit\n\
+      \  `l1`, correlation `>4536/6565>2/3`, and tail mass `1/4` at `C_t>=N/4` for all sufficiently large\n\
+      \  odd `N`. Status is CONJECTURED pending fresh Rule-7 review; the exact finite checker is not a\n\
+      \  completion certificate."
+    kind: task
+    since: '2026-08-16'
+  task-039:
+    task: "PHASE-27 RULE-7 REVIEW: fresh pre-anchor reconstruction and an independent five-color full-\n\
+      \  central-row checker return MINOR/PASS and satisfy 7(a)--(g), licensing the scoped `q=5` node\
+      \ as\n  PROVED for all odd `N>=513`. The proposer `(20003,7)` gate was off schedule; independent\n\
+      \  `(20003,8)` and floor-transition gates through `D=12` pass exactly. L2 remains CONJECTURED because\n\
+      \  the `q=N` endpoint is still open."
+    kind: task
+    since: '2026-08-16'
+  task-040:
+    task: "PHASE-27 SUBEXPOSED DECISION: a single four-orbit subexposed reservoir has attractive raw gates\n\
+      \  but a constant fixed-index Laplace defect. The correlation/tail-decoupled two-reservoir escape\n\
+      \  was registered before testing; it is not needed for the new `q=5` candidate but may matter for\n\
+      \  the still-open `q=N` endpoint."
+    kind: task
+    since: '2026-08-16'
+  task-041:
+    task: "PHASE-28 `q=N` TWO-RESERVOIR DECISION: a neutral parity reservoir exactly annihilates every\n\
+      \  low-degree orbit row at `C_t=Theta(N^(4/3))`; mixed with a perfect low bridge it has raw\n  correlation\
+      \ `3/4` and tail `1/4`. The actual `C_t` row breaks the sum, and any correction\n  confined to the\
+      \ separated high band costs `exp(Theta(D))` total variation. The multiscale\n  moment-bearing neutral\
+      \ ladder was registered before testing."
+    kind: task
+    since: '2026-08-16'
+  task-042:
+    task: "PHASE-28 INDEPENDENT AUDIT: every literal final-support two-band architecture with an `O(N)`\n\
+      \  bridge and label-neutral `Theta(N^(4/3))` tail has correlation `o(1)` by an actual sub-target\n\
+      \  two-interval scalar polynomial. Mixed tail selectors also expose every fixed-weight\n  multisymmetric\
+      \ mismatch. Only intermediate-scale/global-exactor support remains outside scope."
+    kind: task
+    since: '2026-08-16'
+  task-043:
+    task: "PHASE-29 `q=N` LADDER DECISION: any bridge whose first positive `C_t` scale is `Theta(N)` has\n\
+      \  exponentially small correlation; it must reach `O(1)`. Independently, actual Vandermonde rows\n\
+      \  force every fixed-weight payload to vanish on ladders with `o(D)` effective levels. A live law\n\
+      \  must start near zero, use `Theta(D)` angular-gap-free levels, and resist selectors in the whole\n\
+      \  mixed multisymmetric palette. The near-zero bridge node is registered; no formula exists."
+    kind: task
+    since: '2026-08-16'
+  task-044:
+    task: "PHASE-30 `q=N` STOP DECISION: coupling the full Phase-21 Gram residual to the exact parity\
+      \ tail\n  makes exactness, normalization, and tail automatic; the only remaining gate is the asymptotic\n\
+      \  normalized residual correlation `2E[g_D^2]/E|g_D|`. Natural same-total near-zero paired bridges\n\
+      \  are independently capped at `exp(-Theta(N^(1/6)))`. Any higher-dimensional bridge must directly\n\
+      \  control the full growing mixed residual, which is the original restricted dual rather than a\
+      \ new\n  reduced construction. No distinct escape or next bounded discriminator was generated."
+    kind: task
+    since: '2026-08-16'
+  task-045:
+    task: "PHASE-30 RESIDUAL REFINEMENT: an exact latent iid-Boolean representation proves\n  `2^(-L)(1-exp(-L/8))\
+      \ <= E[g_D^2] <= 2^(-L)`, so nonzero normalization is closed without Gram\n  inversion. With `f_D=Pi_(V_D)b`,\
+      \ the remaining correlation gate is exactly the one-sided ratio\n  `E_YES(-f_D)_+/E[g_D^2] < 0.485-o(1)`\
+      \ for `epsilon=.01`; NO overshoot is exponentially\n  negligible. Fiberwise tensorization, plain\
+      \ `L2`, and diagonal leverage do not imply it. The\n  natural reciprocal/activation-count Chebyshev\
+      \ selector is also over budget at\n  `0.881373...L>D=(1/2+o(1))L`, so only a genuinely coherent\
+      \ one-sided kernel theorem or a different\n  discrete/multivariate selector can decide this explicit\
+      \ bridge."
+    kind: task
+    since: '2026-08-16'
+  task-046:
+    task: "PHASE-30 EXPLICIT-BRIDGE OBSTRUCTION: the remaining sign gate is decided negatively for the\n\
+      \  displayed `pi_N` projection law. With `H` the latent activation count, low `H<L/64` has\n  exponentially\
+      \ negligible residual contribution. On the complement, one global actual\n  Chebyshev polynomial\
+      \ in `C=sum_i x_i`, of weight `2 floor((D-1)/2)<D`, is\n  `exp(-Omega(sqrt L))` while equaling one\
+      \ on NO. Orthogonality gives\n  `C_N<=4exp(-sqrt(L)/20)+exp(-kappa L)/(1-exp(-L/8))=o(1)`. A fresh\
+      \ independent Rule-7 review\n  passes this formula-level scoped obstruction on all sufficiently\
+      \ large admissible odd `N`.\n  This closes the explicit Phase-30 bridge but not all near-zero laws.\
+      \ The distinct weighted-\n  activation OR dual-composition dense slice is **REFUTED / DEAD** after\
+      \ fresh Rule-7 review;\n  the separately registered balanced positive-split successor remains OPEN\
+      \ and outside that scope."
+    kind: task
+    since: '2026-08-16'
+  task-047:
+    task: "PHASE-30 BALANCED-SUPPORT CHECKPOINT: on that exact nearly-equal-total successor, a\n  degree-at-most-five\
+      \ marker splits unit activation `A` from bulk target count `G`. Two anchored\n  Chebyshev factors\
+      \ have combined actual weight `<D`, equal one on NO, and are `o(1)` uniformly in\n  unit-only, bulk-only,\
+      \ and mixed YES regimes. Fresh Rule-7 review independently passes the full\n  formula and promotes\
+      \ this exact support to **REFUTED / DEAD**. Other balanced supports and the\n  balanced/dense mixture\
+      \ remain outside scope."
+    kind: task
+    since: '2026-08-16'
+  task-048:
+    task: "PHASE-19 MOVING-REMEZ DECISION: the canonical lexicographic basis plus any one extra circuit\n\
+      \  column has negligible correlation across 21 exact gates, despite exact cancellation and strong\n\
+      \  tail mass; its dual is pierced by the omitted balanced interior. The label-aware Fekete/basis-\n\
+      \  exchange escape is registered OPEN before work."
+    kind: task
+    since: '2026-08-16'

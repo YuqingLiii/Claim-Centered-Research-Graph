@@ -1,0 +1,35 @@
+id: SE.denom.Phi.legal.trace.r7
+aliases:
+- R7DEAD
+claim: '**Killed route (compose-late / output-side-only, R3''s suggested order and R4a''s S2):** apply
+  the V_λ-level weighted frame equality (R.32) BEFORE strict compression (or only on the output side),
+  and move `P_ξ` to the last step, so no per-copy transport is ever needed.'
+assessment:
+  level: REFUTED
+  summary: REFUTED and PARKED. The independent kill review reproduced [P_xi,Pi_D]!=0 at every recorded
+    j=1 gate and confirmed the output-side carrier-trace mismatch. Only a genuinely commutation-free reformulation
+    could reopen this direction.
+  basis:
+    evidence:
+    - path: se/artifacts/se_frames3_20260719.md
+      kind: text
+    reviews:
+    - path: se/reviews/se_trace_r5r6r7_killreview_20260730.md
+      kind: review
+    counterexamples:
+    - path: se/reviews/se_trace_r5r6r7_killreview_20260730.md
+      kind: counterexample
+      note: Sourced contradiction or counterexample supporting this scoped refutation.
+disposition:
+  state: PARKED
+  reason: REFUTED and PARKED. The independent kill review reproduced [P_xi,Pi_D]!=0 at every recorded
+    j=1 gate and confirmed the output-side carrier-trace mismatch. Only a genuinely commutation-free reformulation
+    could reopen this direction.
+  revive: Revive only if a commutation-free reformulation avoids the recorded noncommutation and carrier-trace
+    obstructions.
+frontier:
+  commutation-free-reformulation:
+    task: Register a new route only after stating a commutation-free proposition that avoids both reviewed
+      obstructions.
+    kind: task
+    since: '2026-08-16'

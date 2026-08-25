@@ -1,0 +1,41 @@
+id: KSUM.B4b.retarget
+role: tool
+aliases:
+- B4bRetarget
+claim: 'The campaign milestone is relaxed from full exponent matching (`eta = 1/4`) to ANY `eta > 1/6`:
+
+  at the critical alphabet `q = Theta(N^(2/3))`, a strict improvement over the proved
+
+  `Omega(sqrt(N) q^(1/6))` tolerates a TOTAL bridge-loss factor up to `q^(1/12-delta)`
+
+  (equivalently `~N^(1/18)` at the critical point). Consequently bounded-polynomial-loss
+
+  interfaces are admissible, and the B/C interface triage must be re-run under this budget
+
+  instead of the previous zero-loss ("full match") framing.'
+assessment:
+  level: CONJECTURED
+  summary: '**CONJECTURED — pending-review** (budget arithmetic unreviewed; no completion tier claimed).'
+  basis:
+    evidence:
+    - node: KSUM.B4b
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.literal-marked-query-polar-norm-interface
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.hs-query-energy-law
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.induced-packet-outer-incidence-numerator-interface
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.induced-packet-payload-value-test
+      kind: node-evidence
+  caveats:
+  - 'pending-review: the cited evidence has not completed an independent review gate'
+frontier:
+  task-001:
+    task: Independent review of the budget arithmetic including loss composition across bridges.
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: Re-triage of the three literal-query candidate laws under the relaxed budget.
+    kind: task
+    since: '2026-08-16'

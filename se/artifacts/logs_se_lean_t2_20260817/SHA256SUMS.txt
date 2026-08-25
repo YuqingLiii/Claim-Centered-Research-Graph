@@ -1,0 +1,50 @@
+# SHA256SUMS.txt — SE tier-2 delivery (node SE.formal.t2), 2026-08-17
+# Digests are over LF-NORMALIZED bytes: each file is read in binary and CRLF -> LF is
+# applied before hashing, so the ledger is stable across the Windows/macOS round trip this
+# tree came through.  Paths are repository-relative.  This file is not listed in itself.
+# verify:  python3 - <<'EOF'
+#   import hashlib,sys
+#   for line in open('se/artifacts/logs_se_lean_t2_20260817/SHA256SUMS.txt'):
+#       if line.startswith('#') or not line.strip(): continue
+#       h,p = line.split(None,1); p=p.strip()
+#       d=hashlib.sha256(open(p,'rb').read().replace(b'\r\n',b'\n')).hexdigest()
+#       print('OK ' if d==h else 'MISMATCH ', p)
+# EOF
+
+dedb2472083614b800e02efb1ae28985da70183129891f1d719bd1c1932dbc69  se/artifacts/logs_se_lean_t2_20260817/command.txt
+24927f628fe6d01b7bcda9c335c17d9c594e757eafcc74653ea0076488eeeba0  se/artifacts/logs_se_lean_t2_20260817/grep_trust.txt
+8ed7277677d62b6bccf6f86bd199c48cdd4538a641216820e3959331ee43c04a  se/artifacts/logs_se_lean_t2_20260817/interface_diff.txt
+0729d59a083c393d84a3bbc6237f501be7c29f084e6b602099cfa43da7bad8e0  se/artifacts/logs_se_lean_t2_20260817/interface_field_census.txt
+75605067190f5f415b1018b8b4242e6561b50515ad33b89a34d48a3e634636a4  se/artifacts/logs_se_lean_t2_20260817/lake_build_clean.txt
+5c4c44ff7dae31f387aa690c233c363d57f68f0d17826a9ab9944fa818c024fd  se/artifacts/logs_se_lean_t2_20260817/lean_dag_check_se_trial.txt
+a3df993d2e769f56adecd04a17b7c393cb8dfd5666accaa8d5c5fd2d753b515b  se/artifacts/logs_se_lean_t2_20260817/print_axioms.txt
+b5bee6908d6272e4653fd3748300e939802dfe740424def31a2bc37d47e8aecf  se/artifacts/se_lean_t2_20260817.md
+d44996e79ae9637bf08887320589a985b6b8f5c60fd0bcb95c1b42272c62f7c0  se/lean/SE.lean
+c121850c81323d503fce9a405af2f84f4ab44ce38222ef04c5abe1fd596baab5  se/lean/lakefile.lean
+efac0b94923b2d8b6840cd35be9177ad0fc5ab2332f4f4311c98712cee92fdee  se/lean/lean-toolchain
+4f197a50e1affd6eb745d084e18ea747b4e327b475b12adb3a665e3796e3fa0c  se/lean/lake-manifest.json
+06b81622b6cbbcb4c0446a54a9da7b3f0a0482bb92df0e2a9394b72d63f2f727  se/lean/SE/Interface.lean
+a8235bcdf81ca7bbb4e46aac3842b77a416ddf3873d02e7c5da7018c091ea7c8  se/lean/SE/Trust.lean
+bd2d22e70a6e1d73a200307582bd844afb692538f82d737640e07389bb04387a  se/lean/SE/SelfTest.lean
+9769e214523cce832eea3f57ed96c287f16ab14f52f080367dd1b98b2b8f8f02  se/lean/SE/br.lean
+c8a558882dde063027ad477dff55ecc905479800add2f01ca8206cb0b30f2b4d  se/lean/SE/denom.lean
+77f40bbc3f2358dd7ef69edce6eea60ac23e51ee4f5c30e05e30c8ca6bc43868  se/lean/SE/goal.lean
+be1fc35c96132967d78717ded612f372880bc0314b39f7969c7084cff49bf23c  se/lean/SE/Support/Defs.lean
+f429e813c000fc784f8697083ff23b59fc7faa5736dacefb3b50bc80e6dedce1  se/lean/SE/Support/Cbrt.lean
+aa330ea2fd0b95a433c1642cc57c13ac4c508579600a2ad5d93c5e36a11901c5  se/lean/SE/Support/Constants.lean
+57c37cbf56b3265e2283970d54ce56b39fbfb5b07635d8d418d28999e7ce0628  se/lean/SE/Support/Envelope.lean
+f30d4dcdf8807689eaaf5a3bd045bd8587daf7249c93f3a6eff8aceb5014dc3b  se/lean/SE/Support/Limits.lean
+4b394d0d61d2704ff7b37845b0a79a67efaa1ce9b7962b18d53cb094d5d6f8c4  se/lean/SE/Support/Hook.lean
+ee9e96089c66fb95288ec45134101ef60f71b6d5f2e8b374c0226cac06344f35  se/lean/SE/Support/RhoEnvelope.lean
+6abac63022f60570680221f85b619a815b326c93881cddf27ca985e9574e6a5b  se/lean/SE/Support/BranchFactors.lean
+9a5416b4b5683129f0065de95fd7bcb34b29a00130ccc9617afacf1eaebd42d3  se/lean/SE/denom/taper.lean
+f93edabcff253c4c24e0fbebf416676ebd9ea2347968325bb2fecc28a3a53e00  se/lean/SE/denom/Phi/legal/tame.lean
+415660cecfc088230cabeaaaf565b98c78c9ab57cc4da9aa61e4589ce6b9c851  se/lean/SE/denom/Phi/legal/sect.lean
+f1abee6416f0a735413e32d3871492451ef1c390f271e340f59e8facfbf709b8  se/lean/SE/denom/Phi/legal/trace/t6.lean
+7b9ab656484f555a06edfb998599cbc35be054d3cdcfe2bcc45ae3dba8d252ca  se/lean/SE/denom/Phi/legal/gram/interface.lean
+bd147ddcaa04c321b141b223ac46f946c341e52e4a9ad6d8bf8132b95a41888c  se/lean/SE/denom/Phi/legal/omega/interface.lean
+acdc350ebbfc4c7e6b31ebc6a69f78d696c5459db6e00040844a21d3911a7bd3  se/proof-dag/nodes/SE.formal.t2.yaml
+78114997cc5f0832f26a23f97d6fec479372143570bdc2f35075144196fdca0c  se/proof-dag/nodes/SE.formal.t1.yaml
+9c36b2d460d0ecd394058062814b520a2cbafa9a3f77518267a48395f69db572  se/proof-dag/nodes/SE.denom.taper.yaml
+9c68ee435dcfb6ee79a7e59f08a319d17a50803d477d6c230f03ab6952be74e9  se/proof-dag/nodes/SE.denom.assembly.envelope.yaml
+3d9d1f08a758040c3165eb877117f3ad06c994eb0815f58351aae8ee5aac7490  se/lean/README.md

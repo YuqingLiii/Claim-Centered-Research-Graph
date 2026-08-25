@@ -1,0 +1,45 @@
+# SHA-256 over LF-normalized bytes (CRLF -> LF before hashing), paths relative to the repository root.
+# Produced 2026-07-30 by the proof-DAG Lean reorganization pass (DAG_PROTOCOL.md 7.2/7.3/7.7).
+3f98764780488580e3f3fc55b531b324107dbca350eac217a0ed583e8454068e *ksum/lean/lakefile.lean
+1550dc85bb00026cc586c6390f0af6d6b84c0aef210f4b8b44efdc6812ef6256 *ksum/lean/lean-toolchain
+4f197a50e1affd6eb745d084e18ea747b4e327b475b12adb3a665e3796e3fa0c *ksum/lean/lake-manifest.json
+f97c1b1ce134bbfff3d8f99c8c4a7632e74c75397f3b5431662b216f3190f610 *ksum/lean/README.md
+2e99cd4e68cc63f875e4eb340c6ecc34696ac8c39229afb766d190e9468b010d *ksum/lean/.gitignore
+5c4d8811245528dfcd5337e616c52f6f177a014b0a5598fb77cd0e1dacae0e32 *ksum/lean/KsumAudit.lean
+ab19a29461c3f24efa9895120c63c5d77bf7dc24f8e199b6c757ee5ab27d8207 *ksum/lean/KsumAudit/Defs.lean
+b6a0294efcf0408933bf389c8220fde5a0c8f44de0eb39f163eeaa3711930ed9 *ksum/lean/KsumAudit/QueryModel.lean
+ee35f319c6c435013ca7cd7dc58408320d8540022f4c82d4d3d868eaf54c4b9b *ksum/lean/KsumAudit/MainLine.lean
+2a711c92ddddaf380760ebe71e34ed1800e7a0eae06b131728b36c3502ac4979 *ksum/lean/KsumAudit/Smoke.lean
+e647678ba06f5a608bcc2297e4db5dcacd519faa59dcac559e33534eddae11e2 *ksum/lean/KSUM/Interface.lean
+0713cee169445b311301170b73f74efa15521131c558ce06041db5c1b357df8c *ksum/lean/KSUM/Support/Freeze.lean
+95e28facfc84b76b5264a5bd2c6bec43cb57eb122a8c3e86b2c2380ca38e8896 *ksum/lean/KSUM/Support/Embed.lean
+13ea20e006c7f87c0bc1beb182c717ebbddcb26b33362b4ff84b49da94782587 *ksum/lean/KSUM/A1a.lean
+00bb74ef13e82eaf786bf43b59be3c88c6e40056c840e245b239eae2e82d55d8 *ksum/lean/KSUM/A1b.lean
+6b58b0a3e8839a3d9ce1bd7f09cfa8ed959ec65cc45bb12c6c6598a6db586808 *ksum/lean/KSUM/A1c.lean
+d4d9c6a62dc742f5a276d3d702d2048c6327a7bbdbf8889e9abd3226922ae192 *ksum/lean/KSUM/A1d.lean
+ebf33476ebbd6c0651ab32a4de12fd247b86babe3750ea1e79fdbe3ee5dda9a6 *ksum/lean/KSUM/A1.lean
+2c5dc9660a6026622a8eb6394b692cb93a49d9b999f2a1b3da6d79c3414ffd8d *ksum/lean/KSUM/A2a.lean
+9af975bcba32395c14f9fd14cb51e03a59081b8bf9b1543ebaea8adcda1da8f5 *ksum/lean/KSUM/A2b.lean
+e35a5e365dbd1f21b5bbb211dc65564eb697d327516664f4658bf8569509a62f *ksum/lean/KSUM/A2.lean
+e8a6289782850263357c127d0147361414ace30fb43cab1ff2ae3bd9e3fa591e *ksum/lean/KSUM/B4a.lean
+6f41c37cec9718c97ad5d9d70fedede89c5fb6cd11724798eadbd5b8671185bf *ksum/lean/KSUM/B4.lean
+f368f305e7bac53a3baae0ac9a7344f85bf0d280edd635e710d495924680df5a *ksum/lean/KSUM/B2.lean
+d274429299f42393d4e0e2c2e6010c422e1c8ded0f6021f06d110698c00c26c0 *ksum/lean/KSUM/goal.lean
+55cf97a1446f9ef2e2740ad82ccadc23cb98777af1b09dde7e485640fc130227 *ksum/lean/KSUM/Trust.lean
+da3a8cdb8da780f41941a5eee649e702b6d8e1a99d5ff9528d53e642db600301 *ksum/lean/KSUM/SelfTest.lean
+339053f63e03f15318ac3d6d723aea28b5f22085c8fbb6556884ae19c63a55a7 *ksum/lean/README.md
+8667ca409344fa9187b16c04ffa73181c0c3a6ba05e4f3571eb17e2fac2f465c *ksum/artifacts/ksum_lean_reorg_20260730.md
+4662cb5a6f2fd8cae17fc8ad08ab8b299f67f8160a5e6fbdff9ebefdd22f27e2 *ksum/artifacts/logs_ksum_lean_reorg_20260730/build.log
+76f5cac8e113be909a2138ed468b41de9f5dc9415738e632631acda2f6780a35 *ksum/artifacts/logs_ksum_lean_reorg_20260730/print_axioms.txt
+
+# ---------------------------------------------------------------------------------
+# Cross-check against the archived tier-T1 ledger
+#   ksum/artifacts/logs_ksum_lean_T1_20260730/SHA256SUMS.txt
+# That ledger hashed RAW bytes, and MainLine.lean has CRLF line endings on disk, so its LF-
+# normalized hash above differs from the T1 value.  The RAW hashes below are byte-identical
+# to the T1 ledger, which is the proof that the 2026-07-30 relocation changed no T1 content:
+#
+# raw ab19a29461c3f24efa9895120c63c5d77bf7dc24f8e199b6c757ee5ab27d8207 *ksum/lean/KsumAudit/Defs.lean
+# raw b6a0294efcf0408933bf389c8220fde5a0c8f44de0eb39f163eeaa3711930ed9 *ksum/lean/KsumAudit/QueryModel.lean
+# raw ae6e9991c81429037572a31e726909d7cb5bc7488ea659f7197f0e3106f3a95e *ksum/lean/KsumAudit/MainLine.lean
+# (lakefile.lean is NOT byte-identical: it gained the second library target KSUM.)

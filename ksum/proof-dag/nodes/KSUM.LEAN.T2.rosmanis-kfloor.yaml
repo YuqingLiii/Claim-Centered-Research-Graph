@@ -1,0 +1,56 @@
+id: KSUM.LEAN.T2.rosmanis-kfloor
+role: tool
+aliases:
+- LeanT2
+claim: The orbit parametrization and count at least two in part (1) of prop:rosmanis, together with the
+  core lemmas of thm:kfloor for k>=3, have sorry-free Lean formalizations over the declared QueryModel
+  interface.
+assessment:
+  level: CERTIFIED*
+  summary: '**CERTIFIED\*** — statement-fidelity review completed 2026-07-31 (rollup **PASS-WITH-CAVEATS**;
+    caveats in frontmatter). The green build supplies run evidence, and the linked independent review
+    licenses the current conditional completion level. Four of the five registered gates pass;
+    **G-T2b is a deliberate FAIL-BY-CLAIM-DEFECT** and remains a documented negative result.'
+  basis:
+    evidence:
+    - path: ksum/lean/KSUM/A1a.lean
+      kind: text
+    - path: ksum/lean/KSUM/A1c.lean
+      kind: text
+    - path: ksum/lean/KSUM/Trust.lean
+      kind: text
+    - path: ksum/artifacts/ksum_lean_T2_rosmanis_kfloor_20260730.md
+      kind: text
+    - node: KSUM.C0
+      kind: node-evidence
+    - node: KSUM.A1a
+      kind: node-evidence
+    - node: KSUM.A1b
+      kind: node-evidence
+    - node: KSUM.A1c
+      kind: node-evidence
+    reviews:
+    - path: ksum/reviews/ksum_lean_statement_fidelity_review_20260731.md
+      kind: review
+      scope: Audits the T2 orbit and k-floor statements against the manuscript and records the exact gaps
+        and external-query-model assumptions; it does not certify omitted parts of Proposition rosmanis.
+      locator: Section 5 and T2 rollup in Section 10
+      reviewed_hash: sha256:8d3b4c56cb2e2997a7b10ca8be57f60a025be5a12ae82e988ca1835b9bd3a158
+    runs:
+    - path: ksum/artifacts/logs_ksum_lean_T2_20260730
+      kind: run
+      result: Execution artifact supporting KSUM.LEAN.T2.rosmanis-kfloor at the exact finite, formal,
+        or computational scope stated in the linked output.
+  caveats:
+  - '(fidelity caveats: lem:core subset-range clause base-target-only; rosmanis(1) bijection+count formula
+    and (2) representation sentence unformalized; C(sigma) iso and prop:embed unformalized; core_reduction_at
+    r>=1 witnesses CLOSED 2026-07-31 by the closeout batch (five, sited at the tight r=k-1 target) — cores
+    UNCONDITIONAL, verified by import inspection)'
+frontier:
+  task-004:
+    task: "Formalize the remaining statements: `prop:embed`; the `prop:rosmanis`(1)\n\
+      \  bijection and count formula; the `prop:rosmanis`(2) representation sentence; the\n  `C(σ) ≅ (C₂\
+      \ ≀ S_m) × S_τ` structure theorem; a `demoEmbed` witness for `KSUM.Support.EmbedData`\n  (review\
+      \ finding R-A2-3, optional, outside this run's file ownership)."
+    kind: task
+    since: '2026-08-16'

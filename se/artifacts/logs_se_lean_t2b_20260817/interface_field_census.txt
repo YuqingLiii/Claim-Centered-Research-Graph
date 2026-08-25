@@ -1,0 +1,25 @@
+# SE.SEFrame / SE.SEFrame.Cited field census — tier 1 -> tier 2a -> tier 2b (2026-08-17)
+# tier 1  = git:f0d686a:se/lean/SE/Interface.lean  (in git)
+# tier 2a = the list the independent review se/artifacts/se_lean_t2_review_20260817.md section V3
+#           reproduced field by field; the tier-2a file itself is working-tree state that
+#           tier 2b superseded (HEAD is the tier-1 snapshot, so there is no git object for it).
+# tier 2b = se/lean/SE/Interface.lean  (working tree, this delivery)
+
+== SEFrame ==
+tier 1  (20): Sector admissible rtopS omegaS btheS mxiS gcanS cnprobS csectS rho adv gammaNorm maskNorm dNorm blockNorm xNorm yNorm cDiag cLower rhoConst
+tier 2b (21): Sector admissible rtopS omegaS btheS mxiS gcanS cnprobS csectS rho adv gammaNorm maskNorm dNorm blockNorm xNorm yNorm cDiag cLower shapeLen shapeCol
+removed tier 1 -> 2b: rhoConst
+added   tier 1 -> 2b: shapeCol shapeLen
+
+== Cited ==
+tier 1  (25): adv_ge numerator maskNorm_pos mask_from_D defect_orth block_triangle x_bound y_bound cDiag_bound cDiag_zero cLower_zero rho_ge_one rho_le rhoConst_nonneg rtop_le_rho omega_le omega_pos bthe_pos rtop_pos mxi_nonneg csect_nonneg xNorm_nonneg yNorm_nonneg cDiag_nonneg cLower_nonneg
+tier 2a (23): adv_ge numerator maskNorm_pos mask_from_D defect_orth block_triangle x_bound y_bound cDiag_bound cDiag_zero cLower_zero rho_hook rtop_le_rho omega_le omega_pos bthe_pos rtop_pos mxi_nonneg csect_nonneg xNorm_nonneg yNorm_nonneg cDiag_nonneg cLower_nonneg
+tier 2b (21): adv_ge numerator maskNorm_pos mask_from_D defect_orth block_triangle x_bound y_bound cDiag_bound cDiag_zero cLower_zero rho_isGreatest admissible_window sector_hook bthe_pos mxi_nonneg csect_nonneg xNorm_nonneg yNorm_nonneg cDiag_nonneg cLower_nonneg
+removed tier 1 -> 2a: rhoConst_nonneg rho_ge_one rho_le
+added   tier 1 -> 2a: rho_hook
+removed tier 2a -> 2b: omega_le omega_pos rho_hook rtop_le_rho rtop_pos
+added   tier 2a -> 2b: admissible_window rho_isGreatest sector_hook
+
+== statement-level comparison of the fields present in BOTH tier 1 and tier 2b ==
+byte-identical statements (18): adv_ge block_triangle bthe_pos cDiag_bound cDiag_nonneg cDiag_zero cLower_nonneg cLower_zero csect_nonneg defect_orth maskNorm_pos mask_from_D mxi_nonneg numerator xNorm_nonneg x_bound yNorm_nonneg y_bound
+changed statements (0): (none)

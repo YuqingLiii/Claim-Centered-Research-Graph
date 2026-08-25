@@ -1,0 +1,22 @@
+id: SE.denom.familysplit.ident
+aliases:
+- ID12
+claim: With P_k := Pibar_{se,k}, identities IDENT-1 and IDENT-2 follow from the displayed decomposition,
+  and the stated Delta_1-diamond assignment remains valid after restriction to legal inputs.
+assessment:
+  level: PROVED
+  summary: The claim is supported by the linked evidence and independent review.
+  basis:
+    reviews:
+    - path: se/reviews/se_bridge2_reviews_20260718.md
+      kind: review
+      scope: Re-derives IDENT-1/2, the legal restriction, and the diamond assignment identifying the witness
+        with the restricted BR family.
+      locator: Review 4
+      reviewed_hash: sha256:46e6068e019323e1735be6b9be3a789c8649815e791db9c64a2c2bd77ccff5e5
+    runs:
+    - path: se/artifacts/logs_se_py_reverify_20260717/ybar_norms_fresh.log
+      kind: run
+      locator: RESID rows for (n,k)=(3,1), (3,2), (4,1), and (4,2)
+      result: Independent finite recomputation gives maximum IDENT-1/2 residual 3.373e-15 on the listed
+        cases and exact zero for IDENT-3. This corroborates but does not prove the symbolic identities.

@@ -1,0 +1,4 @@
+PROVENANCE {"baseline_sha256": "18a8992128fb30e1af14b5a2aa6b785a8ea0ce6a51578773170df9c22832dca1", "command": "<machine-local-path-redacted> 3 4 1 --solver MOSEK", "cvxpy_version": "1.7.1", "installed_solvers": ["CLARABEL", "CVXOPT", "GLPK", "GLPK_MI", "MOSEK", "OSQP", "SCIPY", "SCS"], "numpy_version": "2.2.6", "python": "<machine-local-path-redacted>", "python_version": "3.10.16", "review_script_sha256": "4214184f6c0026537667a09a82f02bf9f1722327019e7273cc78a0955c96e4bf", "scipy_version": "1.15.3"}
+INSTANCE n=3 q=4 t=1 inputs=64 psd_dim=192 yes=36 no=28
+AFFINE equality=1008 diagonal=64 eq_nnz=2268
+RESULT_JSON {"eps_argument": 1e-07, "equalities": 1008, "inputs": 64, "n": 3, "no": 28, "psd_dim": 192, "q": 4, "solve_seconds": 148.77631350000047, "solver": "MOSEK", "status": "optimal", "target": 1, "value": 2.4755812998316946, "wall_seconds": 148.80648939999992, "yes": 36}

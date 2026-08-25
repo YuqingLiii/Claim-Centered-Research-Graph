@@ -1,0 +1,15 @@
+========================================================================================
+BRIDGE II legal rebuild, n=3 q=6, PRIMED projector Pibar'_{se,k} (S_{n-1} x S_n, BR:639)
+PASS criterion (pre-registered): s_k = ||R(Xbar_k)|| <= max_theta r_top(6,k,theta)
+r_top table: k=0: 1   k=1: 1.200000 (=6/5)   k=2: 2.000000 (=2)
+G8: K(3)=1 -- only k=0 in spec; k=1,2 test the general inequality, not the witness regime
+========================================================================================
+k=0  ||R(Xbar_k)|| = 1.0000000000  <=? r_top=1.000000   PASS
+     ||R(Ybar_k)|| = 0.0000000000  <=? r_top*ambY=0.000000   PASS
+k=1  ||R(Xbar_k)|| = 1.2000000000  <=? r_top=1.200000   PASS
+     ||R(Ybar_k)|| = 0.6324555320  <=? r_top*ambY=0.692820   PASS
+k=2  ||R(Xbar_k)|| = 1.0954451150  <=? r_top=2.000000   PASS
+     ||R(Ybar_k)|| = 1.3416407865  <=? r_top*ambY=1.632993   PASS
+========================================================================================
+ANCHOR k=0 must be 1.0 exactly; H_B: is s_1 = 1.2 exactly?
+OVERALL: ALL PASS -- Bridge II's X/Y inequalities HOLD numerically at n=3 (off-spec k>=1)

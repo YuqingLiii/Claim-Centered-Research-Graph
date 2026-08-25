@@ -1,0 +1,87 @@
+KSUM.B4b.L2 phase-5 review -- pre-report anchoring derivation
+Date: 2026-07-19
+Reviewer state: phase-5 report, phase-5 scripts, and phase-5 logs not yet opened.
+
+1. Typed S_N-average and multivariate factorial Vandermonde identity
+
+Fix a finite alphabet A of size q.  For block j in [m], let N_j be a
+nonnegative integer, let
+
+    Omega_j = {n^(j) in N_0^A : sum_(a in A) n^(j)_a = N_j},
+
+and let mu_j:Omega_j -> R be a finite signed occupancy measure.  Its
+uniform orbit lift L_j mu_j is a signed measure on A^[N_j]: an occupancy
+atom n^(j) is spread uniformly over the (N_j)!/prod_a n^(j)_a! strings
+with that occupancy.  Put N=sum_j N_j.  The tensor product of the lifted
+measures is a signed measure on the fixed positional product
+A^[N_1] x ... x A^[N_m], identified with A^[N].  Averaging it by S_N
+gives a signed measure bar(mu) on A^[N].  Because a position permutation
+does not change global occupancy, the occupancy pushforward of bar(mu) is
+the convolution
+
+    nu(n) = sum_(n^(1)+...+n^(m)=n) prod_j mu_j(n^(j)),
+
+for n in Omega_{N,q}.  Thus the average changes the distribution within a
+global occupancy orbit, not its total signed weight.
+
+For alpha in N_0^A, write |alpha|=sum_a alpha_a,
+(n)_alpha=prod_a (n_a)_(alpha_a), and
+binom(alpha;beta^(1),...,beta^(m))
+=prod_a alpha_a!/prod_j beta^(j)_a!.  Coordinatewise falling-factorial
+Vandermonde gives the identity of functions on prod_j Omega_j
+
+    (sum_j n^(j))_alpha
+      = sum_(beta^(1)+...+beta^(m)=alpha)
+          binom(alpha;beta^(1),...,beta^(m))
+          prod_j (n^(j))_(beta^(j)).
+
+Pairing with the product signed measure therefore gives
+
+    <nu,(n)_alpha>
+      = sum_(beta^(1)+...+beta^(m)=alpha)
+          binom(alpha;beta^(1),...,beta^(m))
+          prod_j <mu_j,(n^(j))_(beta^(j))>.
+
+Every object is scalar-valued after pairing; beta^(j) has q coordinates
+and local total order |beta^(j)|.  If block j annihilates all factorial
+rows of local order below d_j, then every summand with |alpha|<sum_j d_j
+has some |beta^(j)|<d_j and is zero.  Hence the averaged product
+annihilates all global factorial rows below sum_j d_j (m*d0 for equal
+bands d0).  Under the uniform S_N lift, a compatible one-hot query
+monomial on |alpha| distinct positions has expectation
+<nu,(n)_alpha>/(N)_(|alpha|); repetitions reduce by idempotence and
+incompatible labels vanish.  Therefore this is exactly query-degree
+filtration, with no occupancy-degree/query-degree swap.
+
+2. NO-side axis-orientation coherence and its exact cost
+
+Fix an odd-q involution sigma with r=(q-1)/2 nonfixed two-cycles
+c={a_c,b_c}.  In each repeated positional block, an axis atom for pair c
+puts its positive pair total entirely at one endpoint.  Define its axis
+orientation epsilon_(j,c) in {a_c,b_c} to be that occupied endpoint.
+The symmetric axis measure makes epsilon_(j,c) uniform; the product block
+construction makes these choices independent over j and c.  (The pair
+totals may be random, but positive totals do not affect this orientation
+calculation.)
+
+After merging occupancies, global NO requires two conditions.  First,
+every block must itself be on its all-axis/NO layer: one interior pair in
+one block already occupies both endpoints and forces global YES.  Second,
+for each fixed pair c, all m block orientations must agree.  Conditional
+on all blocks being axis on c,
+
+    Pr[epsilon_(1,c)=...=epsilon_(m,c)]
+      = 2*(1/2)^m = 2^(1-m).
+
+Independence across the r pairs makes the exact coherence cost
+
+    prod_(c=1)^r 2^(1-m) = 2^(-r(m-1)).
+
+The S_N average does not change occupancies or the global YES/NO label, so
+it neither removes nor adds this cost.  Endpoint-swap averaging also
+preserves the equality event.  Thus, in the repeated symmetric product
+family, the global-NO signed mass is the product of the blocks' all-axis
+layer masses multiplied by exactly 2^(-r(m-1)); it is not merely bounded
+by that factor.  This derivation does not cover coupled orientations,
+non-product block laws, or blocks whose axis choices are not independent
+and symmetric.

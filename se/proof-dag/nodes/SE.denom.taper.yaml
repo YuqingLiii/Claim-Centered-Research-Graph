@@ -1,0 +1,51 @@
+id: SE.denom.taper
+aliases:
+- TAP
+claim: For the linear taper coefficients a_k=(K-k)_+, |a_(k-1)-a_k|<=1, |a_k|<=sqrt(n/k) for k>=1, and
+  |a_k|<=sqrt(n).
+assessment:
+  level: PROVED
+  summary: The claim is supported by the linked evidence and independent review.
+  basis:
+    reviews:
+    - path: se/reviews/se_cor16_review_20260718.md
+      kind: review
+      scope: Checks the integer taper coefficients, endpoint conventions, and the coefficient arithmetic
+        used in the denominator envelope and final ratio.
+      locator: Sections 3 and 5
+      reviewed_hash: sha256:d9c47838a0eab4bfcd80edc9ebc30b00cc8a215194d98c41e0632708ed67fa20
+  caveats:
+  - The linked Lean formalization records the current claim text and hash); it now renders all three frozen
+    conjuncts, but the mechanization is run evidence and was not itself independently reviewed at tier
+    2 — see SE.formal.t2.
+formalization:
+  lean:
+    module: SE.denom.taper
+    file: se/lean/SE/denom/taper.lean
+    claim: Claim
+    state: proved
+    claim_hash: sha256:d9c47838a0eab4bfcd80edc9ebc30b00cc8a215194d98c41e0632708ed67fa20
+    theorems:
+    - holds
+    sync_state: current
+    rel:
+    - 'FULL RENDERING since 2026-08-17 (tier 2, SE.formal.t2): all three frozen conjuncts are proved in
+      SE/denom/taper.lean — |beta_d| <= 1 (abs_beta_le_one), the TIGHT |a_k| <= sqrt(n/k) for 1 <= k (alpha_le_sqrt_div,
+      from (K-k)^2 k <= K^3 <= n by AM-GM), and |a_k| <= sqrt n (alpha_le_sqrt).  This retires coordinator
+      ruling R2, which had recorded the TIGHT conjunct as UNRENDERED for an operator-layer reason that
+      does not apply in the paper normalization a_k = alpha_k.'
+    - 'Declared residual scope: the TIGHT conjunct carries the binder 1 <= k, because at k = 0 the frozen
+      right-hand side sqrt(n/0) is not a real bound (Lean''s n/0 = 0 would make the instance the false
+      K <= 0).  The k-cleared equivalent k*alpha_k^2 <= n is proved for every k (sq_alpha_mul_le''), so
+      no instance of the frozen conjunct is lost.  No attainment ("TIGHT" = the k-dependent bound, not
+      an equality) is claimed.'
+    build: se/artifacts/logs_se_lean_t2_20260817/
+    source_claim_hash: sha256:d9c47838a0eab4bfcd80edc9ebc30b00cc8a215194d98c41e0632708ed67fa20
+    synced: '2026-08-19'
+frontier:
+  review-tier2-rendering:
+    task: Independent review of the 2026-08-17 tier-2 rendering of the TIGHT conjunct (the AM-GM step
+      and the declared `1 <= k` binder) before this node's PROVED level is treated as re-adjudicated rather
+      than earlier unreviewed labeled.
+    kind: review
+    since: '2026-08-17'

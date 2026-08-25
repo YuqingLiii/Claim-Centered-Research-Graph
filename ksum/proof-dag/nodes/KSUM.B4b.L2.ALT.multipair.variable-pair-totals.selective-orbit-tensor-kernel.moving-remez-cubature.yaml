@@ -1,0 +1,70 @@
+id: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.moving-remez-cubature
+aliases:
+- B4bL2AltMultipairMovingRemezCubature
+claim: 'Seek a formula-defined moving legal support `S_{N,D}` of `rank(F_{<D})+1` histograms whose unique
+
+  cofactor kernel annihilates the actual orbit-feature span, has constant correlation and high-`C_t`
+
+  mass, and admits a dual equioscillation bound over every legal orbit.'
+assessment:
+  level: OPEN
+  summary: '**OPEN — canonical circuit obstructed; label-aware global support missing.** A deterministic
+    lexicographic rank-plus-one circuit works algebraically but fails correlation and the global dual
+    bound on all 21 exact gates. Arbitrary moving supports remain open.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L2_phase16_q5_selective_structure_20260721.md
+      kind: text
+    - path: ksum/tools/ksum_l2p16_q5_selective_structure.py
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase19_moving_remez_cubature_20260721.md
+      kind: text
+    - path: ksum/tools/ksum_l2p19_canonical_circuit.py
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.moving-remez-cubature.label-aware-fekete-basis-exchange
+      kind: node-evidence
+    runs:
+    - path: ksum/artifacts/logs_ksum_L2p16_q5_selective_structure_20260721
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.moving-remez-cubature
+        at the exact finite, formal, or computational scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p19_canonical_circuit_20260721
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.moving-remez-cubature
+        at the exact finite, formal, or computational scope stated in the linked output.
+frontier:
+  task-001:
+    task: Give one explicit moving support formula spanning at least three consecutive cutoff blocks.
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "Prove its feature columns have a one-dimensional nullspace and control cofactor signs, `l1`,\n\
+      \  correlation, and high-`C_t` mass uniformly."
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: "Construct the dual equioscillation polynomial and bound it on every legal integer orbit, not\n\
+      \  only on selected nodes or a continuum relaxation."
+    kind: task
+    since: '2026-08-16'
+  task-004:
+    task: Work at both `q=5` and `q=N`, or state a typed endpoint-specific scope without extrapolation.
+    kind: task
+    since: '2026-08-16'
+  task-005:
+    task: Avoid full cylinder annihilation and any collapse to a scalar count.
+    kind: task
+    since: '2026-08-16'
+  task-006:
+    task: "Do not reuse the lexicographic near-boundary basis or tune only its extra column; every such\
+      \ exact\n  circuit tested has negligible correlation and a catastrophic balanced-interior dual violation."
+    kind: task
+    since: '2026-08-16'
+  task-007:
+    task: Continue basis-exchange work only in the preregistered label-aware Fekete node.
+    kind: task
+    since: '2026-08-16'

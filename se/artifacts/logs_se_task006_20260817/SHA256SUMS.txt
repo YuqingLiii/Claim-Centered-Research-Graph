@@ -1,0 +1,52 @@
+# SHA-256 over LF bytes (CRLF normalized to LF before hashing).
+# SE frontier task-006 of SE.formal.t2, 2026-08-17.
+# Covers every evidence file in this directory, the report, the edited checker, every
+# node file and Lean module this session changed, and the two regenerated se views.
+# SHA256SUMS.txt itself is necessarily excluded.
+
+a543f6a2c4b2cfeae387d0e116f2905eb83dd9adc0c67ee34c8df8969a894db9  se/artifacts/logs_se_task006_20260817/00_PRE_ACTION_REPORT.md
+054bf83545fe7e464682b8d07d97b05d701e1bc8e82438e6f78eae6050760c38  se/artifacts/logs_se_task006_20260817/01_commands.txt
+a6dbdb1a423a202b631e254a1e19b0e249ac87e893efcc0e613d32224d9ae309  se/artifacts/logs_se_task006_20260817/10_lean_dag_check_se_before.txt
+f1088a92c0de1133e3a112e959d393bb390e3506100a3045cfd604da5a36df20  se/artifacts/logs_se_task006_20260817/11_selftest_before.txt
+80bd0ae80069f6cf0eefa77cce39bd547b9c3756f210252d1d7f0f04ff40dfe1  se/artifacts/logs_se_task006_20260817/12_lean_dag_check_ksum_before.txt
+84e8e70dbbead665337c6d1a1dd0cf28b2674009102492a7f6688988ae42a288  se/artifacts/logs_se_task006_20260817/13_lean_dag_check_whgap_before.txt
+2bfb45e0b4010844b1a2389b206e571d720815cb641a58abb41670ecc24679b7  se/artifacts/logs_se_task006_20260817/14_lean_dag_check_se_after.txt
+6be55b909e577adc423b583beb6080966415ed60b279aac8d047f962584a2dc1  se/artifacts/logs_se_task006_20260817/15_selftest_after.txt
+6890a910b698f04b3adfafe96aa68efceceeb5814d415dc23295568d6df73b5c  se/artifacts/logs_se_task006_20260817/16_lean_dag_check_ksum_after.txt
+84e8e70dbbead665337c6d1a1dd0cf28b2674009102492a7f6688988ae42a288  se/artifacts/logs_se_task006_20260817/17_lean_dag_check_whgap_after.txt
+37fb26ed62c2b4a0531abe4a442ce16d28f0fb772db1eead567945ce040f19f6  se/artifacts/logs_se_task006_20260817/20_lake_build_clean.txt
+ffa111a3d2a6037175f4d57d778f488f49892ee2b4f060a5f8afaae08dacf1b6  se/artifacts/logs_se_task006_20260817/21_sorry_axiom_scan.txt
+5f55a7885604c65dd95cfc1fa90766c6d80f95144236903bd0855c40e36bdf5a  se/artifacts/logs_se_task006_20260817/22_print_axioms.txt
+51434c94e25cd801b2581f43e4c69b29ccf98c0707ee206045a5d0a630d6ed91  se/artifacts/logs_se_task006_20260817/23_goal_claim_check.txt
+e2f9f27fd59fce1ce108c7197d1d2cd7aa51a447883f2b28fb8180d9eed6230e  se/artifacts/logs_se_task006_20260817/30_checkers.txt
+0dae02e66d6264e302176ba79b698bd390f4231ffed4a2009a1cd408f1a0ebd5  se/artifacts/logs_se_task006_20260817/40_classA_wording_proof.txt
+9855105a400d9c21c0c7e1c388fc6de4c7c60c3836b7d08e6c299e45ec368820  se/artifacts/se_task006_20260817.md
+372b078639f02e552e46641fec63137014dd0c35c5266a2180575cc65c8bbadc  tools/lean_dag_check.py
+b825fc2b27221bd4ead6eafba1a24495c60b13142ea30488eade988ce0b51123  se/proof-dag/nodes/SE.br.yaml
+d04dfec4804f2fc12d355db475eb0314ea8a2683af2893054296197e227866a4  se/proof-dag/nodes/SE.denom.yaml
+0a3fdb35231564df1792555615411a54bd0a3d8891dc436cd10086d85d5a5b77  se/proof-dag/nodes/SE.denom.Phi.legal.gram.interface.yaml
+23d205ce3fb9f32199d3116e780f06d65dbfb3421a546271bf8b465ca807e4f9  se/proof-dag/nodes/SE.denom.Phi.legal.omega.interface.yaml
+adb51e0a4ae9f31f85cb01b8894aa869227425b8dbc5d8ccbe553f0a02aeca8a  se/proof-dag/nodes/SE.denom.Phi.legal.sect.yaml
+8da841171ed29c5aa3f6d17c6650b97bced830b3568057f1b9aa52a810cd842c  se/proof-dag/nodes/SE.denom.Phi.legal.tame.yaml
+5bf0af94c4361073df06d0f34c3331a29a59852c0ac07896e1ec0bf661d180bc  se/proof-dag/nodes/SE.goal.yaml
+7591232019a41923c3b9e981dbdf70b848d2d4f57d593318ec10368e8020ff42  se/proof-dag/nodes/SE.formal.t2.yaml
+2f425e051feb048c19ce7b22b2df31d09eb6412ce6e164d6b10c675eed7ac653  se/lean/SE/br.lean
+60fa2187da335a67213dfa1dbd65abdddb69dc1d7b60ba968b0406bc37b77bf2  se/lean/SE/denom.lean
+4b3193557b46e7b5d65f9edcc71385f411f916d25d328e3a4cf54bb3ffeff91d  se/lean/SE/goal.lean
+708732f3aa121af950183452da5610425d1d69cfac76c09fd99f6bd8050e7e80  se/lean/SE/Trust.lean
+fd220acb8716a8b483f011be12fbd9455f0904e547fc373ef31271fee4bc7967  se/lean/SE/denom/Phi/legal/tame.lean
+87d5b11b53fe566d1e598458e0e5f25c096b1652183feb4ff8a8911b97fc7d6e  se/lean/SE/denom/Phi/legal/sect.lean
+de926407df2d91133111b9158e1798a98c9b8fef4dfa6f5d3edfbae610a1bae0  se/lean/SE/denom/Phi/legal/gram/interface.lean
+32fe3508924bba93fc5ead319568accbacb46d0fd0f7e56879e5a248e8a96e52  se/lean/SE/denom/Phi/legal/omega/interface.lean
+ab669de75140b71242c6024de7b6f95e9fa59d0d735a338ee756555c61ee594a  se/lean/SE/Support/Envelope.lean
+a978032e2bcf9c11e1b4086af061da6e0f423443323726ae17d47a90a07b277f  se/lean/SE/Support/BranchFactors.lean
+b73d712250e0b25c4e9c270f164659cf6fa6066f354e454bfa4c705f8ed9c859  se/proof-dag/NODE_INDEX.md
+8ca1ae31f1ad5e43de190f1c5dded64c81273ae13b8ff0900b54d8bba3cce06b  se/proof-dag/GRAPH.mmd
+
+# verify:
+#   import hashlib
+#   for line in open('se/artifacts/logs_se_task006_20260817/SHA256SUMS.txt'):
+#       if line.startswith('#') or not line.strip(): continue
+#       want, path = line.split()
+#       got = hashlib.sha256(open(path,'rb').read().replace(b'\r\n', b'\n')).hexdigest()
+#       print('OK  ' if got == want else 'BAD ', path)

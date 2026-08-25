@@ -1,0 +1,247 @@
+%% SE proof hypergraph (generated)
+flowchart BT
+  n0["SE.br\nOPEN"]
+  n1["SE.br.cor16\nPROVED"]
+  n2["SE.br.def\nPROVED"]
+  n3["SE.br.num\nPROVED"]
+  n4["SE.denom\nOPEN"]
+  n5["SE.denom.Phi\nOPEN"]
+  n6["SE.denom.Phi.ambient\nPROVED"]
+  n7["SE.denom.Phi.legal\nOPEN"]
+  n8["SE.denom.Phi.legal.bridge1\nOPEN"]
+  n9["SE.denom.Phi.legal.diag\nPROVED"]
+  n10["SE.denom.Phi.legal.found\nCERTIFIED*"]
+  n11["SE.denom.Phi.legal.gram\nCONJECTURED"]
+  n12["SE.denom.Phi.legal.gram.interface\nCONJECTURED"]
+  n13["SE.denom.Phi.legal.offdiag\nOPEN"]
+  n14["SE.denom.Phi.legal.omega\nCONJECTURED"]
+  n15["SE.denom.Phi.legal.omega.interface\nCONJECTURED"]
+  n16["SE.denom.Phi.legal.sect\nOPEN"]
+  n17["SE.denom.Phi.legal.splice\nOPEN"]
+  n18["SE.denom.Phi.legal.splice.i4\nOPEN"]
+  n19["SE.denom.Phi.legal.tame\nOPEN"]
+  n20["SE.denom.Phi.legal.trace\nOPEN"]
+  n21["SE.denom.Phi.legal.trace.m\nREFUTED"]
+  n22["SE.denom.Phi.legal.trace.r1\nREFUTED"]
+  n23["SE.denom.Phi.legal.trace.r2\nREFUTED"]
+  n24["SE.denom.Phi.legal.trace.r3\nREFUTED"]
+  n25["SE.denom.Phi.legal.trace.r4\nREFUTED"]
+  n26["SE.denom.Phi.legal.trace.r5\nREFUTED"]
+  n27["SE.denom.Phi.legal.trace.r6\nREFUTED"]
+  n28["SE.denom.Phi.legal.trace.r7\nREFUTED"]
+  n29["SE.denom.Phi.legal.trace.t1\nREFUTED"]
+  n30["SE.denom.Phi.legal.trace.t2\nREFUTED"]
+  n31["SE.denom.Phi.legal.trace.t3\nREFUTED"]
+  n32["SE.denom.Phi.legal.trace.t4\nREFUTED"]
+  n33["SE.denom.Phi.legal.trace.t5\nREFUTED"]
+  n34["SE.denom.Phi.legal.trace.t6\nOPEN"]
+  n35["SE.denom.Phi.legal.trace.t6.w9j\nOPEN"]
+  n36["SE.denom.X\nPROVED"]
+  n37["SE.denom.X.ambient\nPROVED"]
+  n38["SE.denom.Y\nPROVED"]
+  n39["SE.denom.Y.ambient\nPROVED"]
+  n40["SE.denom.assembly\nCONJECTURED"]
+  n41["SE.denom.assembly.envelope\nNUMERICAL"]
+  n42["SE.denom.bridge2\nPROVED"]
+  n43["SE.denom.bridge2.bimodule\nPROVED"]
+  n44["SE.denom.bridge2.commutation\nPROVED"]
+  n45["SE.denom.bridge2.dagger\nPROVED"]
+  n46["SE.denom.bridge2.degree\nPROVED"]
+  n47["SE.denom.bridge2.jy\nPROVED"]
+  n48["SE.denom.bridge2.md\nPROVED"]
+  n49["SE.denom.bridge2.md.general\nPROVED"]
+  n50["SE.denom.bridge2.md.inst\nPROVED"]
+  n51["SE.denom.bridge2.md.numerics\nNUMERICAL"]
+  n52["SE.denom.bridge2.numerics\nNUMERICAL"]
+  n53["SE.denom.bridge2.pin\nPROVED"]
+  n54["SE.denom.bridge2.scalar\nCONJECTURED"]
+  n55["SE.denom.bridge2.ytransfer\nPROVED"]
+  n56["SE.denom.crossk\nPROVED"]
+  n57["SE.denom.decomp\nPROVED"]
+  n58["SE.denom.familysplit\nPROVED"]
+  n59["SE.denom.familysplit.end\nOPEN"]
+  n60["SE.denom.familysplit.ident\nPROVED"]
+  n61["SE.denom.taper\nPROVED"]
+  n62["SE.formal.t1\nNUMERICAL"]
+  n63["SE.formal.t2\nCERTIFIED*"]
+  n64["SE.goal\nOPEN"]
+  n65["SE.goal.conditional-optimal\nCERTIFIED*"]
+  n66["SE.goal.hyp.se-jz.01\nOPEN"]
+  n67["SE.history.H1\nREFUTED"]
+  n68["SE.history.H2\nREFUTED"]
+  n69["SE.history.H3\nREFUTED"]
+  n70["SE.history.H4\nREFUTED"]
+  n71["SE.history.H5\nREFUTED"]
+  n72["SE.history.H6a\nREFUTED"]
+  n73["SE.history.H6b\nCONJECTURED"]
+  n74["SE.history.H7\nREFUTED"]
+  n75["SE.history.H8\nREFUTED"]
+  n76["SE.jz\nOPEN"]
+  n77["SE.mdh\nOPEN"]
+  n78["SE.mdh.adv\nOPEN"]
+  n79["SE.mdh.asym\nCONJECTURED"]
+  n80["SE.mdh.coeffs\nCONJECTURED"]
+  n81["SE.mdh.structure\nNUMERICAL"]
+  n82["SE.related.collision\nOPEN"]
+  n83["SE.ros\nREFUTED"]
+  n84["SE.sdp\nOPEN"]
+  r1(("joint\nPROVED"))
+  n2 --> r1
+  n3 --> r1
+  n4 --> r1
+  r1 --> n0
+  r2(("assembled-witness\nPROVED"))
+  n2 --> r2
+  n3 --> r2
+  n57 --> r2
+  n36 --> r2
+  n38 --> r2
+  n6 --> r2
+  n9 --> r2
+  n56 --> r2
+  n58 --> r2
+  n61 --> r2
+  r2 --> n1
+  r3(("joint\nPROVED"))
+  n57 --> r3
+  n36 --> r3
+  n38 --> r3
+  n5 --> r3
+  n58 --> r3
+  n56 --> r3
+  n61 --> r3
+  n40 --> r3
+  r3 --> n4
+  r4(("joint\nCERTIFIED*"))
+  n6 --> r4
+  n7 --> r4
+  r4 --> n5
+  r5(("joint\nOPEN"))
+  n9 --> r5
+  n19 --> r5
+  r5 --> n7
+  r6(("joint\nCERTIFIED*"))
+  n12 --> r6
+  n34 --> r6
+  r6 --> n11
+  r7(("joint\nCERTIFIED*"))
+  n15 --> r7
+  n11 --> r7
+  n16 --> r7
+  r7 --> n14
+  r8(("SE.denom.Phi.legal.splice.i4\nOPEN"))
+  n18 --> r8
+  r8 --> n17
+  r9(("joint\nCERTIFIED*"))
+  n11 --> r9
+  n14 --> r9
+  n20 --> r9
+  n10 --> r9
+  n16 --> r9
+  r9 --> n19
+  r10(("SE.denom.Phi.legal.trace.t6\nCERTIFIED*"))
+  n34 --> r10
+  r10 --> n20
+  r11(("SE.denom.Phi.legal.trace.t1\nOPEN"))
+  n29 --> r11
+  r11 --> n20
+  r12(("SE.denom.Phi.legal.trace.t2\nOPEN"))
+  n30 --> r12
+  r12 --> n20
+  r13(("SE.denom.Phi.legal.trace.t3\nOPEN"))
+  n31 --> r13
+  r13 --> n20
+  r14(("SE.denom.Phi.legal.trace.t4\nOPEN"))
+  n32 --> r14
+  r14 --> n20
+  r15(("SE.denom.Phi.legal.trace.t5\nOPEN"))
+  n33 --> r15
+  r15 --> n20
+  r16(("SE.denom.Phi.legal.trace.m\nOPEN"))
+  n21 --> r16
+  r16 --> n20
+  r17(("SE.denom.Phi.legal.trace.r1\nOPEN"))
+  n22 --> r17
+  r17 --> n20
+  r18(("SE.denom.Phi.legal.trace.r2\nOPEN"))
+  n23 --> r18
+  r18 --> n20
+  r19(("SE.denom.Phi.legal.trace.r3\nOPEN"))
+  n24 --> r19
+  r19 --> n20
+  r20(("SE.denom.Phi.legal.trace.r4\nOPEN"))
+  n25 --> r20
+  r20 --> n20
+  r21(("SE.denom.Phi.legal.trace.r5\nOPEN"))
+  n26 --> r21
+  r21 --> n20
+  r22(("SE.denom.Phi.legal.trace.r6\nOPEN"))
+  n27 --> r22
+  r22 --> n20
+  r23(("SE.denom.Phi.legal.trace.r7\nOPEN"))
+  n28 --> r23
+  r23 --> n20
+  r24(("joint\nPROVED"))
+  n37 --> r24
+  n42 --> r24
+  r24 --> n36
+  r25(("joint\nPROVED"))
+  n39 --> r25
+  n42 --> r25
+  r25 --> n38
+  r26(("joint\nPROVED"))
+  n43 --> r26
+  n45 --> r26
+  n46 --> r26
+  n44 --> r26
+  n47 --> r26
+  n48 --> r26
+  n55 --> r26
+  n53 --> r26
+  r26 --> n42
+  r27(("joint\nPROVED"))
+  n49 --> r27
+  n50 --> r27
+  r27 --> n48
+  r28(("joint\nPROVED"))
+  n60 --> r28
+  r28 --> n58
+  r29(("SE.br\nPROVED"))
+  n0 --> r29
+  r29 --> n64
+  r30(("SE.ros\nOPEN"))
+  n83 --> r30
+  r30 --> n64
+  r31(("SE.mdh\nOPEN"))
+  n77 --> r31
+  r31 --> n64
+  r32(("SE.sdp\nOPEN"))
+  n84 --> r32
+  r32 --> n64
+  r33(("SE.jz\nOPEN"))
+  n76 --> r33
+  n66 --> r33
+  r33 --> n64
+  r34(("assembled-conditional-witness\nPROVED"))
+  n2 --> r34
+  n3 --> r34
+  n57 --> r34
+  n36 --> r34
+  n38 --> r34
+  n6 --> r34
+  n9 --> r34
+  n34 --> r34
+  n12 --> r34
+  n15 --> r34
+  n10 --> r34
+  n16 --> r34
+  n58 --> r34
+  n56 --> r34
+  n61 --> r34
+  r34 --> n65
+  r35(("joint\nOPEN"))
+  n81 --> r35
+  n80 --> r35
+  n78 --> r35
+  n79 --> r35
+  r35 --> n77

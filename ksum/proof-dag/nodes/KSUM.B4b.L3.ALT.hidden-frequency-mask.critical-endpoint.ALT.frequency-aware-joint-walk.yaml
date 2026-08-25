@@ -1,0 +1,33 @@
+id: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.frequency-aware-joint-walk
+aliases:
+- B4bL3AltCriticalFrequencyAwareJointWalk
+claim: 'Construct a frequency-aware two-list quantum walk that shares heavy/singleton information across
+
+  the lists and detects the unique shared singleton in `o(N^(2/3))`, or derive an exact MNRS-style
+
+  barrier for this walk family.'
+assessment:
+  level: OPEN
+  summary: '**OPEN — the explicit soft-filter weighted walk optimizes back to ordinary Johnson.** The
+    walk has stationary label weights from a coherent duplicate filter and a fully costed MNRS ledger.
+    Filters using `o(sqrt(q))` queries leave essentially all heavy weight, so the optimum is no filtering
+    and cost `Theta(N^(2/3))`; filters strong enough to change the measure cost at least `O-tilde(N^(17/18))`.
+    This closes the tested weighted-representative family, not every possible joint walk.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L3_hidden_frequency_upper_attack_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_multiscale_frequency_upper_envelope_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_hidden_frequency_critical_adversary_attempt_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_critical_nonsampling_upper_attacks_20260721.md
+      kind: text
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint
+      kind: node-evidence
+frontier:
+  task-001:
+    task: "Any continuation must use a joint transform not expressible as independently filtered label\n\
+      \  representatives; that whole explicit family is minimized by ordinary Johnson."
+    kind: task
+    since: '2026-08-16'

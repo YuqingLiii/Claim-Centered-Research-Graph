@@ -1,0 +1,52 @@
+id: KSUM.B4b.L2.ALT.mesoscopic-split-opening-cascade
+aliases:
+- B4bL2AltMultipairMesoscopicSplitOpeningCascade
+claim: 'Bridge discrete `C_t=O(1)` corner jets to the `C_t=Theta(N)` normal layer through a formula-defined
+
+  cascade of intermediate slot-total scales, with exact falling-factorial transfer and uniformly
+
+  bounded total variation, so corner correlation and normal-layer tail coexist in one legal
+
+  annihilator.'
+assessment:
+  level: OPEN
+  summary: '**OPEN — one-orientation paired cascades are correlation-obstructed.** Overcompleteness beats
+    the raw norm/tail tradeoff, but a schedule-independent Chebyshev dual caps correlation at `1/2+exp(-Omega(D))`
+    when the required tail fraction is present. Shared-NO or nonpaired mechanisms remain outside the obstruction.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L2_phase24_discrete_corner_jets_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase25_mesoscopic_split_opening_cascade_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase26_overcomplete_split_opening_cascade_20260721.md
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.moving-remez-cubature.label-aware-fekete-basis-exchange.continuation-seeded-block-fekete.continuum-limit-remez-support-flow.stratified-boundary-jet-remez-system
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.two-orientation-shared-no-cascade
+      kind: node-evidence
+frontier:
+  task-001:
+    task: "Specify an asymptotically controlled scale ladder between `O(1)` and `Theta(N)` without creating\n\
+      \  a low-degree scale selector."
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "Test only shared-NO or nonpaired orbit combinations; overcomplete one-orientation paired ladders\n\
+      \  are now correlation-obstructed even though they can satisfy norm and tail simultaneously."
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: Derive exact adjacent-scale transfer matrices for every orbit feature below `D`.
+    kind: task
+    since: '2026-08-16'
+  task-004:
+    task: Prove bounded total variation, correlation above `2/3`, and constant `C_t=Theta(N)` tail.
+    kind: task
+    since: '2026-08-16'
+  task-005:
+    task: Realize all atoms as legal odd-`N`, `q=5` histograms with leading-order rounding control.
+    kind: task
+    since: '2026-08-16'

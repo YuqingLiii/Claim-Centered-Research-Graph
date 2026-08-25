@@ -1,0 +1,60 @@
+id: SE.denom.Phi.legal.trace.t6.w9j
+aliases:
+- W9J
+claim: 'For every admissible strict sector, retain the full carrier-copy and
+
+  colour-copy indices and prove
+
+
+  `sum_mu h_mu ||R_mu J_delta||_HS^2 <= B_theta(q)^2 omega`,
+
+
+  where
+
+
+  `h_mu=omega^2|d_(0,mu)|^2+sum_z|d_(z,mu)|^2`,
+
+
+  `A=m f^alpha f^beta/f^theta`, `J_delta=C_delta/sqrt(A)`,
+
+
+  `m=C(j,a)`, and
+
+  `omega=(1-p0)/p0` with
+
+  `p0=f^(q-j-1,theta)/f^(q-j,theta)`.
+
+
+  Equivalently, with `N=C(n-1,j)`, `w=f^alpha f^beta`, and the full-copy
+
+  common-line quantities,
+
+
+  `J/T=sum_mu h_mu Q_mu`,
+
+
+  `Q_mu=||R_mu J_delta||_HS^2=q_mu/A=f^mu r_mu/(Nw)`,
+
+
+  `T=N m w`.
+
+
+  The raw colour number occurs exactly once in the literal physical trace and
+
+  in `T`; it is not dropped before normalization.'
+assessment:
+  level: OPEN
+  summary: The full-copy weighted relative-9j inequality remains OPEN. Standard contraction estimates
+    can lose the copy trace, and the old same-index shortcut is refuted. The surviving task is to control
+    the fixed-row sum over all colour copies or prove the sharper projector-overlap bound.
+  basis:
+    evidence:
+    - node: SE.denom.Phi.legal.trace.t6
+      kind: node-evidence
+frontier:
+  task-001:
+    task: Control the fixed-row sum over all colour copies without losing the copy trace.
+    kind: task
+  task-002:
+    task: Prove the sharper projector-overlap estimate if the direct W9J bound is insufficient.
+    kind: task

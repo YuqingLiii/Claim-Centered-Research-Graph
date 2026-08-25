@@ -1,0 +1,16 @@
+REQUESTED_INTERPRETER <machine-local-path-redacted> (unavailable to execution interface: ENOENT)
+FALLBACK_INTERPRETER <machine-local-path-redacted>
+TIME_CAP_SECONDS 1200
+INSTANCE n=6 q=3 t=1 inputs=729 yes=715 no=14 tau=1 |C(sigma)|=2
+RUNTIME python=<machine-local-path-redacted> version=3.10.16 numpy=2.2.6 scipy=1.15.3 cvxpy=1.7.1 solvers=['CLARABEL', 'CVXOPT', 'GLPK', 'GLPK_MI', 'MOSEK', 'OSQP', 'SCIPY', 'SCS']
+COMMAND <machine-local-path-redacted> 6 3 1 --solver SCS --eps 1e-4 --max-iters 300000
+FULL_G_ORBITS equality=81 diagonal=16 build_s=0.002
+WEDDERBURN spectral_blocks=42 block_dims=[8, 10, 36, 36, 23, 8, 5, 22, 10, 5, 4, 4, 8, 36, 5, 10, 36, 4, 23, 36, 5, 8, 22, 36, 4, 10, 33, 5, 30, 23, 4, 22, 8, 10, 8, 23, 36, 10, 22, 36, 23, 22] sum_dims=729 max_spread=3.553e-15 min_gap=0.0015602072765222852 build_s=0.420
+COMMUTANT generators=5 true_block_dims=[8, 10, 36, 36, 23, 5, 22, 4, 33, 30] repetitions=[6, 6, 4, 4, 5, 5, 5, 5, 1, 1] schur_residual=2.031e-14 build_s=0.163
+AFFINE_BUILD equality=81 diagonal=16 seconds=0.265
+RESULT Adv_pm=3.349839169785479 status=optimal solver=SCS eps=0.0001 solve_s=10.084 wall_s=10.968
+RESULT_JSON {"audit": null, "centralizer_order": 2, "command": "<machine-local-path-redacted> 6 3 1 --solver SCS --eps 1e-4 --max-iters 300000", "cvxpy_version": "1.7.1", "diagonal_constraint_orbits": 16, "eps": 0.0001, "equality_constraint_orbits": 81, "inputs": 729, "max_iters": 300000, "n": 6, "no": 14, "numpy_version": "2.2.6", "python": "<machine-local-path-redacted>", "python_version": "3.10.16", "q": 3, "scipy_version": "1.15.3", "solve_seconds": 10.083628200000021, "solver": "SCS", "spectral_copy_block_dims": [8, 10, 36, 36, 23, 8, 5, 22, 10, 5, 4, 4, 8, 36, 5, 10, 36, 4, 23, 36, 5, 8, 22, 36, 4, 10, 33, 5, 30, 23, 4, 22, 8, 10, 8, 23, 36, 10, 22, 36, 23, 22], "stabilizer_generators": 5, "status": "optimal", "target": 1, "tau": 1, "value": 3.349839169785479, "wall_seconds": 10.967940199999703, "wedderburn": {"alphabet_group_order": 2, "block_dims": [8, 10, 36, 36, 23, 8, 5, 22, 10, 5, 4, 4, 8, 36, 5, 10, 36, 4, 23, 36, 5, 8, 22, 36, 4, 10, 33, 5, 30, 23, 4, 22, 8, 10, 8, 23, 36, 10, 22, 36, 23, 22], "eigen_residual": 3.583934628143153e-15, "irrep_dimensions_repetitions": [6, 6, 4, 4, 5, 5, 5, 5, 1, 1], "isotypic_block_dims": [8, 10, 36, 36, 23, 5, 22, 4, 33, 30], "max_schur_polar_residual": 2.0311484397210627e-14, "max_within_cluster_spread": 3.552713678800501e-15, "min_between_cluster_gap": 0.0015602072765222852, "position_group_order": 120, "spectral_blocks": 42, "spectral_copy_edges": 866}, "wedderburn_block_dims": [8, 10, 36, 36, 23, 5, 22, 4, 33, 30], "yes": 715}
+
+STDERR
+<machine-local-path-redacted> UserWarning: Converting A to a CSC (compressed sparse column) matrix; may take a while.
+  warn(

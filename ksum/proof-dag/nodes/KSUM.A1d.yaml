@@ -1,0 +1,71 @@
+id: KSUM.A1d
+aliases:
+- A1d
+claim: For every fixed k>=3 there are constants C_k,c_k>0 such that, for all sufficiently large N, every
+  target t, and q0(k)=2k^2+2k-5<=q<=C_k N, Q(k-Sum,Z_q,t,N)=Omega_k(sqrt(N)q^(1/6)); for q>=c_k N the
+  same reduction gives Omega_k(N^(2/3)).
+assessment:
+  level: PROVED
+  summary: PROVED. The composition-layer review checks the full quantified lower-bound statement, its
+    constants and regime coverage, its role in the B1 route, and the distinction between A1d and the A1
+    composition node. The earlier review is retained for the narrower cutoff correction.
+  basis:
+    reviews:
+    - path: ksum/reviews/ksum_composition_layer_review_20260730.md
+      kind: review
+      locator: Sections 3.1, 4.2, 6.1, and 7d
+      scope: Full claim-level audit of A1d, including quantifiers, both q-regimes, constant dependence,
+        downstream use, and its noncircular role beside A1.
+      reviewed_hash: sha256:d9f22fb14b5783c6250635c63c8b446222ec69911d051d3f55ed6e8e0b382af1
+    - path: ksum/reviews/ksum_rev2_review.md
+      kind: review
+      locator: Item I1 and Overall ruling
+      scope: Revision-only audit of the lower-cutoff correction; this artifact does not by itself re-adjudicate
+        the complete A1d theorem.
+      reviewed_hash: sha256:d9f22fb14b5783c6250635c63c8b446222ec69911d051d3f55ed6e8e0b382af1
+    routes:
+    - fixed-k-reduction
+  caveats:
+  - Text and digest synchronization does not by itself establish that the Lean proposition is equivalent
+    to the natural-language claim; that correspondence remains review-dependent.
+formalization:
+  lean:
+    module: KSUM.A1d
+    file: ksum/lean/KSUM/A1d.lean
+    claim: Claim
+    state: stated
+    claim_hash: sha256:d9f22fb14b5783c6250635c63c8b446222ec69911d051d3f55ed6e8e0b382af1
+    sync_state: current
+    build: ksum/artifacts/logs_ksum_lean_reorg_20260730/
+    synced: '2026-08-19'
+    source_claim_hash: sha256:d9f22fb14b5783c6250635c63c8b446222ec69911d051d3f55ed6e8e0b382af1
+frontier:
+  task-001:
+    task: "The 2026-07-19 statement correction is independently reviewed; no new open obligation and no\n\
+      \  status transition resulted."
+    kind: task
+    since: '2026-08-16'
+routes:
+  fixed-k-reduction:
+    premises:
+    - KSUM.A1
+    implication: The reviewed frozen-core construction, live two-list encoding, and target-coset coverage
+      assembled in KSUM.A1 imply both q-regime lower bounds stated by this node.
+    proof:
+      sketch: The parent theorem is the quantified consequence of the completed composition recorded in
+        KSUM.A1.
+      sources:
+      - path: ksum/reviews/ksum_composition_layer_review_20260730.md
+        kind: text
+    assessment:
+      level: PROVED
+      summary: The full quantified reduction and its two alphabet regimes passed independent composition-layer
+        review.
+      basis:
+        reviews:
+        - path: ksum/reviews/ksum_composition_layer_review_20260730.md
+          kind: review
+          scope: Checks the implication from the completed A1 construction to both regimes of the fixed-k
+            theorem.
+          locator: Sections 3.1, 4.2, 6.1, and 7d
+          reviewed_hash: sha256:e3a830fd900131d7c7379973c06ccacf82a90cf1e48e578cdbf12867d2fcead0

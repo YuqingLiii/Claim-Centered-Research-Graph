@@ -1,0 +1,40 @@
+id: KSUM.B4b.L2.M1
+role: tool
+aliases:
+- B4bL2M1
+claim: For every odd `q`, every `N>=q`, and every target `t`, the phase-2 exact-total pair tensor has
+  exact `l1=1`, is `S_N x C(sigma)` invariant, and annihilates every query polynomial of degree below
+  `q-1`; cancellation holds separately on every exact-total pair-size slice before mixing.
+assessment:
+  level: PROVED
+  summary: The pair-tensor claim remains OPEN. Its current scope and unresolved structural step are recorded
+    by the linked phase-2 review.
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L2_phase2.md
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    reviews:
+    - path: ksum/reviews/ksum_L2p2_review.md
+      kind: review
+      scope: Checks invariance, unit l1 norm, exact-total cancellation, and the query-degree annihilation
+        claim, including the factorial-filtration interface and finite exact gates.
+      locator: Section M1 and Fresh finite checks
+      reviewed_hash: sha256:16d5622d64f82c2652cf622a9feb52cdf93e6537aaefb5bf8ebbb272a630f3fc
+frontier:
+  task-001:
+    task: None for this scoped lemma; it does not supply the route-level cap-scale witness or correlation
+      threshold.
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "**From gap-closure batch 1 (2026-07-31):** the filtration bridge\n  ([KSUM.B4b.L2.FILT](KSUM.B4b.L2.FILT.yaml))\
+      \ is now formalized, so the two objects still standing\n  between `KsumAudit.Obstructions.PairTensor.pair_tensor`\
+      \ and the manuscript's query-degree\n  statement are: (i) the `Z_q` pair-orientation `Unit ⊕ (Fin\
+      \ r ⊕ Fin r) ≃ Z_q` for odd\n  `q = 2r+1` with fixed point `v = t/2`, plus the transport of `∏_{a∈Z_q}(n_a)_{α_a}`\
+      \ across it;\n  and (ii) the labeled-slice → occupancy pushforward, which is NOT injective (for\
+      \ even pair\n  totals the two interior local states coincide), so the `ℓ¹` identity needs the observation\
+      \ that\n  the colliding states carry the same sign."
+    kind: task
+    since: '2026-08-16'

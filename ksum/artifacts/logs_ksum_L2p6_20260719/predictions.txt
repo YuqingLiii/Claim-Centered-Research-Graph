@@ -1,0 +1,76 @@
+KSUM.B4b.L2 phase 6 preregistration — 2026-07-19
+
+FROZEN BEFORE label extraction, held-out solves, ansatz fitting, or phase-6 verification runs.
+No network. No git commit.
+
+OUTCOMES
+
+PROGRESS: construct an explicit S_N x C(sigma)-invariant signed-measure family which is not
+factorized over complementary pairs or positional blocks, prove at every fixed odd q>=5 an
+annihilation band omega(log q) as N grows (any N-growth beats L2P3's N-independent band), prove
+correlation > 2/3 + delta for one fixed delta>0, and verify finite closed-form instances exactly.
+
+PARTIAL: give the explicit nonfactorized construction, exact finite verification, and exactly name
+the remaining unproved step preventing PROGRESS (for example the uniform band or correlation
+bound, or a missing well-typed operator-to-measure transform).
+
+BLOCKED: prove a new obstruction covering the proposed non-composition spine+satellite forms. In
+combination with M2, phase-4 T1/T2/D10, and phase-5 T2, record it as a candidate paradigm-level
+obstruction map, without claiming that it rules out every joint-histogram witness.
+
+ESCAPE LEDGER (claims to verify against definitions)
+
+1. M2: a genuine spine+satellite candidate will use a global signed coefficient array and will not
+   admit the five-condition representation as sign-aligned positive mixtures of locally
+   zero-balanced, sign-separated pair products. For q>=5 it must in particular have an invariant
+   K-layer signature incompatible with condition 5.
+2. Phase-4 T2: the candidate will not allocate whole complementary pairs to disjoint blocks; it
+   uses the complete global alphabet in a single sector-resolved object.
+3. Phase-5 T2: the candidate is not identical blocks with one common exact pair total and a raw
+   product outer tensor. It is a direct sum/coupling of named representation sectors.
+4. Phase-4 T1/D10: the candidate is not the fixed-allocation unaveraged absolute-value sign-bit
+   composition. Its definition is invariant ab initio, not a renormalized average of that class.
+
+TYPE GATE
+
+The reviewed L33 sectors are multiplicity blocks of an H=S_(N-1) x C(sigma)-commutant PSD operator.
+The required L2 witness is an S_N x C(sigma)-fixed signed-measure vector. Before calling a sector
+formula a witness, exhibit and type-check an explicit map from the L33 operator sectors to the
+signed-measure space which preserves invariance, factorial cancellation, l1 normalization, and
+correlation. If every equivariant linear extraction annihilates the nontrivial sectors (or returns
+only an operator for which L2 moments/l1/correlation are undefined), this triggers BLOCKED and is
+to be stated as the candidate spine+satellite type-obstruction theorem.
+
+FIT POINTS AND LABEL PREDICTIONS
+
+Fit points: (5,4,0), (5,4,1), (6,3,0), (7,3,0).
+
+- Dominant spine prediction: the leading repetition-one family is the trivial stabilizer irrep
+  ([N-1], triv_C) at all four points.
+- q=3 satellite prediction: the largest nonspine family is ([N-2,1], chi) for one of the two C2
+  characters; exact character extraction must decide chi.
+- (5,4,0), tau=2 prediction: the three large repetition-three families are ([3,1], chi) for three
+  distinct one-dimensional characters chi of C2 x S2.
+- (5,4,1), tau=0 prediction: the 22.33%-trace repetition-two family is ([4], rho_std), where
+  rho_std is the unique two-dimensional irrep of C2 wr S2, bipartition ((1),(1)).
+
+HELD-OUT GATE — frozen before solving
+
+Held-outs: (4,4,0) and (4,5,0), neither used in the fit.
+
+- (4,4,0): predict leading label ([3],triv), a near-rank-one spine, and its largest standard
+  satellites labeled ([2,1],chi). Predict the closed label/profile family captures at least 75%
+  of optimizer squared Frobenius mass.
+- (4,5,0): predict leading label ([3],triv), with a visible tau=1 hyperoctahedral satellite;
+  predict at least 75% squared-Frobenius capture.
+
+The preregistered capture threshold is 75% at EACH held-out point, where capture means
+1-||A_opt-A_closed||_F^2/||A_opt||_F^2 after fitting only the four training points and allowing no
+held-out refit. This materially exceeds L1 phase 1's 38.90–62.83% range. Failure at either point
+prevents PROGRESS via the fitted family; it does not by itself prove BLOCKED.
+
+G11 AND STATUS
+
+Finite labels, fits, exact moment tables, and held-out captures are structure/machinery evidence,
+not exponent evidence. Any new mathematics remains CONJECTURED/pending-review. No completion-tier
+status is authorized without a fresh rule-7 review.

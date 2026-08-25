@@ -1,0 +1,88 @@
+id: KSUM.A1c
+aliases:
+- A1c
+claim: The translation identity k-Sum_t(x)=k-Sum_(t+ka)(x+a*1) implies that, for every target t, there
+  is a window target t' in t+kZ_q with Q(k-Sum_t)>=Q(k-Sum_(t'))/C for an absolute constant C, without
+  parity or coprimality assumptions.
+assumptions:
+  query-domain-restriction:
+    kind: model-fact
+    statement: Restricting a promised input domain cannot increase bounded-error quantum query complexity.
+    source:
+      path: ksum/lean/KSUM/Interface.lean
+      kind: text
+      locator: QueryModel interface table, `restrict` field
+  per-coordinate-relabeling:
+    kind: model-fact
+    statement: An input-independent per-coordinate injective relabeling transfers bounded-error query
+      complexity in the required direction with at most the absolute factor two used in this claim.
+    source:
+      path: ksum/lean/KSUM/Interface.lean
+      kind: text
+      locator: QueryModel interface table, `relabel` field and `relabel_inj` theorem
+assessment:
+  level: PROVED
+  summary: The claim is supported by the linked evidence and independent review.
+  basis:
+    reviews:
+    - path: ksum/reviews/ksum_composition_layer_review_20260730.md
+      kind: review
+      scope: Re-derives the coset-covering translation argument, refutes the former all-target-pairs formulation,
+        and specifies the corrected coverage statement consumed by A1.
+      locator: Section 3.1, R-A1-3 and regime-coverage paragraphs
+      reviewed_hash: sha256:440432db8a151ea3709d715cde9b8e451545a1337424a19e4945fe303184e8e4
+    - path: ksum/reviews/ksum_lean_delta_fidelity_review_20260801.md
+      kind: review
+      scope: Checks that the Lean statement uses the corrected target-coset coverage rather than the refuted
+        all-pairs formulation and records the remaining abstract query-model interface.
+      locator: Sections 3.A--3.B
+      reviewed_hash: sha256:440432db8a151ea3709d715cde9b8e451545a1337424a19e4945fe303184e8e4
+    runs:
+    - path: ksum/artifacts/logs_ksum_lean_repair_20260730/build.log
+      kind: run
+      result: Execution artifact supporting KSUM.A1c at the exact finite, formal, or computational scope
+        stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_lean_repair_20260730/print_axioms.txt
+      kind: run
+      result: Execution artifact supporting KSUM.A1c at the exact finite, formal, or computational scope
+        stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_lean_repair_20260730/SHA256SUMS.txt
+      kind: run
+      result: Execution artifact supporting KSUM.A1c at the exact finite, formal, or computational scope
+        stated in the linked output.
+  caveats:
+  - Text and digest synchronization does not by itself establish that the Lean proposition is equivalent
+    to the natural-language claim; that correspondence remains review-dependent.
+formalization:
+  lean:
+    module: KSUM.A1c
+    file: ksum/lean/KSUM/A1c.lean
+    claim: Claim
+    state: proved
+    claim_hash: sha256:440432db8a151ea3709d715cde9b8e451545a1337424a19e4945fe303184e8e4
+    sync_state: current
+    theorems:
+    - holds
+    build: ksum/artifacts/logs_ksum_lean_repair_20260730/
+    source_claim_hash: sha256:440432db8a151ea3709d715cde9b8e451545a1337424a19e4945fe303184e8e4
+    synced: '2026-08-19'
+    rel:
+    - The query-complexity portion is relative to the explicit `QueryModel` restriction and relabeling
+      fields; the translation identity itself is unconditional.
+frontier:
+  task-001:
+    task: "**Review coverage of the restated text** (flagged, for the pending statement-fidelity review):\n\
+      \  the node's PROVED rests on the 2026-07-18/19 reviews of `lem:transl-cover`, which is exactly\
+      \ the\n  coset-local statement now frozen here — so the restatement moves the text *towards* the\
+      \ reviewed\n  mathematics rather than away from it. No reviewer has yet read this text, so\n  [KSUM.LEAN.statement-fidelity](KSUM.LEAN.statement-fidelity.yaml)\
+      \ should check it explicitly,\n  including that `A1a`'s widened Claim and this one compose (they\
+      \ are consumed together by\n  `KSUM.A1.composition`, which now closes without any all-pairs premise)."
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "whether `ClaimAllPairs` is FALSE (not merely\n  underivable) is still unsettled — turning \"\
+      not derivable\" into \"false\" needs a `QueryModel`\n  separating the two target orbits at `k=3,\
+      \ q=21` while satisfying `restrict`, `relabel`,\n  `freeze`, `constQ`, `abi`, `tani`. Nothing now\
+      \ depends on the answer."
+    kind: task
+    since: '2026-08-16'

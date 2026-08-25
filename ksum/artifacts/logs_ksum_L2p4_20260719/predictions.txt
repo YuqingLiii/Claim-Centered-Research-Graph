@@ -1,0 +1,52 @@
+KSUM.B4b.L2 phase 4 preregistration — 2026-07-19
+
+Scope and status discipline
+- Canonical D7-repaired route only: odd q >= 5, every target, strict correlation > 2/3.
+- New general mathematics may be recorded only as CONJECTURED/pending-review; exact runs are
+  NUMERICAL evidence. No network and no git commit.
+
+Frozen outcomes
+- PROGRESS: a composed witness family with a PROVED proposer-level derivation (status still
+  CONJECTURED/pending-review under DAG rule 6) of band Omega(sqrt(m) log q), or better, over
+  m >= 2 disjoint position blocks at general odd q >= 5, correlation > 2/3 + delta for one fixed
+  delta > 0, and exact finite verification. This is the first route bound with a block-count factor.
+- PARTIAL: an explicit construction and exact finite verification, with exactly one named
+  unproved mathematical step preventing the general band/correlation theorem.
+- BLOCKED: a precise obstruction to the selected dual block composition, identifying the inner
+  kernel property that fails and recording it as a candidate lemma. A finite successful endpoint
+  does not override a general obstruction.
+
+Preregistered mechanism
+- Cross-block handling: allocate disjoint sigma-pairs of Z_q to position blocks, omit the unique
+  fixed point from every block, and average over equal-size pair allocations only after proving
+  the fixed-allocation statement. Since each sigma-pair belongs to one block, a target-summing
+  pair cannot cross blocks. This costs the alphabet budget: if a block receives r0 pairs, then
+  m r0 <= (q-1)/2, so its phase-3 band is 2(1+floor(log_5 r0)), not automatically log q.
+- Dual composition: derive the standard absolute-value composition directly. For an inner signed
+  measure mu with ||mu||_1=1 and sum mu=0, sample from |mu| and expose the sign bit S=sgn(mu).
+  For an outer OR_m dual Psi, use the density 2^m Psi(S_1,...,S_m) against the product |mu| law.
+  Prove l1 normalization and falling-factorial degree multiplication from first principles.
+- Required one-sided property: positive inner mass is supported only on block-YES inputs
+  (equivalently, every block-NO input in the support has negative sign). For OR this makes S=+1
+  a sound YES certificate. To retain constant composed correlation for growing m, the same
+  mechanism is expected also to require inner conditional NO correctness
+  Pr[g=NO | S=-1] = 1-O(1/m), not merely a fixed constant.
+
+Frozen gates
+1. Audit the reviewed phase-3 kernel's exact sign support at every outer K layer and determine its
+   one-sided property and conditional correctness rho.
+2. Prove or falsify fixed-allocation cross-block soundness and account for the q budget.
+3. Derive the composition correlation exactly before attempting a general success theorem.
+4. Exact rational finite gate with m >= 2 at the smallest feasible odd q (q=5 preferred), stating
+   pattern level versus full input level; verify l1, correlation, and every claimed factorial row.
+5. Check the composed object against all five M2 conditions and D9 (escape claim only for q>=5).
+6. Sweep every stated general band at both q-range endpoints against the Johnson N^(2/3) cap and
+   reviewed B4a bound before recording it.
+
+Predicted obstruction to test (not a conclusion)
+- The phase-3 inner is NO-correct but has YES false-negative mass. If its correlation is rho, then
+  the one-sided identities may force Pr[g=NO | S=-1]=rho. Under m independent blocks, the only
+  uncertain outer sign pattern is S=(-1,...,-1), and its true all-NO probability becomes rho^m.
+  Thus the standard composed correlation may equal -2 Psi(-1^m) rho^m <= rho^m. If rho is bounded
+  away from 1 (the reviewed uniform guarantee is 437/581), this mechanism cannot keep correlation
+  > 2/3 for growing m, and already cannot certify it uniformly for m=2 from that guarantee alone.

@@ -1,0 +1,46 @@
+id: KSUM.B4a
+aliases:
+- B4a
+claim: For every epsilon>0 there exist C_epsilon>0 and N0 such that, for every N>=N0, every q>=2, and
+  every target t, the bounded-error quantum query complexity of cyclic 2-Sum satisfies Q(2-Sum_(Z_q,t,N))
+  <= C_epsilon N^(1/2+epsilon) q^(1/4).
+assessment:
+  level: PROVED
+  summary: The bounded-query upper bound passed independent theorem-level hostile review. The linked review
+    checks the recurrence, worst-case query cap, quantifiers, and the complete proof.
+  basis:
+    evidence:
+    - path: ksum/artifacts/reference_ambainis_balodis_iraids_2021_recurrence.md
+      kind: text
+      locator: source lines 135--143 and 240--286
+    - path: ksum/artifacts/ksum_B4_upper_note.md
+      kind: text
+      scope: Superseded first proof attempt for the cyclic 2-Sum upper bound.
+    - path: ksum/reviews/ksum_B4_review.md
+      kind: review
+      locator: Ruling and defects D1--D4
+      scope: Historical hostile review that rejected the first proof attempt and identified the recursive-subcase
+        and worst-case-query-cap gaps.
+    - path: ksum/artifacts/ksum_B4_upper_note_v2.md
+      kind: text
+      scope: Repaired proof reviewed by ksum/reviews/ksum_B4_review2.md.
+    reviews:
+    - path: ksum/reviews/ksum_B4_review2.md
+      kind: review
+      locator: Ruling, defect-discharge table, and standalone proof audit
+      scope: Complete bounded-query proof of the O_epsilon(N^(1/2+epsilon) q^(1/4)) upper bound.
+      reviewed_hash: sha256:ef85eea2f26b73d1efb01943c1d5e868608aa1154c21b05fbacaa544d2f3c77c
+  caveats:
+  - Text and digest synchronization does not by itself establish that the Lean proposition is equivalent
+    to the natural-language claim; that correspondence remains review-dependent.
+formalization:
+  lean:
+    module: KSUM.B4a
+    file: ksum/lean/KSUM/B4a.lean
+    claim: Claim
+    state: stated
+    claim_hash: sha256:ef85eea2f26b73d1efb01943c1d5e868608aa1154c21b05fbacaa544d2f3c77c
+    sync_state: current
+    build: ksum/artifacts/logs_ksum_lean_reorg_20260730/
+    source_claim_hash: sha256:ef85eea2f26b73d1efb01943c1d5e868608aa1154c21b05fbacaa544d2f3c77c
+    synced: '2026-08-19'

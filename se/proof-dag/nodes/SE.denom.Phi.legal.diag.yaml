@@ -1,0 +1,16 @@
+id: SE.denom.Phi.legal.diag
+aliases:
+- PLD
+claim: For each level k, legal restriction satisfies ||R(T_k)|| <= F_k||T_k||, where F_k=max{rho_k,(k-1)rho_(k-1)},
+  and only levels k-1 and k can survive.
+assessment:
+  level: PROVED
+  summary: The claim is supported by the linked evidence and independent review.
+  basis:
+    reviews:
+    - path: se/reviews/se_phi_legal_review_20260718.md
+      kind: review
+      scope: Checks the per-level legal restriction factors and conditional n^{1/6} envelope, while requiring
+        the source-range qualifier and leaving cross-k assembly and the O(1) target open.
+      locator: Per-step table, Sections 3--5, and Gate disposition
+      reviewed_hash: sha256:b0fad6981bae3d66103473fda5f974ce5fb4eae03b34b7ef3e4153445b4453eb

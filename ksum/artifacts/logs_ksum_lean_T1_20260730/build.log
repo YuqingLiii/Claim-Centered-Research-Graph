@@ -1,0 +1,42 @@
+# KSUM.LEAN.T1 build log — 2026-07-30
+# host: win32; Lean v4.31.0; Mathlib v4.31.0 (machine-local prebuilt cache via .lake/packages junction)
+# cwd: ksum/lean
+# command: lake build KsumAudit.MainLine
+# (oleans for Defs/QueryModel/MainLine deleted first to force a real rebuild)
+
+✔ [1981/1983] Built KsumAudit.Defs (56s)
+✔ [1982/1983] Built KsumAudit.QueryModel (50s)
+ℹ [1983/1983] Built KsumAudit.MainLine (53s)
+info: KsumAudit/MainLine.lean:1048:0: 'KsumAudit.twoSum_encode' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1049:0: 'KsumAudit.twoSum_encode_cyc' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1050:0: 'KsumAudit.twoSum_encode_cyc_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1051:0: 'KsumAudit.twoSum_snoc_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1052:0: 'KsumAudit.twoSum_encode_snoc' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1053:0: 'KsumAudit.twoSum_encode_snoc_cyc' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1054:0: 'KsumAudit.QueryModel.relabel_inj' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1055:0: 'KsumAudit.Q_claw_le_encode' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1056:0: 'KsumAudit.Q_claw_le_encode_odd' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1057:0: 'KsumAudit.Q_claw_le_twoSum_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1058:0: 'KsumAudit.twoSum_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1059:0: 'KsumAudit.Q_twoSum_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1060:0: 'KsumAudit.exists_half_odd' depends on axioms: [propext, Quot.sound]
+info: KsumAudit/MainLine.lean:1061:0: 'KsumAudit.combine_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1062:0: 'KsumAudit.main_odd' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1063:0: 'KsumAudit.main_odd_abi' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1064:0: 'KsumAudit.exists_repr_set' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1065:0: 'KsumAudit.main_general' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1066:0: 'KsumAudit.Q_zero_le_target' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1067:0: 'KsumAudit.threshold_large' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1068:0: 'KsumAudit.threshold_small' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1069:0: 'KsumAudit.threshold_small_abi' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1070:0: 'KsumAudit.threshold' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1071:0: 'KsumAudit.sqrt_mul_rpow_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1072:0: 'KsumAudit.ED_isIndexOne' does not depend on any axioms
+info: KsumAudit/MainLine.lean:1073:0: 'KsumAudit.oabarrier_ED' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1074:0: 'KsumAudit.oabarrier_ED_Q' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1075:0: 'KsumAudit.oabarrier_kSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: KsumAudit/MainLine.lean:1076:0: 'KsumAudit.demoModel' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (1983 jobs).
+
+# exit status of the pipeline above: see BUILD_RESULT line
+BUILD_RESULT: exit=0

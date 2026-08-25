@@ -1,0 +1,70 @@
+KSUM.B4b.L2 phase 5 preregistration — averaged shared-value positional composition
+Date: 2026-07-19
+Network: forbidden / not used
+
+OUTCOMES (frozen before phase-5 construction code or finite experiments)
+
+PROGRESS = an S_N x C(sigma)-invariant witness family with a PROVED annihilation band
+strictly exceeding the reviewed phase-3 logarithmic band in its N-dependence, together
+with correlation > 2/3 + delta for some fixed delta > 0 and exact finite verification.
+Any band omega(log q) that grows with N at fixed odd q >= 5 counts as the first N-side
+growth from this route.  "PROVED" here means a completed rule-7 independent review;
+this executor may only record new mathematics as CONJECTURED/pending-review.
+
+PARTIAL = the construction, exact finite verification, and one explicitly named
+unproved step needed for the general claim.
+
+BLOCKED = a new precise obstruction for averaged shared-value positional compositions
+that extends the reviewed T1/T2 map.  Combined with T1 and T2, such an obstruction
+would nearly close the composition paradigm.  A failed example or a small-instance
+correlation loss alone is not enough for BLOCKED.
+
+FROZEN CONSTRUCTION
+
+Fix odd q >= 5, target t, r=(q-1)/2, and m >= 2 positional blocks.  Every block uses
+the SAME full collection of r nonfixed sigma-pairs; the fixed point has occupancy zero.
+On each block use a phase-3-style tilted axis/interior kernel on balanced exact pair-total
+slices, with all pair totals at least two.  Form the raw tensor product over the labeled
+position blocks.  Then average this raw string measure over S_N (and, redundantly, over
+C(sigma) if useful), compute the resulting l1 norm exactly, and renormalize only after
+the average.  No complementary value pair is assigned exclusively to a block.
+
+ESCAPE LEDGER (frozen)
+
+1. M2 escape for q >= 5: condition 5 is violated.  Each phase-3 tilted block has a
+signed correlated K-layer functional with missing layers (in particular K=2 when
+r>=2), so it is not a sign-aligned positive mixture of locally zero-balanced products.
+The phase-5 raw tensor retains those signed cross-layer cancellations.  Conditions 1-4
+are not claimed as the escape; condition 5 is the named gate, subject to an exact
+representation-independent finite signature check after averaging.
+
+2. T2 escape: this is NOT whole-pair/value-disjoint allocation.  Every positional block
+uses both endpoints of every nonfixed sigma-pair.  Blocks are disjoint only in position
+indices, so sum_j r_j <= (q-1)/2 is inapplicable: here each r_j=r and values are reused.
+
+3. T1/D10 escape: the final object is A_{S_N}(tensor_j mu_j) divided by its ACTUAL l1
+norm.  The mandatory averaging step mixes the labeled position blocks and may cancel
+opposite raw weights inside one global occupancy orbit.  Reviewed T1 is only the
+fixed-allocation unaveraged sign-bit formula (and any later norm-preserving average),
+whereas this construction both reuses values (so global 2-Sum is not simply OR of the
+within-block labels) and explicitly allows ||A_{S_N} mu_raw||_1 < 1.  The D10 quantity
+to compute, not bound away, is
+
+    L = ||A_{S_N} mu_raw||_1
+      = sum_n | sum_{n^(1)+...+n^(m)=n} product_j mu_j(n^(j)) |.
+
+The normalized correlation is the invariant numerator divided by L.
+
+FROZEN TECHNICAL GATES
+
+- Derive the S_N-averaged action on falling-factorial rows both as a hypergeometric
+  occupancy-split mixture and as the equivalent factorial convolution/Vandermonde sum.
+- Prove exactly which product annihilation band survives averaging; cap-sweep the
+  proposed general band at q=5 and q=N against the Johnson N^(2/3) cap and B4a.
+- Quantify cross-block hits exactly.  They are the only new YES channel relative to
+  blockwise OR and must be included in the true global 2-Sum correlation.
+- Compute the actual post-average l1 norm exactly, then verify l1=1 only after division.
+- Run exact Fraction gates at (N,q,m)=(10,5,2) and (14,5,2) at occupancy-pattern level,
+  and at raw input level only if feasible.  Require exact moment residual zero in the
+  claimed band and strict normalized correlation > 2/3.
+- Preserve G11: finite gates validate formulas and machinery, not an exponent trend.

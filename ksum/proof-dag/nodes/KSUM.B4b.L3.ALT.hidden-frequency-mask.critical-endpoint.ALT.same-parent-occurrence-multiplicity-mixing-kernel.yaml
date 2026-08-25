@@ -1,0 +1,58 @@
+id: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.same-parent-occurrence-multiplicity-mixing-kernel
+aliases:
+- B4bL3AltCriticalSameParentOccurrenceMultiplicityMixingKernel
+claim: 'Find one or a bounded number of full-group irreducibles whose exact NO/YES multiplicity spaces
+
+  contain `r=Theta(m^(1/3))` occurrence-incidence channels, and define a genuinely pair-dependent
+
+  matrix on those channels whose physical off-equality left and right query blocks have norm
+
+  `O(r^(-1/2))` while its unmarked norm is one. Couple the resulting `m^(1/6)` separation to the
+
+  outer `a^(2/3)` numerator after normalized incidence.'
+assessment:
+  level: OPEN
+  summary: '**OPEN — genuine growing common occurrence multiplicity exists, but the first trivial-alphabet
+    family has a near-isometric physical query on every coefficient matrix.** On the decisive `p=0,u=1`
+    subsequence, one fixed full-group parent has at least `g_h^2` common occurrence channels in both answers,
+    with `g_h>=r`; the growth comes from block-partition transportation occurrences, not LR multiplicity.
+    For the explicit `lambda=(n-h,h)`, `nu=(q)` family, however, the heavy- unselected compression has
+    minimum squared singular value at least `kappa>=1-a/(n-4r)>=1-1/d`, uniformly for arbitrary noncommuting
+    `B`, and equality deletion is the scalar `1-1/q`. Both physical query ratios therefore tend to one.
+    A nontrivial alphabet parent is the newly identified noncoverage boundary.'
+  basis:
+    evidence:
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.noncommuting-parent-mixing-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.nontrivial-alphabet-occurrence-mixing-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.covariant-block-standard-occurrence-mixing-kernel
+      kind: node-evidence
+frontier:
+  task-001:
+    task: "Convert the exact `g_h^2` common occurrence space into a formula-defined coefficient matrix;\
+      \ the\n  occurrence basis is the Fourier multiplicity of uniform `d`-block partitions and its pair\
+      \ orbits\n  are block-intersection transportation tables."
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "Prove the pair-dependent law is not `U_1^*AU_0` with fixed `A` and does not reduce after incidence\n\
+      \  to the independent `P/Q` algebra."
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: "Do not retry the displayed `lambda=(n-h,h), nu=(q)` family with a different occurrence matrix:\n\
+      \  the lower bound is uniform over every noncommuting `B`."
+    kind: task
+    since: '2026-08-16'
+  task-004:
+    task: "Test the separately registered nontrivial-alphabet occurrence-mixing successor, where equality\n\
+      \  pinching need not be scalar, and compute every physical off-equality marked block on both sides."
+    kind: task
+    since: '2026-08-16'
+  task-005:
+    task: Preserve the outer numerator, remainder statuses, normalized incidence, and legality.
+    kind: task
+    since: '2026-08-16'

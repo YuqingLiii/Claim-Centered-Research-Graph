@@ -1,0 +1,134 @@
+id: KSUM.B1
+aliases:
+- B1
+claim: 'For every fixed `k ≥ 3` there is a frozen-coordinate reduction — a core of `k−2` coordinates (plus
+
+  one parked coordinate when `N−(k−2)` is odd) together with the `k=2` claw encoding on the `2m` live
+
+  coordinates — such that `Q(kSum_{Z_q,t,N}) = Ω(Q(Claw_{m→K}))` for every target `t`, every `K ≥ 2`
+
+  and every `q ≥ (k²−2)K+2k−1`.
+
+
+  *(Claim rewritten 2026-07-30 per the composition-layer review §7.4 — the previous text, kept for
+
+  history, was a strategy description, not a proposition: "OR-1: FROZEN-COORDINATE REDUCTION (freeze
+
+  k−2 coords, embed proved k=2 claw→2-Sum into live coords)". The rewrite is what `A1` delivers, and
+
+  it makes the `A1 ⇒ B1` route entry statable — near-trivial, which is the honest state of that
+
+  edge.)*'
+routes:
+  KSUM.L11:
+    premises:
+    - KSUM.L11
+    implication: L11 implies B1.
+    assessment:
+      level: OPEN
+      summary: 'Moot: the child is already REFUTED/DEAD (reviewed), so min(child, route) is REFUTED regardless
+        of this route claim; no route proof will be written.'
+      basis:
+        evidence:
+        - node: KSUM.L11
+          kind: node-evidence
+      caveats:
+      - The premise node is REFUTED, so this route is disabled; no evidence in this record refutes the
+        implication itself.
+  KSUM.L12:
+    premises:
+    - KSUM.L12
+    implication: L12 implies B1.
+    assessment:
+      level: OPEN
+      summary: 'Moot: the child is already REFUTED/DEAD (reviewed), so min(child, route) is REFUTED regardless
+        of this route claim; no route proof will be written.'
+      basis:
+        evidence:
+        - node: KSUM.L12
+          kind: node-evidence
+      caveats:
+      - The premise node is REFUTED, so this route is disabled; no evidence in this record refutes the
+        implication itself.
+  frozen-core-reduction:
+    premises:
+    - KSUM.A1a
+    - KSUM.A1b
+    - KSUM.A1c
+    implication: 'A1''s INPUT SUBTREE (A1a: the frozen core at every window target; A1b: the live claw
+      encoding; A1c: coset covering) implies B1. [CORRECTED 2026-07-31 per the gap-closure-1 finding:
+      the prior claim ''A1 implies B1'' is FALSE at the Claim level — A1.Claim is A1d''s NUMERIC FLOOR
+      on Q(kSum), which says nothing about Q(Claw); what delivers B1 is A1''s PROOF MACHINERY, i.e. its
+      three children. The machine-checked route is KSUM.B1.composition_via_A1_inputs; composition_via_A1
+      is declared per §7.4 with its hypothesis explicitly not consumed.]'
+    assumptions:
+      assumption-01:
+        kind: model-fact
+        statement: QueryModel facts (i)/(ii)/freeze — the same interface as A1's composition
+        source:
+          path: ksum/lean/KSUM/Interface.lean
+          kind: text
+          locator: QueryModel interface table, `restrict`, `relabel`, and `freeze` fields
+    proof:
+      sketch: 'ksum/lean/KSUM/B1.lean — composition_via_A1_inputs, and holds with absolute
+        constant C=4 (donor-unconditional: abi/tani unused)'
+      sources:
+      - path: ksum/lean/KSUM/B1.lean
+        kind: text
+    assessment:
+      level: NUMERICAL
+      summary: The lead corrected the route to consume A1a, A1b, and A1c directly. The Lean proof composition_via_A1_inputs
+        and theorem holds establish the reduction with absolute constant C=4; the route remains NUMERICAL
+        pending independent statement-fidelity review.
+      basis:
+        runs:
+        - path: ksum/artifacts/logs_ksum_lean_gapclose1_20260731
+          kind: run
+          result: Lean route composition and theorem holds build successfully
+assessment:
+  level: NUMERICAL
+  summary: '**NUMERICAL — `pending-review: KSUM.LEAN.statement-fidelity`** — lead recompute 2026-08-01
+    applying the correction below: `max` over the three routes = `max(REFUTED-moot, REFUTED-moot, min(A1=PROVED,
+    route=NUMERICAL)) = NUMERICAL`. (History: displayed CONJECTURED 2026-07-31 → corrected one rung up
+    when the machine-checked route proof was recognized.) **Correction, 2026-08-01 (docs-sync batch; delta-fidelity
+    review defect D-4 — text only, no status written).** The sentence this section used to carry — *"the
+    one live route''s proof (`A1 ⇒ B1`) is statable against the rewritten Claim and near-trivial, but
+    unwritten and unreviewed"* — has been false since gap-closure batch 1 (2026-07-31). The route proof
+    **is written and machine-checked**: [`KSUM/B1.lean`](../lean/KSUM/B1.lean) declares `composition_via_A1_inputs`
+    and `holds`, delivering the absolute constant `C = 4` from `A1a`/`A1b`/`A1c`, with `abi`/`tani` unused.
+    The `lean.note` field of this node''s own frontmatter had recorded that since the batch landed, four
+    lines below the `status_source` that denied it. It is unreviewed — that part was and remains true
+    — which is why the `composition[KSUM.A1]` entry sits at **NUMERICAL** with `review: null`, queued
+    on [KSUM.LEAN.statement-fidelity](KSUM.LEAN.statement-fidelity.yaml). **Consequence for the number
+    displayed, recorded and deliberately not acted on.** §1 recomputes the live route as `min(A1 = PROVED,
+    route = NUMERICAL) = NUMERICAL · pending-review`, i.e. **one rung above the CONJECTURED shown in the
+    frontmatter**.'
+  basis:
+    routes:
+    - frozen-core-reduction
+    runs:
+    - path: ksum/artifacts/logs_ksum_lean_gapclose1_20260731
+      kind: run
+      result: Execution artifact supporting KSUM.B1 at the exact finite, formal, or computational scope
+        stated in the linked output.
+  caveats:
+  - 'pending-review: the cited evidence has not completed an independent review gate'
+  - Text and digest synchronization does not by itself establish that the Lean proposition is equivalent
+    to the natural-language claim; that correspondence remains review-dependent.
+formalization:
+  lean:
+    module: KSUM.B1
+    file: ksum/lean/KSUM/B1.lean
+    claim: Claim
+    state: proved
+    claim_hash: sha256:aa3244091213ff586fd57c90572a5796a37b25c4b43fca71de4efe41d60a2fa5
+    sync_state: current
+    theorems:
+    - composition_via_frozen_core_reduction
+    - holds
+    rel:
+    - QueryModel.restrict and QueryModel.relabel implement the cited query-model transfer.
+    - QueryModel.freeze implements deletion of the final fixed coordinate.
+    build: ksum/artifacts/logs_ksum_lean_gapclose1_20260731/
+    synced: '2026-08-19'
+    source_claim_hash: sha256:aa3244091213ff586fd57c90572a5796a37b25c4b43fca71de4efe41d60a2fa5

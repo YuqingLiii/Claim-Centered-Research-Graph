@@ -1,0 +1,58 @@
+id: KSUM.B4b.L2.ALT.iterated-multiscale-boundary-compactification
+aliases:
+- B4bL2AltIteratedMultiscaleBoundaryCompactification
+claim: 'Replace the incomplete four-stratum limit by an iterated compactification covering every legal
+
+  scale between discrete corners, `C_t=Theta(N)` normal layers, intermediate supernormal layers, and
+
+  the bulk, together with a uniformly bounded right-inverse that corrects limiting moment defects to
+
+  exact finite annihilation.'
+assessment:
+  level: OPEN
+  summary: '**OPEN — exact correction is characterized, but no small-defect multiscale candidate exists.**
+    A canonical nonlinear exactor has norm one and a discrete linear exactor costs at most the feature
+    rank, but naive atom pairs have constant defect and finite boundary rays are rank-deficient.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L2_phase24_stratified_feasibility_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase25_uniformly_stable_exactor_20260721.md
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.moving-remez-cubature.label-aware-fekete-basis-exchange.continuation-seeded-block-fekete.continuum-limit-remez-support-flow.stratified-boundary-jet-remez-system
+      kind: node-evidence
+frontier:
+  task-001:
+    task: "Define a regime-complete iterated scale space for all legal orbit sequences at\n  `D=Theta(sqrt\
+      \ N)`."
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: Derive limiting kernels on every chart and transition/matching maps on overlaps.
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: Construct a uniformly norm-bounded exactor for the full finite orbit-moment operator.
+    kind: task
+    since: '2026-08-16'
+  task-004:
+    task: "Construct a regime-complete candidate with canonical defect `o(D^-3)` for the explicit linear\n\
+      \  Fekete correction, or exploit the norm-one nonlinear distance characterization directly."
+    kind: task
+    since: '2026-08-16'
+  task-005:
+    task: "Prove a WKB-to-canonical norming inequality, or directly construct a coupling with vanishing\n\
+      \  full-feature pseudometric cost; phase equality alone is now known insufficient."
+    kind: task
+    since: '2026-08-16'
+  task-006:
+    task: "Prove that approximate limiting cancellation lifts to exact finite cancellation without losing\n\
+      \  correlation or `C_t=Theta(N)` residual tail."
+    kind: task
+    since: '2026-08-16'
+  task-007:
+    task: Give a formula-defined solution with correlation strictly above `2/3` for all large odd `N`.
+    kind: task
+    since: '2026-08-16'

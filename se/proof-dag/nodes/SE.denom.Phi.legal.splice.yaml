@@ -1,0 +1,51 @@
+id: SE.denom.Phi.legal.splice
+aliases:
+- SPLICE
+claim: "**Lemma (M), the block identification** (minimal missing statement, `se/artifacts/se_spliceadj_20260719.md`\
+  \ §\"Minimal missing statement\"): for every active tuple `q=2n, j≥1, n≥3j, k=j+1<K`, every `λ=(q−j,θ)`\
+  \ and strict sector ξ, the actual legal lower block `C_{λ,ξ} = E^Y_{λ,ξ} ℛ(T_{j+1}) E^N_{λ,ξ} : H_N\
+  \ → H_Y` satisfies the well-typed operator inequality\n\n    C*C ⪯ c_N · c_Y · r_top(q,j,θ)² · ‖T_{j+1}‖²\
+  \ · I_{H_N}     (M)\n\nwith `c_N=1/4`, `c_Y=15/4`. Sufficient structural form: exhibit `C = Y·M·N` with\
+  \ forward maps only (no pseudoinverse, no reciprocal endpoint singular value), `‖N‖² ≤ c_N·r_top`, `Y*Y\
+  \ ≅ G_can^{λ,ξ}` (defined on `supp(C_N)` where `C_N^{-1/2}` is genuinely invertible), `‖M‖ ≤ ‖T_{j+1}‖`."
+routes:
+  SE.denom.Phi.legal.splice.i4:
+    premises:
+    - SE.denom.Phi.legal.splice.i4
+    implication: If the signed-intertwiner construction (i4) supplies the block identification, then Lemma
+      (M) — the well-typed operator inequality C*C <= c_N c_Y r_top^2 ||T_{j+1}||^2 I on the ACTUAL legal
+      lower block — follows for every active tuple.
+    assessment:
+      level: OPEN
+      summary: No additional supporting evidence has been recorded for this route.
+      caveats:
+      - route never attempted (i4 is a registered but unexecuted idea)
+assessment:
+  level: OPEN
+  summary: '**OPEN.** This is THE remaining lemma of the SE campaign: (M) + the proved `[[SE.denom.Phi.legal.gram]]`
+    + marked-NO (`se_specialsite_20260718.md`) yield `‖C_{j+1→j}‖ ≤ (√15/4)·ρ_j·‖T_{j+1}‖`, which is exactly
+    the fourth term of the assembly envelope (6.1) ⟹ denominator O(1) ⟹ explicit Ω(n^{1/3}).'
+  basis:
+    evidence:
+    - node: SE.denom.Phi.legal.tame
+      kind: node-evidence
+    - node: SE.denom.Phi.legal.omega
+      kind: node-evidence
+    routes:
+    - SE.denom.Phi.legal.splice.i4
+disposition:
+  state: PARKED
+  reason: '**OPEN.** This is THE remaining lemma of the SE campaign: (M) + the proved `[[SE.denom.Phi.legal.gram]]`
+    + marked-NO (`se_specialsite_20260718.md`) yield `‖C_{j+1→j}‖ ≤ (√15/4)·ρ_j·‖T_{j+1}‖`, which is exactly
+    the fourth term of the assembly envelope (6.1) ⟹ denominator O(1) ⟹ explicit Ω(n^{1/3}).'
+  revive: Revive when the common-middle refinement in the splice report is proved for the forward maps.
+  source:
+    node: SE.denom.Phi.legal.tame
+    kind: text
+frontier:
+  task-001:
+    task: 'Prove (M) (or the structural Y·M·N form), with pre-registered exact gates: the (3,6,1) Z₂ anchor
+      must be reproduced; new exact block-norm computations at (4,8,1) and j=2 must satisfy `‖C‖ ≤ √(c_N·c_Y)·r_top·‖T‖`
+      and match the factorization''s intermediate objects.'
+    kind: task
+    since: '2026-08-16'

@@ -1,0 +1,33 @@
+id: KSUM.B4b.L2.M2
+role: obstruction
+aliases:
+- B4bL2M2
+claim: For odd `q>=5`, every fully locally zero-balanced sign-separated product or sign-aligned positive
+  mixture satisfying all five hard class conditions—(1) fixed-point occupancy at most one so global NO
+  is the all-axis event; (2) one nonzero local signed factor per two-cycle in every product component;
+  (3) after local orientation each factor is axis-nonpositive, interior-nonnegative, and zero-total; (4)
+  arbitrary local shapes, pair totals, and nonzero scales are allowed; and (5) only sign-aligned positive
+  mixtures are taken—has correlation exactly `2^(1-(q-1)/2)`, hence at most `1/2`.
+assessment:
+  level: PROVED
+  summary: '**PROVED** only for the five-condition class stated in the Claim. This is not a refutation
+    of the full L2 route.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L2_phase2.md
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    reviews:
+    - path: ksum/reviews/ksum_L2p2_review.md
+      kind: review
+      scope: Checks the exact tensor-correlation obstruction for the five-condition locally balanced class
+        and records the repaired family-label qualification.
+      locator: Section M2 and Defect D8
+      reviewed_hash: sha256:8847c714ada24e9b84199595baf84de9043e447a8b0659ae80d7891b41b5e137
+frontier:
+  task-001:
+    task: The theorem does not cover globally canceling signed outer coefficients or other nonfactorizing
+      joint-histogram kernels.
+    kind: task
+    since: '2026-08-16'

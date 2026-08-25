@@ -1,0 +1,60 @@
+id: KSUM.B4b.L3.ALT.critical-core-psearch-lift
+aliases:
+- B4bL3AltCriticalCorePsearchLift
+claim: 'Assume a theorem-backed `Omega(B^(2/3))` lower bound for a range-`q` critical claw promise with
+
+  `B=Theta(q^(3/2))` positions per side. Compose each outer coordinate with a `q`-valued
+
+  `pSearch_m`, `m=Theta(N/B)`, to obtain a legal range-`O(q)` claw/2-SUM promise of total length
+
+  `Theta(N)` and lower bound
+
+
+  `Omega(B^(2/3) sqrt(m)) = Omega(sqrt(N) q^(1/4))`,
+
+
+  with the usual `N^(2/3)` cap and fixed-`q` endpoint handled explicitly.'
+assessment:
+  level: OPEN
+  summary: '**OPEN — the conditional lift and all interfaces pass at proposer tier; the donor antecedent
+    is unproved.** Assuming a uniform exact-orbit bound `Adv+/-(HF_(B,kappa))>=c_HF B^(2/3)` for `B=Theta(kappa^(3/2))`,
+    the audited BHK matrix construction preserves zero support and gives the exact partial-promise product
+    `Omega(B^(2/3)sqrt(m))`. With `kappa=Theta(min{q,n^(2/3)})`, exact integer choices and side sentinels
+    produce the whole `min{sqrt(N)q^(1/4),N^(2/3)}` curve over cyclic range `O(q)`, including fixed `q`,
+    leftovers, the cap, arbitrary target, and odd padding. This implication does not prove its critical
+    endpoint antecedent, so the node remains OPEN/pending-review.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L3_multiscale_frequency_upper_envelope_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_multiscale_frequency_candidate_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_hidden_frequency_critical_adversary_attempt_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_hidden_frequency_promise_20260721.md
+      kind: text
+    - node: KSUM.B4b.L3
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.multiscale-frequency-mask
+      kind: node-evidence
+  caveats:
+  - 'pending-review: the cited evidence has not completed an independent review gate'
+frontier:
+  task-001:
+    task: "Prove the sole remaining antecedent under the critical-endpoint node:\n  `Adv+/-(HF_(B,kappa))=Omega(B^(2/3))`\
+      \ uniformly for `B=Theta(kappa^(3/2))`."
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "If a completion-tier theorem statement is needed, commission a fresh rule-7 review of the\n\
+      \  conditional interface audit only after the donor exists; do not promote the implication while\n\
+      \  the antecedent remains unproved."
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: "Preserve the exact theorem boundary: the output modulus is `O(q)` (specifically `2kappa+5`),\
+      \ not\n  necessarily the literal advertised modulus `q` for every parity."
+    kind: task
+    since: '2026-08-16'

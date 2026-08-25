@@ -1,0 +1,51 @@
+id: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.nontrivial-alphabet-occurrence-mixing-kernel
+aliases:
+- B4bL3AltCriticalNontrivialAlphabetOccurrenceMixingKernel
+claim: 'Replace the trivial alphabet parent `nu=(q)` in a growing same-parent occurrence space by a
+
+  formula-defined nontrivial `S_q` carrier so that equality pinching acts non-scalarly and cancels a
+
+  growing occurrence matrix on both physical sides, while the off-equality query norm is
+
+  `O(m^(-1/6))` and the unmarked norm is one.'
+assessment:
+  level: OPEN
+  summary: '**OPEN — the first standard-alphabet product family has a proposer-tier near-isometric query
+    obstruction.** Taking `nu=(q-1,1)`, the Foulkes occurrence factors on both physical sides combine
+    with formula-defined `H_t`-fixed type-cell contrasts to give exact common multiplicity in both answers.
+    But the invariant contrast spreads a distinguished raw-label amplitude across an entire size-`a` cell.
+    Its exact pinching coefficient is only `chi_s=O(1/q)`, so the heavy first-row branch of every occurrence
+    matrix `B` is retained by both off-equality queries with ratio `1-o(1)`. The separately registered
+    covariant block-standard coupling is outside this product-family failure.'
+  basis:
+    evidence:
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.same-parent-occurrence-multiplicity-mixing-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.covariant-block-standard-occurrence-mixing-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.two-cell-covariant-cross-sector-mixing-kernel
+      kind: node-evidence
+frontier:
+  task-001:
+    task: "Do not retry a separately invariant `Foulkes x H_t-fixed type-cell contrast` product with a\n\
+      \  different occurrence matrix: the retained-branch bound holds for arbitrary `B`, and every such\n\
+      \  contrast has distinguished-label overlap `O(q^(-1/2))`."
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "Pursue the separately registered covariant block-standard successor, where the alphabet\n \
+      \ `Std_a` and position block-permutation `Std_a` transform diagonally rather than separately."
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: "Alternatively exhibit a larger alphabet partition or different position parent with exact\n\
+      \  common multiplicity and no heavy near-isometric branch."
+    kind: task
+    since: '2026-08-16'
+  task-004:
+    task: "Prove both physical query bounds, unmarked norm, normalized incidence, outer numerator, and\n\
+      \  legality for any replacement."
+    kind: task
+    since: '2026-08-16'

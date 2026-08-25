@@ -1,0 +1,107 @@
+id: SE.denom.Phi.legal.tame
+aliases:
+- PLT
+claim: 'SE.denom.Phi.legal.tame — make Phi legality O(1): 1(a) general structural vanishing REFUTED
+
+  (witness: defect-1 block = 0.3 at (3,6,2)); OPEN: in-spec-only vanishing / uniform O(1) two-sided improvement
+  / cross-channel cancellation'
+routes:
+  joint:
+    premises:
+    - SE.denom.Phi.legal.gram
+    - SE.denom.Phi.legal.omega
+    - SE.denom.Phi.legal.trace
+    - SE.denom.Phi.legal.found
+    - SE.denom.Phi.legal.sect
+    implication: 'gram AND omega AND trace AND found AND sect imply tame: (trace/H1) the physical multiplicity
+      block satisfies M_xi <= (15/4) B_theta(q)^2 omega I_c; (gram/H2) the canonical Gram equals I_{V_kappa
+      (x) V_nu} (x) [r_top/(B_theta(q)^2 omega)] M_xi on the full sector carrier, so ||G_can^{lambda,xi}||
+      <= (15/4) r_top; (omega/H3) the exact sandwich with the full-multiplicity NO polar C_N = r_top*omega*I
+      converts that into the per-sector block bound ||C~_{lambda,xi}|| <= sqrt(15/8)*r_top*sqrt(j/(n-j));
+      (sect/H4) the actual legal lower block decomposes orthogonally and exhaustively into those sectors
+      with the identity lift, so ||C_{j+1->j}|| = max over sectors and the global bound with rho_j = max_theta
+      r_top follows; (found) supplies the typed carrier objects, orbit identities, twirl and output frames
+      the previous four steps are stated against. Together these give the O(1) tame bound for the legal
+      Phi layer.'
+    proof:
+      sketch: The implication is supported by the linked review and linked Lean formalization.
+      sources:
+      - path: se/lean/SE/denom/Phi/legal/tame.lean
+        kind: text
+    assessment:
+      level: CERTIFIED*
+      summary: 'se/reviews/se_external_rereview2_20260730.md — T2'' CONFIRM-WITH-ISSUES: ''H1 AND H2 AND
+        H3 AND H4 suffice for Theorem B; no hidden H5 was found'''
+      basis:
+        reviews:
+        - path: se/reviews/se_external_rereview2_20260730.md
+          kind: review
+          scope: Checks that H1--H4 and the typed foundation give the global legal lower-block bound and
+            finds no hidden fifth obligation; it remains a conditional reduction.
+          locator: Sections T2'.1--T2'.3
+          reviewed_hash: sha256:9830165a753a997feaf08f04cbe9c176b0b0add069ecfd87bbe9effffe1a3c7f
+      caveats:
+      - every step is relative to its own child claim; NONE of H1-H4 is proved here
+      - 'caveat: the reviewer''s confirmation is of the DERIVATION chain, and FOUND still carries its
+        own rule-7b c>=2 caveat'
+      - The route contains four mathematical obligations H1--H4 plus the separate FOUND foundation/interface
+        premise. FOUND is not a fifth obstruction theorem, but its own c>=2 caveat remains load-bearing
+        for the conditional implication.
+assessment:
+  level: OPEN
+  summary: The tame-sector claim remains OPEN because its Gram, omega-decay, trace, and sectorization
+    obligations are not all established. Refuted scalar shortcuts do not refute the broader operator bound.
+  basis:
+    evidence:
+    - node: SE.denom.Phi.legal.splice
+      kind: node-evidence
+    routes:
+    - joint
+  caveats:
+  - The linked Lean formalization checks only the conditional composition from H1--H4 and the foundation/interface
+    layer; it does not prove those inputs.
+  - The formal statement is a conditional bound rather than a formal proof of the complete OPEN natural-language
+    claim.
+formalization:
+  lean:
+    module: SE.denom.Phi.legal.tame
+    file: se/lean/SE/denom/Phi/legal/tame.lean
+    claim: Claim
+    state: composition-checked
+    claim_hash: sha256:d90c15dec4235220cf1370c0a9863598c18ee42326b51a5fbe4f8dfaf8d609bf
+    sync_state: current
+    theorems:
+    - composition
+    rel:
+    - SE.denom.Phi.legal.trace.t6 (grandchild, declared per ruling R3)
+    - SE.denom.Phi.legal.gram.interface
+    - SE.denom.Phi.legal.omega.interface
+    - SE.denom.Phi.legal.sect
+    - Interface.Cited
+    - FOUND unrenderable at tier 1 - its rule-7b c>=2 caveat rides along
+    - 'premise-not-imported: SE.denom.Phi.legal.trace — the H1 obligation lives one level below, on the
+      grandchild SE.denom.Phi.legal.trace.t6, whose module IS imported; TRACE itself carries no formalization
+      block, so no module for it exists to import. Ruling R3 / deviation D2.'
+    - 'premise-not-imported: SE.denom.Phi.legal.gram — the H2 obligation lives one level below, on the
+      grandchild SE.denom.Phi.legal.gram.interface, whose module IS imported; GRAM itself carries no formalization
+      block. Ruling R3 / deviation D2.'
+    - 'premise-not-imported: SE.denom.Phi.legal.omega — the H3 obligation lives one level below, on the
+      grandchild SE.denom.Phi.legal.omega.interface, whose module IS imported; OMEGA itself carries no
+      formalization block. Ruling R3 / deviation D2.'
+    - 'premise-not-imported: SE.denom.Phi.legal.found — NO tier-1 rendering at all: FOUND supplies the
+      typed carrier objects, orbit identities, twirl and output frames against which H1-H4 are STATED,
+      and without an operator layer those are invisible; the abstract carrier `SE.SEFrame` stands in for
+      them. FOUND''s own rule-7b c>=2 identity-gate caveat therefore rides along with this composition,
+      exactly as it does with the prose block. Ruling R3 / deviation D2.'
+    - 'import-not-child: SE.denom.Phi.legal.trace.t6 — GRANDCHILD via the unmechanized premise SE.denom.Phi.legal.trace;
+      `t6.Claim` is consumed directly as the H1 parameter of `tame.composition`. Ruling R3 / deviation
+      D2.'
+    - 'import-not-child: SE.denom.Phi.legal.gram.interface — GRANDCHILD via the unmechanized premise SE.denom.Phi.legal.gram;
+      `gram.interface.Claim` is consumed directly as the H2 parameter of `tame.composition`. Ruling R3
+      / deviation D2.'
+    - 'import-not-child: SE.denom.Phi.legal.omega.interface — GRANDCHILD via the unmechanized premise
+      SE.denom.Phi.legal.omega; `omega.interface.Claim` is consumed directly as the H3 parameter of `tame.composition`.
+      Ruling R3 / deviation D2.'
+    build: se/artifacts/logs_se_lean_20260730/
+    source_claim_hash: sha256:d90c15dec4235220cf1370c0a9863598c18ee42326b51a5fbe4f8dfaf8d609bf
+    synced: '2026-08-17'

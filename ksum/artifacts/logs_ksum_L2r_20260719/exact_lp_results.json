@@ -1,0 +1,734 @@
+{
+  "all_corrected_degree_gains_vanish": false,
+  "arithmetic": "exact rational (SymPy simplex)",
+  "correlation_threshold": "strictly greater than 2/3",
+  "decision": "SURVIVE",
+  "degree_to_query_conversion": "Q_(1/3) >= d/2",
+  "direct_quantum_error": "1/3",
+  "expected_sign_uniform_error": "2/3",
+  "function_encoding": "-1 on NO, +1 on YES",
+  "joint_symmetry": "S_N x C(sigma)",
+  "kill_criterion_triggered": false,
+  "moment_basis": "falling-factorial occupancy monomials of total degree < d",
+  "results": [
+    {
+      "case": [
+        3,
+        3,
+        0
+      ],
+      "corrected_degree_gain_joint_minus_single": 2,
+      "corrected_degree_gain_survives": true,
+      "joint_dominates_every_objective_band": true,
+      "modes": {
+        "joint": {
+          "bands": [
+            {
+              "centralizer_order": 2,
+              "certifies_direct_q13": true,
+              "class_count": 6,
+              "degree": 1,
+              "mode": "joint",
+              "moment_rank": 1,
+              "nonzero_weights": [
+                {
+                  "class_index": 0,
+                  "weight": "-1/2"
+                },
+                {
+                  "class_index": 1,
+                  "weight": "1/2"
+                }
+              ],
+              "optimum_exact": "1",
+              "optimum_float": 1.0,
+              "raw_moment_rows": 1,
+              "unique_moment_rows": 1,
+              "witness_l1_exact": "1"
+            },
+            {
+              "centralizer_order": 2,
+              "certifies_direct_q13": true,
+              "class_count": 6,
+              "degree": 2,
+              "mode": "joint",
+              "moment_rank": 2,
+              "nonzero_weights": [
+                {
+                  "class_index": 0,
+                  "weight": "-1/2"
+                },
+                {
+                  "class_index": 1,
+                  "weight": "1/2"
+                }
+              ],
+              "optimum_exact": "1",
+              "optimum_float": 1.0,
+              "raw_moment_rows": 4,
+              "unique_moment_rows": 3,
+              "witness_l1_exact": "1"
+            },
+            {
+              "centralizer_order": 2,
+              "certifies_direct_q13": false,
+              "class_count": 6,
+              "degree": 3,
+              "mode": "joint",
+              "moment_rank": 4,
+              "nonzero_weights": [
+                {
+                  "class_index": 0,
+                  "weight": "1/8"
+                },
+                {
+                  "class_index": 2,
+                  "weight": "-3/8"
+                },
+                {
+                  "class_index": 4,
+                  "weight": "3/8"
+                },
+                {
+                  "class_index": 5,
+                  "weight": "-1/8"
+                }
+              ],
+              "optimum_exact": "1/2",
+              "optimum_float": 0.5,
+              "raw_moment_rows": 10,
+              "unique_moment_rows": 7,
+              "witness_l1_exact": "1"
+            }
+          ],
+          "max_certified_degree_direct_q13": 2
+        },
+        "single": {
+          "bands": [
+            {
+              "centralizer_order": 2,
+              "certifies_direct_q13": false,
+              "class_count": 3,
+              "degree": 1,
+              "mode": "single",
+              "moment_rank": 1,
+              "nonzero_weights": [
+                {
+                  "class_index": 0,
+                  "weight": "1/2"
+                },
+                {
+                  "class_index": 2,
+                  "weight": "-1/2"
+                }
+              ],
+              "optimum_exact": "2/3",
+              "optimum_float": 0.6666666666666666,
+              "raw_moment_rows": 1,
+              "unique_moment_rows": 1,
+              "witness_l1_exact": "1"
+            },
+            {
+              "centralizer_order": 2,
+              "certifies_direct_q13": false,
+              "class_count": 3,
+              "degree": 2,
+              "mode": "single",
+              "moment_rank": 1,
+              "nonzero_weights": [
+                {
+                  "class_index": 0,
+                  "weight": "1/2"
+                },
+                {
+                  "class_index": 2,
+                  "weight": "-1/2"
+                }
+              ],
+              "optimum_exact": "2/3",
+              "optimum_float": 0.6666666666666666,
+              "raw_moment_rows": 4,
+              "unique_moment_rows": 1,
+              "witness_l1_exact": "1"
+            },
+            {
+              "centralizer_order": 2,
+              "certifies_direct_q13": false,
+              "class_count": 3,
+              "degree": 3,
+              "mode": "single",
+              "moment_rank": 2,
+              "nonzero_weights": [
+                {
+                  "class_index": 0,
+                  "weight": "1/3"
+                },
+                {
+                  "class_index": 1,
+                  "weight": "-1/2"
+                },
+                {
+                  "class_index": 2,
+                  "weight": "1/6"
+                }
+              ],
+              "optimum_exact": "1/9",
+              "optimum_float": 0.1111111111111111,
+              "raw_moment_rows": 10,
+              "unique_moment_rows": 3,
+              "witness_l1_exact": "1"
+            }
+          ],
+          "max_certified_degree_direct_q13": 0
+        }
+      }
+    },
+    {
+      "case": [
+        4,
+        3,
+        0
+      ],
+      "corrected_degree_gain_joint_minus_single": 2,
+      "corrected_degree_gain_survives": true,
+      "joint_dominates_every_objective_band": true,
+      "modes": {
+        "joint": {
+          "bands": [
+            {
+              "centralizer_order": 2,
+              "certifies_direct_q13": true,
+              "class_count": 9,
+              "degree": 1,
+              "mode": "joint",
+              "moment_rank": 1,
+              "nonzero_weights": [
+                {
+                  "class_index": 0,
+                  "weight": "-1/2"
+                },
+                {
+                  "class_index": 1,
+                  "weight": "1/2"
+                }
+              ],
+              "optimum_exact": "1",
+              "optimum_float": 1.0,
+              "raw_moment_rows": 1,
+              "unique_moment_rows": 1,
+              "witness_l1_exact": "1"
+            },
+            {
+              "centralizer_order": 2,
+              "certifies_direct_q13": true,
+              "class_count": 9,
+              "degree": 2,
+              "mode": "joint",
+              "moment_rank": 2,
+              "nonzero_weights": [
+                {
+                  "class_index": 0,
+                  "weight": "-1/2"
+                },
+                {
+                  "class_index": 1,
+                  "weight": "1/2"
+                }
+              ],
+              "optimum_exact": "1",
+              "optimum_float": 1.0,
+              "raw_moment_rows": 4,
+              "unique_moment_rows": 3,
+              "witness_l1_exact": "1"
+            },
+            {
+              "centralizer_order": 2,
+              "certifies_direct_q13": false,
+              "class_count": 9,
+              "degree": 3,
+              "mode": "joint",
+              "moment_rank": 4,
+              "nonzero_weights": [
+                {
+                  "class_index": 0,
+                  "weight": "1/6"
+                },
+                {
+                  "class_index": 3,
+                  "weight": "-4/9"
+                },
+                {
+                  "class_index": 5,
+                  "weight": "1/3"
+                },
+                {
+                  "class_index": 8,
+                  "weight": "-1/18"
+                }
+              ],
+              "optimum_exact": "5/9",
+              "optimum_float": 0.5555555555555556,
+              "raw_moment_rows": 10,
+              "unique_moment_rows": 7,
+              "witness_l1_exact": "1"
+            },
+            {
+              "centralizer_order": 2,
+              "certifies_direct_q13": false,
+              "class_count": 9,
+              "degree": 4,
+              "mode": "joint",
+              "moment_rank": 6,
+              "nonzero_weights": [
+                {
+                  "class_index": 0,
+                  "weight": "1/16"
+                },
+                {
+                  "class_index": 3,
+                  "weight": "-1/4"
+                },
+                {
+                  "class_index": 5,
+                  "weight": "3/8"
+                },
+                {
+                  "class_index": 7,
+                  "weight": "-1/4"
+                },
+                {
+                  "class_index": 8,
+                  "weight": "1/16"
+                }
+              ],
+              "optimum_exact": "3/8",
+              "optimum_float": 0.375,
+              "raw_moment_rows": 20,
+              "unique_moment_rows": 13,
+              "witness_l1_exact": "1"
+            }
+          ],
+          "max_certified_degree_direct_q13": 2
+        },
+        "single": {
+          "bands": [
+            {
+              "centralizer_order": 2,
+              "certifies_direct_q13": false,
+              "class_count": 4,
+              "degree": 1,
+              "mode": "single",
+              "moment_rank": 1,
+              "nonzero_weights": [
+                {
+                  "class_index": 0,
+                  "weight": "1/2"
+                },
+                {
+                  "class_index": 3,
+                  "weight": "-1/2"
+                }
+              ],
+              "optimum_exact": "2/3",
+              "optimum_float": 0.6666666666666666,
+              "raw_moment_rows": 1,
+              "unique_moment_rows": 1,
+              "witness_l1_exact": "1"
+            },
+            {
+              "centralizer_order": 2,
+              "certifies_direct_q13": false,
+              "class_count": 4,
+              "degree": 2,
+              "mode": "single",
+              "moment_rank": 1,
+              "nonzero_weights": [
+                {
+                  "class_index": 0,
+                  "weight": "1/2"
+                },
+                {
+                  "class_index": 3,
+                  "weight": "-1/2"
+                }
+              ],
+              "optimum_exact": "2/3",
+              "optimum_float": 0.6666666666666666,
+              "raw_moment_rows": 4,
+              "unique_moment_rows": 2,
+              "witness_l1_exact": "1"
+            },
+            {
+              "centralizer_order": 2,
+              "certifies_direct_q13": false,
+              "class_count": 4,
+              "degree": 3,
+              "mode": "single",
+              "moment_rank": 2,
+              "nonzero_weights": [
+                {
+                  "class_index": 0,
+                  "weight": "-1/4"
+                },
+                {
+                  "class_index": 1,
+                  "weight": "1/2"
+                },
+                {
+                  "class_index": 2,
+                  "weight": "-1/4"
+                }
+              ],
+              "optimum_exact": "1/6",
+              "optimum_float": 0.16666666666666666,
+              "raw_moment_rows": 10,
+              "unique_moment_rows": 4,
+              "witness_l1_exact": "1"
+            },
+            {
+              "centralizer_order": 2,
+              "certifies_direct_q13": false,
+              "class_count": 4,
+              "degree": 4,
+              "mode": "single",
+              "moment_rank": 3,
+              "nonzero_weights": [
+                {
+                  "class_index": 1,
+                  "weight": "3/8"
+                },
+                {
+                  "class_index": 2,
+                  "weight": "-1/2"
+                },
+                {
+                  "class_index": 3,
+                  "weight": "1/8"
+                }
+              ],
+              "optimum_exact": "1/6",
+              "optimum_float": 0.16666666666666666,
+              "raw_moment_rows": 20,
+              "unique_moment_rows": 7,
+              "witness_l1_exact": "1"
+            }
+          ],
+          "max_certified_degree_direct_q13": 0
+        }
+      }
+    },
+    {
+      "case": [
+        5,
+        4,
+        1
+      ],
+      "corrected_degree_gain_joint_minus_single": 1,
+      "corrected_degree_gain_survives": true,
+      "joint_dominates_every_objective_band": true,
+      "modes": {
+        "joint": {
+          "bands": [
+            {
+              "centralizer_order": 8,
+              "certifies_direct_q13": true,
+              "class_count": 10,
+              "degree": 1,
+              "mode": "joint",
+              "moment_rank": 1,
+              "nonzero_weights": [
+                {
+                  "class_index": 0,
+                  "weight": "-1/2"
+                },
+                {
+                  "class_index": 1,
+                  "weight": "1/2"
+                }
+              ],
+              "optimum_exact": "1",
+              "optimum_float": 1.0,
+              "raw_moment_rows": 1,
+              "unique_moment_rows": 1,
+              "witness_l1_exact": "1"
+            },
+            {
+              "centralizer_order": 8,
+              "certifies_direct_q13": true,
+              "class_count": 10,
+              "degree": 2,
+              "mode": "joint",
+              "moment_rank": 1,
+              "nonzero_weights": [
+                {
+                  "class_index": 0,
+                  "weight": "-1/2"
+                },
+                {
+                  "class_index": 1,
+                  "weight": "1/2"
+                }
+              ],
+              "optimum_exact": "1",
+              "optimum_float": 1.0,
+              "raw_moment_rows": 5,
+              "unique_moment_rows": 2,
+              "witness_l1_exact": "1"
+            },
+            {
+              "centralizer_order": 8,
+              "certifies_direct_q13": true,
+              "class_count": 10,
+              "degree": 3,
+              "mode": "joint",
+              "moment_rank": 3,
+              "nonzero_weights": [
+                {
+                  "class_index": 0,
+                  "weight": "1/14"
+                },
+                {
+                  "class_index": 2,
+                  "weight": "-1/14"
+                },
+                {
+                  "class_index": 6,
+                  "weight": "-3/7"
+                },
+                {
+                  "class_index": 8,
+                  "weight": "3/7"
+                }
+              ],
+              "optimum_exact": "5/7",
+              "optimum_float": 0.7142857142857143,
+              "raw_moment_rows": 15,
+              "unique_moment_rows": 5,
+              "witness_l1_exact": "1"
+            },
+            {
+              "centralizer_order": 8,
+              "certifies_direct_q13": false,
+              "class_count": 10,
+              "degree": 4,
+              "mode": "joint",
+              "moment_rank": 4,
+              "nonzero_weights": [
+                {
+                  "class_index": 0,
+                  "weight": "-1/30"
+                },
+                {
+                  "class_index": 1,
+                  "weight": "1/30"
+                },
+                {
+                  "class_index": 6,
+                  "weight": "-4/15"
+                },
+                {
+                  "class_index": 8,
+                  "weight": "7/15"
+                },
+                {
+                  "class_index": 9,
+                  "weight": "-1/5"
+                }
+              ],
+              "optimum_exact": "3/5",
+              "optimum_float": 0.6,
+              "raw_moment_rows": 35,
+              "unique_moment_rows": 9,
+              "witness_l1_exact": "1"
+            },
+            {
+              "centralizer_order": 8,
+              "certifies_direct_q13": false,
+              "class_count": 10,
+              "degree": 5,
+              "mode": "joint",
+              "moment_rank": 8,
+              "nonzero_weights": [
+                {
+                  "class_index": 0,
+                  "weight": "1/22"
+                },
+                {
+                  "class_index": 1,
+                  "weight": "-3/22"
+                },
+                {
+                  "class_index": 2,
+                  "weight": "1/11"
+                },
+                {
+                  "class_index": 3,
+                  "weight": "-1/11"
+                },
+                {
+                  "class_index": 4,
+                  "weight": "4/11"
+                },
+                {
+                  "class_index": 5,
+                  "weight": "-3/11"
+                }
+              ],
+              "optimum_exact": "1/11",
+              "optimum_float": 0.09090909090909091,
+              "raw_moment_rows": 70,
+              "unique_moment_rows": 17,
+              "witness_l1_exact": "1"
+            }
+          ],
+          "max_certified_degree_direct_q13": 3
+        },
+        "single": {
+          "bands": [
+            {
+              "centralizer_order": 8,
+              "certifies_direct_q13": true,
+              "class_count": 6,
+              "degree": 1,
+              "mode": "single",
+              "moment_rank": 1,
+              "nonzero_weights": [
+                {
+                  "class_index": 0,
+                  "weight": "1/2"
+                },
+                {
+                  "class_index": 5,
+                  "weight": "-1/2"
+                }
+              ],
+              "optimum_exact": "1",
+              "optimum_float": 1.0,
+              "raw_moment_rows": 1,
+              "unique_moment_rows": 1,
+              "witness_l1_exact": "1"
+            },
+            {
+              "centralizer_order": 8,
+              "certifies_direct_q13": true,
+              "class_count": 6,
+              "degree": 2,
+              "mode": "single",
+              "moment_rank": 1,
+              "nonzero_weights": [
+                {
+                  "class_index": 0,
+                  "weight": "1/2"
+                },
+                {
+                  "class_index": 5,
+                  "weight": "-1/2"
+                }
+              ],
+              "optimum_exact": "1",
+              "optimum_float": 1.0,
+              "raw_moment_rows": 5,
+              "unique_moment_rows": 2,
+              "witness_l1_exact": "1"
+            },
+            {
+              "centralizer_order": 8,
+              "certifies_direct_q13": false,
+              "class_count": 6,
+              "degree": 3,
+              "mode": "single",
+              "moment_rank": 2,
+              "nonzero_weights": [
+                {
+                  "class_index": 2,
+                  "weight": "3/7"
+                },
+                {
+                  "class_index": 3,
+                  "weight": "-1/2"
+                },
+                {
+                  "class_index": 5,
+                  "weight": "1/14"
+                }
+              ],
+              "optimum_exact": "11/21",
+              "optimum_float": 0.5238095238095238,
+              "raw_moment_rows": 15,
+              "unique_moment_rows": 4,
+              "witness_l1_exact": "1"
+            },
+            {
+              "centralizer_order": 8,
+              "certifies_direct_q13": false,
+              "class_count": 6,
+              "degree": 4,
+              "mode": "single",
+              "moment_rank": 3,
+              "nonzero_weights": [
+                {
+                  "class_index": 0,
+                  "weight": "-3/14"
+                },
+                {
+                  "class_index": 2,
+                  "weight": "1/2"
+                },
+                {
+                  "class_index": 3,
+                  "weight": "-11/42"
+                },
+                {
+                  "class_index": 5,
+                  "weight": "-1/42"
+                }
+              ],
+              "optimum_exact": "25/63",
+              "optimum_float": 0.3968253968253968,
+              "raw_moment_rows": 35,
+              "unique_moment_rows": 7,
+              "witness_l1_exact": "1"
+            },
+            {
+              "centralizer_order": 8,
+              "certifies_direct_q13": false,
+              "class_count": 6,
+              "degree": 5,
+              "mode": "single",
+              "moment_rank": 5,
+              "nonzero_weights": [
+                {
+                  "class_index": 1,
+                  "weight": "-3/11"
+                },
+                {
+                  "class_index": 2,
+                  "weight": "4/11"
+                },
+                {
+                  "class_index": 3,
+                  "weight": "1/11"
+                },
+                {
+                  "class_index": 4,
+                  "weight": "-5/22"
+                },
+                {
+                  "class_index": 5,
+                  "weight": "1/22"
+                }
+              ],
+              "optimum_exact": "1/11",
+              "optimum_float": 0.09090909090909091,
+              "raw_moment_rows": 70,
+              "unique_moment_rows": 12,
+              "witness_l1_exact": "1"
+            }
+          ],
+          "max_certified_degree_direct_q13": 2
+        }
+      }
+    }
+  ],
+  "single_symmetry": "S_N x S_q"
+}

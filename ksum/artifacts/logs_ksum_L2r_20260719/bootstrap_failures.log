@@ -1,0 +1,8 @@
+The first syntax-check invocation used the shell-default Python and stopped
+before solving because that Inkscape Python lacks SymPy:
+
+python -m py_compile ksum/tools/ksum_l2r_exact_moment_lp.py ksum/tools/ksum_l2r_exact_verify.py
+ModuleNotFoundError: No module named 'sympy'
+
+Disposition: switched to the exact Bell_ineq interpreter recorded by the
+reviewed phase-1 COMMANDS.txt.  No LP solve occurred before the switch.

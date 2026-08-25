@@ -1,0 +1,39 @@
+id: KSUM.B4b.L2.BANDMULT
+role: tool
+aliases:
+- B4bL2BandMult
+claim: For arbitrary finite nonzero signed fixed-size block occupancy measures, the `S_N`-averaged product
+  has occupancy pushforward equal to their convolution; multivariate falling-factorial Vandermonde implies
+  that annihilation bands add, so blocks with bands `d_j` yield annihilation below `sum_j d_j`, and nonzero
+  finite generating polynomials ensure the averaged convolution is nonzero and legal to normalize.
+assessment:
+  level: PROVED
+  summary: '**PROVED** at the general reviewed scope above. The lemma preserves bands but supplies no
+    correlation guarantee.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L2_phase5.md
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    reviews:
+    - path: ksum/reviews/ksum_L2p5_review.md
+      kind: review
+      scope: Checks the convolution identity, addition of falling-factorial annihilation bands, nonzero
+        normalization, and the finite signed-block hypotheses.
+      locator: Rule-7 execution log and Target verdict T1
+      reviewed_hash: sha256:e96e5270cd05c6e47fea589b1ff08684fd052084cc6541cc1cca9b1b3f634627
+frontier:
+  task-001:
+    task: Pair the tool with a construction retaining strict correlation above `2/3`; the lemma alone
+      is not a witness.
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "**From gap-closure batch 1 (2026-07-31):** clauses (a) and (d) are now mechanized, and are\n\
+      \  UNREVIEWED executor work — an independent delta-fidelity review is owed. STILL NOT\n  mechanized:\
+      \ the convolution reduction, whose residual is exactly the block splitting\n  `A^{N₁+N₂} ≃ A^{N₁}\
+      \ × A^{N₂}` with occupancy additivity across it (the orbit-size cancellation\n  half is already\
+      \ proved as `Filtration.sum_uniformLift_comp`)."
+    kind: task
+    since: '2026-08-16'

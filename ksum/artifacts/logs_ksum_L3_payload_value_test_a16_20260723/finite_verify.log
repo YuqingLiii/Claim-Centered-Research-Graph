@@ -1,0 +1,209 @@
+{
+  "scope": "a=16, q=64, s=4, N=576, tau=(61,2)",
+  "checks": {
+    "hook_dim (62,2)": {
+      "got": "1952",
+      "expected": "1952",
+      "pass": true
+    },
+    "hook_dim (61,3)": {
+      "got": "39648",
+      "expected": "39648",
+      "pass": true
+    },
+    "hook_dim (61,2,1)": {
+      "got": "79360",
+      "expected": "79360",
+      "pass": true
+    },
+    "hook_dim (61,2)": {
+      "got": "1890",
+      "expected": "1890",
+      "pass": true
+    },
+    "hook_dim (62,1)": {
+      "got": "62",
+      "expected": "62",
+      "pass": true
+    },
+    "hook_dim (60,3)": {
+      "got": "37758",
+      "expected": "37758",
+      "pass": true
+    },
+    "hook_dim (60,2,1)": {
+      "got": "75579",
+      "expected": "75579",
+      "pass": true
+    },
+    "hook_dim (61,1,1)": {
+      "got": "1891",
+      "expected": "1891",
+      "pass": true
+    },
+    "branch-children (62,2)": {
+      "got": "[(61, 2), (62, 1)]",
+      "expected": "[(61, 2), (62, 1)]",
+      "pass": true
+    },
+    "branch-sum (62,2)": {
+      "got": "1952",
+      "expected": "1952",
+      "pass": true
+    },
+    "branch-children (61,3)": {
+      "got": "[(60, 3), (61, 2)]",
+      "expected": "[(60, 3), (61, 2)]",
+      "pass": true
+    },
+    "branch-sum (61,3)": {
+      "got": "39648",
+      "expected": "39648",
+      "pass": true
+    },
+    "branch-children (61,2,1)": {
+      "got": "[(60, 2, 1), (61, 1, 1), (61, 2)]",
+      "expected": "[(60, 2, 1), (61, 1, 1), (61, 2)]",
+      "pass": true
+    },
+    "branch-sum (61,2,1)": {
+      "got": "79360",
+      "expected": "79360",
+      "pass": true
+    },
+    "reducer-factor (62,2)": {
+      "got": "3780/61",
+      "expected": "3780/61",
+      "pass": true
+    },
+    "reducer-factor (61,3)": {
+      "got": "180/59",
+      "expected": "180/59",
+      "pass": true
+    },
+    "reducer-factor (61,2,1)": {
+      "got": "189/124",
+      "expected": "189/124",
+      "pass": true
+    },
+    "m0": {
+      "got": "[16, 48, 96]",
+      "expected": "[16, 48, 96]",
+      "pass": true
+    },
+    "m1": {
+      "got": "[16, 80, 160]",
+      "expected": "[16, 80, 160]",
+      "pass": true
+    },
+    "D_coeff_space": {
+      "got": "19456",
+      "expected": "19456",
+      "pass": true
+    },
+    "d0_alphabet_module": {
+      "got": "9552896",
+      "expected": "9552896",
+      "pass": true
+    },
+    "d1_alphabet_module": {
+      "got": "15900672",
+      "expected": "15900672",
+      "pass": true
+    },
+    "f_lambda_(283,4,1)": {
+      "got": "62660742144",
+      "expected": "62660742144",
+      "pass": true
+    },
+    "p_dim_(f_lambda)^2": {
+      "got": "3926368606036857716736",
+      "expected": "3926368606036857716736",
+      "pass": true
+    },
+    "hierarchy D < p^2 D < p^2 d0 d1": {
+      "got": "True",
+      "expected": "True",
+      "pass": true
+    },
+    "ambient_dims": {
+      "D": 19456,
+      "p2D": 76391427599053103736815616,
+      "p2_d0_d1": 596405441627366838332630002336530432,
+      "note": "position carriers suppressed in D; full HS = p^2 d0 d1"
+    },
+    "lambda_0": {
+      "got": "1",
+      "expected": "1",
+      "pass": true
+    },
+    "lambda_a (=-1/a)": {
+      "got": "-1/16",
+      "expected": "-1/16",
+      "pass": true
+    },
+    "contrast kills j=0 (sv^2=0)": {
+      "got": "0",
+      "expected": "0",
+      "pass": true
+    },
+    "smallest nonzero contrast sv^2 at j=1 (=4/a=1/4)": {
+      "got": "1/4",
+      "expected": "1/4",
+      "pass": true
+    },
+    "||J_L - J_R||^2 = 2+2/a = 17/8": {
+      "got": "17/8",
+      "expected": "17/8",
+      "pass": true
+    },
+    "||J_L + J_R||^2 = 4": {
+      "got": "4",
+      "expected": "4",
+      "pass": true
+    },
+    "johnson_spectrum": {
+      "a": 16,
+      "lambda_j": {
+        "0": "1",
+        "1": "7/8",
+        "2": "97/128",
+        "3": "83/128",
+        "4": "35/64",
+        "5": "29/64",
+        "6": "47/128",
+        "7": "37/128",
+        "8": "7/32",
+        "9": "5/32",
+        "10": "13/128",
+        "11": "7/128",
+        "12": "1/64",
+        "13": "-1/64",
+        "14": "-5/128",
+        "15": "-7/128",
+        "16": "-1/16"
+      },
+      "||J_L - J_R||": "sqrt(17/8) ~= 1.457738",
+      "smallest nonzero contrast singular value": "2/sqrt(a) = 1/2 = 0.500000",
+      "||J_L + J_R||": "2"
+    },
+    "matched_baseline": {
+      "proved_structure": "Adv(UIC_a o pSearch_{d+1}) = Theta(a^{2/3} sqrt(d+1)) = Theta(sqrt(N) q^{1/6}) = Theta(N^{11/18})",
+      "matched_params": {
+        "a": 16,
+        "d": 17,
+        "N": 576,
+        "q": 64
+      },
+      "a^{2/3} sqrt(d+1)": 26.93908915942495,
+      "sqrt(N) q^{1/6}": 48.0,
+      "target N^{2/3}": 69.22797937475559,
+      "finite_constant_pinned": false,
+      "note": "The two scaling forms disagree numerically at finite scale (26.94 vs 48.00), confirming the constant is a scaling constant, not a pinned finite value; no finite ratio is defined even on the baseline side."
+    }
+  },
+  "status": "ALL_FINITE_VERIFICATION_GATES_PASS",
+  "assemblable": false,
+  "assembly_note": "Finite ingredients above are PRESENT and reproduced. The complete compressed-model candidate adversary object is NOT assemblable: the literal native central transfer K_s = sum_z (F0_z)^T (x) F1_z is not constructible (four private point-children undefined; correlated carrier/Wigner kernel Omega_tau unevaluated), and neither the query polar-norm interface (denominator) nor the outer incidence/numerator map (numerator) is frozen; the 19456 slice is not a norm-complete operator model; and no adversary coefficient law B_nu is chosen. Hence no objective value and no ratio are computed. G11: no asymptotic conclusion follows."
+}
+ALL_FINITE_VERIFICATION_GATES_PASS

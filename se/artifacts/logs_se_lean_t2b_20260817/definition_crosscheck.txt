@@ -1,0 +1,15 @@
+# Independent exact-rational cross-check of the tier-2b definitions, 2026-08-17
+# (Fractions only; no floating point anywhere.)
+
+1. rtopHook == q^d f^theta/(d! f^lambda)  over all q<=40, 2d<q, all theta|-d : 16530 checks, 0 mismatches
+2. p0Hook == f^(q-j-1,theta)/f^(q-j,theta)  over all q<=40, 1<=j<=q/6, all theta|-j : 379 checks, 0 mismatches
+3. j/q <= omega <= j/(q-2j)  over all q<=60, 1<=j<=q/6, all theta|-j : 1782 checks, 0 violations
+   equality at the LOWER end: 0 cases (none)
+   equality at the UPPER end: 55 cases, e.g. [(6, 1, (1,)), (7, 1, (1,)), (8, 1, (1,))]
+   -> the upper bound is ATTAINED (so it cannot be improved, and no lossy step is
+      admissible); every attaining case below has j = 1: [1]
+4. rtopHook(q,d,theta) <= rtopHook(q,d,(d))  over all q<=40, 2d<q, all theta|-d : 16492 checks, 0 violations   [SE.rtopHook_le_rowShape / SE.isGreatest_rtopHookSet]
+
+5. worked example q=10, j=2, theta=(2,):
+   f^(8,2) = 35, f^(7,2) = 27, p0 = 27/35 = 27/35 (direct = hook)
+   omega = 8/27;  j/q = 1/5;  j/(q-2j) = 1/3

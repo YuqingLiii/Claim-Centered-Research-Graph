@@ -1,0 +1,30 @@
+id: KSUM.A1e
+role: outcome
+aliases:
+- A1e
+claim: At q=Theta(N), the lower bound supplied by the fixed-k reduction is Omega_k(N^(2/3)), which is
+  below N^(k/(k+1)) and is therefore a lower-bound floor rather than a matching fixed-k characterization.
+assessment:
+  level: PROVED
+  summary: PROVED. The composition-layer review §4.2 adjudicated this as a corollary of the reviewed A1d
+    bound and the elementary inequality 2/3 < k/(k+1) for k>=3; the earlier OPEN label was a mistyped
+    outcome status.
+  basis:
+    evidence:
+    - node: KSUM.A1
+      kind: node-evidence
+    - node: KSUM.goal
+      kind: node-evidence
+    reviews:
+    - path: ksum/reviews/ksum_rev2_review.md
+      kind: review
+      scope: Checks the corrected lower-cutoff quantifiers and the distinction between the proved floor
+        and the still-open optimal exponent, including the k=3, q=3 endpoint.
+      locator: Item I1 and Overall ruling
+      reviewed_hash: sha256:ff0bece9d9de5527b9862285a02c72bb1a494683170ad393bf29210d9ab73391
+    - path: ksum/reviews/ksum_composition_layer_review_20260730.md
+      kind: review
+      scope: Checks that A1e is a non-load-bearing caveat about the gap between the proved floor and the
+        target exponent and endorses its outcome/related role; it is not a fresh proof of the floor theorem.
+      locator: Section 5.1
+      reviewed_hash: sha256:ff0bece9d9de5527b9862285a02c72bb1a494683170ad393bf29210d9ab73391

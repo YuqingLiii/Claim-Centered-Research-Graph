@@ -1,0 +1,32 @@
+{
+  "birth_edge_adjacent_defect": [
+    {"D": 100, "defect_over_D": 0.19, "normalized_defect": 19.0, "s": 2},
+    {"D": 200, "defect_over_D": 0.195, "normalized_defect": 39.0, "s": 2},
+    {"D": 400, "defect_over_D": 0.1975, "normalized_defect": 79.0, "s": 2},
+    {"D": 800, "defect_over_D": 0.19875, "normalized_defect": 159.0, "s": 2}
+  ],
+  "command": "python ksum/tools/ksum_l2p26_phase_pair_right_inverse_check.py",
+  "driver_sha256": "27fb0fc6ce7d06590d5773791acb32a601f5882963f6e9562c7b1c7b9ae0fb5f",
+  "exposed_path": {
+    "alpha": 0.5,
+    "beta": 0.15,
+    "c": 1.0,
+    "lambda_star": 0.38122411238051973,
+    "phase_second_derivative": -1.7016795360850772,
+    "sigma_star": 0.5464198385217808
+  },
+  "pascal_inverse": [
+    {"M": 4, "inverse_l1_lower_bound": 15, "two_to_M_minus_one": 15},
+    {"M": 8, "inverse_l1_lower_bound": 255, "two_to_M_minus_one": 255},
+    {"M": 12, "inverse_l1_lower_bound": 4095, "two_to_M_minus_one": 4095},
+    {"M": 16, "inverse_l1_lower_bound": 65535, "two_to_M_minus_one": 65535},
+    {"M": 20, "inverse_l1_lower_bound": 1048575, "two_to_M_minus_one": 1048575}
+  ],
+  "scope": "Exact adjacent-row ratios, Pascal inverse norms, and one exposed-path saddle; no support optimization or LP.",
+  "two_atom_adjacent_defect": [
+    {"D": 100, "b": 15, "m_minus": 55, "m_plus": 35, "normalized_defect": 1.0},
+    {"D": 200, "b": 30, "m_minus": 110, "m_plus": 70, "normalized_defect": 1.0},
+    {"D": 400, "b": 60, "m_minus": 220, "m_plus": 140, "normalized_defect": 1.0},
+    {"D": 800, "b": 120, "m_minus": 440, "m_plus": 280, "normalized_defect": 1.0}
+  ]
+}

@@ -1,0 +1,61 @@
+======================================================================================
+se_carrier_steps35_check   n=3 q=6   |Y|=|N|=720   |M_se|=6   c_0=10.800000
+======================================================================================
+
+[0]  r_top(q,k,theta) = q^k f^theta/(k! f^{(q-k,theta)})  and R_{n,k}   (q=6)
+   k=0  R_{n,k}=1.000000   max_theta r_top=1.000000   r_top()=1(1.0000)
+   k=1  R_{n,k}=1.221403   max_theta r_top=1.200000   r_top(1,)=6/5(1.2000)
+   k=2  R_{n,k}=2.378968   max_theta r_top=2.000000   r_top(2,)=2(2.0000)  r_top(1, 1)=9/5(1.8000)
+   k=3  R_{n,k}=42.521082   max_theta r_top=7.200000   r_top(3,)=36/5(7.2000)  r_top(2, 1)=9/2(4.5000)  r_top(1, 1, 1)=18/5(3.6000)
+
+[1]  LEAKAGE LEMMA (= steps 3+4 of the Q1 list), tested on C[N_n] = C[S_6]:
+     claim:  Pi^alph_{def=j} . Pi^{H_pos}_{def=k} = 0   whenever j < k,
+     where H_pos = S_{[2..n]} x S_{[n+1..2n]} = S_2 x S_3   (BR:561).
+     A_POS(0-idx)=[1, 2]  B_POS(0-idx)=[3, 4, 5]
+     sanity  sum_j Pi^alph_j = I : 4.99e-18
+     sanity  sum_a PA_a = I     : 0.00e+00
+     sanity  sum_b PB_b = I     : 1.11e-16
+     j     k     ||Pi^alph_j Pi^Hpos_k||
+     0     0     1.000e+00     
+     1     0     1.000e+00     
+     2     0     1.000e+00     
+     3     0     1.000e+00     
+     0     1     4.677e-17     
+     1     1     1.000e+00     
+     2     1     1.000e+00     
+     3     1     1.000e+00     
+     4     1     1.000e+00     
+     0     2     3.982e-17     
+     1     2     5.516e-17     
+     2     2     1.000e+00     
+     3     2     1.000e+00     
+     4     2     1.000e+00     
+     0     3     4.778e-18     
+     1     3     2.605e-17     
+     2     3     8.012e-17     
+     3     3     1.000e+00     
+     4     3     1.000e+00     
+     5     3     1.000e+00     
+     VERDICT step3/4 leakage lemma: holds at n=3
+
+[2]  BR's barX_{se,k} = X_{se,k}(Pi_0 (x) barPi'_{se,k})   [BR:655, :639]
+     built with the S_{n-1} x S_n group (BR:561), NOT S_n x S_n.
+     k    ||barX_k||(BR<=1) ||R(barX_k)||    max_th r_top   R_{n,k}        c_0           
+     0    0.09259259       1.00000000       1.000000       1.000000       10.800000     
+     1    0.11111111       1.20000000       1.200000       1.221403       10.800000     
+     2    0.10143010       1.09544512       2.000000       2.378968       10.800000     
+
+[3]  NO-SIDE NO-LEAKAGE, tested on the operator:
+     claim:  barX_k P_N^* = barX_k Pi^alph_{=k} P_N^*   (alphabet defect exactly k)
+     k=0   max|barX_k - barX_k Pi^alph_k| = 2.982e-19     ||barX_k||=9.259259e-02
+     k=1   max|barX_k - barX_k Pi^alph_k| = 1.518e-18     ||barX_k||=1.111111e-01
+     k=2   max|barX_k - barX_k Pi^alph_k| = 1.518e-18     ||barX_k||=1.014301e-01
+
+[4]  YES-SIDE: image alphabet type (step 5).  Alphabet acts on YES rows (mu,y) by
+     y -> sigma.y.  Claim: image of barX_k Pi^alph_k has alphabet defect exactly k.
+     k=0 :  ||Pi^alphY_0 barX_k|| = 9.259259e-02
+     k=1 :  ||Pi^alphY_1 barX_k|| = 1.111111e-01
+     k=2 :  ||Pi^alphY_2 barX_k|| = 1.014301e-01
+     (only j=k should appear)
+
+[5]  DONE

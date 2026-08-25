@@ -1,0 +1,37 @@
+id: KSUM.A2b
+aliases:
+- A2b
+claim: For the balanced base-omega construction in KSUM.A2a, every block multiset other than the intended
+  one is excluded.
+assessment:
+  level: PROVED
+  summary: The claim is supported by the linked evidence and independent review.
+  basis:
+    reviews:
+    - path: ksum/reviews/ksum_composition_layer_review_20260730.md
+      kind: review
+      scope: Checks the balanced-base exclusion used for soundness and separates the general proof from
+        the 62,140 finite checks, which are retained only as numerical corroboration.
+      locator: Sections 2.2, 3.2, and 6.3
+      reviewed_hash: sha256:8dabf96fb4ffd395e6b6dbfd782345de8078f0d1e40a14cd9bfb07ffc1681bbf
+    - path: ksum/reviews/ksum_lean_delta_fidelity_review_20260801.md
+      kind: review
+      scope: Checks how the A2b soundness claim is represented and consumed in Lean and confirms the nonvacuous
+        embedding example; it records that the general encoding identity is assumed rather than proved
+        by the kernel.
+      locator: Sections 3.A--3.B and 5.3
+      reviewed_hash: sha256:8dabf96fb4ffd395e6b6dbfd782345de8078f0d1e40a14cd9bfb07ffc1681bbf
+  caveats:
+  - Text and digest synchronization does not by itself establish that the Lean proposition is equivalent
+    to the natural-language claim; that correspondence remains review-dependent.
+formalization:
+  lean:
+    module: KSUM.A2b
+    file: ksum/lean/KSUM/A2b.lean
+    claim: Claim
+    state: stated
+    claim_hash: sha256:8dabf96fb4ffd395e6b6dbfd782345de8078f0d1e40a14cd9bfb07ffc1681bbf
+    sync_state: current
+    build: ksum/artifacts/logs_ksum_lean_reorg_20260730/
+    source_claim_hash: sha256:8dabf96fb4ffd395e6b6dbfd782345de8078f0d1e40a14cd9bfb07ffc1681bbf
+    synced: '2026-08-19'

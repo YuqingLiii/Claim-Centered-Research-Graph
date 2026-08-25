@@ -1,0 +1,76 @@
+id: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.multiscale-gapfree-base-measure.critical-dense-palette-residual-window
+aliases:
+- B4bL2AltMultipairCriticalDensePaletteResidualWindow
+claim: 'For the Phase-21 explicit `q=N` critical mixture and some fixed
+
+  `0<c<(arcosh 3)/2`, directly control the full orbit-feature weighted projection residual at
+
+  `D=cN^(2/3)` and prove or refute correlation above `2/3` together with residual high-tail mass.'
+assessment:
+  level: OPEN
+  summary: '**OPEN — full-orbit finite evidence is nonmonotone and unfavorable at the two largest gates.**
+    The candidate and upper obstruction above `c_*` are explicit, but no asymptotic residual analysis
+    in `0<c<c_*` exists.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L2_phase21_critical_dense_palette_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase22_critical_dense_residual_c_half_20260721.md
+      kind: text
+    - path: ksum/tools/ksum_l2p22_critical_dense_residual.py
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase23_nonscalar_critical_residual_20260721.md
+      kind: text
+    - path: ksum/tools/ksum_l2p23_feature_attribution.py
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.multiscale-gapfree-base-measure
+      kind: node-evidence
+    runs:
+    - path: ksum/artifacts/logs_ksum_L2p22_critical_dense_20260721/run.json
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.multiscale-gapfree-base-measure.critical-dense-palette-residual-window
+        at the exact finite, formal, or computational scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p23_feature_attribution_20260721/run.json
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.multiscale-gapfree-base-measure.critical-dense-palette-residual-window
+        at the exact finite, formal, or computational scope stated in the linked output.
+frontier:
+  task-001:
+    task: "Choose a fixed preregistered test constant, initially `c=1/2`, and compute or bound the full\n\
+      \  weighted projection residual without replacing the orbit span by scalar `C_t` polynomials."
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "Derive a typed non-scalar asymptotic approximant or diagonalization; Phase-22 finite gates\
+      \ show\n  that scalar analysis is insufficient and do not license monotone extrapolation."
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: "Analyze the growing colored-partition Gram operator at `D=L/2`; the balanced and dense component\n\
+      \  moment operators have no known common diagonal basis, and their overlapping supports cannot be\n\
+      \  treated as a direct sum."
+    kind: task
+    since: '2026-08-16'
+  task-004:
+    task: "Control `E_pi|g_D|` and residual-tail sign geometry, not only the spectral quantity\n  `E_pi[g_D^2]`;\
+      \ Phase 23 makes the distinction explicit."
+    kind: task
+    since: '2026-08-16'
+  task-005:
+    task: Prove strict correlation above `2/3` or find a typed non-scalar approximant below the cutoff.
+    kind: task
+    since: '2026-08-16'
+  task-006:
+    task: Prove constant residual-weighted mass at `C_t=Theta(N^(4/3))` if correlation survives.
+    kind: task
+    since: '2026-08-16'
+  task-007:
+    task: Control mixture-component overlap, rounding, feature ranks, and all odd sufficiently large `N`.
+    kind: task
+    since: '2026-08-16'
+  task-008:
+    task: Explain how any finite calculation yields an asymptotic formula or obstruction.
+    kind: task
+    since: '2026-08-16'

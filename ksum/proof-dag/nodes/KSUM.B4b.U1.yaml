@@ -1,0 +1,64 @@
+id: KSUM.B4b.U1
+role: outcome
+aliases:
+- B4bU1
+claim: Within the black-box charged-recurrence model F_SC^charge stated in the linked record, no fixed
+  theta<1/4 gives a uniform O_epsilon(N^(1/2+epsilon)q^theta) bound for every epsilon>0.
+assumptions:
+  range-independent-subset-finding-base:
+    kind: external-theorem
+    statement: For fixed L, a marked L-subset can be found with O(N^(L/(L+1))) quantum
+      queries when its property can be checked without additional input queries; at L=2
+      this supplies the range-independent O(N^(2/3)) base used by the charged recurrence.
+    source:
+      path: ksum/artifacts/reference_childs_eisenberg_2005_subset_finding.md
+      kind: text
+      locator: Section 2 and source lines 276--285
+assessment:
+  level: CERTIFIED*
+  summary: 'Primary status: **CERTIFIED*** — conditional charged-recurrence certificate. The fresh independent
+    review is complete and archived at [`ksum/reviews/ksum_B4bU1_review.md`](../../../../ksum/reviews/ksum_B4bU1_review.md).
+    Named caveats: the certificate assumes nonamortized independent residual access and a compulsory child
+    charge; it is not an algorithm-family composition lower bound. The plateau step applies only to an
+    all-`q` range-independent generic base.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_B4_upper_note_v2.md
+      kind: text
+    - node: KSUM.B4a
+      kind: node-evidence
+    - node: KSUM.B4b
+      kind: node-evidence
+    reviews:
+    - path: ksum/reviews/ksum_B4bU1_review.md
+      kind: review
+      scope: Checks the charged-recurrence invariant and plateau calculation only inside the explicitly
+        defined F_SC^charge model, while naming batched, amortized, q-dependent, and promise-aware escapes.
+      locator: Ruling and Attacks 1--5
+      reviewed_hash: sha256:cc703696eb471efc20cfe9e3f1003dae0f42cc2f19747d40af2c1b2985f2f293
+    - path: ksum/reviews/ksum_merge_review.md
+      kind: review
+      scope: Checks that the journal integration preserves the scoped charged-recurrence certificate and
+        its caveats; it is an integration review, not a new proof of the obstruction.
+      locator: Rule-7 execution log and Per-section verdicts
+      reviewed_hash: sha256:cc703696eb471efc20cfe9e3f1003dae0f42cc2f19747d40af2c1b2985f2f293
+  caveats:
+  - charged-recurrence certificate only; no algorithm-family composition lower bound; plateau only for
+    all-q range-independent bases
+frontier:
+  task-001:
+    task: "To upgrade to PROVED as an algorithm-family theorem, supply an oracle-level family definition\
+      \ and\n  a direct-sum/composition lower bound justifying the independent selector and compulsory\
+      \ child\n  charges."
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "Test `q`-dependent generic bases and promise-specific residual solvers separately; the cyclic\n\
+      \  plateau does not exclude them."
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: "Revisit same-level batching, caching, arity, or correlated/nested constructions when explicit;\n\
+      \  `F_SC^charge` covers only independent nonamortized children and grouped unary levels."
+    kind: task
+    since: '2026-08-16'

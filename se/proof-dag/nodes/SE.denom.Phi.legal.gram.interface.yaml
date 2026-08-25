@@ -1,0 +1,58 @@
+id: SE.denom.Phi.legal.gram.interface
+aliases:
+- GRAMI
+claim: 'SE.denom.Phi.legal.gram.interface — **H2, the canonical-coefficient interface
+
+  identity, in the TYPED (Schur-lifted) form**: for every admissible strict sector,
+
+
+  `G_can^full |_{H_ξ} = I_{V_κ⊗V_ν} ⊗ [ r_top(q,j,θ) / (B_θ(q)²·ω) ] · M_ξ`
+
+
+  as operators on the whole H-isotypic carrier `H_ξ = V_κ⊗V_ν⊗C^c`, all `c` copies carried by the
+
+  single multiplicity trace `𝔪_ξ`, no lost factor `c`. (This is the paper''s H2 with the
+
+  `I_{V_κ⊗V_ν}` lift restored per external review T2-G2 — the lift the paper''s own eq:Htwirl
+
+  carries and eq:gcan1/gcan2 had dropped.)'
+assessment:
+  level: CONJECTURED
+  summary: The H2 canonical-coefficient identity remains CONJECTURED. It has strong c=1 numerical support,
+    but the transport, output-frame Gram, twirl, and coset-coefficient steps lack a complete independent
+    proof.
+  basis:
+    evidence:
+    - node: SE.denom.Phi.legal.trace.t6
+      kind: node-evidence
+  caveats:
+  - 'The linked Lean formalization records the current claim text and hash, docstring quote). `Claim`
+    remains a HYPOTHESIS: nothing in the Lean development proves it, and the module states only the declared
+    tier-1 shadow of the frozen identity.'
+  - '`sync_state: current` on this node is a statement about TEXT AND DIGESTS ONLY: the module quotes
+    the current claim verbatim and the three digests agree (lean_dag_check checks 3/3b). It does NOT assert
+    that the Lean `Claim : Prop` expresses this node''s claim, and here it does not. The node claim is
+    the TYPED, Schur-lifted operator identity carrying the `I_{V_kappa (x) V_nu}` lift and the "no lost
+    factor c"; the Lean `Claim` is its SCALAR SHADOW `gcanS = rtopS/(btheS^2 * omegaS) * mxiS`, in which
+    the Schur lift is INVISIBLE, so a MIS-TYPED H2 would NOT be caught by this development. The divergence
+    is declared in the module header and has been present, unchanged, since the tier-1 snapshot git:f0d686a;
+    it is restated here because the formalization synchronization rule ("until the formal statement, imports, proof, and
+    hash are synchronized") invites the stronger reading. Review item F6 of se/reviews/se_task006_review_20260817.md;
+    frontier task-011 of SE.formal.t2.'
+formalization:
+  lean:
+    module: SE.denom.Phi.legal.gram.interface
+    file: se/lean/SE/denom/Phi/legal/gram/interface.lean
+    claim: Claim
+    state: stated
+    claim_hash: sha256:f8848b614b32dec79f3ca65ee5acd43777762429d490232490c17d1dbb40f0d7
+    sync_state: current
+    build: se/artifacts/logs_se_lean_20260730/
+    source_claim_hash: sha256:f8848b614b32dec79f3ca65ee5acd43777762429d490232490c17d1dbb40f0d7
+    synced: '2026-08-17'
+frontier:
+  task-001:
+    task: "Prove the identity (the parent's demoted derivation chain, rebuilt under the current review requirements with the c≥2\n\
+      \  identity gate), or refute it."
+    kind: task
+    since: '2026-08-16'

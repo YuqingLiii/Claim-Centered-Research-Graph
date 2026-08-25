@@ -1,0 +1,30 @@
+id: KSUM.B4b.L2.L2P3
+role: tool
+aliases:
+- B4bL2L2P3
+claim: For every odd `q>=3`, every `N>=q`, and every target `t`, the phase-3 tilted log-band witness is
+  `S_N x C(sigma)` invariant, has exact `l1=1`, has pure high degree at least `2(1+floor(log_5((q-1)/2)))`,
+  and has correlation at least `437/581>3/4`; by D9 it genuinely escapes the complete M2 class for odd
+  `q>=5`, while the `q=3` endpoint is the in-class M1 product.
+assessment:
+  level: PROVED
+  summary: '**PROVED** at exactly the reviewed scope in the Claim. The logarithmic band is not the route-level
+    cap-scale result.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L2_phase3.md
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    reviews:
+    - path: ksum/reviews/ksum_L2p3_review.md
+      kind: review
+      scope: Checks the tilted log-band witness's invariance, l1 normalization, annihilation band, correlation,
+        and parameter caps, with the q=3 endpoint separated from the genuine q>=5 escape.
+      locator: Sections 1--4 and Ruling
+      reviewed_hash: sha256:7e367a00131b017ce4cab0e545d9ebdf0c917d81006f3fbb4ee77c5d9f88cca5
+frontier:
+  task-001:
+    task: Amplify beyond `O(log q)` and engage the untouched `sqrt(N)` side of the canonical L2 target.
+    kind: task
+    since: '2026-08-16'

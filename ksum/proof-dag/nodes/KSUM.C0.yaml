@@ -1,0 +1,55 @@
+id: KSUM.C0
+role: constraint
+aliases:
+- C0
+claim: 'Two constraints guide the lower-bound search:
+
+
+  (i) any small-q bound must use group structure — OA-uniform bounds are vacuous;
+
+
+  (ii) k≥3 alphabet symmetry is only diag(Aff)⋊S_n ⇒ k-Sum itself is not multisymmetric
+
+
+  Consequently, routes relying only on OA-uniform bounds or on full alphabet multisymmetry are not currently
+  justified.'
+assessment:
+  level: CONJECTURED
+  summary: The OA-uniform obstruction is supported by the paper and its Lean statement-fidelity audit,
+    while the full k>=3 symmetry characterization has a detailed derivation but no independent claim-level
+    review. The combined constraint therefore remains below completion level.
+  basis:
+    evidence:
+    - node: KSUM.goal
+      kind: node-evidence
+    - path: ksum/artifacts/ksum_stage2_aut_theorems.md
+      kind: text
+      scope: Derivation and finite checks for the k>=3 alphabet-symmetry characterization.
+    reviews:
+    - path: ksum/reviews/ksum_lean_statement_fidelity_review_20260731.md
+      kind: review
+      locator: Section 4.B, thm:oabarrier rows
+      scope: Statement fidelity of the OA-uniform obstruction; not a review of the full symmetry clause.
+    - path: ksum/reviews/ksum_composition_layer_review_20260730.md
+      kind: review
+      locator: Sections 5.2 and 6.3 references to C0
+      scope: Structural use of C0 in the composition graph; not a mathematical adjudication of both clauses.
+  caveats:
+  - Promotion requires an independent review of the k>=3 symmetry characterization and of the combined
+    pruning consequence.
+frontier:
+  claim-level-review:
+    task: Independently review both C0 clauses and their precise pruning consequence.
+    kind: review
+    since: '2026-08-19'
+events:
+  unsupported-completion-demoted-2026-08-19:
+    date: '2026-08-19'
+    type: level-change
+    from: PROVED
+    to: CONJECTURED
+    summary: The available review covered the OA-uniform obstruction but not the full symmetry clause,
+      so the combined claim was demoted pending a direct claim-level review.
+    sources:
+    - path: ksum/reviews/ksum_lean_statement_fidelity_review_20260731.md
+      kind: review

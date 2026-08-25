@@ -1,0 +1,33 @@
+id: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.polar-offdiagonal-block-law
+aliases:
+- B4bL3AltCriticalPolarOffdiagonalBlockLaw
+claim: 'Writing each literal marked row as a polar partial isometry times the square root of its source
+
+  effect, the physical inequality-query mask is unitarily equivalent, on the exact support sums, to
+
+  the off-diagonal block operator with `(z,w)` entry
+
+  `(F_(1,z)^s)^(1/2) B (F_(0,w)^s)^(1/2)` for `z != w`; this exact object admits a uniform
+
+  formula-level norm bound on the required invariant coefficient family.'
+assessment:
+  level: OPEN
+  summary: '**OPEN.** The polar block formula and the required uniform norm estimate are registered candidates,
+    not established results.'
+  basis:
+    evidence:
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.literal-marked-query-polar-norm-interface
+      kind: node-evidence
+frontier:
+  task-001:
+    task: Prove the domain/codomain and support-unitary statement for unequal NO/YES ranks.
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: Derive exact block Gram formulas and decide which representation carriers remain active.
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: Obtain a uniform bound strong enough for both physical query sides and both endpoint regimes.
+    kind: task
+    since: '2026-08-16'

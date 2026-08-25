@@ -1,0 +1,45 @@
+id: SE.denom.Phi
+aliases:
+- CP
+claim: 'SE.denom.Phi — Phi channel (AND: ambient + legal)'
+routes:
+  joint:
+    premises:
+    - SE.denom.Phi.ambient
+    - SE.denom.Phi.legal
+    implication: 'ambient AND legal imply Phi: the Phi-channel contribution to the legal diamond representative
+      is the legal restriction of the ambient Phi operator; the ambient factor supplies the operator bound
+      ||T_k|| <= sqrt6/sqrt(n-2k+1) (with the analytically repaired special-path constant sqrt3), and
+      the legal factor supplies the restriction scalars and the legality-induced block structure. Their
+      product, summed over the taper window, is the Phi channel bound consumed by SE.denom.'
+    proof:
+      sketch: inline (## Composition proof); the unconditional instance is se/reviews/se_cor16_certification_20260723.md
+        A.23-A.26 (ambient bounds) composed with A.16-A.19 (legal completion scalars)
+      sources:
+      - path: se/reviews/se_cor16_certification_20260723.md
+        kind: text
+    assessment:
+      level: CERTIFIED*
+      summary: se/reviews/se_cor16_certification_20260723.md (rule-7 CERTIFY, from-scratch) — covers the
+        composition AS USED FOR THE n^{1/6} ENVELOPE only
+      basis:
+        evidence:
+        - path: se/reviews/se_cor16_certification_20260723.md
+          kind: text
+        reviews:
+        - path: se/reviews/se_cor16_certification_20260723.md
+          kind: review
+          scope: Checks how the ambient Phi estimate and legal restriction factors enter the unconditional
+            n^{1/6} denominator envelope; it does not establish the later O(1) conditional Phi program.
+          locator: Phase A.3--A.7 and Amendment 2
+          reviewed_hash: sha256:16be57a05b85dfeb3de7f0cad589a9d5f134100402b6401bb6a2c1bc46f8c8a0
+      caveats:
+      - Certified conditionally on the listed premises; this route-level assessment does not by itself
+        promote the parent node.
+assessment:
+  level: OPEN
+  summary: 'The Phi channel remains OPEN: its ambient estimate is PROVED, while the legal restriction
+    is OPEN.'
+  basis:
+    routes:
+    - joint

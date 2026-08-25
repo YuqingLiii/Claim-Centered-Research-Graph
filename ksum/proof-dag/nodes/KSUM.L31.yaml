@@ -1,0 +1,19 @@
+id: KSUM.L31
+aliases:
+- L31
+claim: The regular-representation reduction implemented by ksum_probe.py produces a tractable exact adversary
+  formulation from which a uniform-in-N lower bound for fixed k>=3 can be derived.
+assessment:
+  level: REFUTED
+  summary: REFUTED and DEAD. The proposed reduction inflated the PSD block by factors between 6 and 29,
+    failed to converge at the smallest test point, and produced no adversary values; it therefore does
+    not deliver the tractable formulation asserted by the claim.
+  basis:
+    counterexamples:
+    - kind: counterexample
+      note: The contradiction and its scope are stated in this node assessment and disposition.
+disposition:
+  state: DEAD
+  reason: REFUTED and DEAD. The proposed reduction inflated the PSD block by factors between 6 and 29,
+    failed to converge at the smallest test point, and produced no adversary values; it therefore does
+    not deliver the tractable formulation asserted by the claim.

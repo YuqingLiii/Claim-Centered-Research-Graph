@@ -1,0 +1,45 @@
+id: KSUM.B4b.L2.ALT.multipair.multiscale-splits
+role: obstruction
+aliases:
+- B4bL2AltMultipairMultiscaleSplits
+claim: 'For any legal split support with a fixed low-complexity list of pair-total occupancy scales, exact
+
+  low-degree selectors isolate each scale and reduce 2-Sum to an OR of per-scale threshold problems.
+
+  For fixed totals `S_l`, counts `K_l`, and total occupancy at most `N`, the proposer bound is
+
+
+  `deg_epsilon(f_t | F) <= C_epsilon (L+4) log(L+1) sum_l sqrt(K_l S_l)`.
+
+
+  Consequently every geometric ladder with `L=O(log N)` has restricted degree `o(N^(2/3))`, even if
+
+  its positive `C_t` support begins at `1` and reaches `Theta(N^(4/3))`.'
+assessment:
+  level: CONJECTURED
+  summary: '**CONJECTURED — proposer-tier scoped obstruction, pending independent review.** No coefficient
+    law was attempted because the support failed the primal gate.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L2_phase10_multiscale_splits_web_feasibility_20260721.md
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.highCt-balanced
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.variable-pair-totals
+      kind: node-evidence
+frontier:
+  task-001:
+    task: "Independently audit the exact scale selector and composed OR degree, including query-degree\n\
+      \  accounting and uniform constants."
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: Do not generalize this result beyond fixed low-complexity pair-total lists.
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: Continue only at the registered variable-pair-totals node, where total values are jointly coupled.
+    kind: task
+    since: '2026-08-16'

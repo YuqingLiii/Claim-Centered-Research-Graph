@@ -1,0 +1,155 @@
+id: KSUM.LEAN
+role: tool
+aliases:
+- Lean
+claim: The theorems in the declared target lists T1, T2, and T3 have sorry-free Lean 4 formalizations
+  over the explicit abstract query-model interface, with the formal statements classified by the linked
+  independent statement-fidelity review. No formalization is claimed here for theorem groups outside those
+  declared lists.
+routes:
+  joint:
+    premises:
+    - KSUM.LEAN.T1.k2-main-line
+    - KSUM.LEAN.T2.rosmanis-kfloor
+    - KSUM.LEAN.T3.obstruction-theorems
+    - KSUM.LEAN.statement-fidelity
+    implication: T1, T2, T3, and statement-fidelity jointly establish the declared Lean-audit scope. The
+      on-disk census maps each target theorem to its tier, module, and checked state, and the delta-fidelity
+      review verified that mapping after the recorded corrections.
+    proof:
+      sketch: ksum/artifacts/ksum_lean_census_20260731.md — the itemized census table, verified row-by-row
+        by the delta-fidelity review (DF-9) with four prescribed corrections (C-1..C-4) applied verbatim
+        by the lead 2026-08-01
+      sources:
+      - path: ksum/artifacts/ksum_lean_census_20260731.md
+        kind: text
+    assessment:
+      level: CERTIFIED*
+      summary: 'Review §7.3: against this node''s own scope predicate, NO child covers lem:embed / prop:embed
+        / lem:embed-allt / rem:k3embed, prop:kclaw-fillers, prop:kclaw-coloring, prop:rosmanis(2)(3),
+        rem:torsion, or the two F-T1 labels (FILT, JOINTLP) — the claimed census covered the complete
+        result set, which was false. Nothing propagated (node OPEN, non-propagating), so no status was
+        wrong on disk; the false claim was caught before it could discharge anything. Lead decision on
+        repair: option (b) — the parent Claim is NARROWED to the three tiers'' actual target lists (see
+        Claim), and the census table plus the wider-scope decision are recorded as open obligations.'
+      basis:
+        reviews:
+        - path: ksum/reviews/ksum_composition_layer_review_20260730.md
+          kind: review
+          scope: Rejects the former overbroad scope census and prescribes a narrowed target-list composition;
+            it does not by itself certify the later corrected census, which is covered by the delta-fidelity
+            review.
+          locator: Verdict table and Section 7.3
+          reviewed_hash: sha256:d7fc4c27b1c12889e64e68463769a4b4ea7bd644850ec2180900b4fbfd134a24
+        - path: ksum/reviews/ksum_lean_delta_fidelity_review_20260801.md
+          kind: review
+          scope: Audits whether the T1, T2, T3, and statement-fidelity children cover the parent's narrowed
+            target list after corrections; it does not enlarge that declared scope.
+          locator: Sections 7--10, especially the scope-identity verdict
+          reviewed_hash: sha256:d7fc4c27b1c12889e64e68463769a4b4ea7bd644850ec2180900b4fbfd134a24
+      caveats:
+      - The separate KSUM DAG-mirroring composition layer remains evidence rather than a premise of this
+        audit node.
+assessment:
+  level: CERTIFIED*
+  summary: '**CERTIFIED\*** — recomputed 2026-08-01. The delta-fidelity review verified the census table
+    row by row (DF-9; four prescribed corrections applied verbatim), which lifts the restated composition
+    to CERTIFIED\*, and `min` over the AND is now CERTIFIED\* across the board: composition, T1, T2, T3,
+    statement-fidelity. **The entire Lean audit sits at the starred tier** — one uniform caveat class
+    (single-review) and the standing conditionality (interface = ABI21 + Tani24 + facts (i)–(iv), all
+    four stated in the linked formal interface; T3 clauses and T2 cores unconditional). What would lift
+    the node further: a second independent review of any tier (rule 5), and the named residuals in the
+    census''s explicitly-open-extension section.'
+  basis:
+    evidence:
+    - path: ksum/lean
+      kind: text
+    - path: ksum/lean/README.md
+      kind: text
+    - path: ksum/artifacts/ksum_lean_T1_k2_main_line_20260730.md
+      kind: text
+    - node: KSUM.goal
+      kind: node-evidence
+    - node: KSUM.C0
+      kind: node-evidence
+    - node: KSUM.B4a
+      kind: node-evidence
+    - node: KSUM.A1b
+      kind: node-evidence
+    reviews:
+    - path: ksum/reviews/ksum_lean_delta_fidelity_review_20260801.md
+      kind: review
+      scope: Checks the corrected Lean target census and the honesty of the parent scope after recorded
+        repairs; coverage is limited to the declared target lists and does not include results outside
+        those lists.
+      locator: Sections 7--10, especially 10.2 and the scope-identity verdict
+      reviewed_hash: sha256:f0b152b83751ac990fd711d4f333a11488bc0dbc60da418e93525dbaa2d83b0e
+    routes:
+    - joint
+    runs:
+    - path: ksum/artifacts/logs_ksum_lean_T1_20260730
+      kind: run
+      result: Execution artifact supporting KSUM.LEAN at the exact finite, formal, or computational scope
+        stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_lean_reorg_20260730
+      kind: run
+      result: Execution artifact supporting KSUM.LEAN at the exact finite, formal, or computational scope
+        stated in the linked output.
+  caveats:
+  - Certified with an explicitly unresolved review or dependency caveat; see the assessment basis.
+frontier:
+  task-005:
+    task: "**Account for the `KSUM/` DAG-mirroring composition layer inside this AND** — reviewed by the\n\
+      \  composition-layer review but currently not a child of this node; decide child-vs-evidence."
+    kind: task
+    since: '2026-08-16'
+  task-006:
+    task: 'Decide the extension plan for the remaining uncovered in-scope theorem families: embed, kclaw-fillers,
+      kclaw-coloring, the remaining Rosmanis clauses, and torsion. FILT and JOINTLP are now registered
+      separately.'
+    kind: task
+    since: '2026-08-16'
+  task-007:
+    task: Run the fidelity review on each tier as it lands.
+    kind: task
+    since: '2026-08-16'
+  task-008:
+    task: "Record `#print axioms` output for every top-level theorem as the machine-checked citation\n\
+      \  manifest — this is rule 1 (\"cite or it didn't happen\") made mechanical."
+    kind: task
+    since: '2026-08-16'
+  task-009:
+    task: "Decide and document where a `lean-checked` attribute is recorded on the audited nodes without\n\
+      \  being mistaken for a status upgrade."
+    kind: task
+    since: '2026-08-16'
+  task-010:
+    task: "**New, from the 2026-07-30 §7 pass — fidelity obligations of the composition layer.** Every\
+      \ node\n  module carries a PROSE ↔ `Claim` DIFF section; the ones that need adjudication are: the\n\
+      \  per-instance rather than `R`-uniform form of `A2`'s `Θ_k(R^{k−1})`\n  clause ([A2](KSUM.A2.yaml));\
+      \ and the fact that `B2`'s Lean Claim renders the donor TRANSPORT but\n  **not** the novelty side\
+      \ condition ([B2](KSUM.B2.yaml)) — the omission that killed L2e/L2f."
+    kind: task
+    since: '2026-08-16'
+  task-011:
+    task: "**Window question CLOSED by the same pass (see [A1a](KSUM.A1a.yaml)):** `A1d`'s floor\n  `q₀(k)\
+      \ = 2k²+2k−5` is *equivalent* to \"`lem:core-odd`'s window admits `K ≥ 2`\", so it is not an\n \
+      \ extra assumption. The mechanization also caught, and corrected, a draft in which `A1a`'s Claim\n\
+      \  quantified the claw alphabet over the `k = 2` range `2κ+1 ≤ q` — false for `k ≥ 3`, and the\n\
+      \  direction that makes a composition vacuous."
+    kind: task
+    since: '2026-08-16'
+  task-012:
+    task: "**Non-vacuity of `KSUM.A1.composition` is not machine-checked**: `A1a.Claim` and `A1c.Claim`\
+      \ are\n  unmechanized (`prop:core-even`/`lem:core-odd` and `lem:transl-cover`), so their joint\n\
+      \  satisfiability is open. `A1b.Claim` is proved for every model and cannot be the source of\n \
+      \ vacuity. Discharging this is the natural next tier."
+    kind: task
+    since: '2026-08-16'
+  task-013:
+    task: "**Prose repair owed on [A2](KSUM.A2.yaml)'s `composition.rel`**: it still lists `gcd(k,q)=1`\
+      \ as an\n  unresolved hypothesis, which the 2026-07-30 pass showed is a theorem (`KSUM.A2.coprime_k_q`)\
+      \ and\n  which [A2a](KSUM.A2a.yaml)'s own 2026-07-19 review had already verified. Left to the review,\
+      \ not\n  edited by the executor."
+    kind: task
+    since: '2026-08-16'

@@ -1,0 +1,57 @@
+id: SE.denom.Y
+aliases:
+- CY
+claim: For every relevant n and k, legal restriction of the stay channel satisfies ||R(Ybar_k)||<=rho_(n,k)sqrt(2)sqrt(k/n).
+routes:
+  joint:
+    premises:
+    - SE.denom.Y.ambient
+    - SE.denom.bridge2
+    implication: 'Y.ambient AND bridge2 imply Y: the ambient child bounds the stay-channel operator Ybar_k
+      (the sqrt(2k/n) partner-count factor); Bridge II''s Y-line converts it to the legal bound ||R(Ybar_k)||
+      <= rho_{n,k}*||Ybar_k|| <= rho_{n,k}*sqrt2*sqrt(k/n).'
+    proof:
+      sketch: se/artifacts/se_bridge2_pin_20260718.md (Y corollary); independently re-derived in se/reviews/se_cor16_certification_20260723.md
+        A.19 (principal-sector argument, exact 2d/n partner count)
+      sources:
+      - path: se/artifacts/se_bridge2_pin_20260718.md
+        kind: text
+      - path: se/reviews/se_cor16_certification_20260723.md
+        kind: text
+    assessment:
+      level: PROVED
+      summary: se/reviews/se_bridge2_pin_review_20260718.md (CONFIRMED) + the certification's from-scratch
+        re-derivation + se/reviews/se_external_rereview2_20260730.md
+      basis:
+        reviews:
+        - path: se/reviews/se_bridge2_pin_review_20260718.md
+          kind: review
+          scope: Checks exact-defect pinning, equivariance transport, matched-degree legality factors,
+            and the Y-line passage from the ambient stay-channel bound to the legal restriction.
+          locator: Per-step table and Sections 5--6, Y-line corollary
+          reviewed_hash: sha256:e763fce4c1522af7d6ebd6116084cc3a2d10d76a6965d9a44ed5e6d7b38e7eac
+        - path: se/reviews/se_external_rereview2_20260730.md
+          kind: review
+          scope: Rechecks the Y defect-pinning and legal-transfer component as part of the repaired Theorem-A
+            chain; the detailed standalone proof remains in the Bridge-II reviews.
+          locator: Section T3'.1, load-bearing item 4
+          reviewed_hash: sha256:e763fce4c1522af7d6ebd6116084cc3a2d10d76a6965d9a44ed5e6d7b38e7eac
+assessment:
+  level: PROVED
+  summary: The claim is supported by the linked evidence and independent review.
+  basis:
+    routes:
+    - joint
+    reviews:
+    - path: se/reviews/se_phi_xbar_qfree_audit_20260717.md
+      kind: review
+      locator: Section 6, independent checker verdict
+      scope: Independent verdict on the q-free ambient channel analysis; Sections 0--5 are proposer-side
+        analysis.
+      reviewed_hash: sha256:a982b3d3b6d5237f144789d783290bb7b7c430ee362ffbb034d054f4aca8b966
+    - path: se/reviews/se_stage2_py_verdict.md
+      kind: review
+      scope: Certifies the ambient Y estimate and its exact scope, while explicitly recording that legal
+        transfer and the other channels are separate obligations.
+      locator: Verdict and Sections 1--5
+      reviewed_hash: sha256:a982b3d3b6d5237f144789d783290bb7b7c430ee362ffbb034d054f4aca8b966

@@ -1,0 +1,36 @@
+id: KSUM.L2d
+aliases:
+- L2d
+claim: Combining value search with cost O-tilde(sqrt(Rn)) and Tani's walk with cost O(n^(k/(k+1))) implies
+  c<=min{1/2,(k-1)/(2 theta (k+1))}; at R=Theta(n), attaining the endpoint bound is equivalent to optimality
+  of the walk within this route.
+assumptions:
+  tani-k-claw-walk:
+    kind: external-theorem
+    statement: For fixed k and equal input-list lengths n, Tani's standard-oracle k-claw algorithm finds
+      a claw, and hence decides whether one exists, using O(n^(k/(k+1))) queries; the bound is independent
+      of the codomain size.
+    source:
+      path: ksum/reviews/ksum_final_gap_audit.md
+      kind: review
+      locator: Section 6, Tani walk and donor cap
+assessment:
+  level: PROVED
+  summary: The claim is supported by the linked evidence and independent review.
+  basis:
+    evidence:
+    - node: KSUM.k3.donor
+      kind: node-evidence
+    reviews:
+    - path: ksum/reviews/ksum_final_gap_audit.md
+      kind: review
+      scope: Derives and attacks the donor cap, endpoint-only equivalence, and blocked-zone calculation,
+        identifying the corrections required before the L2d statement can be accepted.
+      locator: Sections 1--7 and Defect ledger
+      reviewed_hash: sha256:02556c18d9cde088ef57c2749ff3f5894704660512ba4a99ec759426b4f3185e
+    - path: ksum/reviews/ksum_gap_verification.md
+      kind: review
+      scope: Verifies all donor-cap repairs, independently reruns the exact cap table, and confirms the
+        final endpoint and blocked-zone wording; it does not re-prove the imported donor theorems.
+      locator: Verdict and Tasks 1--3
+      reviewed_hash: sha256:02556c18d9cde088ef57c2749ff3f5894704660512ba4a99ec759426b4f3185e

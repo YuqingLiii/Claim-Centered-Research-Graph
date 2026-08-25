@@ -1,0 +1,64 @@
+id: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.induced-packet-total-energy-resolvent-law
+aliases:
+- B4bL3AltCriticalInducedPacketTotalEnergyResolventLaw
+claim: 'After the physical occurrence pencils are classified, test the scalar spectral Cauchy law
+
+
+  `b_(j,h,k)=1/(epsilon+mu_j+ell_h+r_k)`
+
+
+  on the complete common packet, where every spectral variable must come from a proved common
+
+  physical decomposition, and determine whether it can attenuate both query pencils while preserving
+
+  the outer numerator.'
+assessment:
+  level: OPEN
+  summary: '**OPEN / deprioritized — registered before any test.** No physical meanings for all three
+    spectral variables, legal choice of `epsilon`, coefficient norm, query ratio, or numerator have been
+    derived. The formula has not passed even the noncollapse gate and is queued behind the exact occurrence-pencil
+    classification. The first classification review did not supply a common scalar spectrum. The later
+    direct-coset review now proves complete-packet aggregate cross-side and native-transfer commutation,
+    hence a joint eigenbasis exists for those native operators. It still supplies no eigenvalues, no reduction
+    of the one-side pointed matrices, and no reason that the displayed law avoids forbidden one-dimensional
+    total energy. This candidate therefore remains OPEN, untested, and deprioritized.'
+  basis:
+    evidence:
+    - path: ksum/proof-dag/nodes/KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.induced-packet-occurrence-pencil-classification.yaml
+      kind: text
+    - path: ksum/proof-dag/nodes/KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.induced-packet-joint-parent-content-kernel.yaml
+      kind: text
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.three-row-induced-bicovariant-alphabet-packet-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.induced-packet-joint-parent-content-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.induced-packet-occurrence-pencil-classification
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.induced-packet-noncommuting-sylvester-law
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.induced-packet-rectangular-transfer-resolvent-law
+      kind: node-evidence
+frontier:
+  task-001:
+    task: "Obtain `mu_j`, `ell_h`, and `r_k` from the exact native joint spectrum rather than merely invoking\n\
+      \  the now-proved existence of an aggregate joint eigenbasis. Determine the unresolved one-side\n\
+      \  `R_(beta,epsilon)` matrices and do not import spectra through pullbacks or nonproduct truncations."
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "Specify a uniform legal `epsilon` and prove the coefficient family is defined and normalized\
+      \ on\n  the whole critical family, including repeated or zero spectral values."
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: "Decide first whether the law factors through the single total-energy statistic. If so, compare\
+      \ it\n  with the already forbidden one-dimensional collapses before doing any attenuation calculation."
+    kind: task
+    since: '2026-08-16'
+  task-004:
+    task: "Only if it survives that gate, derive both literal query ratios, coefficient norm, incidence,\n\
+      \  remainder, and outer numerator analytically."
+    kind: task
+    since: '2026-08-16'

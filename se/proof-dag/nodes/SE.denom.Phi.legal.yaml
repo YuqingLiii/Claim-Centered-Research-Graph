@@ -1,0 +1,33 @@
+id: SE.denom.Phi.legal
+aliases:
+- PL
+claim: SE.denom.Phi.legal — legal Phi layer (AND)
+routes:
+  joint:
+    premises:
+    - SE.denom.Phi.legal.diag
+    - SE.denom.Phi.legal.tame
+    implication: 'diag AND tame imply legal: the legal Phi block splits into the defect-diagonal part
+      (diag) and the lower/off-diagonal part (tame); both are bounded on the same orthogonal defect decomposition,
+      so the legal Phi factor is bounded by the maximum of the two. No cross term survives, by the same
+      defect orthogonality used one level up.'
+    proof:
+      sketch: inline (## Composition proof)
+    assessment:
+      level: OPEN
+      summary: No additional supporting evidence has been recorded for this route.
+      caveats:
+      - 'PROSE ONLY, unreviewed: the split is used throughout the manuscript but has never been written
+        as a separately reviewable statement; registered 2026-07-30 rather than left implicit'
+assessment:
+  level: OPEN
+  summary: 'The legal Phi layer remains OPEN: the diagonal part is PROVED, while the tame-sector bound
+    is OPEN.'
+  basis:
+    evidence:
+    - node: SE.denom.Phi.legal.offdiag
+      kind: node-evidence
+    - node: SE.denom.Phi.legal.bridge1
+      kind: node-evidence
+    routes:
+    - joint

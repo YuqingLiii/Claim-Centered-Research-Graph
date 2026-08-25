@@ -1,0 +1,110 @@
+id: KSUM.A2
+aliases:
+- A2
+claim: 'Lemma W3E-2 (AND): for every k≥3 and R≥2, the displayed construction gives an exact, query-free
+  reduction from k-partite k-collision with range R to k-Sum over Z_q at one constructed modulus q=(P+1)(M+1)=Θ_k(R^{k−1});
+  the hidden constants depend only on k and are uniform in R.'
+routes:
+  joint:
+    premises:
+    - KSUM.A2a
+    - KSUM.A2b
+    implication: 'A2a (the explicit payload/tag assignment over q=(P+1)(M+1) sends every genuine k-partite
+      k-collision to a k-subset summing to the target) AND A2b (the balanced-base argument excludes every
+      wrong block multiset, so no non-collision produces a hit) together imply A2: for every k≥3 and R≥2,
+      the map is an exact, query-free reduction to k-Sum at one constructed modulus q for that R. This
+      is not a claim about an interval of moduli. The parameter display in Lemma lem:embed shows that
+      M depends only on k and that P is bounded above and below by k-dependent multiples of R^{k−1}; hence
+      the constants in q=Θ_k(R^{k−1}) are uniform in R.'
+    assumptions:
+      assumption-01:
+        kind: model-fact
+        statement: query-model facts (i)/(ii) - fact (ii) is what makes the reduction QUERY-FREE (one
+          simulated query per real query at an absolute constant); interfaces, not children
+        source:
+          path: ksum/lean/KSUM/Interface.lean
+          kind: text
+          locator: QueryModel interface table, `restrict` and `relabel` fields
+      assumption-02:
+        kind: external-theorem
+        statement: 'NOTE (§6.2 of the 2026-07-30 review): gcd(k,q)=1 is NOT a hypothesis - for the constructed
+          modulus q=(P+1)(M+1) it is a THEOREM (lem:embed-allt; machine-checked as KSUM.A2.coprime_k_q
+          from k|P and 2(M+1)=(2k+1)^(k-1)+1, both read off lem:embed parameter display), independently
+          verified 2026-07-19 (KSUM.A2a.yaml, ksum/reviews/ksum_rev2_review.md); it enters the Claim as
+          the all-targets clause. Scope: valid ONLY for the general recipe modulus family; rem:k3embed
+          tighter k=3 recipe keeps coprimality as a genuine hypothesis; and B2 composition discards the
+          all-targets conjunct, so no downstream node depends on it'
+        source:
+          path: ksum/reviews/ksum_rev2_review.md
+          kind: review
+          locator: Items I2 and I4 and Overall ruling
+    proof:
+      sketch: The implication is supported by the linked review and linked Lean formalization.
+    assessment:
+      level: PROVED
+      summary: ksum/reviews/ksum_composition_layer_review_20260730.md §3.2 - CONFIRMED-WITH-REPAIRS (R-A2-1..3);
+        PROVED licensed with R-A2-1 + §6.2 applied
+      basis:
+        reviews:
+        - path: ksum/reviews/ksum_composition_layer_review_20260730.md
+          kind: review
+          scope: Checks that A2a supplies the good-pattern encoding and A2b excludes every wrong block
+            multiset, and that together they give an exact query-preserving reduction at one constructed
+            modulus for each R.
+          locator: Sections 2.2 and 3.2
+          reviewed_hash: sha256:3cfaa898b0553fbf1622e003c445ac32ed36188345c546c5495ea4574620897f
+assessment:
+  level: PROVED
+  summary: '**PROVED** — restored 2026-07-30 by the independent [composition-layer review](../../../../ksum/reviews/ksum_composition_layer_review_20260730.md)
+    (§3.2: CONFIRMED-WITH-REPAIRS; the reviewer''s own §2.2 worksheet mapped one-to-one onto the five
+    steps below). Repairs R-A2-1 (the `Θ_k` uniformity clause + explicit citation of `lem:embed`''s parameter
+    display) and §6.2 (the `gcd(k,q)=1` scoped resolution) are applied in this diff, which is what the
+    license was conditioned on. `status(A2) = min(composition=PROVED, A2a=PROVED, A2b=PROVED) = PROVED`.
+    R-A2-3 (a `demoEmbed` witness for the Lean `EmbedData`) is an evidence gap on the mechanization, not
+    on this composition; it is queued on the Lean side and does not block the promotion (reviewer''s explicit
+    ruling).'
+  basis:
+    reviews:
+    - path: ksum/reviews/ksum_rev2_review.md
+      kind: review
+      scope: Checks the exact-modulus coprimality and all-target translation repairs; it is a revision
+        audit and does not independently re-adjudicate every step of the full A2 reduction.
+      locator: Items I2 and I4 and Overall ruling
+      reviewed_hash: sha256:3d32188ad689328d14a76d145156109cd422f7821990c111b5e357efc20f9c64
+    - path: ksum/reviews/ksum_composition_layer_review_20260730.md
+      kind: review
+      scope: Independently reconstructs the exact reduction, checks completeness, soundness, query transfer,
+        per-R parameter uniformity, and the derived coprimality fact; the license is conditional on R-A2-1
+        and the scoped coprimality-record repair.
+      locator: Sections 2.2, 3.2, and 6.2
+      reviewed_hash: sha256:3d32188ad689328d14a76d145156109cd422f7821990c111b5e357efc20f9c64
+    routes:
+    - joint
+  caveats:
+  - Text and digest synchronization does not by itself establish that the Lean proposition is equivalent
+    to the natural-language claim; that correspondence remains review-dependent.
+formalization:
+  lean:
+    module: KSUM.A2
+    file: ksum/lean/KSUM/A2.lean
+    claim: Claim
+    state: composition-checked
+    claim_hash: sha256:3d32188ad689328d14a76d145156109cd422f7821990c111b5e357efc20f9c64
+    sync_state: current
+    theorems:
+    - composition
+    rel:
+    - QueryModel.restrict + QueryModel.relabel = sec:prelim facts (i)/(ii), carrying the query-freeness
+    - KSUM.Support.EmbedData = the data of lem:embed (enc, enc_inj, k_dvd_P, two_mul_Mv, cP_pos, P_lower,
+      P_upper)
+    build: ksum/artifacts/logs_ksum_lean_reorg_20260730/
+    synced: '2026-08-19'
+    source_claim_hash: sha256:3d32188ad689328d14a76d145156109cd422f7821990c111b5e357efc20f9c64
+frontier:
+  task-001:
+    task: "Split [A2b](KSUM.A2b.yaml)'s dual \"PROVED + NUMERICAL\" status per review §6.3: A2b keeps\
+      \ PROVED for\n  the balanced-base-ω exclusion (the claim the reduction consumes, already what `KSUM/A2b.lean`\n\
+      \  renders); the 62,140 exhaustive checks move to Evidence as NUMERICAL corroboration. No second\
+      \ node."
+    kind: task
+    since: '2026-08-16'

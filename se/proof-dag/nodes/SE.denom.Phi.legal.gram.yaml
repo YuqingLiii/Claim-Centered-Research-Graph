@@ -1,0 +1,83 @@
+id: SE.denom.Phi.legal.gram
+aliases:
+- GRAM
+claim: For q=2n, every matching-averaged Belovs-Rosmanis block G_can^(lambda,xi), as defined before any
+  identification with the actual legal lower block, satisfies ||G_can^(lambda,xi)|| <= (15/4) r_top. Hence
+  ||G_can^(lambda,xi)|| < 9/2 whenever r_top < 6/5. The identification with the actual legal lower block
+  is a separate obligation recorded at SE.denom.Phi.legal.splice.
+routes:
+  joint:
+    premises:
+    - SE.denom.Phi.legal.gram.interface
+    - SE.denom.Phi.legal.trace.t6
+    implication: 'gram.interface (H2) together with the T6 multiplicity bound implies this node''s canonical
+      Gram consequence: from G_can^full|_{H_xi} = I_{V_kappa (x) V_nu} (x) [r_top/(B_theta(q)^2 omega)]
+      M_xi and M_xi <= (15/4) B_theta(q)^2 omega I_c, the positive scalar and the norm-preserving identity
+      lift give ||G_can^{lambda,xi}|| <= (15/4) r_top — NON-STRICT. Strict < is available only where r_top
+      < 6/5 (sufficient condition: the active taper n >= (j+2)^3), NOT from H1+H2 alone.'
+    proof:
+      sketch: The implication is supported by the linked review and linked Lean formalization.
+    assessment:
+      level: CERTIFIED*
+      summary: se/reviews/se_external_rereview2_20260730.md T1'-3 (the non-strict repair and the corrected
+        r_top<6/5 criterion both verified)
+      basis:
+        reviews:
+        - path: se/reviews/se_external_rereview2_20260730.md
+          kind: review
+          scope: Checks that H1 and the canonical Gram interface imply the non-strict (15/4) r_top sector
+            bound, with the strict range treated separately.
+          locator: Sections T2'.1, first step, and T2'.3
+          reviewed_hash: sha256:237dc0d9c83963d0bf007c07d0a56a497556cea3d821742e96eae8ba8a048cb4
+      caveats:
+      - Certified conditionally on the listed premises; this route-level assessment does not by itself
+        promote the parent node.
+assessment:
+  level: CONJECTURED
+  summary: The canonical Gram bound remains CONJECTURED. Exact c=1 tests support it, but the linked human
+    review identifies unresolved transport, output-frame, twirl, and coefficient steps for general multiplicity.
+  basis:
+    routes:
+    - joint
+    evidence:
+    - path: se/artifacts/se_gramdirect_20260719.md
+      kind: text
+      scope: superseded canonical-Gram construction
+    reviews:
+    - path: se/reviews/se_gramdirect_review_20260719.md
+      kind: review
+    - path: se/reviews/se_gramdirect_review2_20260719.md
+      kind: review
+    - path: se/reviews/se_human_review_20260719.md
+      kind: review
+    - path: se/reviews/se_external_review_20260729.md
+      kind: review
+    - path: se/reviews/se_external_rereview2_20260730.md
+      kind: review
+    counterexamples:
+    - path: se/reviews/se_human_review_20260719.md
+      kind: counterexample
+      locator: 'sections 一–四: the c>1 transport is ill-typed'
+frontier:
+  task-001:
+    task: 'The load-bearing unproved steps listed in Current status: (i) the ill-typed transport `ρ_θ(σ_p)⊗L_p`
+      replacement, (ii) output-frame Grams, (iii) the matching-average→H-twirl step, (iv) the coset coefficient
+      — all demoted by the human review and not yet rebuilt.'
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: '**Statement-alignment obligation (external review T2-G1/T2-G2/T2-G3, machine-verified 2026-07-29):**
+      the conditional paper''s H2 is the interface IDENTITY `G_can = [r_top/(B_θ(q)²ω)]M_ξ`, which is
+      NOT this node''s Claim (a norm bound) — the identity needs its own frozen home (proposed: a `gram.interface`
+      child or a rewritten Claim), and it needs the Schur identity lift `I_{V_κ⊗V_ν}⊗(·)` (the paper''s
+      eq:gcan1/gcan2 silently drop the lift that its own eq:Htwirl carries). Also the strict `<` in this
+      Claim is unprovable from H1+H2 (at (j,n)=(1,3), `(15/4)r_top = 9/2` EXACTLY — exact-fraction check);
+      the repair is `≤`; strict `<9/2` is recoverable where `r_top<6/5`, i.e. for `n ≥ (j+2)³` (CORRECTION
+      2026-07-29, repair-verifier Fix 1: the external review''s own "via `r_top<3/2`" was arithmetically
+      wrong — `(15/4)(3/2)=45/8>9/2`).'
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: The block identification lives in `[[SE.denom.Phi.legal.splice]]` (PARKED).
+    kind: task
+    since: '2026-08-16'

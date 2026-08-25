@@ -1,0 +1,28 @@
+id: SE.denom.Phi.legal.trace.m
+aliases:
+- MPHYS
+claim: '**Variant target (M_phys):** the single joint trace budget `Tr_𝒞[L_h*(S₀*S₀+Σ_z(δ_z+1)S_z*S_z)L_h]
+  ≤ B_θ(q)²T` — a clean STRONGER statement implying both (T-a) and (T-b) (discard-tail + δ_min steps).'
+assessment:
+  level: REFUTED
+  summary: The displayed joint budget implies the already-refuted raw physical T-a bound and is therefore
+    REFUTED. A differently signed, cancellation-sensitive target would require a new claim.
+  basis:
+    reviews:
+    - path: se/reviews/logs_se_trace_t5_uniform_ta_normalization_review_20260722/REPORT.md
+      kind: review
+    runs:
+    - path: se/artifacts/logs_se_trace_t5_ta_raw_audit_review_20260722
+      kind: run
+      result: Execution artifact supporting SE.denom.Phi.legal.trace.m at the exact finite, formal, or
+        computational scope stated in the linked output.
+    counterexamples:
+    - path: se/reviews/logs_se_trace_t5_uniform_ta_normalization_review_20260722/REPORT.md
+      kind: counterexample
+      note: Sourced contradiction or counterexample supporting this scoped refutation.
+disposition:
+  state: PARKED
+  reason: The displayed joint budget implies the already-refuted raw physical T-a bound and is therefore
+    REFUTED. A differently signed, cancellation-sensitive target would require a new claim.
+  revive: Do not revive this positive joint budget; register a distinct node for a signed-cancellation
+    target.

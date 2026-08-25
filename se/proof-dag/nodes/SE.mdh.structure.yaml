@@ -1,0 +1,17 @@
+id: SE.mdh.structure
+aliases:
+- MS
+claim: SE.mdh.structure — frame/dims/orthogonality/recurrence/difference-op/pencil, machine-checked n<=4
+assessment:
+  level: NUMERICAL
+  summary: NUMERICAL. The frame, dimension, orthogonality, recurrence, difference-operator, and pencil
+    identities have finite machine support through n=4, but no locatable independent review establishes
+    the all-n claim.
+  basis:
+    runs:
+    - path: se/artifacts/mdh_phi_tower_n4.json
+      kind: run
+      result: finite machine check through n=4
+  caveats:
+  - The archived computation is finite-scope evidence only; promotion requires an independent review of
+    a precise all-n statement.

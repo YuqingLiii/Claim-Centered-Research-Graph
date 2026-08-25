@@ -1,0 +1,44 @@
+id: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.moving-remez-cubature.label-aware-fekete-basis-exchange.continuation-seeded-block-fekete.continuum-limit-remez-support-flow
+aliases:
+- B4bL2AltMultipairContinuumRemezSupportFlow
+claim: 'Derive limiting support locations, cofactor densities, and equioscillation conditions from explicit
+
+  differential/algebraic equations in scaled orbit space, then round them to legal finite supports
+
+  without using an expanding combinatorial search.'
+assessment:
+  level: OPEN
+  summary: '**OPEN — the ordinary continuum limit is singular.** The exact invariant ring, rank growth,
+    and boundary scale are known, but a macroscopic support density weakly vanishes and loses the label
+    correlation. The required stratified boundary/corner system is registered separately before work.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L2_phase21_continuation_seeded_block_fekete_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase23_continuum_remez_support_flow_20260721.md
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.moving-remez-cubature.label-aware-fekete-basis-exchange.continuation-seeded-block-fekete
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.moving-remez-cubature.label-aware-fekete-basis-exchange.continuation-seeded-block-fekete.continuum-limit-remez-support-flow.stratified-boundary-jet-remez-system
+      kind: node-evidence
+frontier:
+  task-001:
+    task: "Replace the now-obstructed ordinary weak support density by the registered stratified\n  boundary-jet\
+      \ system; a finite-node or purely macroscopic support-flow ODE is not the right type."
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "Show the equations select both boundary and balanced interior mass with correct signed\n  correlation\
+      \ and high-`C_t` tail."
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: Prove lattice rounding preserves all moments to the required order and controls global residuals.
+    kind: task
+    since: '2026-08-16'
+  task-004:
+    task: Explain whether the construction has any compatible `q=N` analogue.
+    kind: task
+    since: '2026-08-16'

@@ -1,0 +1,65 @@
+id: SE.br
+aliases:
+- BR
+claim: 'SE.br — Branch A: BR tapered witness restricted to legal q=2n (AND)'
+routes:
+  joint:
+    premises:
+    - SE.br.def
+    - SE.br.num
+    - SE.denom
+    implication: 'def AND num AND denom imply br: if Gamma_n is the well-defined legal tapered matrix
+      (def), ||Gamma_n|| >= K with K = floor(n^{1/3}) (num), and max_i ||Gamma_n o Delta_i|| <= C = O(1)
+      (denom), then the ratio ||Gamma_n||/max_i||Gamma_n o Delta_i|| >= K/C = Omega(n^{1/3}).'
+    proof:
+      sketch: inline (## Composition proof) — one division; the executed instance is se/reviews/se_cor16_certification_20260723.md
+        A.33
+      sources:
+      - path: se/reviews/se_cor16_certification_20260723.md
+        kind: text
+    assessment:
+      level: PROVED
+      summary: se/reviews/se_cor16_certification_20260723.md (rule-7 CERTIFY) + se/reviews/se_external_rereview2_20260730.md
+        (external, without reservation)
+      basis:
+        reviews:
+        - path: se/reviews/se_external_rereview2_20260730.md
+          kind: review
+          scope: Checks the conditional chain from the four Phi obligations through the O(1) denominator
+            and adversary ratio, and distinguishes it from the unconditional n^{1/6} theorem; it does
+            not discharge H1--H4.
+          locator: Sections T2'.1--T2'.2 and T3'.1
+          reviewed_hash: sha256:6b81f2d20fc3fb0514c45c5a39cb8982dee68cadf3f953a63e6ae93bbc7c1a54
+assessment:
+  level: OPEN
+  summary: This branch remains OPEN because SE.denom is OPEN, although the witness definition and numerator
+    estimate are PROVED.
+  basis:
+    routes:
+    - joint
+  caveats:
+  - The linked Lean formalization checks the branch composition from its recorded premises; it does not
+    prove the OPEN denominator premise.
+formalization:
+  lean:
+    module: SE.br
+    file: se/lean/SE/br.lean
+    claim: Claim
+    state: composition-checked
+    claim_hash: sha256:2e795bb6962a6da9ebcd384fc11801f7940abc727a2fda6e38388d1744c16735
+    sync_state: current
+    theorems:
+    - composition
+    rel:
+    - Interface.Cited
+    - SE.denom
+    - 'premise-not-imported: SE.br.num — enters as the cited field `Cited.numerator` (`(K n : R) <= F.gammaNorm
+      n`, paper lem:numerator). Tier 1 has no Gamma_n matrix to reprove the PROVED node against, so it
+      is cited, not imported (declared deviation D5, SE/Trust.lean).'
+    - 'premise-not-imported: SE.br.def — no tier-1 rendering of the construction of Gamma_n exists (no
+      operator layer). Its content enters twice: the abstract carrier fields `SEFrame.gammaNorm`/`SEFrame.maskNorm`
+      stand in for the constructed matrix, and the nonzero-mask fact is the cited field `Cited.maskNorm_pos`
+      (declared deviation D5, SE/Trust.lean).'
+    build: se/artifacts/logs_se_lean_20260730/
+    source_claim_hash: sha256:2e795bb6962a6da9ebcd384fc11801f7940abc727a2fda6e38388d1744c16735
+    synced: '2026-08-17'

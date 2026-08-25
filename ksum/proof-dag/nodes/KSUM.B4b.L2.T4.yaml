@@ -1,0 +1,46 @@
+id: KSUM.B4b.L2.T4
+role: obstruction
+aliases:
+- B4bL2T4
+claim: For the formula-defined fixed-allocation, unaveraged absolute-value sign-bit composition, a logarithmic
+  phase-3 inner has conditional correctness `rho<=4/5`, the exact correlation identity is `-2 Psi(-1^m)
+  product_j rho_j`, and normalized correlation is at most `product_j rho_j`; this theorem does not cover
+  a later norm-changing symmetry average and `l1` renormalization, which D10 leaves open.
+assessment:
+  level: PROVED
+  summary: '**PROVED** within the Claim''s formula-defined class. Arbitrary symmetry-completed normalized
+    compositions are outside the theorem.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L2_phase4.md
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    reviews:
+    - path: ksum/reviews/ksum_L2p4_review.md
+      kind: review
+      scope: Checks the fixed-allocation unaveraged correlation-product formula and its normalization,
+        while explicitly excluding the later norm-changing symmetry average identified in D10.
+      locator: Rule-7 execution log and Target verdict T1
+      reviewed_hash: sha256:d3faa4c035fe2ab77c662bcc84b467c802ff1ed6c88ad5dbc9c4c3580b9e0d1f
+frontier:
+  task-001:
+    task: Prove norm preservation/post-average control or use a composition outside the fixed-allocation
+      sign-bit class.
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "**From gap-closure batch 1 (2026-07-31):** `thm:block-obstruction` clause (i) still needs an\n\
+      \  `m`-fold multivariate Vandermonde (the splitting-indexed expansion of\n  `∏_a ((∑_j n_j a)_{α_a})`);\
+      \ with it, `Block.block_obstruction_band_combination` closes the\n  clause immediately. A design\
+      \ decision precedes it: Part A is stated over abstract block state\n  spaces, so stating clause\
+      \ (i) at the paper's quantifier means instantiating Part A at\n  `X j = A^{N_j}` — a lead call,\
+      \ not an executor's."
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: "**Clause (iii) is blocked upstream:** `thm:tilted-log-band` is not formalized at all\n  (`KsumAudit/ObstructionsTiltedBand.lean`\
+      \ says so in its own header), so there is no tilted\n  inner from which `ρ_j ≤ 4/5` could be derived.\
+      \ Closing (iii) means first formalizing\n  `thm:tilted-log-band` — see [KSUM.B4b.L2.L2P3](KSUM.B4b.L2.L2P3.yaml)."
+    kind: task
+    since: '2026-08-16'

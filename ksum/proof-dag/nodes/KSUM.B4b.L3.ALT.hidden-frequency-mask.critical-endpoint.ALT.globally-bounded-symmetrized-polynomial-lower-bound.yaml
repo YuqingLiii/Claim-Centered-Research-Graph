@@ -1,0 +1,54 @@
+id: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.globally-bounded-symmetrized-polynomial-lower-bound
+aliases:
+- B4bL3AltCriticalGloballyBoundedSymmetrizedPolynomialLowerBound
+claim: 'Show that every degree-`o(N^(2/3))` acceptance polynomial which is globally bounded between zero
+
+  and one on all two-list inputs remains unable, after `S_n x S_n x S_q` symmetrization, to separate
+
+  the exact hidden-frequency NO and YES orbits by a constant; then transfer the degree bound to an
+
+  `Omega(N^(2/3))` quantum query lower bound.'
+assessment:
+  level: OPEN
+  summary: '**OPEN — registered before any interpolation family, proof, or computation.** The route is
+    deprioritized behind the explicit growing-occurrence carrier. No theorem currently shows that the
+    off-promise boundedness forces degree `Omega(N^(2/3))`; a naive one-parameter interpolation in the
+    number of shared singleton labels is expected to give at most a square-root scale.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L3_hidden_frequency_critical_adversary_attempt_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_hidden_frequency_promise_20260721.md
+      kind: text
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.strict-injection-recording-query
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.reachability-sensitive-recording-filtration
+      kind: node-evidence
+frontier:
+  task-001:
+    task: "State the `q`-ary indicator-polynomial model and prove that symmetrization preserves degree,\n\
+      \  global `[0,1]` boundedness, and the NO/YES gap."
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "Give an explicit all-large off-promise interpolation family with every histogram legal and\
+      \ all\n  alphabet, length, and integrality constraints checked."
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: "Derive an analytic degree lower bound of order `N^(2/3)` from global boundedness. A univariate\n\
+      \  Markov/Paturi estimate of only `sqrt(a)` does not meet the gate."
+    kind: task
+    since: '2026-08-16'
+  task-004:
+    task: "Explain why the degree-two cross-collision statistic cannot be rescaled or composed into a\n\
+      \  globally bounded low-degree separator on the full input space."
+    kind: task
+    since: '2026-08-16'
+  task-005:
+    task: "Transfer the final degree statement to bounded-error quantum queries with constants uniform\
+      \ in\n  the critical endpoint parameters."
+    kind: task
+    since: '2026-08-16'

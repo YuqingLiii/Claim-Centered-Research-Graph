@@ -1,0 +1,97 @@
+id: SE.goal.conditional-optimal
+role: outcome
+aliases:
+- ConditionalOptimalWitness
+claim: For q=2n, let Gamma_n be the explicit legal tapered matrix recorded in SE.br.def. If the four representation-theoretic
+  obligations H1--H4 and the foundation/interface package hold in their recorded scopes, then Adv+/-(SE_{n,2n})
+  >= (9/(18+4sqrt(6)+3sqrt(10)) - o(1)) n^(1/3).
+routes:
+  assembled-conditional-witness:
+    premises:
+    - SE.br.def
+    - SE.br.num
+    - SE.denom.decomp
+    - SE.denom.X
+    - SE.denom.Y
+    - SE.denom.Phi.ambient
+    - SE.denom.Phi.legal.diag
+    - SE.denom.Phi.legal.trace.t6
+    - SE.denom.Phi.legal.gram.interface
+    - SE.denom.Phi.legal.omega.interface
+    - SE.denom.Phi.legal.found
+    - SE.denom.Phi.legal.sect
+    - SE.denom.familysplit
+    - SE.denom.crossk
+    - SE.denom.taper
+    assumptions:
+      negative-weight-adversary-bound:
+        kind: external-theorem
+        statement: For every admissible adversary matrix Gamma, the negative-weight adversary value is
+          at least ||Gamma||/max_i ||Gamma o Delta_i||.
+        source:
+          path: se/lean/SE/Interface.lean
+          kind: text
+          locator: The `adv_ge` field and its cited adversary-bound documentation
+    implication: The established witness construction, numerator estimate, channel decomposition, ambient
+      and diagonal estimates, family split, cross-defect orthogonality, taper arithmetic, and cited adversary
+      interface, together with H1, H2, H3, H4, and the foundation/interface package, give an O(1) query-mask
+      denominator and hence the stated conditional adversary bound for Gamma_n.
+    proof:
+      sketch: The linked external review checks the H1--H4 reduction and exact constant. The linked Lean
+        modules machine-check the conditional composition from the four obligations and the cited foundation/interface
+        layer through the denominator, adversary ratio, and final bound.
+      sources:
+      - path: se/reviews/se_external_rereview2_20260730.md
+        kind: review
+        locator: Sections T2'.1--T2'.3
+      - path: se/lean/SE/denom/Phi/legal/tame.lean
+        kind: text
+        locator: The `composition` theorem
+      - path: se/lean/SE/goal.lean
+        kind: text
+        locator: The `composition_via_br` theorem
+    assessment:
+      level: PROVED
+      summary: The conditional implication, including the exact asymptotic constant and the absence of
+        a hidden fifth obstruction theorem, passed independent review; the foundation/interface package
+        remains a separate load-bearing premise with its own evidence caveat.
+      basis:
+        reviews:
+        - path: se/reviews/se_external_rereview2_20260730.md
+          kind: review
+          scope: Reconstructs the chain from H1--H4 and the typed foundation through the canonical Gram
+            and sandwich bounds, sector assembly, denominator estimate, and final adversary constant.
+          locator: Sections T2'.1--T2'.3
+          reviewed_hash: sha256:8c4adf92ee19ccbd8297c669005a52a6ff772057881db5e3a7c79756dfad7cf5
+assessment:
+  level: CERTIFIED*
+  summary: The implication to the optimal-order explicit witness is independently reviewed and linked,
+    but its mathematical conclusion remains conditional on four unresolved obligations and on the separately
+    recorded foundation/interface package.
+  basis:
+    routes:
+    - assembled-conditional-witness
+    evidence:
+    - node: SE.formal.t1
+      kind: node-evidence
+    reviews:
+    - path: se/reviews/se_external_rereview2_20260730.md
+      kind: review
+      scope: Checks the conditional optimal-order theorem, its exact constant, and the mapping from H1--H4
+        to the final adversary bound without claiming that the hypotheses themselves are established.
+      locator: Sections T2'.1--T2'.3 and Final verdict
+      reviewed_hash: sha256:8e24dabefa2e8dc34746c5f177840a725942cc0ff3d23bb392903c1236b4f40c
+  caveats:
+  - The unresolved premises SE.denom.Phi.legal.trace.t6, SE.denom.Phi.legal.gram.interface, SE.denom.Phi.legal.omega.interface,
+    and SE.denom.Phi.legal.sect are H1--H4; this node does not establish them.
+  - SE.denom.Phi.legal.found is not a fifth obstruction theorem, but its c>=2 evidence caveat remains
+    load-bearing for the conditional result.
+events:
+  claim-registered-2026-08-23:
+    date: '2026-08-23'
+    type: created
+    summary: Registered the conditional optimal-order result while separating H1--H4 from the supporting
+      representation-theoretic foundation.
+    sources:
+    - path: se/reviews/se_external_rereview2_20260730.md
+      kind: review

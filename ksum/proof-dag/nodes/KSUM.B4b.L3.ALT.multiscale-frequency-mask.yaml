@@ -1,0 +1,78 @@
+id: KSUM.B4b.L3.ALT.multiscale-frequency-mask
+aliases:
+- B4bL3AltMultiscaleFrequencyMask
+claim: 'Construct a permutation-invariant small-range-claw promise whose possible shared rare labels are
+
+  hidden among side-exclusive decoys spread across a growing ladder of multiplicities, so that no
+
+  single sampling/frequency cutoff exposes a small residual, and prove a lower bound at
+
+  `Omega(min{sqrt(N)q^(1/4),N^(2/3)})` with a constant-query, range-`O(q)` cyclic 2-SUM embedding.'
+assessment:
+  level: OPEN
+  summary: '**OPEN — a generic sampling envelope and a surviving two-scale law now exist; no lower bound
+    is known.** For candidate residual mass `R` and side-exclusive decoy spectrum `(h_j,M_j)`, the audited
+    sample/delete/compress/Johnson family has cost `O-tilde(min{N^(2/3), inf_ell[ell+sqrt(N)(R+sum_j h_j
+    M_j exp(-ell M_j/N))^(1/6)]})`. This does not universally undercut the target. A legal spectrum with
+    one `Theta(N)`-multiplicity side-exclusive label, `Theta(q)` side-exclusive labels of multiplicity
+    `Theta(sqrt(q))`, and `Theta(q)` singleton candidates makes that entire envelope `Theta(sqrt(N)q^(1/4))`
+    for `5<=q<=N^(2/3)`. Thus the palette-exposure attack that killed the balanced profile does not kill
+    this node. At its exact critical core, dedicated duplicate-classification, soft-filter joint-walk,
+    and direct joint-statistic audits also found no subcap algorithm: their best audited costs are respectively
+    `O-tilde(N^(5/6))`, `Theta(N^(2/3))`, and `O-tilde(N^(5/6))`. This is still not an adversary/dual
+    lower bound and does not cover every possible quantum algorithm. An explicit rounded ladder version
+    has also passed a second hostile gate: quantum enumeration of distinct decoy labels. The residual-claw
+    condition forces the lowest decoy multiplicity `m=Omega(sqrt(q))`, while avoiding subtarget distinct-label
+    enumeration forces `m=O(sqrt(q))`; hence `m=Theta(sqrt(q))` is the unique polynomial balance. Both
+    the stratified sampling envelope and the enumerator match, but do not beat, the target.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L3_hidden_frequency_promise_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_hidden_frequency_upper_attack_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_multiscale_frequency_upper_envelope_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_multiscale_frequency_candidate_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_critical_nonsampling_upper_attacks_20260721.md
+      kind: text
+    - path: ksum/proof-dag/nodes/KSUM.B4b.L3.yaml
+      kind: text
+    - node: KSUM.B4b.L3
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.critical-core-psearch-lift
+      kind: node-evidence
+frontier:
+  task-001:
+    task: "Freeze the critical-shelf specialization with exact integer counts, identical marginal spectra,\n\
+      \  one exact cross-side answer bit, and a complete range/padding embedding. A long ladder is not\n\
+      \  needed merely to survive the audited palette-exposure algorithm."
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "Treat the Laplace envelope as discharged: every future frequency law must satisfy its exact\n\
+      \  residual condition, not merely claim that labels are hidden."
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: "Audit whether conditioning separately on frequency bands decomposes the instance into an OR\
+      \ or\n  direct sum of ordinary claws, which would restore the `q^(1/6)` envelope."
+    kind: task
+    since: '2026-08-16'
+  task-004:
+    task: "Do not retune the lowest shelf multiplicity away from `Theta(sqrt(q))` without a new algorithmic\n\
+      \  mechanism: residual compression and distinct-label enumeration force opposite inequalities and\n\
+      \  meet exactly there."
+    kind: task
+    since: '2026-08-16'
+  task-005:
+    task: "Verify whether the critical shelf is exactly the image of the separately registered\n  critical-core\
+      \ pSearch lift. If so, its lower bound reduces to the critical endpoint donor rather\n  than requiring\
+      \ an unrelated multiscale dual."
+    kind: task
+    since: '2026-08-16'

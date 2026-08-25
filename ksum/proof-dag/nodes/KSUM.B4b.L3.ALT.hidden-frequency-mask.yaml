@@ -1,0 +1,69 @@
+id: KSUM.B4b.L3.ALT.hidden-frequency-mask
+aliases:
+- B4bL3AltHiddenFrequencyMask
+claim: 'Construct a direct adversary or approximate-degree lower bound for a permutation-invariant
+
+  small-range claw promise in which rare singleton candidate values are hidden among unknown
+
+  side-exclusive heavy decoy values, with no supplied bucket or latent-address coordinate, at scale
+
+  `Omega(min{sqrt(N) q^(1/4), N^(2/3)})`.'
+assessment:
+  level: OPEN
+  summary: '**OPEN — exact balanced promise frozen, but the uniform quarter-power route fails a proposer-tier
+    upper-algorithm attack.** Put `n=floor(N/2)`, `a=floor(q/4)`, and `d=floor((n-a)/a)`. Each side has
+    `a` singleton labels and `a` side-exclusive heavy labels of multiplicity `d` or `d+1`. NO has disjoint
+    supports; YES has one shared `(1,1)` singleton and no other cross-side match. The two answers have
+    identical complete one-side frequency spectra and differ only by the joint-histogram switch `Delta
+    H_(1,1)=Delta H_(0,0)=1`, `Delta H_(1,0)=Delta H_(0,1)=-1`. This promise is an exact restriction of
+    small-range claw and has a constant-query, arbitrary-target cyclic 2-SUM embedding with modulus `2q+1`.
+    However, exposing all heavy labels and running the reviewed residual-claw child gives `O-tilde(q +
+    sqrt(N) q^(1/6))`. For every polynomial `q=N^kappa` with `0<kappa<2/3`, this is little-oh of `sqrt(N)q^(1/4)`.
+    Thus the balanced profile is no longer a viable construction for the whole intermediate curve. No
+    `o(N^(2/3))` algorithm was found at `q=Theta(N^(2/3))`; that narrower question is registered separately.
+    Because the upper attack has not received an independent rule-7 completion review, this node remains
+    OPEN/pending-review rather than REFUTED.'
+  basis:
+    evidence:
+    - path: ksum/proof-dag/nodes/KSUM.B4b.L3.yaml
+      kind: text
+    - path: ksum/artifacts/ksum_L3_hidden_frequency_promise_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_hidden_frequency_upper_attack_20260721.md
+      kind: text
+    - node: KSUM.B4b.L3
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.multiscale-frequency-mask
+      kind: node-evidence
+  caveats:
+  - 'pending-review: the cited evidence has not completed an independent review gate'
+frontier:
+  task-001:
+    task: "If a completion-tier obstruction is needed, independently reconstruct the sampling/deletion/\n\
+      \  residual-child algorithm and its uniform rounding/error bounds under the exact frozen promise."
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "Do not pursue a uniform quarter-power dual for this balanced single-scale profile unless the\n\
+      \  upper algorithm is first invalidated; its stated cost already beats the target below the critical\n\
+      \  window."
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: "Treat the unresolved `q=Theta(N^(2/3))` problem only under the separately registered\n  `KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint`\
+      \ node."
+    kind: task
+    since: '2026-08-16'
+  task-004:
+    task: "Do not cite Collision/ED, ordinary hiding, arbitrary-type syntax, Set Equality, BKT, Tani\n\
+      \  alphabet reduction, or surjectivity as a donor without a new exact `q`-ary interface theorem;\n\
+      \  the local audit found none."
+    kind: task
+    since: '2026-08-16'
+  task-005:
+    task: "Any altered frequency law intended to evade palette exposure is a new construction. The generated\n\
+      \  multiscale version is registered at `KSUM.B4b.L3.ALT.multiscale-frequency-mask` before testing."
+    kind: task
+    since: '2026-08-16'

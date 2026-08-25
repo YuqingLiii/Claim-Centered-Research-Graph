@@ -1,0 +1,46 @@
+id: SE.denom.Phi.legal.trace.t1
+aliases:
+- T1
+claim: '**Route T1 (tail Hölder with the j/q suppression):** the Hölder product `‖L_h‖²·‖S_{h,z}‖²_HS
+  ≤ B_θ(q)·m·B_θ(q)²f^{τ_z}/(δ_z+1)` (from the proved `‖L_h‖²≤B_θ` and the η closed forms) already implies
+  (T-b) throughout the tame range, because tail shapes τ_z=(q−j,θ−z) carry `f^{τ_z}/C(q−1,j) ~ (j/(q−j))·f^{θ−z}`
+  — a 1/n-order suppression absent from the long branch. If proved, only (T-a) remains.'
+assessment:
+  level: REFUTED
+  summary: '**REFUTED/DEAD.** A blind independent rule-7 review independently reproduced the printed-condition
+    failure at `(12,24,4,(4);2,(2);2,(2))`, ratio `36/35`, then derived the corrected full-tail summed
+    condition (with no extra factor `m`) and found that it also fails: the first reviewed counterexample
+    is `(18,36,6,(4,2);2,(2);4,(4))`, ratio `903/620>1`. Thus the t1 tail-Hölder route is dead as stated.
+    This refutes neither (T-b) itself nor the parent trace frontier. The project-wide c>=2 identity-level
+    matrix gate remains untested.'
+  basis:
+    reviews:
+    - path: se/reviews/logs_se_trace_t1_independent_20260720/se_trace_t1_independent_review_20260720.md
+      kind: review
+    runs:
+    - path: se/artifacts/logs_se_trace_t1_independent_20260720
+      kind: run
+      result: Execution artifact supporting SE.denom.Phi.legal.trace.t1 at the exact finite, formal, or
+        computational scope stated in the linked output.
+    counterexamples:
+    - path: se/reviews/logs_se_trace_t1_independent_20260720/se_trace_t1_independent_review_20260720.md
+      kind: counterexample
+      note: Sourced contradiction or counterexample supporting this scoped refutation.
+disposition:
+  state: DEAD
+  reason: '**REFUTED/DEAD.** A blind independent rule-7 review independently reproduced the printed-condition
+    failure at `(12,24,4,(4);2,(2);2,(2))`, ratio `36/35`, then derived the corrected full-tail summed
+    condition (with no extra factor `m`) and found that it also fails: the first reviewed counterexample
+    is `(18,36,6,(4,2);2,(2);4,(4))`, ratio `903/620>1`. Thus the t1 tail-Hölder route is dead as stated.
+    This refutes neither (T-b) itself nor the parent trace frontier. The project-wide c>=2 identity-level
+    matrix gate remains untested.'
+frontier:
+  task-001:
+    task: The actual (T-b) inequality remains open at the parent trace node.
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "c>=2 identity-level gate at `(7,14,6)` remains a standing project\n  obligation, but cannot\
+      \ revive this c=1-refuted route."
+    kind: task
+    since: '2026-08-16'

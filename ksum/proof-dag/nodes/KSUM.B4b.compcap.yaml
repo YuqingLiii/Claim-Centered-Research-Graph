@@ -1,0 +1,38 @@
+id: KSUM.B4b.compcap
+role: obstruction
+aliases:
+- B4bCompcap
+claim: 'Any 2-Sum lower-bound construction that factorizes across disjoint position blocks with
+
+  independently hard sub-instances, instantiated with CURRENTLY PROVED block hardness, certifies at
+
+  most `O(sqrt(N) q^(1/6))`. Exceeding `eta = 1/6` therefore requires either (i) cross-block
+
+  coupling through the shared alphabet (the witness must not survive disjoint-block factorization),
+
+  or (ii) block hardness already in the small-range regime — which is the original problem
+
+  recursively (self-referential, no independent gain).'
+assessment:
+  level: CONJECTURED
+  summary: '**CONJECTURED — pending-review** (sketch above; formal statement and proof not yet commissioned).'
+  basis:
+    evidence:
+    - node: KSUM.B4b
+      kind: node-evidence
+    - node: KSUM.B4b.U1
+      kind: node-evidence
+    - node: KSUM.B4b.L2.M2
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ORIENT
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.nonproduct.profile-lattice-core
+      kind: node-evidence
+  caveats:
+  - 'pending-review: the cited evidence has not completed an independent review gate'
+frontier:
+  task-001:
+    task: "Formalize \"factorizes across disjoint blocks\" (for both dual-polynomial witnesses and adversary\n\
+      \  matrices) and prove the cap; then the pre-filter becomes a PROVED screening lemma."
+    kind: task
+    since: '2026-08-16'

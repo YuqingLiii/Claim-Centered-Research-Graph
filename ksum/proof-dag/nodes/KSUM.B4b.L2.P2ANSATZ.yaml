@@ -1,0 +1,36 @@
+id: KSUM.B4b.L2.P2ANSATZ
+aliases:
+- B4bL2P2Ansatz
+claim: Attempt the phase-2 pure coefficientwise sign-separated tensor ansatz, independently zero-balanced
+  on every complementary pair, as an L2 witness; the proposer-tier diagnosis is BLOCKED for this ansatz
+  because its correlation is `2^(1-(q-1)/2)` and therefore at most `1/2` for odd `q>=5`.
+assessment:
+  level: OPEN
+  summary: '**OPEN · PARKED with reason.** The frozen phase-2 outcome was BLOCKED for this ansatz at proposer
+    tier; protocol rule 3 forbids converting that mechanism kill into REFUTED.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L2_phase2.md
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    - node: KSUM.B4b.L2.M2
+      kind: node-evidence
+    reviews:
+    - path: ksum/reviews/ksum_L2p2_review.md
+      kind: review
+disposition:
+  state: PARKED
+  reason: '**OPEN · PARKED with reason.** The frozen phase-2 outcome was BLOCKED for this ansatz at proposer
+    tier; protocol rule 3 forbids converting that mechanism kill into REFUTED.'
+  revive: Revive only with a revised ansatz that escapes the recorded local zero-balance and sign-aligned
+    product obstruction.
+  source:
+    path: ksum/reviews/ksum_L2p2_review.md
+    kind: review
+frontier:
+  task-001:
+    task: Revive only with a material change escaping local zero-balance/sign-aligned product structure;
+      the correlated outer route already does so.
+    kind: task
+    since: '2026-08-16'

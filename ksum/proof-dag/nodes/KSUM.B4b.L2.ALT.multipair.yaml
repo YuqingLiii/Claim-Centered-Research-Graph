@@ -1,0 +1,41 @@
+id: KSUM.B4b.L2.ALT.multipair
+role: obstruction
+aliases:
+- B4bL2AltMultipair
+claim: 'Scoped obstruction candidate: any constant-correlation invariant dual supported on valid orbit
+
+  profiles with target-pair count `C_t <= M` has pure high degree at most `O_tau(sqrt(M))`. In
+
+  particular, the explicit one-defect multi-pair family has `M <= N-1` and cannot produce a growing
+
+  `q` factor or reach the `N^(2/3)` cap.'
+assessment:
+  level: CONJECTURED
+  summary: '**CONJECTURED — pending independent review.** The web proposer supplied a formula family,
+    an explicit nonseparable coefficient law, and the primal Chebyshev obstruction. No completion-tier
+    status is claimed.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L2_phase8_multipair_web_feasibility_20260720.md
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.tworay
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.highCt-balanced
+      kind: node-evidence
+frontier:
+  task-001:
+    task: "Independently review the Chebyshev composition, query-degree factor, correlation-duality\n\
+      \  implication, legality constraints, and the exact hard boundary."
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: Do not tune coefficients further inside this support class unless review breaks the obstruction.
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: "Any escape using superlinear target-pair count belongs to the separately registered\n  `ALT.multipair.highCt-balanced`\
+      \ node."
+    kind: task
+    since: '2026-08-16'

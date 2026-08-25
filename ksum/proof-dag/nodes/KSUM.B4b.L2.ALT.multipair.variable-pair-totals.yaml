@@ -1,0 +1,128 @@
+id: KSUM.B4b.L2.ALT.multipair.variable-pair-totals
+aliases:
+- B4bL2AltMultipairVariablePairTotals
+claim: 'The full variable-total orbit simplex is parametrized by unordered split histograms `H_{r,u}`
+  with
+
+  `sum H=K` and `sum(r+u)H=N`. It survives the phase-11 support-level primal attacks and reaches
+
+  `C_t=Theta(N^(4/3))` at the capped endpoints. The open claim is to construct one nonseparable signed
+
+  kernel on these histograms with constant correlation, the target annihilation band, and constant
+
+  high-`C_t` absolute mass.'
+assessment:
+  level: OPEN
+  summary: '**OPEN — explicit support, missing coefficient kernel.** A proposer pass found no strict primal
+    obstruction, but did not construct the required signed annihilator. No lower bound is claimed.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L2_phase11_variable_pair_totals_web_feasibility_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase13_exact_finite_discriminator_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase14_multialternant_distributed_boundary_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase14_target_scale_sweep_20260721.md
+      kind: text
+    - path: ksum/tools/ksum_l2p14_target_scale_sweep.py
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase15_intermediate_constant_sweep_20260721.md
+      kind: text
+    - path: ksum/tools/ksum_l2p15_intermediate_constant_sweep.py
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase15_growing_rank_moment_design_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase16_selective_orbit_tensor_kernel_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase17_qN_explicit_pi_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase17_q5_explicit_pi_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase18_qN_multidimensional_pi_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase18_q5_boundary_tilt_pi_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase19_multiscale_gapfree_base_measure_20260721.md
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.multiscale-splits
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.growing-rank-moment-design
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel
+      kind: node-evidence
+    reviews:
+    - path: ksum/reviews/ksum_L2p12p13_independent_review_20260721.md
+      kind: review
+    - path: ksum/reviews/ksum_L2p14_multialternant_independent_review_20260721.md
+      kind: review
+    runs:
+    - path: ksum/artifacts/logs_ksum_L2p14_target_scale_sweep_20260721
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2.ALT.multipair.variable-pair-totals at the exact
+        finite, formal, or computational scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p15_intermediate_constant_sweep_20260721
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2.ALT.multipair.variable-pair-totals at the exact
+        finite, formal, or computational scope stated in the linked output.
+frontier:
+  task-001:
+    task: "Construct an explicit formula `W_{N,q}(H)` on joint split histograms, not a product of total\
+      \ and\n  split laws."
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "Prove zero total mass, unit `l1`, correlation above `2/3+delta`, factorial-moment annihilation\
+      \ below\n  `c_0 D_*`, and constant absolute mass on `C_t>=c D_*^2`."
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: "Adapt or rule out the Bun–Thaler invalid-parameter correction/shared-boundary mechanism on\
+      \ the\n  unbounded-dimensional partition/split histogram."
+    kind: task
+    since: '2026-08-16'
+  task-004:
+    task: "Phase-13 finite discriminator has been independently reproduced numerically; an independent\n\
+      \  Rule-7 review now confirms the finite core. Do not retroactively create/promote a new lemma node;\n\
+      \  The pre-registration rule required node registration before that review commission."
+    kind: task
+    since: '2026-08-16'
+  task-005:
+    task: "Do not reuse the Phase-14 broad bounded-collection obstruction. Bounded rank three and higher\n\
+      \  remains live; any replacement obstruction must account for the exact `N=10,q=5,K=2,D=5`\n  counterexample\
+      \ and must control correlation, not only moment feasibility."
+    kind: task
+    since: '2026-08-16'
+  task-006:
+    task: "Sweep exact cutoffs proportional to `sqrt N`; do not extrapolate from the over-demanding `D=8`\n\
+      \  instance. Independently reproduce the phase-13 certificate before using it."
+    kind: task
+    since: '2026-08-16'
+  task-007:
+    task: "Extend the target-scale sweep to intermediate constants `1<c<2` and larger `N`, while preserving\n\
+      \  exact tail gates; finite patterns cannot substitute for an asymptotic coefficient formula."
+    kind: task
+    since: '2026-08-16'
+  task-008:
+    task: "Preserve the audited endpoint choice of `K`: two pairs at `q=5` and `Theta(N^(2/3))` pairs\
+      \ at the\n  capped large-`q` endpoints."
+    kind: task
+    since: '2026-08-16'
+  task-009:
+    task: "Gate the general moment formula at `K<m`, `rho>=3`, and the relevant odd-`q` ranges before\
+      \ using it\n  beyond the reviewed `m=K=2` specialization; do not claim even-`q` coverage."
+    kind: task
+    since: '2026-08-16'
+  task-010:
+    task: "In the common-split formula, use only\n  `rho<=min(floor((D-1)/2),m,K,floor(N/2))`; the earlier\
+      \ unqualified range was too broad."
+    kind: task
+    since: '2026-08-16'
+  task-011:
+    task: "Continue construction work only in the preregistered selective-orbit-tensor node; the faithful\n\
+      \  determinant/OA family is recorded as a scoped CONJECTURED obstruction, not a proof of\n  impossibility\
+      \ for selective orbit kernels."
+    kind: task
+    since: '2026-08-16'

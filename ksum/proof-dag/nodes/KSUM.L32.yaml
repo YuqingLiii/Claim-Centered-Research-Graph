@@ -1,0 +1,18 @@
+id: KSUM.L32
+aliases:
+- L32
+claim: 'fresh unreduced direct Adv± solver: k=2 values only
+
+  (3,3)=2.4186 (4,3)=2.7127; k≥3 not reached'
+assessment:
+  level: NUMERICAL
+  summary: NUMERICAL. Reproducible finite or mechanized evidence supports the scoped claim; the exact
+    run records are listed below and do not establish an asymptotic theorem beyond that scope.
+  basis:
+    evidence:
+    - node: KSUM.L32a
+      kind: node-evidence
+    runs:
+    - path: ksum/artifacts/logs_ksum_stage0_20260716/D_direct_atlas.log
+      kind: run
+      result: direct adversary SDP values computed at the recorded finite instances

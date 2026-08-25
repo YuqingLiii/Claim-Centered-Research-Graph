@@ -1,0 +1,26 @@
+id: SE.denom.Phi.legal.trace.r6
+aliases:
+- R6DEAD
+claim: '**Killed route (h-averaging, R4b''s H3):** the h-AVERAGED trace bounds are strictly easier than
+  per-h, so prove the averaged version via the twirl/Schur structure.'
+assessment:
+  level: REFUTED
+  summary: REFUTED and DEAD. The independent kill review proved that matching covariance makes the relevant
+    quantities exactly h-independent, so h-averaging equals the per-h value and gives no improvement.
+    The fact that the averaged object suffices for assembly remains valid.
+  basis:
+    evidence:
+    - path: se/artifacts/se_mphys2_20260719.md
+      kind: text
+    reviews:
+    - path: se/reviews/se_trace_r5r6r7_killreview_20260730.md
+      kind: review
+    counterexamples:
+    - path: se/reviews/se_trace_r5r6r7_killreview_20260730.md
+      kind: counterexample
+      note: Sourced contradiction or counterexample supporting this scoped refutation.
+disposition:
+  state: DEAD
+  reason: REFUTED and DEAD. The independent kill review proved that matching covariance makes the relevant
+    quantities exactly h-independent, so h-averaging equals the per-h value and gives no improvement.
+    The fact that the averaged object suffices for assembly remains valid.

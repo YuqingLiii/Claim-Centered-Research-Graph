@@ -1,0 +1,64 @@
+# F1 embedding audit -- independent -- date-tag 20260718
+# cmd: ksum/tools/ksum_f1_embed.py
+## A1. k=3 specialised recipe (omega=R), t=0, all inputs
+{"cfg": "k3spec_R2_n2_q76", "k": 3, "R": 2, "n": 2, "q": 76, "t": 0, "inputs": 64, "mism": 0, "expect_mismatch": false, "verdict": "PASS", "s": 0.0}
+{"cfg": "k3spec_R2_n3_q76", "k": 3, "R": 2, "n": 3, "q": 76, "t": 0, "inputs": 512, "mism": 0, "expect_mismatch": false, "verdict": "PASS", "s": 0.0}
+{"cfg": "k3spec_R3_n2_q181", "k": 3, "R": 3, "n": 2, "q": 181, "t": 0, "inputs": 729, "mism": 0, "expect_mismatch": false, "verdict": "PASS", "s": 0.0}
+{"cfg": "k3spec_R3_n3_q181", "k": 3, "R": 3, "n": 3, "q": 181, "t": 0, "inputs": 19683, "mism": 0, "expect_mismatch": false, "verdict": "PASS", "s": 0.17}
+{"cfg": "k3spec_R4_n2_q328", "k": 3, "R": 4, "n": 2, "q": 328, "t": 0, "inputs": 4096, "mism": 0, "expect_mismatch": false, "verdict": "PASS", "s": 0.02}
+{"cfg": "k3spec_R5_n2_q517", "k": 3, "R": 5, "n": 2, "q": 517, "t": 0, "inputs": 15625, "mism": 0, "expect_mismatch": false, "verdict": "PASS", "s": 0.08}
+## A2. general-k recipe (omega=2R-1, closing coeff), t=0, all inputs
+{"cfg": "gen_k3_R2_n3_q325", "k": 3, "R": 2, "n": 3, "q": 325, "t": 0, "inputs": 512, "mism": 0, "expect_mismatch": false, "verdict": "PASS", "s": 0.0}
+{"cfg": "gen_k3_R3_n2_q925", "k": 3, "R": 3, "n": 2, "q": 925, "t": 0, "inputs": 729, "mism": 0, "expect_mismatch": false, "verdict": "PASS", "s": 0.0}
+{"cfg": "gen_k4_R2_n2_q19345", "k": 4, "R": 2, "n": 2, "q": 19345, "t": 0, "inputs": 256, "mism": 0, "expect_mismatch": false, "verdict": "PASS", "s": 0.0}
+{"cfg": "gen_k4_R2_n3_q19345", "k": 4, "R": 2, "n": 3, "q": 19345, "t": 0, "inputs": 4096, "mism": 0, "expect_mismatch": false, "verdict": "PASS", "s": 0.15}
+{"cfg": "gen_k4_R3_n2_q90885", "k": 4, "R": 3, "n": 2, "q": 90885, "t": 0, "inputs": 6561, "mism": 0, "expect_mismatch": false, "verdict": "PASS", "s": 0.09}
+{"cfg": "gen_k5_R2_n2_q1471521", "k": 5, "R": 2, "n": 2, "q": 1471521, "t": 0, "inputs": 1024, "mism": 0, "expect_mismatch": false, "verdict": "PASS", "s": 0.03}
+## B. reviewer trap: u_j=omega^{j-1} for ALL j (no closing) -> collision MISSES 0
+{"cfg": "TRAP_k3_R2_naive", "k": 3, "R": 2, "n": 2, "q": 325, "t": 0, "inputs": 64, "mism": 3, "expect_mismatch": true, "verdict": "PASS", "s": 0.0}
+  witness {"g": [[0, 1], [0, 1], [1, 1]], "hit": false, "coll": true}
+  witness {"g": [[0, 1], [1, 0], [1, 1]], "hit": false, "coll": true}
+  witness {"g": [[0, 1], [1, 1], [0, 1]], "hit": false, "coll": true}
+{"trap_k": 3, "R": 2, "collision_payload_mod_q": 13, "would_be_broken_iff_nonzero": true}
+{"cfg": "TRAP_k3_R3_naive", "k": 3, "R": 3, "n": 2, "q": 925, "t": 0, "inputs": 729, "mism": 3, "expect_mismatch": true, "verdict": "PASS", "s": 0.0}
+  witness {"g": [[0, 1], [0, 1], [1, 1]], "hit": false, "coll": true}
+  witness {"g": [[0, 1], [0, 1], [1, 2]], "hit": false, "coll": true}
+  witness {"g": [[0, 1], [0, 1], [2, 1]], "hit": false, "coll": true}
+{"trap_k": 3, "R": 3, "collision_payload_mod_q": 31, "would_be_broken_iff_nonzero": true}
+{"cfg": "TRAP_k4_R2_naive", "k": 4, "R": 2, "n": 2, "q": 19345, "t": 0, "inputs": 256, "mism": 3, "expect_mismatch": true, "verdict": "PASS", "s": 0.0}
+  witness {"g": [[0, 1], [0, 1], [0, 1], [1, 1]], "hit": false, "coll": true}
+  witness {"g": [[0, 1], [0, 1], [1, 0], [1, 1]], "hit": false, "coll": true}
+  witness {"g": [[0, 1], [0, 1], [1, 1], [0, 1]], "hit": false, "coll": true}
+{"trap_k": 4, "R": 2, "collision_payload_mod_q": 40, "would_be_broken_iff_nonzero": true}
+{"cfg": "TRAP_k5_R2_naive", "k": 5, "R": 2, "n": 2, "q": 1471521, "t": 0, "inputs": 1024, "mism": 3, "expect_mismatch": true, "verdict": "PASS", "s": 0.04}
+  witness {"g": [[0, 1], [0, 1], [0, 1], [0, 1], [1, 1]], "hit": false, "coll": true}
+  witness {"g": [[0, 1], [0, 1], [0, 1], [1, 0], [1, 1]], "hit": false, "coll": true}
+  witness {"g": [[0, 1], [0, 1], [0, 1], [1, 1], [0, 1]], "hit": false, "coll": true}
+{"trap_k": 5, "R": 2, "collision_payload_mod_q": 121, "would_be_broken_iff_nonzero": true}
+## C. independent bound audit: enumerate max|payload|, verify vs P; tag sep vs P+1
+{"cfg": "bound_k3_R2", "P": 12, "max_payload": 12, "payload_le_P": true, "min_tag_sep": 13, "sep_ge_P+1": true, "P+1": 13, "verdict": "PASS"}
+{"cfg": "bound_k3_R3", "P": 36, "max_payload": 36, "payload_le_P": true, "min_tag_sep": 37, "sep_ge_P+1": true, "P+1": 37, "verdict": "PASS"}
+{"cfg": "bound_k3_R4", "P": 72, "max_payload": 72, "payload_le_P": true, "min_tag_sep": 73, "sep_ge_P+1": true, "P+1": 73, "verdict": "PASS"}
+{"cfg": "bound_k4_R2", "P": 52, "max_payload": 52, "payload_le_P": true, "min_tag_sep": 53, "sep_ge_P+1": true, "P+1": 53, "verdict": "PASS"}
+{"cfg": "bound_k4_R3", "P": 248, "max_payload": 248, "payload_le_P": true, "min_tag_sep": 249, "sep_ge_P+1": true, "P+1": 249, "verdict": "PASS"}
+{"cfg": "bound_k5_R2", "P": 200, "max_payload": 200, "payload_le_P": true, "min_tag_sep": 201, "sep_ge_P+1": true, "P+1": 201, "verdict": "PASS"}
+## D. t!=0 via translation x->x+a, target t=k*a  (all inputs)
+{"cfg": "transl_k3_R2_t9", "k": 3, "R": 2, "n": 2, "q": 76, "t": 9, "inputs": 64, "mism": 0, "expect_mismatch": false, "verdict": "PASS", "s": 0.0}
+{"cfg": "transl_k3_R3_t15", "k": 3, "R": 3, "n": 2, "q": 181, "t": 15, "inputs": 729, "mism": 0, "expect_mismatch": false, "verdict": "PASS", "s": 0.0}
+{"cfg": "transl_k4_R2_t16", "k": 4, "R": 2, "n": 2, "q": 19345, "t": 16, "inputs": 256, "mism": 0, "expect_mismatch": false, "verdict": "PASS", "s": 0.0}
+{"cfg": "transl_k5_R2_t10", "k": 5, "R": 2, "n": 2, "q": 1471521, "t": 10, "inputs": 1024, "mism": 0, "expect_mismatch": false, "verdict": "PASS", "s": 0.03}
+## E. pattern-level certification (proof case analysis), k=3..6, R=2..4
+{"cfg": "pat_k3_R2", "q": 325, "P": 12, "M": 24, "max_payload_enum": 12, "min_tag_sep_enum": 13, "verdict": "PASS", "why": "ok"}
+{"cfg": "pat_k3_R3", "q": 925, "P": 36, "M": 24, "max_payload_enum": 36, "min_tag_sep_enum": 37, "verdict": "PASS", "why": "ok"}
+{"cfg": "pat_k3_R4", "q": 1825, "P": 72, "M": 24, "max_payload_enum": 72, "min_tag_sep_enum": 73, "verdict": "PASS", "why": "ok"}
+{"cfg": "pat_k4_R2", "q": 19345, "P": 52, "M": 364, "max_payload_enum": 52, "min_tag_sep_enum": 53, "verdict": "PASS", "why": "ok"}
+{"cfg": "pat_k4_R3", "q": 90885, "P": 248, "M": 364, "max_payload_enum": 248, "min_tag_sep_enum": 249, "verdict": "PASS", "why": "ok"}
+{"cfg": "pat_k4_R4", "q": 250025, "P": 684, "M": 364, "max_payload_enum": 684, "min_tag_sep_enum": 685, "verdict": "PASS", "why": "ok"}
+{"cfg": "pat_k5_R2", "q": 1471521, "P": 200, "M": 7320, "max_payload_enum": 200, "min_tag_sep_enum": 201, "verdict": "PASS", "why": "ok"}
+{"cfg": "pat_k5_R3", "q": 11428081, "P": 1560, "M": 7320, "max_payload_enum": 1560, "min_tag_sep_enum": 1561, "verdict": "PASS", "why": "ok"}
+{"cfg": "pat_k5_R4", "q": 43933321, "P": 6000, "M": 7320, "max_payload_enum": 6000, "min_tag_sep_enum": 6001, "verdict": "PASS", "why": "ok"}
+{"cfg": "pat_k6_R2", "q": 134965369, "P": 726, "M": 185646, "max_payload_enum": 726, "min_tag_sep_enum": 727, "verdict": "PASS", "why": "ok"}
+{"cfg": "pat_k6_R3", "q": 1740069331, "P": 9372, "M": 185646, "max_payload_enum": 9372, "min_tag_sep_enum": 9373, "verdict": "PASS", "why": "ok"}
+{"cfg": "pat_k6_R4", "q": 9360136093, "P": 50418, "M": 185646, "max_payload_enum": 50418, "min_tag_sep_enum": 50419, "verdict": "PASS", "why": "ok"}
+# TOTAL inputs checked: 58033
+# OVERALL: ALL PASS

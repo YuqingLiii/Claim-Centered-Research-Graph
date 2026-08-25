@@ -1,0 +1,17 @@
+id: SE.denom.assembly.envelope
+role: outcome
+aliases:
+- ENV
+claim: SE.denom.assembly.envelope — rho_{n,k} <= R_{n,k} (in-spec max 16/15), 0 viol / 32612 tuples
+assessment:
+  level: NUMERICAL
+  summary: NUMERICAL. Reproducible finite or mechanized evidence supports the scoped claim; the exact
+    run records are listed below and do not establish an asymptotic theorem beyond that scope.
+  basis:
+    evidence:
+    - node: SE.denom.assembly
+      kind: node-evidence
+    runs:
+    - path: se/artifacts/logs_se_carrier_steps35_20260716/se_carrier_steps35_check.log
+      kind: run
+      result: 0 violations over 32,612 tested tuples

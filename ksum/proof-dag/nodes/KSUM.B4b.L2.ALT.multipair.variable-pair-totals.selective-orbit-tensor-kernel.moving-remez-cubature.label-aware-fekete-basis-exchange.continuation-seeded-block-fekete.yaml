@@ -1,0 +1,61 @@
+id: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.moving-remez-cubature.label-aware-fekete-basis-exchange.continuation-seeded-block-fekete
+aliases:
+- B4bL2AltMultipairContinuationSeededBlockFekete
+claim: 'Seek a deterministic support path transported across neighboring `(N,D)` instances and updated
+  by
+
+  coordinated multi-column Fekete exchanges, avoiding the local path instability of restarted
+
+  single-entry basis exchange.'
+assessment:
+  level: OPEN
+  summary: '**OPEN — bounded continuation is stable but subcritical; continuum equations missing.** The
+    closed finite transport works as intended yet fails correlation and the global dual bound in every
+    gate.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L2_phase20_label_aware_fekete_basis_exchange_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase21_continuation_seeded_block_fekete_20260721.md
+      kind: text
+    - path: ksum/tools/ksum_l2p21_continuation_block_exchange.py
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.moving-remez-cubature.label-aware-fekete-basis-exchange
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.moving-remez-cubature.label-aware-fekete-basis-exchange.continuation-seeded-block-fekete.continuum-limit-remez-support-flow
+      kind: node-evidence
+    runs:
+    - path: ksum/artifacts/logs_ksum_L2p21_continuation_block_exchange_20260721
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.moving-remez-cubature.label-aware-fekete-basis-exchange.continuation-seeded-block-fekete
+        at the exact finite, formal, or computational scope stated in the linked output.
+frontier:
+  task-001:
+    task: "Define a deterministic support transport from `(N,D)` to neighboring points without using their\n\
+      \  optimal LP supports as seeds."
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: Define a bounded-width coordinated exchange objective and tie-breaking rule before testing.
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: Demonstrate a stable path through at least one full cutoff block, then three consecutive blocks.
+    kind: task
+    since: '2026-08-16'
+  task-004:
+    task: Prove exact rank-plus-one cancellation, correlation, high-tail mass, and global dual bounds.
+    kind: task
+    since: '2026-08-16'
+  task-005:
+    task: "Explain how the finite transport yields a uniform asymptotic formula rather than an algorithmic\n\
+      \  restatement of the LP."
+    kind: task
+    since: '2026-08-16'
+  task-006:
+    task: "Do not widen/deepen finite search toward the whole orbit set. Any non-algorithmic continuation\n\
+      \  belongs to the preregistered continuum-limit Remez support-flow node."
+    kind: task
+    since: '2026-08-16'

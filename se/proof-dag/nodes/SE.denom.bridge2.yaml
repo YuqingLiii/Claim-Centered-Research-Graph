@@ -1,0 +1,74 @@
+id: SE.denom.bridge2
+aliases:
+- BR2
+claim: On the exact-defect-k sector, the two-sided identity (4.7) holds; consequently ||R(Xbar_k)||<=rho_(n,k)
+  and ||R(Ybar_k)||<=rho_(n,k)||Ybar_k||.
+routes:
+  joint:
+    premises:
+    - SE.denom.bridge2.bimodule
+    - SE.denom.bridge2.dagger
+    - SE.denom.bridge2.degree
+    - SE.denom.bridge2.commutation
+    - SE.denom.bridge2.jy
+    - SE.denom.bridge2.md
+    - SE.denom.bridge2.ytransfer
+    - SE.denom.bridge2.pin
+    implication: 'bimodule AND dagger AND degree AND commutation AND jy AND md AND ytransfer AND pin imply
+      bridge2: the bimodule/dagger/degree/commutation children establish the structural setting in which
+      the completion-forgetting square commutes; jy and md give the matched-degree legality lemma; pin
+      gives the two-sided defect pinning (X/Y carried on exact defect k, LR first-row inequality); ytransfer
+      carries the stay-channel side. Assembled, these give the exact-defect-k two-sided legality identity
+      (4.7) with the X-line ||R(Xbar_k)|| <= rho_{n,k} and the Y-line <= rho_{n,k}||Ybar_k||.'
+    proof:
+      sketch: se/artifacts/se_bridge2_pin_20260718.md + se/artifacts/se_bridge2_md_inst_20260718.md (the two
+        assembled halves)
+      sources:
+      - path: se/artifacts/se_bridge2_pin_20260718.md
+        kind: text
+      - path: se/artifacts/se_bridge2_md_inst_20260718.md
+        kind: text
+    assessment:
+      level: PROVED
+      summary: se/reviews/se_bridge2_pin_review_20260718.md and se/reviews/se_bridge2_reviews_20260718.md
+        (both CONFIRMED item-by-item incl. the assembled corollaries); independently re-derived from scratch
+        in se/reviews/se_cor16_certification_20260723.md A.11-A.19; externally confirmed 2026-07-30
+      basis:
+        reviews:
+        - path: se/reviews/se_bridge2_pin_review_20260718.md
+          kind: review
+          scope: Checks how the structural, matched-degree, pinning, and transfer inputs assemble into
+            the exact-defect identity and the two legal channel bounds.
+          locator: Per-step table, Sections 4--6, and Final verdict
+          reviewed_hash: sha256:0e402ff9c730c21cc78deb40b8890af8e4f7e1f816718f470ccb9430e7c7977c
+        - path: se/reviews/se_bridge2_reviews_20260718.md
+          kind: review
+          scope: Indexes the component reviews used by the Bridge-II route and identifies the pinning
+            obligation later discharged in the separately linked pin review.
+          locator: Reviews 1--4 and Same-day reviews
+          reviewed_hash: sha256:0e402ff9c730c21cc78deb40b8890af8e4f7e1f816718f470ccb9430e7c7977c
+assessment:
+  level: PROVED
+  summary: The claim is supported by the linked evidence and independent review.
+  basis:
+    evidence:
+    - node: SE.denom.bridge2.numerics
+      kind: node-evidence
+    - node: SE.denom.bridge2.scalar
+      kind: node-evidence
+    routes:
+    - joint
+    reviews:
+    - path: se/reviews/se_bridge2_pin_review_20260718.md
+      kind: review
+      scope: Checks the load-bearing pinning, transport, matched-degree, and X/Y corollaries that close
+        Bridge II, including k=0 and k=n boundaries.
+      locator: Per-step table, Sections 4--6, and Final verdict
+      reviewed_hash: sha256:7f8f3e5c427538d42ac39347180945f7b14cc7ac8613629ae29f5764c9380d07
+    - path: se/reviews/se_bridge2_reviews_20260718.md
+      kind: review
+      scope: Archives independent checks of the degree, normalization, commutation, matched-degree, Y-transfer,
+        and family-split components; final pinning and full assembly are covered by the separately linked
+        pin review.
+      locator: Reviews 1--4 and Same-day reviews
+      reviewed_hash: sha256:7f8f3e5c427538d42ac39347180945f7b14cc7ac8613629ae29f5764c9380d07

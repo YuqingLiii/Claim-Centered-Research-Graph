@@ -1,0 +1,43 @@
+id: KSUM.B4b.L2.ALT.weighted-activation-or-dual-composition
+aliases:
+- B4bL2AltWeightedActivationOrDualComposition
+claim: 'On a legal dense-composition near-zero support with slots
+
+  `x_i=y_i(s_i-1)`, construct a formula-defined discrete dual block composition for the zero-test
+
+  `1[y=0]` whose pure actual multisymmetric weight is at least `(1/2+delta)L`, correlation is
+
+  strictly above `2/3`, and coefficient `l1` is bounded; then couple it to the exact parity tail to
+
+  obtain the `q=N`, `D=Theta(N^(2/3))` endpoint witness.'
+assessment:
+  level: REFUTED
+  summary: On the registered dense-composition slice, a strict weight-<D actual Chebyshev row in C=sum_i
+    y_i(s_i-1) forces every normalized pure signed law to have correlation o(1).
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L2_weighted_activation_or_dual_composition_obstruction_20260722.md
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.near-zero-bridge-independent-parity-tail
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.balanced-positive-split-weighted-dual-composition
+      kind: node-evidence
+    counterexamples:
+    - path: ksum/artifacts/ksum_L2_weighted_activation_or_dual_composition_obstruction_20260722.md
+      kind: counterexample
+      note: Sourced contradiction or counterexample supporting this scoped refutation.
+disposition:
+  state: DEAD
+  reason: On the registered dense-composition slice, a strict weight-<D actual Chebyshev row in C=sum_i
+    y_i(s_i-1) forces every normalized pure signed law to have correlation o(1).
+  source:
+    path: ksum/artifacts/ksum_L2_weighted_activation_or_dual_composition_obstruction_20260722.md
+    kind: text
+frontier:
+  task-001:
+    task: "No obligation remains inside this dead dense-slice claim. Continue only on separately registered\n\
+      \  supports such as balanced positive splits; do not relabel them as repairs of this node."
+    kind: task
+    since: '2026-08-16'

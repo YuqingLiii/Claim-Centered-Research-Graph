@@ -1,0 +1,33 @@
+id: KSUM.B4b.L3.ALT.biclique-cover-graph-claw
+aliases:
+- B4bL3AltBicliqueCoverGraphClaw
+claim: 'Seek a bipartite relation-claw donor on `r=Theta(q^(3/2))` virtual labels whose relation has a
+
+  size-`O(q)` bounded-incidence biclique cover, whose query complexity is `Omega(r^(2/3))`, and whose
+
+  incidence expansion plus pSearch embeds with constant overhead into range-`O(q)` claw/2-SUM.'
+assessment:
+  level: OPEN
+  summary: '**OPEN — deprioritized with reason.** The parameter identity is attractive: `r^(2/3) sqrt(N/r)=sqrt(N)q^(1/4)`
+    at `r=q^(3/2)`. But no local theorem gives the required `Omega(r^(2/3))` relation-claw lower bound
+    when only `O(q)` bicliques are available; the obvious set-intersection realization is simply another
+    presentation of the same small-range-claw gap.'
+  basis:
+    evidence:
+    - node: KSUM.B4b.L3
+      kind: node-evidence
+frontier:
+  task-001:
+    task: Give an explicit bounded-incidence biclique cover and exact constant-query cyclic encoding.
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "Supply an independent lower-bound donor for its relation-claw problem; a restatement of\n \
+      \ small-range claw or graph collision does not count."
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: "Revive only after such a donor or a genuinely new adversary construction is available. Until\n\
+      \  then the hidden-frequency-mask node has higher priority."
+    kind: task
+    since: '2026-08-16'

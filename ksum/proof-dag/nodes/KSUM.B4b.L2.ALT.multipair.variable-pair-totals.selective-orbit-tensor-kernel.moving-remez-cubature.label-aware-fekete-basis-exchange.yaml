@@ -1,0 +1,61 @@
+id: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.moving-remez-cubature.label-aware-fekete-basis-exchange
+aliases:
+- B4bL2AltMultipairLabelAwareFeketeBasisExchange
+claim: 'Seek a formula-defined moving unisolvent basis selected jointly from NO-boundary and balanced
+  YES
+
+  orbits, with basis exchanges driven by label-aware determinant/equioscillation criteria, so its
+
+  fundamental circuit has constant signed correlation and a globally bounded dual residual.'
+assessment:
+  level: OPEN
+  summary: '**OPEN — single-entry label-aware exchange obstructed; continuation/block exchange untested.**
+    The closed Phase-20 rule fails every three-block gate, though a wide exchange nearly passes one isolated
+    instance.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L2_phase19_moving_remez_cubature_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase20_label_aware_fekete_basis_exchange_20260721.md
+      kind: text
+    - path: ksum/tools/ksum_l2p20_label_aware_exchange.py
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.moving-remez-cubature
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.moving-remez-cubature.label-aware-fekete-basis-exchange.continuation-seeded-block-fekete
+      kind: node-evidence
+    runs:
+    - path: ksum/artifacts/logs_ksum_L2p20_label_aware_exchange_20260721
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.moving-remez-cubature.label-aware-fekete-basis-exchange
+        at the exact finite, formal, or computational scope stated in the linked output.
+frontier:
+  task-001:
+    task: "Define a deterministic label-aware Fekete or basis-exchange objective without using the final\
+      \ LP\n  optimum as its definition."
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: Produce one support formula across at least three cutoff blocks and prove rank-plus-one legality.
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: Control cofactor sign balance, correlation, `l1`, high-`C_t` mass, and all low moments.
+    kind: task
+    since: '2026-08-16'
+  task-004:
+    task: "Prove a global integer-orbit residual bound; equioscillation only on the selected circuit is\n\
+      \  insufficient."
+    kind: task
+    since: '2026-08-16'
+  task-005:
+    task: Explain a compatible large-`q` endpoint or explicitly restrict and justify the `q=5` scope.
+    kind: task
+    since: '2026-08-16'
+  task-006:
+    task: "Do not restart the failed single-entry rule at each instance. Any transported multi-entry work\n\
+      \  belongs to the preregistered continuation-seeded block-Fekete node."
+    kind: task
+    since: '2026-08-16'

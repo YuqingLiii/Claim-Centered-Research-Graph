@@ -1,0 +1,24 @@
+{
+  "command": "python ksum/tools/ksum_l2p27_subexposed_reservoir_check.py",
+  "driver_sha256": "1d395c8d060b48106e4c9afa4c435104d18e8603035d2c63afe64be2ba7729f5",
+  "fixed_index_defects": [
+    {"D": 100, "h": 75, "natural_scaled_j0": -0.0001554138205233091, "natural_scaled_j1": 0.000003877977696914261, "natural_scaled_j2": -0.00000006689439535231836, "natural_scaled_j3": 0.00000000062040722467786, "wkb_normalized_j0": -0.0001554138205233091, "wkb_normalized_j1": 0.0003877977696914261, "wkb_normalized_j2": -0.0006689439535231836, "wkb_normalized_j3": 0.00062040722467786},
+    {"D": 200, "h": 150, "natural_scaled_j0": -0.00015823518638125034, "natural_scaled_j1": 0.0000019434443566791945, "natural_scaled_j2": -0.000000016583787856975737, "natural_scaled_j3": 0.00000000007602774771134178, "wkb_normalized_j0": -0.00015823518638125034, "wkb_normalized_j1": 0.00038868887133583887, "wkb_normalized_j2": -0.0006633515142790295, "wkb_normalized_j3": 0.0006082219816907343},
+    {"D": 400, "h": 300, "natural_scaled_j0": -0.0001596261993804804, "natural_scaled_j1": 0.0000009727607334117772, "natural_scaled_j2": -0.000000004128469208400707, "natural_scaled_j3": 0.00000000000940921417556584, "wkb_normalized_j0": -0.0001596261993804804, "wkb_normalized_j1": 0.0003891042933647109, "wkb_normalized_j2": -0.0006605550733441131, "wkb_normalized_j3": 0.0006021897072362138},
+    {"D": 800, "h": 600, "natural_scaled_j0": -0.00016031662896931476, "natural_scaled_j1": 0.0000004866307695223105, "natural_scaled_j2": -0.0000000010299326039154249, "natural_scaled_j3": 0.0000000000011702903047605323, "wkb_normalized_j0": -0.00016031662896931476, "wkb_normalized_j1": 0.0003893046156178484, "wkb_normalized_j2": -0.000659156866505872, "wkb_normalized_j3": 0.0005991886360373925}
+  ],
+  "lambdas": [0.02, 0.2, 0.4, 0.7],
+  "moment_checks_0_to_3": [1.0, -3.469446951953614e-18, 2.710505431213761e-18, 2.952756854128491e-18],
+  "normalized_correlation": 0.7536945812807883,
+  "normalized_high_tail_mass": 0.6231527093596059,
+  "positive_beta_subexposure": [
+    {"D": 100, "gap_over_D_log_D": -0.20789618244419877, "log_ratio_to_global_max": -95.73973011727651},
+    {"D": 200, "gap_over_D_log_D": -0.20634078184326973, "log_ratio_to_global_max": -218.65178957345915},
+    {"D": 400, "gap_over_D_log_D": -0.20537975767567362, "log_ratio_to_global_max": -492.2102147229707},
+    {"D": 800, "gap_over_D_log_D": -0.20472075958150077, "log_ratio_to_global_max": -1094.783032316469}
+  ],
+  "reservoir_l1": 1.65359477124183,
+  "scope": "Closed-form four-node reservoir, fixed-index kernel defects, and positive-beta phase gaps only; no support optimization or LP.",
+  "weights": [1.2039903680770554, -0.3111111111111111, 0.12280701754385964, -0.01568627450980392],
+  "weights_exact": ["3500/2907", "-14/45", "7/57", "-4/255"]
+}

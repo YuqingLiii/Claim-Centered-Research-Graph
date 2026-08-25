@@ -1,0 +1,4 @@
+python -m py_compile ksum/tools/ksum_l2p4_block_composition.py ksum/tools/ksum_l2p4_exact_verify.py
+python ksum/tools/ksum_l2p4_block_composition.py --output ksum/artifacts/logs_ksum_L2p4_20260719/block_composition_results.json
+python ksum/tools/ksum_l2p4_exact_verify.py --input ksum/artifacts/logs_ksum_L2p4_20260719/block_composition_results.json
+

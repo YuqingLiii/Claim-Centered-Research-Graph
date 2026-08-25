@@ -1,0 +1,45 @@
+id: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.reachability-sensitive-recording-filtration.ALT.nonlinear-algorithm-dependent-carrier
+aliases:
+- B4bL3AltCriticalNonlinearAlgorithmDependentRecordingCarrier
+claim: 'Define a precise nonlinear or algorithm-dependent carrier for strict-promise query states that
+  is
+
+  closed under each actual algorithmic query update, excludes the known leakage components without
+
+  using universal linear-span closure, and supports `O(T^(3/2)/N)` progress plus constant output
+
+  separation through `T=cN^(2/3)`.'
+assessment:
+  level: OPEN
+  summary: '**OPEN — registered before work and deprioritized.** No state manifold, algorithm-dependent
+    invariant, update rule, metric/progress functional, or output-separation theorem has been defined.
+    Merely renaming a linear subspace or taking the union of reachable states does not meet the claim.'
+  basis:
+    evidence:
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.strict-injection-recording-query
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.reachability-sensitive-recording-filtration
+      kind: node-evidence
+frontier:
+  task-001:
+    task: "Define the carrier as a mathematical object with exact quantifiers over algorithms, workspaces,\n\
+      \  intermediate unitaries, inputs, and query time."
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "Prove it is preserved by every actual query update without closing under arbitrary cross-\n\
+      \  algorithm linear combinations."
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: "Give a nonnegative progress functional and prove both the per-query bound and constant YES/NO\n\
+      \  output separation on the exact strict promise."
+    kind: task
+    since: '2026-08-16'
+  task-004:
+    task: "Explain why fixed-workspace components of the known degree-two through degree-nine witnesses\
+      \ do\n  not recreate the failed progress comparison inside one algorithm."
+    kind: task
+    since: '2026-08-16'

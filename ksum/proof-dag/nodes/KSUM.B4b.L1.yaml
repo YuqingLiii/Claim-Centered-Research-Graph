@@ -1,0 +1,55 @@
+id: KSUM.B4b.L1
+aliases:
+- B4bL1
+claim: Construct a uniform negative-adversary family with a near-rank-one repetition-one spine and tau-indexed
+  satellite Wedderburn blocks, matching the cyclic 2-Sum lower-bound structure. ****
+assessment:
+  level: OPEN
+  summary: 'Primary status: **OPEN**. Phase 1 tested an explicit three-weight polar-completion family
+    and triggered its P2 stop: the per-instance globally optimized family captured only 38.90%--62.83%
+    of the reviewed numerical optima and was below 60% on five of six points. This kills that family operationally,
+    not the full L1 claim. No independent review is complete, so DAG rule 6 forbids REFUTED or another
+    completion-tier status.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_expL_structure.md
+      kind: text
+    - path: ksum/artifacts/ksum_L1_phase1.md
+      kind: text
+    - node: KSUM.L33
+      kind: node-evidence
+    runs:
+    - path: ksum/artifacts/logs_ksum_L1p1_20260719/known_fits.log
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L1 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L1p1_20260719/known_fits.json
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L1 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L1p1_20260719/SHA256SUMS.txt
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L1 at the exact finite, formal, or computational
+        scope stated in the linked output.
+frontier:
+  task-001:
+    task: 'Phase-1 stop: do not run the held-outs for this family. The retained Phase-1 evidence records
+      that P3 was not entered.'
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "Revive/redesign condition: supply a genuinely finer explicit cross-label joint-histogram kernel\n\
+      \  (or equivalent exact cross-N sector labels) rather than adding balance weights to the same\n\
+      \  reciprocal-Hamming cross block."
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: "Broad-route kill criterion remains: stop or redesign if sector labels cannot be aligned across\n\
+      \  consecutive N, or the first properly pre-registered held-out instance loses a constant fraction\n\
+      \  of optimum or violates PSD/feasibility."
+    kind: task
+    since: '2026-08-16'
+  task-004:
+    task: Obtain a fresh independent review before any completion-tier status.
+    kind: task
+    since: '2026-08-16'

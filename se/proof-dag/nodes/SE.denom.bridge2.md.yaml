@@ -1,0 +1,51 @@
+id: SE.denom.bridge2.md
+aliases:
+- MDL
+claim: At d=k, the matched-degree legality lemma follows from its general form and the checked d=k instantiation.
+routes:
+  joint:
+    premises:
+    - SE.denom.bridge2.md.general
+    - SE.denom.bridge2.md.inst
+    implication: 'md.general AND md.inst imply md: the general matched-degree statement plus its instantiation
+      at d=k give the matched-degree legality lemma used by the X and Y lines of Bridge II.'
+    proof:
+      sketch: se/artifacts/se_bridge2_md_inst_20260718.md
+      sources:
+      - path: se/artifacts/se_bridge2_md_inst_20260718.md
+        kind: text
+    assessment:
+      level: PROVED
+      summary: se/reviews/se_bridge2_reviews_20260718.md (completion, scalar, equality, endpoint all CONFIRMED)
+        + se/reviews/se_cor16_certification_20260723.md A.16-A.18 (independent re-derivation of the completion
+        square and the exact r_{d+1}=d*r_top identity)
+      basis:
+        reviews:
+        - path: se/reviews/se_bridge2_reviews_20260718.md
+          kind: review
+          scope: Checks that the reviewed general completion argument and its d=k instantiation yield
+            the matched-degree legality statement used by the bridge.
+          locator: Review 2
+          reviewed_hash: sha256:57f641fa6ff116eafd8ad4ef76d6586b899e1cb00ac341f882f4a7bcaa7d7805
+assessment:
+  level: PROVED
+  summary: The claim is supported by the linked evidence and independent review.
+  basis:
+    evidence:
+    - node: SE.denom.bridge2.md.numerics
+      kind: node-evidence
+    routes:
+    - joint
+    reviews:
+    - path: se/reviews/se_bridge2_pin_review_20260718.md
+      kind: review
+      scope: Checks the matched-degree legality estimate at d=k, its equality case on the full permutation
+        space, and the k=0 endpoint used in the assembled bridge.
+      locator: Per-step table and Section 6
+      reviewed_hash: sha256:8c34ab9f542b51bf130faf80cc561b7696f5152510faa35a9e1cd1b75b535de0
+    - path: se/reviews/se_bridge2_reviews_20260718.md
+      kind: review
+      scope: Checks the instantiated matched-degree lemma used by Bridge II; the more general completion
+        mechanism is covered by the separate pin review.
+      locator: Review 2
+      reviewed_hash: sha256:8c34ab9f542b51bf130faf80cc561b7696f5152510faa35a9e1cd1b75b535de0

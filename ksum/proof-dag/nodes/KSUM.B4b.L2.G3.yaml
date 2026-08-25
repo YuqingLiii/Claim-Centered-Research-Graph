@@ -1,0 +1,29 @@
+id: KSUM.B4b.L2.G3
+role: obstruction
+aliases:
+- B4bL2G3
+claim: For every nonzero PSD ambient operator `A`, the transfer `mu_A=Reynolds(diag A)/tr A` is invariant,
+  nonnegative, has exact `l1=1`, and has degree-zero factorial moment exactly one; consequently its annihilation
+  band is zero, regardless of its correlation.
+assessment:
+  level: PROVED
+  summary: '**PROVED** uniformly in `N,q,t` for the positive normalized diagonal/Reynolds map.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L2_phase6.md
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    reviews:
+    - path: ksum/reviews/ksum_L2p6_review.md
+      kind: review
+      scope: Checks positivity, invariance, normalization, and the nonzero degree-zero moment of the PSD-diagonal
+        Reynolds transfer, establishing a zero annihilation band.
+      locator: Rule-7 execution log and Target verdict T3
+      reviewed_hash: sha256:f6107c9ce9d042712889ad851844e30c4ab3359dba9fff5a698cda3414e82510
+frontier:
+  task-001:
+    task: Define and analyze a genuinely signed transfer with zero constant moment; G3 does not cover
+      it.
+    kind: task
+    since: '2026-08-16'

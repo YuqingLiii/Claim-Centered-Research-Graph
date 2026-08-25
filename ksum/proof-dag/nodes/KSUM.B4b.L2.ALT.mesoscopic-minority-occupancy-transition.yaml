@@ -1,0 +1,53 @@
+id: KSUM.B4b.L2.ALT.mesoscopic-minority-occupancy-transition
+aliases:
+- B4bL2AltMesoscopicMinorityOccupancyTransition
+claim: 'Derive and solve the orbit-feature transition kernels as minority occupancy grows from fixed
+
+  `m=O(1)` normal jets through `m=Theta(D)` to macroscopic bulk, retaining enough coordinates to
+
+  distinguish equal-`xi` orbits and matching exact annihilation with bounded total variation.'
+assessment:
+  level: OPEN
+  summary: '**OPEN — interior transition matches bulk, but the birth edge and global coupling remain open.**
+    Single-fiber shallow support and positive-gap NO matching are scopedly obstructed.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L2_phase24_stratified_normal_kernel_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase25_mesoscopic_minority_transition_20260721.md
+      kind: text
+    - path: ksum/tools/ksum_l2p25_transition_kernel_check.py
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.moving-remez-cubature.label-aware-fekete-basis-exchange.continuation-seeded-block-fekete.continuum-limit-remez-support-flow.stratified-boundary-jet-remez-system
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.tangential-phase-paired-transport
+      kind: node-evidence
+    runs:
+    - path: ksum/artifacts/logs_ksum_L2p25_transition_kernel_20260721/run.json
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2.ALT.mesoscopic-minority-occupancy-transition at
+        the exact finite, formal, or computational scope stated in the linked output.
+frontier:
+  task-001:
+    task: Give exact kernels for fixed, mesoscopic `m=Theta(D)`, and macroscopic minority occupancy.
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "Resolve the discrete birth edge `m=b+O(1)` and couple multiple tangential phases; one shallow\n\
+      \  fiber and any positive proportional NO gap are now scoped out."
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: Identify a complete orbit coordinate system; `xi` alone is already insufficient.
+    kind: task
+    since: '2026-08-16'
+  task-004:
+    task: Prove matching across regimes with bounded total variation and exact moment cancellation.
+    kind: task
+    since: '2026-08-16'
+  task-005:
+    task: Establish correlation above `2/3`, constant `C_t=Theta(N)` tail, legality, and finite lifting.
+    kind: task
+    since: '2026-08-16'

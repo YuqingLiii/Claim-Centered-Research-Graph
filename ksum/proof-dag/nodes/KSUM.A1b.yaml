@@ -1,0 +1,42 @@
+id: KSUM.A1b
+aliases:
+- A1b
+claim: 'For all natural numbers n, kappa, and q with 2*kappa+1 <= q, and every y : Fin(2*n) -> Fin(kappa),
+  the signed cyclic encoding E(y) := encode n (cyc q kappa) y satisfies 2-Sum_{Z_q,0,2n}(E(y)) = Claw_{n->kappa}(y).
+  Thus the live instance has exactly 2*n coordinates and no unpaired live coordinate.'
+assessment:
+  level: PROVED
+  summary: The claim is supported by the linked evidence and independent review.
+  basis:
+    reviews:
+    - path: ksum/reviews/ksum_W2_audit_of_W1.md
+      kind: review
+      scope: Independently verifies the two-list claw encoding, all no-collision cases, restriction direction,
+        per-position relabeling, target shifts, and odd-N coverage; it does not review the surrounding
+        k>=3 core construction.
+      locator: Sections A1--A2 and A-summary
+      reviewed_hash: sha256:7c128111eadfd0f4a2874719517de3144cb6edb98032f30cd39fd2af0ff1f2c9
+    - path: ksum/reviews/ksum_lean_statement_fidelity_review_20260731.md
+      kind: review
+      scope: Checks that A1b's exact encoding statement and its Lean declaration agree within the abstract
+        query-model interface; it is not an independent review of the original claw-reduction mathematics.
+      locator: Sections 3--5 and Section 10 KSUM-layer census
+      reviewed_hash: sha256:7c128111eadfd0f4a2874719517de3144cb6edb98032f30cd39fd2af0ff1f2c9
+  caveats:
+  - Text and digest synchronization does not by itself establish that the Lean proposition is equivalent
+    to the natural-language claim; that correspondence remains review-dependent.
+formalization:
+  lean:
+    module: KSUM.A1b
+    file: ksum/lean/KSUM/A1b.lean
+    claim: Claim
+    state: proved
+    claim_hash: sha256:7c128111eadfd0f4a2874719517de3144cb6edb98032f30cd39fd2af0ff1f2c9
+    sync_state: current
+    theorems:
+    - holds
+    build: ksum/artifacts/logs_ksum_lean_reorg_20260730/
+    source_claim_hash: sha256:7c128111eadfd0f4a2874719517de3144cb6edb98032f30cd39fd2af0ff1f2c9
+    synced: '2026-08-19'
+    rel:
+    - No external theorem is assumed by `Claim`; the module proves the exact encoding identity unconditionally.

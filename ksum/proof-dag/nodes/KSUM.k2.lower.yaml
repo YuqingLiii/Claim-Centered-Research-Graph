@@ -1,0 +1,85 @@
+id: KSUM.k2.lower
+role: outcome
+aliases:
+- K2Lower
+claim: Let q>=5 be odd, t in Z_q, and n=floor(N/2). If q<=4n-1, then Q(2-Sum_{Z_q,t,N})=Omega(sqrt(N)
+  q^(1/6)). Equivalently, the allowed range is q<=2N-1 for even N and q<=2N-3 for odd N.
+routes:
+  claw-transfer:
+    premises:
+    - KSUM.A1b
+    assumptions:
+      small-range-claw-lower-bound:
+        kind: external-theorem
+        statement: The Ambainis-Balodis-Iraids lower bound, extended over the range used here by Tani,
+          gives Q(Claw_(n->kappa))=Omega(sqrt(n) kappa^(1/6)) for 2<=kappa<=2n-1.
+        source:
+          path: ksum/lean/KSUM/Interface.lean
+          kind: text
+          locator: The `abi` and `tani` field documentation
+      query-model-transfer:
+        kind: model-fact
+        statement: Restriction, per-position relabeling, and deletion of one frozen coordinate preserve
+          the lower bound up to absolute constants. The odd-q translation is proved inside the route.
+        source:
+          path: ksum/lean/KSUM/Interface.lean
+          kind: text
+          locator: The `restrict`, `relabel`, and `freeze` field documentation
+    implication: The exact claw-to-2-Sum encoding in KSUM.A1b, followed by target translation and the
+      odd-length frozen-coordinate reduction, transfers the cited small-range Claw lower bound with kappa=(q-1)/2.
+    proof:
+      sketch: The exact transfer, odd-q target shift, and odd-length frozen-coordinate case are recorded
+        by the main_odd and main_odd_abi theorems in the linked Lean source.
+      sources:
+      - path: ksum/lean/KsumAudit/MainLine.lean
+        kind: text
+        locator: The `main_odd` and `main_odd_abi` theorems
+    assessment:
+      level: PROVED
+      summary: The transfer, endpoint arithmetic, parity handling, and imported theorem scopes passed
+        independent hostile review and statement-fidelity review.
+      basis:
+        reviews:
+        - path: ksum/reviews/ksum_W2_audit_of_W1.md
+          kind: review
+          locator: Section A2, parts (a)--(d), and opening verdict
+          reviewed_hash: sha256:afe960bef2d9cfe3a9933955545031605f261e2a0282524bcb16ffc3bbe63527
+        - path: ksum/reviews/ksum_lean_statement_fidelity_review_20260731.md
+          kind: review
+          locator: 'T1 table: thm:main-odd'
+          reviewed_hash: sha256:afe960bef2d9cfe3a9933955545031605f261e2a0282524bcb16ffc3bbe63527
+assessment:
+  level: PROVED
+  summary: The odd-cyclic small-alphabet 2-Sum lower bound is the reviewed mathematical headline of the
+    k=2 reduction.
+  basis:
+    routes:
+    - claw-transfer
+    evidence:
+    - path: ksum/reviews/ksum_W1_claw_reduction_verdict.md
+      kind: review
+      locator: Section 0 verdict and Section 3 chain C1--C5
+    - path: ksum/artifacts/ksum_lean_T1_k2_main_line_20260730.md
+      kind: text
+    - node: KSUM.LEAN.T1.k2-main-line
+      kind: node-evidence
+    reviews:
+    - path: ksum/reviews/ksum_W2_audit_of_W1.md
+      kind: review
+      locator: Section A2, parts (a)--(d), and opening verdict
+      reviewed_hash: sha256:ffa0068fc661e846a216f8262eb01f8a9e9a1a68d80db78cd6e996a8a907f870
+    - path: ksum/reviews/ksum_lean_statement_fidelity_review_20260731.md
+      kind: review
+      locator: 'T1 table: thm:main-odd'
+      reviewed_hash: sha256:ffa0068fc661e846a216f8262eb01f8a9e9a1a68d80db78cd6e996a8a907f870
+  caveats:
+  - The Lean result is conditional on the explicit QueryModel interface and the cited Claw lower bounds;
+    this node's PROVED level rests on the reviewed natural-language argument, not on the build alone.
+events:
+  claim-registered-2026-08-19:
+    date: '2026-08-19'
+    type: created
+    summary: Registered the principal k=2 lower bound as a canonical claim node.
+    sources:
+    - path: ksum/reviews/ksum_W2_audit_of_W1.md
+      kind: review

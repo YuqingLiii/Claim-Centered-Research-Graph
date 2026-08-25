@@ -1,0 +1,56 @@
+id: KSUM.B4b.L2.ALT.phase-subexposed-correlation-reservoir
+aliases:
+- B4bL2AltPhaseSubexposedCorrelationReservoir
+claim: 'Place constant signed YES mass on legal strata that never maximize any positive-minority WKB
+
+  phase, cancel exposed phases separately, and couple the subexposed reservoir to NO only through
+
+  fixed-index and two-slot rows, thereby avoiding the birth-edge Pascal inverse while retaining
+
+  correlation and tail.'
+assessment:
+  level: OPEN
+  summary: '**OPEN — a high-`C_t`-only correlation reservoir is obstructed.** WKB subexposure does not
+    evade a scalar `C_t` dual. Any live version must use an `O(N)` correlation bridge plus separately
+    sign-balanced high-tail mass; no formula is known.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L2_phase26_tangential_phase_paired_transport_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase27_phase_subexposed_reservoir_20260721.md
+      kind: text
+    - path: ksum/tools/ksum_l2p27_subexposed_reservoir_check.py
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.tangential-phase-paired-transport
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.correlation-tail-decoupled-two-reservoir
+      kind: node-evidence
+    runs:
+    - path: ksum/artifacts/logs_ksum_L2p27_subexposed_reservoir_20260721/run.json
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2.ALT.phase-subexposed-correlation-reservoir at
+        the exact finite, formal, or computational scope stated in the linked output.
+frontier:
+  task-001:
+    task: Define a nonempty legal subexposed region for all positive-minority WKB query directions.
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: Give one signed reservoir with constant correlation and required target tail.
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: "Correlation cannot be stored only at `C_t/N->infinity`; combine any live reservoir with an\n\
+      \  `O(N)` correlation bridge and control their joint full orbit moments."
+    kind: task
+    since: '2026-08-16'
+  task-004:
+    task: Cancel every exposed phase and all fixed-index/two-slot rows with bounded total variation.
+    kind: task
+    since: '2026-08-16'
+  task-005:
+    task: Prove exact finite lifting without using the exponentially ill-conditioned birth inverse.
+    kind: task
+    since: '2026-08-16'

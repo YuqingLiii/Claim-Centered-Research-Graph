@@ -1,0 +1,14 @@
+REQUESTED_INTERPRETER <machine-local-path-redacted> (unavailable to execution interface: ENOENT)
+FALLBACK_INTERPRETER <machine-local-path-redacted>
+TIME_CAP_SECONDS 1200
+INSTANCE n=6 q=4 t=0 inputs=4096 yes=4010 no=86 tau=2 |C(sigma)|=4
+RUNTIME python=<machine-local-path-redacted> version=3.10.16 numpy=2.2.6 scipy=1.15.3 cvxpy=1.7.1 solvers=['CLARABEL', 'CVXOPT', 'GLPK', 'GLPK_MI', 'MOSEK', 'OSQP', 'SCIPY', 'SCS']
+COMMAND <machine-local-path-redacted> 6 4 0 --solver SCS --eps 1e-4 --max-iters 300000
+FULL_G_ORBITS equality=532 diagonal=30 build_s=0.076
+WEDDERBURN spectral_blocks=100 block_dims=[42, 78, 30, 54, 42, 6, 36, 18, 18, 90, 84, 66, 30, 2, 42, 22, 78, 22, 60, 36, 4, 18, 36, 6, 20, 20, 6, 30, 90, 84, 22, 54, 78, 18, 36, 42, 2, 84, 2, 60, 36, 4, 20, 44, 18, 4, 20, 20, 4, 54, 66, 90, 22, 30, 42, 60, 84, 68, 20, 36, 22, 36, 84, 66, 20, 42, 6, 56, 54, 20, 4, 30, 4, 78, 60, 36, 60, 84, 30, 2, 20, 66, 36, 90, 54, 36, 4, 56, 20, 60, 84, 60, 36, 66, 60, 36, 4, 60, 84, 60] sum_dims=4096 max_spread=5.773e-15 min_gap=0.0002482330630467766 build_s=8.658
+COMMUTANT generators=7 true_block_dims=[42, 78, 30, 54, 6, 36, 18, 90, 84, 66, 2, 22, 60, 4, 36, 20, 84, 60, 4, 44, 20, 68, 56, 56] repetitions=[6, 4, 6, 5, 4, 6, 5, 4, 4, 5, 4, 5, 5, 4, 6, 5, 4, 5, 4, 1, 5, 1, 1, 1] schur_residual=3.600e-14 build_s=5.714
+AFFINE_BUILD equality=532 diagonal=30 seconds=5.298
+<machine-local-path-redacted> UserWarning: Converting A to a CSC (compressed sparse column) matrix; may take a while.
+  warn(
+
+RUNNER_EXIT code=null signal=SIGTERM timed_out=true elapsed_s=1200.201

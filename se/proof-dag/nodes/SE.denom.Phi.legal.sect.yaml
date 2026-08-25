@@ -1,0 +1,69 @@
+id: SE.denom.Phi.legal.sect
+aliases:
+- SECT
+claim: 'SE.denom.Phi.legal.sect — **H4: exhaustive Schur sectorization of the actual legal lower
+
+  block.** For every active `j`, the actual legal lower block `C_{j+1→j}` is an intertwiner for
+
+  `S_q` and the fixed-query-position subgroup `H = S_{n-1}×S_n`, and on the actual legal NO/YES
+
+  spaces it admits an ORTHOGONAL, EXHAUSTIVE decomposition
+
+
+  `C_{j+1→j} ≅ ⊕_{λ=(q−j,θ)} I_{S^λ} ⊗ ⊕_{ξ=(κ,ν) admissible} ( I_{V_κ⊗V_ν} ⊗ C̃_{λ,ξ} )`
+
+
+  with NO residual sectors, where the `c×c` blocks of H2/H3 are exactly the Gram/NO-polar blocks of
+
+  these `C̃_{λ,ξ}`; consequently `‖C_{j+1→j}‖ = max_{λ,ξ} ‖C̃_{λ,ξ}‖`, uniformly for every LR
+
+  multiplicity `c ≥ 1`. (Frozen statement as supplied by the external review T3-G1; the Schur
+
+  identity lift `I_{V_κ⊗V_ν} ⊗ (·)` is the same lift H2 requires per T2-G2.)'
+assessment:
+  level: OPEN
+  summary: '**OPEN — registered 2026-07-29 under the pre-registration rule** from the external cross-stack review (`se/reviews/se_external_review_20260729.md`,
+    finding T3-G1; overall verdict GAP on the "three-obligation" reduction). Machine-verified missing
+    before registration: the FOUND package carries the rule-7b caveat "c≥2 compressed identity-gate regime
+    UNTESTED project-wide" and records the per-sector `⊗I_c` lift as **REFUTED AS TYPED / NOT part of
+    the package** (`SE.denom.Phi.legal.found.yaml:29`), so no artifact in the review package states this
+    decomposition caveat-free. NOTE: parts of H4 may in fact be recoverable from FOUND''s underlying backbone/twirl
+    artifacts — if so, the discharge route is to extract and independently review that derivation rather
+    than prove from scratch; until then the obligation stands OPEN.'
+  basis:
+    evidence:
+    - node: SE.denom.Phi.legal.found
+      kind: node-evidence
+    - node: SE.denom.assembly
+      kind: node-evidence
+  caveats:
+  - 'The linked Lean formalization records the current claim text and hash, docstring quote). `Claim`
+    remains a HYPOTHESIS: nothing in the Lean development proves it, and the module states only the declared
+    tier-1 shadow of the frozen identity.'
+  - '`sync_state: current` on this node is a statement about TEXT AND DIGESTS ONLY: the module quotes
+    the current claim verbatim and the three digests agree (lean_dag_check checks 3/3b). It does NOT assert
+    that the Lean `Claim : Prop` expresses this node''s claim, and here it does not. The node claim is
+    the EXHAUSTIVE orthogonal sector decomposition and the resulting uniform identity ||C|| = max ||C~||
+    for c >= 1; the Lean `Claim` is only the <= direction, on the re-scoped window `1 <= j`, `3j <= n`,
+    `j < K n - 1`. The missing-sector failure mode survives this development untouched. The divergence
+    is declared in the module header and has been present, unchanged, since the tier-1 snapshot git:f0d686a;
+    it is restated here because the formalization synchronization rule ("until the formal statement, imports, proof, and
+    hash are synchronized") invites the stronger reading. Review item F6 of se/reviews/se_task006_review_20260817.md;
+    frontier task-011 of SE.formal.t2.'
+formalization:
+  lean:
+    module: SE.denom.Phi.legal.sect
+    file: se/lean/SE/denom/Phi/legal/sect.lean
+    claim: Claim
+    state: stated
+    claim_hash: sha256:11131e8cf92d4988213466c621c6bfa53148f177d303066942100a561b9899d5
+    sync_state: current
+    build: se/artifacts/logs_se_lean_20260730/
+    source_claim_hash: sha256:11131e8cf92d4988213466c621c6bfa53148f177d303066942100a561b9899d5
+    synced: '2026-08-17'
+frontier:
+  task-001:
+    task: "Prove H4, or extract it caveat-free from FOUND's underlying artifacts + independent rule-7\n\
+      \  review; either way the c≥2 compressed identity regime must be gated (7b)."
+    kind: task
+    since: '2026-08-16'

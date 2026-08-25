@@ -1,0 +1,17 @@
+REQUESTED_INTERPRETER <machine-local-path-redacted> (unavailable to execution interface: ENOENT)
+FALLBACK_INTERPRETER <machine-local-path-redacted>
+REFERENCE_STAGE0 2
+INSTANCE n=2 q=3 t=0 inputs=9 yes=3 no=6 tau=1 |C(sigma)|=2
+RUNTIME python=<machine-local-path-redacted> version=3.10.16 numpy=2.2.6 scipy=1.15.3 cvxpy=1.7.1 solvers=['CLARABEL', 'CVXOPT', 'GLPK', 'GLPK_MI', 'MOSEK', 'OSQP', 'SCIPY', 'SCS']
+COMMAND <machine-local-path-redacted> 2 3 0 --solver SCS --eps 1e-4 --max-iters 300000 --audit
+FULL_G_ORBITS equality=5 diagonal=4 build_s=0.000
+WEDDERBURN spectral_blocks=2 block_dims=[4, 5] sum_dims=9 max_spread=0.000e+00 min_gap=4.037661648974331 build_s=0.001
+COMMUTANT generators=1 true_block_dims=[4, 5] repetitions=[1, 1] schur_residual=2.220e-16 build_s=0.001
+AFFINE_BUILD equality=5 diagonal=4 seconds=0.002
+RESULT Adv_pm=2.0001691209870023 status=optimal solver=SCS eps=0.0001 solve_s=0.017 wall_s=0.041
+FULL_AUDIT {"max_full_diagonal_violation": 0.0, "max_full_equality_residual": 5.136271719052843e-08, "max_generator_invariance_residual": 0.0, "natural_min_eigenvalue": 1.9986370326230413e-05}
+RESULT_JSON {"audit": {"max_full_diagonal_violation": 0.0, "max_full_equality_residual": 5.136271719052843e-08, "max_generator_invariance_residual": 0.0, "natural_min_eigenvalue": 1.9986370326230413e-05}, "centralizer_order": 2, "command": "<machine-local-path-redacted> 2 3 0 --solver SCS --eps 1e-4 --max-iters 300000 --audit", "cvxpy_version": "1.7.1", "diagonal_constraint_orbits": 4, "eps": 0.0001, "equality_constraint_orbits": 5, "inputs": 9, "max_iters": 300000, "n": 2, "no": 6, "numpy_version": "2.2.6", "python": "<machine-local-path-redacted>", "python_version": "3.10.16", "q": 3, "scipy_version": "1.15.3", "solve_seconds": 0.017438299999412266, "solver": "SCS", "spectral_copy_block_dims": [4, 5], "stabilizer_generators": 1, "status": "optimal", "target": 0, "tau": 1, "value": 2.0001691209870023, "wall_seconds": 0.040820199999870965, "wedderburn": {"alphabet_group_order": 2, "block_dims": [4, 5], "eigen_residual": 2.482534153247273e-16, "irrep_dimensions_repetitions": [1, 1], "isotypic_block_dims": [4, 5], "max_schur_polar_residual": 2.220446049250313e-16, "max_within_cluster_spread": 0.0, "min_between_cluster_gap": 4.037661648974331, "position_group_order": 1, "spectral_blocks": 2, "spectral_copy_edges": 2}, "wedderburn_block_dims": [4, 5], "yes": 3}
+
+STDERR
+<machine-local-path-redacted> UserWarning: Converting A to a CSC (compressed sparse column) matrix; may take a while.
+  warn(

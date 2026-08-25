@@ -1,0 +1,74 @@
+# diff of SE/Interface.lean, tier-1 baseline (git f0d686a) -> tier 2 (2026-08-17)
+# command: git diff f0d686a -- se/lean/SE/Interface.lean
+
+diff --git a/se/lean/SE/Interface.lean b/se/lean/SE/Interface.lean
+index 07391b1..14316c5 100644
+--- a/se/lean/SE/Interface.lean
++++ b/se/lean/SE/Interface.lean
+@@ -20,6 +20,7 @@ The four *unproved* obligations H1–H4 are NOT here; each lives in its own node
+ consumed as an explicit hypothesis by `SE.denom.Phi.legal.tame.composition`.
+ -/
+ import SE.Support.Defs
++import SE.Support.Hook
+ 
+ namespace SE
+ 
+@@ -51,7 +52,10 @@ structure SEFrame where
+   cnprobS : ∀ n j, Sector n j → ℝ
+   /-- `‖C̃_{λ,ξ}‖`, the sector compression of the legal lower block. -/
+   csectS : ∀ n j, Sector n j → ℝ
+-  /-- `ρ_j = max_{θ⊢j} r_top(2n,j,θ)`, paper eq:rtop. -/
++  /-- `ρ_j = max_{θ⊢j} r_top(2n,j,θ)`, paper eq:rtop.  Tier 2 no longer assumes anything
++  quantitative about this field: `Cited.rho_hook` ties it to the explicit hook product
++  `SE.rtopHook` and the envelope of eq:rho-asymp is then PROVED
++  (`SE/Support/RhoEnvelope.lean`). -/
+   rho : ℕ → ℕ → ℝ
+   /-- `Adv(SE(n,2n))`, the negative-weight adversary bound, paper eq:adv. -/
+   adv : ℕ → ℝ
+@@ -71,9 +75,6 @@ structure SEFrame where
+   cDiag : ℕ → ℕ → ℝ
+   /-- `‖C_{d+1→d}‖`, the legal lower block, paper eq:omega-lower-global. -/
+   cLower : ℕ → ℕ → ℝ
+-  /-- The implied constant of the uniform hook envelope `ρ_d = 1 + O(n^{-1/3})`,
+-  paper eq:rho-asymp. -/
+-  rhoConst : ℝ
+ 
+ namespace SEFrame
+ 
+@@ -131,13 +132,29 @@ structure Cited : Prop where
+   cDiag_zero : ∀ n, F.cDiag n 0 = 0
+   /-- Companion of `cDiag_zero`: the lower block into defect `0` vanishes (`lem:phi-diag`). -/
+   cLower_zero : ∀ n, F.cLower n 0 = 0
+-  /-- **Hook envelope, lower half** — paper eq:rho-asymp: `1 ≤ ρ_d`. -/
+-  rho_ge_one : ∀ n d, 1 ≤ F.rho n d
+-  /-- **Hook envelope, upper half** — paper eq:rho-asymp:
+-  `ρ_d ≤ exp(d(d-1)/(2(2n-d+1)) + d/(2n-2d+1)) = 1 + O(n^{-1/3})`, uniformly for `d < K`.
+-  The `O(·)` is named here by the explicit constant `F.rhoConst`. -/
+-  rho_le : ∀ n d, d < K n → F.rho n d ≤ 1 + F.rhoConst / (n : ℝ) ^ ((1 : ℝ) / 3)
+-  rhoConst_nonneg : 0 ≤ F.rhoConst
++  /-- **Hook-length evaluation of `ρ_d`** (TIER 2, 2026-08-17; node `SE.formal.t2`).
++
++  This single DEFINITIONAL field replaced the three tier-1 analytic assumptions
++  `rho_ge_one : 1 ≤ ρ_d`, `rho_le : ρ_d ≤ 1 + rhoConst·n^{-1/3}` and `rhoConst_nonneg`
++  (tier-1 baseline: `git:f0d686a:se/lean/SE/Interface.lean`), which are now
++  the PROVED theorems `SEFrame.Cited.rho_ge_one`, `SEFrame.Cited.rho_le` and the explicit
++  constant `SE.rhoConst = 4` of `SE/Support/RhoEnvelope.lean` / `SE/Support/Hook.lean`.
++
++  What it says.  On the taper window `d < K n` the maximum
++  `ρ_d = max_{θ⊢d} r_top(2n,d,θ)` of paper eq:rtop is ATTAINED at some shape `θ ⊢ d`, and the
++  hook-length formula evaluates that shape's `r_top(q,d,θ) = q^d f^θ/(d! f^{(q-d,θ)})` as the
++  explicit product `SE.rtopHook q d θ₁ θ'` (`θ'` = conjugate, `SE.IsColumnData`).
++
++  What it cites, exactly (nothing quantitative):
++  * the Frame–Robinson–Thrall hook-length formula, applied to `λ = (q-d,θ)` — absent from
++    Mathlib v4.31.0 (verified 2026-08-17: `YoungDiagram` exists, hook-length formula, Specht
++    modules, Littlewood–Richardson and Pieri do not), hence cited, not proved;
++  * that a maximum over the finite nonempty set of partitions of `d` is attained.
++
++  Note that tier 1 assumed `1 ≤ ρ_d` for ALL `(n,d)`; this field assumes nothing outside the
++  taper window, which is the only place the assembly evaluates `ρ`. -/
++  rho_hook : ∀ n d, d < K n →
++    ∃ (L : ℕ) (t : ℕ → ℕ), IsColumnData L t d ∧ F.rho n d = rtopHook (2 * n) d L t
+   /-- **`ρ_j` is the maximum over shapes** — paper eq:rtop, `ρ_j = max_{θ⊢j} r_top(2n,j,θ)`. -/
+   rtop_le_rho : ∀ n j s, F.admissible n j s → F.rtopS n j s ≤ F.rho n j
+   /-- **The `ω` range** — paper eq:omega-range, `j/q ≤ ω ≤ j/(q-2j) = j/(2(n-j))`, described in

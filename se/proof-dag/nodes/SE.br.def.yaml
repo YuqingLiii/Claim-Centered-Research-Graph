@@ -1,0 +1,16 @@
+id: SE.br.def
+aliases:
+- DEF
+claim: For q=2n and K=floor(n^(1/3)), the normalized legal candidate witness is Gamma_n=(1/q!) sum_{0<=k<K}(K-k)
+  W_k^leg P_k, where P_k=Pibar_{se,k}; its normalization uses n!(q)_n=q! and (q)_(2n)=q!.
+assessment:
+  level: PROVED
+  summary: The claim is supported by the linked evidence and independent review.
+  basis:
+    reviews:
+    - path: se/reviews/se_cor16_review_20260718.md
+      kind: review
+      scope: Checks adversary feasibility, the exact legal witness definition, q! normalization, taper
+        choice, and the corrected position-symmetry label.
+      locator: Sections 1--2 and Status-table audit
+      reviewed_hash: sha256:9bf0740e4b6a1ad624966087c4c6f6c48316a4d9048cebeee8c192183efb1320

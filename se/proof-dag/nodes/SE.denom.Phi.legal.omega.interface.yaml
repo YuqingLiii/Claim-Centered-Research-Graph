@@ -1,0 +1,47 @@
+id: SE.denom.Phi.legal.omega.interface
+aliases:
+- OMI
+claim: 'SE.denom.Phi.legal.omega.interface — **H3, the ω-decay operator interface**, exactly
+
+  the paper''s hypothesis: for every admissible strict sector, (i) the exact sandwich
+
+  `C_{λ,ξ}^* C_{λ,ξ} = C_{N,prob}^{1/2} · G_can^{λ,ξ} · C_{N,prob}^{1/2}` and (ii) the
+
+  full-multiplicity NO polar `C_{N,prob} = r_top·ω · I_{H_ξ}` (acting as a scalar on every LR
+
+  copy). Nothing more: the downstream `‖C_{j+1→j}‖ ≤ √(15/8)·r_top·√(j/(n−j))` bound and the
+
+  Theorem-B constant belong to the PARENT node as consequences of H1∧H2∧H3∧H4.'
+assessment:
+  level: CONJECTURED
+  summary: The H3 omega-decay interface remains CONJECTURED because the exact sandwich identity and full-multiplicity
+    scalar action have not received a complete independent proof.
+  basis:
+    evidence:
+    - node: SE.denom.Phi.legal.gram.interface
+      kind: node-evidence
+  caveats:
+  - 'The linked Lean formalization records the current claim text and hash, docstring quote). `Claim`
+    remains a HYPOTHESIS: nothing in the Lean development proves it, and the module states only the declared
+    tier-1 shadow of the frozen identity.'
+  - '`sync_state: current` on this node is a statement about TEXT AND DIGESTS ONLY: the module quotes
+    the current claim verbatim and the three digests agree (lean_dag_check checks 3/3b). It does NOT assert
+    that the Lean `Claim : Prop` expresses this node''s claim, and here it does not. The node claim asserts
+    the EXACT sandwich equality; part (i) of the Lean `Claim` is the INEQUALITY `csectS^2 <= cnprobS *
+    gcanS`, strictly weaker than the frozen identity. The implication runs the safe way, so nothing downstream
+    is over-claimed, but the equality itself is not what is stated. The divergence is declared in the
+    module header and has been present, unchanged, since the tier-1 snapshot git:f0d686a; it is restated
+    here because the formalization synchronization rule ("until the formal statement, imports, proof, and hash are synchronized")
+    invites the stronger reading. Review item F6 of se/reviews/se_task006_review_20260817.md; frontier
+    task-011 of SE.formal.t2.'
+formalization:
+  lean:
+    module: SE.denom.Phi.legal.omega.interface
+    file: se/lean/SE/denom/Phi/legal/omega/interface.lean
+    claim: Claim
+    state: stated
+    claim_hash: sha256:5d62b12d5112c0f004d75bf42f01143b1e3004825602d80a4bff9eb7f85f0fb7
+    sync_state: current
+    build: se/artifacts/logs_se_lean_20260730/
+    source_claim_hash: sha256:5d62b12d5112c0f004d75bf42f01143b1e3004825602d80a4bff9eb7f85f0fb7
+    synced: '2026-08-17'

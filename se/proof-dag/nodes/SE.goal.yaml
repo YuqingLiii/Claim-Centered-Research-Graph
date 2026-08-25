@@ -1,0 +1,141 @@
+id: SE.goal
+aliases:
+- GOAL
+claim: 'SE.goal — explicit optimal neg-weight adversary witness for SE at q=2n
+
+  Adv± >= ||Gamma_n||/max_i||Gamma_n o Delta_i|| = Omega(n^1/3); Theta(n^1/3) known (Zhandry), witness
+  missing'
+routes:
+  SE.br:
+    premises:
+    - SE.br
+    implication: If the explicit legal matrix Gamma_n is an admissible adversary matrix for SE(n,q=2n)
+      and Branch A's ratio bound holds for it, then Adv±(SE(n,2n)) >= that bound; hence Omega(n^{1/3})
+      with an EXPLICIT witness, which is the goal.
+    assumptions:
+      assumption-01:
+        kind: external-theorem
+        statement: 'Interface: the negative-weight adversary method — Adv±(f) >= ||Gamma||/max_i||Gamma
+          o Delta_i|| for ANY admissible Gamma (Hoyer-Lee-Spalek); cited, not reproved here'
+        source:
+          path: se/lean/SE/Interface.lean
+          kind: text
+          locator: The `adv_ge` field and its cited adversary-bound documentation
+    proof:
+      sketch: 'inline (this file, ## Composition proof) + se/reviews/se_cor16_certification_20260723.md
+        A.33 for the executed instance'
+      sources:
+      - path: se/reviews/se_cor16_certification_20260723.md
+        kind: text
+    assessment:
+      level: PROVED
+      summary: se/reviews/se_external_rereview2_20260730.md (confirmed the instance without reservation)
+      basis:
+        reviews:
+        - path: se/reviews/se_external_rereview2_20260730.md
+          kind: review
+          scope: Checks that an explicit legal witness with the four conditional Phi obligations would
+            yield the target Omega(n^{1/3}) adversary bound; it does not assert that those obligations
+            are already proved.
+          locator: Sections T2'.1--T2'.2 and Summary verdict
+          reviewed_hash: sha256:59d11c0e494782d0ae566b48a4b483a97de342998f8eeaa4d1e832143fa34f9c
+  SE.ros:
+    premises:
+    - SE.ros
+    implication: If the Rosmanis transfer produced an admissible q=2n adversary matrix with ratio Omega(n^(1/3)),
+      the explicit negative-weight witness goal would follow.
+    assessment:
+      level: OPEN
+      summary: The route is disabled because its premise is REFUTED; the implication itself has not been
+        refuted.
+      basis:
+        evidence:
+        - node: SE.ros
+          kind: node-evidence
+      caveats:
+      - The premise is REFUTED, so this route is disabled; the implication itself was not refuted and
+        was reset to OPEN during current assessment.
+  SE.mdh:
+    premises:
+    - SE.mdh
+    implication: If the matrix dual-Hahn family yields an admissible witness with ratio Omega(n^{1/3}),
+      the goal follows by the same adversary interface.
+    assessment:
+      level: OPEN
+      summary: No additional supporting evidence has been recorded for this route.
+  SE.sdp:
+    premises:
+    - SE.sdp
+    implication: If the SDP route certifies an explicit optimal witness at q=2n, the goal follows.
+    assessment:
+      level: OPEN
+      summary: No additional supporting evidence has been recorded for this route.
+  SE.jz:
+    premises:
+    - SE.jz
+    - SE.goal.hyp.se-jz.01
+    implication: If the Jeffery-Zur reduction yields an explicit MULTIPLICATIVE-adversary witness, the
+      goal follows ONLY after a transfer to the additive Adv± setting; without that transfer the route
+      resolves a variant, not this goal.
+    assessment:
+      level: OPEN
+      summary: No additional supporting evidence has been recorded for this route.
+assessment:
+  level: OPEN
+  summary: The explicit optimal-order witness remains OPEN. The reviewed Omega(n^(1/6)) witness is retained
+    in SE.br.cor16, while the Omega(n^(1/3)) construction remains conditional on H1--H4 and the foundation/interface
+    layer. Failed Rosmanis and trace shortcuts do not refute the goal.
+  basis:
+    evidence:
+    - node: SE.related.collision
+      kind: node-evidence
+    routes:
+    - SE.br
+    - SE.mdh
+    - SE.sdp
+    - SE.jz
+  caveats:
+  - The linked Lean formalization checks only the SE.br composition route under its recorded premises;
+    it does not establish the open denominator bound.
+formalization:
+  lean:
+    module: SE.goal
+    file: se/lean/SE/goal.lean
+    claim: Claim
+    state: composition-checked
+    claim_hash: sha256:9ac39ac1e9de6e5ab45b32375be0dcf7f559271b16266c3318949d9aaec1a0b5
+    sync_state: current
+    theorems:
+    - composition_via_br
+    rel:
+    - Interface.Cited (HLS adversary method)
+    - SE.br
+    - 'route-not-formalized: SE.jz — the route has `proof: null` on this node: no prose route proof exists
+      to mirror, and as registered it needs an UNPROVED transfer from the multiplicative adversary to
+      the additive Adv± setting, so a rendered theorem would resolve a VARIANT of this goal. Rendering
+      one would invent content. Ruling R5 / deviation D6.'
+    - 'route-not-formalized: SE.mdh — the route has `proof: null` on this node: no prose route proof exists
+      on disk to mirror, so there is nothing to render faithfully. Ruling R5 / deviation D6.'
+    - 'route-not-formalized: SE.sdp — the route has `proof: null` on this node: no prose route proof exists
+      on disk to mirror, so there is nothing to render faithfully. Ruling R5 / deviation D6.'
+    - 'route-not-formalized: SE.ros — the route is DISABLED: its sole premise SE.ros is REFUTED (the failure rule disables
+      every route requiring a refuted premise, without refuting this node''s claim). There is no prose
+      route proof to mirror. Ruling R5 / deviation D6.'
+    - 'premise-not-imported: SE.jz — premise of the unformalized route SE.jz (declared above); the node
+      carries no formalization block, so no module for it exists to import. Its content enters `goal.Claim`
+      in no way at all: the Lean development renders the br route only.'
+    - 'premise-not-imported: SE.goal.hyp.se-jz.01 — second premise of the unformalized route SE.jz (the
+      multiplicative-to-additive transfer hypothesis); the node carries no formalization block, so no
+      module for it exists to import, and nothing in the Lean development assumes it.'
+    - 'premise-not-imported: SE.mdh — premise of the unformalized route SE.mdh (declared above); the node
+      carries no formalization block, so no module for it exists to import, and nothing in the Lean development
+      assumes it.'
+    - 'premise-not-imported: SE.sdp — premise of the unformalized route SE.sdp (declared above); the node
+      carries no formalization block, so no module for it exists to import, and nothing in the Lean development
+      assumes it.'
+    - 'premise-not-imported: SE.ros — premise of the DISABLED route SE.ros (declared above; the premise
+      itself is REFUTED); the node carries no formalization block, so no module for it exists to import,
+      and nothing in the Lean development assumes it.'
+    build: se/artifacts/logs_se_lean_20260730/
+    source_claim_hash: sha256:9ac39ac1e9de6e5ab45b32375be0dcf7f559271b16266c3318949d9aaec1a0b5
+    synced: '2026-08-17'

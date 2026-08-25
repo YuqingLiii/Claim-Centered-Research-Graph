@@ -1,0 +1,51 @@
+id: KSUM.G11
+role: constraint
+aliases:
+- G11
+claim: 'Exact values of a complexity measure (in particular `Adv±`) at finitely many reachable parameter
+
+  points `(n, q)` cannot establish an asymptotic exponent that is uniform in `n` — for any constant
+
+  `c` and any finite table there are functions agreeing with the table whose true exponent differs
+
+  from `c`. Finite exact computation can therefore **refute** a conjectured exponent (by violating a
+
+  bound it implies at a computed point) and can supply **evidence**, but can never discharge an
+
+  asymptotic proof obligation.'
+assessment:
+  level: CERTIFIED*
+  summary: '**CERTIFIED\*** with the frontmatter caveat: the composition-layer review examined and confirmed
+    exactly the two applications now citing this node (the `B3 → GOAL` and `L32/L33 → B3` route kills)
+    and the constraint''s statement as used there. That is a single, application-scoped review — not an
+    independent certification of the constraint as a general metatheorem, which per the ladder caps this
+    node at CERTIFIED\*.'
+  basis:
+    evidence:
+    - node: KSUM.C0
+      kind: node-evidence
+    - node: KSUM.B3
+      kind: node-evidence
+    - node: KSUM.goal
+      kind: node-evidence
+    - node: KSUM.L32a
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.nonproduct.profile-lattice-core
+      kind: node-evidence
+    reviews:
+    - path: ksum/reviews/ksum_composition_layer_review_20260730.md
+      kind: review
+      scope: Checks the use of G11 to block asymptotic exponent claims from finitely many computed parameter
+        points and applies it to the registered B3 routes; it does not review the underlying numerical
+        runs themselves.
+      locator: Sections 2.5--2.6 and 4.3--4.4
+      reviewed_hash: sha256:77afdd542dc6c251e5977d903b44764dfe806527877318c10850320c5ba61dda
+  caveats:
+  - (single review; certified for the two route-kill applications it now carries, not as a general metatheorem;
+    the quantitative illustration is inherited from the reviewed L32a record)
+frontier:
+  task-001:
+    task: "None for the current applications. A future use outside the two reviewed applications must\n\
+      \  re-open scope under the review-scope rule."
+    kind: task
+    since: '2026-08-16'

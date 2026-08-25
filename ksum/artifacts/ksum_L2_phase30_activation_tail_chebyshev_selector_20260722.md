@@ -1,0 +1,528 @@
+# k-Sum L2 Phase-30 activation-tail Chebyshev selector
+
+Date: 2026-07-22
+
+Controlling node:
+`KSUM.B4b.L2.ALT.near-zero-bridge-independent-parity-tail`
+
+Scope: only the explicit Phase-30 mixture `pi_N`, its actual weight-`<D` multisymmetric space
+`V_D`, and the residual bridge
+
+\[
+ f_D=\Pi_{V_D}b,
+ \qquad
+ g_D=b-f_D.
+\tag{1}
+\]
+
+This memo constructs one globally coherent actual polynomial that proves the normalized
+correlation of this explicit bridge tends to zero.  It is a scoped obstruction to this particular
+`pi_N` projection bridge.  It does not obstruct every near-zero law and does not decide the full
+`q=N` endpoint.
+
+Tier: exact proposer-tier analytic obstruction.  No finite-size trend or numerical exponent is
+used, and no completion-tier status is claimed.
+
+## Decision
+
+**Decision B for the explicit Phase-30 bridge.**  Put
+
+\[
+ L=\lfloor N^{2/3}\rfloor,
+ \qquad
+ D=\lfloor L/2\rfloor,
+ \qquad
+ p=2^{-L},
+\tag{2}
+\]
+
+and let
+
+\[
+ C=\sum_{i=1}^L x_i,
+ \qquad
+ H=\#\{i:x_i>0\}.
+\tag{3}
+\]
+
+On the exact latent representation of `pi_N`, `H` is a `Bin(L,1/2)` random variable and
+`b=1[H=0]`.  On every support point,
+
+\[
+ 0\leq H\leq C\leq L^2
+\tag{4}
+\]
+
+for all sufficiently large `N`.
+
+Set
+
+\[
+ a_0=L/64,
+ \qquad
+ B=L^2,
+ \qquad
+ n=\left\lfloor\frac{D-1}{2}\right\rfloor,
+\tag{5}
+\]
+
+and define the actual scalar polynomial
+
+\[
+ q_N(C)=
+ \frac{
+ T_n\!\left((B+a_0-2C)/(B-a_0)\right)
+ }{
+ T_n\!\left((B+a_0)/(B-a_0)\right)
+ }.
+\tag{6}
+\]
+
+Here `T_n` is the Chebyshev polynomial of the first kind.  Formula (6) is globally defined on
+histograms; it uses neither the latent component label nor fiber-dependent coefficients.  Since
+`C=p_(0,1)` has actual weight two,
+
+\[
+ \operatorname{weight}(q_N)\leq 2n\leq D-1<D.
+\tag{7}
+\]
+
+Thus `q_N in V_D`.  It equals one on NO.  Its absolute value is at most one on the full support,
+and it is exponentially small whenever `H>=a_0`.  Combining this selector with the already proved
+high-Fourier estimate
+
+\[
+ p(1-e^{-L/8})\leq \mathbb E[g_D^2]\leq p,
+ \qquad
+ \|f_D\|_2^2\leq pe^{-L/8},
+\tag{8}
+\]
+
+gives
+
+\[
+ C_N:=\frac{2\mathbb E[g_D^2]}{\mathbb E|g_D|}
+ \leq
+ 4e^{-\sqrt L/20}
+ +\frac{e^{-\kappa L}}{1-e^{-L/8}}
+ =o(1),
+\tag{9}
+\]
+
+where
+
+\[
+ \kappa=\frac{1/8-h(1/64)}2
+ =0.0222575814\ldots>0
+\tag{10}
+\]
+
+and `h(alpha)=-alpha ln(alpha)-(1-alpha)ln(1-alpha)` uses natural logarithms.  In particular,
+`C_N<2/3` for every sufficiently large `N`.  The explicit Phase-30 projection bridge, and hence
+its coupling to a correlation-neutral parity tail, cannot prove the desired endpoint.
+
+## 1. The activation count is a genuine orbit statistic
+
+The exact latent lift first samples a component and its prospective pair data, then takes
+independent bits `y_i~Bernoulli(1/2)` and sets
+
+\[
+ x_i=y_i z_i,
+ \qquad z_i>0.
+\tag{11}
+\]
+
+Consequently
+
+\[
+ H=\sum_i y_i=\#\{i:x_i>0\}
+\tag{12}
+\]
+
+is determined by the pushed-forward orbit, even though the ordering, component label, and
+prospective inactive splits are forgotten.  In particular, overlap between the balanced and dense
+components does not change `H`.  Conditional on every latent `eta`, it has the same binomial law,
+so unconditionally
+
+\[
+ H\sim\operatorname{Bin}(L,1/2),
+ \qquad
+ b=1[H=0],
+ \qquad
+ \Pr(H=0)=p.
+\tag{13}
+\]
+
+Every positive `x_i` is a positive integer.  Therefore
+
+\[
+ C=\sum_i x_i\geq\sum_i1[x_i>0]=H.
+\tag{14}
+\]
+
+This proves the lower half of (4) without identifying or approximating any individual activation
+bit.
+
+## 2. Uniform support bound `C<=L^2`
+
+The upper bound in (4) must hold on both components.
+
+### 2.1 Dense component
+
+On the dense component, each active slot has `x_i=s_i-1`, while each inactive slot has zero.
+Since there are exactly `L` positive totals and `sum_i s_i=N`,
+
+\[
+ C\leq\sum_i(s_i-1)=N-L.
+\tag{15}
+\]
+
+Because `L=N^{2/3}+O(1)`, one has `N-L=o(L^2)`.  Hence (15) is below `L^2` for all sufficiently
+large `N`.
+
+### 2.2 Balanced component
+
+Recall
+
+\[
+ U=\lceil2N^{1/3}\rceil,
+ \qquad
+ M=L-U,
+ \qquad
+ S=N-2U.
+\tag{16}
+\]
+
+The `U` unit slots contribute at most `U` to `C`.  The `M` bulk totals sum to `S`, and the exact
+balanced-composition rule puts every bulk total within two of its mean `S/M`.  Thus
+
+\[
+ s_i\leq S/M+2.
+\tag{17}
+\]
+
+Every positive split of total `s_i` satisfies `x_i=r_i(s_i-r_i)<=s_i^2/4`.  Using
+`s_i^2<=(S/M+2)s_i` and summing gives
+
+\[
+ \begin{aligned}
+ C
+ &\leq U+\frac14\sum_{i=1}^M s_i^2\\
+ &\leq U+\frac14(S/M+2)S\\
+ &=U+\frac{S^2}{4M}+\frac S2.
+ \end{aligned}
+\tag{18}
+\]
+
+Now `U=o(L)`, `M=L(1-o(1))`, `S=N(1-o(1))`, and
+
+\[
+ \frac{N^2}{L}=(1+o(1))L^2,
+ \qquad
+ N=o(L^2).
+\tag{19}
+\]
+
+Therefore the right side of (18) is `(1/4+o(1))L^2`, and in particular is at most `L^2` for all
+sufficiently large `N`.  This proves the upper half of (4) on the complete mixture support, not
+only on typical total vectors.
+
+## 3. The selector is legal under the strict actual cutoff
+
+The actual Phase-30 invariant space is generated by polarized power sums
+
+\[
+ p_{(a,b)}=\sum_i s_i^a x_i^b,
+ \qquad
+ \operatorname{weight}(p_{(a,b)})=a+2b,
+\tag{20}
+\]
+
+and their products of total weight strictly below `D`.  Since
+
+\[
+ C=p_{(0,1)},
+\tag{21}
+\]
+
+every monomial `C^j` has actual weight `2j`.  Formula (5) gives, including all floors,
+
+\[
+ 2n
+ =2\left\lfloor\frac{D-1}{2}\right\rfloor
+ \leq D-1<D.
+\tag{22}
+\]
+
+The denominator in (6) is a positive scalar because `(B+a_0)/(B-a_0)>1`.  Hence (6) is a real
+polynomial in `C` of degree `n`, and (20)-(22) prove `q_N in V_D`.  It is an actual global
+multisymmetric coefficient law, not a conditional Boolean polynomial and not a reciprocal fitted
+separately on latent fibers.
+
+At `C=0`, numerator and denominator in (6) agree, so
+
+\[
+ q_N(0)=1.
+\tag{23}
+\]
+
+Since NO is exactly `C=0`, (23) holds at every NO histogram in both mixture components.
+
+## 4. Pointwise Chebyshev bounds
+
+Write
+
+\[
+ z(C)=\frac{B+a_0-2C}{B-a_0},
+ \qquad
+ z_0=z(0)=\frac{B+a_0}{B-a_0}>1,
+\tag{24}
+\]
+
+and
+
+\[
+ \delta_L=\frac1{T_n(z_0)}
+ =\operatorname{sech}\!\left(n\operatorname{arcosh}z_0\right).
+\tag{25}
+\]
+
+For `0<=C<=a_0`, one has `1<=z(C)<=z_0`.  On `[1,infinity)`, `T_n(z)=cosh(n arcosh z)` is positive
+and nondecreasing.  Therefore
+
+\[
+ 0<\delta_L\leq q_N(C)\leq1
+ \qquad(0\leq C\leq a_0).
+\tag{26}
+\]
+
+For `a_0<=C<=B`, one has `-1<=z(C)<=1`, and hence `|T_n(z(C))|<=1`.  Thus
+
+\[
+ |q_N(C)|\leq\delta_L
+ \qquad(a_0\leq C\leq B).
+\tag{27}
+\]
+
+Equations (26)-(27) also show `|q_N(C)|<=1` throughout the support interval `[0,B]`.
+
+There is a useful exact expression for the exponent.  Since `B=L^2` and `a_0=L/64`,
+
+\[
+ \operatorname{arcosh}\frac{B+a_0}{B-a_0}
+ =2\operatorname{artanh}\sqrt{\frac{a_0}{B}}
+ =2\operatorname{artanh}\frac1{8\sqrt L}
+ \geq\frac1{4\sqrt L}.
+\tag{28}
+\]
+
+Also `D=floor(L/2)` and (5) imply
+
+\[
+ n\geq L/4-2\geq L/5
+\tag{29}
+\]
+
+for all sufficiently large `L`.  Combining (25), (28), and (29),
+
+\[
+ \delta_L
+ \leq2\exp\!\left[-n\operatorname{arcosh}z_0\right]
+ \leq2e^{-\sqrt L/20}.
+\tag{30}
+\]
+
+The key point is that (27) is required only above the activation threshold `a_0`, not from the
+first positive scalar value `C=1`.  The latter low-activation region is handled by its exact
+binomial probability below.
+
+## 5. The low-activation tail is negligible on the residual scale
+
+Let
+
+\[
+ A_{\rm low}=\{1\leq H<a_0\},
+ \qquad
+ \alpha=1/64.
+\tag{31}
+\]
+
+For `H~Bin(L,1/2)`, the standard binomial entropy bound, with natural logarithms, gives
+
+\[
+ \Pr(A_{\rm low})
+ \leq\Pr(H\leq\alpha L)
+ \leq\exp[-L(\ln2-h(\alpha))],
+\tag{32}
+\]
+
+where
+
+\[
+ h(\alpha)=-\alpha\ln\alpha-(1-\alpha)\ln(1-\alpha).
+\tag{33}
+\]
+
+At `alpha=1/64`,
+
+\[
+ \begin{aligned}
+ h(1/64)
+ &=\frac{\ln64}{64}+\frac{63}{64}\ln\frac{64}{63}\\
+ &<\frac6{64}+\frac1{64}
+ =\frac7{64}<\frac18,
+ \end{aligned}
+\tag{34}
+\]
+
+where the strict bounds use `ln 2<1` and `ln(1+1/63)<1/63`.  Numerically,
+`h(1/64)=0.0804848371...`.
+
+By Cauchy-Schwarz and the second inequality in (8),
+
+\[
+ \begin{aligned}
+ R_L
+ &:=\mathbb E[1_{A_{\rm low}}|f_D|]\\
+ &\leq\Pr(A_{\rm low})^{1/2}\|f_D\|_2\\
+ &\leq
+ \left(
+ e^{-L(\ln2-h(1/64))}\,p e^{-L/8}
+ \right)^{1/2}\\
+ &=p\exp\!\left[-\frac{1/8-h(1/64)}2L\right]\\
+ &=pe^{-\kappa L},
+ \end{aligned}
+\tag{35}
+\]
+
+with `kappa` as in (10).  This is a one-sided localization estimate: plain residual `L2` energy
+would not suffice, but its combination with the exact activation-count large deviation makes the
+entire unattenuated region exponentially negligible relative to the NO scale `p`.
+
+## 6. Orthogonality forces vanishing bridge correlation
+
+Put
+
+\[
+ e_D=\mathbb E[g_D^2],
+ \qquad
+ Z_D=\mathbb E|g_D|.
+\tag{36}
+\]
+
+The residual identities from the preceding audit are
+
+\[
+ \mathbb E_{\rm NO}g_D=e_D,
+ \qquad
+ g_D=-f_D\quad\hbox{on YES},
+ \qquad
+ Z_D\geq2e_D.
+\tag{37}
+\]
+
+The last inequality also follows from the exact identity
+`Z_D=2(e_D+Lambda_D)` with `Lambda_D>=0`.
+
+Because `q_N in V_D`, orthogonal projection gives `E[g_Dq_N]=0`.  Because `q_N=1` on NO, (37)
+then gives the exact equality
+
+\[
+ 0
+ =\mathbb E[g_Dq_N]
+ =e_D-\mathbb E_{\rm YES}[f_Dq_N],
+ \qquad
+ e_D=\mathbb E_{\rm YES}[f_Dq_N].
+\tag{38}
+\]
+
+Split the last expectation according to (31).  On `A_low`, (26) gives `|q_N|<=1`.  On the
+complementary YES event, `H>=a_0`; equations (4) and (27) give `|q_N(C)|<=delta_L`.  Hence
+
+\[
+ \begin{aligned}
+ e_D
+ &\leq
+ \mathbb E[1_{A_{\rm low}}|f_D|]
+ +\delta_L\mathbb E_{\rm YES}|f_D|\\
+ &\leq R_L+\delta_L Z_D.
+ \end{aligned}
+\tag{39}
+\]
+
+Using `Z_D>=2e_D`, (8), and (35),
+
+\[
+ \begin{aligned}
+ C_N=\frac{2e_D}{Z_D}
+ &\leq2\delta_L+\frac{2R_L}{Z_D}\\
+ &\leq2\delta_L+\frac{R_L}{e_D}\\
+ &\leq
+ 4e^{-\sqrt L/20}
+ +\frac{e^{-\kappa L}}{1-e^{-L/8}}.
+ \end{aligned}
+\tag{40}
+\]
+
+This proves (9).  In particular, the right side is below `2/3` for all sufficiently large `N`.
+The stronger conclusion is `C_N=o(1)`.
+
+## 7. Relation to the earlier continuous-composition barrier
+
+The previous candidate tried to approximate every individual reciprocal, sum the approximate
+activation bits, and then apply a robust zero test over the full positive range.  Its two
+continuous Chebyshev stages cost at least
+
+\[
+ (\operatorname{arcosh}3/2)L+o(L)=0.881373\ldots L+o(L),
+\tag{41}
+\]
+
+above the available cutoff `D=(1/2+o(1))L`.
+
+Formula (6) does not retry that composition.  It uses only the genuine global statistic `C`, has
+actual weight below `D`, and permits order-one values on `1<=C<a_0`.  Those values are harmless
+because reaching them requires the binomial lower-tail event `H<a_0`, whose contribution to the
+specific projection residual is exponentially below `e_D`.  The escape is therefore the joint use
+of:
+
+1. global coefficient coherence (`q_N` is one polynomial in `C`);
+2. the actual composition support bound `C<=L^2`;
+3. the exact latent activation large deviation; and
+4. the already proved high-Fourier bound on `||f_D||_2`.
+
+None of these four ingredients alone yields (40).
+
+## 8. Gate ledger
+
+| obligation | result |
+|:---|:---|
+| selector is one global histogram polynomial | **PASS** by (6) |
+| selector lies in complete actual `V_D` | **PASS**: weight `2n<D` by (22) |
+| `q_N=1` on every NO orbit | **PASS** by (23) |
+| complete dense-component bound `C<=L^2` | **PASS** by (15) |
+| complete balanced-component bound `C<=L^2` | **PASS** by (18)-(19) |
+| activation lower bound `C>=H` | **PASS** by integrality, (14) |
+| low-activation probability | **PASS** with natural-log entropy, (32)-(34) |
+| low-tail residual contribution relative to `e_D` | **PASS** by (35) and (8) |
+| strict actual weight cutoff including floors | **PASS** by (22) |
+| explicit bridge correlation `<=2/3` for all large `N` | **PASS**; in fact `o(1)` by (40) |
+| every near-zero bridge law is obstructed | **NOT CLAIMED** |
+| full `q=N` endpoint is decided | **NOT CLAIMED** |
+
+## 9. Scoped conclusion
+
+The low scalar levels that defeated a full-interval Chebyshev separator carry too little of the
+specific projection residual to save the explicit Phase-30 bridge.  A legal degree-`n` Chebyshev
+polynomial in the actual statistic `C` suppresses every state with at least `L/64` active pairs by
+`e^{-Omega(sqrt(L))}`.  The remaining YES states have probability small enough that Cauchy-Schwarz,
+together with the exact high-Fourier projection bound, places their entire contribution at
+`o(E[g_D^2])`.
+
+Orthogonality then forces the normalized bridge correlation to vanish.  This is a formula-level,
+all-large obstruction to the explicit mixed law `pi_N`; it is not a finite-size extrapolation and
+does not rely on a fiber-dependent Boolean selector.
+
+The near-zero-bridge project node must therefore seek a materially different positive law or
+coefficient mechanism if it remains open.  This memo does not refute such alternatives and does
+not assign a completion-tier DAG status.

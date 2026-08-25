@@ -1,0 +1,31 @@
+id: KSUM.B4b.L2.G1
+role: obstruction
+aliases:
+- B4bL2G1
+claim: 'In the reviewed `H=S_(N-1) x C(sigma)` commutant decomposition, terminal H-irrep labels do not
+  determine coordinates in a multiplicity space: `Q_j -> Q_j O` and `B -> O^T B O` leave the ambient operator
+  unchanged, and a symmetric-group Gelfand–Tsetlin/Jucys–Murphy chain acts on the irrep factor while leaving
+  the residual multiplicity/copy space unresolved, so terminal labels plus that chain do not define a
+  cross-`N` internal optimizer profile.'
+assessment:
+  level: PROVED
+  summary: '**PROVED** for terminal-label coordinates and the stated GT/Jucys–Murphy insufficiency.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L2_phase6.md
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    reviews:
+    - path: ksum/reviews/ksum_L2p6_review.md
+      kind: review
+      scope: Checks the multiplicity-space gauge ambiguity and why terminal irrep labels and a Gelfand--Tsetlin
+        chain do not define a cross-N optimizer profile.
+      locator: Rule-7 execution log and Target verdict T1
+      reviewed_hash: sha256:149d4ebd37e464ba4694277dcc8237a8d84c52823da91fa2e7c8788c88494fc2
+frontier:
+  task-001:
+    task: Construct a canonical ambient multiplicity/branching basis with phase/order/sign conventions
+      and a cross-`N` coefficient law.
+    kind: task
+    since: '2026-08-16'

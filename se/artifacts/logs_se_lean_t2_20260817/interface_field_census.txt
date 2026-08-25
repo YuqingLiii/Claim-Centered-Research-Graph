@@ -1,0 +1,105 @@
+# SE.SEFrame / SE.SEFrame.Cited field census, tier 1 -> tier 2 (2026-08-17)
+# baseline: git:f0d686a:se/lean/SE/Interface.lean
+# current : se/lean/SE/Interface.lean (working tree)
+# extraction: lines matching '^  <ident> :' inside each structure body; the paper-label token
+#             'eq:phiambient' inside a docstring matches that shape and is filtered out below.
+
+## structure SEFrame: 20 fields -> 19 fields
+   removed: rhoConst
+   added  : (none)
+   -- tier-1 list --
+      Sector
+      admissible
+      rtopS
+      omegaS
+      btheS
+      mxiS
+      gcanS
+      cnprobS
+      csectS
+      rho
+      adv
+      gammaNorm
+      maskNorm
+      dNorm
+      blockNorm
+      xNorm
+      yNorm
+      cDiag
+      cLower
+      rhoConst
+   -- tier-2 list --
+      Sector
+      admissible
+      rtopS
+      omegaS
+      btheS
+      mxiS
+      gcanS
+      cnprobS
+      csectS
+      rho
+      adv
+      gammaNorm
+      maskNorm
+      dNorm
+      blockNorm
+      xNorm
+      yNorm
+      cDiag
+      cLower
+
+## structure Cited: 25 fields -> 23 fields
+   removed: rho_ge_one, rho_le, rhoConst_nonneg
+   added  : rho_hook
+   -- tier-1 list --
+      adv_ge
+      numerator
+      maskNorm_pos
+      mask_from_D
+      defect_orth
+      block_triangle
+      x_bound
+      y_bound
+      cDiag_bound
+      cDiag_zero
+      cLower_zero
+      rho_ge_one
+      rho_le
+      rhoConst_nonneg
+      rtop_le_rho
+      omega_le
+      omega_pos
+      bthe_pos
+      rtop_pos
+      mxi_nonneg
+      csect_nonneg
+      xNorm_nonneg
+      yNorm_nonneg
+      cDiag_nonneg
+      cLower_nonneg
+   -- tier-2 list --
+      adv_ge
+      numerator
+      maskNorm_pos
+      mask_from_D
+      defect_orth
+      block_triangle
+      x_bound
+      y_bound
+      cDiag_bound
+      cDiag_zero
+      cLower_zero
+      rho_hook
+      rtop_le_rho
+      omega_le
+      omega_pos
+      bthe_pos
+      rtop_pos
+      mxi_nonneg
+      csect_nonneg
+      xNorm_nonneg
+      yNorm_nonneg
+      cDiag_nonneg
+      cLower_nonneg
+

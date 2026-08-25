@@ -1,0 +1,28 @@
+id: KSUM.B4b.L2.ALT.nonproduct
+aliases:
+- B4bL2AltNonproduct
+claim: Explore genuinely non-product signed couplings between blocks, including correlated orientations
+  or outer coefficients that are not raw product tensors, while retaining exact invariance, unit `l1`,
+  strict correlation, and additive or cap-scale annihilation.
+assessment:
+  level: OPEN
+  summary: '**OPEN — all proved block obstructions assume a product outer at their hard boundary; non-product
+    couplings are unexamined.**'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L2_phase5.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase6.md
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ORIENT
+      kind: node-evidence
+    - node: KSUM.B4b.L2.L2P6G
+      kind: node-evidence
+frontier:
+  task-001:
+    task: Define a concrete non-product coupling and subject its type, moment, norm, correlation, and
+      cap quantifiers to independent review.
+    kind: task
+    since: '2026-08-16'

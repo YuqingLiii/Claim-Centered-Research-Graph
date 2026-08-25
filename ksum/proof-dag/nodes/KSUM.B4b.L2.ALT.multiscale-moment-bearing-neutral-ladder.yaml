@@ -1,0 +1,59 @@
+id: KSUM.B4b.L2.ALT.multiscale-moment-bearing-neutral-ladder
+aliases:
+- B4bL2AltMultiscaleMomentBearingNeutralLadder
+claim: 'Use correlation-neutral YES/YES support across continuously linked scales from `C_t=Theta(N)`
+  to
+
+  `Theta(N^(4/3))` to transport scalar and mixed moments locally, while a separate parity component
+
+  supplies constant absolute high-tail mass, avoiding separated-scale extrapolation.'
+assessment:
+  level: OPEN
+  summary: '**OPEN — every ladder beginning at `C_t=Theta(N)` is scalar-obstructed.** A live bridge must
+    reach `C_t=O(1)`; the separately registered near-zero bridge has no formula.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L2_phase28_qN_two_reservoir_construction_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase29_qN_multiscale_neutral_ladder_20260721.md
+      kind: text
+    - path: ksum/tools/ksum_l2p29_qn_multiscale_ladder_check.py
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.correlation-tail-decoupled-two-reservoir
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.near-zero-bridge-independent-parity-tail
+      kind: node-evidence
+    runs:
+    - path: ksum/artifacts/logs_ksum_L2p29_qN_multiscale_ladder_20260721/run.json
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2.ALT.multiscale-moment-bearing-neutral-ladder at
+        the exact finite, formal, or computational scope stated in the linked output.
+frontier:
+  task-001:
+    task: Give a formula-defined ladder spanning `C_t=Theta(N)` through `Theta(N^(4/3))`.
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "Extend the correlation-bearing support to `C_t=O(1)`; any positive gap beginning at\n  `Theta(N)`\
+      \ is now ruled out."
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: Cancel the full scalar and mixed orbit-row moment system with bounded total variation.
+    kind: task
+    since: '2026-08-16'
+  task-004:
+    task: "Use at least `Theta(D)` effective `C_t` levels with no angular gaps and prevent short/gapped\n\
+      \  palettes for every fixed-weight mixed feature such as `M1,M2,X2`."
+    kind: task
+    since: '2026-08-16'
+  task-005:
+    task: Preserve correlation above `2/3` and constant high-tail mass after normalization.
+    kind: task
+    since: '2026-08-16'
+  task-006:
+    task: Prove legality and `D=Theta(N^(2/3))` for every sufficiently large `N` at `q=N`.
+    kind: task
+    since: '2026-08-16'

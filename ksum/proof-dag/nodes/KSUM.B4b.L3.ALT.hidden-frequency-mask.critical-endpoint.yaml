@@ -1,0 +1,187 @@
+id: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint
+aliases:
+- B4bL3AltHiddenFrequencyMaskCriticalEndpoint
+claim: 'For the exact rare-singleton/heavy-decoy promise frozen in the parent artifact at
+
+  `q=Theta(N^(2/3))`, prove an `Omega(N^(2/3))` quantum query lower bound, or construct an explicit
+
+  `o(N^(2/3))` algorithm that rules out that endpoint.'
+assessment:
+  level: OPEN
+  summary: '**OPEN — exact addressed baseline proved at proposer tier; cap endpoint unresolved.** The
+    exact promise is legal and losslessly embedded. A proposer-tier upper-algorithm audit breaks the desired
+    quarter-power scale for every strictly subcritical polynomial `q=N^kappa`, but all audited sampling,
+    Grover, frequency-classification, and ordinary Johnson/MNRS strategies still cost `Theta(N^(2/3))`
+    when `q=Theta(N^(2/3))`. A theorem-backed adversary construction now gives the exact frozen promise
+    `Adv+/-=Omega(a^(2/3)sqrt(d+1))=Omega(sqrt(N)q^(1/6))`, hence `Omega(N^(11/18))` at the endpoint.
+    Together with ordinary Johnson, the rigorous bracket is `Omega(N^(11/18)) <= Q <= O(N^(2/3))`. The
+    missing `N^(1/18)` is an address-erasure gain not present in independent `pSearch`; no subcap algorithm
+    was found. A dedicated audit of the three registered non-sampling attack families also found no subcap
+    algorithm: coherent duplicate classification and direct joint-statistic estimation cost at best `O-tilde(N^(5/6))`,
+    while the explicit soft-filter frequency-aware walk is minimized by applying no filter and becomes
+    the ordinary `Theta(N^(2/3))` Johnson walk. These are scoped architecture failures, not a general
+    lower bound. On the lower side, the exact orbit-intertwiner system is explicit. Its local two-orbital
+    span tops out at `Theta(N^(1/3))`, and the addressed subalgebra reproduces `N^(11/18)`.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L3_hidden_frequency_promise_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_hidden_frequency_upper_attack_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_hidden_frequency_critical_adversary_attempt_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_critical_nonsampling_upper_attacks_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_critical_orbit_intertwiner_attempt_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_critical_strict_injection_recording_attempt_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_critical_signed_cycle_weight_attempt_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_critical_coupled_uic_address_cycle_attempt_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_critical_coupled_higher_specht_attempt_20260722.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_critical_coupled_multiblock_inner_attempt_20260722.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_critical_growing_selector_repaired_matching_attempt_20260722.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_critical_sparse_delocalized_multiblock_attempt_20260722.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_critical_noncommuting_parent_mixing_balanced_grid_query_cut_20260722.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_critical_full_young_rank_balanced_harmonic_feasibility_20260722.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_critical_three_row_block_standard_covariant_feasibility_20260722.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_critical_three_row_bicovariant_two_cell_alphabet_feasibility_20260722.md
+      kind: text
+    - node: KSUM.B4b.L3
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.critical-core-psearch-lift
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.duplicate-classification
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.frequency-aware-joint-walk
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.joint-statistic-estimation
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.orbit-intertwiner-adversary
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.orbit-intertwiner-adversary.ALT.signed-cycle-weight-law
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.orbit-intertwiner-adversary.ALT.coupled-uic-address-cycle-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.orbit-intertwiner-adversary.ALT.coupled-uic-address-cycle-kernel.ALT.growing-selector-specht-branching-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.orbit-intertwiner-adversary.ALT.coupled-uic-address-cycle-kernel.ALT.delocalized-multiblock-occurrence-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.full-position-incidence-three-layer-word-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.noncommuting-parent-mixing-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.shared-branch-young-lattice-patch-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.same-parent-occurrence-multiplicity-mixing-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.macroscopic-parent-patch-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.non-skeleton-heavy-occurrence-carrier
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.full-young-rank-balanced-harmonic-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.non-scaled-plethystic-many-corner-occurrence-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.globally-bounded-symmetrized-polynomial-lower-bound
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.three-row-block-standard-covariant-occurrence-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.three-row-bicovariant-two-cell-alphabet-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.three-row-mixed-two-box-full-type-recoupling-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.three-row-induced-bicovariant-alphabet-packet-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.induced-packet-young-holonomy-law
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.induced-packet-joint-parent-content-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.induced-packet-occurrence-pencil-classification
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.induced-packet-total-energy-resolvent-law
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.induced-packet-noncommuting-sylvester-law
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.induced-packet-rectangular-transfer-resolvent-law
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.induced-packet-plaquette-flow-law
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.nontrivial-alphabet-occurrence-mixing-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.covariant-block-standard-occurrence-mixing-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.strict-injection-recording-query
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.promise-ideal-quotient-adversary
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.reachability-sensitive-recording-filtration
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.reachability-sensitive-recording-filtration.ALT.nonlinear-algorithm-dependent-carrier
+      kind: node-evidence
+frontier:
+  task-001:
+    task: "Decide whether a known adversary/approximate-degree donor applies to this exact two-orbit promise;\n\
+      \  every reduction must preserve the hidden palette and use `O(1)` oracle queries. The audited local\n\
+      \  donors do not; any continuation needs a new theorem or construction, not another parameter match."
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "If constructing a lower bound, give an explicit feasible adversary/dual or a theorem-backed\n\
+      \  restriction at `Omega(N^(2/3))`; numerical spectra alone do not license the exponent."
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: "Improve the exact addressed `N^(11/18)` adversary by the missing `N^(1/18)` without reusing\n\
+      \  independent pSearch. Concretely, construct the orbit-intertwiner coefficients satisfying the\n\
+      \  displayed critical adversary norm constraints, or define a genuinely nonlinear/algorithm-\n \
+      \ dependent strict-promise progress carrier not covered by the reachable-span ceiling."
+    kind: task
+    since: '2026-08-16'
+  task-004:
+    task: "The strict-projector and standalone square-cycle failures are independently closed. Any repair\n\
+      \  must change the typed architecture and proceed through an already registered successor or a new\n\
+      \  Rule-8-registered node, not through renamed projectors or coefficient formulas."
+    kind: task
+    since: '2026-08-16'
+  task-005:
+    task: "Do not retry either explicit parent grid, any `o(m)` singleton/Pieri patch, the displayed\n\
+      \  trivial-alphabet same-parent family, or the minimal separately invariant standard-hook\n  type-cell\
+      \ product: each has a uniform near-unit physical marked branch."
+    kind: task
+    since: '2026-08-16'
+  task-006:
+    task: "Pursue one of the remaining registered noncoverage boundaries with an explicit formula: a\n\
+      \  macroscopic `Omega(m)` patch or a non-skeleton heavy-occurrence carrier outside the Pieri cone.\n\
+      \  Do not retry the adjacent two-row trivial-core chain or the odd-`d` sign/rectangle carrier while\n\
+      \  their scoped reviews are pending; any continuation must leave those exact families.\n  Any new\
+      \ alphabet/position carrier must first be registered outside the scoped two-cell family.\n  It must\
+      \ prove `sqrt(r)` attenuation for every physical off-equality\n  left/right query after exact incidence;\
+      \ dimension counts and unmasked down cancellation are not\n  sufficient."
+    kind: task
+    since: '2026-08-16'
+  task-007:
+    task: Neither route can be replaced by a favorable finite spectrum.
+    kind: task
+    since: '2026-08-16'
+  task-008:
+    task: "If attacking from above, solve the coherent singleton-residual access problem without learning\n\
+      \  `Theta(q)` heavy labels and without leaving `Theta(N)` false singleton positions."
+    kind: task
+    since: '2026-08-16'
+  task-009:
+    task: "Keep this scoped as endpoint evidence. Any claim for all subcritical `q` belongs to a different,\n\
+      \  already registered composition node."
+    kind: task
+    since: '2026-08-16'

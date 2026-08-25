@@ -1,0 +1,17 @@
+Validation run from repository root on 2026-07-19.
+
+PASS  python -m py_compile ksum/tools/ksum_l2p6_labels.py ksum/tools/ksum_l2p6_fit_audit.py ksum/tools/ksum_l2p6_obstruction.py
+PASS  SHA256SUMS.txt entry-by-entry (20/20)
+PASS  python tools/proof_dag_check.py --problem ksum
+      ksum: 38 node files structurally valid
+      Proof-DAG validation OK: 38 nodes
+PASS  python tools/literature_check.py
+      Literature catalog OK: 24 papers, schema v1
+PASS  git diff --check -- <phase-6 and touched KSUM paths>
+
+FULL-WORKTREE NOTE
+
+`git diff --check` without a path restriction exits 1 solely on pre-existing trailing whitespace in
+`ksum/artifacts/logs_se_w2blind_20260719/codex_run.log`, an unrelated modified SE transcript present
+before this task. It reports no phase-6 or touched-KSUM whitespace error. That unrelated file was
+not changed or repaired in this pass.

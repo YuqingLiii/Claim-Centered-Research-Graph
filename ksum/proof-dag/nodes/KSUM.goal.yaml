@@ -1,0 +1,109 @@
+id: KSUM.goal
+aliases:
+- G
+claim: 'GOAL : reduce alphabet requirement in BS Ω(N^{k/(k+1)}) for fixed k≥3;
+
+  find Q(N,k,q) between q=O(1) (Grover √N) and q≥n^k (BS tight)'
+routes:
+  KSUM.B1:
+    premises:
+    - KSUM.B1
+    implication: 'B1 (frozen-coordinate reduction) implies GOAL: the reduction delivers a bound matching
+      Omega(N^{k/(k+1)}) at small alphabet.'
+    proof:
+      sketch: ksum/reviews/ksum_composition_layer_review_20260730.md §4.1
+    assessment:
+      level: REFUTED
+      summary: 'Donor-intrinsic CEILING (K-B1-1): the donor''s own upper bound Q(Claw_{n->kappa}) = O(n^{2/3})
+        holds for EVERY range kappa (Ambainis / Childs–Eisenberg, already cited for cor:threshold), so
+        no reduction whose live block carries a 2-wise problem on at most N coordinates can exceed O(N^{2/3})
+        — and 2/3 < k/(k+1) for every k >= 3. The route is dead, not unfinished. Scope (K-B1-2): REFUTED·DEAD
+        applies to this ROUTE ENTRY only; KSUM.B1 itself stays OPEN and its floor stands. Cites A1d (PROVED,
+        reviewed) + decidable arithmetic, not the label of A1e.'
+      basis:
+        reviews:
+        - path: ksum/reviews/ksum_composition_layer_review_20260730.md
+          kind: review
+        counterexamples:
+        - note: 'Donor-intrinsic CEILING (K-B1-1): the donor''s own upper bound Q(Claw_{n->kappa}) = O(n^{2/3})
+            holds for EVERY range kappa (Ambainis / Childs–Eisenberg, already cited for cor:threshold),
+            so no reduction whose live block carries a 2-wise problem on at most N coordinates can exceed
+            O(N^{2/3}) — and 2/3 < k/(k+1) for every k >= 3. The route is dead, not unfinished. Scope
+            (K-B1-2): REFUTED·DEAD applies to this ROUTE ENTRY only; KSUM.B1 itself stays OPEN and its
+            floor stands. Cites A1d (PROVED, reviewed) + decidable arithmetic, not the label of A1e.'
+          kind: counterexample
+          path: ksum/reviews/ksum_composition_layer_review_20260730.md
+      caveats:
+      - The route is disabled because its premise is REFUTED.
+  KSUM.B2:
+    premises:
+    - KSUM.B2
+    - KSUM.k3.donor
+    implication: B2 (conditional k-collision embedding) implies GOAL, GIVEN a walk-optimal small-range
+      k>=3 k-collision detection lower bound.
+    proof:
+      sketch: ksum/lean/KSUM/B2.lean and ksum/reviews/ksum_composition_layer_review_20260730.md
+        §3.3
+    assessment:
+      level: CONJECTURED
+      summary: No additional supporting evidence has been recorded for this route.
+  KSUM.B3:
+    premises:
+    - KSUM.B3
+    implication: B3 (direct Adv+- computation) implies GOAL.
+    proof:
+      sketch: ksum/reviews/ksum_composition_layer_review_20260730.md §§4.3-4.4
+    assessment:
+      level: REFUTED
+      summary: 'Two independent grounds: (1) constraint [[KSUM.G11]] — finite exact Adv+- values at reachable
+        (n,q) cannot establish a uniform asymptotic exponent (registered as its own node per K-B3-1; L32a''s
+        reviewed text records ''G11-non-discriminating'', and KSUM_STAGE0_VERDICT.md:61 quantifies it:
+        a G11-compliant 2x separation needs n ~ 256 at q=3, where the matrix has ~3^n columns); (2) the
+        registered solvers L32/L33 are k=2 solvers while GOAL is k>=3 — even unlimited-n solvers of that
+        kind answer a different question. Scope (K-B3-2): kills the FINITE-EXACT-COMPUTATION route as
+        registered; expressly NOT a kill of adversary-method approaches in general, which live under B4b.L1/L2/L3
+        and stay OPEN.'
+      basis:
+        reviews:
+        - path: ksum/reviews/ksum_composition_layer_review_20260730.md
+          kind: review
+        counterexamples:
+        - note: 'Two independent grounds: (1) constraint [[KSUM.G11]] — finite exact Adv+- values at reachable
+            (n,q) cannot establish a uniform asymptotic exponent (registered as its own node per K-B3-1;
+            L32a''s reviewed text records ''G11-non-discriminating'', and KSUM_STAGE0_VERDICT.md:61 quantifies
+            it: a G11-compliant 2x separation needs n ~ 256 at q=3, where the matrix has ~3^n columns);
+            (2) the registered solvers L32/L33 are k=2 solvers while GOAL is k>=3 — even unlimited-n solvers
+            of that kind answer a different question. Scope (K-B3-2): kills the FINITE-EXACT-COMPUTATION
+            route as registered; expressly NOT a kill of adversary-method approaches in general, which
+            live under B4b.L1/L2/L3 and stay OPEN.'
+          kind: counterexample
+          path: ksum/reviews/ksum_composition_layer_review_20260730.md
+      caveats:
+      - The route is disabled because its premise is REFUTED.
+assessment:
+  level: OPEN
+  summary: 'Primary status: **OPEN**. The exact qualifiers and scope are preserved in the Claim above.
+    This status was mirrored mechanically and was not re-adjudicated during normalization.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_lean_repair_batch_20260730.md
+      kind: text
+    - node: KSUM.C0
+      kind: node-evidence
+    - node: KSUM.B4
+      kind: node-evidence
+    routes:
+    - KSUM.B2
+    runs:
+    - path: ksum/artifacts/logs_ksum_lean_repair_20260730/build.log
+      kind: run
+      result: Execution artifact supporting KSUM.goal at the exact finite, formal, or computational scope
+        stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_lean_repair_20260730/print_axioms.txt
+      kind: run
+      result: Execution artifact supporting KSUM.goal at the exact finite, formal, or computational scope
+        stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_lean_repair_20260730/SHA256SUMS.txt
+      kind: run
+      result: Execution artifact supporting KSUM.goal at the exact finite, formal, or computational scope
+        stated in the linked output.

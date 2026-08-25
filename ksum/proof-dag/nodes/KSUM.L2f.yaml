@@ -1,0 +1,32 @@
+id: KSUM.L2f
+aliases:
+- L2f
+claim: When R=Omega(n^2), amplified random color coding from k-distinctness to partite k-claw, followed
+  by the cited Belovs lower bound, gives Omega(n^(3/4-1/(4(2^k-1)))).
+assumptions:
+  belovs-k-distinctness-lower-bound:
+    kind: external-theorem
+    statement: For every fixed k and alphabet size Omega(n^2), bounded-error quantum k-distinctness decision
+      has query complexity Omega(n^(3/4-1/(4(2^k-1)))); the decision statement follows from the cited
+      search lower bound by the standard search-to-decision reduction.
+    source:
+      path: ksum/reviews/ksum_W_review.md
+      kind: review
+      locator: Section R-B, Exact imported statement
+assessment:
+  level: PROVED
+  summary: The claim is supported by the linked evidence and independent review.
+  basis:
+    evidence:
+    - node: KSUM.L2fC
+      kind: node-evidence
+    - node: KSUM.k3.donor
+      kind: node-evidence
+    reviews:
+    - path: ksum/reviews/ksum_W_review.md
+      kind: review
+      scope: Proves the amplified color-coding reduction from k-distinctness in the R=Omega_k(n^2) regime,
+        with exact soundness and range accounting; it does not extend the result into the small-alphabet
+        zone.
+      locator: Ruling table and Section R-B
+      reviewed_hash: sha256:03b7f93801933401d46bf64361c04747ec2f118c54d947883cf2c78437035003

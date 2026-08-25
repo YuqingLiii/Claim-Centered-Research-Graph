@@ -1,0 +1,69 @@
+id: KSUM.B2
+aliases:
+- B2
+claim: 'OR-2 (AND: encoding A2 proved; needs a WALK-OPTIMAL donor L2):
+
+  CONDITIONAL k-COLLISION EMBEDDING
+
+  (partial W floors do not discharge consequence; branch OPEN)'
+routes:
+  joint:
+    premises:
+    - KSUM.A2
+    - KSUM.k3.donor
+    implication: 'A2 (the exact query-free reduction k-partite k-collision -> kSum with q = Theta_k(R^{k-1}))
+      AND k3.donor (a walk-optimal small-range k>=3 k-collision detection lower bound) together imply
+      B2: a k-Sum lower bound at small alphabet matching the donor''s exponent through the reduction.'
+    proof:
+      sketch: ksum/lean/KSUM/B2.lean and the composition-layer review §3.3
+    assessment:
+      level: CERTIFIED*
+      summary: ksum/reviews/ksum_composition_layer_review_20260730.md §3.3 — CONFIRMED-WITH-REPAIRS (R-B2-1..3);
+        CERTIFIED* licensed, PROVED withheld pending the construction-family premise repair
+      basis:
+        reviews:
+        - path: ksum/reviews/ksum_composition_layer_review_20260730.md
+          kind: review
+          scope: Checks the conditional transport from A2 and a walk-optimal donor to B2, while recording
+            the construction-family, padding/interpolation, and donor-statement limitations; it does not
+            establish the open donor premise.
+          locator: Sections 2.3 and 3.3
+          reviewed_hash: sha256:031bbe241ef53be8d52b19b7aa47254feb9e2fae799f1e5a0868221deeb0599d
+        evidence:
+        - node: KSUM.L2fC
+          kind: node-evidence
+      caveats:
+      - The constructed moduli q_k(R) and padded input lengths are the scope of the reviewed transport;
+        the route does not quantify over every integer q.
+      - The donor range R and the induced alphabet q=Theta_k(R^(k-1)) must lie in the donor's validity
+        and novelty window. KSUM.L2fC records why the earlier large-range donor fails this test; it is
+        evidence for this caveat, not a supporting premise.
+      - The former R-B2-3 claim-shape blocker was discharged on 2026-07-31 when KSUM.k3.donor was rewritten
+        as a proposition.
+assessment:
+  level: OPEN
+  summary: 'Primary status: **OPEN**. The exact qualifiers and scope are preserved in the Claim above.
+    This status was mirrored mechanically and was not re-adjudicated during normalization.'
+  basis:
+    routes:
+    - joint
+  caveats:
+  - Text and digest synchronization does not by itself establish that the Lean proposition is equivalent
+    to the natural-language claim; that correspondence remains review-dependent.
+formalization:
+  lean:
+    module: KSUM.B2
+    file: ksum/lean/KSUM/B2.lean
+    claim: Claim
+    state: composition-checked
+    claim_hash: sha256:a25606dcdd3e07b9f93ba38e0ab0e352929a1d1a03687264d9ad49d0bd951e14
+    sync_state: current
+    theorems:
+    - composition
+    rel:
+    - 'premise-not-imported: KSUM.k3.donor - enters through the explicitly named local `DonorClaim` hypothesis
+      because that OPEN premise has no formalization module'
+    - The construction-family novelty side condition is not mechanized.
+    build: ksum/artifacts/logs_ksum_lean_reorg_20260730/
+    synced: '2026-08-19'
+    source_claim_hash: sha256:a25606dcdd3e07b9f93ba38e0ab0e352929a1d1a03687264d9ad49d0bd951e14

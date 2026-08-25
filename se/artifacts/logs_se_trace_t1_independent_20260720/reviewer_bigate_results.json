@@ -1,0 +1,555 @@
+{
+  "method": "tabloid permutation module plus central Casimir projectors",
+  "results": [
+    {
+      "sector": {
+        "n": 4,
+        "q": 8,
+        "j": 2,
+        "theta": [
+          2
+        ],
+        "a": 1,
+        "alpha": [
+          1
+        ],
+        "b": 1,
+        "beta": [
+          1
+        ]
+      },
+      "module": {
+        "shape": [
+          6,
+          2
+        ],
+        "dimension": 28,
+        "specht_dimension_not_materialized": 20,
+        "carrier_dimension": 6,
+        "physical_terms": 6
+      },
+      "constants": {
+        "B": "7/5",
+        "T": 6,
+        "d": 6,
+        "p0": "7/10",
+        "omega": "3/7",
+        "rtop": "8/5",
+        "delta_min": 5,
+        "tail_deltas": [
+          5
+        ]
+      },
+      "central_residuals": {
+        "lambda": 6.186606545111919e-15,
+        "kappa": 1.4739332814554997e-15,
+        "nu": 2.6291254051609417e-15,
+        "orthogonality": 7.352781054625497e-16,
+        "smallest_retained_singular": 4.276619869688035,
+        "largest_discarded_singular": 1.85498233351949e-15,
+        "polar_distance_bound": 9.005280887117819e-16,
+        "inflated_joint_residuals": [
+          5.275173249588539e-13,
+          3.871184173957992e-14,
+          1.0193021462682606e-13
+        ],
+        "joint_leakage_bound": 5.386677115592563e-13
+      },
+      "branch_checks": {
+        "partition_residual_frobenius": 1.357426300644439e-15,
+        "max_branch_inner_product": 1.8735013540549517e-16,
+        "total_reflected_direct": 1.196666666666666,
+        "total_reflected_branch_sum": 1.1966666666666665
+      },
+      "branches": [
+        {
+          "name": "long",
+          "tau": [
+            5,
+            2
+          ],
+          "delta": null,
+          "reflected_trace": 0.9119999999999999,
+          "central_eigen_residual_bound": 3.476488717269415e-13
+        },
+        {
+          "name": "tail_1",
+          "tau": [
+            6,
+            1
+          ],
+          "delta": 5,
+          "reflected_trace": 0.2846666666666667,
+          "central_eigen_residual_bound": 4.0661254910899903e-13
+        }
+      ],
+      "targets": {
+        "T-a": {
+          "value": 4.965333333333333,
+          "certified_interval": [
+            4.965333330502704,
+            4.965333336163962
+          ],
+          "bound_exact": "294/25",
+          "verdict": "PASS"
+        },
+        "T-b": {
+          "value": 0.2846666666666667,
+          "certified_interval": [
+            0.28466666562684395,
+            0.2846666677064894
+          ],
+          "bound_exact": "49/25",
+          "verdict": "PASS"
+        },
+        "joint": {
+          "value": 6.673333333333333,
+          "certified_interval": [
+            6.673333327383236,
+            6.67333333928343
+          ],
+          "bound_exact": "294/25",
+          "verdict": "PASS"
+        },
+        "G_can": {
+          "value": 0.37989417989417973,
+          "certified_interval": [
+            0.37989417972965595,
+            0.3798941800587035
+          ],
+          "conditional_bound_exact": "412/315",
+          "15/4_rtop_exact": "6",
+          "vs_conditional": "PASS",
+          "vs_15/4_rtop": "PASS"
+        }
+      },
+      "error_budget": {
+        "orbit_radius_frobenius": 1.968540273092343e-14,
+        "numeric_frobenius_bound": 7.141625002091615e-14,
+        "total_reflected_trace_error": 5.182496601719007e-10,
+        "per_branch_trace_error": 5.199113400759131e-10,
+        "long_trace_error": 2.8306284070799713e-09,
+        "tail_trace_error": 1.0398226801518263e-09,
+        "joint_trace_error": 5.9500964475354506e-09,
+        "G_can_error": 1.6452370164187326e-10
+      }
+    },
+    {
+      "sector": {
+        "n": 4,
+        "q": 8,
+        "j": 2,
+        "theta": [
+          1,
+          1
+        ],
+        "a": 1,
+        "alpha": [
+          1
+        ],
+        "b": 1,
+        "beta": [
+          1
+        ]
+      },
+      "module": {
+        "shape": [
+          6,
+          1,
+          1
+        ],
+        "dimension": 56,
+        "specht_dimension_not_materialized": 21,
+        "carrier_dimension": 6,
+        "physical_terms": 6
+      },
+      "constants": {
+        "B": "4/3",
+        "T": 6,
+        "d": 6,
+        "p0": "5/7",
+        "omega": "2/5",
+        "rtop": "32/21",
+        "delta_min": 7,
+        "tail_deltas": [
+          7
+        ]
+      },
+      "central_residuals": {
+        "lambda": 4.382421087474291e-15,
+        "kappa": 1.0277499278176768e-15,
+        "nu": 1.4667839825223392e-15,
+        "orthogonality": 5.082420507980002e-16,
+        "smallest_retained_singular": 4.099424465792182,
+        "largest_discarded_singular": 7.022264335169369e-15,
+        "polar_distance_bound": 6.224668451403943e-16,
+        "inflated_joint_residuals": [
+          6.80504269117423e-13,
+          5.1736888530063834e-14,
+          1.3669115358851208e-13
+        ],
+        "joint_leakage_bound": 6.960224402928174e-13
+      },
+      "branch_checks": {
+        "partition_residual_frobenius": 8.292470721465807e-16,
+        "max_branch_inner_product": 5.204170427930421e-18,
+        "total_reflected_direct": 0.6977777777777775,
+        "total_reflected_branch_sum": 0.6977777777777773
+      },
+      "branches": [
+        {
+          "name": "long",
+          "tau": [
+            5,
+            1,
+            1
+          ],
+          "delta": null,
+          "reflected_trace": 0.6501587301587297,
+          "central_eigen_residual_bound": 4.579129753113054e-13
+        },
+        {
+          "name": "tail_1",
+          "tau": [
+            6,
+            1
+          ],
+          "delta": 7,
+          "reflected_trace": 0.047619047619047575,
+          "central_eigen_residual_bound": 5.709411445204305e-13
+        }
+      ],
+      "targets": {
+        "T-a": {
+          "value": 4.063492063492061,
+          "certified_interval": [
+            4.063492059299498,
+            4.063492067684623
+          ],
+          "bound_exact": "32/3",
+          "verdict": "PASS"
+        },
+        "T-b": {
+          "value": 0.047619047619047575,
+          "certified_interval": [
+            0.04761904627742764,
+            0.04761904896066751
+          ],
+          "bound_exact": "4/3",
+          "verdict": "PASS"
+        },
+        "joint": {
+          "value": 4.444444444444441,
+          "certified_interval": [
+            4.444444434885399,
+            4.4444444540034835
+          ],
+          "bound_exact": "32/3",
+          "verdict": "PASS"
+        },
+        "G_can": {
+          "value": 0.2492063492063491,
+          "certified_interval": [
+            0.24920634896739022,
+            0.24920634944530798
+          ],
+          "conditional_bound_exact": "38/35",
+          "15/4_rtop_exact": "40/7",
+          "vs_conditional": "PASS",
+          "vs_15/4_rtop": "PASS"
+        }
+      },
+      "error_budget": {
+        "orbit_radius_frobenius": 3.360625921696494e-14,
+        "numeric_frobenius_bound": 9.955782371154481e-14,
+        "total_reflected_trace_error": 6.690847527842009e-10,
+        "per_branch_trace_error": 6.708099635411677e-10,
+        "long_trace_error": 4.192562272132298e-09,
+        "tail_trace_error": 1.3416199270823353e-09,
+        "joint_trace_error": 9.55904198046164e-09,
+        "G_can_error": 2.3895884028007175e-10
+      }
+    },
+    {
+      "sector": {
+        "n": 9,
+        "q": 18,
+        "j": 3,
+        "theta": [
+          2,
+          1
+        ],
+        "a": 2,
+        "alpha": [
+          2
+        ],
+        "b": 1,
+        "beta": [
+          1
+        ]
+      },
+      "module": {
+        "shape": [
+          15,
+          2,
+          1
+        ],
+        "dimension": 2448,
+        "specht_dimension_not_materialized": 1344,
+        "carrier_dimension": 160,
+        "physical_terms": 168
+      },
+      "constants": {
+        "B": "17/14",
+        "T": 168,
+        "d": 160,
+        "p0": "1105/1344",
+        "omega": "239/1105",
+        "rtop": "81/56",
+        "delta_min": 14,
+        "tail_deltas": [
+          14,
+          16
+        ]
+      },
+      "central_residuals": {
+        "lambda": 1.3961911516294693e-11,
+        "kappa": 3.634684226565073e-12,
+        "nu": 8.027198733061031e-12,
+        "orthogonality": 7.139191781453546e-15,
+        "smallest_retained_singular": 0.9493472477212952,
+        "largest_discarded_singular": 4.64887165609213e-10,
+        "polar_distance_bound": 4.515221336429657e-14,
+        "inflated_joint_residuals": [
+          1.6722018643036567e-10,
+          2.8877223624176765e-11,
+          4.589100782947857e-11
+        ],
+        "joint_leakage_bound": 1.7579098211697955e-10
+      },
+      "branch_checks": {
+        "partition_residual_frobenius": 7.1498730353158836e-12,
+        "max_branch_inner_product": 1.5920424700777147e-15,
+        "total_reflected_direct": 7.280822230272791,
+        "total_reflected_branch_sum": 7.2808222302727925
+      },
+      "branches": [
+        {
+          "name": "long",
+          "tau": [
+            14,
+            2,
+            1
+          ],
+          "delta": null,
+          "reflected_trace": 6.9717438370107105,
+          "central_eigen_residual_bound": 1.2469511070886874e-10
+        },
+        {
+          "name": "tail_1",
+          "tau": [
+            15,
+            1,
+            1
+          ],
+          "delta": 14,
+          "reflected_trace": 0.19825072886298276,
+          "central_eigen_residual_bound": 1.3311000484149567e-10
+        },
+        {
+          "name": "tail_2",
+          "tau": [
+            15,
+            2
+          ],
+          "delta": 16,
+          "reflected_trace": 0.11082766439909869,
+          "central_eigen_residual_bound": 1.3416707646131716e-10
+        }
+      ],
+      "targets": {
+        "T-a": {
+          "value": 149.0287900874635,
+          "certified_interval": [
+            149.0158005714679,
+            149.0417796034591
+          ],
+          "bound_exact": "1734/7",
+          "verdict": "PASS"
+        },
+        "T-b": {
+          "value": 0.3090783932620814,
+          "certified_interval": [
+            0.30786306328409796,
+            0.3102937232400649
+          ],
+          "bound_exact": "578/35",
+          "verdict": "PASS"
+        },
+        "joint": {
+          "value": 153.8866213151929,
+          "certified_interval": [
+            153.85418651954956,
+            153.91905611083627
+          ],
+          "bound_exact": "1734/7",
+          "verdict": "PASS"
+        },
+        "G_can": {
+          "value": 0.20638590888560157,
+          "certified_interval": [
+            0.20636868376424317,
+            0.20640313400695998
+          ],
+          "conditional_bound_exact": "2103813/2640950",
+          "15/4_rtop_exact": "1215/224",
+          "vs_conditional": "PASS",
+          "vs_15/4_rtop": "PASS"
+        }
+      },
+      "error_budget": {
+        "orbit_radius_frobenius": 1.5173999910938318e-10,
+        "numeric_frobenius_bound": 1.6488938681851458e-10,
+        "total_reflected_trace_error": 0.0006076628350379393,
+        "per_branch_trace_error": 0.0006076649889917116,
+        "long_trace_error": 0.012989515995581392,
+        "tail_trace_error": 0.0012153299779834232,
+        "joint_trace_error": 0.03243479564331617,
+        "G_can_error": 1.7225121358389164e-05
+      }
+    },
+    {
+      "sector": {
+        "n": 9,
+        "q": 18,
+        "j": 3,
+        "theta": [
+          3
+        ],
+        "a": 2,
+        "alpha": [
+          2
+        ],
+        "b": 1,
+        "beta": [
+          1
+        ]
+      },
+      "module": {
+        "shape": [
+          15,
+          3
+        ],
+        "dimension": 816,
+        "specht_dimension_not_materialized": 663,
+        "carrier_dimension": 160,
+        "physical_terms": 168
+      },
+      "constants": {
+        "B": "16/13",
+        "T": 168,
+        "d": 160,
+        "p0": "32/39",
+        "omega": "7/32",
+        "rtop": "324/221",
+        "delta_min": 13,
+        "tail_deltas": [
+          13
+        ]
+      },
+      "central_residuals": {
+        "lambda": 1.3288044940549858e-11,
+        "kappa": 3.5080753699608487e-12,
+        "nu": 7.95496514357552e-12,
+        "orthogonality": 7.735360285679711e-15,
+        "smallest_retained_singular": 0.9448076927339968,
+        "largest_discarded_singular": 4.3624245406766603e-10,
+        "polar_distance_bound": 4.8922714049517385e-14,
+        "inflated_joint_residuals": [
+          1.0870908644681431e-10,
+          1.9041733289585294e-11,
+          3.1255452023012186e-11
+        ],
+        "joint_leakage_bound": 1.147046483972444e-10
+      },
+      "branch_checks": {
+        "partition_residual_frobenius": 1.0586702405526478e-11,
+        "max_branch_inner_product": 1.4051260155412137e-15,
+        "total_reflected_direct": 8.338874800413292,
+        "total_reflected_branch_sum": 8.338874800413294
+      },
+      "branches": [
+        {
+          "name": "long",
+          "tau": [
+            14,
+            3
+          ],
+          "delta": null,
+          "reflected_trace": 7.3918980427856145,
+          "central_eigen_residual_bound": 7.304320192595755e-11
+        },
+        {
+          "name": "tail_1",
+          "tau": [
+            15,
+            2
+          ],
+          "delta": 13,
+          "reflected_trace": 0.9469767576276789,
+          "central_eigen_residual_bound": 7.743595479858425e-11
+        }
+      ],
+      "targets": {
+        "T-a": {
+          "value": 154.47558358800958,
+          "certified_interval": [
+            154.4672960512059,
+            154.48387112481328
+          ],
+          "bound_exact": "43008/169",
+          "verdict": "PASS"
+        },
+        "T-b": {
+          "value": 0.9469767576276789,
+          "certified_interval": [
+            0.9461836144570144,
+            0.9477699007983433
+          ],
+          "bound_exact": "3072/169",
+          "verdict": "PASS"
+        },
+        "joint": {
+          "value": 167.7332581947971,
+          "certified_interval": [
+            167.71941865579873,
+            167.74709773379544
+          ],
+          "bound_exact": "43008/169",
+          "verdict": "PASS"
+        },
+        "G_can": {
+          "value": 0.23058915874042007,
+          "certified_interval": [
+            0.23057819264536314,
+            0.230600124835477
+          ],
+          "conditional_bound_exact": "41553/49504",
+          "15/4_rtop_exact": "1215/221",
+          "vs_conditional": "PASS",
+          "vs_15/4_rtop": "PASS"
+        }
+      },
+      "error_budget": {
+        "orbit_radius_frobenius": 5.7327322120429144e-11,
+        "numeric_frobenius_bound": 7.162099396411706e-11,
+        "total_reflected_trace_error": 0.00039657065504964913,
+        "per_branch_trace_error": 0.00039657158533220563,
+        "long_trace_error": 0.008287536803677114,
+        "tail_trace_error": 0.0007931431706644113,
+        "joint_trace_error": 0.013839538998327993,
+        "G_can_error": 1.096609505691388e-05
+      }
+    }
+  ]
+}

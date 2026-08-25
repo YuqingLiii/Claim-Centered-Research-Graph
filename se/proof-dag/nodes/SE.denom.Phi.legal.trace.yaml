@@ -1,0 +1,308 @@
+id: SE.denom.Phi.legal.trace
+aliases:
+- TRACE
+claim: For every admissible strict sector, prove the canonical multiplicity-block estimate M_xi <= (15/4)
+  B_theta(q)^2 omega I_c, or an equivalent joint trace bound strong enough to establish the legal Phi
+  denominator estimate.
+routes:
+  SE.denom.Phi.legal.trace.t6:
+    premises:
+    - SE.denom.Phi.legal.trace.t6
+    implication: The T6 child states the multiplicity-block target required by this node. Orthogonality
+      of the output child projectors eliminates the physical branch cross terms, so a proof of T6 establishes
+      this trace obligation.
+    proof:
+      sketch: se/reviews/logs_se_trace_t6_joint_review_20260722/REPORT.md (the exact cross-term-zero derivation)
+      sources:
+      - path: se/reviews/logs_se_trace_t6_joint_review_20260722/REPORT.md
+        kind: review
+    assessment:
+      level: CERTIFIED*
+      summary: same artifact — an independent review that CONFIRMED the joint definition
+      basis:
+        reviews:
+        - path: se/reviews/logs_se_trace_t6_joint_review_20260722/REPORT.md
+          kind: review
+          scope: Confirms the joint-trace normalization, zero physical cross terms, and finite exact gates
+            and supports the identity re-basing of TRACE onto T6; it does not prove the uniform T6 target
+            or license an ancestor promotion.
+          locator: Verdict and Sections 1--5
+          reviewed_hash: sha256:475ed1e4ee0829f673b7438ca94876c5469e55ed19b4816f098785e335625686
+      caveats:
+      - Certified conditionally on the listed premises; this route-level assessment does not by itself
+        promote the parent node.
+  SE.denom.Phi.legal.trace.t1:
+    premises:
+    - SE.denom.Phi.legal.trace.t1
+    implication: If the tail-Hölder proposition in SE.denom.Phi.legal.trace.t1 held uniformly, it would
+      establish the recorded T-b trace cap.
+    assessment:
+      level: OPEN
+      summary: The route is disabled because its premise is REFUTED; the implication itself has not been
+        refuted.
+      basis:
+        reviews:
+        - note: 'SE.denom.Phi.legal.trace.t1 assessment.source: review-2026-07-20'
+          kind: review
+        evidence:
+        - node: SE.denom.Phi.legal.trace.t1
+          kind: node-evidence
+      caveats:
+      - The premise is REFUTED, so this route is disabled; the implication itself was not refuted and
+        was reset to OPEN during current assessment.
+  SE.denom.Phi.legal.trace.t2:
+    premises:
+    - SE.denom.Phi.legal.trace.t2
+    implication: If the exact four-overlap evaluation in SE.denom.Phi.legal.trace.t2 yielded its registered
+      all-sector cap, it would establish the recorded T-a trace cap.
+    assessment:
+      level: OPEN
+      summary: The route is disabled because its premise is REFUTED; the implication itself has not been
+        refuted.
+      basis:
+        reviews:
+        - note: 'SE.denom.Phi.legal.trace.t2 assessment.source: independent-review-2026-07-22-entry-76'
+          kind: review
+        evidence:
+        - node: SE.denom.Phi.legal.trace.t2
+          kind: node-evidence
+      caveats:
+      - exact four-overlap formula survives as a local asset
+      - The premise is REFUTED, so this route is disabled; the implication itself was not refuted and
+        was reset to OPEN during current assessment.
+  SE.denom.Phi.legal.trace.t3:
+    premises:
+    - SE.denom.Phi.legal.trace.t3
+    implication: association-scheme spectra route
+    assessment:
+      level: OPEN
+      summary: No additional supporting evidence has been recorded for this route.
+      caveats:
+      - never executed
+  SE.denom.Phi.legal.trace.t4:
+    premises:
+    - SE.denom.Phi.legal.trace.t4
+    implication: If the averaging-and-transfer proposition in SE.denom.Phi.legal.trace.t4 held, it would
+      establish the recorded fixed-L trace cap.
+    assessment:
+      level: OPEN
+      summary: The route is disabled because its premise is REFUTED; the implication itself has not been
+        refuted.
+      basis:
+        reviews:
+        - note: 'SE.denom.Phi.legal.trace.t4 assessment.source: independent-review-2026-07-22-entry-76'
+          kind: review
+        evidence:
+        - node: SE.denom.Phi.legal.trace.t4
+          kind: node-evidence
+      caveats:
+      - The premise is REFUTED, so this route is disabled; the implication itself was not refuted and
+        was reset to OPEN during current assessment.
+  SE.denom.Phi.legal.trace.t5:
+    premises:
+    - SE.denom.Phi.legal.trace.t5
+    implication: If the complete uniform trace proposition registered in SE.denom.Phi.legal.trace.t5 held,
+      it would establish the corresponding trace caps.
+    assessment:
+      level: OPEN
+      summary: The route is disabled because its premise is REFUTED; the implication itself has not been
+        refuted.
+      basis:
+        reviews:
+        - note: 'SE.denom.Phi.legal.trace.t5 assessment.source: independent-review-2026-07-22-entry-76'
+          kind: review
+        evidence:
+        - node: SE.denom.Phi.legal.trace.t5
+          kind: node-evidence
+      caveats:
+      - The premise is refuted by exact c=2 counterexamples.
+      - The premise is REFUTED, so this route is disabled; the implication itself was not refuted and
+        was reset to OPEN during current assessment.
+  SE.denom.Phi.legal.trace.m:
+    premises:
+    - SE.denom.Phi.legal.trace.m
+    implication: The positive M_phys joint budget in SE.denom.Phi.legal.trace.m is stronger than both
+      recorded trace caps, so that premise would imply the recorded TRACE target.
+    assessment:
+      level: OPEN
+      summary: The route is disabled because its premise is REFUTED; the implication itself has not been
+        refuted.
+      basis:
+        reviews:
+        - note: 'SE.denom.Phi.legal.trace.m assessment.source: independent-review-2026-07-22-entry-76'
+          kind: review
+        evidence:
+        - node: SE.denom.Phi.legal.trace.m
+          kind: node-evidence
+      caveats:
+      - The premise is REFUTED, so this route is disabled; the implication itself was not refuted and
+        was reset to OPEN during current assessment.
+  SE.denom.Phi.legal.trace.r1:
+    premises:
+    - SE.denom.Phi.legal.trace.r1
+    implication: The operator-level T-column factorization in SE.denom.Phi.legal.trace.r1 would imply
+      both recorded trace caps and hence the recorded TRACE target.
+    assessment:
+      level: OPEN
+      summary: The route is disabled because its premise is REFUTED; the implication itself has not been
+        refuted.
+      basis:
+        reviews:
+        - note: 'SE.denom.Phi.legal.trace.r1 assessment.source: adjudicated-2026-07-20'
+          kind: review
+        evidence:
+        - node: SE.denom.Phi.legal.trace.r1
+          kind: node-evidence
+      caveats:
+      - reviewed kill
+      - The premise is REFUTED, so this route is disabled; the implication itself was not refuted and
+        was reset to OPEN during current assessment.
+  SE.denom.Phi.legal.trace.r2:
+    premises:
+    - SE.denom.Phi.legal.trace.r2
+    implication: The frame-side operator bound and trace estimate in SE.denom.Phi.legal.trace.r2 would
+      imply the recorded TRACE target.
+    assessment:
+      level: OPEN
+      summary: The route is disabled because its premise is REFUTED; the implication itself has not been
+        refuted.
+      basis:
+        reviews:
+        - note: 'SE.denom.Phi.legal.trace.r2 assessment.source: adjudicated-2026-07-30-killreview'
+          kind: review
+        evidence:
+        - node: SE.denom.Phi.legal.trace.r2
+          kind: node-evidence
+      caveats:
+      - kill review COMPLETED 2026-07-30, see the route node
+      - The premise is REFUTED, so this route is disabled; the implication itself was not refuted and
+        was reset to OPEN during current assessment.
+  SE.denom.Phi.legal.trace.r3:
+    premises:
+    - SE.denom.Phi.legal.trace.r3
+    implication: The two inequalities registered in SE.denom.Phi.legal.trace.r3 would jointly imply the
+      recorded TRACE target.
+    assessment:
+      level: OPEN
+      summary: The route is disabled because its premise is REFUTED; the implication itself has not been
+        refuted.
+      basis:
+        reviews:
+        - note: 'SE.denom.Phi.legal.trace.r3 assessment.source: adjudicated-2026-07-30-killreview'
+          kind: review
+        evidence:
+        - node: SE.denom.Phi.legal.trace.r3
+          kind: node-evidence
+      caveats:
+      - kill review COMPLETED 2026-07-30, see the route node
+      - The premise is REFUTED, so this route is disabled; the implication itself was not refuted and
+        was reset to OPEN during current assessment.
+  SE.denom.Phi.legal.trace.r4:
+    premises:
+    - SE.denom.Phi.legal.trace.r4
+    implication: The per-fiber Hölder conditions registered in SE.denom.Phi.legal.trace.r4 would imply
+      the recorded TRACE target.
+    assessment:
+      level: OPEN
+      summary: The route is disabled because its premise is REFUTED; the implication itself has not been
+        refuted.
+      basis:
+        reviews:
+        - note: 'SE.denom.Phi.legal.trace.r4 assessment.source: adjudicated-2026-07-30-killreview'
+          kind: review
+        evidence:
+        - node: SE.denom.Phi.legal.trace.r4
+          kind: node-evidence
+      caveats:
+      - kill recorded (in-range failure 13/8 at (9,18,3)), review completed 2026-07-30
+      - The premise is REFUTED, so this route is disabled; the implication itself was not refuted and
+        was reset to OPEN during current assessment.
+  SE.denom.Phi.legal.trace.r5:
+    premises:
+    - SE.denom.Phi.legal.trace.r5
+    implication: The reversed-Hölder estimate registered in SE.denom.Phi.legal.trace.r5 would imply the
+      corresponding historical trace cap.
+    assessment:
+      level: OPEN
+      summary: The route is disabled because its premise is REFUTED; the implication itself has not been
+        refuted.
+      basis:
+        reviews:
+        - note: 'SE.denom.Phi.legal.trace.r5 assessment.source: adjudicated-2026-07-30-killreview'
+          kind: review
+        evidence:
+        - node: SE.denom.Phi.legal.trace.r5
+          kind: node-evidence
+      caveats:
+      - kill review COMPLETED 2026-07-30, see the route node
+      - The premise is REFUTED, so this route is disabled; the implication itself was not refuted and
+        was reset to OPEN during current assessment.
+  SE.denom.Phi.legal.trace.r6:
+    premises:
+    - SE.denom.Phi.legal.trace.r6
+    implication: If h-averaging strictly improved the per-h estimates as claimed in SE.denom.Phi.legal.trace.r6,
+      it would supply the averaged TRACE route.
+    assessment:
+      level: OPEN
+      summary: The route is disabled because its premise is REFUTED; the implication itself has not been
+        refuted.
+      basis:
+        reviews:
+        - note: 'SE.denom.Phi.legal.trace.r6 assessment.source: adjudicated-2026-07-30-killreview'
+          kind: review
+        evidence:
+        - node: SE.denom.Phi.legal.trace.r6
+          kind: node-evidence
+      caveats:
+      - kill recorded (per-h equals average exactly), review completed 2026-07-30
+      - The premise is REFUTED, so this route is disabled; the implication itself was not refuted and
+        was reset to OPEN during current assessment.
+  SE.denom.Phi.legal.trace.r7:
+    premises:
+    - SE.denom.Phi.legal.trace.r7
+    implication: The compose-late proposition in SE.denom.Phi.legal.trace.r7 would avoid the per-copy
+      transport and imply the recorded TRACE target.
+    assessment:
+      level: OPEN
+      summary: The route is disabled because its premise is REFUTED; the implication itself has not been
+        refuted.
+      basis:
+        reviews:
+        - note: 'SE.denom.Phi.legal.trace.r7 assessment.source: adjudicated-2026-07-30-killreview'
+          kind: review
+        evidence:
+        - node: SE.denom.Phi.legal.trace.r7
+          kind: node-evidence
+      caveats:
+      - kill recorded ([P_xi, Pi_D] != 0), review completed 2026-07-30
+      - The premise is REFUTED, so this route is disabled; the implication itself was not refuted and
+        was reset to OPEN during current assessment.
+assessment:
+  level: OPEN
+  summary: This trace frontier remains OPEN. Exact counterexamples rule out several scalar and same-index
+    shortcuts, but they do not refute the canonical block estimate. The surviving route requires a full-copy
+    row-sum or copy-contraction argument, represented by T6 and its W9J subproblem.
+  basis:
+    evidence:
+    - path: se/proof-dag/nodes/SE.denom.Phi.legal.trace.t6.w9j.yaml
+      kind: text
+    - node: SE.denom.Phi.legal.gram
+      kind: node-evidence
+    - node: SE.denom.Phi.legal.omega
+      kind: node-evidence
+    - node: SE.denom.Phi.legal.splice
+      kind: node-evidence
+    - node: SE.denom.Phi.legal.found
+      kind: node-evidence
+    routes:
+    - SE.denom.Phi.legal.trace.t6
+frontier:
+  task-001:
+    task: Prove the full-copy W9J inequality or the sharper projector-overlap bound needed by T6.
+    kind: task
+  task-002:
+    task: Establish the normalized, typed physical identity before using the canonical Gram estimate.
+    kind: task
+  task-003:
+    task: Complete the canonical coefficient/Gram interface uniformly over the required parameter range.
+    kind: task

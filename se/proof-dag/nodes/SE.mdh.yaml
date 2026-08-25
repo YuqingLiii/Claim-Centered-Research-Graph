@@ -1,0 +1,29 @@
+id: SE.mdh
+aliases:
+- MDH
+claim: 'SE.mdh — Branch C: matrix dual-Hahn family (AND)'
+routes:
+  joint:
+    premises:
+    - SE.mdh.structure
+    - SE.mdh.coeffs
+    - SE.mdh.adv
+    - SE.mdh.asym
+    implication: 'structure AND coeffs AND adv AND asym imply mdh: the block structure of the matrix dual-Hahn
+      family (structure) with all-n rational coefficients (coeffs) determines a concrete witness whose
+      adversary ratio has a closed form (adv), and the asymptotic evaluation of that closed form gives
+      Theta(n^{1/3}) (asym).'
+    assessment:
+      level: OPEN
+      summary: No additional supporting evidence has been recorded for this route.
+      caveats:
+      - 'NO composition proof has been written: even with all four children closed, nothing on disk states
+        how the closed ratio yields the branch conclusion. Registered 2026-07-30 so the gap is visible
+        before anyone invests in this branch.'
+assessment:
+  level: OPEN
+  summary: 'Primary status: **OPEN**. The exact qualifiers and scope are preserved in the Claim above.
+    This status was mirrored mechanically and was not re-adjudicated during normalization.'
+  basis:
+    routes:
+    - joint

@@ -1,0 +1,48 @@
+id: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.promise-ideal-quotient-adversary
+aliases:
+- B4bL3AltCriticalPromiseIdealQuotientAdversary
+claim: 'Construct a representation-theoretic adversary/progress space directly on the two exact strict
+
+  orbit modules after quotienting the Fourier function space by the strict promise ideal, and prove
+
+  an `Omega(N^(2/3))` lower bound without the promise-kernel leakage that defeats the full-low-degree
+
+  knowledge projector.'
+assessment:
+  level: OPEN
+  summary: '**OPEN — quotient-only and exact query-module-hom repairs fail at proposer tier; only a genuinely
+    nonintertwining masked adversary remains possible.** Separate strict NO/YES quotients are individually
+    query stable, but the inherited identity/formula transfer is not well defined because their promise
+    ideals differ. The union quotient is well defined on the full promise but retains the degree-two cross-equality
+    answer signal and hence the known leakage. The previously untested rectangular module-hom continuation
+    also has an exact zero-space result: the coordinate-query algebra is the full finite function algebra,
+    and the strict NO and YES modules have disjoint joint spectra. Hence `Hom_F(F/I_0,F/I_1)=0`. Equivalently,
+    the degree-two cross-equality projectors vanish on NO and resolve the identity on YES, so any operator
+    intertwining them all is zero. This remains a scoped proposer-tier no-go, not completion-tier closure.
+    A surviving operator must deliberately fail exact query intertwining and instead prove bounded physical
+    query masks, which is the ordinary rectangular orbit-adversary obligation rather than an automatic
+    benefit of quotienting.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L3_critical_strict_injection_recording_attempt_20260721.md
+      kind: text
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.strict-injection-recording-query
+      kind: node-evidence
+frontier:
+  task-001:
+    task: "Define an explicit nonzero rectangular cross-orbit operator on the separate quotient spaces;\
+      \ it\n  can neither be inherited from the ambient identity nor intertwine every query multiplication."
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "Prove that operator's numerator and every physical query-masked norm, then give constant output\n\
+      \  separation at the cap scale."
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: "Obtain fresh independent review of both scoped no-go calculations before assigning any\n  completion-tier\
+      \ status."
+    kind: task
+    since: '2026-08-16'

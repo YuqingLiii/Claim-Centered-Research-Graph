@@ -1,0 +1,93 @@
+id: KSUM.B4
+aliases:
+- B4
+claim: 'OR-4 (AND internally): UPPER-BOUND / ALGORITHM SIDE — close the k=2 middle gap
+
+  (B4a PROVED: upper q^1/4; lower q^1/6, so exponent matching remains)'
+routes:
+  joint:
+    premises:
+    - KSUM.B4a
+    - KSUM.B4b
+    implication: 'B4a (the upper bound O_eps(N^{1/2+eps} q^{1/4})) AND B4b (a lower bound matching it)
+      together imply B4: the k=2 exponent window at small alphabet is closed, the two sides compared at
+      the SAME (N, q) throughout the regime q odd with 5 <= q <= N (the thm:main-odd regime; outside it
+      the matching claim asserts nothing - at q=2, t=0, N>=3 the function is constant and the two-sided
+      form would be vacuous). [q-range clause added 2026-07-31 per H-6, closing the prose/Lean divergence:
+      the mechanized B4bClaim/Claim carried this scope since the R-B4-1 repair while the frozen prose
+      stated none]'
+    proof:
+      sketch: ksum/reviews/ksum_composition_layer_review_20260730.md §3.4 and ksum/lean/KSUM/B4.lean
+    assessment:
+      level: CERTIFIED*
+      summary: ksum/reviews/ksum_composition_layer_review_20260730.md §3.4 — CONFIRMED-WITH-REPAIRS (R-B4-1,
+        R-B4-2); CERTIFIED* licensed, PROVED withheld
+      basis:
+        reviews:
+        - path: ksum/reviews/ksum_composition_layer_review_20260730.md
+          kind: review
+          scope: Checks the same-(N,q,t) sandwich between the upper and lower bounds, the odd-q range,
+            and the epsilon quantifiers; it certifies only the conditional composition and not the open
+            B4b premise.
+          locator: Sections 2.4 and 3.4
+          reviewed_hash: sha256:e13479a01ca0cda919b4f9fa9f7da97f9c697f5f781cb085bcd221e424aacb85
+      caveats:
+      - the two sides must be compared at the SAME (N,q) with the same normalization — the exponent window
+        is two-parameter, and 'matching' means matching as a function of both N and q, not at one slice
+      - 'R-B4-1 (review): restrict the q-range in the matching claim (e.g. 5 <= q, odd, or the regime
+        of thm:main-odd) — at q=2,t=0,N>=3 twoSum is constant and Q=0, so the unrestricted two-sided form
+        is unsatisfiable. LEAN HALF APPLIED 2026-07-30 (q odd, 5 <= q <= N); PROSE HALF still owed'
+assessment:
+  level: OPEN
+  summary: 'Primary status: **OPEN**. The exact qualifiers and scope are preserved in the Claim above.
+    This status was mirrored mechanically and was not re-adjudicated during normalization.'
+  basis:
+    evidence:
+    - node: KSUM.goal
+      kind: node-evidence
+    routes:
+    - joint
+    runs:
+    - path: ksum/artifacts/logs_ksum_lean_repair_20260730/build.log
+      kind: run
+      result: Execution artifact supporting KSUM.B4 at the exact finite, formal, or computational scope
+        stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_lean_repair_20260730/print_axioms.txt
+      kind: run
+      result: Execution artifact supporting KSUM.B4 at the exact finite, formal, or computational scope
+        stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_lean_repair_20260730/SHA256SUMS.txt
+      kind: run
+      result: Execution artifact supporting KSUM.B4 at the exact finite, formal, or computational scope
+        stated in the linked output.
+  caveats:
+  - Text and digest synchronization does not by itself establish that the Lean proposition is equivalent
+    to the natural-language claim; that correspondence remains review-dependent.
+formalization:
+  lean:
+    module: KSUM.B4
+    file: ksum/lean/KSUM/B4.lean
+    claim: Claim
+    state: composition-checked
+    claim_hash: sha256:44da23d6a8c52d7d9cea9e35ec17247ac39cbc1dbc43e6f06db8fb33dc5a94d7
+    sync_state: current
+    theorems:
+    - composition
+    rel:
+    - 'premise-not-imported: KSUM.B4b - enters through the explicitly named local `B4bClaim` hypothesis
+      because that OPEN premise has no formalization module'
+    - The mechanized sandwich is restricted to odd q with 5 <= q <= N.
+    build: ksum/artifacts/logs_ksum_lean_repair_20260730/
+    source_claim_hash: sha256:44da23d6a8c52d7d9cea9e35ec17247ac39cbc1dbc43e6f06db8fb33dc5a94d7
+    synced: '2026-08-19'
+frontier:
+  task-001:
+    task: "The Front U family obstruction requires fresh review and, even if proved, redirects rather\
+      \ than\n  discharges exponent matching: any improved upper bound must leave the defined F_SC family."
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: "**R-B4-2 — OWED** (unchanged): the `ε`-clause must survive into any \"window closed\" claim;\
+      \ the\n  Lean `Claim` keeps it, the prose composition claim should say so explicitly."
+    kind: task
+    since: '2026-08-16'

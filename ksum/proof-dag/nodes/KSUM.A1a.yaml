@@ -1,0 +1,66 @@
+id: KSUM.A1a
+aliases:
+- A1a
+claim: For every window target t in [t0,t0+k), where t0=(k-2)(kK+1), the frozen-core reduction can use
+  C0=floor(q/(k-1)) or a positive core summing to the target; when N-(k-2) is odd it also uses the parked
+  coordinate v=t+(k-1)K+1, and all d>=1 bad patterns are excluded.
+assessment:
+  level: PROVED
+  summary: The claim is supported by the linked evidence and independent review.
+  basis:
+    reviews:
+    - path: ksum/reviews/ksum_composition_layer_review_20260730.md
+      kind: review
+      scope: Checks the every-window-target core construction, the odd-live-length parked coordinate,
+        and the k=3 and threshold endpoints; identifies the claim repair required before use in A1.
+      locator: Section 3.1, R-A1-1 and regime-coverage paragraphs
+      reviewed_hash: sha256:8c7ece4a3dee96320494bb19181234015db693e2eb828a680e628aabc6136696
+    - path: ksum/reviews/ksum_lean_delta_fidelity_review_20260801.md
+      kind: review
+      scope: Compares the repaired A1a Lean statement with the manuscript and checks nonvacuity of the
+        every-window and parked-coordinate construction; this is a statement-fidelity audit, not a new
+        mathematical proof of the reduction.
+      locator: Sections 3.A--3.B and 5.4
+      reviewed_hash: sha256:8c7ece4a3dee96320494bb19181234015db693e2eb828a680e628aabc6136696
+    runs:
+    - path: ksum/artifacts/logs_ksum_lean_repair_20260730/build.log
+      kind: run
+      result: Execution artifact supporting KSUM.A1a at the exact finite, formal, or computational scope
+        stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_lean_repair_20260730/print_axioms.txt
+      kind: run
+      result: Execution artifact supporting KSUM.A1a at the exact finite, formal, or computational scope
+        stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_lean_repair_20260730/SHA256SUMS.txt
+      kind: run
+      result: Execution artifact supporting KSUM.A1a at the exact finite, formal, or computational scope
+        stated in the linked output.
+  caveats:
+  - Text and digest synchronization does not by itself establish that the Lean proposition is equivalent
+    to the natural-language claim; that correspondence remains review-dependent.
+formalization:
+  lean:
+    module: KSUM.A1a
+    file: ksum/lean/KSUM/A1a.lean
+    claim: Claim
+    state: proved
+    claim_hash: sha256:8c7ece4a3dee96320494bb19181234015db693e2eb828a680e628aabc6136696
+    sync_state: current
+    theorems:
+    - holds
+    build: ksum/artifacts/logs_ksum_lean_repair_20260730/
+    source_claim_hash: sha256:8c7ece4a3dee96320494bb19181234015db693e2eb828a680e628aabc6136696
+    synced: '2026-08-19'
+    rel:
+    - No external theorem is assumed by `Claim`; the module proves the encoded frozen-core consequence
+      unconditionally.
+frontier:
+  task-001:
+    task: "**Review coverage of the widened text** (flagged, for the pending statement-fidelity review):\n\
+      \  this node's PROVED comes from the 2026-07-18/19 reviews of the manuscript's `prop:core-even`\
+      \ /\n  `lem:core-odd`, which hold at every window target; the composition-layer reviewer derived\
+      \ the\n  every-window-target form independently and prescribed it. The widened Claim is therefore\
+      \ covered\n  by reviewed mathematics — but no reviewer has yet read *this text*, so\n  [KSUM.LEAN.statement-fidelity](KSUM.LEAN.statement-fidelity.yaml)\
+      \ should check it explicitly."
+    kind: task
+    since: '2026-08-16'

@@ -1,0 +1,17 @@
+Validation run from repository root on 2026-07-19.
+
+PASS  python -m py_compile ksum/tools/ksum_l2p6r_exact_review.py ksum/tools/ksum_l2p6r_pipeline_audit.py
+PASS  review SHA256SUMS.txt entry-by-entry (8/8)
+PASS  python tools/proof_dag_check.py --problem ksum
+      ksum: 38 node files structurally valid
+      Proof-DAG validation OK: 38 nodes
+PASS  python tools/literature_check.py
+      Literature catalog OK: 24 papers, schema v1
+PASS  git diff --check -- <review-touched tracked KSUM paths>
+PASS  explicit trailing-whitespace scan of the new review/scripts/reviewer-log paths
+
+FULL-WORKTREE NOTE
+
+`git diff --check` exits 1 solely on pre-existing trailing whitespace in
+`ksum/artifacts/logs_se_w2blind_20260719/codex_run.log`, an unrelated modified SE transcript that was
+already present in the pre-action worktree. The review did not edit or normalize that file.

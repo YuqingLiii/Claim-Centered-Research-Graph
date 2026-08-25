@@ -1,0 +1,73 @@
+{
+  "finite_instances": [
+    {
+      "annihilation_band": 0,
+      "case": [
+        4,
+        5,
+        0
+      ],
+      "closed_form": "Reynolds(diag(P_([N-1],triv_C)+P_([N-2,1],triv_C))) / trace",
+      "correlation": "49/95",
+      "degree_zero_factorial_moment": "1",
+      "full_invariance": true,
+      "l1": "1",
+      "nonnegative": true,
+      "support": 625
+    },
+    {
+      "annihilation_band": 0,
+      "case": [
+        5,
+        5,
+        0
+      ],
+      "closed_form": "Reynolds(diag(P_([N-1],triv_C)+P_([N-2,1],triv_C))) / trace",
+      "correlation": "5/7",
+      "degree_zero_factorial_moment": "1",
+      "full_invariance": true,
+      "l1": "1",
+      "nonnegative": true,
+      "support": 3125
+    }
+  ],
+  "interpretation": "The label-only positive projector transfer is invariant and has exact l1 one, but its constant factorial moment is one, so it has no positive annihilation band. Signed sector coefficients or a canonical multiplicity-coordinate construction are outside this obstruction.",
+  "theorem_gates": {
+    "multiplicity_gauge": {
+      "natural_operator_equal": true,
+      "original_top_coordinate_squares": [
+        "1",
+        "0"
+      ],
+      "rotated_top_coordinate_squares": [
+        "9/25",
+        "16/25"
+      ],
+      "rotation": [
+        [
+          "3/5",
+          "-4/5"
+        ],
+        [
+          "4/5",
+          "3/5"
+        ]
+      ]
+    },
+    "nontrivial_vector_reynolds": {
+      "input_vector": [
+        1,
+        -1,
+        0
+      ],
+      "killed": true,
+      "reynolds_average": [
+        "0",
+        "0",
+        "0"
+      ],
+      "sector": "S3:[2,1]"
+    },
+    "projector_diagonal_fact": "diag(A)>=0 and sum diag(A)=trace(A)>0 for every nonzero PSD A"
+  }
+}

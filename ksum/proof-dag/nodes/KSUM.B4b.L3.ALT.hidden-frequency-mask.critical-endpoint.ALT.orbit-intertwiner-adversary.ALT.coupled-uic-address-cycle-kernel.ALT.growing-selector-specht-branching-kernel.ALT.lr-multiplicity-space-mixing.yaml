@@ -1,0 +1,60 @@
+id: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.orbit-intertwiner-adversary.ALT.coupled-uic-address-cycle-kernel.ALT.growing-selector-specht-branching-kernel.ALT.lr-multiplicity-space-mixing
+aliases:
+- B4bL3AltCriticalCoupledLrMultiplicitySpaceMixing
+claim: 'Choose genuine outer full-transition irreducibles whose restriction to the address gauge group
+  has
+
+  Littlewood--Richardson multiplicity `c=Omega(m^(1/3))`, and construct an explicit multiplicity-
+
+  space mixer that preserves the outer `a^(2/3)` numerator while distributing every physical query
+
+  over `c` orthogonal channels to gain `Omega(sqrt(c))`.'
+assessment:
+  level: OPEN
+  summary: '**OPEN — the genuine LR-dimension gate passes, but every fixed input-wise factorized middle
+    operator fails the query-balancing gate.** For any `a >= 3r`, the explicit partitions `lambda=mu=(a-r,r)`
+    and `Theta=(2a-3r,2r,r)` satisfy the exact identity `c^Theta_(lambda,mu)=r+1`. Taking `r=floor(m^(1/3))`
+    therefore supplies the requested genuine `Omega(m^(1/3))` restriction multiplicity in the actual repaired-transition
+    carrier. This is Littlewood--Richardson multiplicity, not the regular Fourier multiplicity `f^Theta`
+    and not a presentation-gauge ancilla. The multiplicity by itself gives no adversary gain. Write the
+    common isotypic component as `M tensor Lambda`, where `dim M=c`. A pure multiplicity mixer has middle
+    block `W tensor I_Lambda`; after one physical coordinate is marked, every branching component contains
+    the same `W`, so the marked map is `direct-sum_eta W` and retains `||W||` exactly. More generally,
+    for an arbitrary fixed middle operator `A`, the unmarked incidence contraction is a normalized partial
+    trace `W_K`. Its marked branch contractions `W_eta` obey `W_K=sum_eta (dim Lambda_eta/dim Lambda)
+    W_eta`; hence `||W_K|| <= max_eta ||W_eta||`. At least one marked branch retains the full unmarked
+    norm. Thus the whole fixed-middle family `U_1(z_1)^* A U_0(z_0)` has selector gain at most one, despite
+    growing genuine LR multiplicity. The only identified escape is an already registered nonfactorizable
+    cycle-word/equality-graph coefficient whose middle law depends on the input pair.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L3_critical_coupled_higher_specht_attempt_20260722.md
+      kind: text
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.orbit-intertwiner-adversary.ALT.coupled-uic-address-cycle-kernel.ALT.growing-selector-specht-branching-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.orbit-intertwiner-adversary.ALT.coupled-uic-address-cycle-kernel.ALT.growing-selector-specht-branching-kernel.ALT.nonfactorizable-cycle-word-selector
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.full-position-incidence-three-layer-word-kernel
+      kind: node-evidence
+frontier:
+  task-001:
+    task: "Independently Rule-7 review the exact LR-tableau count, all displayed row/column types, and\
+      \ the\n  partial-trace convexity no-go before any completion status is considered."
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "Any surviving coefficient must make its middle law depend nonfactorizably on the outer input\n\
+      \  pair; this obligation belongs to the already registered nonfactorizable cycle-word successor."
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: "Prove the full unmasked and physical query-mask norms for such a nonfactorizable law; a large\
+      \ LR\n  multiplicity alone is now known to be insufficient."
+    kind: task
+    since: '2026-08-16'
+  task-004:
+    task: Preserve exact outer UIC query norms, `C/uC` normalization, and remainder regimes.
+    kind: task
+    since: '2026-08-16'

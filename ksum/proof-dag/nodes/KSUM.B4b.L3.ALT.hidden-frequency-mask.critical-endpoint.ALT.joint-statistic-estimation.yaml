@@ -1,0 +1,35 @@
+id: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.joint-statistic-estimation
+aliases:
+- B4bL3AltCriticalJointStatisticEstimation
+claim: 'Determine whether quantum estimation of a genuinely joint statistic—support intersection, union
+
+  size, cross-collision mass, combined collision count, or the four-cell joint-histogram switch—can
+
+  distinguish the critical promise in `o(N^(2/3))` queries; otherwise isolate its exact precision
+
+  barrier.'
+assessment:
+  level: OPEN
+  summary: '**OPEN — every audited statistic synthesis is slower than the cap.** Sparse support/union/four-cell
+    search costs `O-tilde(sqrt(Nq))=O-tilde(N^(5/6))` even with ideal variable-time role access. Raw cross-collision
+    search costs `N`, dense four-cell estimation `N^(7/6)`, and combined-collision unit-resolution counting
+    `N^(5/3)`. The unit signal is exact but no cheap statistic oracle was found. This is not a lower bound
+    against a different global transform.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L3_hidden_frequency_promise_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_hidden_frequency_upper_attack_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_hidden_frequency_critical_adversary_attempt_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_critical_nonsampling_upper_attacks_20260721.md
+      kind: text
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint
+      kind: node-evidence
+frontier:
+  task-001:
+    task: "Any continuation must synthesize a joint observable without per-label role access, pair search,\n\
+      \  or unit-resolution collision counting; all three explicit routes are supercap."
+    kind: task
+    since: '2026-08-16'

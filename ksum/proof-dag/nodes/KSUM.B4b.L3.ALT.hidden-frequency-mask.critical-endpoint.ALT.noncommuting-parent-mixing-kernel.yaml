@@ -1,0 +1,87 @@
+id: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.noncommuting-parent-mixing-kernel
+aliases:
+- B4bL3AltCriticalNoncommutingParentMixingKernel
+claim: "On the critical endpoint, choose a formula-defined family of common one-coordinate stabilizer\n\
+  types whose marked multiplicity spaces contain\n\n\\[\n r=\\Theta(m^{1/3})\n\\]\n\nfull-group parent\
+  \ channels. Define rectangular full-orbit Fourier blocks so that the unmarked\nparent-diagonal coefficients\
+  \ add at unit scale, while every physical off-equality left and right\nquery block mixes those parents\
+  \ noncommutatively and is smaller by `Omega(sqrt(r))`. After exact\nincidence compression, combine this\
+  \ `m^(1/6)` separation with the outer `a^(2/3)` numerator to\nobtain the critical `Omega(N^(2/3))` adversary\
+  \ ratio."
+assessment:
+  level: OPEN
+  summary: '**OPEN — an explicit two-sided `R x R` common-parent grid exists, but its near-first-row Pieri
+    realization fails the physical off-equality gate.** With `R=Theta(m^(1/3))`, exact partitions `alpha,theta,nu`
+    give parents `rho_(jk)=(lambda^(j),lambda^(k),nu)` of nonzero multiplicity in both answer modules;
+    fixed `k` shares one left marked type and fixed `j` shares one right marked type. Thus representation
+    dimension is not the bottleneck. However, every lower-row parent has a different first-row-removal
+    branch unique within the supported grid. That branch is `1-O(1/m)` heavy-unselected, and heavy equality
+    is only an `O(1/a)` Schur multiplier, so a physical off-equality query retains `1-o(1)` of every coefficient
+    with `j>1` on the left or `k>1` on the right. Simultaneous attenuation leaves only `(1,1)` and no
+    growing gain. Balanced position shapes, growing multiplicity inside one parent, and non-skeleton occurrence
+    carriers remain outside this scoped failure. A second explicit balanced Pieri/LR grid gives formula-defined
+    row/column-centered Fourier blocks of norm one and proves that one parent star cannot serve both sides.
+    Its row/column sums cancel restriction means, not the physical off-equality Schur map; its natural
+    coefficient is now also physically closed without a `6j` calculation. Every lower parent has a unique
+    first-row-removal type, its heavy-unselected overlap is at least `1-a/(L-t_i)`, and the off-equality
+    mask retains another `1-O(1/a)` factor. Since each lower diagonal coefficient equals one, both physical
+    query ratios tend to one.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L3_critical_full_position_incidence_orbit_classification_20260722.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_critical_full_position_three_layer_exterior_word_attempt_20260722.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_critical_noncommuting_parent_mixing_construct_20260722.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_critical_noncommuting_parent_mixing_balanced_grid_query_cut_20260722.md
+      kind: text
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.full-position-incidence-three-layer-word-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.orbit-intertwiner-adversary
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.shared-branch-young-lattice-patch-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.same-parent-occurrence-multiplicity-mixing-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.macroscopic-parent-patch-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.non-skeleton-heavy-occurrence-carrier
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.nontrivial-alphabet-occurrence-mixing-kernel
+      kind: node-evidence
+frontier:
+  task-001:
+    task: "Do not retry a target-sized Young-lattice closure inside the singleton/Pieri cone: literal\n\
+      \  degree closure, exact harmonics, and all `o(m)` patches are now obstructed. A partition-label\n\
+      \  repair must either use at least `Omega(m)` parents per side or leave this cone through a genuine\n\
+      \  non-skeleton heavy-occurrence carrier."
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "Test the separately registered same-parent occurrence-multiplicity mechanism, which is not\n\
+      \  touched by the partition-label triangular pivot."
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: "Compute the physical off-equality query map on these parent sums, including cross-parent blocks;\n\
+      \  restriction multiplicities or dimension counting alone are not a query calculation."
+    kind: task
+    since: '2026-08-16'
+  task-004:
+    task: "Do not retry the displayed balanced grid: its unique heavy-unselected branches already give\n\
+      \  physical left/right norm cuts tending to one, independently of all selected-corner `6j` blocks."
+    kind: task
+    since: '2026-08-16'
+  task-005:
+    task: "Give formula-defined parent-diagonal Fourier coefficients and prove unmarked/query norm ratio\n\
+      \  `Omega(m^(1/6))` simultaneously on both sides."
+    kind: task
+    since: '2026-08-16'
+  task-006:
+    task: "Prove exact inverse orbital realization, `C/uC` incidence survival, all remainder/exclusion\n\
+      \  statuses, the outer `a^(2/3)` factor, and non-circularity."
+    kind: task
+    since: '2026-08-16'

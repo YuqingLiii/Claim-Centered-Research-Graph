@@ -1,0 +1,48 @@
+id: SE.history.H8
+role: outcome
+aliases:
+- H8
+claim: 'The reviewed R1 contraction `U_h` can close T2 through a retained-block map
+
+  `C_h` satisfying `U_h=Z^*C_h`, where `Z=D_h^*L_h`; a lower-frame or
+
+  coisometry bound for `C_h` would then imply the grouped-local trace bound.'
+assessment:
+  level: REFUTED
+  summary: '**REFUTED / DEAD.** The natural abstract retained-block map exists and is a coisometry, but
+    no physical factorization `U_h=Z^*C_h` is possible. In the tame c=1 killer sector, exact ten-prime
+    ranks give `rank(U_h)=160>112=rank(Z)` and `rank([U_h;Z])=160`. Thus no map `C_h` of any kind can
+    provide the claimed factorization. Here LR multiplicity is one and the raw and physical tabloid modules
+    coincide, so phases, row gauges, or multiplicity choices cannot repair the rank obstruction. Moreover
+    `Z` is onto the 112-dimensional grouped space, so restricting the lower-frame bound to `supp(ZZ^*)`
+    gives no weakening. The weakest associated scalar bridge also fails exactly at the killer: `||U_h||_HS²=640/9`,
+    whereas `B_theta(q)^(-1)||Z||_HS²=940/9` (ratio `32/47`). A smaller signed c=1 sector independently
+    has ranks `6>3` and scalar ratio `3/5`.'
+  basis:
+    evidence:
+    - node: SE.denom.Phi.legal.trace.t2
+      kind: node-evidence
+    counterexamples:
+    - node: SE.denom.Phi.legal.trace.t2
+      kind: counterexample
+      note: Sourced contradiction or counterexample supporting this scoped refutation.
+disposition:
+  state: DEAD
+  reason: '**REFUTED / DEAD.** The natural abstract retained-block map exists and is a coisometry, but
+    no physical factorization `U_h=Z^*C_h` is possible. In the tame c=1 killer sector, exact ten-prime
+    ranks give `rank(U_h)=160>112=rank(Z)` and `rank([U_h;Z])=160`. Thus no map `C_h` of any kind can
+    provide the claimed factorization. Here LR multiplicity is one and the raw and physical tabloid modules
+    coincide, so phases, row gauges, or multiplicity choices cannot repair the rank obstruction. Moreover
+    `Z` is onto the 112-dimensional grouped space, so restricting the lower-frame bound to `supp(ZZ^*)`
+    gives no weakening. The weakest associated scalar bridge also fails exactly at the killer: `||U_h||_HS²=640/9`,
+    whereas `B_theta(q)^(-1)||Z||_HS²=940/9` (ratio `32/47`). A smaller signed c=1 sector independently
+    has ranks `6>3` and scalar ratio `3/5`.'
+  source:
+    node: SE.denom.Phi.legal.trace.t2
+    kind: node-evidence
+frontier:
+  task-001:
+    task: "Pursue the already registered T3/T4 routes or a newly registered direct\n  scalar route. c>=2\
+      \ identity coverage remains UNTESTED."
+    kind: task
+    since: '2026-08-16'

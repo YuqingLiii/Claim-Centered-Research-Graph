@@ -1,0 +1,30 @@
+id: KSUM.L2e
+aliases:
+- L2e
+claim: For R>=2, the hard 2-claw reduction with fixed surjective filler lists gives Omega(sqrt(n) min{R,n}^(1/6)),
+  and hence Omega(n^(2/3)) when R>=n.
+assumptions:
+  abi-two-claw-lower-bound:
+    kind: external-theorem
+    statement: For two length-n lists over a range of size s with 2<=s<=n, the bounded-error quantum query
+      complexity of detecting a claw is Omega(sqrt(n) s^(1/6)).
+    source:
+      path: ksum/reviews/ksum_W_review.md
+      kind: review
+      locator: Section R-A, Imported theorem and endpoint
+assessment:
+  level: PROVED
+  summary: The claim is supported by the linked evidence and independent review.
+  basis:
+    evidence:
+    - node: KSUM.L2eC
+      kind: node-evidence
+    - node: KSUM.k3.donor
+      kind: node-evidence
+    reviews:
+    - path: ksum/reviews/ksum_W_review.md
+      kind: review
+      scope: Proves the 2-claw filler lift for R>=2, including completeness, soundness, query simulation,
+        and the min{R,n} range split; it does not review the later W3E-2 composition.
+      locator: Ruling table and Section R-A
+      reviewed_hash: sha256:0117d48f1c77c1e7a5735a62149cd4737a9459bc27a143dc9175794c9b7e143a

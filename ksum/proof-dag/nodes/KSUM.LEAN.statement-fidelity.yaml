@@ -1,0 +1,47 @@
+id: KSUM.LEAN.statement-fidelity
+role: tool
+aliases:
+- LeanFid
+claim: The archived statement-fidelity audits classify the current Lean development clause by clause as
+  faithful, narrower, wider, or not formalized, and explicitly record every identified trust boundary
+  rather than asserting blanket equivalence with the manuscript.
+assessment:
+  level: CERTIFIED*
+  summary: CERTIFIED*. The 2026-07-31 full review and the 2026-08-01 independent delta review provide
+    statement-level verdict tables and identify the remaining narrower, wider, and unformalized clauses.
+    The certified object is the audit record, not a claim that every Lean statement is equivalent to the
+    corresponding prose theorem.
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_lean_docsync_20260801.md
+      kind: text
+    - node: KSUM.LEAN.T1.k2-main-line
+      kind: node-evidence
+    - node: KSUM.LEAN.T2.rosmanis-kfloor
+      kind: node-evidence
+    - node: KSUM.LEAN.T3.obstruction-theorems
+      kind: node-evidence
+    reviews:
+    - path: ksum/reviews/ksum_lean_statement_fidelity_review_20260731.md
+      kind: review
+      locator: Sections 1--10 and the final fidelity result
+      scope: Performs the consolidated build, axiom, nonvacuity, and statement-by-statement comparison
+        and reports every narrowing and trust boundary; it does not claim full formalization of the manuscript.
+      reviewed_hash: sha256:4d41d1c603160492377b02c5dafe8e47a34601a70bafb456609f567c0598035b
+    - path: ksum/reviews/ksum_lean_delta_fidelity_review_20260801.md
+      kind: review
+      locator: Sections 1--10 and Verdict table
+      scope: Rebuilds the delta, audits axioms, compares changed Lean statements with the manuscript,
+        and classifies scope and trust boundaries; it identifies census defects rather than asserting
+        blanket manuscript equivalence.
+      reviewed_hash: sha256:4d41d1c603160492377b02c5dafe8e47a34601a70bafb456609f567c0598035b
+  caveats:
+  - The verdict counts are tied to dated review snapshots; later claim rewrites require a new delta review.
+  - Several formal statements are deliberately narrower than the manuscript, and the recursive upper-bound
+    algorithm and the A2 encoding identity are not fully formalized.
+frontier:
+  claim-fidelity-review:
+    task: Commission an independent delta-fidelity review of the current claim quotations and the two
+      newly registered k=2 headline nodes before the publication freeze.
+    kind: review
+    since: '2026-08-19'

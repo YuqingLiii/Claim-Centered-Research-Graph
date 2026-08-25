@@ -1,0 +1,126 @@
+id: KSUM.LEAN.T3.obstruction-theorems
+role: tool
+aliases:
+- LeanT3
+claim: 'The obstruction theorems of §`sec:proof-search` — pure finite linear algebra and combinatorics
+  with
+
+  no quantum content whatsoever — are formalizable `sorry`-free in Lean 4 + Mathlib **with no
+
+  interface hypotheses at all**.'
+assessment:
+  level: CERTIFIED*
+  summary: '**CERTIFIED\*** — statement-fidelity review completed 2026-07-31 (rollup **PASS-WITH-CAVEATS**;
+    NARROWER enlarged to 6 labels / 9 clauses — see frontmatter caveat; the kernel-confirms / kernel-does-NOT-confirm
+    split is stated there verbatim). History: landed 2026-07-30 at NUMERICAL (a green build is a run,
+    §2 + §7.1). The eight `Obstructions*` modules left by the interrupted first executor were **audited
+    (adopt-or-rewrite), completed, and adopted**: ADOPT 44 / REPAIR 0 / REJECT 0 on the draft statements,
+    plus 14 theorems added to close gaps the audit found. Build green (3009 jobs, exit 0), zero warnings,
+    zero `sorry`/`axiom`/`native_decide`, 58 declarations at exactly Lean''s three standard axioms. **No
+    `QueryModel` appears anywhere in this tier, so every theorem here is unconditional** — which is what
+    makes this tier categorically stronger evidence than T1/T2. **Four NARROWER verdicts, and one of them
+    is on an obstruction — escalate that one:** 1. **`thm:orientation-obstruction` clause (b)** ([ORIENT](KSUM.B4b.L2.ORIENT.yaml))
+    — Lean takes the paper''s displayed bound (51) as a **hypothesis** and derives `corr ≤ 1/2`; the analytic
+    step that *produces* (51) (endpoint-phase generating polynomial, `θ = π/s` resp. `π/(s+1)`, triangle
+    inequality) is not formalized. Clause (a), the exact factor `2^{-r(m-1)}`, IS proved outright. Because
+    this is a universally quantified impossibility, the Lean tier does **not** confirm clause (b) — it
+    confirms only `(51) ⇒ ≤ 1/2`. 2.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_lean_T3_obstructions_20260730.md
+      kind: text
+    - path: ksum/lean/KSUM/Trust.lean
+      kind: text
+    - node: KSUM.B4b.L2.M1
+      kind: node-evidence
+    - node: KSUM.B4b.L2.L2P3
+      kind: node-evidence
+    - node: KSUM.B4b.L2.BANDMULT
+      kind: node-evidence
+    - node: KSUM.B4b.L2.M2
+      kind: node-evidence
+    - node: KSUM.B4b.L2.T4
+      kind: node-evidence
+    - node: KSUM.B4b.L2.VBUD
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ORIENT
+      kind: node-evidence
+    - node: KSUM.B4b.L2.G1
+      kind: node-evidence
+    - node: KSUM.B4b.L2.G2
+      kind: node-evidence
+    - node: KSUM.B4b.L2.G3
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.nonproduct.profile-lattice-core
+      kind: node-evidence
+    reviews:
+    - path: ksum/reviews/ksum_lean_statement_fidelity_review_20260731.md
+      kind: review
+      scope: Audits the finite obstruction theorems clause by clause and identifies narrower formal statements,
+        including the missing general factorial-filtration bridge.
+      locator: Section 6 and T3 rollup in Section 10
+      reviewed_hash: sha256:8f3b47ba33ad8684929f1750083e20f3af120fa290e07cf6ca673be5b6fcdb15
+    runs:
+    - path: ksum/artifacts/logs_ksum_lean_T3_20260730
+      kind: run
+      result: Execution artifact supporting KSUM.LEAN.T3.obstruction-theorems at the exact finite, formal,
+        or computational scope stated in the linked output.
+  caveats:
+  - '(fidelity caveats, RE-GRADED 2026-08-01 by the delta-fidelity review ksum/reviews/ksum_lean_delta_fidelity_review_20260801.md,
+    rows 8/9/14/29 of its section 3.B — the reviewer''s own call, executed here as text only, status untouched.
+    FOUR clauses of the 2026-07-31 caveat are now WRONG and are withdrawn: (a) ''(iii) rho<=4/5 ASSUMED''
+    — rho <= 4/5 is DERIVED, via the manuscript''s own three-weight step at its own normalized weights,
+    with both ratios (abs_lam_one_ge, abs_lam_two_ge) now theorems [row 9, FAITHFUL]; (b) ''transfer (G2)
+    satellite-replaced-by-augmentation-submodule (Maschke granted)'' — the bridge is PROVED (inNontrivialSatellite_iff_mem_augment),
+    Maschke is granted nowhere, and the Lean hypothesis is WEAKER than eq. (52)''s summand form, so the
+    theorem is stronger [row 29, FAITHFUL]; (c) ''kernel does NOT confirm the orientation obstruction''
+    — the analytic step PRODUCING display (51) is proved (endpoint phases, the exact one-block Fourier
+    modulus 2W_0*A^r, the triangle inequality, and corr <= 1/8 even / <= 1/2 odd), and the derived exponent
+    1-r(m-1)-m EQUALS the paper''s r+1-m(r+1), so what the kernel checks IS (51) [row 14]; (d) ''or the
+    tilted-band witness'' — the OUTER half is hypothesis-free: the construction (42), the divided-difference
+    annihilation, the ratio computation (44) and both displayed bounds C_h <= 25/19, sum_j A_j <= 29/23,
+    giving 2|lam_0|/Z >= 437/581 > 3/4 with no hypothesis [row 8]. WHAT REMAINS TRUE, and is the live
+    caveat: this tier is still NARROWER at 6 labels / 9 clauses in the 2026-07-31 sense; the residuals
+    are the inner pair tensor as a measure on Z_q^N (so eq. (43)''s identification, and hence thm:tilted-log-band
+    as a whole, is still NOT a theorem of the module), the identification of the named construction''s
+    generating polynomial with the phase function (so orientation''s hnum/hZ/hfourier remain structural
+    hypotheses about the construction, and the four kernel-checked links are NOT composed into a single
+    declaration), hident in block clause (iii) (structural: which measure the block carries), block clause
+    (i)''s m-fold multivariate Vandermonde (the module proves the linearity half only, and says so), and
+    the S_N-average operator in lem:band-multiplication. Kernel CONFIRMS product-obstruction + block correlation
+    identity (49) + G1/G2/G3 + band-mult (a)/(b)/(c)/(d) + lem:factorial-filtration both directions)'
+frontier:
+  task-001:
+    task: "Submit to [statement-fidelity](KSUM.LEAN.statement-fidelity.yaml) before any completion tier.\n\
+      \  **Still open — this is the gate; nothing here licenses a completion status.**"
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "**The two unformalized labels (the claim-registration decision belongs to the lead):**\n  `lem:factorial-filtration`\
+      \ and `prop:joint-lp` have no node. The first is the bridge from\n  falling-factorial rows to query\
+      \ polynomials and is what makes `thm:pair-tensor` NARROWER; the\n  second asserts exact LP **optima**,\
+      \ which need a dual certificate per (instance, degree, basis)\n  that the manuscript does not print\
+      \ — it delegates reconstruction to\n  `ksum/tools/ksum_l2rr_exact_review.py`. That makes `prop:joint-lp`\
+      \ the only\n  §`sec:proof-search` statement whose proof is delegated wholesale to an ancillary program."
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: "**To reach FAITHFUL across the tier, exactly two developments remain** (report §6.1, §6.3–6.4):\n\
+      \  the filtration lemma (needs the value-respecting-injection count and the `S_N`-averaging step),\n\
+      \  and the tilted divided-difference construction (Mathlib has `Lagrange.interpolate` but no\n \
+      \ divided differences), which also unlocks the orientation norm bound. Neither is deep\n  mathematics;\
+      \ both are substantial Lean engineering."
+    kind: task
+    since: '2026-08-16'
+  task-004:
+    task: "**Manuscript repair recommended (F-T9):** state in `thm:block-obstruction` that `OR_m` is the\n\
+      \  ±1 indicator of the *composed problem* (`-1` exactly when every block INPUT is NO), which today\n\
+      \  is recoverable only from the proof."
+    kind: task
+    since: '2026-08-16'
+  task-005:
+    task: "**Housekeeping for whoever next touches T1 (F-T13):** `KsumAudit/Defs.lean:12` still cites\
+      \ the\n  pre-move path `ksum/lean/README.md`. Deliberately not edited here —\
+      \ that file is\n  byte-identical to the archived T1 ledger and belongs to `KSUM.LEAN.T1.k2-main-line`."
+    kind: task
+    since: '2026-08-16'

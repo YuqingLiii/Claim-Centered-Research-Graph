@@ -1,0 +1,14 @@
+{
+  "command": "python ksum/tools/ksum_l2p30_qn_near_zero_bridge_coupling.py",
+  "driver_sha256": "a9978c4c7c5f1a47cc86f2850c06a0bbbd5940eb24b3ebb663d534ed6a2c6096",
+  "epsilon": 0.01,
+  "results": [
+    {"D": 3, "L": 6, "N": 15, "bridge_correlation": 0.6948730742260757, "bridge_threshold_for_coupled_two_thirds": 0.6734006734006733, "coupled_correlation": 0.6879243434838149, "coupled_correlation_pass": true, "coupled_tail_lower_bound": 0.01},
+    {"D": 3, "L": 7, "N": 21, "bridge_correlation": 0.8042336153069841, "bridge_threshold_for_coupled_two_thirds": 0.6734006734006733, "coupled_correlation": 0.7961912791539143, "coupled_correlation_pass": true, "coupled_tail_lower_bound": 0.01},
+    {"D": 4, "L": 9, "N": 27, "bridge_correlation": 0.5861085064503629, "bridge_threshold_for_coupled_two_thirds": 0.6734006734006733, "coupled_correlation": 0.5802474213858593, "coupled_correlation_pass": false, "coupled_tail_lower_bound": 0.01},
+    {"D": 5, "L": 10, "N": 33, "bridge_correlation": 0.4705055709709264, "bridge_threshold_for_coupled_two_thirds": 0.6734006734006733, "coupled_correlation": 0.46580051526121713, "coupled_correlation_pass": false, "coupled_tail_lower_bound": 0.01}
+  ],
+  "scope": "Arithmetic coupling of archived full-orbit bridge correlations with an independently annihilating parity tail; no new projection solve.",
+  "source_driver_sha256": "d11627702e81aff7f2f19142099adf3d88342281c0a4b50db4c19ef8a9be7e91",
+  "source_log": "ksum/artifacts/logs_ksum_L2p22_critical_dense_20260721/run.json"
+}

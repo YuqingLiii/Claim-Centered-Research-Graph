@@ -1,0 +1,66 @@
+id: KSUM.B4b.L2.JOINTLP
+role: tool
+aliases:
+- B4bL2JointLP
+claim: At the stated finite parameter sets, the exact rational joint-histogram LPs certify the listed
+  separations as exact optima rather than one-sided bounds.
+assessment:
+  level: CONJECTURED
+  summary: '**CONJECTURED — pending-review**, with one adjudication owed: the 2026-07-19 L2 phase-1 review
+    cycle ([ksum_L2p1_review](../../../../ksum/reviews/ksum_L2p1_review.md) and the repair review) independently
+    verified "all 24 finite rational LP optima". If those tables are the same objects as `prop:joint-lp`''s,
+    that review may already cover this node at the granularity being used — but that identification has
+    not been made, and under the review-scope rule a frozen citation must name the scope of the review it leans on. Until
+    adjudicated, the node stays capped here.'
+  basis:
+    evidence:
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    - node: KSUM.LEAN.T3.obstruction-theorems
+      kind: node-evidence
+    runs:
+    - path: ksum/artifacts/logs_ksum_lean_gapclose2_20260731/jointlp_certificates.json
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2.JOINTLP at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_lean_gapclose2_20260731
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2.JOINTLP at the exact finite, formal, or computational
+        scope stated in the linked output.
+  caveats:
+  - 'pending-review: the cited evidence has not completed an independent review gate'
+  - Lean kernel-checks six decisive instances; the remaining 18 exact certificates are externally checkable
+    JSON but are not yet kernel-checked.
+  - Text and digest synchronization does not by itself establish that the Lean proposition is equivalent
+    to the natural-language claim; that correspondence remains review-dependent.
+frontier:
+  task-001:
+    task: Adjudicate whether the 2026-07-19 LP verifications are these optima (review-scope requirement).
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: Kernel-check the remaining 18 exact certificates or publish them in a directly reviewable certificate
+      format.
+    kind: task
+    since: '2026-08-16'
+formalization:
+  lean:
+    module: KsumAudit.JointLP
+    file: ksum/lean/KsumAudit/JointLP.lean
+    claim: lp_optimum
+    state: proved
+    claim_hash: sha256:19aa4b9b41e3cd4fc98755b31e9b47ae5d142320fa667e66fd36426082d06fbb
+    sync_state: current
+    theorems:
+    - opt_s330_single_d1
+    - opt_s330_joint_d2
+    - opt_s330_joint_d3
+    - opt_s541_single_d3
+    - opt_s541_joint_d3
+    - opt_s541_joint_d4
+    rel:
+    - Six of the 24 finite LP optima are kernel-checked; exact primal and dual certificates for all 24
+      are stored in the linked JSON artifact.
+    build: ksum/artifacts/logs_ksum_lean_gapclose2_20260731/
+    synced: '2026-08-19'
+    source_claim_hash: sha256:19aa4b9b41e3cd4fc98755b31e9b47ae5d142320fa667e66fd36426082d06fbb

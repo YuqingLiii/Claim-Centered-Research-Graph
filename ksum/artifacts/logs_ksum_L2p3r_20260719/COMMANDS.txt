@@ -1,0 +1,7 @@
+# Run from repository root on 2026-07-19; no network.
+
+python -m py_compile ksum/tools/ksum_l2p3r_outer_audit.py ksum/tools/ksum_l2p3r_finite_verify.py
+
+python ksum/tools/ksum_l2p3r_outer_audit.py 2>&1 | Tee-Object -FilePath ksum/artifacts/logs_ksum_L2p3r_20260719/outer_audit.log
+
+python ksum/tools/ksum_l2p3r_finite_verify.py 2>&1 | Tee-Object -FilePath ksum/artifacts/logs_ksum_L2p3r_20260719/finite_verify.log

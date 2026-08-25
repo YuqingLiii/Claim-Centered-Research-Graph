@@ -1,0 +1,59 @@
+id: KSUM.B4b.L2.ALT.correlation-tail-decoupled-two-reservoir
+aliases:
+- B4bL2AltCorrelationTailDecoupledTwoReservoir
+claim: 'Use an `O(N)` boundary-jet component to carry YES/NO correlation and a separately phase-paired,
+
+  correlation-neutral subexposed component to carry constant `C_t=omega(N)` absolute tail, coupling
+
+  them only through the remaining fixed-index and two-slot moment equations.'
+assessment:
+  level: OPEN
+  summary: '**OPEN — the additive separated-scale construction is obstructed.** An exact neutral parity
+    tail and a perfect boundary bridge pass raw gates, but their scalar moments do not match and high-band-
+    only correction costs exponential total variation. A registered multiscale ladder remains untested.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L2_phase27_phase_subexposed_reservoir_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase28_qN_two_reservoir_construction_20260721.md
+      kind: text
+    - path: ksum/tools/ksum_l2p28_qn_two_reservoir_check.py
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.phase-subexposed-correlation-reservoir
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multiscale-moment-bearing-neutral-ladder
+      kind: node-evidence
+    runs:
+    - path: ksum/artifacts/logs_ksum_L2p28_qN_two_reservoir_20260721/run.json
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2.ALT.correlation-tail-decoupled-two-reservoir at
+        the exact finite, formal, or computational scope stated in the linked output.
+frontier:
+  task-001:
+    task: Specify formula-defined correlation and tail reservoirs on legal orbits.
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: Cancel all cross fixed-index and two-slot moments with bounded total variation.
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: "Do not confine the neutral moment correction to a separated high band; Phase 28 proves\n  exponential\
+      \ extrapolation cost in that class."
+    kind: task
+    since: '2026-08-16'
+  task-004:
+    task: "Final support must use genuinely intermediate scales or a global exactor; every literal separated\n\
+      \  two-band architecture is now correlation-obstructed, independently of its coefficient formula."
+    kind: task
+    since: '2026-08-16'
+  task-005:
+    task: Prove canonical defect small enough for exact lifting, or give exact pre-limit identities.
+    kind: task
+    since: '2026-08-16'
+  task-006:
+    task: Meet both endpoint scalings; the present positive shared-NO result only closes the `q=5` role.
+    kind: task
+    since: '2026-08-16'

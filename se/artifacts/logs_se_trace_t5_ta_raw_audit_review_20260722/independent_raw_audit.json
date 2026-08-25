@@ -1,0 +1,394 @@
+{
+  "T_a_adjudication": "registered raw physical T_a fails at n=18 and n=19; T5 and every route whose obligation is uniform (T-a) are refuted",
+  "T_b_adjudication": "both corrected finite raw c=2 T_b gates pass, but the effective-rank/output-frame chain proves only raw T_b/m; uniform physical T-b must be reopened",
+  "date": "2026-07-22",
+  "definition_audit": {
+    "assertions": {
+      "T3_m_definition": true,
+      "T3_raw_fold_identity": true,
+      "canonical_claim_calls_pairings_physical": true,
+      "common_a_is_raw_branch_norm": true,
+      "common_fold_is_raw_sum": true,
+      "common_normalization_optional_only_if_absorbed": true
+    },
+    "conclusion": "registered physical S is raw; S/sqrt(m) is a different normalized map",
+    "hashes": {
+      "artifacts\\logs_se_trace_t3_20260721\\se_trace_t3_report_20260721.md": "bb5cde48c3cdf0ae6c1d08a2574a653ae800a68380b5dee100c848e70b17dd31",
+      "artifacts\\logs_se_trace_t5_common_line_20260721\\REPORT.md": "34b3b325206b9b80b9339b9499e19ae43b13d12b620e5d80c977539cd293401a",
+      "research\\se\\proof-dag\\nodes\\SE.denom.Phi.legal.trace.t5.md": "48d92d7dd703a6af206497da485cb55c303ba448122b7da5d166b5c7203e0c7f"
+    }
+  },
+  "existing_T_a_certificate_scope": {
+    "affected_T_a_scope": "the two tame c=2 final contraction verdicts and any later proof that identifies raw T_a with a normalized-fold norm; not the archived j1-j5 c=1 orbital certificates",
+    "j1": "raw direct formulas; m=1, so raw and normalized coincide",
+    "j2_to_j5": "orbital sums use M=C(n-1,j)C(j,a), or cancel that same raw M in a ratio to the raw cap; no missing-m defect found",
+    "j5_full_colour_enumeration": {
+      "N": 2002,
+      "enumeration": "all coloured (I,J) targets for p=14,j=5,a=2",
+      "families": [
+        {
+          "N": 2002,
+          "alpha": [
+            1,
+            1
+          ],
+          "archived_ratio": "67173/104650",
+          "artifact": "artifacts\\logs_se_trace_t5_j5_theta32_resume_v4_20260722\\theta32_certified11_v4.json",
+          "beta": [
+            2,
+            1
+          ],
+          "enumerated_coloured_targets": 20020,
+          "expected_mN": 20020,
+          "extra_m_diagnosis": "double-counts the colour factor already present in pair_count and T",
+          "f_alpha_f_beta": 2,
+          "family": "theta32_a2_alpha11_beta21",
+          "fixed_coloured_source": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ]
+          ],
+          "fixed_sum_of_cap_normalized_physical_kernel": "67173/52325",
+          "incorrect_extra_m_ratio": "67173/10465",
+          "m": 10,
+          "pair_count_sum": 20020,
+          "pair_types": 40,
+          "raw_full_double_sum_ratio": "67173/104650"
+        },
+        {
+          "N": 2002,
+          "alpha": [
+            1,
+            1
+          ],
+          "archived_ratio": "267437/417312",
+          "artifact": "artifacts\\logs_se_trace_t5_j5_theta311_localdp_v1_20260722\\theta311_certified13_v1.json",
+          "beta": [
+            2,
+            1
+          ],
+          "enumerated_coloured_targets": 20020,
+          "expected_mN": 20020,
+          "extra_m_diagnosis": "double-counts the colour factor already present in pair_count and T",
+          "f_alpha_f_beta": 2,
+          "family": "theta311_a2_alpha11_beta21",
+          "fixed_coloured_source": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3,
+              4
+            ]
+          ],
+          "fixed_sum_of_cap_normalized_physical_kernel": "267437/208656",
+          "incorrect_extra_m_ratio": "1337185/208656",
+          "m": 10,
+          "pair_count_sum": 20020,
+          "pair_types": 40,
+          "raw_full_double_sum_ratio": "267437/417312"
+        }
+      ],
+      "formula_matches_all_pair_types": true,
+      "m": 10,
+      "mN": 20020,
+      "pair_count_sum": 20020,
+      "theta32_and_theta311_use_same_family_ratio_engine": true,
+      "verdict": "RAW_M_ALREADY_INCLUDED; DO_NOT_MULTIPLY_CERTIFICATE_RATIOS_BY_M"
+    },
+    "rows": [
+      {
+        "file": "artifacts\\logs_se_trace_t5_mixed_orbital_20260721\\t5_mixed_j2_exact.py",
+        "layer": "j2",
+        "raw_colour_orbit_factor_present": true,
+        "sha256": "e419b838337485b0171e0df273bde727525e8152ae5aef1f2c96023bca28babe"
+      },
+      {
+        "file": "artifacts\\logs_se_trace_t5_j3_orbital_20260721\\t5_j3_orbital_exact.py",
+        "layer": "j3",
+        "raw_colour_orbit_factor_present": true,
+        "sha256": "068c30db2b88da4a8933429e6450d25fcf453a5c90023b3bc1c609f99dba4cdf"
+      },
+      {
+        "file": "artifacts\\logs_se_trace_t5_j4_orbital_20260721\\t5_j4_scalar_exact.py",
+        "layer": "j4_scalar",
+        "raw_colour_orbit_factor_present": true,
+        "sha256": "bbe6385bab11619595aa07a2512d6af7efed65b87ea3a950c8e8d99fa64e9d3f"
+      },
+      {
+        "file": "artifacts\\logs_se_trace_t5_j4_nonscalar_20260721\\theta22_harmonic_exact.py",
+        "layer": "j4_matrix",
+        "raw_colour_orbit_factor_present": true,
+        "sha256": "1bf63dd293ba3355effe7912ee0f054cb3dac54087e375641c516a4b4e61f155"
+      },
+      {
+        "file": "artifacts\\logs_se_trace_t5_j5_c1_20260722\\t5_j5_c1_exact.py",
+        "layer": "j5_scalar",
+        "raw_colour_orbit_factor_present": true,
+        "sha256": "f032465a4f3667fda746b581f888c009dd5fab578f2f422d1b8cbca42ae6c289"
+      },
+      {
+        "file": "artifacts\\logs_se_trace_t5_j5_degree3_20260722\\j5_degree3_exact.py",
+        "layer": "j5_matrix",
+        "raw_colour_orbit_factor_present": true,
+        "sha256": "cc83ee21700d4bbf6c42c748e368fd28604962cfb852f7469ee7af01744d20df"
+      }
+    ]
+  },
+  "non_tame_direct_raw_matrix_gate": {
+    "branches": {
+      "long": {
+        "normalized_matrix_HS2": 2.8536621093749925,
+        "raw_matrix_HS2": 57.07324218749987,
+        "raw_over_normalized": 20.000000000000007
+      },
+      "tail_1": {
+        "normalized_matrix_HS2": 0.12353515624999956,
+        "raw_matrix_HS2": 2.470703124999992,
+        "raw_over_normalized": 20.000000000000007
+      },
+      "tail_2": {
+        "normalized_matrix_HS2": 0.11118164062499962,
+        "raw_matrix_HS2": 2.223632812499993,
+        "raw_over_normalized": 20.000000000000004
+      },
+      "tail_3": {
+        "normalized_matrix_HS2": 0.07412109374999977,
+        "raw_matrix_HS2": 1.4824218749999958,
+        "raw_over_normalized": 20.000000000000004
+      }
+    },
+    "convention": "archived direct physical K is the raw horizontal 20-colour stack",
+    "m": 20,
+    "witness_sha256": "b1a6b1b37eac4b01d918d84cedcc8778f6d22af6e1cdb5dffc5b6052055fc868"
+  },
+  "root_adjudication": "the counterexamples refute the sufficient T-a/T-b route, not the original SE lower-bound statement; T2 cannot remain a conjectured route to uniform T-a, but the SE root is not mathematically refuted by these data",
+  "tame_c2_exact_recomputations": [
+    {
+      "T_a_cap": "51396202/35",
+      "T_a_excess": "35381674757/85260",
+      "T_a_ratio": "36224413/28242984",
+      "T_a_verdict": "FAIL",
+      "T_b_cap": "51396202/1015",
+      "T_b_margin": "1059233757257/22252860",
+      "T_b_verdict": "PASS_SINGLE_GATE",
+      "a": 3,
+      "active_mu": [
+        [
+          14,
+          2,
+          1
+        ],
+        [
+          13,
+          3,
+          1
+        ],
+        [
+          13,
+          2,
+          2
+        ],
+        [
+          13,
+          2,
+          1,
+          1
+        ],
+        [
+          12,
+          3,
+          2
+        ],
+        [
+          12,
+          3,
+          1,
+          1
+        ],
+        [
+          12,
+          2,
+          2,
+          1
+        ],
+        [
+          11,
+          3,
+          2,
+          1
+        ]
+      ],
+      "archived_divided_T_a_rebuilt": "160582822829/1705200",
+      "archived_divided_T_b_rebuilt": "67576575391/445057200",
+      "b": 3,
+      "f_mu": [
+        1105,
+        5236,
+        3536,
+        5355,
+        20400,
+        24752,
+        20944,
+        116688
+      ],
+      "j": 6,
+      "m": 20,
+      "n": 18,
+      "q_mu": [
+        "41785/41743296",
+        "284075/19380816",
+        "28615/2608956",
+        "273545/8613696",
+        "39275/269178",
+        "10555/31059",
+        "150205/346086",
+        "4400/609"
+      ],
+      "r_mu": [
+        "8357/931770",
+        "5165/186354",
+        "5723/186354",
+        "54709/931770",
+        "1571/22185",
+        "4222/31059",
+        "2731/13311",
+        "160/261"
+      ],
+      "raw_T_a_rebuilt_from_a_mass_times_r": "160582822829/85260",
+      "raw_T_a_rebuilt_from_d_squared_times_t_squared": "160582822829/85260",
+      "raw_T_b_rebuilt": "67576575391/22252860",
+      "source_hashes": {
+        "artifacts\\logs_se_trace_t5_tame_c2_rcol_20260721\\tame_c2_rcol.npz": "5029d67206b08a8743958836814462e323b096a3287433f534719e3af1ec0659",
+        "artifacts\\logs_se_trace_t5_tame_c2_rout_20260721\\tame_c2_rout.npz": "493ffde7d5746b9e81b1d9c8ba53a894b26fa1301ff1773dfa6bcc69def022ea"
+      },
+      "t_norm_squared": [
+        "16714/93177",
+        "51650/93177",
+        "57230/93177",
+        "109418/93177",
+        "6284/4437",
+        "84440/31059",
+        "54620/13311",
+        "3200/261"
+      ]
+    },
+    {
+      "T_a_cap": "137582445/64",
+      "T_a_excess": "199431265033/287680",
+      "T_a_ratio": "10611004/8023575",
+      "T_a_verdict": "FAIL",
+      "T_b_cap": "137582445/1984",
+      "T_b_margin": "584866046583/8918080",
+      "T_b_verdict": "PASS_SINGLE_GATE",
+      "a": 3,
+      "active_mu": [
+        [
+          15,
+          2,
+          1
+        ],
+        [
+          14,
+          3,
+          1
+        ],
+        [
+          14,
+          2,
+          2
+        ],
+        [
+          14,
+          2,
+          1,
+          1
+        ],
+        [
+          13,
+          3,
+          2
+        ],
+        [
+          13,
+          3,
+          1,
+          1
+        ],
+        [
+          13,
+          2,
+          2,
+          1
+        ],
+        [
+          12,
+          3,
+          2,
+          1
+        ]
+      ],
+      "archived_divided_T_a_rebuilt": "204466088827/1438400",
+      "archived_divided_T_b_rebuilt": "8391760923/44590400",
+      "b": 3,
+      "f_mu": [
+        1344,
+        6885,
+        4641,
+        7020,
+        29172,
+        35343,
+        29835,
+        182784
+      ],
+      "j": 6,
+      "m": 20,
+      "n": 19,
+      "q_mu": [
+        "6308/8940555",
+        "1061/90272",
+        "3733/431520",
+        "21395/855848",
+        "19547/151032",
+        "112277/373984",
+        "76863/201376",
+        "87040/11687"
+      ],
+      "r_mu": [
+        "1577/202275",
+        "1061/41850",
+        "3733/134850",
+        "4279/80910",
+        "1777/26970",
+        "10207/80910",
+        "25621/134850",
+        "544/899"
+      ],
+      "raw_T_a_rebuilt_from_a_mass_times_r": "204466088827/71920",
+      "raw_T_a_rebuilt_from_d_squared_times_t_squared": "204466088827/71920",
+      "raw_T_b_rebuilt": "8391760923/2229520",
+      "source_hashes": {
+        "artifacts\\logs_se_trace_t5_second_tame_c2_gate_20260722\\second_gate_witness.npz": "a378f2410f445d4249d94310d5056436f185cb59b44a5b2fafd3e819e6ab6a42"
+      },
+      "t_norm_squared": [
+        "6308/40455",
+        "2122/4185",
+        "7466/13485",
+        "8558/8091",
+        "3554/2697",
+        "20414/8091",
+        "51242/13485",
+        "10880/899"
+      ]
+    }
+  ],
+  "verdict": "CONFIRMED_REFUTATION"
+}

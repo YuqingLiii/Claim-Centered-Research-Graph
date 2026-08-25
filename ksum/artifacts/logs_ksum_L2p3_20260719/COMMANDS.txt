@@ -1,0 +1,7 @@
+# Run from repository root on 2026-07-19; no network.
+
+python -m py_compile ksum/tools/ksum_l2p3_tilted_outer.py ksum/tools/ksum_l2p3_exact_verify.py
+
+python ksum/tools/ksum_l2p3_tilted_outer.py --output ksum/artifacts/logs_ksum_L2p3_20260719/tilted_outer_results.json 2>&1 | Tee-Object -FilePath ksum/artifacts/logs_ksum_L2p3_20260719/tilted_outer.log
+
+python ksum/tools/ksum_l2p3_exact_verify.py --input ksum/artifacts/logs_ksum_L2p3_20260719/tilted_outer_results.json 2>&1 | Tee-Object -FilePath ksum/artifacts/logs_ksum_L2p3_20260719/exact_verify.log

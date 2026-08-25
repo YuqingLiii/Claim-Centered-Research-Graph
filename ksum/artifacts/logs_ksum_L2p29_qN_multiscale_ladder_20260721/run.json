@@ -1,0 +1,11 @@
+{
+  "cases": [
+    {"D": 100, "N": 1001, "chebyshev_alpha": 0.6632942174102643, "ct_max": 10000, "ct_min": 1024, "full_cutoff_log10_correlation_upper": -13.513125915153104, "full_cutoff_log_correlation_upper": -31.115122291983063, "largest_core_filler": 801, "legal": true, "number_of_local_rungs": 68, "one_quarter_separator_degree": 4, "s_max": 100, "s_min": 32, "separator_query_degree": 8, "separator_query_degree_over_D": 0.08},
+    {"D": 400, "N": 8001, "chebyshev_alpha": 0.4578330936254803, "ct_max": 160000, "ct_min": 8100, "full_cutoff_log10_correlation_upper": -38.96598286132598, "full_cutoff_log_correlation_upper": -89.72249127035069, "largest_core_filler": 7201, "legal": true, "number_of_local_rungs": 310, "one_quarter_separator_degree": 5, "s_max": 400, "s_min": 90, "separator_query_degree": 10, "separator_query_degree_over_D": 0.025},
+    {"D": 1600, "N": 64001, "chebyshev_alpha": 0.3189260498749957, "ct_max": 2560000, "ct_min": 64009, "full_cutoff_log10_correlation_upper": -110.06569106180564, "full_cutoff_log_correlation_upper": -253.43561948900165, "largest_core_filler": 60801, "legal": true, "number_of_local_rungs": 1347, "one_quarter_separator_degree": 7, "s_max": 1600, "s_min": 253, "separator_query_degree": 14, "separator_query_degree_over_D": 0.00875},
+    {"D": 6400, "N": 512001, "chebyshev_alpha": 0.22469055956873413, "ct_max": 40960000, "ct_min": 512656, "full_cutoff_log10_correlation_upper": -311.562342639172, "full_cutoff_log_correlation_upper": -717.3988056992607, "largest_core_filler": 499201, "legal": true, "number_of_local_rungs": 5684, "one_quarter_separator_degree": 10, "s_max": 6400, "s_min": 716, "separator_query_degree": 20, "separator_query_degree_over_D": 0.003125}
+  ],
+  "command": "python ksum/tools/ksum_l2p29_qn_multiscale_ladder_check.py",
+  "driver_sha256": "71adf46c9547caf1902ee2d114f2f211c0c44cf35ff1be0bad87b62316e22057",
+  "scope": "Formula ladder legality and scalar C_t Chebyshev bounds only; no support optimization or LP."
+}

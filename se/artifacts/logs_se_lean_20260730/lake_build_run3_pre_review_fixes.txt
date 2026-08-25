@@ -1,0 +1,59 @@
+command: lake build
+cwd: se/proof-dag/lean
+toolchain: leanprover/lean4:v4.31.0
+date: 2026-07-30T20:28:29Z
+note: from-scratch rebuild of all SE modules (SE build outputs wiped first; Mathlib v4.31.0 from the pinned prebuilt cache)
+----
+✔ [3038/3056] Built SE.Support.Defs (39s)
+✔ [3039/3056] Built SE.Interface (47s)
+✔ [3040/3056] Built SE.Support.Cbrt (50s)
+✔ [3041/3056] Built SE.Support.Constants (51s)
+✔ [3042/3056] Built SE.denom.Phi.legal.trace.t6 (46s)
+✔ [3043/3056] Built SE.denom.Phi.legal.sect (46s)
+✔ [3044/3056] Built SE.denom.Phi.legal.omega.interface (46s)
+✔ [3045/3056] Built SE.denom.Phi.legal.gram.interface (46s)
+✔ [3046/3056] Built SE.denom.taper (47s)
+✔ [3047/3056] Built SE.Support.Limits (121s)
+✔ [3048/3056] Built SE.denom.Phi.legal.tame (80s)
+✔ [3049/3056] Built SE.Support.Envelope (65s)
+✔ [3050/3056] Built SE.denom (75s)
+✔ [3051/3056] Built SE.br (65s)
+✔ [3052/3056] Built SE.goal (76s)
+✔ [3053/3056] Built SE.SelfTest (71s)
+ℹ [3054/3056] Built SE.Trust (57s)
+info: SE/Trust.lean:134:0: 'SE.goal.composition_via_br' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SE/Trust.lean:135:0: 'SE.goal.adv_quantitative' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SE/Trust.lean:136:0: 'SE.br.composition' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SE/Trust.lean:137:0: 'SE.denom.composition' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SE/Trust.lean:138:0: 'SE.denom.dNorm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SE/Trust.lean:139:0: 'SE.denom.block_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SE/Trust.lean:140:0: 'SE.denom.Phi.legal.tame.composition' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SE/Trust.lean:141:0: 'SE.denom.Phi.legal.tame.csect_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SE/Trust.lean:142:0: 'SE.denom.Phi.legal.tame.gcan_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SE/Trust.lean:143:0: 'SE.denom.taper.holds' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SE/Trust.lean:144:0: 'SE.K_eq_floor_rpow' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SE/Trust.lean:145:0: 'SE.K_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SE/Trust.lean:146:0: 'SE.taper_max' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SE/Trust.lean:147:0: 'SE.alpha_le_sqrt' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SE/Trust.lean:148:0: 'SE.Mconst_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SE/Trust.lean:149:0: 'SE.inv_two_one_add_Mconst' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SE/Trust.lean:150:0: 'SE.Cconst_digits' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SE/Trust.lean:151:0: 'SE.one_sub_mul_sqrt_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SE/Trust.lean:152:0: 'SE.errEnv_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SE/Trust.lean:153:0: 'SE.tendsto_envBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SE/Trust.lean:154:0: 'SE.SelfTest.emptySectorFrame_cited' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SE/Trust.lean:155:0: 'SE.SelfTest.emptySectorFrame_t6' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SE/Trust.lean:156:0: 'SE.SelfTest.emptySectorFrame_gram' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SE/Trust.lean:157:0: 'SE.SelfTest.emptySectorFrame_omega' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SE/Trust.lean:158:0: 'SE.SelfTest.emptySectorFrame_sect' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SE/Trust.lean:159:0: 'SE.SelfTest.hypotheses_consistent' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SE/Trust.lean:160:0: 'SE.SelfTest.liveSectorFrame_cited' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SE/Trust.lean:161:0: 'SE.SelfTest.liveSectorFrame_t6' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SE/Trust.lean:162:0: 'SE.SelfTest.liveSectorFrame_gram' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SE/Trust.lean:163:0: 'SE.SelfTest.liveSectorFrame_omega' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SE/Trust.lean:164:0: 'SE.SelfTest.liveSectorFrame_sect' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SE/Trust.lean:165:0: 'SE.SelfTest.hypotheses_consistent_live' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SE/Trust.lean:166:0: 'SE.SelfTest.liveSectorFrame_goal' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [3055/3056] Built SE (59s)
+Build completed successfully (3056 jobs).
+exit=0

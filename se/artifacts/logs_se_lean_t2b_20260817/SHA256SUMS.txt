@@ -1,0 +1,53 @@
+# SHA256SUMS.txt — SE tier-2b delivery (node SE.formal.t2, frontier task-003/004/005),
+# 2026-08-17.  Digests are over LF-NORMALIZED bytes: each file is read in binary and
+# CRLF -> LF is applied before hashing, so the ledger is stable across the Windows/macOS
+# round trip this tree came through.  Paths are repository-relative.  This file is not
+# listed in itself.
+# verify:  python3 - <<'EOF'
+#   import hashlib
+#   for line in open('se/artifacts/logs_se_lean_t2b_20260817/SHA256SUMS.txt'):
+#       if line.startswith('#') or not line.strip(): continue
+#       h,p = line.split(None,1); p=p.strip()
+#       d=hashlib.sha256(open(p,'rb').read().replace(b'\r\n',b'\n')).hexdigest()
+#       print('OK ' if d==h else 'MISMATCH ', p)
+# EOF
+
+5a861f00e7472ce3386f418dc53820b0ca926e32d6b462aedaa8da640d873b9e  se/artifacts/logs_se_lean_t2b_20260817/command.txt
+ac9d27d73e008a70c89c57fb1cc94afb059c4b87d33233e921d63ade85479cdc  se/artifacts/logs_se_lean_t2b_20260817/lake_build_clean.txt
+024662a12044d63e3d030c1ea77ff1ccb5cb40225e168c962987a0b780f21b48  se/artifacts/logs_se_lean_t2b_20260817/print_axioms.txt
+4c32f27e71fe9018e43eec13a1666bca436cb87197e0892155a66299f72d6460  se/artifacts/logs_se_lean_t2b_20260817/grep_trust.txt
+31603da64f716867a550d4e2ce39beec9c5422bca777b50f68e441d22c126bc4  se/artifacts/logs_se_lean_t2b_20260817/interface_field_census.txt
+be3086e7d5bc62b6b05540f85a895aff62112ed19801591de5e31039b0df9b80  se/artifacts/logs_se_lean_t2b_20260817/goal_claim_check.txt
+ab0472f8239b1cbf0bdf5c2b828cbb3b385ef79df0530db4f3df0950f2b117a0  se/artifacts/logs_se_lean_t2b_20260817/tier2a_ledger_recheck.txt
+2cb2e5b5b44aa41c49534f0abb4214c556b472ce2244ec954c00c129f7f9eff8  se/artifacts/logs_se_lean_t2b_20260817/definition_crosscheck.txt
+573e7e45c540ff29bc99377e3a88594e21d54f9e1cba38638d181f1deae74a02  se/artifacts/logs_se_lean_t2b_20260817/checkers.txt
+2f902988a70c78469981f5188f18759755bceb40aee42784532df3a319872d4d  se/artifacts/se_lean_t2b_20260817.md
+2a1893f9c6d7eb39a16a6f859f7689cd2f63683fe78b8949910330acbcf58c68  se/lean/SE.lean
+c121850c81323d503fce9a405af2f84f4ab44ce38222ef04c5abe1fd596baab5  se/lean/lakefile.lean
+efac0b94923b2d8b6840cd35be9177ad0fc5ab2332f4f4311c98712cee92fdee  se/lean/lean-toolchain
+4f197a50e1affd6eb745d084e18ea747b4e327b475b12adb3a665e3796e3fa0c  se/lean/lake-manifest.json
+414c03d8cd73ff36f5457285414c8c25532dc9837c60a90111b77124feecc878  se/lean/README.md
+5345e72ac547b1a8cace402e0126718bd4b699ce53c432207242a1a9fe288fba  se/lean/SE/Interface.lean
+5225601033ed4f993cadcb8358ef7c600776b24910e413de43095f22a6182d6c  se/lean/SE/SelfTest.lean
+cd1b2d6e9de20f13dff4b5d9a3130127275daaf94bdbb179256ab7910052d3cb  se/lean/SE/Trust.lean
+9769e214523cce832eea3f57ed96c287f16ab14f52f080367dd1b98b2b8f8f02  se/lean/SE/br.lean
+c8a558882dde063027ad477dff55ecc905479800add2f01ca8206cb0b30f2b4d  se/lean/SE/denom.lean
+77f40bbc3f2358dd7ef69edce6eea60ac23e51ee4f5c30e05e30c8ca6bc43868  se/lean/SE/goal.lean
+9a5416b4b5683129f0065de95fd7bcb34b29a00130ccc9617afacf1eaebd42d3  se/lean/SE/denom/taper.lean
+415660cecfc088230cabeaaaf565b98c78c9ab57cc4da9aa61e4589ce6b9c851  se/lean/SE/denom/Phi/legal/sect.lean
+f93edabcff253c4c24e0fbebf416676ebd9ea2347968325bb2fecc28a3a53e00  se/lean/SE/denom/Phi/legal/tame.lean
+7b9ab656484f555a06edfb998599cbc35be054d3cdcfe2bcc45ae3dba8d252ca  se/lean/SE/denom/Phi/legal/gram/interface.lean
+f1abee6416f0a735413e32d3871492451ef1c390f271e340f59e8facfbf709b8  se/lean/SE/denom/Phi/legal/trace/t6.lean
+bd147ddcaa04c321b141b223ac46f946c341e52e4a9ad6d8bf8132b95a41888c  se/lean/SE/denom/Phi/legal/omega/interface.lean
+b0dca9eced983be10ad9ed70e113175a8a688c83c9beefd14272756047d3e1a4  se/lean/SE/Support/BranchFactors.lean
+f429e813c000fc784f8697083ff23b59fc7faa5736dacefb3b50bc80e6dedce1  se/lean/SE/Support/Cbrt.lean
+aa330ea2fd0b95a433c1642cc57c13ac4c508579600a2ad5d93c5e36a11901c5  se/lean/SE/Support/Constants.lean
+be1fc35c96132967d78717ded612f372880bc0314b39f7969c7084cff49bf23c  se/lean/SE/Support/Defs.lean
+57c37cbf56b3265e2283970d54ce56b39fbfb5b07635d8d418d28999e7ce0628  se/lean/SE/Support/Envelope.lean
+4a5709b36af2a307333d385a2c190f7d3487c93dca88572dab40a4f828425294  se/lean/SE/Support/Hook.lean
+f30d4dcdf8807689eaaf5a3bd045bd8587daf7249c93f3a6eff8aceb5014dc3b  se/lean/SE/Support/Limits.lean
+92c838dca46682f85ca724d7b7b6c418f55556029d77f90ac46861659db55d28  se/lean/SE/Support/Omega.lean
+26d9e6efd7988bc3b3bfd90a77e59d34e5b5bf81fbc4ec6933d09ef1a813a09e  se/lean/SE/Support/RhoEnvelope.lean
+c7a2d11e9df48592e25dcd1852d32395f623a9565ab01fd9ecfe4362865049f2  se/lean/SE/Support/Telescope.lean
+a0341362d8c6921593d7a417fbdd0b987104eaa581b96d3046b272a9e8753093  se/proof-dag/nodes/SE.formal.t2.yaml
+11e87b5679c660c7fda21e0b9cf151394f610bd10fc5371f91c4b4764ead2e8b  tools/se_hook_definition_crosscheck.py

@@ -1,0 +1,33 @@
+KSUM.B4b.L2 phase 2 preregistration — 2026-07-19
+
+Scope frozen before any phase-2 constructor or verifier is written or run.
+Only the canonical D7-repaired route is in scope: odd q, all targets, degree target
+c0*min{sqrt(N)*q^eta, N^(2/3)} for one fixed eta in (1/6,1/4], unit l1,
+and correlation strictly greater than 2/3 with a fixed positive margin.  The
+even-q all-cycle-type strengthening is out of scope.  No exponent claim will be
+inferred from finite calculations (G11).
+
+PROGRESS means: an explicit general-odd-q cap-corrected pair-lattice kernel family,
+together with a proved annihilation lemma for a stated band reaching
+c0*min{sqrt(N)*q^eta0,N^(2/3)} for an explicit eta0>1/6, a proved uniform
+correlation bound at least 2/3+delta, proved l1 normalization, and exact-rational
+verification of the claimed finite instances (N,q)=(5,5) and (7,3).
+
+PARTIAL means: an explicit construction and exact-rational finite verification of
+its claimed moment band, l1, and correlation, but at least one named step needed
+for the general asymptotic statement remains unproved.  The report must identify
+that step precisely and make no exponent claim from the finite checks.
+
+BLOCKED means: the assault isolates a precise obstruction to simultaneously
+annihilating the required moment class and retaining unit l1 and correlation
+strictly above 2/3.  The obstruction must be stated as a candidate lemma-for-the-kill,
+with its exact scope (for example a coefficientwise product-kernel subclass), and
+must not be overclaimed as killing the full joint-histogram route without proof.
+
+First candidate to test: coefficientwise total-occupancy conditioning of symmetric
+per-pair signed kernels.  The key risk is that imposing zero constant and first
+falling-factorial moments independently in every sigma-pair may force equal
+absolute YES-interior and NO-axis mass locally; tensoring over r=(q-1)/2 pairs
+would then make the global OR correlation decay exponentially after l1
+normalization.  If proved, this is a BLOCKED outcome for the pure sign-separated
+tensor ansatz and identifies the need for a genuinely correlated outer kernel.

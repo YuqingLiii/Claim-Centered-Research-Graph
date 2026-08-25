@@ -1,0 +1,117 @@
+id: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel
+aliases:
+- B4bL2AltMultipairSelectiveOrbitTensorKernel
+claim: 'Explore a coefficient law orthogonal only to the actual orbit-moment tensor span `F_gamma`, while
+
+  deliberately retaining low-order coordinate-cylinder components needed for constant correlation.'
+assessment:
+  level: OPEN
+  summary: '**OPEN — exact projection normal form, missing explicit base measure.** The formula annihilates
+    only the actual orbit-feature span, but choosing its positive base measure is equivalent to the original
+    dual problem.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L2_phase15_growing_rank_moment_design_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase16_selective_orbit_tensor_kernel_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase17_qN_explicit_pi_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase17_q5_explicit_pi_20260721.md
+      kind: text
+    - path: ksum/tools/ksum_l2p17_q5_explicit_pi.py
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase16_q5_selective_structure_20260721.md
+      kind: text
+    - path: ksum/tools/ksum_l2p16_q5_selective_structure.py
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase18_qN_multidimensional_pi_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase18_q5_boundary_tilt_pi_20260721.md
+      kind: text
+    - path: ksum/tools/ksum_l2p18_q5_boundary_tilts.py
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase19_multiscale_gapfree_base_measure_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase20_rich_palette_gapfree_base_measure_20260721.md
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.variable-pair-totals
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.growing-rank-moment-design
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.moving-remez-cubature
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel.multiscale-gapfree-base-measure
+      kind: node-evidence
+    runs:
+    - path: ksum/artifacts/logs_ksum_L2p17_q5_explicit_pi_alpha1_20260721.json
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel
+        at the exact finite, formal, or computational scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p17_q5_explicit_pi_alpha05_20260721.json
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel
+        at the exact finite, formal, or computational scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p17_q5_explicit_pi_alpha2_20260721.json
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel
+        at the exact finite, formal, or computational scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p16_q5_selective_structure_20260721
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel
+        at the exact finite, formal, or computational scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p18_q5_boundary_tilts_20260721.json
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2.ALT.multipair.variable-pair-totals.selective-orbit-tensor-kernel
+        at the exact finite, formal, or computational scope stated in the linked output.
+frontier:
+  task-001:
+    task: Give a formula-defined positive legal measure `pi_{N,q}`, not an LP optimum or `|W_*|`.
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "Prove `3||g||_{2,pi}^2>||g||_{1,pi}` uniformly at\n  `D=c min{sqrt(N)q^eta,N^(2/3)}`."
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: "Prove constant residual-weighted mass above the required high-`C_t` threshold at both `q=5`\
+      \ and\n  `q=N`, and show the support does not make the NO indicator a low-degree scalar statistic."
+    kind: task
+    since: '2026-08-16'
+  task-004:
+    task: "At `q=N`, exclude one-parameter activation/reservoir supports from further tuning: even a\n\
+      \  nonproduct beta-binomial law with the correct base tail is killed by the actual repeated\n  `(1,1)`\
+      \ rows. A replacement must retain genuinely multidimensional boundary complexity after\n  restriction\
+      \ of the full orbit-feature span."
+    kind: task
+    since: '2026-08-16'
+  task-005:
+    task: "At `q=5`, do not reuse the unmodified symmetric Dirichlet--multinomial/Hahn law as the witness.\n\
+      \  Any replacement must improve the YES-side residual `L_1/L_2^2` ratio while retaining the tail;\n\
+      \  finite fixed-`alpha` sensitivity is not a proof that all Dirichlet deformations fail."
+    kind: task
+    since: '2026-08-16'
+  task-006:
+    task: "Continue any analytic moving-support work only in the preregistered moving-Remez/cubature node.\n\
+      \  Generic LP basic sparsity is not a formula and cannot support an asymptotic claim."
+    kind: task
+    since: '2026-08-16'
+  task-007:
+    task: "At `q=N`, require residual-relevant YES support down to much smaller positive `C_t` while keeping\n\
+      \  constant residual mass at `Theta(N^(4/3))`; uniformly balanced positive splits leave a fatal\n\
+      \  scalar Chebyshev gap even with multidimensional totals and distributed boundary mass."
+    kind: task
+    since: '2026-08-16'
+  task-008:
+    task: "At `q=5`, stop blind tuning of smooth full-support symmetric radial weights. Any next law must\n\
+      \  control joint residual signs across several orbit coordinates while keeping both low- and\n \
+      \ high-`C_t` YES mass; the finite tilt grid does not prove that every such law fails."
+    kind: task
+    since: '2026-08-16'
+  task-009:
+    task: "Independently review the generating-function feature identification, pseudoinverse projection,\n\
+      \  exact correlation formula, and complementary-slackness universality before any promotion."
+    kind: task
+    since: '2026-08-16'

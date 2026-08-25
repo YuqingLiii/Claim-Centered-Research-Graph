@@ -1,0 +1,29 @@
+id: SE.denom.Phi.legal.trace.t4
+aliases:
+- T4
+claim: '**Route T4 (second moment / L-average):** bound the L-averaged (or (a,b)-orbit-averaged) versions
+  of the traces via symmetry, then transfer to the fixed-L statement by the `S_{A°}`-orbit transitivity.
+  Weakest of the four routes; recorded so it is not re-proposed blind.'
+assessment:
+  level: REFUTED
+  summary: Exact c=2 counterexamples refute the universal fixed-L endpoint of this averaging route. Averaging
+    may still be useful for a newly stated joint or cancellation-sensitive claim, so the node is PARKED.
+  basis:
+    reviews:
+    - path: se/reviews/logs_se_trace_t5_uniform_ta_normalization_review_20260722/REPORT.md
+      kind: review
+    runs:
+    - path: se/artifacts/logs_se_trace_t5_uniform_ta_two_frame_20260722
+      kind: run
+      result: Execution artifact supporting SE.denom.Phi.legal.trace.t4 at the exact finite, formal, or
+        computational scope stated in the linked output.
+    counterexamples:
+    - path: se/reviews/logs_se_trace_t5_uniform_ta_normalization_review_20260722/REPORT.md
+      kind: counterexample
+      note: Sourced contradiction or counterexample supporting this scoped refutation.
+disposition:
+  state: PARKED
+  reason: Exact c=2 counterexamples refute the universal fixed-L endpoint of this averaging route. Averaging
+    may still be useful for a newly stated joint or cancellation-sensitive claim, so the node is PARKED.
+  revive: Do not re-enter the false fixed-L endpoint; register a separate node for any averaged joint
+    or cancellation statement.

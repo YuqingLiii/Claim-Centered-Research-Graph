@@ -1,0 +1,58 @@
+id: KSUM.LEAN.T1.k2-main-line
+role: tool
+aliases:
+- LeanT1
+claim: 'The chain `lem:encode` → `lem:shift` → `lem:oddN` → `thm:main-odd` → `thm:main-general` →
+
+  `cor:threshold`, together with `thm:oabarrier`, is formalizable `sorry`-free in Lean 4 + Mathlib
+
+  over an abstract `QueryModel` interface, in **explicit-constant form** (no `Ω`/`Θ` in the statements).'
+assessment:
+  level: CERTIFIED*
+  summary: '**CERTIFIED\*** — statement-fidelity review completed 2026-07-31 (rollup **PASS-WITH-CAVEATS**;
+    caveats in frontmatter; single review caps at the starred tier). The whole commissioned chain compiles
+    `sorry`-free in Lean 4 + Mathlib `v4.31.0`, in explicit-constant form, with a non-vacuous witness
+    per theorem and `#print axioms` clean at Lean''s three standard axioms for all 29 top-level results.
+    The build supplies run evidence; the linked independent statement-fidelity review licenses the current
+    conditional completion level. Gate results: **G-L2 PASS** (the decisive gate
+    — `lem:encode` is `sorry`-free), **G-T1a PASS** (7/7 in-scope targets), **G-T1b PASS** (33 witness
+    `example`s **plus** a proof that `QueryModel` is inhabited, so the conditional theorems are non-vacuous
+    as a class), **G-T1c PASS** (29/29 within `propext`, `Classical.choice`, `Quot.sound`; no `axiom`,
+    no `sorry`).'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_lean_T1_k2_main_line_20260730.md
+      kind: text
+    - path: ksum/lean
+      kind: text
+    - node: KSUM.A1b
+      kind: node-evidence
+    - node: KSUM.C0
+      kind: node-evidence
+    reviews:
+    - path: ksum/reviews/ksum_lean_statement_fidelity_review_20260731.md
+      kind: review
+      scope: Audits the T1 k=2 theorem statements against the manuscript and records faithful, wider,
+        narrower, and unformalized clauses together with their interface assumptions.
+      locator: Section 4 and T1 rollup in Section 10
+      reviewed_hash: sha256:60bfb76cddda6416ffd3957f42ca491e49ecd78915d633606b42cfd7339fb2b6
+    runs:
+    - path: ksum/artifacts/logs_ksum_lean_T1_20260730/build.log
+      kind: run
+      result: Execution artifact supporting KSUM.LEAN.T1.k2-main-line at the exact finite, formal, or
+        computational scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_lean_T1_20260730/SHA256SUMS.txt
+      kind: run
+      result: Execution artifact supporting KSUM.LEAN.T1.k2-main-line at the exact finite, formal, or
+        computational scope stated in the linked output.
+  caveats:
+  - '(fidelity caveats: cor:threshold lower side only; oabarrier(ii) constancy without Q=0; restrict field
+    narrower than fact (i) but sufficient; lem:shift one-sided; freeze/constQ are fields the PAPER DOES
+    NOT STATE; demoModel settles consistency only — conditional on ABI21+Tani24+facts (i)/(ii)+F1/F2)'
+frontier:
+  task-003:
+    task: "Formalize the currently omitted parts: the `O(N^{2/3})` upper half\
+      \ of\n  `cor:threshold` (imported); the general index-1 orthogonal-array framework of Belovs–Špalek\
+      \ (only\n  the two arrays named in `thm:oabarrier` are formalized); `thm:k2-upper` (out of scope)."
+    kind: task
+    since: '2026-08-16'

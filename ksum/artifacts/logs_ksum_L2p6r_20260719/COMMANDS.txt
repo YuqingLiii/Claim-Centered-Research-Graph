@@ -1,0 +1,10 @@
+Run from repository root on 2026-07-19. No network. No git commit.
+
+python ksum/tools/ksum_l2p6r_exact_review.py --json ksum/artifacts/logs_ksum_L2p6r_20260719/exact_review.json
+<machine-local-path-redacted>
+
+Closeout commands (run after record synchronization):
+
+python tools/proof_dag_check.py --problem ksum
+python tools/literature_check.py
+git diff --check

@@ -1,0 +1,59 @@
+id: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.induced-packet-payload-value-test
+role: outcome
+aliases:
+- B4bL3AltCriticalInducedPacketPayloadValueTest
+claim: 'Decide, from the on-disk reviewed induced-packet components at `a=16, q=64`, whether they
+
+  assemble into a complete compressed-model candidate adversary object; if yes, compute its
+
+  objective value exactly and compare it against a MATCHED composition baseline defined from the
+
+  proved bounds at the same finite parameters; if no, output the exact list of missing
+
+  components/normalizations (which is then the concrete front end of the open assembly
+
+  obligations). Finite diagnostic only (G11): no outcome of this test licenses an asymptotic
+
+  exponent.'
+assessment:
+  level: NUMERICAL
+  summary: '**NUMERICAL — pending-review.** Outcome class: **NOT ASSEMBLABLE (7 missing pieces).** The
+    reviewed `a=16, q=64` components do not compose end-to-end into the compressed-model candidate adversary
+    object `Gamma`; no objective value and no packet-vs-baseline ratio exist. File-level missing pieces
+    (executor''s M-list): - **M1** — four private point-children `(62,1), (60,3), (60,2,1), (61,1,1)`
+    (NO+YES): no tables anywhere; reviewed tables cover only the common child `tau_* = (61,2)`. - **M2**
+    — correlated carrier/Wigner kernel `Omega_tau`: defined, never evaluated. - **M3** — literal native
+    transfer `K_s = sum_z (F0_z)^T (x) F1_z`: not assembled (needs M1+M2); no rank/kernel/spectrum. -
+    **M4** — query polar/range norm interface (denominator) unfixed; the exact finite guard shows `||B
+    - E_s(B)||^2 = 1/4 != ||Delta||^2 = 1/2` (compressed defect != true norm, reconfirmed). - **M5** —
+    outer incidence/numerator map undefined; equivariance cannot supply it. - **M6** — the `D = 19456`
+    slice is not norm-complete (position carriers suppressed; no license). - **M7** — no adversary coefficient
+    law `B_nu` chosen: three nonseparable candidates plus the resolvent law are all OPEN, and the scalar
+    choice collapses to the `N^(11/18)` baseline. Everything that IS present was independently re-derived
+    by the executor and passes 30+ finite gates (hook dimensions, `S_64 -> S_63` branchings, reducer factors,
+    `D = 19456`, Johnson spectrum at `a=16`). The matched baseline could not be pinned to a finite constant
+    either, so no ratio is defined even on the baseline side.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L3_payload_value_test_a16_20260723.md
+      kind: text
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.three-row-induced-bicovariant-alphabet-packet-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.induced-packet-outer-incidence-numerator-interface
+      kind: node-evidence
+    - node: KSUM.B4b.retarget
+      kind: node-evidence
+    runs:
+    - path: ksum/artifacts/logs_ksum_L3_payload_value_test_a16_20260723/finite_verify.log
+      kind: run
+      result: finite payload-value checks completed
+  caveats:
+  - 'pending-review: the cited evidence has not completed an independent review gate'
+frontier:
+  task-001:
+    task: "Run the test; archive artifact with commands, logs, script SHA-256; then rule-7 review before\n\
+      \  any completion-tier use."
+    kind: task
+    since: '2026-08-16'

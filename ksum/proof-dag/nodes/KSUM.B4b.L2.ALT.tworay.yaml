@@ -1,0 +1,39 @@
+id: KSUM.B4b.L2.ALT.tworay
+role: obstruction
+aliases:
+- B4bL2AltTworay
+claim: 'Candidate scoped obstruction: every `S_N x C(sigma)`-invariant signed measure supported on the
+
+  constant bad profile `B`, the complementary-split profiles `Y_j`, and the noncomplementary-split
+
+  profiles `Z_j`, with unit `l1`, zero total mass, and fixed positive correlation, has pure high
+
+  degree `O_tau(sqrt(N))` uniformly in odd `5<=q<=N`; consequently this support class cannot meet the
+
+  canonical `N^(2/3)` endpoint at `q=N`.'
+assessment:
+  level: CONJECTURED
+  summary: '**CONJECTURED — pending independent rule-7 review.** The web executor supplied a formula and
+    proof sketch; no local symbolic gate or independent review has been commissioned.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L2_phase7_web_feasibility_20260720.md
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.canonbasis
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.multipair
+      kind: node-evidence
+frontier:
+  task-001:
+    task: "Independently type-audit the orbit profiles and factorial moments, prove an explicit Chebyshev\n\
+      \  degree/error bound with constants depending only on `tau`, and verify that dual orthogonality\n\
+      \  implies the claimed degree ceiling."
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "If the scoped obstruction passes review, retain its hard boundary: multi-pair profiles,\n \
+      \ fixed-point defects, and other global histograms remain outside it."
+    kind: task
+    since: '2026-08-16'

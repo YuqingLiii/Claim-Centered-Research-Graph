@@ -1,0 +1,118 @@
+# Checker statuses — SE tier 2b, 2026-08-17 (run from the repository root)
+
+## $ python3 tools/proof_dag_check.py --problem se
+se: 84 node files structurally valid
+Proof-DAG validation OK: 84 nodes
+EXIT=0
+
+## $ python3 tools/proof_dag_check.py --problem se --write-generated
+se: 84 node files structurally valid
+Proof-DAG validation OK: 84 nodes
+EXIT=0
+
+## $ python3 tools/check_event_append_only.py --base-ref HEAD
+Append-only event check OK against HEAD
+EXIT=0
+
+## $ python3 tools/literature_check.py
+Literature catalogs OK: 52 papers across 5 libraries, schema v1
+EXIT=0
+
+## $ python3 tools/se_hook_definition_crosscheck.py
+# Independent exact-rational cross-check of the tier-2b definitions, 2026-08-17
+# (Fractions only; no floating point anywhere.)
+
+1. rtopHook == q^d f^theta/(d! f^lambda)  over all q<=40, 2d<q, all theta|-d : 16530 checks, 0 mismatches
+2. p0Hook == f^(q-j-1,theta)/f^(q-j,theta)  over all q<=40, 1<=j<=q/6, all theta|-j : 379 checks, 0 mismatches
+3. j/q <= omega <= j/(q-2j)  over all q<=60, 1<=j<=q/6, all theta|-j : 1782 checks, 0 violations
+   equality at the LOWER end: 0 cases (none)
+   equality at the UPPER end: 55 cases, e.g. [(6, 1, (1,)), (7, 1, (1,)), (8, 1, (1,))]
+   -> the upper bound is ATTAINED (so it cannot be improved, and no lossy step is
+      admissible); every attaining case below has j = 1: [1]
+4. rtopHook(q,d,theta) <= rtopHook(q,d,(d))  over all q<=40, 2d<q, all theta|-d : 16492 checks, 0 violations   [SE.rtopHook_le_rowShape / SE.isGreatest_rtopHookSet]
+
+5. worked example q=10, j=2, theta=(2,):
+   f^(8,2) = 35, f^(7,2) = 27, p0 = 27/35 = 27/35 (direct = hook)
+   omega = 8/27;  j/q = 1/5;  j/(q-2j) = 1/3
+EXIT=0
+
+## $ git diff --check -- research/se se/artifacts/logs_se_lean_t2b_20260817 se/artifacts/se_lean_t2b_20260817.md tools/se_hook_definition_crosscheck.py
+warning: in the working copy of 'se/notes/SE_HANDOFF_20260720.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'se/notes/SE_PROOF_DAG.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'se/paper/se_explicit_witness.tex', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'se/proof-dag/NODE_INDEX.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'se/proof-dag/README.md', LF will be replaced by CRLF the next time Git touches it
+EXIT=0
+
+## $ git status --porcelain se/proof-dag/NODE_INDEX.md se/proof-dag/GRAPH.mmd
+ M se/proof-dag/NODE_INDEX.md
+?? se/proof-dag/GRAPH.mmd
+##   (both are GENERATED; regenerated with --write-generated above, never hand-edited.)
+
+## $ python3 tools/lean_dag_check.py --problem se
+## NOT relied on by this commission (report section 8).  Recorded for its TRUE status.
+## Finding: the tool now HAS a schema-v6 loader (node task-006 / review F6 is out of date on
+## that point); it exits 1 for other, pre-existing reasons — the declared deviations of
+## SE/Trust.lean section D and the stale docstring digests of modules tier 2b did not touch.
+lean_dag_check.py -- DAG_PROTOCOL.md §7 (pre-v6 §7.6) anti-drift checks
+problem: se
+nodes:   se/proof-dag/nodes
+lean:    se/lean/SE
+schema:  v6
+
+INFO [0] nodes: schema v6 has no `lean: none` + reason field: absence of a formal mirror is recorded by OMITTING `formalization` (DAG_PROTOCOL §1/§7), so the §7.4 per-node silence check is NOT PORTABLE and is not run. 75 of 84 nodes carry no `formalization.lean` block.
+FAIL [3] SE.br: docstring digest 01590f3fc25b9219793a095d3e15e54b43d874649acacb36ff5a708813325e63 != recomputed 2e795bb6962a6da9ebcd384fc11801f7940abc727a2fda6e38388d1744c16735 [docstring digest == the node's recorded `source_claim_hash`; node declares `sync_state: stale` -- §7 requires the formal statement, imports, proof and hash to be synchronized, so this FAIL is that open gate]
+WARN [3b] SE.br: docstring frozen Claim body differs from the node's canonical claim (hash line may be stale-but-intact)
+FAIL [3] SE.denom: docstring digest c1db854e6d1010c5785be1e91deb68564edd5b5979d9210e31d48f8287514a9b != recomputed f12812b12baf1dc19543bb712e0f50f2d39680c0e28abdc2f90eb542d99b17a0 [docstring digest == the node's recorded `source_claim_hash`; node declares `sync_state: stale` -- §7 requires the formal statement, imports, proof and hash to be synchronized, so this FAIL is that open gate]
+WARN [3b] SE.denom: docstring frozen Claim body differs from the node's canonical claim (hash line may be stale-but-intact)
+FAIL [3] SE.denom.Phi.legal.gram.interface: docstring digest ee41bc7f672f987b0f91e080ce15a70361c696bfddeb985650e9c3c8f210d465 != recomputed f8848b614b32dec79f3ca65ee5acd43777762429d490232490c17d1dbb40f0d7 [docstring digest == the node's recorded `source_claim_hash`; node declares `sync_state: stale` -- §7 requires the formal statement, imports, proof and hash to be synchronized, so this FAIL is that open gate]
+WARN [3b] SE.denom.Phi.legal.gram.interface: docstring frozen Claim body differs from the node's canonical claim (hash line may be stale-but-intact)
+FAIL [3] SE.denom.Phi.legal.omega.interface: docstring digest 25ff3a772f796d5f48ca43baeeb3974d58652c5f7a5272c7af1e1f0a84d87a02 != recomputed 5d62b12d5112c0f004d75bf42f01143b1e3004825602d80a4bff9eb7f85f0fb7 [docstring digest == the node's recorded `source_claim_hash`; node declares `sync_state: stale` -- §7 requires the formal statement, imports, proof and hash to be synchronized, so this FAIL is that open gate]
+WARN [3b] SE.denom.Phi.legal.omega.interface: docstring frozen Claim body differs from the node's canonical claim (hash line may be stale-but-intact)
+FAIL [3] SE.denom.Phi.legal.sect: docstring digest 0ef0e835e5dc63954c09a12b4bef83c599950e242137efb90e372cf37f77f401 != recomputed 11131e8cf92d4988213466c621c6bfa53148f177d303066942100a561b9899d5 [docstring digest == the node's recorded `source_claim_hash`; node declares `sync_state: stale` -- §7 requires the formal statement, imports, proof and hash to be synchronized, so this FAIL is that open gate]
+WARN [3b] SE.denom.Phi.legal.sect: docstring frozen Claim body differs from the node's canonical claim (hash line may be stale-but-intact)
+FAIL [3] SE.denom.Phi.legal.tame: docstring digest a203b64b83d45df9dcc131898e14f659767783586da4b011abd2f291d47123b5 != recomputed d90c15dec4235220cf1370c0a9863598c18ee42326b51a5fbe4f8dfaf8d609bf [docstring digest == the node's recorded `source_claim_hash`; node declares `sync_state: stale` -- §7 requires the formal statement, imports, proof and hash to be synchronized, so this FAIL is that open gate]
+WARN [3b] SE.denom.Phi.legal.tame: docstring frozen Claim body differs from the node's canonical claim (hash line may be stale-but-intact)
+WARN [3] SE.denom.taper: docstring carries 2 distinct 64-hex digests ['a79e1c5985b52137feb0224fc6617134a07662fe1527afb7dc5af3f76d144a02', 'd181c0bdb60c41fdfca5b888339302081d5908caf23350ecfd3c88d297ae8221']
+FAIL [3] SE.goal: docstring digest cb578c2f3ef7724cdfc7177400ba07f35fdb9e7afe5d8f585dd93dc055955362 != recomputed 9ac39ac1e9de6e5ab45b32375be0dcf7f559271b16266c3318949d9aaec1a0b5 [docstring digest == the node's recorded `source_claim_hash`; node declares `sync_state: stale` -- §7 requires the formal statement, imports, proof and hash to be synchronized, so this FAIL is that open gate]
+WARN [3b] SE.goal: docstring frozen Claim body differs from the node's canonical claim (hash line may be stale-but-intact)
+WARN [4] SE.br: composition theorem text does not mention child `SE.br.def` (TEXTUAL APPROXIMATION: a sound check needs elaboration)
+WARN [4] SE.br: composition theorem text does not mention child `SE.br.num` (TEXTUAL APPROXIMATION: a sound check needs elaboration)
+WARN [4] SE.denom: composition theorem text does not mention child `SE.denom.decomp` (TEXTUAL APPROXIMATION: a sound check needs elaboration)
+WARN [4] SE.denom: composition theorem text does not mention child `SE.denom.X` (TEXTUAL APPROXIMATION: a sound check needs elaboration)
+WARN [4] SE.denom: composition theorem text does not mention child `SE.denom.Y` (TEXTUAL APPROXIMATION: a sound check needs elaboration)
+WARN [4] SE.denom: composition theorem text does not mention child `SE.denom.Phi` (TEXTUAL APPROXIMATION: a sound check needs elaboration)
+WARN [4] SE.denom: composition theorem text does not mention child `SE.denom.familysplit` (TEXTUAL APPROXIMATION: a sound check needs elaboration)
+WARN [4] SE.denom: composition theorem text does not mention child `SE.denom.crossk` (TEXTUAL APPROXIMATION: a sound check needs elaboration)
+WARN [4] SE.denom: composition theorem text does not mention child `SE.denom.taper` (TEXTUAL APPROXIMATION: a sound check needs elaboration)
+WARN [4] SE.denom: composition theorem text does not mention child `SE.denom.assembly` (TEXTUAL APPROXIMATION: a sound check needs elaboration)
+WARN [4] SE.denom.Phi.legal.tame: composition theorem text does not mention child `SE.denom.Phi.legal.gram` (TEXTUAL APPROXIMATION: a sound check needs elaboration)
+WARN [4] SE.denom.Phi.legal.tame: composition theorem text does not mention child `SE.denom.Phi.legal.omega` (TEXTUAL APPROXIMATION: a sound check needs elaboration)
+WARN [4] SE.denom.Phi.legal.tame: composition theorem text does not mention child `SE.denom.Phi.legal.trace` (TEXTUAL APPROXIMATION: a sound check needs elaboration)
+WARN [4] SE.denom.Phi.legal.tame: composition theorem text does not mention child `SE.denom.Phi.legal.found` (TEXTUAL APPROXIMATION: a sound check needs elaboration)
+WARN [4] SE.denom.Phi.legal.tame: composition theorem text does not mention child `SE.denom.Phi.legal.sect` (TEXTUAL APPROXIMATION: a sound check needs elaboration)
+FAIL [5] SE.goal: composition_via_* suffixes ['br'] != live routes ['br', 'jz', 'mdh', 'ros', 'sdp']
+FAIL [6] SE.br: node-module imports ['SE.denom'] != children ['SE.br.def', 'SE.br.num', 'SE.denom'] (children NOT imported: ['SE.br.def', 'SE.br.num'])
+FAIL [6] SE.denom: node-module imports ['SE.denom.Phi.legal.tame', 'SE.denom.taper'] != children ['SE.denom.Phi', 'SE.denom.X', 'SE.denom.Y', 'SE.denom.assembly', 'SE.denom.crossk', 'SE.denom.decomp', 'SE.denom.familysplit', 'SE.denom.taper'] (imports NOT among children: ['SE.denom.Phi.legal.tame']; children NOT imported: ['SE.denom.Phi', 'SE.denom.X', 'SE.denom.Y', 'SE.denom.assembly', 'SE.denom.crossk', 'SE.denom.decomp', 'SE.denom.familysplit'])
+FAIL [6] SE.denom.Phi.legal.tame: node-module imports ['SE.denom.Phi.legal.gram.interface', 'SE.denom.Phi.legal.omega.interface', 'SE.denom.Phi.legal.sect', 'SE.denom.Phi.legal.trace.t6'] != children ['SE.denom.Phi.legal.found', 'SE.denom.Phi.legal.gram', 'SE.denom.Phi.legal.omega', 'SE.denom.Phi.legal.sect', 'SE.denom.Phi.legal.trace'] (imports NOT among children: ['SE.denom.Phi.legal.gram.interface', 'SE.denom.Phi.legal.omega.interface', 'SE.denom.Phi.legal.trace.t6']; children NOT imported: ['SE.denom.Phi.legal.found', 'SE.denom.Phi.legal.gram', 'SE.denom.Phi.legal.omega', 'SE.denom.Phi.legal.trace'])
+FAIL [6] SE.goal: node-module imports ['SE.br'] != children ['SE.br', 'SE.goal.hyp.se-jz.01', 'SE.jz', 'SE.mdh', 'SE.ros', 'SE.sdp'] (children NOT imported: ['SE.goal.hyp.se-jz.01', 'SE.jz', 'SE.mdh', 'SE.ros', 'SE.sdp'])
+WARN [7c] SE.denom.Phi.legal.gram: node level CONJECTURED exceeds min(route joint=CERTIFIED*, SE.denom.Phi.legal.gram.interface=CONJECTURED, SE.denom.Phi.legal.trace.t6=OPEN) on its best live route and NO assessment caveat names the shortfall [below the completion tier, where §3 permits a mother to sit above her premises -- reported for review, not as a defect]
+WARN [7c] SE.denom.Phi.legal.omega: node level CONJECTURED exceeds min(route joint=CERTIFIED*, SE.denom.Phi.legal.omega.interface=CONJECTURED, SE.denom.Phi.legal.gram=CONJECTURED, SE.denom.Phi.legal.sect=OPEN) on its best live route and NO assessment caveat names the shortfall [below the completion tier, where §3 permits a mother to sit above her premises -- reported for review, not as a defect]
+
+coverage (evaluations actually performed):
+  1            : 9
+  2            : 18
+  3            : 9
+  4            : 3
+  5            : 1
+  6            : 9
+  7a           : 9
+  7b           : 5
+  7c           : 16
+  lean-none    : 75
+  mechanized   : 9
+  nodes        : 84
+  schema:v6    : 1
+
+summary: 12 FAIL, 25 WARN, 1 INFO
+EXIT=1

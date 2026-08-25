@@ -1,0 +1,63 @@
+id: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.orbit-intertwiner-adversary.ALT.coupled-uic-address-cycle-kernel.ALT.growing-selector-specht-branching-kernel
+aliases:
+- B4bL3AltCriticalCoupledGrowingSelectorSpechtBranchingKernel
+claim: 'Construct a formula-defined rectangular critical adversary in which a growing outer full-matching,
+
+  endpoint-tuple, or cycle-word selector carries the same growing Specht sector as the hidden-address
+
+  module, and coherently balances `r=Theta(m^(1/3))` branching channels to obtain the missing
+
+  `sqrt(r)=Theta(m^(1/6))` marked/unmarked gain.'
+assessment:
+  level: OPEN
+  summary: '**OPEN — the actual repaired full UIC matching contains an explicit common growing Specht
+    sector, but its canonical multiplicity-one transport formula FAILS exactly.** Put `r=floor(m^(1/3))`,
+    `s=r(r-1)/2`, `lambda=(a-s,r-1,...,1)`, and `Theta=2lambda`. The true repaired transition permutation
+    is an `S_(2a)` carrier, and `c^(Theta)_(lambda,lambda)=1`, so `S^Theta restricted to S_a^L x S_a^R`
+    really contains the requested growing `S^lambda box-times S^lambda` sector; it is not an attached
+    regular ancilla. For the first formula `B_Theta[z_1,z_0]=Gamma_UIC[z_1,z_0] rho_Theta(tau_1^(-1)tau_0)`,
+    the repaired matching factors input-wise. It is block-unitarily equivalent to `Gamma_UIC tensor I`,
+    so it preserves the outer numerator and every outer mask. The same factorization makes the incidence
+    Schur contraction identically scalar one. A physical query exposes all `r` removable-corner branches
+    at once, and the exact marked multiplicity operator is `I_r`, not one branch of a balanced vector.
+    Thus this selector contributes ratio one and, with standard BHK blocks, remains at `O(a^(2/3)sqrt(m))=O(N^(11/18))`.
+    The two successors have now been tested at their natural full scope. Genuine LR multiplicity `c=r+1`
+    exists, but every fixed middle operator obeys a partial-trace convexity ceiling: a marked branch retains
+    at least the unmarked selector norm. Natural two-matching cycle words reduce to a standalone convolution/Hecke
+    kernel, and the repair defect contributes only two capped endpoints.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L3_critical_coupled_higher_specht_attempt_20260722.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_critical_coupled_uic_address_cycle_attempt_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_critical_growing_selector_repaired_matching_attempt_20260722.md
+      kind: text
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.orbit-intertwiner-adversary.ALT.coupled-uic-address-cycle-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.orbit-intertwiner-adversary.ALT.coupled-uic-address-cycle-kernel.ALT.delocalized-multiblock-occurrence-kernel
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.orbit-intertwiner-adversary.ALT.coupled-uic-address-cycle-kernel.ALT.growing-selector-specht-branching-kernel.ALT.lr-multiplicity-space-mixing
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.orbit-intertwiner-adversary.ALT.coupled-uic-address-cycle-kernel.ALT.growing-selector-specht-branching-kernel.ALT.nonfactorizable-cycle-word-selector
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.full-position-incidence-three-layer-word-kernel
+      kind: node-evidence
+frontier:
+  task-001:
+    task: "Move any further construction to the registered full-position-incidence three-layer successor.\n\
+      \  Neither a fixed LR middle operator nor a word in only the two input-wise matchings qualifies."
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "Prove numerator `Omega(a^(2/3)m^(2/3))` and every physical query-masked norm, including selector,\n\
+      \  short, long, and remainder branches, uniformly in `a,d,p`."
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: "Show that the selector does not encode a solved copy of the original critical endpoint or erase\n\
+      \  the outer `UIC_a` numerator."
+    kind: task
+    since: '2026-08-16'

@@ -1,0 +1,23 @@
+id: SE.br.num
+aliases:
+- NUM
+claim: For q=2n and K=floor(n^(1/3)), let Gamma_n be the legal tapered witness defined in SE.br.def, and
+  let 1_N and 1_Y be the unit constant vectors. Then Gamma_n 1_N = K 1_Y, and hence ||Gamma_n|| >= K.
+  This is proved directly at q=2n in the linked claim-level proof and review; no large-alphabet illegal-row-removal
+  argument is used.
+assessment:
+  level: PROVED
+  summary: The claim is supported by the linked evidence and independent review.
+  basis:
+    reviews:
+    - path: se/reviews/se_cor16_review_20260718.md
+      kind: review
+      scope: Independently derives Gamma_n 1 = K 1 and hence the numerator norm lower bound, with the
+        exact q=2n normalization separated from the large-alphabet citation.
+      locator: Section 2 and Per-step verdict row 2
+      reviewed_hash: sha256:4f7d3d64da92522f918a7dfc1f45bf4cb0a8a5f7ecd444bdd0b9216ed1773345
+    runs:
+    - path: se/artifacts/se_br_num_n3_ground_truth_run_20260819.md
+      kind: run
+      result: At n=3 and K=1,2,3, the recomputed witness has ||Gamma_n||=K; the largest all-ones residual
+        is 1.155e-15. This is numerical corroboration, not the proof of the all-n claim.

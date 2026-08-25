@@ -1,0 +1,47 @@
+id: KSUM.B4b.L2.ALT.two-orientation-shared-no-cascade
+aliases:
+- B4bL2AltTwoOrientationSharedNoCascade
+claim: Coupling split-opening jumps at complementary slot totals s and N-s, which share the same NO orbit,
+  can change total variation and correlation through cancellation of duplicated NO coefficients while
+  preserving a multiscale YES tail and exact moment cancellation.
+assessment:
+  level: PROVED
+  summary: '**PROVED — explicit `q=5` endpoint construction, fresh Rule-7 reviewed.** For every odd `N>=513`,
+    the shared-NO tail kernel plus quadratic boundary bridge passes exactness, normalization, correlation,
+    and tail gates at `D=floor(sqrt(N/512))+2`.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L2_phase26_overcomplete_split_opening_cascade_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L2_phase27_two_orientation_shared_no_cascade_20260721.md
+      kind: text
+    - path: ksum/tools/ksum_l2p27_shared_no_check.py
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    - node: KSUM.B4b.L2.ALT.mesoscopic-split-opening-cascade
+      kind: node-evidence
+    reviews:
+    - path: ksum/reviews/ksum_L2_phase27_shared_no_rule7_review_20260721.md
+      kind: review
+      scope: Independently reconstructs and checks the q=5 shared-NO construction, its full orbit-row
+        annihilation, correlation, and tail mass for odd N>=513; it does not prove endpoint-uniform or
+        polynomial-scale amplification.
+      locator: Post-anchor comparison, Rule-7 ledger, and Verdict
+      reviewed_hash: sha256:c813d8b79ea7e0ae1908b21900e47a3d8a5d122ac824d9261483c19cefb16272
+    runs:
+    - path: ksum/artifacts/logs_ksum_L2p27_shared_no_20260721/run.json
+      kind: run
+      result: Execution artifact supporting KSUM.B4b.L2.ALT.two-orientation-shared-no-cascade at the exact
+        finite, formal, or computational scope stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_L2p27_shared_no_rule7_review_20260721/independent.json
+      kind: run
+      result: Independent finite enumeration output used by the accompanying Rule-7 review; the Markdown
+        review, not this JSON file alone, supplies the reviewer identity, scope, and verdict.
+frontier:
+  task-001:
+    task: "None for the scoped `q=5,K=2`, odd-`N>=513` construction. This node does not address `q=N`\
+      \ or\n  provide a literal quantum-query cutoff equal to `D`; the standard polynomial conversion\
+      \ gives\n  the same `Theta(sqrt N)` query scale up to a factor two."
+    kind: task
+    since: '2026-08-16'

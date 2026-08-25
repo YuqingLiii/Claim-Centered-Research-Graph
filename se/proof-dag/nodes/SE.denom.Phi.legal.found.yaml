@@ -1,0 +1,47 @@
+id: SE.denom.Phi.legal.found
+aliases:
+- FOUND
+claim: 'The following foundation-layer statements hold: admissible-sector definition + unique-long-child/stable-LR
+  (R1 Def 2.1, Thm 2.2); operator-level colored orbit identities free+pinned incl. all LR multiplicities
+  (R1 §4); matching covariance + full-H twirl + Schur form (R1 §5 as repaired by R2 P1 formulas); dimension-correct
+  transport (R1 §6, replacing the broken ρ_θ⊗L_p); δ adjudication (axial=δ_z; Young coefficients (δ∓1)/(2δ);
+  Pieri hook ratio 1/(δ+1) unchanged) (R1 §7); formal output frames + frame Grams + weighted Bessel EQUALITY
+  `E₀*E₀+Σ_z(δ_z+1)E_z*E_z = B_θ(q)I_{f^λ}` on V_λ (R2 P2); backbone + physical branch maps `B_{h,γ}=S_{h,γ}L_h`
+  with the normalization bridge `1/(q!)²` (R3); `‖L_h‖² ≤ B_θ(q)` all-c and the fold formula `‖S_{h,γ}‖²_HS
+  = mN·η_γ` with η closed forms (R4b/R4c).'
+assessment:
+  level: CERTIFIED*
+  summary: The foundation/interface layer is CERTIFIED* only within the recorded scope. One compressed
+    c=2 sector passes all seven numerical identity gates, but uniform validity for general c>=2 and the
+    full parameter range remains unproved.
+  basis:
+    reviews:
+    - path: se/reviews/se_frames1_review_20260719.md
+      kind: review
+      scope: Audits the admissible sectors, LR stability, orbit identities, twirl, dimension-correct transport,
+        output frames, weighted Bessel equality, and branch-map normalization forming the first foundation
+        layer.
+      locator: Sections 1--9
+      reviewed_hash: sha256:2200fa8f65ebb61c05b8b6cce3b03c7582fb3c8b9effdb50be21607fc80b19d4
+    - path: se/reviews/se_frames1_w2_review_20260719.md
+      kind: review
+      scope: Blindly re-derives the four principal foundation claims and exact rational gates before comparing
+        with earlier materials, recording the precise promotion scope and limitations.
+      locator: Part A and Part B, especially A2--A7 and B3--B5
+      reviewed_hash: sha256:2200fa8f65ebb61c05b8b6cce3b03c7582fb3c8b9effdb50be21607fc80b19d4
+    - path: se/reviews/se_frames2_review_20260719.md
+      kind: review
+      scope: Independently checks the Y-side hook products, frame traces, sector multiplicities, chain
+        constants, and exact gates added to the typed foundation package.
+      locator: Sections 2--7
+      reviewed_hash: sha256:2200fa8f65ebb61c05b8b6cce3b03c7582fb3c8b9effdb50be21607fc80b19d4
+    evidence:
+    - node: SE.denom.Phi.legal.trace
+      kind: node-evidence
+  caveats:
+  - Certified with an explicitly unresolved review or dependency caveat; see the assessment basis.
+frontier:
+  task-001:
+    task: c≥2 identity gate (7b); the trace frontier consumes this package via `[[SE.denom.Phi.legal.trace]]`.
+    kind: task
+    since: '2026-08-16'

@@ -1,0 +1,332 @@
+id: SE.formal.t2
+role: tool
+aliases:
+- FT2
+claim: In the linked Set Equality Lean development, the named analytic and combinatorial fields of SE.SEFrame.Cited
+  are replaced by sorry-free theorems from the explicit product definitions, without adding a new quantitative
+  estimate as an assumption. The operator layer and the hook-length, Specht-module, and Littlewood--Richardson
+  results remain outside this formalization scope.
+assessment:
+  level: CERTIFIED*
+  summary: 'CERTIFIED*. The independent review of 2026-08-17 (`se/reviews/se_lean_t2_review_20260817.md`,
+    fresh non-author reviewer) returned PASS-WITH-FIXES with NO blocking mathematical or mechanization
+    defect: it reproduced the clean build (exit 0, 3059 jobs), reproduced the 79-declaration axiom census
+    byte-identically, verified all 37 SHA ledger entries, re-derived the hook-envelope log bound, the
+    one-defect identity and the special-path maximum with exact arithmetic, and confirmed no statement
+    was weakened. It also CORRECTED this node''s headline: the fields discharged WITH MATHEMATICAL CONTENT
+    are TWO (`rho_ge_one`, `rho_le`), not three — `rhoConst_nonneg` was bookkeeping on a datum this change
+    deletes — and the added `rho_hook` is EQUATIONAL, hence strictly stronger than the two inequalities
+    it replaces, so the admissible-frame class shrank. Honest headline: net −2 interface fields, purchased
+    with one stronger definitional assumption that cites Frame–Robinson–Thrall. PROVED is NOT licensed
+    while the discharge rests on an external theorem absent from the Lean development. Underlying run
+    evidence: Mechanized run evidence only: a clean, `sorry`-free rebuild (exit 0, 3059 jobs) in which
+    `SE.SEFrame.Cited` carries 23 assumption fields instead of the tier-1 25 — `rho_ge_one`, `rho_le`
+    and `rhoConst_nonneg` are theorems (`SE/Support/Hook.lean`, `SE/Support/RhoEnvelope.lean`), the carrier
+    field `SEFrame.rhoConst` is gone in favour of the explicit `SE.rhoConst = 4`, and one DEFINITIONAL
+    field, `rho_hook` (the hook-length evaluation of `rho_d`), was added in their place. `SE.denom.taper.Claim`
+    now renders all three frozen conjuncts (ruling R2 discharged). Every `composition` theorem and `SE.goal.composition_via_br`
+    still typecheck, and the three non-vacuity models still satisfy `Cited` with H1-H4. 79 declarations
+    printed by `#print axioms`, all exactly [propext, Classical.choice, Quot.sound]. This level records
+    mechanization, not mathematics: no completion tier may be written here until an INDEPENDENT reviewer
+    has checked the no-weakening claim field by field against the tier-1 baseline (frontier task-005).
+    It establishes nothing about H1-H4 and does not change the conditional status of Theorem B.
+
+
+    TIER 2b (same day, frontier task-003/task-004/task-005, EXECUTOR-AUTHORED AND UNREVIEWED - see the
+    scope caveat below). `Cited` went 23 -> 21 assumption fields. FOUR more fields became theorems, all
+    with their tier-1 binders and conclusions verbatim: `omega_le` (the manuscript''s two-sided range
+    eq:omega-range, which it calls "the reviewed-proved range"), `omega_pos`, `rtop_le_rho` and `rtop_pos`.
+    They are proved from `p_0` DEFINED by its hook ratio in conjugate coordinates (`SE/Support/Omega.lean`:
+    the top hook is 1, one telescoping over `Finset.Ico theta_1 (q-j-1)` reduces `1/p_0` to `q/(q-j-theta_1)
+    * prod_{c<=theta_1}(1-1/h_c)`, and two further telescoping majorants give `j/q <= omega <= j/(q-2j)`,
+    with equality at j = 1 so that no lossy MAJORANT STEP is admissible - a statement about the STEPS,
+    not about both ends of the range: the UPPER end is attained (at j = 1, omega = 1/(q-2) exactly) while
+    the LOWER bound j/q is attained in 0 cases in one exact-rational sweep (re-run and reproduced; independently
+    corroborated by the task-013 reviewer''s own branching-rule sweep, 11219 triples, agreeing), and only
+    its POSITIVITY is load-bearing (wording corrected 2026-08-17, frontier task-008)), and from the new
+    theorem that the hook product is MAXIMIZED by the single row (`SE.rtopHook_le_rowShape`), which upgrades
+    tier 2a''s attainment field `rho_hook` to the `IsGreatest` field `rho_isGreatest`. Two DEFINITIONAL
+    fields were added: `sector_hook` (the sector''s shape datum is a shape of j, and its `r_top` and `omega`
+    ARE the hook expressions) and `admissible_window` (`1 <= j` and `3j <= n`, the paper''s own standing
+    window for admissible strict sectors). `SEFrame` gained two CARRIER data, `shapeLen`/`shapeCol` (the
+    sector''s shape theta), 19 -> 21. All three SelfTest models were reworked onto genuine hook values
+    and still satisfy `Cited` with H1-H4; `channelFrame` is still non-degenerate, now with its sector
+    compression positive BECAUSE the lower half `j/q <= omega` is proved. Clean rebuild exit 0, 3061 jobs,
+    no sorry, no added axiom, no native_decide, 124 declarations printed by `#print axioms`, all standard.
+    Review fixes F1-F5 and F7 applied. `goal.Claim` is unchanged.'
+  basis:
+    reviews:
+    - path: se/reviews/se_frontier_review_20260817.md
+      kind: review
+      note: 'independent non-author review 2026-08-17 of the task-008/010/011 clearance: PASS-WITH-FIXES,
+        no blocking finding. Re-ran the six prior adversarial probes in throwaway copies against BOTH
+        tool versions (P1/P3/P4 now FAIL; P2/P5/P6 remain by-design residuals, now each gated by an INFO
+        line and a docstring sentinel that three selftest fixtures protect), then invented five NEW probes
+        and found three soft spots - NEW-1 the F1 anchor gate is a syntax tax, NEW-5 the descendancy licence
+        counts paths through section-4-disabled routes, and NEW-4 the fundamental one. It also caught
+        a false epistemic label of ours (R1) and supplied a genuinely independent second sweep of its
+        own.'
+      scope: Reviews the task-008/010/011 frontier repairs, adversarial probes, no-weakening property,
+        field-count derivation, and clean rebuild; it does not extend Tier 2 beyond the declared analytic
+        layer.
+      locator: Verdict and Sections V1--V6
+      reviewed_hash: sha256:bc62301610bbab4dcf41197d6aaa255ede307d69d6c151c7c13dd1640e0f1ae4
+    - path: se/reviews/se_task006_review_20260817.md
+      kind: review
+      note: 'independent non-author review 2026-08-17 of the task-006 clearance (12 FAIL -> 0): PASS-WITH-FIXES,
+        no blocking defect. Its decisive evidence is a 2x2 cross-matrix the executor did not run - the
+        tool edit applied to the UN-FIXED tree clears zero FAILs (12 -> 12), so no FAIL was cleared by
+        weakening the checker. It also discharged the task-009 relevance audit for all 26 lean.rel declarations
+        and found six residual soft spots in the checker (F1-F6).'
+      scope: Reviews the checker repairs that reduce twelve false failures to zero and verifies that no
+        check was weakened; this is tool/record coverage rather than a new proof of the Tier-2 mathematics.
+      locator: Sections V1--V6 and True counts
+      reviewed_hash: sha256:bc62301610bbab4dcf41197d6aaa255ede307d69d6c151c7c13dd1640e0f1ae4
+    - path: se/reviews/se_lean_t2b_review_20260817.md
+      kind: review
+      note: 'independent non-author review 2026-08-17 of the tier-2b increment AND the lean_dag_check
+        current-loader track: PASS-WITH-FIXES, 4 fixes none blocking, 124/124 declarations axiom-clean,
+        no weakening, goal.Claim byte-identical. Extends the CERTIFIED* basis to tier-2b and closes the
+        scope gap its own fix 1 identified.'
+      scope: Checks the Tier-2b follow-up and current YAML loader, including rebuild, census, no-weakening,
+        arithmetic, tooling, and the corrected discharged-field count.
+      locator: Sections V1--V7 and Corrected field count
+      reviewed_hash: sha256:bc62301610bbab4dcf41197d6aaa255ede307d69d6c151c7c13dd1640e0f1ae4
+    - path: se/reviews/se_lean_t2_review_20260817.md
+      kind: review
+      note: independent non-author review 2026-08-17, PASS-WITH-FIXES, 7 fixes none blocking; licenses
+        CERTIFIED* and explicitly withholds PROVED
+      scope: Checks the Tier-2 build, axiom census, no-weakening argument, hook-product arithmetic, and
+        protocol record, with the named external hook-formula boundary retained.
+      locator: Verdict and Sections V1--V6
+      reviewed_hash: sha256:bc62301610bbab4dcf41197d6aaa255ede307d69d6c151c7c13dd1640e0f1ae4
+    evidence:
+    - node: SE.formal.t1
+      kind: node-evidence
+    - path: se/artifacts/se_lean_t2_20260817.md
+      kind: text
+    - path: se/artifacts/se_lean_t2b_20260817.md
+      kind: text
+      note: tier-2b executor report (task-003, task-004, task-005); NOT yet reviewed
+    - path: se/artifacts/se_task006_20260817.md
+      kind: text
+      note: 'frontier task-006 executor report (lean_dag_check 12 FAIL -> 0). Linked here for reachability
+        under FILE_PROTOCOL section 6; it supports NO part of this node''s level. It is bookkeeping and
+        checker work: seven wording-only claim re-syncs, 26 deviation declarations, and two tool edits.
+        Executor-authored and UNREVIEWED - frontier task-009.'
+    runs:
+    - path: se/artifacts/logs_se_lean_t2_20260817/lake_build_clean.txt
+      kind: run
+      note: 'clean rebuild: rm -rf .lake/build && lake build, exit 0, 3059 jobs'
+      result: Execution artifact supporting SE.formal.t2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: se/artifacts/logs_se_lean_t2_20260817/print_axioms.txt
+      kind: run
+      note: 79 declarations, 0 with a non-standard axiom
+      result: Execution artifact supporting SE.formal.t2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: se/artifacts/logs_se_lean_t2_20260817/interface_field_census.txt
+      kind: run
+      note: Cited 25 -> 23 fields; SEFrame 20 -> 19
+      result: Execution artifact supporting SE.formal.t2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: se/artifacts/logs_se_lean_t2_20260817/SHA256SUMS.txt
+      kind: run
+      result: Execution artifact supporting SE.formal.t2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: se/artifacts/logs_se_lean_t2b_20260817/lake_build_clean.txt
+      kind: run
+      note: 'tier 2b: clean rebuild rm -rf .lake/build && lake build, exit 0, 3061 jobs'
+      result: Execution artifact supporting SE.formal.t2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: se/artifacts/logs_se_lean_t2b_20260817/print_axioms.txt
+      kind: run
+      note: 'tier 2b: 124 declarations, 0 with a non-standard axiom'
+      result: Execution artifact supporting SE.formal.t2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: se/artifacts/logs_se_lean_t2b_20260817/interface_field_census.txt
+      kind: run
+      note: 'tier 2b: Cited 23 -> 21; SEFrame 19 -> 21; 18 surviving tier-1 fields byte-identical'
+      result: Execution artifact supporting SE.formal.t2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: se/artifacts/logs_se_lean_t2b_20260817/goal_claim_check.txt
+      kind: run
+      note: 'tier 2b: goal.Claim and SE.Cconst unchanged; the tier-1 chain files untouched'
+      result: Execution artifact supporting SE.formal.t2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: se/artifacts/logs_se_lean_t2b_20260817/tier2a_ledger_recheck.txt
+      kind: run
+      result: Execution artifact supporting SE.formal.t2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: se/artifacts/logs_se_lean_t2b_20260817/definition_crosscheck.txt
+      kind: run
+      note: 'tier 2b: exact-rational cross-check (tools/se_hook_definition_crosscheck.py) that rtopHook
+        and p0Hook ARE the Frame-Robinson-Thrall evaluations of eq:rtop and eq:parameters-can, that the
+        two-sided omega range holds, and that the single row maximizes the hook product. 35183 checks,
+        0 failures; the upper bound is attained in 55 cases, all at j = 1.'
+      result: Execution artifact supporting SE.formal.t2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: se/artifacts/logs_se_lean_t2b_20260817/checkers.txt
+      kind: run
+      result: Execution artifact supporting SE.formal.t2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: se/artifacts/logs_se_lean_t2b_20260817/SHA256SUMS.txt
+      kind: run
+      result: Execution artifact supporting SE.formal.t2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: se/artifacts/logs_se_task006_20260817/14_lean_dag_check_se_after.txt
+      kind: run
+      note: 'task-006: lean_dag_check --problem se, 0 FAIL / 18 WARN / 7 INFO, exit 0'
+      result: Execution artifact supporting SE.formal.t2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: se/artifacts/logs_se_task006_20260817/20_lake_build_clean.txt
+      kind: run
+      note: 'task-006 re-verification: clean rebuild exit 0, 3061 jobs, unchanged from tier 2b'
+      result: Execution artifact supporting SE.formal.t2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: se/artifacts/logs_se_task006_20260817/22_print_axioms.txt
+      kind: run
+      note: 'task-006 re-verification: 124/124 declarations axiom-clean, unchanged from tier 2b'
+      result: Execution artifact supporting SE.formal.t2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+    - path: se/artifacts/logs_se_task006_20260817/SHA256SUMS.txt
+      kind: run
+      result: Execution artifact supporting SE.formal.t2 at the exact finite, formal, or computational
+        scope stated in the linked output.
+  caveats:
+  - The hook-length formula (Frame-Robinson-Thrall) is CITED, not formalized. It is the sole content of
+    the added rho_hook field and therefore the sole thing the discharged estimates rest on.
+  - rho_ge_one had its scope narrowed to d < K n, the hypothesis both call sites already carry. Declared,
+    not silent.
+  - c = 4 is fixed in denom/br/goal.Claim. Asymptotics unchanged (same constant 9/(18+4sqrt6+3sqrt10),
+    same n >= 27, same eps_n -> 0), but the finite-n guarantee is 0.43x/0.71x/0.96x the c = 0 instance
+    at n = 27/1e3/1e6. The smallest constant the data support is about 0.219, so 4 is valid but loose.
+    (Review fix F2, recorded 2026-08-17.)
+  - SE.denom.taper.Claim gained a conjunct, so denom.composition has a strictly stronger hypothesis than
+    tier-1. Harmless because taper.holds is unconditional, but it is a statement change the executor report
+    had omitted.
+  - 'pending-review: authored by the executor; the current review-gated promotion rule bars a completion tier until
+    an independent review is archived on disk and cited here.'
+  - 'SCOPE OF THE CERTIFIED* LEVEL (2026-08-17, tier 2b). The archived independent review se/reviews/se_lean_t2_review_20260817.md
+    examined the TIER-2a delivery (Cited 25 -> 23). The tier-2b increment of the same day (Cited 23 ->
+    21: omega_le, omega_pos, rtop_le_rho and rtop_pos discharged; rho_hook sharpened to rho_isGreatest;
+    sector_hook and admissible_window added; the three SelfTest models reworked) is EXECUTOR-AUTHORED
+    AND NOT YET REVIEWED. Its own evidence is mechanized only (clean rebuild exit 0, 3061 jobs, 124 axiom-clean
+    declarations), which the current evidence-level rules caps at NUMERICAL. The node level was left at CERTIFIED*
+    on the commissioning instruction; read it as CERTIFIED* for the tier-2a delivery and NUMERICAL/pending-review
+    for the tier-2b increment until frontier task-007 is discharged.'
+  - 'TIER 2b, added assumption strength, declared. (i) rho_isGreatest is the IsGreatest form of tier 2a
+    rho_hook on the wider window d < n: strictly stronger than the attainment form, so the admissible-frame
+    class shrank again. It is satisfiable and satisfied: SE.rowShape is proved to be the maximizing shape
+    (SE.isGreatest_rtopHookSet), and all three SelfTest models carry it. (ii) sector_hook is one field
+    bundling three conjuncts (the sector shape datum is a shape of j; r_top and omega ARE their hook expressions).
+    THE COUNT REPORTED IS THE FIELD COUNT: Cited carries 21 assumption fields (23 - 4 discharged + 2 added)
+    and SEFrame carries 21 carrier data. The conjunct-level arithmetic previously offered beside it ("23
+    - 4 + 4 = 23 conjunct by conjunct") is WITHDRAWN as of 2026-08-17 (tier-2b review fix 4, frontier
+    task-008): it was not the conjunct count either, because sector_hook is not the only bundling field
+    - rho_isGreatest unfolds to two conjuncts (IsGreatest S a = a in S AND a in upperBounds S) and admissible_window
+    to two (1 <= j AND 3j <= n), and an honest conjunct ledger would have to unfold every surviving tier-1
+    field as well. One number is reported, not two. What is invariant under any counting convention, and
+    is the fact that matters: NO conjunct added at tier 2b is QUANTITATIVE - each is a definitional identification
+    (sector_hook), a maximality statement about the same hook expressions (rho_isGreatest), or the manuscript''s
+    own standing admissibility window (admissible_window). None is an estimate, a numerical constant,
+    or a bound taken on trust. (iii) admissible_window assumes 1 <= j and 3j <= n for admissible sectors:
+    n >= 3j is literally in the papers admissibility definition, and j = k-1 >= 1 is the displayed standing
+    hypothesis of the project proof record where those sectors are defined. Without it omega_pos is FALSE
+    under the hook evaluation, since omega = 0 at j = 0.'
+  - 'TIER 2b, no weakening: all 18 tier-1 Cited fields that survive to tier 2b have BYTE-IDENTICAL statements
+    (se/artifacts/logs_se_lean_t2b_20260817/interface_field_census.txt), and the four fields discharged at
+    tier 2b became theorems with their tier-1 binders and conclusions unchanged - no scope narrowing was
+    needed, because admissible_window supplies the window from admissibility itself. goal.Claim still
+    concludes the same constant 9/(18+4sqrt6+3sqrt10) over the same range n >= 27 with the same eps_n
+    -> 0 (goal.lean was not touched at tier 2b).'
+  - 'The discharge rests on ONE cited external fact, named in the Lean interface: the Frame-Robinson-Thrall
+    hook-length formula (absent from Mathlib v4.31.0), plus the attainment of a maximum over the partitions
+    of d. Nothing quantitative is assumed.'
+  - 'Declared scope narrowing: `rho_ge_one` was assumed for all (n,d) at tier 1 and is proved for d <
+    K n at tier 2; both of its call sites already carry that hypothesis, so the tier-1 chain is unchanged.
+    See se/artifacts/se_lean_t2_20260817.md section 3 item 5.'
+frontier:
+  task-012:
+    task: 'The successor of task-010(b), registered rather than dropped when task-010 closed (2026-08-17).
+      The 15 surviving check-4 WARNs of `tools/lean_dag_check.py --problem se` are the honest residue
+      of rulings R3/R4 and are ACCEPTED as WARNs, not repaired: check 4 declares itself a TEXTUAL APPROXIMATION
+      ("a sound check needs elaboration") and looks for a child''s name inside the composition theorem
+      text, so a premise that legitimately arrives as an `Interface.Cited` field or as an imported grandchild
+      has no such name to find. The DECISION taken today is that no severity change and no textual patch
+      is defensible; what would actually close it is one of exactly two things, and this task is to do
+      one of them: (a) elaboration-level checking - resolve each composition theorem''s binders through
+      the Lean environment (e.g. a `lake env lean` script emitting the hypothesis types) and compare THOSE
+      against the route premises, or (b) extend the task-006 declaration channel to check 4, i.e. a per-premise
+      `premise-in-composition-as: <child> - <the Cited field or parameter that carries it>` entry, with
+      the same anti-rubber-stamp hygiene the `rel` check already enforces. Option (b) is bookkeeping and
+      would make the checker''s coverage honest without deciding anything mathematical; option (a) is
+      the real check. Neither is a severity change.'
+    kind: task
+    since: '2026-08-17'
+  task-014:
+    task: 'Second-generation checker soft spots found by the task-013 review''s own probes (`se/reviews/se_frontier_review_20260817.md`,
+      R1-R5; it would gate the next promotion on R1, R3, R5). R2/NEW-1: the F1 gate is a SYNTAX tax, not
+      a substance gate - a mechanism of eight backticked `q`s clears 24 chars / 8 words / 8 anchors at
+      0 FAIL, so fold NEW-1 into the F2 relevance disclosure instead of claiming F1 closed junk. R3/NEW-5:
+      `descendants_of()` walks all route premises without consulting `route_disabled_reason()`, so an
+      `import-not-child` licence can be earned across a section-4-DISABLED route (probe imported the REFUTED/DEAD
+      `trace.r1` at 0 FAIL); gate it with the predicate the tool already factored out for checks 5/7c,
+      or FAIL when the imported subject is REFUTED. Latent - no live instance today. R5 and the remaining
+      items are enumerated in the review.'
+    kind: task
+    since: '2026-08-17'
+  task-015:
+    task: 'THE FUNDAMENTAL LIMIT of hash-based anti-drift, to be stated in the formalization synchronization rule rather
+      than left as a review finding (task-013 review, probe NEW-4). A MEANING change can be laundered
+      past the ENTIRE machinery with a fully self-consistent re-sync: the probe narrowed SE.br''s claim
+      to n >= 10^6 and then updated `claim_hash`, `source_claim_hash`, the module''s FROZEN CLAIM text
+      AND its header digest - 0 FAIL, exit 0. No hash check can catch this by construction, because every
+      record agrees; only a human-or-independent-reviewer judgement on whether the claim still says the
+      same thing can. Consequence to record: the section-7 hash gates prove SYNCHRONY, never FIDELITY,
+      and a re-sync event must therefore always carry an explicit meaning-vs-wording judgement (which
+      the two Class-A clearances of 2026-08-17 did carry, per commission - that discipline is now load-bearing,
+      not optional).'
+    kind: task
+    since: '2026-08-17'
+events:
+  formalization-registered-2026-08-17:
+    date: '2026-08-17'
+    type: created
+    summary: Registered the second-stage Lean formalization target before carrying out the additional
+      mechanization work.
+    sources:
+    - path: se/proof-dag/nodes/SE.formal.t1.yaml
+      kind: text
+  mechanization-completed-2026-08-17:
+    date: '2026-08-17'
+    type: level-change
+    from: OPEN
+    to: NUMERICAL
+    summary: The linked Lean development built without sorry or project-specific axioms and discharged
+      the scoped second-stage obligations recorded by this node.
+    sources:
+    - path: se/artifacts/se_lean_t2_20260817.md
+      kind: text
+    - path: se/artifacts/logs_se_lean_t2_20260817/lake_build_clean.txt
+      kind: run
+    - path: se/artifacts/logs_se_lean_t2_20260817/print_axioms.txt
+      kind: run
+  independent-review-completed-2026-08-17:
+    date: '2026-08-17'
+    type: review-completed
+    summary: An independent non-author review reproduced the build and arithmetic checks, required
+      non-blocking corrections, and recommended a conditional completion level.
+    sources:
+    - path: se/reviews/se_lean_t2_review_20260817.md
+      kind: review
+  independent-review-promotion-2026-08-17:
+    date: '2026-08-17'
+    type: level-change
+    from: NUMERICAL
+    to: CERTIFIED*
+    summary: The node was promoted only to the conditional level licensed by the independent review;
+      the external hook-formula and stated scope restrictions remain explicit caveats.
+    sources:
+    - path: se/reviews/se_lean_t2_review_20260817.md
+      kind: review

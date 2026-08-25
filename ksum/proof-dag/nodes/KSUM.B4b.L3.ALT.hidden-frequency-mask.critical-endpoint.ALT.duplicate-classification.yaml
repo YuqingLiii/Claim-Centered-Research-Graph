@@ -1,0 +1,37 @@
+id: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.duplicate-classification
+aliases:
+- B4bL3AltCriticalDuplicateClassification
+claim: 'At the critical hidden-frequency promise, determine whether coherent duplicate testing and
+
+  variable-time classification can isolate enough singleton positions to detect the unique cross
+
+  match in `o(N^(2/3))` queries; otherwise derive a precise ceiling for this algorithm architecture.'
+assessment:
+  level: OPEN
+  summary: '**OPEN — the scoped indexed/variable-time architectures are slower than the cap.** A promise-calibrated
+    same-side role test costs `O-tilde(sqrt(q))` on both branches, but every true or false singleton still
+    needs a zero-versus-one opposite-list search of cost `Theta(sqrt(N))`. Even granting ideal root-sum-square
+    variable-time composition gives `O-tilde(sqrt(Nq))=O-tilde(N^(5/6))`; exact singleton generation plus
+    a walk costs `O-tilde(N^(17/18))`. This does not exclude a non-indexed global classifier, so the node
+    remains OPEN/pending-review rather than REFUTED.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L3_hidden_frequency_upper_attack_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_multiscale_frequency_candidate_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_hidden_frequency_critical_adversary_attempt_20260721.md
+      kind: text
+    - path: ksum/artifacts/ksum_L3_critical_nonsampling_upper_attacks_20260721.md
+      kind: text
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint
+      kind: node-evidence
+  caveats:
+  - 'pending-review: the cited evidence has not completed an independent review gate'
+frontier:
+  task-001:
+    task: "Any continuation must leave the indexed branch model and explain how it globally shares the\n\
+      \  `Theta(q)` long opposite-list negative searches; the audited variable-time theorem already\n\
+      \  charges them."
+    kind: task
+    since: '2026-08-16'

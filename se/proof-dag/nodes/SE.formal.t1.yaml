@@ -1,0 +1,52 @@
+id: SE.formal.t1
+role: tool
+aliases:
+- FT1
+claim: 'SE.formal.t1 — **Tier-1 formalization target**: a Lean 4 + Mathlib development in which the
+
+  four frozen hypotheses H1 (`[[SE.denom.Phi.legal.trace.t6]]`), H2
+
+  (`[[SE.denom.Phi.legal.gram.interface]]`), H3 (`[[SE.denom.Phi.legal.omega.interface]]`) and H4
+
+  (`[[SE.denom.Phi.legal.sect]]`) are stated as explicit hypotheses, and the ASSEMBLY (conditional
+
+  Theorem B) is derived from them: taper arithmetic, the exact discrete maximum
+
+  `max_{0≤d<K} d(K−d−1) = ⌊(K−1)²/4⌋`, defect-orthogonal regrouping, the envelope, and the closed
+
+  constants `M = (4√6+3√10)/18`, `1/(2(1+M)) = 9/(18+4√6+3√10) = 0.24138528147545817331…`.
+
+
+  Success criterion for this node: the development COMPILES with `sorry` occurring ONLY at
+
+  (i) the four hypotheses, and (ii) explicitly enumerated, individually named imported lemmas that
+
+  carry their own on-disk provenance — so that the file exhibits the project''s trust boundary
+
+  mechanically. This node does NOT prove any mathematics: a green Lean build here means the
+
+  CONDITIONAL DERIVATION is machine-checked, nothing more.'
+assessment:
+  level: NUMERICAL
+  summary: NUMERICAL. The 2026-07-30 independent Lean review passed the conditional derivation and declaration
+    census after scoped fixes. This level records a green, sorry-free conditional build; it does not establish
+    the four mathematical hypotheses.
+  basis:
+    evidence:
+    - node: SE.goal
+      kind: node-evidence
+    - node: SE.denom.Phi.legal.trace.t6
+      kind: node-evidence
+    - node: SE.denom.Phi.legal.gram.interface
+      kind: node-evidence
+    - node: SE.denom.Phi.legal.omega.interface
+      kind: node-evidence
+    - node: SE.denom.Phi.legal.sect
+      kind: node-evidence
+    reviews:
+    - path: se/reviews/se_lean_t1_review_20260730.md
+      kind: review
+    runs:
+    - path: se/artifacts/logs_se_lean_20260730
+      kind: run
+      result: Lean tier-1 build and axiom census completed

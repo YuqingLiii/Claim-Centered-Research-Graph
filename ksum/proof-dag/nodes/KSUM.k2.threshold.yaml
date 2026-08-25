@@ -1,0 +1,91 @@
+id: KSUM.k2.threshold
+role: outcome
+aliases:
+- K2Threshold
+claim: Fix c>0. For all sufficiently large N and every cyclic modulus q>=cN, Q(2-Sum_{Z_q,t,N})=Theta_c(N^(2/3))
+  for t=0 at either parity of q, and for every target t when q is odd.
+routes:
+  linear-alphabet-threshold:
+    premises:
+    - KSUM.A1b
+    assumptions:
+      abi-claw-lower-bound:
+        kind: external-theorem
+        statement: For 2<=kappa<n, Q(Claw_(n->kappa))=Omega(sqrt(n) kappa^(1/6)).
+        source:
+          path: ksum/lean/KSUM/Interface.lean
+          kind: text
+          locator: The `abi` field documentation
+      range-independent-upper-bound:
+        kind: external-theorem
+        statement: The standard subset-finding/element-distinctness quantum walk gives Q(2-Sum)=O(N^(2/3))
+          independently of q.
+        source:
+          path: ksum/artifacts/reference_childs_eisenberg_2005_subset_finding.md
+          kind: text
+          locator: Section 2 and source lines 276--285
+      query-model-transfer:
+        kind: model-fact
+        statement: Restriction, relabeling, and deletion of a frozen coordinate preserve the required
+          inequalities up to constants. The odd-q translation is proved inside the route.
+        source:
+          path: ksum/lean/KSUM/Interface.lean
+          kind: text
+          locator: The `restrict`, `relabel`, and `freeze` field documentation
+    implication: For q below N choose kappa=floor((q-1)/2)=Theta_c(N); for q at least N choose kappa=n-1.
+      KSUM.A1b transfers the ABI lower bound in both cases, while the cited range-independent upper bound
+      supplies the matching O(N^(2/3)) side.
+    proof:
+      sketch: The lower-bound half and its two alphabet regimes are recorded by the threshold theorem
+        and its threshold_large and threshold_small_abi cases in the linked Lean source; the upper-bound
+        half is the separately cited subset-finding theorem.
+      sources:
+      - path: ksum/lean/KsumAudit/MainLine.lean
+        kind: text
+        locator: The `threshold`, `threshold_large`, and `threshold_small_abi` theorems
+    assessment:
+      level: PROVED
+      summary: The two q-regimes, parity/target scope, constant dependence, and use of ABI rather than
+        Tani were independently checked.
+      basis:
+        reviews:
+        - path: ksum/reviews/ksum_composition_layer_review_20260730.md
+          kind: review
+          locator: section 3.4 and regime-coverage audit
+          reviewed_hash: sha256:286b106764ff9c640cab56b2f48fcf61c3baa5b3b3a135dd97a19e7c44ae4722
+        - path: ksum/reviews/ksum_lean_statement_fidelity_review_20260731.md
+          kind: review
+          locator: 'T1 table: cor:threshold'
+          reviewed_hash: sha256:286b106764ff9c640cab56b2f48fcf61c3baa5b3b3a135dd97a19e7c44ae4722
+assessment:
+  level: PROVED
+  summary: The reviewed reduction lowers the sufficient cyclic 2-Sum alphabet threshold for the tight
+    N^(2/3) regime to linear order in N, with the stated parity and target scope.
+  basis:
+    routes:
+    - linear-alphabet-threshold
+    evidence:
+    - path: ksum/artifacts/ksum_lean_T1_k2_main_line_20260730.md
+      kind: text
+    - node: KSUM.LEAN.T1.k2-main-line
+      kind: node-evidence
+    reviews:
+    - path: ksum/reviews/ksum_composition_layer_review_20260730.md
+      kind: review
+      locator: section 3.4 and regime-coverage audit
+      reviewed_hash: sha256:aa27134f66a004daf08fbfc5dc537c806d3a8801ce4b683dfa205ef562f27184
+    - path: ksum/reviews/ksum_lean_statement_fidelity_review_20260731.md
+      kind: review
+      locator: 'T1 table: cor:threshold'
+      reviewed_hash: sha256:aa27134f66a004daf08fbfc5dc537c806d3a8801ce4b683dfa205ef562f27184
+  caveats:
+  - The linked Lean development formalizes the lower-bound half of the threshold statement; the matching
+    upper bound remains an explicitly cited external theorem.
+events:
+  claim-registered-2026-08-19:
+    date: '2026-08-19'
+    type: created
+    summary: Registered the linear-alphabet threshold consequence as a canonical claim node.
+    sources:
+    - path: ksum/reviews/ksum_composition_layer_review_20260730.md
+      kind: review

@@ -1,0 +1,29 @@
+# exact commands run for the SE tier-2 delivery (node SE.formal.t2), 2026-08-17
+# host: Darwin 24.3.0 arm64, macOS 15.3.1
+# elan: elan 4.2.3 (b6cec7e10 2026-06-08)
+# lake: Lake version 5.0.0-src+68218e8 (Lean version 4.31.0)
+# toolchain pinned by se/lean/lean-toolchain: leanprover/lean4:v4.31.0
+# mathlib rev (lake-manifest.json): fabf563a7c95a166b8d7b6efca11c8b4dc9d911f
+# .lake/packages came from the recovered Windows copy and was USABLE as-is:
+#   no 'lake exe cache get' was needed (the prebuilt Mathlib oleans loaded on darwin/arm64).
+
+## 0. node registration and DAG validation (repo root)
+python3 tools/proof_dag_check.py --problem se --write-generated      # -> exit 0
+python3 tools/lean_dag_check.py --problem se                         # -> exit 2 (SE not enabled in that tool's registry)
+python3 tools/check_event_append_only.py --base-ref HEAD             # -> exit 0
+
+## 1. baseline build of the tier-1 tree, before any tier-2 edit (se/proof-dag/lean)
+lake build                                                           # -> exit 0 (cached, 3056 jobs)
+
+## 2. incremental builds during the tier-2 work
+lake build SE.Support.Hook
+lake build SE.Support.RhoEnvelope
+lake build SE.Support.BranchFactors
+lake build SE.denom.taper
+lake build
+
+## 3. the recorded clean rebuild (lake_build_clean.txt)
+rm -rf .lake/build && lake build                                     # -> exit 0, 3059 jobs
+
+## 4. trust greps (no sorry / axiom / native_decide added by this development)
+grep -rn 'sorry\|native_decide\|^axiom ' SE.lean SE/                 # -> only prose mentions, see grep_trust.txt

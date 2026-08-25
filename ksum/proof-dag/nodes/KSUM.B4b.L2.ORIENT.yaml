@@ -1,0 +1,30 @@
+id: KSUM.B4b.L2.ORIENT
+role: obstruction
+aliases:
+- B4bL2Orient
+claim: For odd `q=2r+1>=5`, `m>=2`, and `s>=2`, in the hard class with identical phase-3 blocks, one common
+  exact pair total `s` on every nonfixed pair and block, a raw product outer tensor, exact `S_N` averaging/normalization,
+  and hence `N=mrs`, cross-block true-NO coherence costs exactly `2^{-r(m-1)}` and the normalized correlation
+  is at most `1/2`.
+assessment:
+  level: PROVED
+  summary: '**PROVED** exactly for the class in the Claim; not a theorem about all averaged compositions.'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L2_phase5.md
+      kind: text
+    - node: KSUM.B4b.L2
+      kind: node-evidence
+    reviews:
+    - path: ksum/reviews/ksum_L2p5_review.md
+      kind: review
+      scope: Checks the common-total orientation-coherence calculation and the exact 2^{-r(m-1)} correlation
+        loss for the named identical-block construction class.
+      locator: Rule-7 execution log and Target verdict T2
+      reviewed_hash: sha256:2716962f9b33d7e285c65188fe39379c818d1413a4e94f2cb4ca5920f404e3ff
+frontier:
+  task-001:
+    task: The named unequal-total, nonidentical, non-product, correlated-orientation, and alternative-inner
+      escapes remain unexamined by this theorem.
+    kind: task
+    since: '2026-08-16'

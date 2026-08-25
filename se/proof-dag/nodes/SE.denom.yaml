@@ -1,0 +1,102 @@
+id: SE.denom
+aliases:
+- DEN
+claim: 'SE.denom — max_i ||Gamma o Delta_i|| = O(1) : THE OPEN PROBLEM (AND)'
+routes:
+  joint:
+    premises:
+    - SE.denom.decomp
+    - SE.denom.X
+    - SE.denom.Y
+    - SE.denom.Phi
+    - SE.denom.familysplit
+    - SE.denom.crossk
+    - SE.denom.taper
+    - SE.denom.assembly
+    implication: 'decomp AND X AND Y AND Phi AND familysplit AND crossk AND taper AND assembly imply denom:
+      the legal diamond representative splits into the X/Y/Phi channels (decomp, familysplit); blocks
+      of distinct alphabet defect are mutually orthogonal on both sides (crossk), so the norm is the maximum
+      over defects of a per-defect sum bounded termwise by the channel estimates (X, Y, Phi) weighted
+      by the taper coefficients (taper); the aggregation and the resulting absolute constant are the envelope
+      calculus (assembly). Hence max_i ||Gamma o Delta_i|| = O(1) once the Phi channel is O(1).'
+    proof:
+      sketch: inline (## Composition proof); executed instance for the unconditional envelope = se/reviews/se_cor16_certification_20260723.md
+        A.27-A.31 (Phase A, from-scratch)
+      sources:
+      - path: se/reviews/se_cor16_certification_20260723.md
+        kind: text
+    assessment:
+      level: PROVED
+      summary: se/reviews/se_cor16_certification_20260723.md (rule-7 CERTIFY, from-scratch re-derivation)
+        + se/reviews/se_human_review_20260719.md sec 8.5 (envelope calculus CONFIRMED) + se/reviews/se_external_rereview2_20260730.md
+      basis:
+        reviews:
+        - path: se/reviews/se_human_review_20260719.md
+          kind: review
+          scope: Human cross-stack review identifying the unresolved transport, Gram, twirl, orbit, sandwich,
+            and quantifier gaps in the attempted O(1) denominator route; retained as adversarial evidence,
+            not as a positive discharge of those gaps.
+          locator: Sections 1--7 and Final decision
+          reviewed_hash: sha256:c188bcb6b6b2f0b5a032198c3e2f8da9fa546a96aaab24c30f3743e0c277bc40
+        - path: se/reviews/se_external_rereview2_20260730.md
+          kind: review
+          scope: Checks the conditional channel assembly, constants, and absence of a hidden fifth obligation,
+            while keeping the four unresolved Phi premises explicit.
+          locator: Sections T2'.1--T2'.2 and T3'.1
+          reviewed_hash: sha256:c188bcb6b6b2f0b5a032198c3e2f8da9fa546a96aaab24c30f3743e0c277bc40
+      caveats:
+      - the mask factor 2 (equal-symbol part) is part of this aggregation and is proved in the certification,
+        A.10
+assessment:
+  level: OPEN
+  summary: The denominator claim remains OPEN because the legal Phi channel is unresolved. The linked
+    evidence proves the X and Y channels and the unconditional n^(1/6) envelope, but not the target O(1)
+    denominator.
+  basis:
+    routes:
+    - joint
+  caveats:
+  - The linked Lean formalization checks a conditional denominator composition and does not establish
+    the OPEN Phi obligations.
+formalization:
+  lean:
+    module: SE.denom
+    file: se/lean/SE/denom.lean
+    claim: Claim
+    state: composition-checked
+    claim_hash: sha256:f12812b12baf1dc19543bb712e0f50f2d39680c0e28abdc2f90eb542d99b17a0
+    sync_state: current
+    theorems:
+    - composition
+    rel:
+    - Interface.Cited (decomp/X/Y/familysplit/crossk as named fields, ruling R4)
+    - SE.denom.taper
+    - SE.denom.Phi.legal.tame
+    - 'premise-not-imported: SE.denom.decomp — enters as the cited fields `Cited.block_triangle` (the
+      four-term split inside one defect) and, jointly with SE.denom.familysplit, `Cited.mask_from_D` (steps
+      1-2 of the prose composition block: reduction to one query position and the factor 2; certification
+      A.9-A.10, A.32). Ruling R4 / deviation D3.'
+    - 'premise-not-imported: SE.denom.X — enters as the cited field `Cited.x_bound` (`F.xNorm n d <= F.rho
+      n d` for d < K n); the node is PROVED on disk and is cited, not reproved, at tier 1. Ruling R4 /
+      deviation D3.'
+    - 'premise-not-imported: SE.denom.Y — enters as the cited field `Cited.y_bound`; the node is PROVED
+      on disk and is cited, not reproved, at tier 1. Ruling R4 / deviation D3.'
+    - 'premise-not-imported: SE.denom.familysplit — enters as the cited field `Cited.mask_from_D` (`F.maskNorm
+      n <= 2 * F.dNorm n`), jointly with SE.denom.decomp. Ruling R4 / deviation D3.'
+    - 'premise-not-imported: SE.denom.crossk — enters as the cited field `Cited.defect_orth` (`||D|| =
+      max_d ||D_d||`, of which only the <= half is used). Ruling R4 / deviation D3.'
+    - 'premise-not-imported: SE.denom.Phi — the node carries no linked formalization; its matched-defect
+      half enters as the cited fields `Cited.cDiag_bound`, `Cited.cDiag_zero`, `Cited.cLower_zero`, and
+      its OPEN half is exactly what the imported grandchild-chain module tame.Claim carries. Ruling R4
+      / deviation D3.'
+    - 'premise-not-imported: SE.denom.assembly — no composition theorem exists for this premise (coordinator
+      ruling R6: the node is a declared dependency-modelling debt with an empty premise list). Its envelope
+      calculus is proved in the support module SE/Support/Envelope.lean (ruling R1), which this module
+      imports as a non-node support import.'
+    - 'import-not-child: SE.denom.Phi.legal.tame — DESCENDANT reached by skipping the two intermediate
+      nodes SE.denom.Phi and SE.denom.Phi.legal, neither of which carries a formalization block, so no
+      module for them exists to import. tame.Claim is consumed directly as a Claim parameter of `denom.composition`.
+      Ruling R4 / deviation D3.'
+    build: se/artifacts/logs_se_lean_20260730/
+    source_claim_hash: sha256:f12812b12baf1dc19543bb712e0f50f2d39680c0e28abdc2f90eb542d99b17a0
+    synced: '2026-08-17'

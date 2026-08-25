@@ -1,0 +1,63 @@
+id: SE.denom.Phi.legal.omega
+aliases:
+- OMEGA
+claim: For q=2n, each admissible sector satisfies ||C~_(lambda,xi)|| <= sqrt(15/8) r_top(2n,j,theta) sqrt(j/(n-j)).
+  After the sectorization lift, the global block satisfies ||C_(j+1->j)|| <= sqrt(15/8) rho_j sqrt(j/(n-j)),
+  where rho_j=max_(theta partition j) r_top(2n,j,theta).
+routes:
+  joint:
+    premises:
+    - SE.denom.Phi.legal.omega.interface
+    - SE.denom.Phi.legal.gram
+    - SE.denom.Phi.legal.sect
+    implication: 'omega.interface (H3) together with the canonical Gram bound and H4 implies this node''s
+      omega-decay consequence: the exact sandwich C*C = C_N^{1/2} G_can C_N^{1/2} with the full-multiplicity
+      NO polar C_N = r_top*omega*I, plus ||G_can|| <= (15/4) r_top and omega <= j/(2(n-j)), gives the
+      PER-SECTOR bound ||C~_{lambda,xi}||^2 <= (15/8) r_top^2 j/(n-j); the GLOBAL bound with rho_j = max_theta
+      r_top then requires H4 (sect) and is not obtainable from the sandwich alone.'
+    proof:
+      sketch: The implication is supported by the linked review and linked Lean formalization.
+    assessment:
+      level: CERTIFIED*
+      summary: se/reviews/se_external_rereview2_20260730.md T3'-N1 (the quantifier split was this reviewer's
+        finding; the corrected two-part statement was verified in the external audit)
+      basis:
+        reviews:
+        - path: se/reviews/se_external_rereview2_20260730.md
+          kind: review
+          scope: Checks the operator sandwich and per-sector omega-decay bound and explains that the global
+            norm requires H4 and a maximum over theta.
+          locator: Sections T2'.1, second and third steps, and T3'-N1
+          reviewed_hash: sha256:a8db74e5eaeb9e639feffb34cfaa963fa767cdddbc2d99783118cefbb9142a1d
+      caveats:
+      - Certified conditionally on the listed premises; this route-level assessment does not by itself
+        promote the parent node.
+assessment:
+  level: CONJECTURED
+  summary: The omega-decay bound remains CONJECTURED. Its downstream norm and taper arithmetic are supported,
+    but the required Gram, orbit-sum, and termwise operator identities are not fully established.
+  basis:
+    evidence:
+    - node: SE.denom.Phi.legal.splice
+      kind: node-evidence
+    routes:
+    - joint
+frontier:
+  task-001:
+    task: The human-review-demoted inputs listed in Current status (gram inputs §一-§四; the `C_N` colored-orbit
+      bridge §五; backbone §六) remain unrebuilt; the norm chain + taper arithmetic themselves were confirmed
+      sound (§八.5).
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: '**Statement-scope obligation (external review T2-G4, verified 2026-07-29):** the conditional
+      paper''s H3 assumes only the sandwich `(E)` + the full-multiplicity NO polar — a strict SUB-hypothesis
+      of this node''s Claim (which also bundles the `‖G_can‖` bound, ω-range, and the Theorem-B constant).
+      The paper split is mathematically cleaner; the node should be split into `interface` (= paper H3)
+      and `consequence` (depends on H1∧H2∧H3∧H4) in the repair pass.'
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: Constant improvement (0.2414 → 0.3238) lives in `[[SE.denom.Phi.legal.splice]]` (PARKED).
+    kind: task
+    since: '2026-08-16'

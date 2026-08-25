@@ -1,0 +1,65 @@
+# Re-verification of the TIER-2a ledger se/artifacts/logs_se_lean_t2_20260817/SHA256SUMS.txt against the working tree after tier 2b.
+# OK        = the tier-2a file is byte-identical now, i.e. tier 2b did NOT touch it.
+# SUPERSEDED= tier 2b modified it (the tier-2a bytes are working-tree history with no git
+#             object: HEAD is the tier-1 snapshot f0d686a).  Its new digest is in this
+#             delivery's own SHA256SUMS.txt.
+# MISSING   = the path no longer exists.
+# Digests over LF-normalized bytes, as in the tier-2a ledger.
+
+OK           se/artifacts/logs_se_lean_t2_20260817/command.txt
+OK           se/artifacts/logs_se_lean_t2_20260817/grep_trust.txt
+OK           se/artifacts/logs_se_lean_t2_20260817/interface_diff.txt
+OK           se/artifacts/logs_se_lean_t2_20260817/interface_field_census.txt
+OK           se/artifacts/logs_se_lean_t2_20260817/lake_build_clean.txt
+OK           se/artifacts/logs_se_lean_t2_20260817/lean_dag_check_se_trial.txt
+OK           se/artifacts/logs_se_lean_t2_20260817/print_axioms.txt
+OK           se/artifacts/se_lean_t2_20260817.md
+SUPERSEDED   se/lean/SE.lean 
+             tier2a d44996e79ae9637bf08887320589a985b6b8f5c60fd0bcb95c1b42272c62f7c0 
+             now    2a1893f9c6d7eb39a16a6f859f7689cd2f63683fe78b8949910330acbcf58c68
+OK           se/lean/lakefile.lean
+OK           se/lean/lean-toolchain
+OK           se/lean/lake-manifest.json
+SUPERSEDED   se/lean/SE/Interface.lean 
+             tier2a 06b81622b6cbbcb4c0446a54a9da7b3f0a0482bb92df0e2a9394b72d63f2f727 
+             now    5345e72ac547b1a8cace402e0126718bd4b699ce53c432207242a1a9fe288fba
+SUPERSEDED   se/lean/SE/Trust.lean 
+             tier2a a8235bcdf81ca7bbb4e46aac3842b77a416ddf3873d02e7c5da7018c091ea7c8 
+             now    cd1b2d6e9de20f13dff4b5d9a3130127275daaf94bdbb179256ab7910052d3cb
+SUPERSEDED   se/lean/SE/SelfTest.lean 
+             tier2a bd2d22e70a6e1d73a200307582bd844afb692538f82d737640e07389bb04387a 
+             now    5225601033ed4f993cadcb8358ef7c600776b24910e413de43095f22a6182d6c
+OK           se/lean/SE/br.lean
+OK           se/lean/SE/denom.lean
+OK           se/lean/SE/goal.lean
+OK           se/lean/SE/Support/Defs.lean
+OK           se/lean/SE/Support/Cbrt.lean
+OK           se/lean/SE/Support/Constants.lean
+OK           se/lean/SE/Support/Envelope.lean
+OK           se/lean/SE/Support/Limits.lean
+SUPERSEDED   se/lean/SE/Support/Hook.lean 
+             tier2a 4b394d0d61d2704ff7b37845b0a79a67efaa1ce9b7962b18d53cb094d5d6f8c4 
+             now    4a5709b36af2a307333d385a2c190f7d3487c93dca88572dab40a4f828425294
+SUPERSEDED   se/lean/SE/Support/RhoEnvelope.lean 
+             tier2a ee9e96089c66fb95288ec45134101ef60f71b6d5f2e8b374c0226cac06344f35 
+             now    26d9e6efd7988bc3b3bfd90a77e59d34e5b5bf81fbc4ec6933d09ef1a813a09e
+SUPERSEDED   se/lean/SE/Support/BranchFactors.lean 
+             tier2a 6abac63022f60570680221f85b619a815b326c93881cddf27ca985e9574e6a5b 
+             now    b0dca9eced983be10ad9ed70e113175a8a688c83c9beefd14272756047d3e1a4
+OK           se/lean/SE/denom/taper.lean
+OK           se/lean/SE/denom/Phi/legal/tame.lean
+OK           se/lean/SE/denom/Phi/legal/sect.lean
+OK           se/lean/SE/denom/Phi/legal/trace/t6.lean
+OK           se/lean/SE/denom/Phi/legal/gram/interface.lean
+OK           se/lean/SE/denom/Phi/legal/omega/interface.lean
+SUPERSEDED   se/proof-dag/nodes/SE.formal.t2.yaml 
+             tier2a acdc350ebbfc4c7e6b31ebc6a69f78d696c5459db6e00040844a21d3911a7bd3 
+             now    dc263de206e7bcd5b3f626ffd9ab63cd5aab67f56387da143d25891be2182203
+OK           se/proof-dag/nodes/SE.formal.t1.yaml
+OK           se/proof-dag/nodes/SE.denom.taper.yaml
+OK           se/proof-dag/nodes/SE.denom.assembly.envelope.yaml
+SUPERSEDED   se/lean/README.md 
+             tier2a 3d9d1f08a758040c3165eb877117f3ad06c994eb0815f58351aae8ee5aac7490 
+             now    414c03d8cd73ff36f5457285414c8c25532dc9837c60a90111b77124feecc878
+
+summary: 28 unchanged, 9 superseded by tier 2b, 0 missing

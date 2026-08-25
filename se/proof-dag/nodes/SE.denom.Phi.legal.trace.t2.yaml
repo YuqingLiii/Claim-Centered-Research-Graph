@@ -1,0 +1,37 @@
+id: SE.denom.Phi.legal.trace.t2
+aliases:
+- T2
+claim: '**Route T2 (closed-form/exact evaluation of the long trace):** `Tr(L_h*S_{h,0}*S_{h,0}L_h) = Σ_{s,s''}
+  Tr(Q₀Π_{D_s}P_ξΠ_{D_s''}Q₀P_comp·transport)` depends on fiber pairs (s,s'') only through their two-colored
+  intersection type ⟹ an association-scheme pair sum with few parameters ⟹ a closed form à la the η formulas
+  plausibly exists; (T-a) would then follow by identity + elementary estimate.'
+assessment:
+  level: REFUTED
+  summary: The exact coherent-configuration formula remains reusable, but exact c=2 counterexamples refute
+    the route's universal T-a endpoint. The node is PARKED because the formula may still support a differently
+    formulated joint or cancellation-sensitive route.
+  basis:
+    reviews:
+    - path: se/reviews/logs_se_trace_t5_uniform_ta_normalization_review_20260722/REPORT.md
+      kind: review
+    runs:
+    - path: se/artifacts/logs_se_trace_t5_uniform_ta_two_frame_20260722
+      kind: run
+      result: Execution artifact supporting SE.denom.Phi.legal.trace.t2 at the exact finite, formal, or
+        computational scope stated in the linked output.
+    counterexamples:
+    - path: se/reviews/logs_se_trace_t5_uniform_ta_normalization_review_20260722/REPORT.md
+      kind: counterexample
+      note: Sourced contradiction or counterexample supporting this scoped refutation.
+disposition:
+  state: PARKED
+  reason: The exact coherent-configuration formula remains reusable, but exact c=2 counterexamples refute
+    the route's universal T-a endpoint. The node is PARKED because the formula may still support a differently
+    formulated joint or cancellation-sensitive route.
+  revive: Do not re-enter the refuted raw T-a endpoint; reuse the retained formula only in a separately
+    registered joint or cancellation target.
+frontier:
+  task-001:
+    task: Reuse the exact formula only for a newly stated joint or cancellation-sensitive target; do not
+      reassert the refuted universal cap.
+    kind: task

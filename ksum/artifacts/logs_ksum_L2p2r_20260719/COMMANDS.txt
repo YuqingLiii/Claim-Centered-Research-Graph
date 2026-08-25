@@ -1,0 +1,7 @@
+# Run from repository root on 2026-07-19; no network.
+
+python -m py_compile ksum/tools/ksum_l2p2r_exact_verify.py ksum/tools/ksum_l2p2r_product_obstruction.py
+
+python ksum/tools/ksum_l2p2r_exact_verify.py --output ksum/artifacts/logs_ksum_L2p2r_20260719/exact_review.json
+
+python ksum/tools/ksum_l2p2r_product_obstruction.py --output ksum/artifacts/logs_ksum_L2p2r_20260719/product_obstruction.json

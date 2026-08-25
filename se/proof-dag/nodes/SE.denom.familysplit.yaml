@@ -1,0 +1,50 @@
+id: SE.denom.familysplit
+aliases:
+- FS
+claim: The project witness is the legal restriction of the Belovs--Rosmanis ambient witness, and IDENT-1,
+  IDENT-2, and the diamond assignment remain valid after that restriction.
+routes:
+  joint:
+    premises:
+    - SE.denom.familysplit.ident
+    implication: 'familysplit.ident implies familysplit: IDENT-1/2 identifies our witness with the legal
+      restriction of BR''s own Gamma-tilde, so the three-channel diamond assignment is BR''s algebra restricted
+      legally rather than a new construction; the family split therefore needs no independent justification
+      beyond the identification.'
+    proof:
+      sketch: se/artifacts/se_familysplit_20260718.md
+      sources:
+      - path: se/artifacts/se_familysplit_20260718.md
+        kind: text
+    assessment:
+      level: PROVED
+      summary: 'se/reviews/se_cor16_certification_20260723.md (dependency-closure row: the frozen channel
+        split and signed diamond assignment re-expanded from scratch, A.8-A.9)'
+      basis:
+        evidence:
+        - path: se/reviews/se_cor16_certification_20260723.md
+          kind: text
+        reviews:
+        - path: se/reviews/se_cor16_certification_20260723.md
+          kind: review
+          scope: Checks the normalized legal witness identification and channel decomposition used in
+            the certified lower-bound chain, including the product-level replacement for the defective
+            atomwise transport.
+          locator: Phase A.1--A.4 and Full dependency closure
+          reviewed_hash: sha256:9d24b1d9ce7151f2263fd45144227643643fd06bb5c7e4b0f151262417419152
+assessment:
+  level: PROVED
+  summary: The claim is supported by the linked evidence and independent review.
+  basis:
+    evidence:
+    - node: SE.denom.familysplit.end
+      kind: node-evidence
+    routes:
+    - joint
+    reviews:
+    - path: se/reviews/se_bridge2_reviews_20260718.md
+      kind: review
+      scope: Checks the family identification and all four diamond assignments, including the corrected
+        numerical residual; it does not prove legal cross-k orthogonality.
+      locator: Review 4
+      reviewed_hash: sha256:b711eecda245aea94d0760035969dab0da39fec638f1efbff0f580c592122018

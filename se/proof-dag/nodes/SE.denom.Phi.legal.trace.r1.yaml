@@ -1,0 +1,31 @@
+id: SE.denom.Phi.legal.trace.r1
+aliases:
+- R1DEAD
+claim: '**Dead route (operator-level T-column factorization):** prove (T-a)/(T-b) via maps K_{h,γ} with
+  `B_{h,γ}=K_{h,γ}U_h*`, `U_h*U_h⪯I_T`, and the weighted operator bound `K₀*K₀+Σ_z(δ_z+1)K_z*K_z ⪯ B_θ(q)²I_T`
+  ((F3.40)-(F3.41)).'
+assessment:
+  level: REFUTED
+  summary: '**REFUTED — DEAD.** Reason: the necessary consequence (R3b.3) `B₀*B₀+Σ(δ_z+1)B_z*B_z ⪯ B_θ²I_{dc}`
+    fails by EXACT ratios 17/12 at (4,8,2,θ=(2),(1,1)) and 2 at (4,8,2,θ=(1,1),(1,1)) — each computed
+    twice (fixed-set formula AND literal q!-term BR kernel); no K maps can exist even dropping the output-frame
+    requirement. Independent review CONFIRMED the no-go is real, not a gate artifact, and recommended
+    exactly this REFUTED/DEAD marking with the no-go proposition PROVED as a refutation.'
+  basis:
+    evidence:
+    - path: se/artifacts/se_frames3b_20260719.md
+      kind: text
+    reviews:
+    - path: se/reviews/se_frames3b_review_20260719.md
+      kind: review
+    counterexamples:
+    - path: se/reviews/se_frames3b_review_20260719.md
+      kind: counterexample
+      note: Sourced contradiction or counterexample supporting this scoped refutation.
+disposition:
+  state: DEAD
+  reason: '**REFUTED — DEAD.** Reason: the necessary consequence (R3b.3) `B₀*B₀+Σ(δ_z+1)B_z*B_z ⪯ B_θ²I_{dc}`
+    fails by EXACT ratios 17/12 at (4,8,2,θ=(2),(1,1)) and 2 at (4,8,2,θ=(1,1),(1,1)) — each computed
+    twice (fixed-set formula AND literal q!-term BR kernel); no K maps can exist even dropping the output-frame
+    requirement. Independent review CONFIRMED the no-go is real, not a gate artifact, and recommended
+    exactly this REFUTED/DEAD marking with the no-go proposition PROVED as a refutation.'

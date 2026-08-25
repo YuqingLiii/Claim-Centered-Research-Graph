@@ -1,0 +1,41 @@
+id: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.reachability-sensitive-recording-filtration
+aliases:
+- B4bL3AltCriticalReachabilitySensitiveRecordingFiltration
+claim: 'Define a universal linear recording filtration containing every state actually reachable by a
+
+  `T`-query algorithm on the exact strict promise but strictly smaller than the transferred full
+
+  low-Fourier-degree space, and prove `O(T^(3/2)/N)` progress plus constant output
+
+  anti-concentration through `T=cN^(2/3)`.'
+assessment:
+  level: REFUTED
+  summary: For every promise D and query cap T, the span of all reachable state families is the full restricted
+    degree-at-most-T image tensor workspace, so no strictly smaller universal linear filtration exists.
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_L3_critical_strict_injection_recording_attempt_20260721.md
+      kind: text
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.strict-injection-recording-query
+      kind: node-evidence
+    - node: KSUM.B4b.L3.ALT.hidden-frequency-mask.critical-endpoint.ALT.reachability-sensitive-recording-filtration.ALT.nonlinear-algorithm-dependent-carrier
+      kind: node-evidence
+    counterexamples:
+    - path: ksum/artifacts/ksum_L3_critical_strict_injection_recording_attempt_20260721.md
+      kind: counterexample
+      note: Sourced contradiction or counterexample supporting this scoped refutation.
+disposition:
+  state: DEAD
+  reason: For every promise D and query cap T, the span of all reachable state families is the full restricted
+    degree-at-most-T image tensor workspace, so no strictly smaller universal linear filtration exists.
+  source:
+    path: ksum/artifacts/ksum_L3_critical_strict_injection_recording_attempt_20260721.md
+    kind: text
+frontier:
+  task-001:
+    task: "None for this exact universal linear architecture. Pursue nonlinear or algorithm-dependent\n\
+      \  replacements only in the separately registered successor."
+    kind: task
+    since: '2026-08-16'

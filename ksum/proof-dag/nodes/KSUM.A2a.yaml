@@ -1,0 +1,40 @@
+id: KSUM.A2a
+aliases:
+- A2a
+claim: For k≥3 and R≥2, let ω=2R−1, define u_j=ω^{j−1} for 1≤j≤k−1 and u_k=−(ω^{k−1}−1)/(ω−1), and set
+  P=k(R−1)(ω^{k−1}−1)/(ω−1), M=((2k+1)^{k−1}−1)/2, and V=P+1. Define w_j=V(2k+1)^{j−1} for 1≤j≤k−1, w_k=−Σ_{j<k}w_j,
+  and q=(P+1)(M+1). These are the complete payload, tag, and modulus formulas used by Lemma lem:embed.
+assessment:
+  level: PROVED
+  summary: PROVED. The composition-layer review independently reconstructs the payload/tag formula package,
+    checks its load-bearing use in the exact reduction, and compares the canonical claim with the Lean
+    source. The earlier major-revision review is retained only for its narrower coprimality and statement-correction
+    checks.
+  basis:
+    reviews:
+    - path: ksum/reviews/ksum_composition_layer_review_20260730.md
+      kind: review
+      locator: Sections 2.2, 3.2, and 7f
+      scope: Claim-level audit of the A2a payload/tag formulas, their completeness and parameter roles
+        in A2, and their correspondence with KSUM/A2a.lean.
+      reviewed_hash: sha256:ef7049893c485b6afd214496ec087fcae198ac7ab7371e80152ba05971f41f14
+    - path: ksum/reviews/ksum_rev2_review.md
+      kind: review
+      locator: Items I1--I2 and Overall ruling
+      scope: Revision-only audit of the cutoff and coprimality repairs; this artifact does not by itself
+        grant A2a a completion level.
+      reviewed_hash: sha256:ef7049893c485b6afd214496ec087fcae198ac7ab7371e80152ba05971f41f14
+  caveats:
+  - Text and digest synchronization does not by itself establish that the Lean proposition is equivalent
+    to the natural-language claim; that correspondence remains review-dependent.
+formalization:
+  lean:
+    module: KSUM.A2a
+    file: ksum/lean/KSUM/A2a.lean
+    claim: Claim
+    state: stated
+    claim_hash: sha256:ef7049893c485b6afd214496ec087fcae198ac7ab7371e80152ba05971f41f14
+    sync_state: current
+    build: ksum/artifacts/logs_ksum_lean_reorg_20260730/
+    source_claim_hash: sha256:ef7049893c485b6afd214496ec087fcae198ac7ab7371e80152ba05971f41f14
+    synced: '2026-08-19'

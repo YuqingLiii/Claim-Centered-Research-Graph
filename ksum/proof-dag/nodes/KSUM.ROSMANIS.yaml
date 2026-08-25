@@ -1,0 +1,65 @@
+id: KSUM.ROSMANIS
+role: obstruction
+aliases:
+- Rosmanis
+claim: 'For any `(G, t)` with
+
+  `σ ≠ id` and `q ≥ 3`, the negative set `D₀` of `twoSum` is **never a single orbit** of
+
+  `S_N × C(σ)` — (1) the orbits are parametrized by `(f, λ)` with count `Σ_f p_{≤m}(N−f) ≥ 2`;
+
+  (2) the regularity property Rosmanis''''s ED adversary rests on fails in both precise ways (existence
+
+  already at `q=3, τ=1, N=2`; uniqueness whenever `m ≥ 2`), and the trivial-representation
+
+  multiplicity is `≥ 2` against the ED pattern''''s exactly 1; (3) if `τ = 0` the positive-side building
+
+  blocks are empty. Consequently the regular-representation identification of [Rosmanis14] does not
+
+  apply to `twoSum` for any `σ ≠ id`.'
+assessment:
+  level: NUMERICAL
+  summary: '**NUMERICAL — pending-review at node granularity.** Evidence: the linked proof record, plus
+    the T2 kernel-checked core (unconditional, no `QueryModel`): the count `≥ 2` proved for genuine orbits
+    in both recorded branches, part (2)''s two finite witnesses, and part (3) (`KsumAudit/RosmanisBarrier.lean`,
+    build exit 0, axiom-clean — [T2 report](../../artifacts/ksum_lean_T2_rosmanis_kfloor_20260730.md)).
+    The `(f,λ)` bijection, the count formula, and part (2)''s representation sentence are declared unformalized.
+    Whether an archived broader review covers this proposition at node granularity is unadjudicated (rule
+    7d) — same situation as [JOINTLP](KSUM.B4b.L2.JOINTLP.yaml) and, before its adjudication, [FILT](KSUM.B4b.L2.FILT.yaml).'
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_lean_T2_rosmanis_kfloor_20260730.md
+      kind: text
+    - node: KSUM.C0
+      kind: node-evidence
+    - node: KSUM.L31
+      kind: node-evidence
+    - node: KSUM.LEAN.T2.rosmanis-kfloor
+      kind: node-evidence
+    runs:
+    - path: ksum/artifacts/logs_ksum_lean_T2_20260730
+      kind: run
+      result: Execution artifact supporting KSUM.ROSMANIS at the exact finite, formal, or computational
+        scope stated in the linked output.
+  caveats:
+  - 'pending-review: the cited evidence has not completed an independent review gate'
+frontier:
+  task-001:
+    task: Adjudicate archived-review coverage (review-scope rule), or run a node-granular review.
+    kind: task
+    since: '2026-08-16'
+  task-002:
+    task: "Formalize the declared gaps: the `(f,λ)` bijection, the count formula, part (2)'s representation\n\
+      \  sentence, `C(σ) ≅ (C₂ ≀ S_m) × S_τ`."
+    kind: task
+    since: '2026-08-16'
+  task-003:
+    task: "**From gap-closure batch 1 (2026-07-31), item L-5, RESISTED.** The orbit bijection and the\n\
+      \  count `∑_f p_{≤m}(N−f)` need, in order: (1) `C(σ)` as a group acting on `G` **with its\n  `(C₂\
+      \ ≀ S_m) × S_τ` structure** — itself a declared unformalized caveat of\n  [KSUM.LEAN.T2.rosmanis-kfloor](KSUM.LEAN.T2.rosmanis-kfloor.yaml);\
+      \ (2) the quotient\n  `D₀ / (S_N × C(σ))`, or a complete invariant `D₀ → Σ f, Nat.Partition (N −\
+      \ f)` proved\n  orbit-injective and surjective; (3) a `p_{≤m}` counting function, which Mathlib's\n\
+      \  `Nat.Partition` does not provide. (1) is the prerequisite; doing (2)/(3) without it would be\n\
+      \  a statement about a different group."
+    kind: task
+    since: '2026-08-16'

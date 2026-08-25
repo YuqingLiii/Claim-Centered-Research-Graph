@@ -1,0 +1,80 @@
+SE fresh re-verification of Ybar norms - independent script - 2026-07-17 18:37:03
+Abstract (A,z) weight bases; explicit e-basis completion unnecessary (all operators basis-abstract).
+== case (n,k)=(3,1) q=6 dimH(2n)_k=30 dimH(n)_k=15 |M_se|=6
+  Pibar^(2)_0: dim=1 trace=1.000000 sym=0.00e+00 idem=0.00e+00 comm=0.00e+00 complete=0.00e+00
+  Pibar^(2)_1: dim=10 trace=5.000000 sym=0.00e+00 idem=0.00e+00 comm=0.00e+00 complete=0.00e+00
+  Pibar^(3)_0: dim=1 trace=1.000000 sym=0.00e+00 idem=1.11e-16 comm=0.00e+00 complete=1.11e-16
+  Pibar^(3)_1: dim=15 trace=10.000000 sym=0.00e+00 idem=3.51e-16 comm=0.00e+00 complete=0.00e+00
+  k=1 explicit check m=2: max|Pibar^(m)_1 - (I-J/m)xI_{q-1}| = 0.00e+00
+  k=1 explicit check m=3: max|Pibar^(m)_1 - (I-J/m)xI_{q-1}| = 1.11e-16
+  X+Y+Z=W column partition exact for all 6 matchings: True (all coeffs 1)
+  W^mu_k = Pi^(n)_k W^mu_k Pi^(2n)_k: holds by construction (weight-k bases both sides)
+  dense check mu#0: ||W-(X+Y+Z)||_F = 0.00e+00
+  IDENT-3: H^(2n)_0 has 1 all-zero element; Y column condition (partner label>0) impossible for every mu -> Ybar_se_0 = 0 exactly; residual 0
+  RESULT (3,1): Ybar=0.57735 ysec=[0, 0.57735] Xbar=1 Wbar=1 WPhi=0.57735 Phi=0.57735
+  RESID (3,1): IDENT1=5.551e-16 IDENT2max=6.329e-16 IDENT3=0.0e+00 projmax=3.511e-16 XYZWdense=0.00e+00 PhiAsym=0.00e+00 t=0.0s
+== case (n,k)=(3,2) q=6 dimH(2n)_k=375 dimH(n)_k=75 |M_se|=6
+  Pibar^(2)_0: dim=1 trace=1.000000 sym=0.00e+00 idem=0.00e+00 comm=0.00e+00 complete=0.00e+00
+  Pibar^(2)_1: dim=10 trace=5.000000 sym=0.00e+00 idem=0.00e+00 comm=0.00e+00 complete=0.00e+00
+  Pibar^(2)_2: dim=25 trace=0.000000 sym=0.00e+00 idem=0.00e+00 comm=0.00e+00 complete=0.00e+00
+  Pibar^(3)_0: dim=1 trace=1.000000 sym=0.00e+00 idem=1.11e-16 comm=0.00e+00 complete=1.11e-16
+  Pibar^(3)_1: dim=15 trace=10.000000 sym=0.00e+00 idem=3.51e-16 comm=0.00e+00 complete=0.00e+00
+  Pibar^(3)_2: dim=75 trace=10.000000 sym=0.00e+00 idem=5.27e-16 comm=0.00e+00 complete=8.60e-16
+  k=1 explicit check m=2: max|Pibar^(m)_1 - (I-J/m)xI_{q-1}| = 0.00e+00
+  k=1 explicit check m=3: max|Pibar^(m)_1 - (I-J/m)xI_{q-1}| = 1.11e-16
+  X+Y+Z=W column partition exact for all 6 matchings: True (all coeffs 1)
+  W^mu_k = Pi^(n)_k W^mu_k Pi^(2n)_k: holds by construction (weight-k bases both sides)
+  dense check mu#0: ||W-(X+Y+Z)||_F = 0.00e+00
+  IDENT-3: H^(2n)_0 has 1 all-zero element; Y column condition (partner label>0) impossible for every mu -> Ybar_se_0 = 0 exactly; residual 0
+  RESULT (3,2): Ybar=0.816497 ysec=[0, 0.57735, 0.816497] Xbar=0.707107 Wbar=1 WPhi=1 Phi=1
+  RESID (3,2): IDENT1=7.620e-16 IDENT2max=8.600e-16 IDENT3=0.0e+00 projmax=8.600e-16 XYZWdense=0.00e+00 PhiAsym=0.00e+00 t=0.7s
+== case (n,k)=(4,1) q=8 dimH(2n)_k=56 dimH(n)_k=28 |M_se|=24
+  Pibar^(3)_0: dim=1 trace=1.000000 sym=0.00e+00 idem=1.11e-16 comm=0.00e+00 complete=1.11e-16
+  Pibar^(3)_1: dim=21 trace=14.000000 sym=0.00e+00 idem=4.15e-16 comm=0.00e+00 complete=0.00e+00
+  Pibar^(4)_0: dim=1 trace=1.000000 sym=0.00e+00 idem=4.44e-16 comm=0.00e+00 complete=4.44e-16
+  Pibar^(4)_1: dim=28 trace=21.000000 sym=0.00e+00 idem=0.00e+00 comm=0.00e+00 complete=2.54e-16
+  k=1 explicit check m=3: max|Pibar^(m)_1 - (I-J/m)xI_{q-1}| = 1.11e-16
+  k=1 explicit check m=4: max|Pibar^(m)_1 - (I-J/m)xI_{q-1}| = 0.00e+00
+  X+Y+Z=W column partition exact for all 24 matchings: True (all coeffs 1)
+  W^mu_k = Pi^(n)_k W^mu_k Pi^(2n)_k: holds by construction (weight-k bases both sides)
+  dense check mu#0: ||W-(X+Y+Z)||_F = 0.00e+00
+  IDENT-3: H^(2n)_0 has 1 all-zero element; Y column condition (partner label>0) impossible for every mu -> Ybar_se_0 = 0 exactly; residual 0
+  RESULT (4,1): Ybar=0.5 ysec=[0, 0.5] Xbar=1 Wbar=1 WPhi=0.5 Phi=0.5
+  RESID (4,1): IDENT1=1.417e-15 IDENT2max=1.401e-15 IDENT3=0.0e+00 projmax=4.441e-16 XYZWdense=0.00e+00 PhiAsym=0.00e+00 t=0.0s
+== case (n,k)=(4,2) q=8 dimH(2n)_k=1372 dimH(n)_k=294 |M_se|=24
+  Pibar^(3)_0: dim=1 trace=1.000000 sym=0.00e+00 idem=1.11e-16 comm=0.00e+00 complete=1.11e-16
+  Pibar^(3)_1: dim=21 trace=14.000000 sym=0.00e+00 idem=4.15e-16 comm=0.00e+00 complete=0.00e+00
+  Pibar^(3)_2: dim=147 trace=21.000000 sym=0.00e+00 idem=0.00e+00 comm=0.00e+00 complete=1.25e-15
+  Pibar^(4)_0: dim=1 trace=1.000000 sym=0.00e+00 idem=4.44e-16 comm=0.00e+00 complete=4.44e-16
+  Pibar^(4)_1: dim=28 trace=21.000000 sym=0.00e+00 idem=0.00e+00 comm=0.00e+00 complete=2.54e-16
+  Pibar^(4)_2: dim=294 trace=119.000000 sym=2.78e-17 idem=1.15e-15 comm=2.78e-17 complete=8.14e-16
+  k=1 explicit check m=3: max|Pibar^(m)_1 - (I-J/m)xI_{q-1}| = 1.11e-16
+  k=1 explicit check m=4: max|Pibar^(m)_1 - (I-J/m)xI_{q-1}| = 0.00e+00
+  X+Y+Z=W column partition exact for all 24 matchings: True (all coeffs 1)
+  W^mu_k = Pi^(n)_k W^mu_k Pi^(2n)_k: holds by construction (weight-k bases both sides)
+  dense check mu#0: ||W-(X+Y+Z)||_F = 0.00e+00
+  IDENT-3: H^(2n)_0 has 1 all-zero element; Y column condition (partner label>0) impossible for every mu -> Ybar_se_0 = 0 exactly; residual 0
+  RESULT (4,2): Ybar=0.707107 ysec=[0, 0.5, 0.707107] Xbar=1 Wbar=1 WPhi=0.707107 Phi=0.707107
+  RESID (4,2): IDENT1=3.373e-15 IDENT2max=3.162e-15 IDENT3=0.0e+00 projmax=1.246e-15 XYZWdense=0.00e+00 PhiAsym=2.78e-17 t=12.8s
+== case (n,k)=(5,1) q=10 dimH(2n)_k=90 dimH(n)_k=45 |M_se|=120
+  Pibar^(4)_0: dim=1 trace=1.000000 sym=0.00e+00 idem=4.44e-16 comm=0.00e+00 complete=4.44e-16
+  Pibar^(4)_1: dim=36 trace=27.000000 sym=0.00e+00 idem=0.00e+00 comm=0.00e+00 complete=2.88e-16
+  Pibar^(5)_0: dim=1 trace=1.000000 sym=0.00e+00 idem=1.11e-15 comm=0.00e+00 complete=1.11e-15
+  Pibar^(5)_1: dim=45 trace=36.000000 sym=2.78e-17 idem=6.07e-16 comm=2.78e-17 complete=8.03e-16
+  k=1 explicit check m=4: max|Pibar^(m)_1 - (I-J/m)xI_{q-1}| = 0.00e+00
+  k=1 explicit check m=5: max|Pibar^(m)_1 - (I-J/m)xI_{q-1}| = 1.11e-16
+  X+Y+Z=W column partition exact for all 120 matchings: True (all coeffs 1)
+  W^mu_k = Pi^(n)_k W^mu_k Pi^(2n)_k: holds by construction (weight-k bases both sides)
+  dense check mu#0: ||W-(X+Y+Z)||_F = 0.00e+00
+  IDENT-3: H^(2n)_0 has 1 all-zero element; Y column condition (partner label>0) impossible for every mu -> Ybar_se_0 = 0 exactly; residual 0
+  RESULT (5,1): Ybar=0.447214 ysec=[0, 0.447214] Xbar=1 Wbar=1 WPhi=0.447214 Phi=0.447214
+  RESID (5,1): IDENT1=4.177e-15 IDENT2max=4.163e-15 IDENT3=0.0e+00 projmax=1.110e-15 XYZWdense=0.00e+00 PhiAsym=2.78e-17 t=0.2s
+== case (n,k)=(5,2) q=10 dimH(2n)_k=3645 dimH(n)_k=810 |M_se|=120
+  Pibar^(4)_0: dim=1 trace=1.000000 sym=0.00e+00 idem=4.44e-16 comm=0.00e+00 complete=4.44e-16
+  Pibar^(4)_1: dim=36 trace=27.000000 sym=0.00e+00 idem=0.00e+00 comm=0.00e+00 complete=2.88e-16
+  Pibar^(4)_2: dim=486 trace=198.000000 sym=2.78e-17 idem=1.66e-15 comm=2.78e-17 complete=1.02e-15
+  Pibar^(5)_0: dim=1 trace=1.000000 sym=0.00e+00 idem=1.11e-15 comm=0.00e+00 complete=1.11e-15
+  Pibar^(5)_1: dim=45 trace=36.000000 sym=2.78e-17 idem=6.07e-16 comm=2.78e-17 complete=8.03e-16
+  Pibar^(5)_2: dim=810 trace=441.000000 sym=5.55e-17 idem=4.01e-15 comm=1.11e-16 complete=4.02e-15
+  k=1 explicit check m=4: max|Pibar^(m)_1 - (I-J/m)xI_{q-1}| = 0.00e+00
+  k=1 explicit check m=5: max|Pibar^(m)_1 - (I-J/m)xI_{q-1}| = 1.11e-16

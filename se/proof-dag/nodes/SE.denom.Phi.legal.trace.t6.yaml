@@ -1,0 +1,59 @@
+id: SE.denom.Phi.legal.trace.t6
+aliases:
+- T6
+claim: 'For every admissible strict sector, prove the multiplicity-block PSD bound
+
+
+  `M_xi <= (15/4) B_theta(q)^2 omega I_c`.
+
+
+  Here the raw physical joint trace is
+
+
+  `J = omega^2 rawT_a + rawT_b = d Tr(M_xi)`,
+
+
+  with `d=f^kappa f^nu`. A sufficient scalar target is
+
+
+  `(CT) J <= (15/4) B_theta(q)^2 omega d`,
+
+
+  and the stronger assembly target is
+
+
+  `(JT) J <= B_theta(q)^2 T (omega^2+1/(delta_min+1))`.
+
+
+  All physical long-tail and tail-tail cross terms vanish because the output
+
+  projectors are orthogonal. T6 is therefore a weighted joint-energy route, not
+
+  a cross-term-cancellation route.'
+assessment:
+  level: OPEN
+  summary: This node remains OPEN. The former same-index type-lock mechanism is refuted, while the corrected
+    full-copy row-sum/copy-contraction route and sharper projector-overlap estimate remain unresolved.
+    The recorded finite gates pass, but the scalar shortcut fails at j=24, c=10; that failure does not
+    refute the full T6 claim.
+  basis:
+    evidence:
+    - node: SE.denom.Phi.legal.trace.t6.w9j
+      kind: node-evidence
+formalization:
+  lean:
+    module: SE.denom.Phi.legal.trace.t6
+    file: se/lean/SE/denom/Phi/legal/trace/t6.lean
+    claim: Claim
+    state: stated
+    claim_hash: sha256:5c485604043a9c72f2c29ec2e23b051884a27e9e6b22c86993a320951231b0bd
+    sync_state: current
+    build: se/artifacts/logs_se_lean_20260730/
+    synced: '2026-07-30'
+frontier:
+  task-001:
+    task: Prove the full-copy row-sum/copy-contraction inequality.
+    kind: task
+  task-002:
+    task: Prove the sharper projector-overlap estimate beyond the failed scalar shortcut.
+    kind: task

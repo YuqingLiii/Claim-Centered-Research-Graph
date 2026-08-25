@@ -1,0 +1,126 @@
+id: KSUM.A1
+aliases:
+- A1
+claim: For every fixed k>=3, the frozen core (A1a), the live two-list encoding (A1b), and target-coset
+  coverage (A1c) compose to establish the small-alphabet k-Sum reduction and the lower bounds stated in
+  A1d.
+routes:
+  joint:
+    premises:
+    - KSUM.A1a
+    - KSUM.A1b
+    - KSUM.A1c
+    implication: KSUM.A1a, KSUM.A1b, and KSUM.A1c jointly establish the frozen-core reduction and therefore
+      the lower-bound conclusion recorded in KSUM.A1d.
+    assumptions:
+      assumption-01:
+        kind: external-theorem
+        statement: Ambainis-Balodis-Iraids prove Q(Claw_(m->K))=Omega(sqrt(m) K^(1/6)) for 2<=K<m; Tani's
+          range reduction supplies the extended range used by the manuscript. The route invokes only the
+          parameter regime stated in the k-Sum proof.
+        source:
+          path: ksum/lean/KSUM/Interface.lean
+          kind: text
+          locator: The `abi` and `tani` field documentation
+      assumption-02:
+        kind: model-fact
+        statement: query-model fact (i) restriction
+        source:
+          path: ksum/lean/KSUM/Interface.lean
+          kind: text
+          locator: QueryModel interface table, `restrict` field
+      assumption-03:
+        kind: model-fact
+        statement: query-model fact (ii) per-position relabeling
+        source:
+          path: ksum/lean/KSUM/Interface.lean
+          kind: text
+          locator: QueryModel interface table, `relabel` field
+      assumption-04:
+        kind: model-fact
+        statement: coordinate freezing = query-model facts (i)+(iii) composed at the last position — Stated
+          in the manuscript as fact (iii). The linked review checks that freezing a coordinate changes
+          the INPUT LENGTH and is therefore not an instance of fact (i) as then printed; fact (iii) states
+          exactly that. Text synced 2026-08-01 per delta-fidelity defect D-1
+        source:
+          path: ksum/lean/KSUM/Interface.lean
+          kind: text
+          locator: QueryModel interface table, `freeze` field
+    proof:
+      sketch: The implication is supported by the linked review and linked Lean formalization.
+    assessment:
+      level: PROVED
+      summary: ksum/reviews/ksum_composition_layer_review_20260730.md §3.1 — CONFIRMED-WITH-REPAIRS; license
+        discharged by ksum/artifacts/ksum_lean_repair_batch_20260730.md (R-A1-1 + R-A1-3 machine-checked)
+      basis:
+        reviews:
+        - path: ksum/reviews/ksum_composition_layer_review_20260730.md
+          kind: review
+          scope: Checks the implication from A1a, A1b, and A1c to A1d, including the parked-coordinate
+            parity case and target-coset coverage; licenses the route only after R-A1-1 and R-A1-3.
+          locator: Sections 2.1 and 3.1
+          reviewed_hash: sha256:06d6825b7fdddc5a53e41049fb3297bd226dc28b8d2aa69090d29e81b1dce716
+assessment:
+  level: PROVED
+  summary: The linked independent review confirms that A1a, A1b, and A1c compose to A1d after repairs
+    R-A1-1 and R-A1-3. The linked Lean development checks the repaired composition.
+  basis:
+    evidence:
+    - path: ksum/artifacts/ksum_lean_repair_batch_20260730.md
+      kind: text
+    - node: KSUM.A1e
+      kind: node-evidence
+    - node: KSUM.A1f
+      kind: node-evidence
+    reviews:
+    - path: ksum/reviews/ksum_composition_layer_review_20260730.md
+      kind: review
+      scope: Re-derives the frozen-core composition, checks quantifiers, parameter regimes, and constant
+        dependence, and distinguishes the A1 composition from the A1d theorem; the promotion license is
+        conditional on repairs R-A1-1 and R-A1-3.
+      locator: Sections 2.1, 3.1, and 6.1
+      reviewed_hash: sha256:ee8ff595289aacafbaa83b36b68426d91decaad2d2b3ac745a389978115c99ef
+    routes:
+    - joint
+    runs:
+    - path: ksum/artifacts/logs_ksum_lean_repair_20260730/build.log
+      kind: run
+      result: Execution artifact supporting KSUM.A1 at the exact finite, formal, or computational scope
+        stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_lean_repair_20260730/print_axioms.txt
+      kind: run
+      result: Execution artifact supporting KSUM.A1 at the exact finite, formal, or computational scope
+        stated in the linked output.
+    - path: ksum/artifacts/logs_ksum_lean_repair_20260730/SHA256SUMS.txt
+      kind: run
+      result: Execution artifact supporting KSUM.A1 at the exact finite, formal, or computational scope
+        stated in the linked output.
+  caveats:
+  - Text and digest synchronization does not by itself establish that the Lean proposition is equivalent
+    to the natural-language claim; that correspondence remains review-dependent.
+formalization:
+  lean:
+    module: KSUM.A1
+    file: ksum/lean/KSUM/A1.lean
+    claim: Claim
+    state: composition-checked
+    claim_hash: sha256:ee8ff595289aacafbaa83b36b68426d91decaad2d2b3ac745a389978115c99ef
+    sync_state: current
+    theorems:
+    - composition
+    - holds
+    rel:
+    - QueryModel.abi/tani = ABI21 + Tani24 (cited, not proved)
+    - QueryModel.restrict = sec:prelim fact (i)
+    - QueryModel.relabel = sec:prelim fact (ii)
+    - QueryModel.freeze = coordinate freezing = sec:prelim facts (i)+(iii) composed at the last position;
+      stated in the manuscript as facts (i)+(iii) and checked by the linked review
+    build: ksum/artifacts/logs_ksum_lean_repair_20260730/
+    source_claim_hash: sha256:ee8ff595289aacafbaa83b36b68426d91decaad2d2b3ac745a389978115c99ef
+    synced: '2026-08-19'
+frontier:
+  review-a1-a1d-boundary:
+    task: Obtain an independent review before collapsing or redirecting A1/A1d; until then both reviewed
+      records remain active and the cyclic premise has been removed.
+    kind: review
+    since: '2026-08-16'

@@ -1,0 +1,29 @@
+id: KSUM.A1f
+role: outcome
+aliases:
+- A1f
+claim: Independent audit runs retested the k>=3 encoding, the payload and separation bounds, and the odd-length
+  parity repair on the finite scopes recorded in the F1 and R3 logs; the final runs reported no mismatches
+  on those scopes.
+assessment:
+  level: NUMERICAL
+  summary: This node records the outcome of finite independent audit runs. It is evidence for the mathematical
+    reduction nodes, not a separate proof claim or a substitute for their reviews.
+  basis:
+    evidence:
+    - node: KSUM.A1
+      kind: node-evidence
+    runs:
+    - path: ksum/artifacts/logs_ksum_F1_20260718/embed_audit.log
+      kind: run
+      result: The independent F1 encoding, trap, payload-bound, and separation-margin checks reported
+        PASS on all recorded finite instances.
+    - path: ksum/artifacts/logs_ksum_F1_20260718/floor_audit.log
+      kind: run
+      result: The independent F1 even- and odd-core finite checks reported PASS on the final run.
+    - path: ksum/artifacts/logs_ksum_R3_20260718/parity_audit.log
+      kind: run
+      result: The independent R3 parity audit reported no mismatches on its recorded finite scopes and
+        passed its corrected negative controls.
+  caveats:
+  - Finite computational audits do not by themselves prove the corresponding all-parameter lemmas.

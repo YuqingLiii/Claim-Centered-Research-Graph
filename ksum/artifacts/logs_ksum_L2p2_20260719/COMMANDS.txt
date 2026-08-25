@@ -1,0 +1,7 @@
+# Run from repository root on 2026-07-19; no network.
+
+python -m py_compile ksum/tools/ksum_l2p2_pair_kernel.py ksum/tools/ksum_l2p2_exact_verify.py
+
+python ksum/tools/ksum_l2p2_pair_kernel.py --output ksum/artifacts/logs_ksum_L2p2_20260719/pair_kernel_results.json 2>&1 | Tee-Object -FilePath ksum/artifacts/logs_ksum_L2p2_20260719/pair_kernel.log
+
+python ksum/tools/ksum_l2p2_exact_verify.py --input ksum/artifacts/logs_ksum_L2p2_20260719/pair_kernel_results.json 2>&1 | Tee-Object -FilePath ksum/artifacts/logs_ksum_L2p2_20260719/exact_verify.log

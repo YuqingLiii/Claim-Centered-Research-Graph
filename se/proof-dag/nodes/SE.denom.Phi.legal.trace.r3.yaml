@@ -1,0 +1,31 @@
+id: SE.denom.Phi.legal.trace.r3
+aliases:
+- R3DEAD
+claim: '**Killed route (easy trace route):** (1.5) `X_h ⪯ B_θ²I` combined with (1.6) `Tr(L_hL_h*) ≤ T`
+  via the reviewed U_h column count.'
+assessment:
+  level: REFUTED
+  summary: 'REFUTED and DEAD. The independent kill review confirmed both failures: r2 supplies a counterexample
+    to the operator-bound leg, and the cited U_h column count does not apply to the differently typed
+    map L_h. The separate scalar subclaim Tr(L_h L_h*)<=T remains open.'
+  basis:
+    evidence:
+    - path: se/artifacts/se_mphys_20260719.md
+      kind: text
+    reviews:
+    - path: se/reviews/se_trace_r2r3r4_killreview_20260730.md
+      kind: review
+    counterexamples:
+    - path: se/reviews/se_trace_r2r3r4_killreview_20260730.md
+      kind: counterexample
+      note: Sourced contradiction or counterexample supporting this scoped refutation.
+disposition:
+  state: DEAD
+  reason: 'REFUTED and DEAD. The independent kill review confirmed both failures: r2 supplies a counterexample
+    to the operator-bound leg, and the cited U_h column count does not apply to the differently typed
+    map L_h. The separate scalar subclaim Tr(L_h L_h*)<=T remains open.'
+frontier:
+  salvage-scalar-subclaim:
+    task: Decide whether Tr(L_h L_h*)<=T should be registered as a separate claim for use by another route.
+    kind: task
+    since: '2026-08-16'
