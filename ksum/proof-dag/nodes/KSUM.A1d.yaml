@@ -39,12 +39,16 @@ formalization:
     build: ksum/artifacts/logs_ksum_lean_reorg_20260730/
     synced: '2026-08-19'
     source_claim_hash: sha256:d9f22fb14b5783c6250635c63c8b446222ec69911d051d3f55ed6e8e0b382af1
-frontier:
-  task-001:
-    task: "The 2026-07-19 statement correction is independently reviewed; no new open obligation and no\n\
-      \  status transition resulted."
-    kind: task
-    since: '2026-08-16'
+events:
+  cutoff-correction-review-recorded:
+    date: '2026-08-25'
+    type: review-completed
+    summary: Retrospective record of the completed review of the July 19 lower-cutoff correction.
+      Item I1 discharged that correction; it is not an unfinished task. No new review or level change is asserted.
+    sources:
+    - path: ksum/reviews/ksum_rev2_review.md
+      kind: review
+      locator: Item I1
 routes:
   fixed-k-reduction:
     premises:

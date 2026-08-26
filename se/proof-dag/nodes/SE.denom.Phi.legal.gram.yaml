@@ -65,19 +65,18 @@ frontier:
       — all demoted by the human review and not yet rebuilt.'
     kind: task
     since: '2026-08-16'
-  task-002:
-    task: '**Statement-alignment obligation (external review T2-G1/T2-G2/T2-G3, machine-verified 2026-07-29):**
-      the conditional paper''s H2 is the interface IDENTITY `G_can = [r_top/(B_θ(q)²ω)]M_ξ`, which is
-      NOT this node''s Claim (a norm bound) — the identity needs its own frozen home (proposed: a `gram.interface`
-      child or a rewritten Claim), and it needs the Schur identity lift `I_{V_κ⊗V_ν}⊗(·)` (the paper''s
-      eq:gcan1/gcan2 silently drop the lift that its own eq:Htwirl carries). Also the strict `<` in this
-      Claim is unprovable from H1+H2 (at (j,n)=(1,3), `(15/4)r_top = 9/2` EXACTLY — exact-fraction check);
-      the repair is `≤`; strict `<9/2` is recoverable where `r_top<6/5`, i.e. for `n ≥ (j+2)³` (CORRECTION
-      2026-07-29, repair-verifier Fix 1: the external review''s own "via `r_top<3/2`" was arithmetically
-      wrong — `(15/4)(3/2)=45/8>9/2`).'
-    kind: task
-    since: '2026-08-16'
   task-003:
     task: The block identification lives in `[[SE.denom.Phi.legal.splice]]` (PARKED).
     kind: task
     since: '2026-08-16'
+events:
+  statement-alignment-repair-recorded:
+    date: '2026-08-25'
+    type: repair-applied
+    summary: Retrospective record of the July 29 statement repairs checked on July 30. H2 has its own
+      gram.interface node with the Schur lift; the Gram implication uses <=, with strictness only when
+      r_top<6/5. The completed alignment task is removed from the frontier; the mathematical hypotheses remain unresolved.
+    sources:
+    - path: se/reviews/se_external_rereview2_20260730.md
+      kind: review
+      locator: '`T1′-2` and `T1′-3`'

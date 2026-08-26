@@ -78,6 +78,8 @@ def _load_yaml(path: Path) -> Any:
 def load_problem(problem_root: Path) -> LoadedProblem:
     dag_root = problem_root / "proof-dag"
     project = _load_yaml(dag_root / "PROJECT.yaml") or {}
+    if not isinstance(project, dict):
+        raise ValueError(f"{dag_root / 'PROJECT.yaml'}: manifest must be a mapping")
     nodes: dict[str, dict[str, Any]] = {}
     paths: dict[str, Path] = {}
     for path in sorted((dag_root / "nodes").glob("*.yaml")):
@@ -291,8 +293,11 @@ def _check_basis(
                     _check_path_locator(
                         source, f"{label}.reviews[{index}]", root, errors
                     )
-                if key == "runs" and not source.get("result"):
-                    errors.append(f"{label}.runs[{index}] requires a scoped result")
+                if key == "runs":
+                    if not source.get("result"):
+                        errors.append(f"{label}.runs[{index}] requires a scoped result")
+                    if source.get("locator"):
+                        _check_path_locator(source, f"{label}.runs[{index}]", root, errors)
 
 
 def _check_assessment(
@@ -660,12 +665,36 @@ def validate_problem(
             if "route" in event and event["route"] not in route_ids:
                 errors.append(f"{elabel}.route references unknown route {event['route']}")
 
-        # Completion lint: a cited supporting route cannot outrank a premise unless the
-        # node openly carries that dependency as a caveat.
+        # A route's implication and its premises are separate obligations. A review
+        # of the parent does not make an open, refuted, or retired route usable.
         for route_id in basis.get("routes", []):
             route = routes.get(route_id, {})
             if node_level not in COMPLETION_LEVELS:
                 continue
+            route_level = route_levels.get(route_id)
+            if route.get("retired"):
+                errors.append(f"{node_id}: completion basis cites retired route {route_id}")
+            if route_level not in COMPLETION_LEVELS:
+                errors.append(
+                    f"{node_id}: completion route {route_id} has non-completion "
+                    f"implication level {route_level}"
+                )
+            premise_levels = {
+                p: loaded.nodes.get(p, {}).get("assessment", {}).get("level")
+                for p in route.get("premises", [])
+            }
+            refuted = [p for p, level in premise_levels.items() if level == "REFUTED"]
+            if refuted:
+                errors.append(
+                    f"{node_id}: completion route {route_id} uses refuted premises {refuted}"
+                )
+            if node_level == "PROVED":
+                unproved = [p for p, level in premise_levels.items() if level != "PROVED"]
+                if route_level != "PROVED" or unproved:
+                    errors.append(
+                        f"{node_id}: PROVED requires a PROVED route implication and "
+                        f"PROVED premises; route {route_id}, unproved premises {unproved}"
+                    )
             below = [p for p in route.get("premises", [])
                      if loaded.nodes.get(p, {}).get("assessment", {}).get("level") not in COMPLETION_LEVELS]
             if below and not all(any(p in c for c in caveats) for p in below):
@@ -684,6 +713,34 @@ def validate_problem(
     if not graph_path.exists() or graph_path.read_text(encoding="utf-8") != expected_graph:
         errors.append(f"{problem}: generated GRAPH.mmd is stale; run --write-generated")
     return errors, warnings, len(loaded.nodes)
+
+
+def validate_preservation(previous: LoadedProblem, current: LoadedProblem) -> list[str]:
+    """Check retention against an explicit earlier snapshot, without changing either.
+
+    A single snapshot cannot establish append-only history. This comparison
+    checks retention, not whether the historical events were truthfully recorded.
+    Claims and assessments may be corrected; existing events remain immutable,
+    and superseded routes stay registered rather than being silently deleted.
+    """
+    errors: list[str] = []
+    for node_id, old in previous.nodes.items():
+        if node_id not in current.nodes:
+            errors.append(f"{node_id}: previously registered node was removed")
+            continue
+        new = current.nodes[node_id]
+        for event_id, event in (old.get("events") or {}).items():
+            if event_id not in (new.get("events") or {}):
+                errors.append(f"{node_id}: previous event {event_id} was removed")
+            elif new["events"][event_id] != event:
+                errors.append(f"{node_id}: previous event {event_id} was rewritten")
+        for route_id in old.get("routes") or {}:
+            if route_id not in (new.get("routes") or {}):
+                errors.append(
+                    f"{node_id}: previous route {route_id} was removed; retain it "
+                    "with its assessment and retirement record"
+                )
+    return errors
 
 
 def _find_cycle(edges: dict[str, list[str]]) -> list[str] | None:

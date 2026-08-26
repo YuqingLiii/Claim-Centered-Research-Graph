@@ -7,13 +7,24 @@ claim: 'SE.denom.bridge2.numerics — n=3 legal rebuild, PRIMED projector, first
   s = 1.0000 / 1.2000 (=r_top TIGHT) / 1.0954; Y-line 0 / 0.632 / 1.342 — ALL PASS'
 assessment:
   level: NUMERICAL
-  summary: NUMERICAL. Reproducible finite or mechanized evidence supports the scoped claim; the exact
-    run records are listed below and do not establish an asymptotic theorem beyond that scope.
+  summary: The restored primed-projector computation reproduces the recorded legal X/Y norms at n=3,
+    q=6. Only k=0 is in the taper window; k=1,2 test the broader candidate inequality. The Y comparison
+    uses supplied rounded ambient norms, not ambient norms recomputed by this program.
   basis:
     evidence:
     - node: SE.denom.bridge2
       kind: node-evidence
+    - path: se/tools/se_bridge2_legal_rebuild_n3.py
+      kind: code
     runs:
     - path: se/artifacts/logs_se_bridge2_20260717/bridge2_n3.log
       kind: run
       result: n=3 legal-block reconstruction completed with the recorded norms
+      scope: Archived July output, reproduced by the dated rerun below.
+    - path: se/artifacts/numerical_rerun_20260825.md
+      kind: run
+      locator: '`Bridge-II output`'
+      date: '2026-08-25'
+      note: python3 se/tools/se_bridge2_legal_rebuild_n3.py; requires NumPy; command, runtime, script hash,
+        and floating-point trust boundary are recorded in the linked report.
+      result: Legal X norms 1, 1.2, 1.0954451150 and Y norms 0, 0.6324555320, 1.3416407865; all six comparisons pass.

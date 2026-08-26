@@ -23,6 +23,7 @@ se/
   lean/                        linked Lean development
   reviews/                     project-level external reviews
   artifacts/                   proofs, runs, and counterexamples
+  tools/                       project-specific mathematical checkers
 ksum/
   proof-dag/                   k-Sum nodes and generated graph views
   lean/                        linked Lean development
@@ -40,6 +41,9 @@ single case study can be exported without collecting evidence from elsewhere
 in the repository. The repository is a snapshot of the current DAG and its evidence. Manuscripts,
 raw model conversations, private accounting data, and unrelated projects are
 not included.
+The snapshot preserves selected research events and failed claims, not a complete
+event-by-event history. The protocols specify how subsequent updates should be recorded;
+passing the static checks does not establish completeness of the historical record.
 
 ## Validate
 
@@ -51,6 +55,11 @@ python -m pip install -r requirements.txt
 make audit
 make validate
 ```
+
+For retention checks against a saved earlier snapshot, additionally run
+`python tools/proof_dag_check.py --previous-state /path/to/earlier-snapshot`.
+This checks that previously registered nodes, routes, and events have not disappeared
+and that existing events have not been rewritten. It does not inspect old model sessions.
 
 The evidence levels are repository-local assessments. A linked Lean
 formalization checks its formal statement under its declared assumptions; it

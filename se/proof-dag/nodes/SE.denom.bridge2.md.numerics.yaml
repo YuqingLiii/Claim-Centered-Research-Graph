@@ -11,7 +11,20 @@ assessment:
     evidence:
     - node: SE.denom.bridge2.md
       kind: node-evidence
+    - path: se/tools/se_matched_degree_lemma_check.py
+      kind: code
     runs:
     - path: se/artifacts/logs_se_carrier_steps35_20260716/se_matched_degree_lemma_check.log
       kind: run
       result: 40 finite rows checked; no violations
+      scope: Archived July output, reproduced by the dated rerun below.
+    - path: se/artifacts/numerical_rerun_20260825.md
+      kind: run
+      locator: '`Matched-degree output`'
+      date: '2026-08-25'
+      note: python3 se/tools/se_matched_degree_lemma_check.py; requires NumPy; command, runtime, script hash,
+        and finite scope are recorded in the linked report.
+      result: 40 enumerated finite rows, zero violations at tolerance 1e-8; numerical equality in all printed m=q rows.
+  caveats:
+  - The program retains the archived shape filters. These 40 rows are not an exhaustive parameter scan
+    and do not establish the general matched-degree lemma. Norms are computed in floating-point arithmetic.

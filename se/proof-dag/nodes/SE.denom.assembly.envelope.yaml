@@ -5,13 +5,35 @@ aliases:
 claim: SE.denom.assembly.envelope — rho_{n,k} <= R_{n,k} (in-spec max 16/15), 0 viol / 32612 tuples
 assessment:
   level: NUMERICAL
-  summary: NUMERICAL. Reproducible finite or mechanized evidence supports the scoped claim; the exact
-    run records are listed below and do not establish an asymptotic theorem beyond that scope.
+  summary: A fresh finite scan verifies all 32,612 tuples with 2<=n<=600, 0<=k<floor(cuberoot(n)),
+    0<=j<=k, and theta a partition of j. Exact hook-dimension ratios are bounded by a rational Taylor
+    lower bound for R(n,k); the largest scanned ratio is 16/15. This is not an asymptotic theorem
+    or a proof identifying these scalar quantities with legal-sector operator norms.
   basis:
     evidence:
     - node: SE.denom.assembly
       kind: node-evidence
+    - path: se/tools/check_envelope.py
+      kind: code
+      scope: Reconstructed finite scalar checker, with exact cube roots and rational comparisons.
     runs:
-    - path: se/artifacts/logs_se_carrier_steps35_20260716/se_carrier_steps35_check.log
+    - path: se/artifacts/envelope_scan_20260825.json
       kind: run
-      result: 0 violations over 32,612 tested tuples
+      date: '2026-08-25'
+      note: 'Run from the repository root: python3 se/tools/check_envelope.py --max-n 600. Python standard
+        library only; the output records the script hash and runtime. This is a new rerun, not the original July output.'
+      result: All 32,612 finite comparisons verified; zero unresolved tuples; exact maximum 16/15 at
+        n=8, k=1, j=1, theta=(1).
+events:
+  finite-evidence-repaired:
+    date: '2026-08-25'
+    type: repair-applied
+    summary: Replaced the incorrectly attached n=3 carrier log with a fresh finite envelope scan.
+      The old log below is retained only to identify the mistaken pointer, not as evidence for 32,612 tuples.
+      The node remains NUMERICAL.
+    sources:
+    - path: se/artifacts/logs_se_carrier_steps35_20260716/se_carrier_steps35_check.log
+      kind: text
+      scope: Previously mislinked carrier diagnostic; not an envelope scan.
+    - path: se/artifacts/envelope_scan_20260825.json
+      kind: run

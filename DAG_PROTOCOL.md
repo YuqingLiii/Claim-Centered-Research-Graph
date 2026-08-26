@@ -101,6 +101,7 @@ events:                        # optional; material changes to the research stat
                                # route-refuted | review-completed | repair-applied
     from: OPEN                 # required only for level-change
     to: CONJECTURED            # required only for level-change
+    # route: route-id          # required for route-added/retired/refuted; also for a route level-change
     summary: What changed and why.
     sources:
       - path: path/to/supporting-record
@@ -130,6 +131,12 @@ Every route contains two logically separate obligations:
 These obligations may be completed in any order. A level never propagates automatically across a
 route. A completed parent requires an assembled, reviewable argument containing every load-bearing
 premise and the corresponding route implication.
+
+A completion assessment cannot cite an OPEN, CONJECTURED, NUMERICAL, REFUTED, or retired route as
+completed support. A PROVED node requires PROVED supporting implications and premises. A CERTIFIED*
+node may depend on unresolved premises only when each is explicitly named in its caveats; a refuted
+premise cannot be used to support even a conditional completion assessment. The implication itself
+can be reviewed before its premises are settled.
 
 A direct proof needs no artificial empty-premise route. It is recorded in the node's assessment
 basis and linked evidence. An unresolved hypothesis is not an assumption: it becomes its own OPEN
@@ -174,7 +181,7 @@ implications; node levels assess node claims.
 | `PROVED` | A complete argument and all load-bearing inputs passed independent adversarial review. |
 | `REFUTED` | A structured counterexample or decisive contradiction refutes the precise claim or implication. |
 
-Higher positive levels require stronger evidence, but the ladder is not an automatic arithmetic on
+Higher positive levels require stronger evidence, but levels are not an automatic arithmetic on
 the graph. The node's level is written only after examining its own assembled dossier. The validator
 may block an impossible promotion; it does not promote nodes.
 
@@ -220,7 +227,9 @@ Every mutation follows the same sequence.
 6. **Record material changes.** Append a scoped event when a claim or route is registered, a level
    changes, a route is retired or refuted, a review is completed, or a mathematical repair is applied.
    Events describe changes to the research state; repository maintenance and schema changes are not
-   research events.
+   research events. Retrospectively added events must give their recording date, identify the earlier
+   occurrence in the summary, and link the surviving evidence; they must not imply contemporaneous
+   logging. Existing events are retained unchanged, with corrections recorded in new events.
 7. **Refresh derived views and validate.** Regenerate the index and graph, then run the repository
    checker before closing the update.
 
@@ -264,4 +273,11 @@ been reviewed.
 rebuilt without losing research state.
 
 The schema and semantic checks are implemented by `tools/proof_dag_check.py`. The repository's
-pull-request workflow regenerates the derived views and validates both case studies.
+pull-request workflow validates both case studies and checks that their derived views are up to date.
+It does not regenerate or commit them.
+
+A single snapshot cannot establish that its event history is complete or append-only. To check
+retention against a saved earlier repository snapshot, run
+`python tools/proof_dag_check.py --previous-state /path/to/earlier-snapshot`.
+This additionally rejects missing nodes, missing routes, and removed or rewritten events. It does
+not verify the truth of those events or recover changes that were never recorded.

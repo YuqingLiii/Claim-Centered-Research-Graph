@@ -5,8 +5,9 @@ from __future__ import annotations
 
 import argparse
 from pathlib import Path
+import yaml
 
-from proof_dag_schema import validate_problem, write_generated
+from proof_dag_schema import load_problem, validate_preservation, validate_problem, write_generated
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -19,6 +20,11 @@ PROBLEMS = {
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--problem", choices=("se", "ksum", "all"), default="all")
+    parser.add_argument(
+        "--previous-state",
+        type=Path,
+        help="earlier repository snapshot for node, route, and append-only event retention checks",
+    )
     parser.add_argument(
         "--write-generated",
         action="store_true",
@@ -36,6 +42,18 @@ def main() -> int:
         errors, warnings, count = validate_problem(ROOT, PROBLEMS[name], name)
         all_errors.extend(errors)
         all_warnings.extend(warnings)
+        if args.previous_state is not None:
+            previous_project = args.previous_state / name
+            try:
+                previous = load_problem(previous_project)
+                if not previous.nodes:
+                    raise ValueError("previous snapshot contains no canonical node files")
+                retention_errors = validate_preservation(previous, load_problem(PROBLEMS[name]))
+            except (OSError, ValueError, yaml.YAMLError) as exc:
+                retention_errors = [f"{name}: cannot compare previous state: {exc}"]
+            all_errors.extend(retention_errors)
+            if not retention_errors:
+                print(f"{name}: prior nodes, routes, and events retained")
         if not errors:
             print(f"{name}: {count} node files structurally valid")
 

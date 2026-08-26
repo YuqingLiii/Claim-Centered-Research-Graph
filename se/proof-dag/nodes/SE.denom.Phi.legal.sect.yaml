@@ -36,6 +36,17 @@ assessment:
       kind: node-evidence
     - node: SE.denom.assembly
       kind: node-evidence
+    reviews:
+    - path: se/reviews/se_external_review_20260729.md
+      kind: review
+      locator: T3-G1
+      scope: Identifies the missing exhaustive sectorization obligation in the earlier three-obligation
+        reduction. It does not discharge H4 or establish the supporting foundation in general multiplicity.
+      verdict: GAP in the earlier reduction
+    - path: se/reviews/se_external_rereview2_20260730.md
+      kind: review
+      locator: '`T1′-4`'
+      scope: Checks that H4 was registered and included as an explicit hypothesis in the repaired conditional argument.
   caveats:
   - 'The linked Lean formalization records the current claim text and hash, docstring quote). `Claim`
     remains a HYPOTHESIS: nothing in the Lean development proves it, and the module states only the declared
@@ -67,3 +78,16 @@ frontier:
       \  review; either way the c≥2 compressed identity regime must be gated (7b)."
     kind: task
     since: '2026-08-16'
+events:
+  h4-registration-reviewed:
+    date: '2026-08-25'
+    type: review-completed
+    summary: Retrospective record of the July 29 discovery of the missing H4 obligation and the July 30
+      re-review of its registration. H4 remains OPEN; no new mathematical review was performed today.
+    sources:
+    - path: se/reviews/se_external_review_20260729.md
+      kind: review
+      locator: T3-G1
+    - path: se/reviews/se_external_rereview2_20260730.md
+      kind: review
+      locator: '`T1′-4`'

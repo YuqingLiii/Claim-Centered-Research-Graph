@@ -83,7 +83,10 @@ the proposition changes materially, create a new node rather than silently reusi
 - A machine run, certificate, generated table, or large output goes in
   `<project>/artifacts/`. A
   `NUMERICAL` assessment links it under `basis.runs` and records the result and scope;
-  the node also records a locator or checksum when needed for unambiguous reproduction.
+  the node also links its checker, records the command and dependencies, and gives a locator or
+  checksum when needed for unambiguous reproduction. A fresh rerun is dated as such and must not
+  be presented as a recovered historical log. A historical output without an available checker
+  is identified as an archived result, not as a directly reproducible run.
 - A linked Lean development goes under `<project>/lean/`. Build
   products such as `.lake/` and `.olean` are caches, not research records.
 - A mathematical checker used by only one case study goes under

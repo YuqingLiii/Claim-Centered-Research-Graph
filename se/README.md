@@ -9,8 +9,13 @@ alphabet size `q = 2n`.
 - [`lean/`](lean/) contains the linked Lean development.
 - [`reviews/`](reviews/) contains project-level external reviews.
 - [`artifacts/`](artifacts/) contains the linked proofs, runs, and counterexamples.
+- [`tools/`](tools/) contains the node-linked finite envelope and matrix checkers.
 
 Begin with node `SE.goal` for the original target, `SE.br.cor16` for the
 unconditional lower bound, and `SE.goal.conditional-optimal` for the conditional
 optimal-order consequence.  Evidence and reviews are reached through the
 structured links in those node files.
+
+The envelope checker uses only the Python standard library. The two matrix
+checkers additionally require NumPy; their node-linked rerun report gives
+commands, tested versions, outputs, and the finite scope of each check.

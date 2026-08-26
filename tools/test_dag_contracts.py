@@ -6,6 +6,7 @@ from __future__ import annotations
 from pathlib import Path
 import tempfile
 import unittest
+from copy import deepcopy
 
 import yaml
 
@@ -88,6 +89,98 @@ class ValidatorIntegrationTests(unittest.TestCase):
             root = Path(directory)
             self.assertEqual(self.validate(root, self.make_problem(root)), [])
 
+    def test_completion_rejects_unfinished_or_refuted_route(self) -> None:
+        for level in ("OPEN", "CONJECTURED", "NUMERICAL", "REFUTED"):
+            with self.subTest(level=level), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory); problem = self.make_problem(root)
+                path = problem / "proof-dag/nodes/TEST.parent.yaml"
+                node = yaml.safe_load(path.read_text())
+                node["routes"]["joint"]["assessment"]["level"] = level
+                write_yaml(path, node)
+                proof_dag_schema.write_generated(problem, "test")
+                self.assertTrue(any("non-completion implication level" in e
+                                    for e in self.validate(root, problem)))
+
+    def test_completion_rejects_retired_route(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory); problem = self.make_problem(root)
+            path = problem / "proof-dag/nodes/TEST.parent.yaml"
+            node = yaml.safe_load(path.read_text())
+            node["routes"]["joint"]["retired"] = {
+                "date": "2026-08-25", "reason": "Superseded route.",
+                "sources": [{"path": "test/reviews/review.md", "kind": "review"}],
+            }
+            write_yaml(path, node)
+            proof_dag_schema.write_generated(problem, "test")
+            self.assertTrue(any("completion basis cites retired route" in e
+                                for e in self.validate(root, problem)))
+
+    def test_proved_parent_cannot_hide_unproved_inputs_in_caveats(self) -> None:
+        for child_level, route_level in (("OPEN", "PROVED"), ("CERTIFIED*", "PROVED"),
+                                          ("PROVED", "CERTIFIED*")):
+            with self.subTest(child=child_level, route=route_level), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory); problem = self.make_problem(root)
+                path = problem / "proof-dag/nodes/TEST.parent.yaml"
+                node = yaml.safe_load(path.read_text())
+                node["routes"]["joint"]["assessment"]["level"] = route_level
+                node["assessment"]["caveats"] = ["Conditional on TEST.child."]
+                write_yaml(path, node)
+                child_path = problem / "proof-dag/nodes/TEST.child.yaml"
+                child = yaml.safe_load(child_path.read_text())
+                child["assessment"]["level"] = child_level
+                write_yaml(child_path, child)
+                proof_dag_schema.write_generated(problem, "test")
+                self.assertTrue(any("PROVED requires a PROVED route" in e
+                                    for e in self.validate(root, problem)))
+
+    def test_certified_parent_can_explicitly_depend_on_open_premise(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory); problem = self.make_problem(root)
+            path = problem / "proof-dag/nodes/TEST.parent.yaml"
+            node = yaml.safe_load(path.read_text())
+            node["assessment"]["level"] = "CERTIFIED*"
+            node["assessment"]["caveats"] = ["Conditional on the open TEST.child."]
+            write_yaml(path, node)
+            child_path = problem / "proof-dag/nodes/TEST.child.yaml"
+            child = yaml.safe_load(child_path.read_text())
+            child["assessment"]["level"] = "OPEN"
+            write_yaml(child_path, child)
+            proof_dag_schema.write_generated(problem, "test")
+            self.assertEqual(self.validate(root, problem), [])
+            child["assessment"]["level"] = "REFUTED"
+            write_yaml(child_path, child)
+            proof_dag_schema.write_generated(problem, "test")
+            self.assertTrue(any("uses refuted premises" in e for e in self.validate(root, problem)))
+
+    def test_preservation_accepts_appended_events_and_retired_routes(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory); problem = self.make_problem(root)
+            previous = proof_dag_schema.load_problem(problem)
+            current = deepcopy(previous)
+            current.nodes["TEST.parent"]["events"] = {"new": {"summary": "New evidence."}}
+            current.nodes["TEST.parent"]["routes"]["joint"]["retired"] = {
+                "date": "2026-08-25", "reason": "Superseded.",
+                "sources": [{"path": "test/reviews/review.md", "kind": "review"}],
+            }
+            self.assertEqual(proof_dag_schema.validate_preservation(previous, current), [])
+
+    def test_preservation_rejects_removed_nodes_routes_and_events(self) -> None:
+        for target in ("node", "route", "event", "rewritten-event"):
+            with self.subTest(target=target), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory); problem = self.make_problem(root)
+                previous = proof_dag_schema.load_problem(problem)
+                previous.nodes["TEST.parent"]["events"] = {"old": {"summary": "Original evidence."}}
+                current = deepcopy(previous)
+                if target == "node":
+                    del current.nodes["TEST.parent"]
+                elif target == "route":
+                    del current.nodes["TEST.parent"]["routes"]["joint"]
+                elif target == "event":
+                    del current.nodes["TEST.parent"]["events"]["old"]
+                else:
+                    current.nodes["TEST.parent"]["events"]["old"]["summary"] = "Changed history."
+                self.assertTrue(proof_dag_schema.validate_preservation(previous, current))
+
     def test_review_report_must_be_project_level(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory); problem = self.make_problem(root)
@@ -120,6 +213,35 @@ class ValidatorIntegrationTests(unittest.TestCase):
             node["assessment"]["basis"]["reviews"][0]["locator"] = "Section 99.99"
             write_yaml(path, node)
             self.assertTrue(any("99.99" in e for e in self.validate(root, problem)))
+
+    def test_run_locator_must_resolve(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory); problem = self.make_problem(root)
+            path = problem / "proof-dag/nodes/TEST.child.yaml"
+            node = yaml.safe_load(path.read_text())
+            node["assessment"]["basis"]["runs"] = [{
+                "path": "test/reviews/review.md", "kind": "run",
+                "locator": "`nonexistent finite scan`", "result": "Finite check claimed.",
+            }]
+            write_yaml(path, node)
+            self.assertTrue(any("runs[0].locator anchor" in e for e in self.validate(root, problem)))
+
+    def test_previous_state_missing_or_empty_fails_cleanly(self) -> None:
+        from unittest.mock import patch
+        import contextlib
+        import io
+        import proof_dag_check
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory); problem = self.make_problem(root)
+            for previous in (root / "missing", root / "empty"):
+                if previous.name == "empty":
+                    write_yaml(previous / "test/proof-dag/PROJECT.yaml", {"roots": ["TEST.parent"]})
+                with patch.object(proof_dag_check, "ROOT", root), \
+                     patch.object(proof_dag_check, "PROBLEMS", {"test": problem}), \
+                     patch("sys.argv", ["check", "--previous-state", str(previous)]), \
+                     contextlib.redirect_stdout(io.StringIO()) as output:
+                    self.assertEqual(proof_dag_check.main(), 1)
+                    self.assertIn("cannot compare previous state", output.getvalue())
 
     def test_route_scope_cannot_restate_parent_claim(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

@@ -1,7 +1,7 @@
 # k-Sum linked Lean development
 
 This Lean 4 + Mathlib development is linked to the small-alphabet k-Sum claim graph. The canonical
-node files under [`../nodes/`](../nodes/) are the authority for current evidence levels, caveats,
+node files under [`../proof-dag/nodes/`](../proof-dag/nodes/) are the authority for current evidence levels, caveats,
 and review links.
 
 ## Current coverage

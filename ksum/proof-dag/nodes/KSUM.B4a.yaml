@@ -4,6 +4,42 @@ aliases:
 claim: For every epsilon>0 there exist C_epsilon>0 and N0 such that, for every N>=N0, every q>=2, and
   every target t, the bounded-error quantum query complexity of cyclic 2-Sum satisfies Q(2-Sum_(Z_q,t,N))
   <= C_epsilon N^(1/2+epsilon) q^(1/4).
+assumptions:
+  subset-finding-base:
+    kind: external-theorem
+    statement: A fixed two-item subset property that can be checked from stored values admits bounded-error
+      witness finding in O(s^(2/3)) input queries on a list of length s. Here the predicate requires distinct
+      positions and sum t in Z_q; no alphabet-size restriction is imposed by this primitive.
+    source:
+      path: ksum/artifacts/reference_childs_eisenberg_2005_subset_finding.md
+      kind: text
+      locator: '`Claim card: general fixed-size subset upper bound`'
+  search-and-counting:
+    kind: external-theorem
+    statement: Quantum search and approximate counting for a Boolean oracle on s positions have the scoped
+      guarantees recorded in the source. For b>0 marked positions, constant-relative-error counting has
+      expected O(sqrt(s/b)) query cost; the recursive proof must separately justify its fixed cap and amplification.
+    source:
+      path: ksum/artifacts/reference_quantum_query_primitives.md
+      kind: text
+      locator: '`Search and counting`'
+  minimum-finding:
+    kind: external-theorem
+    statement: Bounded-error minimum finding over an s-item oracle table uses O(sqrt(s)) queries.
+      The reduction to first marked position, verification, and worst-case truncation are supplied by the local proof.
+    source:
+      path: ksum/artifacts/reference_quantum_query_primitives.md
+      kind: text
+      locator: '`Minimum finding`'
+  coherent-query-model:
+    kind: model-fact
+    statement: Input-independent reversible computation has zero input-query cost. Replacing M unitaries
+      by unitaries with respective operator errors eta_i changes their product by at most sum_i eta_i.
+      The local proof must establish these operator-error bounds for its coherent virtual oracles.
+    source:
+      path: ksum/artifacts/reference_quantum_query_primitives.md
+      kind: text
+      locator: '`Coherent composition model fact`'
 assessment:
   level: PROVED
   summary: The bounded-query upper bound passed independent theorem-level hostile review. The linked review

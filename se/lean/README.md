@@ -1,8 +1,8 @@
 # Set Equality linked Lean development
 
 This Lean 4 + Mathlib development is linked to the Set Equality claim graph. The canonical records
-for its two main layers are [`SE.formal.t1`](../nodes/SE.formal.t1.yaml) and
-[`SE.formal.t2`](../nodes/SE.formal.t2.yaml). The node files, rather than this README, are the
+for its two main layers are [`SE.formal.t1`](../proof-dag/nodes/SE.formal.t1.yaml) and
+[`SE.formal.t2`](../proof-dag/nodes/SE.formal.t2.yaml). The node files, rather than this README, are the
 authority for current evidence levels, caveats, and review links.
 
 ## Current coverage

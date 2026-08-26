@@ -1,0 +1,32 @@
+{
+  "scope": {
+    "n_min": 2,
+    "n_max_inclusive": 600,
+    "q": "2*n",
+    "k": "0 <= k < floor(cuberoot(n))",
+    "j": "0 <= j <= k",
+    "theta": "every partition of j"
+  },
+  "comparison": "r_top(2*n,j,theta) <= R(n,k)",
+  "r_top": "q^j*f(theta)/(j!*f((q-j,theta))) with hook dimensions f",
+  "R": "exp(k*(k-1)/(2*(2*n-k+1)) + k/(2*n-2*k+1))",
+  "method": "exact rational r_top <= degree-20 Taylor lower bound <= R",
+  "checked_tuples": 32612,
+  "unresolved_tuples": [],
+  "all_finite_comparisons_verified": true,
+  "max_r_top": "16/15",
+  "maximum_witness": {
+    "n": 8,
+    "k": 1,
+    "j": 1,
+    "theta": [
+      1
+    ]
+  },
+  "boundary": "Finite scalar comparisons only; no asymptotic or legal-sector identification theorem is established.",
+  "recorded_at_utc": "2026-08-25T23:58:25.895244+00:00",
+  "python": "3.9.6",
+  "script_sha256": "92d0092cd2a60e53a2b934ce8ff93db5f52703583a090b9322237cd27173fcbe",
+  "command": "python3 se/tools/check_envelope.py --max-n 600",
+  "record_kind": "New rerun, not a recovered historical output log"
+}

@@ -25,6 +25,17 @@ assessment:
     evidence:
     - node: SE.denom.Phi.legal.trace.t6
       kind: node-evidence
+    reviews:
+    - path: se/reviews/se_external_review_20260729.md
+      kind: review
+      locator: T2-G2
+      scope: Identifies the missing Schur identity lift in the earlier H2 statement; it does not prove
+        the corrected identity for general multiplicity.
+      verdict: GAP in the earlier formulation
+    - path: se/reviews/se_external_rereview2_20260730.md
+      kind: review
+      locator: '`T1′-2`'
+      scope: Checks the restored lift and type alignment in H2/H3, not the truth of the H2 hypothesis.
   caveats:
   - 'The linked Lean formalization records the current claim text and hash, docstring quote). `Claim`
     remains a HYPOTHESIS: nothing in the Lean development proves it, and the module states only the declared
@@ -56,3 +67,16 @@ frontier:
       \  identity gate), or refute it."
     kind: task
     since: '2026-08-16'
+events:
+  h2-type-repair-recorded:
+    date: '2026-08-25'
+    type: repair-applied
+    summary: Retrospective record of the July 29 finding and July 30 re-review. The missing Schur lift
+      was restored in H2; this records a statement repair, not a proof of the conjecture or a new review today.
+    sources:
+    - path: se/reviews/se_external_review_20260729.md
+      kind: review
+      locator: T2-G2
+    - path: se/reviews/se_external_rereview2_20260730.md
+      kind: review
+      locator: '`T1′-2`'

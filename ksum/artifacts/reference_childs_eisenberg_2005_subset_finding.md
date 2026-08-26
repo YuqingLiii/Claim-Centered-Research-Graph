@@ -19,5 +19,6 @@ theorem begins at source lines 276--285.
 
 ## Used by
 
+- [`KSUM.B4a`](../proof-dag/nodes/KSUM.B4a.yaml)
 - [`KSUM.k2.threshold`](../proof-dag/nodes/KSUM.k2.threshold.yaml)
 - [`KSUM.B4b.U1`](../proof-dag/nodes/KSUM.B4b.U1.yaml)
