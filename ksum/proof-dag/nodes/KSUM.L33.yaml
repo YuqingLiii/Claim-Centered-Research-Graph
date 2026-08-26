@@ -11,10 +11,32 @@ assessment:
   summary: NUMERICAL. The archived solver comparisons support the reported finite results within their
     recorded tolerances and timeouts; no all-parameter result is asserted by these runs.
   basis:
+    evidence:
+    - path: ksum/tools/ksum_l33_reduced_adv.py
+      kind: code
+    - path: ksum/tools/ksum_l33r_structure_audit.py
+      kind: code
+    - path: ksum/tools/ksum_l33r_unreduced_check.py
+      kind: code
+    - path: ksum/tools/ksum_stage0_d_direct_adv.py
+      kind: code
+    - path: ksum/tools/requirements.txt
+      kind: text
     runs:
     - path: ksum/artifacts/logs_ksum_L33_20260718
       kind: run
       result: reduced and unreduced solver comparisons archived with checksums
+    - path: ksum/artifacts/solver_reproduction_20260825.json
+      kind: run
+      locator: '`L33-n3`, `L33-n4`, `L33-structure`, and `L33-unreduced-n3`'
+      date: '2026-08-25'
+      result: Fresh small-instance reduced SDP runs, structure checks, and a separate unreduced n=3 check.
+      note: Each run records its command, environment, exit code, source hashes, and raw output.
+    - path: ksum/artifacts/reproduction_20260825.md
+      kind: run
+      locator: '`L33: reduced solver`'
+      result: Commands and scope of the new finite checks, distinguished from the historical large-instance runs.
   caveats:
-  - This node links archived solver outputs and checksums, not a standalone solver implementation.
-    These comparisons were not rerun in the August 25 repair; checksums do not replace the missing executable entry point.
+  - The fresh reproduction uses SCS on (n,q,t)=(3,3,0) and (4,3,0). It does not repeat all historical
+    large-instance MOSEK solves or the timeout experiments. Floating-point residuals are reported;
+    the output is not an exact SDP certificate.

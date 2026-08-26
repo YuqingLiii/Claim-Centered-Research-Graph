@@ -9,7 +9,7 @@ alphabet size `q = 2n`.
 - [`lean/`](lean/) contains the linked Lean development.
 - [`reviews/`](reviews/) contains project-level external reviews.
 - [`artifacts/`](artifacts/) contains the linked proofs, runs, and counterexamples.
-- [`tools/`](tools/) contains the node-linked finite envelope and matrix checkers.
+- [`tools/`](tools/) contains the node-linked finite envelope, matrix, and MDH structure checkers.
 
 Begin with node `SE.goal` for the original target, `SE.br.cor16` for the
 unconditional lower bound, and `SE.goal.conditional-optimal` for the conditional
@@ -19,3 +19,7 @@ structured links in those node files.
 The envelope checker uses only the Python standard library. The two matrix
 checkers additionally require NumPy; their node-linked rerun report gives
 commands, tested versions, outputs, and the finite scope of each check.
+The [MDH reproduction record](artifacts/mdh_reproduction_20260825.md) gives
+the restored structure-check commands, input data, and one unresolved
+disagreement with the old dimension dictionary. Its full checker reports
+that disagreement with a nonzero exit code.

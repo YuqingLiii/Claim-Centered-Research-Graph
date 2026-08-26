@@ -12,10 +12,24 @@ assessment:
     evidence:
     - node: KSUM.L32a
       kind: node-evidence
+    - path: ksum/tools/ksum_stage0_d_direct_adv.py
+      kind: code
+    - path: ksum/tools/requirements.txt
+      kind: text
     runs:
     - path: ksum/artifacts/logs_ksum_stage0_20260716/D_direct_atlas.log
       kind: run
       result: direct adversary SDP values computed at the recorded finite instances
+    - path: ksum/artifacts/solver_reproduction_20260825.json
+      kind: run
+      locator: '`L32-n3` and `L32-n4`'
+      date: '2026-08-25'
+      note: Commands, runtime versions, source hashes, exit codes, and raw output are recorded per run.
+      result: Fresh SCS runs reproduce the displayed atlas values 2.418636 and 2.712711 at eps=1e-4.
+    - path: ksum/artifacts/reproduction_20260825.md
+      kind: run
+      locator: '`L32: direct solver`'
+      result: Reproduction instructions and the finite-precision boundary for the two atlas points.
   caveats:
-  - This node links the archived output but no standalone solver program. It was not rerun in the
-    August 25 repair; independent reproduction requires recovering the solver and its dependencies.
+  - The atlas values are low-precision numerical optima, not exact certificates. Tighter solver
+    tolerances give approximately 2.418246 and 2.71216; no asymptotic or k>=3 conclusion follows.

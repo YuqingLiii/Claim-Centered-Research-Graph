@@ -13,6 +13,12 @@ assessment:
     evidence:
     - node: KSUM.A1
       kind: node-evidence
+    - path: ksum/tools/ksum_f1_embed.py
+      kind: code
+    - path: ksum/tools/ksum_f1_floor.py
+      kind: code
+    - path: ksum/tools/ksum_r3_parity.py
+      kind: code
     runs:
     - path: ksum/artifacts/logs_ksum_F1_20260718/embed_audit.log
       kind: run
@@ -25,7 +31,16 @@ assessment:
       kind: run
       result: The independent R3 parity audit reported no mismatches on its recorded finite scopes and
         passed its corrected negative controls.
+    - path: ksum/artifacts/solver_reproduction_20260825.json
+      kind: run
+      locator: '`F1-embed`, `F1-floor`, and `R3-parity`'
+      date: '2026-08-25'
+      note: Standard-library commands, source hashes, exit codes, and raw output are recorded per run.
+      result: Fresh reruns check 58033 F1 encoding inputs and 47496 F1 floor inputs, and pass the R3 finite checks.
+    - path: ksum/artifacts/reproduction_20260825.md
+      kind: run
+      locator: '`A1f: encoding, inherited floor, and parity`'
+      result: Reproduction commands and comparison with the original finite audit outputs.
   caveats:
-  - The linked F1/R3 logs are archived outputs. This node does not link their standalone checking
-    programs, and these runs were not repeated in the August 25 repair.
+  - The dated reruns reproduce the original finite checks; they are not new independent mathematical reviews.
   - Finite computational audits do not by themselves prove the corresponding all-parameter lemmas.

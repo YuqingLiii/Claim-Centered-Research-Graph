@@ -4,16 +4,75 @@ aliases:
 claim: SE.mdh.structure — frame/dims/orthogonality/recurrence/difference-op/pencil, machine-checked n<=4
 assessment:
   level: NUMERICAL
-  summary: NUMERICAL. The frame, dimension, orthogonality, recurrence, difference-operator, and pencil
-    identities have finite machine support through n=4, but no locatable independent review establishes
-    the all-n claim.
+  summary: NUMERICAL. Finite structure and spectral computations support the recorded cases through
+    n=4. The fresh run reproduces the archived tables but detects one disagreement with the recovered
+    n=4 dimension dictionary. No independent review establishes the all-n claim.
   basis:
+    evidence:
+    - path: se/tools/check_mdh_structure.py
+      kind: code
+    - path: se/tools/mdh_engine.py
+      kind: code
+    - path: se/tools/mdh_blocks.py
+      kind: code
+    - path: se/tools/mdh_family.py
+      kind: code
+    - path: se/tools/mdh_phi_tower.py
+      kind: code
+    - path: se/tools/mdh_closed_tower.py
+      kind: code
+    - path: se/tools/mdh_marked_subset_d1.py
+      kind: code
+    - path: se/tools/mdh_certify.py
+      kind: code
+    - path: se/tools/mdh_sigma.py
+      kind: code
+    - path: se/tools/mdh_fast.py
+      kind: code
+    - path: se/tools/mdh_n4_d1.py
+      kind: code
+    - path: se/tools/mdh_n4_block.py
+      kind: code
+    - path: se/tools/requirements.txt
+      kind: text
+    - path: se/artifacts/mdh_dimensions.json
+      kind: text
+      note: Dimension dictionary extracted from the original finite reference data; not an independent proof.
+    - path: se/artifacts/mdh_family_n4.json
+      kind: text
+    - path: se/artifacts/mdh_n4_521_block.json
+      kind: text
+    - path: se/artifacts/mdh_opt_t_n4.npy
+      kind: text
+      note: Saved floating-point parameter vector used by the n=4 spectral check.
+    - path: se/artifacts/blocks_n3.json
+      kind: text
     runs:
     - path: se/artifacts/mdh_phi_tower_n4.json
       kind: run
-      result: finite machine check through n=4
+      result: Archived exact n=4 within-tower table; this file alone does not check every part of the node claim.
+    - path: se/artifacts/mdh_structure_reproduction_20260825.json
+      kind: run
+      date: '2026-08-25'
+      note: python3 se/tools/check_mdh_structure.py --spectral; exact n=2,3,4 checks use the standard
+        library, and the named spectral checks require NumPy. The output records source and input hashes.
+      result: The n=2,3 checks pass; n=4 family and within-tower tables match the archive exactly,
+        and orthogonality, recurrence, difference, and named spectral checks pass. One n=4 dimension
+        reference comparison fails, so the overall checker returns nonzero.
+    - path: se/artifacts/mdh_reproduction_20260825.md
+      kind: run
+      result: Commands, dependency roles, input provenance, and the exact versus floating-point scope of each check.
   caveats:
-  - This node retains the finite JSON output but does not link its generating program. It was not
-    rerun in the August 25 repair; the public record alone is not a complete reproduction package.
+  - At n=4, the recovered dictionary lists (m_Y,m_N)=(4,1) for ((6,2),(3,1),(3,1)), but the engine
+    and saved family table give (3,1), yielding total cell counts 95 versus 94. This disagreement is
+    retained, not silently corrected or presented as a passing comparison.
+  - Exact checks cover n=2,3,4 only. The n=3 spectral comparison uses saved numerical reference data,
+    and the n=4 spectral check uses a saved optimization vector rather than rerunning the optimizer.
   - The archived computation is finite-scope evidence only; promotion requires an independent review of
     a precise all-n statement.
+frontier:
+  dimension-reference-check:
+    task: Independently resolve the n=4 multiplicity for ((6,2),(3,1),(3,1)) and reconcile the 95-versus-94
+      reference/table discrepancy before claiming that every dimension comparison passes.
+    kind: gate
+    since: '2026-08-25'

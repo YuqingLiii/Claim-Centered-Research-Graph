@@ -1,0 +1,132 @@
+{
+  "run_utc": "2026-08-26T02:35:44.331241+00:00",
+  "python": "3.12.13",
+  "publication_note": "Interpreter and workspace prefixes in command metadata are normalized to python3 and repository-relative paths. Numerical output, results, timestamps, and source/input hashes are unchanged.",
+  "scope": "Exact structure checks at requested_n; spectral tests only on the named instances. Not an all-n proof.",
+  "requested_n": [
+    2,
+    3,
+    4
+  ],
+  "exact": [
+    {
+      "n": 2,
+      "cells": 8,
+      "canonical_cells": 6,
+      "orbits": 5,
+      "dimensions_match": true,
+      "orthogonality_errors": 0,
+      "recurrence_errors": [],
+      "difference_operator_ok": true,
+      "tower_labels": [
+        "A1",
+        "B1"
+      ],
+      "passed": true
+    },
+    {
+      "n": 3,
+      "cells": 26,
+      "canonical_cells": 19,
+      "orbits": 13,
+      "dimensions_match": true,
+      "orthogonality_errors": 0,
+      "recurrence_errors": [],
+      "difference_operator_ok": true,
+      "tower_labels": [
+        "A1",
+        "B1",
+        "A2",
+        "B2"
+      ],
+      "passed": true
+    },
+    {
+      "n": 4,
+      "cells": 94,
+      "canonical_cells": 61,
+      "orbits": 51,
+      "dimensions_match": false,
+      "orthogonality_errors": 0,
+      "recurrence_errors": [],
+      "difference_operator_ok": true,
+      "tower_labels": [
+        "A1",
+        "B1",
+        "A2",
+        "B2",
+        "A3",
+        "B3"
+      ],
+      "archived_family_equal": true,
+      "archived_tower_equal": true,
+      "passed": false
+    }
+  ],
+  "spectral": [
+    {
+      "name": "random-n3",
+      "command": [
+        "python3",
+        "-B",
+        "se/tools/mdh_sigma.py",
+        "random",
+        "--n",
+        "3"
+      ],
+      "exit_code": 0,
+      "passed": true,
+      "stdout": "brute-force SVD groups: [(np.float64(285.942857), 1), (np.float64(229.657143), 20), (np.float64(154.714286), 20), (np.float64(143.078006), 64), (np.float64(127.657143), 20), (np.float64(121.498351), 64), (np.float64(99.704762), 36), (np.float64(86.276701), 36), (np.float64(67.164286), 64), (np.float64(41.561905), 9), (np.float64(15.374522), 40), (np.float64(5.628571), 40), (np.float64(0.0), 306)]\npencil sigma per class (expect EXACT match, no constants):\n  ((3, 1, 1, 1), (1, 1, 1), (3,)): 127.6571429 OK\n  ((3, 1, 1, 1), (3,), (1, 1, 1)): 127.6571429 OK\n  ((3, 2, 1), (1, 1, 1), (2, 1)): 121.4983507 OK\n  ((3, 2, 1), (2, 1), (1, 1, 1)): 121.4983507 OK\n  ((3, 2, 1), (2, 1), (2, 1)): 143.0780064 OK\n  ((3, 2, 1), (2, 1), (3,)): 67.1642857 OK\n  ((3, 2, 1), (3,), (2, 1)): 67.1642857 OK\n  ((4, 1, 1), (1, 1, 1), (3,)): 229.6571429 OK\n  ((4, 1, 1), (2, 1), (2, 1)): 15.3745217 OK\n  ((4, 1, 1), (2, 1), (3,)): 5.6285714 OK\n  ((4, 1, 1), (3,), (1, 1, 1)): 229.6571429 OK\n  ((4, 1, 1), (3,), (2, 1)): 5.6285714 OK\n  ((4, 2), (2, 1), (2, 1)): 86.2767014 OK\n  ((4, 2), (2, 1), (3,)): 99.7047619 OK\n  ((4, 2), (3,), (2, 1)): 99.7047619 OK\n  ((4, 2), (3,), (3,)): 41.5619048 OK\n  ((5, 1), (2, 1), (3,)): 154.7142857 OK\n  ((5, 1), (3,), (2, 1)): 154.7142857 OK\n  ((6,), (3,), (3,)): 285.9428571 OK\nmismatches: 0\n",
+      "stderr": ""
+    },
+    {
+      "name": "reference-n3",
+      "command": [
+        "python3",
+        "-B",
+        "se/tools/mdh_sigma.py",
+        "n3opt"
+      ],
+      "exit_code": 0,
+      "passed": true,
+      "stdout": "tie groups: {(12, 6, (2, 1), (0, 0)): 3, (12, 5, (2, 1), (1, 0)): 3}\nbest assignment error 3.11e-15\npencil: [2.454344, 1.56793, 1.238995, 1.132419, 1.117849, 1.117432, 1.0, 0.952223, 0.844379, 0.539643, 0.52499, 0.098588]\nknown : [2.454344, 1.56793, 1.238995, 1.132419, 1.117849, 1.117432, 1.0, 0.952223, 0.844379, 0.539643, 0.52499, 0.098588]\nLAW-1: (2n-1)s0-(2n-2)s1 = 6.000000 (target 6)\n",
+      "stderr": ""
+    },
+    {
+      "name": "parity-n4",
+      "command": [
+        "python3",
+        "-B",
+        "se/tools/mdh_n4_d1.py"
+      ],
+      "exit_code": 0,
+      "passed": true,
+      "stdout": "S_row (solved from equivariance S_row B_o = B_o S_col):\n   ['-1', '0', '0']\n   ['0', '1', '0']\n   ['0', '0', '1']\nS_row^2 = I: True\ntrace S_row = 1 (expect +1: two even rows, one odd)\ncol parity vectors: + ['-5/8', '5/8']  - ['-21/8', '5/8']\nrow parity: dim(+1) = 2  dim(-1) = 1\nparity form [[a,0],[b,0],[0,c]] for ALL 51 orbit images: OK\nmy-optimum sigma for (5,2,1;(3, 1),(3, 1)): ['0.962281', '0.554970']\nmy-optimum sigma for (5,2,1;(3, 1),(2, 1, 1)): ['1.188795']\nmy-optimum sigma for (5,2,1;(2, 1, 1),(3, 1)): ['1.188795']\n",
+      "stderr": ""
+    }
+  ],
+  "source_sha256": {
+    "tools/mdh_blocks.py": "510e4bc681d7552dc0ad4ce0ec5a34b69bf8af1f17ffae0b4646ef40b424376e",
+    "tools/mdh_certify.py": "e53e52eb02ade452d3b2230ec0f8431abc0679c12a25b4b4cd96b75a543ef694",
+    "tools/mdh_closed_tower.py": "0b112422c7ccbf78b0f1f448b562e22be12f0e76db3f4e3aee33dbbdc0e41cef",
+    "tools/mdh_engine.py": "e01516dc93d995b0fb7b940c102d3f29f9c590f3a888bf07a0d5511613b3f760",
+    "tools/mdh_family.py": "09741a273a2101849c1893c58667eaf39e2e2aa89785db50d1c209e93a35880d",
+    "tools/mdh_fast.py": "dfb14910f729441807d7a7fa1bbee17e9e9db8fb60c9f3deba32e67e9adbb10c",
+    "tools/mdh_marked_subset_d1.py": "b7a01129c02cd3142e9d08d077cec2f72fd42d3baf937fdee9899fb045834f60",
+    "tools/mdh_n4_block.py": "3827d044b61a0bb7bc995d009279e6998429b8d7ba4aa55778748586cdd5169c",
+    "tools/mdh_n4_d1.py": "17eb90c557293fb8391b38bec04458526696daf01394d46099ff5e9bf598603a",
+    "tools/mdh_phi_tower.py": "db988ed13a265e51fac88d38b2ed1915fe73aa8e3dce7e8313c5c52e6f0beb2e",
+    "tools/mdh_sigma.py": "242ac8fa8e8d018fe1a6df5a69acf6f59dbf575ceb3055c8762c7c4960ef1d1d",
+    "tools/check_mdh_structure.py": "c98ae71f3a7c8c2bee2ae6869ecdbd7867c3eda90a6e6e43b7bf7e0106787fc5"
+  },
+  "input_sha256": {
+    "artifacts/mdh_dimensions.json": "3363086b049e7d4fc20146724be55af60ecc79d18ec1445bc92fb3cb9ad5c89c",
+    "artifacts/mdh_family_n4.json": "86fc35981636be63f078a3fa0bab229cb0efa2698d789fc32056a8c15ba6b656",
+    "artifacts/mdh_phi_tower_n4.json": "2ef112cdd526b3474106151eacb578fd096f20a3354c3af3848bd378b0f8a9df",
+    "artifacts/mdh_n4_521_block.json": "46c3dfc6ac8109535f96946aa6fa67f32757416d0c152ac29683da0ae8a16160",
+    "artifacts/mdh_opt_t_n4.npy": "74d27e936fd3cd64275cabe2ce0ac3bfc2b8601d11ea5ebd8e08252b64028146",
+    "artifacts/blocks_n3.json": "e1fe0260d55000ed253be2177e87a8c619699f11eeb25172a21c3c5e772cd5de"
+  },
+  "passed": false,
+  "numpy": "2.3.5"
+}
