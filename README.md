@@ -8,6 +8,15 @@ small-alphabet \(k\)-Sum. Each project is represented as an AND/OR proof DAG.
 A node records one mathematical claim, its proof routes and dependencies, its
 current evidence level, and direct links to the evidence used to assess it.
 
+## Paper
+
+[A Claim-Centered Research Record for AI-Assisted Theoretical Research:
+Examples in Quantum Query Complexity (PDF)](paper/claim-centered-research-record.pdf)
+
+The paper is licensed under the
+[Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
+This license statement applies to the paper only.
+
 ## Start here
 
 - [File protocol](FILE_PROTOCOL.md)
@@ -30,6 +39,8 @@ ksum/
   reviews/                     project-level external reviews
   artifacts/                   proofs, runs, and counterexamples
   tools/                       project-specific mathematical checkers
+paper/
+  claim-centered-research-record.pdf
 tools/                         shared DAG validators only
 ```
 
@@ -38,9 +49,9 @@ Begin with a generated `NODE_INDEX.md`, open a claim node under
 relevant proof, computation, review finding, or Lean formalization. The
 materials for each case study are kept inside its own project directory, so a
 single case study can be exported without collecting evidence from elsewhere
-in the repository. The repository is a snapshot of the current DAG and its evidence. Manuscripts,
-raw model conversations, private accounting data, and unrelated projects are
-not included.
+in the repository. The repository is a snapshot of the current DAG and its
+evidence. The public paper is included as a PDF; its LaTeX source, raw model
+conversations, private accounting data, and unrelated projects are not included.
 The snapshot preserves selected research events and failed claims, not a complete
 event-by-event history. The protocols specify how subsequent updates should be recorded;
 passing the static checks does not establish completeness of the historical record.

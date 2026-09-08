@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check that public evidence is reachable from the current SE or k-Sum DAG."""
+"""Check public evidence closure and the bounded publication surface."""
 
 from __future__ import annotations
 
@@ -18,6 +18,7 @@ CORE_TOOLS = {
     Path("tools/proof_dag_schema.py"),
     Path("tools/test_dag_contracts.py"),
 }
+PUBLIC_PAPER = Path("paper/claim-centered-research-record.pdf")
 
 
 def collect_paths(value: object, result: set[Path]) -> None:
@@ -95,7 +96,22 @@ def main() -> int:
     if unexpected_tools:
         errors.extend(f"non-shared tool at repository level: {path}" for path in sorted(unexpected_tools))
 
-    for misplaced in ("artifacts", "reviews", "paper", "papers", "research"):
+    paper_root = ROOT / "paper"
+    if paper_root.exists():
+        paper_files = {
+            path.relative_to(ROOT)
+            for path in paper_root.rglob("*")
+            if path.is_file()
+        }
+        unexpected_paper_files = paper_files - {PUBLIC_PAPER}
+        errors.extend(
+            f"unexpected public paper file: {path}"
+            for path in sorted(unexpected_paper_files)
+        )
+        if PUBLIC_PAPER not in paper_files:
+            errors.append(f"missing public paper PDF: {PUBLIC_PAPER}")
+
+    for misplaced in ("artifacts", "reviews", "papers", "research"):
         if (ROOT / misplaced).exists():
             errors.append(
                 "project material belongs inside se/ or ksum/, found: "
