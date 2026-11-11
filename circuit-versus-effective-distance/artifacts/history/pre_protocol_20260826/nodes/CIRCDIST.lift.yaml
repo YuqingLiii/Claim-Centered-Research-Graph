@@ -1,0 +1,385 @@
+id: CIRCDIST.lift
+role: outcome
+aliases:
+- CLOSED-LIFT
+claim: >-
+  In graph-like detector error models with fixed boundaries — graph-like read per-sector (iff Def
+  1.12) and quantified over memory experiments C_R(M) of legal (iff Def 1.3),
+  measurement-consistent (MC, iff Def 2.1) schedules M with R >= d_sec rounds, d_sec the sector's
+  own spatial distance (d_X for the Z-memory, d_Z for the X-memory) — an independently reviewed
+  necessary-and-sufficient structural criterion (in graph-covering, voltage-graph, or
+  chain-complex form) characterizes when d_circ = d_eff, of the shape "d_circ equals the minimum
+  over nontrivial effective logicals gamma of the length of the shortest closed spacetime lift of
+  gamma", with vanishing minimal time-direction repair cost as the equal-weight liftability
+  condition at minimum weight; the criterion recovers the non-interleaved equality d_circ = d_eff
+  as a corollary and is accompanied by an explicit interleaved example with d_circ > d_eff.
+assessment:
+  level: PROVED
+  caveats:
+  - 'Decision-sheet sweep CLOSED (wave-32): 25 rows — 15 applied, 6 unapplied items folded or
+    discharged in the final edit (both R6 halves incl. (MC) in claim AND implication; the
+    wave-17 implication-adequacy audit; digest binding), 5 rows/13 caveats ruled out-of-claim
+    with reasons, 1 superseded. Nothing accepted remains unapplied. (MC) had TWO loss
+    carriers (R6 and assembly caveat C-M6, both never transferred).'
+  - 'S2 (conservative scoping): the folded R >= d_sec quantifier heads the sentence and scopes
+    over all three clauses, while C-M7 scoped it to the criterion clause only — the claim
+    asserts less than provable; honest scope note, non-blocking.'
+  - The repair >= 3 regime, min-cost-covering extension, and large proposer scans remain
+    excluded, per the children's certifications.
+  - Under the min-over-sectors convention the [[4,2,2]] witness is the sole load-bearing
+    example for the existential clause (its repair = 1 re-derived from Def 5.2 by the wave-31
+    reviewer; the existential clause is now ENTAILED, not merely corroborated).
+  - Per-sector scope, as pinned in the claim text.
+  - 'Shared model design is not independence (standing campaign limitation): every
+    independent implementation re-implements the frozen 公共定义 fault inventory, so a shared
+    misreading of the frozen text would survive all of them. SPOT-VALIDATED AGAINST STIM
+    1.16.0 (artifacts/circdist_stim_crossval_20260823.md, 2026-08-25): the [[4,2,2]] arm (176
+    (MC) schedules re-enumerated, 3 gap witnesses, 1 both-sector, d_circ = 2 at R = 2..5,
+    partners 1) and the Steane arm (M_IL Z-memory d_circ = 3 at R = 2..5, 149/285/421/557 DEM
+    columns exact; M_NI 2) reproduce under stim with 0 disagreements between two independent
+    distance extractors; perturbing the fault inventory (data idle at the reset/measure
+    layers, +84 to +300 elementary faults) and breaking the ideal-readout boundary (noisy
+    terminal readout) changed 0 DEM columns and 0 distances. Systematic-mismatch risk is
+    bounded to untested regions (gross arm, d >= 7, repair >= 2). The prior wording "no stim
+    cross-check exists anywhere in this subtree" was FACTUALLY WRONG — CIRCDIST.lift.gap-example
+    already recorded stim 1.16.0 cross-validation (its lines 71 and 121).'
+  - 'Disjunct availability: of the claim''s three offered forms (graph-covering, voltage-graph,
+    chain-complex), only the chain-complex disjunct is delivered by the children.'
+  summary: 'Promoted CERTIFIED* -> PROVED 2026-08-23 (wave 32): 课题二 (closed-lift
+    characterization) is CLOSED AT PROVED — all three premises PROVED (iff via the wave-29
+    end-to-end pass; nonint and gap-example via the wave-12 claim repairs), the route
+    implication R6-repaired and re-bound, the claim carrying every hypothesis in its own text
+    (per-sector graph-like; legality + (MC); R >= d_sec crossed pairing; minimum weight;
+    repair-cost liftability), and the exhaustive decision-sheet sweep confirming nothing
+    accepted remains unapplied. Promotion chain: CONJECTURED -> CERTIFIED* 2026-08-22 via the
+    assembly + Amendment 1 + focused re-review; claim folds 2026-08-23 (BINDING conditions,
+    d_sec, R1/R2 type repair, (MC)) each blessed-then-installed with hash re-binds at every
+    step. Round-1 recon (2026-08-20) decomposed the claim into three components and delivered the
+    third at NUMERICAL: an explicit [[4,2,2]] interleaved circuit with d_eff = 1 < d_circ = 2 (see
+    CIRCDIST.lift.gap-example). Blueprint: the criterion (CIRCDIST.lift.iff, three alternative
+    formalizations), the non-interleaved corollary (CIRCDIST.lift.nonint), and the example jointly
+    are the claim. Literature verification (artifacts/circdist_lift_litverify_20260820.md) pinned
+    all load-bearing references and found the target sits in open territory (Guemard
+    arXiv:2404.16736 Remark 3.14 leaves lifted-code distance open). Cross-root coupling: this
+    criterion is the only mechanism by which CIRCDIST.gross can reach 12 (gross recon proved
+    d_ext <= 11 for every schedule at NUMERICAL level), and the iff routes'' finite-window premise
+    is CIRCDIST.sat''s target theorem.'
+  basis:
+    routes:
+    - criterion-corollary-example
+    reviews:
+    - path: artifacts/circdist_lift_root_final_20260823.md
+      kind: review
+      scope: Final decision-sheet sweep (25 rows, exhaustive by construction) + the (MC) fold
+        blessed against Theorem 5.7's printed hypotheses ((MC) load-bearing twice; the
+        narrowing verified non-free on the existential conjunct with the [[4,2,2]] witness
+        checked inside scope twice, nonint automatic); licenses node PROVED on the repaired
+        claim with all premises PROVED and the route re-bound.
+      locator: Section 5
+      reviewed_hash: sha256:6e463ba06227fbca209a301fb48cfad6bf72efff822d21d95e594faa9b1cac95
+    evidence:
+    - path: artifacts/circdist_amendments4_review_20260822.md
+      kind: text
+    - path: artifacts/circdist_lift_claimrepair2_review_20260823.md
+      kind: text
+    - path: artifacts/circdist_iff_amendment3_review_20260823.md
+      kind: text
+    - path: artifacts/circdist_endtoend2_review_20260823.md
+      kind: text
+    - path: artifacts/circdist_lift_root_rebind_20260823.md
+      kind: text
+routes:
+  criterion-corollary-example:
+    premises:
+    - CIRCDIST.lift.iff
+    - CIRCDIST.lift.nonint
+    - CIRCDIST.lift.gap-example
+    implication: >-
+      The claim is the conjunction of its three components — the iff criterion with the
+      intrinsic-voltage non-vacuity bar, the non-interleaved corollary derived inside the same
+      framework, and the explicit strict-inequality example. Assembling them is a clause-to-child
+      map plus two scope arguments: the universal clauses restrict downward for free, while the
+      existence clause requires the exhibited witness to be verified graph-like in the per-sector
+      sense of iff Definition 1.12 ([[4,2,2]]: yes, structurally; Steane: no). Formalization
+      consistency was checked and one contradiction was found and repaired (R_sat <= d versus
+      Corollary 7.3). The assembly inherits two hypotheses from the certified criterion —
+      measurement consistency (MC) and R >= d_sec — which bind every clause and which the root
+      claim now carries in its own text.
+    proof:
+      sketch: Near-definitional assembly; the only content is that all three components speak the
+        same framework language (the winning iff formalization).
+      sources:
+      - path: artifacts/circdist_lift_recon_20260820.md
+        kind: text
+    assessment:
+      level: PROVED
+      summary: 'Route re-bound and promoted by the wave-32 final review: the R6-repaired
+        implication (naming (MC) and R >= d_sec) is the reviewed composition argument — the
+        wave-26-era assembly chain plus the wave-30/31/32 audits; all three premises PROVED.'
+      basis:
+        reviews:
+        - path: artifacts/circdist_lift_root_final_20260823.md
+          kind: review
+          scope: Final sweep-and-fold review — constructs and blesses the repaired implication,
+            verifies the (MC) fold against Theorem 5.7's printed hypotheses, and licenses the
+            route at PROVED; supersedes the lapsed amendments4 binding (demoted to evidence).
+          locator: Section 5
+          reviewed_hash: sha256:b80da45d027e41942a3b20d60d8c6ffb693e9cb5a934e1267cb14d4ca1cc21ce
+        evidence:
+        - path: artifacts/circdist_amendments4_review_20260822.md
+          kind: text
+frontier:
+  task-002:
+    task: Prove the overlap>=4 voltage criterion and the distance formula rigorously inside the
+      Laurent-framework formalization (both are theorem-shaped with 5129/5129 numerical backing;
+      see event gate-d3-2026-08-20).
+    kind: task
+    since: '2026-08-20'
+events:
+  readjudication-2026-08-23:
+    date: '2026-08-23'
+    type: repair-applied
+    summary: 'Wave-11 canonical re-adjudication (artifacts/circdist_readjudication_20260823.md
+      §9): STAYS-CERTIFIED* on two independently sufficient grounds — (1) the two BINDING
+      review conditions (per-sector "graph-like"; C-M7 R >= d) restrict the claim AS WRITTEN,
+      which does not carry either restriction in its text; (2) route premise lift.iff remains a
+      conditional result, and passing review at a conditional level is not passing for §3''s
+      PROVED bar. Premise inventory after wave 11: nonint and gap-example PROVED-qualify
+      (pending their claim-text repairs), iff blocks. The retired same-stack/C-R2 caveat is
+      dropped entirely (C-R2 remains a provenance note in this event ledger; under canonical §3
+      it bears on no level in either direction). Adjudicator note for the lead: folding
+      "per-sector" and "R >= d" into the claim text + re-binding the route review converts the
+      root''s own contribution to complete, after which the level is governed purely by
+      lift.iff — registered as a lead-decision item, since root claim revisions follow the
+      R1-R6 lead-approval precedent.'
+    sources:
+    - path: artifacts/circdist_readjudication_20260823.md
+      kind: review
+      locator: Section 9
+  migrated-canonical-home-2026-08-23:
+    date: '2026-08-23'
+    type: migration
+    summary: 'Lead directive 2026-08-23: canonical home moved to the Claim-Centered-Research-Graph
+      repository; the discovery-new-algorithms copy is a frozen snapshot. Levels are re-based on
+      THIS repository''s DAG_PROTOCOL §3 verbatim: CERTIFIED* marks a CONDITIONAL result
+      (unresolved premises or scope caveats); PROVED requires a complete argument plus independent
+      adversarial review of every load-bearing input, with NO cross-model-stack requirement — the
+      former "same-stack ceiling" convention is RETIRED. Existing levels are carried unchanged;
+      re-adjudication of starred nodes under the canonical semantics is registered as review work,
+      not hand-executed by the dispatcher.'
+    sources:
+    - path: research/DAG_PROTOCOL.md
+      kind: text
+  root-promoted-2026-08-22:
+    date: '2026-08-22'
+    type: level-change
+    from: CONJECTURED
+    to: CERTIFIED*
+    summary: Focused re-review cleared the assembled composition proof (Amendment 1 applied);
+      promotion executed with the two review-mandated binding conditions written into the
+      assessment caveats (per-sector graph-like pin; C-M7 R >= d). Root star unliftable without
+      cross-stack re-verification of at least two children.
+    sources:
+    - path: artifacts/circdist_amendments4_review_20260822.md
+      kind: review
+      locator: Item 1
+  root-assembly-amendment1-2026-08-22:
+    date: '2026-08-22'
+    type: repair-applied
+    summary: 'Assembly Amendment 1 (SHA-256 25ed5a77...): F1 applied+verified (graph-like pinned
+      per-sector to iff Def 1.12; whole-DEM failure independently reproduced — R=3 histogram and
+      the weight-4 fault match the reviewer exactly; per-sector max 2 at R=2..5); F2 applied
+      (R >= d restored as carried caveat C-M7; both instruments for the root R-quantifier named);
+      F3 applied+verified (trip-wire rebound to claim hashes — the node file has drifted twice
+      from append-only events while the claim hash stays ccad7fa6, which is exactly why); R4/R6
+      amendments folded (Steane attribution honest); C-R2 containment recorded, unresolved. The
+      remaining root gate: focused re-review of this amendment, then promotion to CERTIFIED*.'
+    sources:
+    - path: artifacts/circdist_lift_root_assembly_amendment1_20260822.md
+      kind: text
+  root-assembly-review-2026-08-22:
+    date: '2026-08-22'
+    type: repair-applied
+    summary: 'Root assembly review (artifacts/circdist_lift_root_review_20260822.md):
+      FURTHER-REPAIR, three one-line items, then clears to a CERTIFIED* ceiling; nothing refuted.
+      F1: "graph-like" unpinned in the root claim — under the whole-DEM reading the [[4,2,2]]
+      witness fires 4 detectors and the existential clause fails; pin Def 1.12 as PER-SECTOR.
+      F2: Theorem 5.7''s R >= d hypothesis dropped from the carry-forward list. F3: the 14-hash
+      trip-wire binds node bytes instead of claim hashes (fires on append-only events). Revision
+      sheet for the lead: R1/R2/R3/R5 AGREE; R4 AMEND (under the min-over-sectors convention
+      Steane is NOT a circuit-level witness — d_eff = 2 both sectors, min d_circ = 2; the
+      [[4,2,2]] witness gaps in BOTH sectors and is the sole load-bearing example); R6 AMEND
+      (also name (MC) and R >= d); new R7/R8 = F1/F3. C-R2 stack identity:
+      UNDETERMINABLE-FROM-DISK (the GPT-5 self-report is hedged; the harness signature matches
+      July ksum reviews; no git/run-log evidence) with a CONTAINMENT CORRECTION: at most
+      lift.iff is affected, the root star is unliftable either way (two children remain
+      same-stack) — the scheduler round-12 "project-wide" phrasing was wrong and is corrected.'
+    sources:
+    - path: artifacts/circdist_lift_root_review_20260822.md
+      kind: text
+  root-assembly-2026-08-22:
+    date: '2026-08-22'
+    type: repair-applied
+    summary: 'Campaign-4 wave 1: the root composition proof is WRITTEN as a reviewable prose
+      assembly (artifacts/circdist_lift_root_assembly_20260822.md, 930 lines) — all five root
+      clauses discharged from the three CERTIFIED* children with claim hashes verified; the
+      [[4,2,2]] witness shown graph-like in both sectors (NUMERICAL, so the existential clause
+      survives the root''s graph-like restriction; Steane corroborates only the unrestricted
+      reading); no clause needs the excluded repair>=3 regime. SIX claim revisions proposed to
+      the lead (R1 bind "proven" to CERTIFIED* ceiling; R2 voltage is a SET — reword to minimal
+      repair cost, only the chain-complex disjunct is delivered; R3 insulate the identity reading
+      of C2; R4 dropping graph-like must wait for lift.iff re-widening; R5 pin C4''s reading; R6
+      correct the route''s "definitional bookkeeping" gloss). FLAG C-R2: the Amendment-2
+      completion review self-reports "Codex, GPT-5-based" while node caveats record a same-stack
+      chain — stack-identity adjudication needed; if cross-stack, star-lifting prospects change
+      for every CERTIFIED* node. Independent review of the assembly is the remaining root gate;
+      root ceiling CERTIFIED* regardless.'
+    sources:
+    - path: artifacts/circdist_lift_root_assembly_20260822.md
+      kind: text
+  created-2026-08-20:
+    date: '2026-08-20'
+    type: created
+    summary: Registered the closed-lift criterion problem as a root of the circdist project (lead
+      commission; live test of the valuation/scheduling layer).
+    sources:
+    - path: research/circdist/notes/CIRCDIST_PROBLEMS.md
+      kind: text
+  recon-2026-08-20:
+    date: '2026-08-20'
+    type: route-added
+    route: criterion-corollary-example
+    summary: Round-1 recon decomposed the node into iff/nonint/gap-example children, registered
+      three alternative iff formalizations, killed the naive H^1-cohomological criterion, and
+      delivered the gap example at NUMERICAL; node raised OPEN -> CONJECTURED on the registered
+      blueprint.
+    sources:
+    - path: artifacts/circdist_lift_recon_20260820.md
+      kind: text
+  gate-d3-2026-08-20:
+    date: '2026-08-20'
+    type: repair-applied
+    summary: d3 gate discharged with a mixed geometry-axis reading (surface 0-gap theorem-shaped,
+      Steane g = 1 witness); conjectured distance formula validated 5129/5129; overlap>=4
+      criterion registered on CIRCDIST.lift.iff; the recon's [[4,2,2]] witness found invalid
+      against the newly identified measurement-consistency constraint and repaired (see
+      CIRCDIST.lift.gap-example claim revision).
+    sources:
+    - path: artifacts/circdist_lift_d3gate_20260820.md
+      kind: text
+  litverify-2026-08-20:
+    date: '2026-08-20'
+    type: repair-applied
+    summary: Background literature verification resolved the recon's UNVERIFIED assumption flags,
+      corrected three citation premises (GT Thm 2.1.2 naming; lifted-product primary source is
+      arXiv:2012.04068; branched graph coverings belong to Baker-Norine, not Gross-Tucker), and
+      established the literature-gap statement.
+    sources:
+    - path: artifacts/circdist_lift_litverify_20260820.md
+      kind: text
+  claim-folded-2026-08-23:
+    date: '2026-08-23'
+    type: claim-revised
+    summary: 'Lead-approved fold executed via the wave-17 review: the two BINDING review
+      conditions (per-sector graph-like; C-M7 R >= d) moved from caveats into the claim text;
+      new hash bd1aa84e... bound to the wave-17 review; amendments4 node-level review (old hash
+      ccad7fa6...) demoted to basis.evidence; route-level review link f39c83e6... CONFIRMED
+      valid (implication byte-identical). Review findings recorded as caveats: S1 (blocking for
+      PROVED — the liftability clause lacks the premise''s minimum-weight restriction; next
+      fold should add it) and S2 (the R >= d scoping is conservative). LEVEL STAYS CERTIFIED*:
+      premises nonint and gap-example are PROVED, but iff remains conditional (unargued
+      per-sector band, see the child) and S1 stands. 课题二 root now carries its restrictions
+      in its own text — the star marks the child''s band conditionality plus S1, nothing
+      retired.'
+    sources:
+    - path: artifacts/circdist_lift_claimrepair2_review_20260823.md
+      kind: review
+      locator: Root verdict
+  claim-dsec-s1-2026-08-23:
+    date: '2026-08-23'
+    type: claim-revised
+    summary: 'Wave-23 re-review constructed and blessed the root text applying BOTH pending
+      fixes — the d_sec constant (replacing R >= d, with the crossed pairing spelled out) and
+      the S1 counterpart ("at minimum weight" in the equal-weight-liftability clause).
+      Installed and hash-verified (582f9e06...); wave-17 fold review demoted to evidence;
+      wave-23 review is the hash-bound entry; route-level review link f39c83e6 CONFIRMED
+      untouched. S1 DISCHARGED; S2 (conservative scoping) stands. LEVEL STAYS CERTIFIED* as
+      licensed: the iff premise remains conditional on two residual amendment defects (both
+      cheap). Old wording preserved in this event history (pre-revision hash bd1aa84e...).'
+    sources:
+    - path: artifacts/circdist_iff_amendment3_review_20260823.md
+      kind: review
+      locator: Levels
+  part-b-adjudication-2026-08-23:
+    date: '2026-08-23'
+    type: repair-applied
+    summary: 'Wave-30 Part B (artifacts/circdist_endtoend2_review_20260823.md): STAYS
+      CERTIFIED* bound to 582f9e06. Premise inventory verified at source — nonint,
+      gap-example, iff ALL PROVED; route implication still hashes to f39c83e6; S2
+      (conservative scoping) adjudicated NON-BLOCKING. Parent-child consistency: the d_circ
+      formula, the d_sec crossed pairing, and "at minimum weight" are byte-identical between
+      root and child; the ONE drift is the liftability clause type error (root review R2,
+      agreed 2026-08-22, never applied — its three sibling repairs all were) plus R1
+      ("proven" embedded). 课题二 does not close pending these two lead-approved one-line
+      wording repairs + re-bind. The reviewer''s note: the child is better-worded than the
+      parent, and only the type repair fell through.'
+    sources:
+    - path: artifacts/circdist_endtoend2_review_20260823.md
+      kind: review
+      locator: Section 9
+  r1r2-applied-2026-08-23:
+    date: '2026-08-23'
+    type: claim-revised
+    summary: 'Lead-approved ("可以") R1 + R2 repairs installed via the wave-31 focused re-bind
+      review (artifacts/circdist_lift_root_rebind_20260823.md): "a proven" -> "an
+      independently reviewed" (stable historical fact, not a level-tracking word); the
+      liftability clause retyped to "vanishing minimal time-direction repair cost" (Definition
+      5.2''s own title; the type error cured — repair(gamma) is a non-negative integer, so
+      "vanishing" is well-typed; both min-scope readings coincide with Thm 5.7''s
+      repair(gamma) = 0; the [[4,2,2]] witness''s repair = 1 re-derived, existential clause
+      now entailed). New hash dbb31a4d bound; wave-23/30 reviews demoted to evidence; route
+      review f39c83e6 unaffected. LEVEL STAYS CERTIFIED*: the wave-31 reviewer DECLINED
+      PROVED on a newly found unapplied item — decision-sheet R6''s (MC) half (measurement
+      consistency, a Thm 5.7 hypothesis, unnamed in claim and implication; its R >= d half
+      was folded, the (MC) half silently dropped — third instance of the
+      "implication-targeting repairs never executed" pattern, flagged for a repo-wide sweep).
+      Old wording preserved here (pre-revision hash 582f9e06). Minimal residual to PROVED:
+      fold (MC) + re-bind, fix content on file (Amendment 1 §4.2).'
+    sources:
+    - path: artifacts/circdist_lift_root_rebind_20260823.md
+      kind: review
+      locator: Licensed
+  proved-2026-08-23:
+    date: '2026-08-23'
+    type: level-change
+    from: CERTIFIED*
+    to: PROVED
+    summary: 'Wave-32 final review (lead-authorized last box): the exhaustive decision-sheet
+      sweep closed (25 rows, nothing accepted left unapplied — (MC) had TWO loss carriers, R6
+      and assembly caveat C-M6); the (MC) + legality fold installed in claim (6e463ba0...) and
+      implication (b80da45d...) in ONE edit per the licence; substance bind verified against
+      Theorem 5.7''s printed hypotheses ((MC) load-bearing twice: d_circ undefined without it;
+      hook voltage exists iff it fails), the narrowing checked non-vacuous on the existential
+      conjunct ([[4,2,2]] inside scope, independently recomputed twice; nonint automatic).
+      Node PROVED and route PROVED as licensed. 课题二 (closed-lift characterization) is
+      CLOSED AT PROVED: criterion, corollary, example, and root all complete. Residual notes
+      live in the caveats (S2 conservative scoping; exclusions; sole-witness; shared-model
+      no-stim; the child''s own claim shares the (MC) omission — non-propagating since the
+      root is now narrower, recorded on the child''s frontier as post-campaign hygiene).'
+    sources:
+    - path: artifacts/circdist_lift_root_final_20260823.md
+      kind: review
+      locator: Licence
+  stim-crossval-2026-08-23:
+    date: '2026-08-23'
+    type: repair-applied
+    summary: 'Wave-34 stim cross-validation (artifacts/circdist_stim_crossval_20260823.md):
+      5/5 targets MATCH, 0 mismatch — the shared-model caveat is DOWNGRADED per license
+      (amendment A installed verbatim). The reviewer also found the prior caveat FACTUALLY
+      WRONG (gap-example had recorded stim validation since 2026-08-20 — a caveat
+      contradicting its own child), and showed the caveat''s two named risk surfaces are
+      INERT under direct perturbation. Claim and level untouched.'
+    sources:
+    - path: artifacts/circdist_stim_crossval_20260823.md
+      kind: review
+      locator: Section 9

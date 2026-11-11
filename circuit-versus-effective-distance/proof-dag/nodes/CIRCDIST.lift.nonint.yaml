@@ -1,0 +1,63 @@
+id: CIRCDIST.lift.nonint
+role: proof
+aliases:
+- LIFT-NONINT
+claim: Within the closed-lift framework, every non-interleaved schedule satisfies d_circ = d_eff, derived
+  (not assumed) from the framework — every minimum-weight effective fault admits a horizontal representative,
+  so the spacetime graph contains R pairwise-disjoint copies of G_eff via weight-preserving sections.
+assessment:
+  level: PROVED
+  caveats:
+  - 'Wording note (wave-12 review, non-blocking): the claim keeps the graph idiom ("spacetime graph",
+    G_eff) while Theorem 7.1 also covers non-graph-like codes, where the proof states the containment
+    for the complex; the graph reading is a faithful specialisation.'
+  - Review depth, not conditionality — the reviewer's exhaustive arm covers Def 2.8 + Lemma 7.2 (the collision/weight
+    accounting) and 112 non-interleaved configurations across 4 codes at R = 1..4, including a [[15,7,3]]
+    Hamming-CSS instance with Z-degree 4 and overlaps up to 8; the general case rests on the reviewed
+    line-by-line prose derivation.
+  - 'Shared model design: the reviewer''s re-implementation inherits the 公共定义 fault inventory (Def 1.8/2.5),
+    so a systematic modelling error at that level would survive both implementations; the reviewer did
+    not run stim for this node. The claim is explicitly scoped "within the closed-lift framework".'
+  - k > 1 is handled per chosen observable and was not exhaustively swept (review §5.3).
+  summary: The non-interleaved equality claim is PROVED within the stated closed-lift framework. The reviewed
+    argument uses containment of R pairwise-disjoint copies, not a decomposition of the entire spacetime
+    object. The repaired claim is bound to the independent clearance.
+  basis:
+    reviews:
+    - path: circuit-versus-effective-distance/reviews/circdist_claimrepair_review_20260823.md
+      kind: review
+      scope: Focused re-review of the wave-11-prescribed one-line claim repair — word-by-word drift check
+        (exactly the three prescribed edits, nothing else), source verification that nonint proof §6 (Def
+        6.1, Prop 6.2 weight-preserving chain section, Cor 6.3) proves containment of R pairwise-disjoint
+        copies and that the base review endorses Settlement S2 verbatim (§4.5) plus verdicts K/L; hash
+        convention validated by reproducing the prior reviewed_hash. Verdict CLEAR-FOR-PROVED, bound to
+        the repaired claim; rests on the base review's Theorem 7.1 verdicts and the wave-11 adjudication
+        §3 for the mathematics.
+      locator: Section 3
+      reviewed_hash: sha256:e2d1b292ae9265cf35ac51e9c2cf582fc167845310d5ed7a5995a235ee10649a
+    runs:
+    - path: circuit-versus-effective-distance/artifacts/circdist_lift_nonint_proof_20260820.md
+      kind: run
+      scope: Model corroboration of the proof (not the proof itself) — 12 schedule/code configurations,
+        both temporal boundaries, exhaustive d_circ = d_eff checks.
+      result: 10233/10233 faults match the detector-chain formula; witness fires 0 detectors in 12/12;
+        exhaustive d_circ = d_eff in 12/12; interleaved-Steane failure isolated to Lemma 5.4 exactly.
+    evidence:
+    - path: circuit-versus-effective-distance/artifacts/circdist_lift_nonint_proof_20260820.md
+      kind: text
+    - path: circuit-versus-effective-distance/reviews/circdist_lift_proofs_review_20260820.md
+      kind: text
+    - path: circuit-versus-effective-distance/reviews/circdist_readjudication_20260823.md
+      kind: text
+    - path: circuit-versus-effective-distance/artifacts/history/pre_protocol_20260826/nodes/CIRCDIST.lift.nonint.yaml
+      kind: text
+      note: Immutable pre-migration record, including every original event, former summary and frontier;
+        historical evidence, not an additional completion review.
+    - path: circuit-versus-effective-distance/reviews/circdist_claimrepair_review_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: circuit-versus-effective-distance/artifacts/circdist_lift_recon_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.

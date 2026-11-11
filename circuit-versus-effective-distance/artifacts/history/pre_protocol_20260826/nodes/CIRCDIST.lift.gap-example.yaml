@@ -1,0 +1,160 @@
+id: CIRCDIST.lift.gap-example
+role: proof
+aliases:
+- LIFT-GAP-EXAMPLE
+claim: There exists an explicit legal interleaved single-ancilla CNOT syndrome-extraction circuit
+  with d_circ strictly greater than d_eff; witnessed at [[4,2,2]] by measurement-consistent
+  depth-7 interleaved schedules (3 of the 44 consistent ones under the frozen
+  idle-layer-compression convention; the same 3 among the 176 uncompressed) with d_eff = 1 and
+  d_circ = 2, while non-interleaved circuits with identical within-check CNOT orders (hence
+  identical residual set and d_eff) have d_circ = 1; and at Steane [[7,1,3]] by an interleaved
+  depth-8 schedule with d_eff = 2 and d_circ = 3 whose identical-orders non-interleaved partner
+  has d_circ = 2.
+assessment:
+  level: PROVED
+  caveats:
+  - Sector scopes as stated — the Steane witness is Z-memory (X-memory gives 2); [[4,2,2]]
+    witness 1 gaps BOTH sectors, witnesses 2-3 gap Z-memory only (adjudicator-confirmed); under
+    a min-over-sectors convention witness 1 is the sole load-bearing example.
+  - 'Shared model design: all three implementations (proposer, reviewer, adjudicator) read the
+    frozen 公共定义 fault inventory; a systematic modelling error at that level would survive
+    every implementation.'
+  summary: 'Promoted NUMERICAL -> CERTIFIED* 2026-08-20: independent adversarial review
+    (artifacts/circdist_numerical_review_20260820.md, items 1-2) CONFIRMS the measurement
+    consistency constraint (re-derived from scratch, validated 524/524 against stim determinism),
+    the repaired [[4,2,2]] witnesses and their d_circ = 1 non-interleaved partners at R = 2..5,
+    the invalidity of the retracted depth-5 circuit, and the Steane instance (independent
+    reconstruction, 9936 DEM columns cross-validated, 0 disagreements).
+    WITNESS REPAIRED 2026-08-20 by the d3 gate: the original depth-5 [[4,2,2]] circuit VIOLATES a
+    validity constraint the recon missed (for every X/Z check pair the back-propagation count
+    #{q in both supports : t(q->b) < t(a->q)} must be EVEN, else detectors are non-deterministic
+    and stim refuses the DEM — the Z ancilla''s |0> is not an X eigenstate); the claim survives
+    with repaired witnesses (3/176 consistent depth-7 schedules; plus the stronger Steane instance
+    with g(C) = 1 at d_eff = 2, Z memory sector). The independent review MUST check the validity
+    constraint and the repaired witnesses, not the retracted depth-5 circuit.
+    Established in the 2026-08-20 recon session by exhaustive weight-1 and weight-2 fault
+    enumeration with a purpose-written ~200-line F2 propagator (no stim/pymatching available),
+    stable for R = 2..5 rounds; the core is hand-checkable. Mechanism: the hook fault firing no
+    detector in the non-interleaved circuit fires exactly two in the interleaved one — the same
+    Z-check in consecutive rounds, a purely timelike edge of net voltage 1; one added
+    measurement-flip cancels it exactly, giving a weight-2 closed lift. This is the smallest
+    instance of the conjectured d_circ = |gamma| + repair-cost formula. Also NUMERICAL evidence
+    that d_eff depends only on within-check CNOT orders, making the completion gap a function of
+    the interleaving pattern alone (the A/B experimental design).'
+  basis:
+    reviews:
+    - path: artifacts/circdist_claimrepair_review_20260823.md
+      kind: review
+      scope: Focused re-review of the wave-11-prescribed denominator repair — word-by-word drift
+        check (one contiguous edit, rest byte-identical), source verification of the compression
+        rule (公共定义 line 58), of the 44-vs-176 counts (base review §1.4 and the wave-11
+        adjudication §1.2 independently agree), and that the same three witnesses occupy all
+        seven layers hence are legal under both conventions. Verdict CLEAR-FOR-PROVED, bound to
+        the repaired claim; rests on the base review's items 1-2 and the wave-11 adjudication §4
+        for the mathematics (three independent implementations of the whole [[4,2,2]] arm).
+      locator: Section 4
+      reviewed_hash: sha256:e080155da0e18435bb834f578df6216bdd0e45e21a81302f58cf7514f47fee50
+    runs:
+    - path: artifacts/circdist_lift_recon_20260820.md
+      kind: run
+      scope: Exhaustive weight-1/weight-2 fault enumeration for the [[4,2,2]] interleaved and
+        non-interleaved A/B pair, R = 2..5, purpose-written F2 propagator (code inline in the
+        artifact).
+      result: Interleaved depth-5 circuit has d_eff = 1 and d_circ = 2; the non-interleaved
+        circuit with identical within-check orders has d_circ = 1; the separating hook fires two
+        timelike detectors (same Z-check, consecutive rounds) and one added measurement flip
+        closes the lift at weight 2. Stable for R = 2..5.
+    - path: artifacts/circdist_lift_d3gate_20260820.md
+      kind: run
+      scope: Validity-constrained exhaustive enumeration — [[4,2,2]] all 176 consistent depth-7
+        schedules; Steane [[7,1,3]] depth-8 (60256 checks); rotated d=3 surface (26570 schedules,
+        2304 order sets, 87000 criterion checks); stim 1.16.0 cross-validation.
+      result: Original depth-5 witness invalid (odd back-propagation count); repaired [[4,2,2]]
+        witnesses 3/176 with d_circ = 2 > d_eff = 1; Steane interleaved d_eff = 2, d_circ = 3 vs
+        non-interleaved 2 (g = 1, R = 2..5); surface code gap provably 0 across the family;
+        formula d_circ = min(|gamma| + repair) agreed 5129/5129.
+    evidence:
+    - path: artifacts/circdist_lift_recon_20260820.md
+      kind: text
+    - path: artifacts/circdist_numerical_review_20260820.md
+      kind: text
+    - path: artifacts/circdist_readjudication_20260823.md
+      kind: text
+events:
+  promoted-proved-2026-08-23:
+    date: '2026-08-23'
+    type: level-change
+    from: CERTIFIED*
+    to: PROVED
+    summary: Promotion executed with the claim repair below (see claim-repaired-promoted event);
+      wave-11 adjudication §4 supplies the PROVED-QUALIFIES verdict, wave-12 focused re-review
+      binds it to the repaired claim hash.
+    sources:
+    - path: artifacts/circdist_claimrepair_review_20260823.md
+      kind: review
+      locator: Section 4
+  claim-repaired-promoted-2026-08-23:
+    date: '2026-08-23'
+    type: claim-revised
+    summary: 'Wave-12 execution of the wave-11 prescription: the wrong denominator ("3 of the
+      176 consistent ones") repaired by pinning BOTH conventions in the claim (3 of the 44
+      compressed; the same 3 among the 176 uncompressed); focused re-review
+      (artifacts/circdist_claimrepair_review_20260823.md §4) verified the repair is one
+      contiguous edit with the rest byte-identical, confirmed 44/176 and the all-seven-layers
+      legality of the three witnesses at source, and returned CLEAR-FOR-PROVED bound to the new
+      claim hash e080155d... Old wording preserved in this event history; prior reviews (base
+      numerical review items 1-2, wave-11 adjudication) bound the pre-repair hash 48734046...
+      and are demoted to basis.evidence, with the re-review resting on their mathematical
+      verdicts. LEVEL CHANGE executed in the same write: CERTIFIED* -> PROVED per the wave-11
+      verdict (§4: existential claim discharged by exhaustive enumeration in three independent
+      implementations; the sole surviving defect was the descriptive numeral, now repaired).'
+    sources:
+    - path: artifacts/circdist_claimrepair_review_20260823.md
+      kind: review
+      locator: Section 4
+  readjudication-2026-08-23:
+    date: '2026-08-23'
+    type: repair-applied
+    summary: 'Wave-11 canonical re-adjudication (artifacts/circdist_readjudication_20260823.md
+      §4): verdict PROVED-QUALIFIES binding to claim hash 48734046... — the purely existential
+      claim is discharged by exhaustive enumeration in THREE independent implementations
+      (proposer F2 propagator; reviewer''s own propagator + own stim build, 9936 DEM columns, 0
+      disagreements; adjudicator''s fresh symplectic propagator reproducing the denominators
+      2/27/176/769, compressed counts 2/17/44/34, all three witnesses, the residual set, the
+      sector split, and the d_circ = 1 non-interleaved partners). Nothing in the [[4,2,2]] arm
+      is carried on paper. HOWEVER the hashed claim asserts a numeral (176) that is wrong under
+      the repository''s own frozen legality rule (cross-cutting finding 2); dispatcher holds the
+      node at CERTIFIED* pending the mandatory one-line repair + hash re-bind. Caveat set
+      rewritten per prescription (same-stack caveat dropped as retired).'
+    sources:
+    - path: artifacts/circdist_readjudication_20260823.md
+      kind: review
+      locator: Section 4
+  review-certified-2026-08-20:
+    date: '2026-08-20'
+    type: repair-applied
+    summary: Independent adversarial review completed (items 1-2, CONFIRM with a schedule-space
+      convention correction); promoted NUMERICAL -> CERTIFIED* with caveats.
+    sources:
+    - path: artifacts/circdist_numerical_review_20260820.md
+      kind: review
+      scope: Items 1 and 2 of the combined NUMERICAL review.
+      locator: Items 1 and 2
+  witness-repaired-2026-08-20:
+    date: '2026-08-20'
+    type: claim-revised
+    summary: The d3 gate found the recon's depth-5 witness violates measurement consistency (odd
+      back-propagation parity); claim retained with repaired [[4,2,2]] witnesses (3/176 depth-7)
+      and a stronger Steane instance (d_eff = 2, d_circ = 3, g = 1). Original wording preserved in
+      this event history.
+    sources:
+    - path: artifacts/circdist_lift_d3gate_20260820.md
+      kind: text
+  created-2026-08-20:
+    date: '2026-08-20'
+    type: created
+    summary: Registered with NUMERICAL evidence from the round-1 recon session's decisive-gate run
+      (the commissioned gate was executed and passed within the session budget).
+    sources:
+    - path: artifacts/circdist_lift_recon_20260820.md
+      kind: text

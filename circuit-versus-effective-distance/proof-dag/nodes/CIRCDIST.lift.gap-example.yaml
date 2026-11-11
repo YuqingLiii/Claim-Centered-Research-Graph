@@ -1,0 +1,72 @@
+id: CIRCDIST.lift.gap-example
+role: proof
+aliases:
+- LIFT-GAP-EXAMPLE
+claim: There exists an explicit legal interleaved single-ancilla CNOT syndrome-extraction circuit with
+  d_circ strictly greater than d_eff; witnessed at [[4,2,2]] by measurement-consistent depth-7 interleaved
+  schedules (3 of the 44 consistent ones under the frozen idle-layer-compression convention; the same
+  3 among the 176 uncompressed) with d_eff = 1 and d_circ = 2, while non-interleaved circuits with identical
+  within-check CNOT orders (hence identical residual set and d_eff) have d_circ = 1; and at Steane [[7,1,3]]
+  by an interleaved depth-8 schedule with d_eff = 2 and d_circ = 3 whose identical-orders non-interleaved
+  partner has d_circ = 2.
+assessment:
+  level: PROVED
+  caveats:
+  - Sector scopes as stated — the Steane witness is Z-memory (X-memory gives 2); [[4,2,2]] witness 1 gaps
+    BOTH sectors, witnesses 2-3 gap Z-memory only (adjudicator-confirmed); under a min-over-sectors convention
+    witness 1 is the sole load-bearing example.
+  - 'Shared model design: all three implementations (proposer, reviewer, adjudicator) read the frozen
+    公共定义 fault inventory; a systematic modelling error at that level would survive every implementation.'
+  summary: The repaired legal [[4,2,2]] and Steane separating examples are PROVED in the exact sector
+    and schedule-count conventions of the current claim. The original invalid depth-5 witness is historical
+    only. The [[4,2,2]] witness supplies the required both-sector example.
+  basis:
+    reviews:
+    - path: circuit-versus-effective-distance/reviews/circdist_claimrepair_review_20260823.md
+      kind: review
+      scope: Focused re-review of the wave-11-prescribed denominator repair — word-by-word drift check
+        (one contiguous edit, rest byte-identical), source verification of the compression rule (公共定义
+        line 58), of the 44-vs-176 counts (base review §1.4 and the wave-11 adjudication §1.2 independently
+        agree), and that the same three witnesses occupy all seven layers hence are legal under both conventions.
+        Verdict CLEAR-FOR-PROVED, bound to the repaired claim; rests on the base review's items 1-2 and
+        the wave-11 adjudication §4 for the mathematics (three independent implementations of the whole
+        [[4,2,2]] arm).
+      locator: Section 4
+      reviewed_hash: sha256:e080155da0e18435bb834f578df6216bdd0e45e21a81302f58cf7514f47fee50
+    runs:
+    - path: circuit-versus-effective-distance/artifacts/circdist_lift_recon_20260820.md
+      kind: run
+      scope: Exhaustive weight-1/weight-2 fault enumeration for the [[4,2,2]] interleaved and non-interleaved
+        A/B pair, R = 2..5, purpose-written F2 propagator (code inline in the artifact).
+      result: Interleaved depth-5 circuit has d_eff = 1 and d_circ = 2; the non-interleaved circuit with
+        identical within-check orders has d_circ = 1; the separating hook fires two timelike detectors
+        (same Z-check, consecutive rounds) and one added measurement flip closes the lift at weight 2.
+        Stable for R = 2..5.
+    - path: circuit-versus-effective-distance/artifacts/circdist_lift_d3gate_20260820.md
+      kind: run
+      scope: Validity-constrained exhaustive enumeration — [[4,2,2]] all 176 consistent depth-7 schedules;
+        Steane [[7,1,3]] depth-8 (60256 checks); rotated d=3 surface (26570 schedules, 2304 order sets,
+        87000 criterion checks); stim 1.16.0 cross-validation.
+      result: Original depth-5 witness invalid (odd back-propagation count); repaired [[4,2,2]] witnesses
+        3/176 with d_circ = 2 > d_eff = 1; Steane interleaved d_eff = 2, d_circ = 3 vs non-interleaved
+        2 (g = 1, R = 2..5); surface code gap provably 0 across the family; formula d_circ = min(|gamma|
+        + repair) agreed 5129/5129.
+    evidence:
+    - path: circuit-versus-effective-distance/artifacts/circdist_lift_recon_20260820.md
+      kind: text
+    - path: circuit-versus-effective-distance/reviews/circdist_numerical_review_20260820.md
+      kind: text
+    - path: circuit-versus-effective-distance/reviews/circdist_readjudication_20260823.md
+      kind: text
+    - path: circuit-versus-effective-distance/artifacts/history/pre_protocol_20260826/nodes/CIRCDIST.lift.gap-example.yaml
+      kind: text
+      note: Immutable pre-migration record, including every original event, former summary and frontier;
+        historical evidence, not an additional completion review.
+    - path: circuit-versus-effective-distance/reviews/circdist_claimrepair_review_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: circuit-versus-effective-distance/artifacts/circdist_lift_d3gate_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
