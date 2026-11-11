@@ -1,0 +1,175 @@
+{
+  "all_negative_controls_pass": true,
+  "controls": {
+    "cegar_trace_replay": {
+      "detected": true,
+      "iterations": [
+        {
+          "block_fails_after_endpoint_swap": true,
+          "block_holds_on_source": true,
+          "iteration": 0,
+          "raw_witness_ok": true
+        },
+        {
+          "block_fails_after_endpoint_swap": true,
+          "block_holds_on_source": true,
+          "iteration": 1,
+          "raw_witness_ok": true
+        },
+        {
+          "block_fails_after_endpoint_swap": true,
+          "block_holds_on_source": true,
+          "iteration": 2,
+          "raw_witness_ok": true
+        },
+        {
+          "block_fails_after_endpoint_swap": true,
+          "block_holds_on_source": true,
+          "iteration": 3,
+          "raw_witness_ok": true
+        },
+        {
+          "block_fails_after_endpoint_swap": true,
+          "block_holds_on_source": true,
+          "iteration": 4,
+          "raw_witness_ok": true
+        },
+        {
+          "block_fails_after_endpoint_swap": true,
+          "block_holds_on_source": true,
+          "iteration": 5,
+          "raw_witness_ok": true
+        },
+        {
+          "block_fails_after_endpoint_swap": true,
+          "block_holds_on_source": true,
+          "iteration": 6,
+          "raw_witness_ok": true
+        },
+        {
+          "block_fails_after_endpoint_swap": true,
+          "block_holds_on_source": true,
+          "iteration": 7,
+          "raw_witness_ok": true
+        },
+        {
+          "block_fails_after_endpoint_swap": true,
+          "block_holds_on_source": true,
+          "iteration": 8,
+          "raw_witness_ok": true
+        },
+        {
+          "block_fails_after_endpoint_swap": true,
+          "block_holds_on_source": true,
+          "iteration": 9,
+          "raw_witness_ok": true
+        },
+        {
+          "block_fails_after_endpoint_swap": true,
+          "block_holds_on_source": true,
+          "iteration": 10,
+          "raw_witness_ok": true
+        },
+        {
+          "block_fails_after_endpoint_swap": true,
+          "block_holds_on_source": true,
+          "iteration": 11,
+          "raw_witness_ok": true
+        },
+        {
+          "block_fails_after_endpoint_swap": true,
+          "block_holds_on_source": true,
+          "iteration": 12,
+          "raw_witness_ok": true
+        },
+        {
+          "block_fails_after_endpoint_swap": true,
+          "block_holds_on_source": true,
+          "iteration": 13,
+          "raw_witness_ok": true
+        },
+        {
+          "block_fails_after_endpoint_swap": true,
+          "block_holds_on_source": true,
+          "iteration": 14,
+          "raw_witness_ok": true
+        },
+        {
+          "block_fails_after_endpoint_swap": true,
+          "block_holds_on_source": true,
+          "iteration": 15,
+          "raw_witness_ok": true
+        },
+        {
+          "block_fails_after_endpoint_swap": true,
+          "block_holds_on_source": true,
+          "iteration": 16,
+          "raw_witness_ok": true
+        },
+        {
+          "block_fails_after_endpoint_swap": true,
+          "block_holds_on_source": true,
+          "iteration": 17,
+          "raw_witness_ok": true
+        },
+        {
+          "block_fails_after_endpoint_swap": true,
+          "block_holds_on_source": true,
+          "iteration": 18,
+          "raw_witness_ok": true
+        },
+        {
+          "block_fails_after_endpoint_swap": true,
+          "block_holds_on_source": true,
+          "iteration": 19,
+          "raw_witness_ok": true
+        }
+      ]
+    },
+    "duplicate_direct_column": {
+      "corrupted_result": {
+        "error": "selected columns are not distinct valid indices",
+        "ok": false
+      },
+      "detected": true,
+      "original_ok": true
+    },
+    "invalid_repair_voltage": {
+      "corrupted_result": {
+        "error": "voltage not in U(R:0:2)",
+        "ok": false
+      },
+      "detected": true,
+      "original_ok": true
+    },
+    "mc_only_timestamp_swap": {
+      "audit_ok": false,
+      "conflict_count": 0,
+      "detected": true,
+      "first_mc_violation": [
+        0,
+        4,
+        [
+          1,
+          75
+        ],
+        [
+          true,
+          false
+        ]
+      ],
+      "mc_violation_count": 3,
+      "swapped_edges": [
+        "Z:4:1",
+        "X:0:1"
+      ]
+    },
+    "shared_qubit_collision": {
+      "audit_ok": false,
+      "changed_edge": "X:5:0",
+      "conflict_count": 1,
+      "detected": true,
+      "source_edge": "X:4:0"
+    }
+  }
+}

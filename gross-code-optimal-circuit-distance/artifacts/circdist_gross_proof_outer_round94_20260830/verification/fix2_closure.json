@@ -1,0 +1,59 @@
+{
+  "all_task_children_reaped": true,
+  "bounded_records_in_package": 217,
+  "checked_unix": 1788140360.834521,
+  "checked_utc": "2026-08-31T01:39:20.834531+00:00",
+  "cleanup_process": {
+    "parent_pid": 70180,
+    "pid": 51956,
+    "self_recorded": true
+  },
+  "detached_processes": 0,
+  "meaning": "All Round94 scratch roots and task processes were removed or reaped; only the durable package and explicitly handed-off interpreter dependency remain.",
+  "os_background_processes_started": 0,
+  "preseal_replay": {
+    "all_reaped": true,
+    "children": 117,
+    "returncode": 0
+  },
+  "process_scan_command": [
+    "/bin/ps",
+    "-axo",
+    "pid=,ppid=,stat=,etime=,command="
+  ],
+  "process_scan_returncode": 0,
+  "process_scan_stderr": "",
+  "proof_fixture_synchronous_children": 6,
+  "replay_temp_glob_matches": [],
+  "repository_validators": {
+    "all_reaped": true,
+    "returncode": 0,
+    "synchronous_children": 10
+  },
+  "retained_external_dependency": {
+    "disposition": "explicitly handed off as bound replay dependency; not Round94 scratch",
+    "path": "/private/tmp/circdist-r72-dispatcher-venv/bin/python",
+    "sha256": "bdea59019a38eb6600cc9e71e984a97fedadc406448431281e7657030f54987e"
+  },
+  "schema": "circdist-round94-fix2-closure-v1",
+  "science_solver_children": 36,
+  "scratch_paths": {
+    "/private/tmp/circdist-r94": {
+      "disposition": "removed",
+      "existed_before": true,
+      "exists_after": false
+    },
+    "/private/tmp/circdist-r94-package-draft": {
+      "disposition": "removed",
+      "existed_before": true,
+      "exists_after": false
+    }
+  },
+  "status": "PASS",
+  "survivors": 0,
+  "task_process_matches": [],
+  "task_process_patterns": [
+    "/private/tmp/circdist-r94",
+    "cadical-1.9.5-arm64-macos"
+  ]
+}

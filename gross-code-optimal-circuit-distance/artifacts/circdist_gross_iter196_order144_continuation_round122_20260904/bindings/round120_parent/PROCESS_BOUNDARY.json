@@ -1,0 +1,32 @@
+{
+  "all_started_have_exactly_one_reap": true,
+  "excluded_by_design": [
+    "the active final cutpoint snapshot operation itself",
+    "this process-boundary writer",
+    "sealing and read-only seal verification",
+    "installed-root read-only replay",
+    "postseal repository-gate replay",
+    "final survivor inspection and exact scratch cleanup"
+  ],
+  "ledger": "logs/process/session_process.jsonl",
+  "ledger_check": "PROCESS_LEDGER_CHECK.json",
+  "ledger_check_sha256": "e4b1e2988620d6ef9ac281d5d054a6c1f7b9e5c13e0cb8b259d4b844c17ed260",
+  "ledger_sha256": "1d6a33ad35a92e434281aa07c3fa1b9e7a769d7af8e981a5535c0aac901f5f8b",
+  "note": "Post-cutpoint operations are separately reported from wrapper, seal, replay, and cleanup outputs; none may invoke a solver or change retained science.",
+  "post_cutpoint_science_permitted": false,
+  "processes": 114,
+  "rows": 228,
+  "schema": "circdist-gross-round120-process-ledger-cutpoint-v1",
+  "science_complete_before_cutpoint": true,
+  "solver_executable_invocations": 5,
+  "solver_identity_probes": 1,
+  "solver_processes": 4,
+  "solver_returncodes": [
+    10,
+    1,
+    10,
+    10
+  ],
+  "status": "PASS",
+  "strict_serial_nonoverlap": true
+}

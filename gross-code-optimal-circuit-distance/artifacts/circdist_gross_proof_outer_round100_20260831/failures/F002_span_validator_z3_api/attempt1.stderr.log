@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/source/validate_span.py", line 128, in <module>
+    name_bits = [xor_all(coefficients[index] for index, row in enumerate(rows) if (row[1] >> bit) & 1)
+  File "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/source/validate_span.py", line 128, in <listcomp>
+    name_bits = [xor_all(coefficients[index] for index, row in enumerate(rows) if (row[1] >> bit) & 1)
+  File "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/source/validate_span.py", line 45, in xor_all
+    return z3.Xor(*values)
+TypeError: Xor() takes from 2 to 3 positional arguments but 5 were given

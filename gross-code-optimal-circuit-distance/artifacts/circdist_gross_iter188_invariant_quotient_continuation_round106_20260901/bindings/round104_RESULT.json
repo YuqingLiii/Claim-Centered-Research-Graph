@@ -1,0 +1,383 @@
+{
+  "canonical_state_modified": false,
+  "distance_status": {
+    "CIRCDIST.gross": "CONJECTURED",
+    "D_star_Gross": [
+      11,
+      12
+    ],
+    "gap-via-lift": "CONJECTURED"
+  },
+  "exact_residual": "Solve this exact fresh quotient proof-first; if SAT, repeat complete physical Xerr/Zerr adjudication and full-orbit selector continuation; if UNSAT, independently validate DRAT/LRAT and the full theorem chain.",
+  "failures": {
+    "development_and_interface_failures_disclosed": true,
+    "ledger": "FAILURE_LEDGER.md",
+    "scientific_failures_or_unknowns": 0
+  },
+  "fresh_frontier": {
+    "base": {
+      "assertions": 545694,
+      "clauses": 6890981,
+      "encoding_check": "PASS",
+      "path": "frontier/iter188_full_invariant/formula/outer.cnf",
+      "sha256": "051dbece97d9cd94a69de7bff644dbb31b35076d0c43558b5408d9f3cc86b257",
+      "variables": 1841756
+    },
+    "blocks": 517140,
+    "exact_file_set": [
+      "independent_check.json",
+      "metadata.json",
+      "outer.cnf",
+      "translation_roots.jsonl",
+      "translation_trace.json.gz"
+    ],
+    "forbidden_solver_artifacts_absent": true,
+    "fresh_unstarted": true,
+    "iteration": 188,
+    "lex_leaders": 71,
+    "quotient": {
+      "assertions": 545765,
+      "clauses": 11798572,
+      "independent_check": "PASS",
+      "path": "frontier/iter188_full_invariant_quotient/outer.cnf",
+      "sha256": "29b16602aa5cdf0e4207271cb50045454ea0aba9254396d732414459a4029215",
+      "variables": 2455196
+    },
+    "schema": "circdist-gross-round104-fresh-frontier-v1",
+    "selector_state_sha256": "90999b94525d7e4d23c7e62d4caf057a061baa461c56941057043b0ba3e22e99",
+    "selectors": 24156,
+    "smallest_honest_residual": "Solve this exact fresh quotient proof-first; if SAT, repeat complete physical Xerr/Zerr adjudication and full-orbit selector continuation; if UNSAT, independently validate DRAT/LRAT and the full theorem chain.",
+    "source_file_sha256": "bb6605e47b541fccd8c33a4b8f3ae56e1ac298ab4be591fbc4c388dc102e0647",
+    "source_semantic_payload_sha256": "026c4cdde428436ec24768d4436b593547319e21b69981fdac6c5decb4527370",
+    "started": false,
+    "state_file_sha256": "ac4140e37f855fe37c1403c645e08d600d7ab70a6aee725f707b74a9721a30cd",
+    "status": "PASS",
+    "stop": null,
+    "translation_group": "Z_12 x Z_6",
+    "translation_group_order": 72
+  },
+  "iteration187": {
+    "absence_or_exhaustion_claim": false,
+    "direct": {
+      "Xerr": {
+        "assignment_sha256": "c28d4d2fbe29dac79057c1030b62bdb55975098b93f4f6f45a17133dfa402163",
+        "canonical_net_support": [
+          3,
+          7,
+          20,
+          35,
+          41,
+          80,
+          84,
+          85,
+          94,
+          95,
+          107,
+          109,
+          110,
+          126
+        ],
+        "canonical_nonstabilizer": true,
+        "clauses": 23036,
+        "cnf_sha256": "032757d174845b1311280f15a06bc6af09ee816fe359fefae650cae1174442ea",
+        "fault_count": 10,
+        "logical_parities": [
+          0,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        "physical_net_support": [
+          3,
+          7,
+          12,
+          17,
+          20,
+          34,
+          35,
+          41,
+          80,
+          84,
+          95,
+          100,
+          107,
+          109,
+          110,
+          126
+        ],
+        "physical_nonstabilizer": true,
+        "selected_names": [
+          "D:35",
+          "D:41",
+          "D:84",
+          "D:107",
+          "D:109",
+          "D:110",
+          "D:126",
+          "R:2:2",
+          "R:11:1",
+          "R:16:0"
+        ],
+        "status": "SATISFIABLE",
+        "variables": 6114
+      },
+      "Zerr": {
+        "assignment_sha256": "de2f4c3e1429317000bda3d7febfe52c123d7bf9e5e18ebd7ec8b81d879fb8f1",
+        "canonical_net_support": [
+          5,
+          7,
+          29,
+          45,
+          46,
+          55,
+          69,
+          70,
+          73,
+          81,
+          121,
+          129
+        ],
+        "canonical_nonstabilizer": true,
+        "clauses": 22916,
+        "cnf_sha256": "fd430c2d8fad7fe7b9db5e1528e127dbe7e575440bba80d92bd93fa405b54d55",
+        "fault_count": 10,
+        "logical_parities": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        "physical_net_support": [
+          0,
+          4,
+          5,
+          29,
+          45,
+          46,
+          55,
+          63,
+          74,
+          80,
+          121,
+          136
+        ],
+        "physical_nonstabilizer": true,
+        "selected_names": [
+          "D:5",
+          "D:7",
+          "D:29",
+          "D:45",
+          "D:46",
+          "D:55",
+          "D:69",
+          "D:121",
+          "R:3:0",
+          "R:10:0"
+        ],
+        "status": "SATISFIABLE",
+        "variables": 6084
+      }
+    },
+    "distance12_result": false,
+    "quotient": {
+      "all_clauses_checked": 11789630,
+      "all_clauses_satisfied": true,
+      "assignment_sha256": "d75cb2a1aa9bab3f0fd7dd87f127273d0462861e21f565e497abe449e1e5092c",
+      "clauses": 11789630,
+      "cnf_sha256": "e415b4c2c5b4923a47348a06ea9ebb06bbc85cea2c9c32bd3a9b25a1ce198234",
+      "status": "SATISFIABLE",
+      "variables": 2452334
+    },
+    "repair_entered": false,
+    "repair_reason": "forbidden because both complete unrestricted direct sectors are SAT",
+    "schedule": {
+      "compressed_sha256": "ef15e4e8dc53d6d14303238d3a32db6a5d73a4ba3cbd4c28a8f1576debc7dadd",
+      "conflicts": 0,
+      "edges": 864,
+      "global_interleaved": true,
+      "max_time": 450,
+      "mc_violations": 0,
+      "overlaps": 648,
+      "used_layers": 451
+    }
+  },
+  "orbit_continuation": {
+    "added_selectors": 144,
+    "block_generator_cases": 1034280,
+    "blocks": 517140,
+    "collisions": 0,
+    "full_registry_invariant": true,
+    "new_selectors": 24156,
+    "old_selectors": 24012,
+    "parent_orbit_sizes": {
+      "Xerr": 72,
+      "Zerr": 72
+    },
+    "selector_generator_cases": 48312,
+    "translated_physical_mechanism_replays": 144,
+    "translated_schedule_replays": 72
+  },
+  "package": "circdist/artifacts/circdist_gross_iter187_invariant_continuation_round104_20260901",
+  "process_and_cleanup": {
+    "detached_processes": 0,
+    "replay_temporary_survivors": 0,
+    "retained_pid_records": 31,
+    "science_survivors": 0,
+    "solver_interval_count": 3,
+    "strict_solver_nonoverlap": true,
+    "wrapper_timeouts": 0
+  },
+  "proof_disposition": {
+    "actual_Gross_UNSAT": false,
+    "drat_or_lrat_claim_for_iter187": false,
+    "proof_output_enabled_from_all_solver_launches": true,
+    "valid_corrupt_truncated_toolchain_controls": "PASS"
+  },
+  "proposed_canonical_yaml": {
+    "identical_to_bound_canonical": true,
+    "installed": false,
+    "level": "CONJECTURED",
+    "path": "PROPOSED_CIRCDIST.gross.yaml",
+    "residual": [
+      11,
+      12
+    ],
+    "sha256": "dd367bf93e59e10588a824d4f530a0b07c3707d43886004bb3ddb754f0ff7d91"
+  },
+  "repository_gates": {
+    "evidence_closure": {
+      "all_errors_under_new_uninstalled_package": true,
+      "error_count": 344,
+      "meaning": "expected pre-review unlinked proposer package; canonical evidence was not edited",
+      "package_prefix": "circdist/artifacts/circdist_gross_iter187_invariant_continuation_round104_20260901/",
+      "raw_exit_code": 1,
+      "schema": "circdist-gross-round104-evidence-closure-interpretation-v1",
+      "status": "PASS",
+      "unique_diagnostics": true
+    },
+    "returncodes": {
+      "circdist_migration": 0,
+      "dag_contracts": 0,
+      "duplicate_yaml": 0,
+      "evidence_closure": 1,
+      "git_diff_check": 0,
+      "lean_dag_selftest": 0,
+      "live_governance": 0,
+      "proof_dag_all": 0,
+      "proof_dag_circdist": 0,
+      "release_contracts": 0
+    },
+    "serial_children": 10,
+    "status": "PASS"
+  },
+  "root_branches": {
+    "A_explicit_legal_distance_12_circuit": false,
+    "B_universal_frozen_family_distance_at_most_11": false
+  },
+  "root_closed": false,
+  "sat_trace_streams": {
+    "classification": "SAT traces, not UNSAT proofs",
+    "empty_clause_lines": 0,
+    "gzip_bytes": 1888732332,
+    "raw_bytes": 8547272816,
+    "status": "PASS"
+  },
+  "schema": "circdist-gross-round104-result-v1",
+  "solver_processes": [
+    {
+      "child_maxrss_raw": 7734607872,
+      "child_pid": 47626,
+      "child_system_seconds": 8.231303,
+      "child_user_seconds": 777.421881,
+      "command": [
+        "<repo>/circdist/artifacts/circdist_gross_iter187_invariant_continuation_round104_20260901/tooling/cadical-1.9.5-arm64-macos",
+        "-t",
+        "21600",
+        "--no-binary",
+        "<repo>/circdist/artifacts/circdist_gross_iter187_invariant_continuation_round104_20260901/inputs/round102/frontier/iter187_full_invariant_quotient/outer.cnf",
+        "<repo>/circdist/artifacts/circdist_gross_iter187_invariant_continuation_round104_20260901/solver/iter187/outer.drat"
+      ],
+      "detached": false,
+      "ended_utc": "2026-09-01T09:14:03.504621+00:00",
+      "name": "solve_iter187_full_invariant_quotient_cadical_proof",
+      "reaped": true,
+      "returncode": 10,
+      "started_utc": "2026-09-01T09:00:56.282562+00:00",
+      "timed_out": false,
+      "wall_seconds": 787.220342
+    },
+    {
+      "child_maxrss_raw": 306511872,
+      "child_pid": 48003,
+      "child_system_seconds": 5.936942,
+      "child_user_seconds": 1184.66685,
+      "command": [
+        "<repo>/circdist/artifacts/circdist_gross_iter187_invariant_continuation_round104_20260901/tooling/cadical-1.9.5-arm64-macos",
+        "--unsat",
+        "-t",
+        "7200",
+        "--no-binary",
+        "<repo>/circdist/artifacts/circdist_gross_iter187_invariant_continuation_round104_20260901/solver/iter187/direct/direct360/Xerr.cnf",
+        "<repo>/circdist/artifacts/circdist_gross_iter187_invariant_continuation_round104_20260901/solver/iter187/direct/solver/Xerr.drat"
+      ],
+      "detached": false,
+      "ended_utc": "2026-09-01T09:37:03.512175+00:00",
+      "name": "solve_iter187_Xerr_complete_direct360_cadical_proof",
+      "reaped": true,
+      "returncode": 10,
+      "started_utc": "2026-09-01T09:17:10.657923+00:00",
+      "timed_out": false,
+      "wall_seconds": 1192.822605
+    },
+    {
+      "child_maxrss_raw": 256802816,
+      "child_pid": 48379,
+      "child_system_seconds": 0.978253,
+      "child_user_seconds": 162.012099,
+      "command": [
+        "<repo>/circdist/artifacts/circdist_gross_iter187_invariant_continuation_round104_20260901/tooling/cadical-1.9.5-arm64-macos",
+        "--unsat",
+        "-t",
+        "7200",
+        "--no-binary",
+        "<repo>/circdist/artifacts/circdist_gross_iter187_invariant_continuation_round104_20260901/solver/iter187/direct/direct360/Zerr.cnf",
+        "<repo>/circdist/artifacts/circdist_gross_iter187_invariant_continuation_round104_20260901/solver/iter187/direct/solver/Zerr.drat"
+      ],
+      "detached": false,
+      "ended_utc": "2026-09-01T09:39:56.526131+00:00",
+      "name": "solve_iter187_Zerr_complete_direct360_cadical_proof",
+      "reaped": true,
+      "returncode": 10,
+      "started_utc": "2026-09-01T09:37:13.170182+00:00",
+      "timed_out": false,
+      "wall_seconds": 163.354507
+    }
+  ],
+  "strict_serial": true,
+  "verdict": "MATERIAL-CHECKED-CONTINUATION-NOT-CLOSED",
+  "verification": {
+    "all_replay_children_reaped": true,
+    "base_encoding_check": "PASS",
+    "independent_direct_audit": "PASS",
+    "independent_full_registry_audit": "PASS",
+    "preseal_package_replay": "PASS",
+    "preseal_replay_children": 13,
+    "quotient_encoding_check": "PASS"
+  }
+}

@@ -1,0 +1,80 @@
+id: CIRCDIST.cplx.upper
+role: proof
+aliases:
+- EFFP-UPPER
+claim: Eff-Preserve is in NP for every fixed constant d (schedule certificate plus polynomial fault enumeration),
+  and in Sigma_2^P when d is part of the input (exists-schedule forall-fault with a polynomial Gaussian-elimination
+  acceptance predicate; the distance promise handled by a total ">= d" surrogate).
+assessment:
+  level: PROVED
+  caveats:
+  - PROVED is bound only to the unchanged 301-character claim at sha256:1c2b9d0fed28591066e3fccba2578b00d179535a0aba048d1423b0397cee32b1
+    under the canonical qubit-sharing, single-ancilla CNOT Eff-Preserve model; it is about d_eff = d_ext(E(M)),
+    not Circ-Preserve or d_circ.
+  - The promise-class statement uses the total separator L_>= that rejects malformed syntax and otherwise asks
+    whether some legal schedule has d_eff >= d. It never verifies the promised static distance. Equality with
+    d_eff = d is asserted only on inputs whose CSS static distance is exactly the supplied positive d.
+  - Binary or unary encodings of d and optional T are covered uniformly. The universal fault choice is a polynomial-length
+    coefficient vector over the polynomial extended-column set, thresholds are compared in binary, malformed choices
+    are harmless, and occupied time layers are rank-compressed to at most the number of required CNOTs.
+  - This result proves membership only. It proves no fixed-d hardness, no input-d Sigma_2^P-hardness, no classification
+    root, and no automatic level inheritance through CIRCDIST.cplx#classification-assembly.
+  summary: Fresh strict-serial round-60 review supplies and adversarially checks a complete exact-claim proof. A legal
+    schedule has polynomial encoding and verification; both CSS extended-column matrices are polynomially constructible;
+    Gaussian elimination recognizes a bad low-weight X- or Z-sector mechanism; fixed d permits polynomial enumeration;
+    and input d gives one uniform exists-schedule/forall-coefficient-vector predicate. The total >= d language separates
+    the promise problem because singleton data columns prove d_eff(M) <= the static CSS distance for every schedule.
+  basis:
+    reviews:
+    - path: circdist/reviews/circdist_cplx_upper_membership_exact_review_20260828.md
+      kind: review
+      scope: Fresh independent exact-text review of the 301-character membership claim, including schedule size and
+        qubit-sharing legality, optional-T normalization, the standard terminal-residual extended-code construction,
+        both CSS sectors, fixed-d enumeration, uniform input-d quantifiers, Gaussian elimination, binary thresholds,
+        malformed/off-promise inputs, the static-distance separator, and promise-versus-language conventions.
+      locator: Finding F-UPPER
+      reviewed_hash: sha256:1c2b9d0fed28591066e3fccba2578b00d179535a0aba048d1423b0397cee32b1
+    evidence:
+    - path: circdist/artifacts/history/pre_protocol_20260826/nodes/CIRCDIST.cplx.upper.yaml
+      kind: text
+      note: Immutable pre-migration record, including every original event, former summary and frontier;
+        historical evidence, not an additional completion review.
+    - path: circdist/artifacts/circdist_cplx_recon_20260820.md
+      kind: text
+      note: Historical Section 5.2 draft; its promise-only d <= n shortcut and input-size notation are repaired
+        explicitly by the round-60 review rather than silently inherited.
+    - path: circdist/artifacts/definitions/CIRCDIST_PROBLEMS.md
+      kind: text
+      scope: Frozen Eff-Preserve promise question, common d_eff definition, and d_eff <= d_static inequality;
+        the round-60 review independently derives the inequality used by the separator.
+    - path: circdist/artifacts/circdist_cplx_islands_amendment5_20260823.md
+      kind: text
+      scope: Definition 1.3-prime and the terminal-residual extended-code/sector bridge; used as model provenance,
+        with the membership predicate re-derived in the round-60 review.
+    - path: circdist/reviews/circdist_cplx_classification_assembly_exact_review_20260828.md
+      kind: text
+      scope: Prior route-only review that recorded the d > n off-promise normalization, optional-T schedule encoding,
+        and malformed-fault convention; corroborating evidence only, since it expressly did not adjudicate this premise.
+events:
+  upper-membership-reviewed-2026-08-28:
+    date: '2026-08-28'
+    type: review-completed
+    summary: Fresh strict-serial independent review bound and proved the unchanged 301-character membership claim,
+      repairing the historical proof's off-promise binary-d and input-size shortcuts and checking all schedule,
+      fault, CSS-sector, Gaussian-elimination, promise, malformed-input and uniformity cases.
+    sources:
+    - path: circdist/reviews/circdist_cplx_upper_membership_exact_review_20260828.md
+      kind: review
+      locator: Finding F-UPPER
+  upper-membership-proved-2026-08-28:
+    date: '2026-08-28'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Promoted only CIRCDIST.cplx.upper after exact-claim proof and independent adversarial review. The
+      fixed-d hardness and input-d hierarchy-hardness premises and the CIRCDIST.cplx root remain unfinished;
+      no downstream level changes by inheritance.
+    sources:
+    - path: circdist/reviews/circdist_cplx_upper_membership_exact_review_20260828.md
+      kind: review
+      locator: Finding F-UPPER

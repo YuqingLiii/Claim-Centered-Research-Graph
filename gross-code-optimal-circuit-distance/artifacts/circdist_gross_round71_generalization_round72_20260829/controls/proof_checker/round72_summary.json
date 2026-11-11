@@ -1,0 +1,78 @@
+{
+  "gross_absence_evidence": false,
+  "runs": [
+    {
+      "accepted": true,
+      "argv": [
+        "/tmp/circdist_gross_r72/staging/circdist_gross_round71_generalization_round72_20260829/tooling/drat-trim-arm64-macos",
+        "/tmp/circdist_gross_r72/staging/circdist_gross_round71_generalization_round72_20260829/controls/proof_checker/php6_5.cnf",
+        "/tmp/circdist_gross_r72/staging/circdist_gross_round71_generalization_round72_20260829/controls/proof_checker/php6_5.drat",
+        "-t",
+        "60",
+        "-L",
+        "/tmp/circdist_gross_r72/staging/circdist_gross_round71_generalization_round72_20260829/controls/proof_checker/php6_5.round72.generated.lrat"
+      ],
+      "ended_utc": "2026-08-29T10:55:30.211866+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "name": "drat_valid",
+      "required_marker": "VERIFIED",
+      "schema": "round72-proof-control-run-v1",
+      "started_utc": "2026-08-29T10:55:29.882289+00:00",
+      "wall_seconds": 0.3298815
+    },
+    {
+      "accepted": true,
+      "argv": [
+        "/tmp/circdist_gross_r72/staging/circdist_gross_round71_generalization_round72_20260829/tooling/drat-trim-arm64-macos",
+        "/tmp/circdist_gross_r72/staging/circdist_gross_round71_generalization_round72_20260829/controls/proof_checker/php6_5.cnf",
+        "/tmp/circdist_gross_r72/staging/circdist_gross_round71_generalization_round72_20260829/controls/proof_checker/php6_5_corrupted_truncated_10_lines.drat",
+        "-t",
+        "60"
+      ],
+      "ended_utc": "2026-08-29T10:55:30.235985+00:00",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "name": "drat_corrupt",
+      "required_marker": "NOT VERIFIED",
+      "schema": "round72-proof-control-run-v1",
+      "started_utc": "2026-08-29T10:55:30.212369+00:00",
+      "wall_seconds": 0.023842292000000043
+    },
+    {
+      "accepted": true,
+      "argv": [
+        "/tmp/circdist_gross_r72/staging/circdist_gross_round71_generalization_round72_20260829/tooling/lrat-check-arm64-macos",
+        "/tmp/circdist_gross_r72/staging/circdist_gross_round71_generalization_round72_20260829/controls/proof_checker/php6_5.cnf",
+        "/tmp/circdist_gross_r72/staging/circdist_gross_round71_generalization_round72_20260829/controls/proof_checker/php6_5.round72.generated.lrat"
+      ],
+      "ended_utc": "2026-08-29T10:55:30.364209+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "name": "lrat_valid",
+      "required_marker": "VERIFIED",
+      "schema": "round72-proof-control-run-v1",
+      "started_utc": "2026-08-29T10:55:30.236393+00:00",
+      "wall_seconds": 0.12810579200000005
+    },
+    {
+      "accepted": true,
+      "argv": [
+        "/tmp/circdist_gross_r72/staging/circdist_gross_round71_generalization_round72_20260829/tooling/lrat-check-arm64-macos",
+        "/tmp/circdist_gross_r72/staging/circdist_gross_round71_generalization_round72_20260829/controls/proof_checker/php6_5.cnf",
+        "/tmp/circdist_gross_r72/staging/circdist_gross_round71_generalization_round72_20260829/controls/proof_checker/php6_5_corrupted_truncated_10_lines.lrat"
+      ],
+      "ended_utc": "2026-08-29T10:55:30.370679+00:00",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "name": "lrat_corrupt",
+      "required_marker": "NOT VERIFIED",
+      "schema": "round72-proof-control-run-v1",
+      "started_utc": "2026-08-29T10:55:30.364658+00:00",
+      "wall_seconds": 0.006269583999999995
+    }
+  ],
+  "schema": "round72-proof-checker-controls-v1",
+  "status": "PASS",
+  "warning": "small pigeonhole fixtures test checkers only"
+}

@@ -1,0 +1,17 @@
+sub-query             solver s   prior distinct TIMEOUTs (wall s)      ratio
+Z (9,22) orbit 0     1655.9   1 x [10800]   6.5x
+X (5,18) orbit 0     4648.3   1 x [10800]   2.3x
+Z (5,18) orbit 0     7091.2   1 x [10800]   1.5x
+Z (7,20) orbit 0     8760.0   1 x [10800]   1.2x
+X (7,20) orbit 0     8877.7   1 x [10800]   1.2x
+Z (7,18) orbit 0     9586.3   2 x [10800, 10802]   2.3x
+X (6,18) orbit 0    10135.8   2 x [10800, 10802]   2.1x
+Z (6,18) orbit 0    12261.6   2 x [10800, 10802]   1.8x
+
+the 8 cost      : 63016.8 s = 17.50 CPU-hours of solver time
+previously burnt: 118808 s = 33.0 CPU-hours of wall on TIMEOUTs that produced nothing
+
+distinct TIMEOUT sub-queries in the whole corpus: 18
+total wall recorded as TIMEOUT across the corpus: 212403 s = 59.0 CPU-hours
+
+of those 18 timed-out sub-queries, how many are now DECIDED?

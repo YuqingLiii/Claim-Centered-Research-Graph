@@ -1,0 +1,83 @@
+{
+  "schema": "circdist-gross-pattern-cegar-frontier-v1",
+  "status": "BOUNDED_POSITIVE_FRONTIER_ONLY",
+  "verdict_use": "none for absence",
+  "outer_model": {
+    "edge_variables": 864,
+    "measurement_consistency_constraints": 648,
+    "requires_global_interleaving": true,
+    "time_domain": [0, 863],
+    "idle_compression": "strict-order-preserving post-solve relabeling",
+    "extra_restrictions": []
+  },
+  "backend": {
+    "outer": "incremental Z3 5.1.0",
+    "proof_producing": false,
+    "raw_schedule_audit_inside_solve": true,
+    "effective_positive_replay": "verify_effective_selection for every inserted pattern"
+  },
+  "command": "PYTHONDONTWRITEBYTECODE=1 python test_pattern_cegar.py",
+  "return_code": 0,
+  "iterations_completed": 10,
+  "outer_statuses": ["SAT", "SAT", "SAT", "SAT", "SAT", "SAT", "SAT", "SAT", "SAT", "SAT"],
+  "outer_solve_seconds_as_printed": [0.916, 0.354, 1.127, 1.622, 1.84, 3.014, 2.96, 2.437, 3.642, 4.407],
+  "new_distinct_support_clauses_by_iteration": [
+    {"iteration": 0, "Xerr": 754, "Zerr": 720, "total": 1474},
+    {"iteration": 1, "Xerr": 801, "Zerr": 356, "total": 1157},
+    {"iteration": 2, "Xerr": 745, "Zerr": 697, "total": 1442},
+    {"iteration": 3, "Xerr": 996, "Zerr": 752, "total": 1748},
+    {"iteration": 4, "Xerr": 893, "Zerr": 965, "total": 1858},
+    {"iteration": 5, "Xerr": 955, "Zerr": 1091, "total": 2046},
+    {"iteration": 6, "Xerr": 815, "Zerr": 912, "total": 1727},
+    {"iteration": 7, "Xerr": 851, "Zerr": 727, "total": 1578},
+    {"iteration": 8, "Xerr": 598, "Zerr": 754, "total": 1352},
+    {"iteration": 9, "Xerr": 751, "Zerr": 741, "total": 1492}
+  ],
+  "totals": {
+    "Xerr_new_distinct_support_clauses": 8159,
+    "Zerr_new_distinct_support_clauses": 7715,
+    "new_distinct_support_clauses": 15874,
+    "raw_positive_witnesses_replayed_before_insertion": 15874
+  },
+  "fixed_first_schedule_enumeration": {
+    "Xerr": {
+      "single_positive_patterns": 1,
+      "pair_positive_patterns": 753,
+      "unique_support_clauses": 754,
+      "atom_histogram": {"9": 1, "16": 737, "17": 10, "18": 6}
+    },
+    "Zerr": {
+      "single_positive_patterns": 0,
+      "pair_positive_patterns": 720,
+      "unique_support_clauses": 720,
+      "atom_histogram": {"16": 720}
+    }
+  },
+  "exploratory_generalization": {
+    "scope": "first 200 enumerated Xerr mechanisms on round62 iteration-0 schedule; mechanisms were not deduplicated",
+    "soundness_test": "all local 6! orders consistent with the retained atoms, with every residual-support tuple checked against an explicit frozen-pool completion",
+    "mechanisms_checked": 200,
+    "original_atom_total": 3193,
+    "retained_atom_total": 2360,
+    "atoms_removed": 833,
+    "histogram_original_to_retained": {
+      "16->12": 93,
+      "16->14": 26,
+      "16->15": 21,
+      "16->13": 19,
+      "16->8": 19,
+      "16->7": 14,
+      "16->9": 7,
+      "9->5": 1
+    },
+    "retained_atom_deletion_checks": 2360,
+    "certificate_ledger_retained": false,
+    "evidentiary_use": "algorithmic milestone only; excluded from sealed clause count"
+  },
+  "retention_limitations": {
+    "raw_schedule_ledger": "not retained by the exploratory script",
+    "schedule_hashes": "not retained",
+    "independent_prior_clause_exclusion_replay": "not performed after the run",
+    "consequence": "the 15874-clause run is quantitative progress and runnable source, not a closure certificate"
+  }
+}

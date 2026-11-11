@@ -1,0 +1,3 @@
+2026-08-29 round72 preseal quick verifier, exit 1.
+The checker expected top-level file_count/gzip_count/tar_member_count fields in preflight/all_required_inputs_read.json, but the reader stores them under summary as files/gzip_members/tar_members. Candidate, classification, formula, assignment, and replay payloads were not changed. The checker was corrected to the sealed schema before the next run.
+Traceback terminal: KeyError: 'file_count' at verify_bindings.

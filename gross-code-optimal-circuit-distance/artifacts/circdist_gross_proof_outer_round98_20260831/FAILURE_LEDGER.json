@@ -1,0 +1,53 @@
+{
+  "accepted_evidence_rule": "Only successful corrected runs and independent replays support the result; rejected outputs support no claim.",
+  "orchestration_incidents": [
+    {
+      "disposition": "disclosed and recovered from disk",
+      "kind": "model-capacity",
+      "ordinal": 1,
+      "scientific_process_effect": "none observed; durable audit and process census passed",
+      "stage": "post-science packaging recovery"
+    },
+    {
+      "disposition": "disclosed and recovered from disk",
+      "kind": "model-capacity",
+      "ordinal": 2,
+      "scientific_process_effect": "none observed; durable audit and process census passed",
+      "stage": "post-science packaging recovery"
+    },
+    {
+      "disposition": "disclosed and recovered from disk",
+      "kind": "model-capacity",
+      "ordinal": 3,
+      "scientific_process_effect": "none observed; durable audit and process census passed",
+      "stage": "post-science packaging recovery"
+    },
+    {
+      "cause": "check_round98_protected was called before INPUT_BINDINGS.json existed",
+      "disposition": "corrected by generating exact bindings before rerun",
+      "kind": "dispatcher-prebinding-check",
+      "returncode": 1,
+      "scientific_process_effect": "none",
+      "stage": "packaging"
+    }
+  ],
+  "schema": "circdist-round98-failure-ledger-v1",
+  "scientific_failures": [
+    [
+      "independent_campaign_audit_attempt1.json",
+      "independent_campaign_audit",
+      1
+    ],
+    [
+      "order5_Xerr_exact_enum.json",
+      "order5_Xerr_exact_enum",
+      -6
+    ],
+    [
+      "order5_compile.json",
+      "order5_compile",
+      1
+    ]
+  ],
+  "status": "PASS_WITH_DISCLOSED_CORRECTED_INCIDENTS"
+}

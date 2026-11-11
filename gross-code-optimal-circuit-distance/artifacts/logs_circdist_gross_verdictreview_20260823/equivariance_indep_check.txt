@@ -1,0 +1,19 @@
+REVIEWER CHECK: is the symmetry breaking SOUND?
+The 864 certificates are UNSAT of cert7, which adds lex/orbit constraints to cert4.
+They rule out ALL solutions only if the group S maps extended-code solutions to solutions.
+Necessary and sufficient structure: for every g=(a,b) in S, with data perm dp and check perm cp,
+   (1) dp(res[c][k]) == res[cp(c)][k]   for all c,k     (residual equivariance)
+   (2) rowspace(H_det) is dp-invariant                  (zero syndrome preserved)
+   (3) rowspace(H_stab) is dp-invariant                 (non-stabiliser preserved)
+
+[Z] triple (1, 2, 62)   |S| = 24
+   (1) residual-equivariance failures over 24 group elements x 216 columns : 0
+   (2) rowspace(H_det)  not preserved, count : 0
+   (3) rowspace(H_stab) not preserved, count : 0
+   => S maps solutions to solutions, so the orbit split and lex breaking are SOUND : True
+
+[X] triple (14, 0, 2)   |S| = 24
+   (1) residual-equivariance failures over 24 group elements x 216 columns : 0
+   (2) rowspace(H_det)  not preserved, count : 0
+   (3) rowspace(H_stab) not preserved, count : 0
+   => S maps solutions to solutions, so the orbit split and lex breaking are SOUND : True

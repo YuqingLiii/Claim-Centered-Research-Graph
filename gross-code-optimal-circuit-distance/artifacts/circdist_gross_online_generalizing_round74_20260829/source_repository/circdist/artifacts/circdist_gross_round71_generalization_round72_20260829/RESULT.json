@@ -1,0 +1,91 @@
+{
+  "candidate_proof": false,
+  "candidate_upper_bound": null,
+  "cegar": {
+    "Xerr_sat_raw_replayed": 12,
+    "Zerr_sat_raw_replayed": 12,
+    "absence_proofs": 0,
+    "branch_closed": false,
+    "completed_dual_sector_candidates": 12,
+    "iteration_range": [
+      30,
+      41
+    ],
+    "new_exact_blocks": 24,
+    "outer_sat": 12,
+    "repair_entered": false,
+    "restart": {
+      "dynamic_blocks_inherited_round71": 60,
+      "dynamic_blocks_new_round72": 24,
+      "dynamic_blocks_total": 84,
+      "exploratory_round63_pair_clauses_installed": 0,
+      "next_iteration": 42,
+      "next_outer_total_blocks": 6850,
+      "round62_blocks": 20,
+      "round63_unary_blocks": 1440,
+      "round69_generalized_blocks": 4740,
+      "round72_generalized_blocks": 566,
+      "state": "cegar/dynamic_blocks.json"
+    },
+    "slowest_direct_query": {
+      "iteration": 41,
+      "sector": "Xerr",
+      "wall_seconds": 103.007196125
+    }
+  },
+  "claim_scope": "566 new terms are a conservative positive library. No negative-side completeness, physical absence, outer exhaustion, D*=11, or D*<=12 claim is made.",
+  "fresh_review_required": true,
+  "generalization": {
+    "candidate_exact_blocks_preserved": 48,
+    "claim_scope": "conservative positive library only; no negative-side completeness or physical absence claim",
+    "dedup_counts": {
+      "dominated_new": 45,
+      "dominated_old": 0,
+      "duplicate_new": 85,
+      "duplicate_old": 0,
+      "merged_installed_generalized_terms": 5306,
+      "new_multi_check_candidates": 96,
+      "new_pair_candidates": 600,
+      "new_raw_term_candidates": 696,
+      "old_reviewed_terms": 4740,
+      "retained_new_terms": 566
+    },
+    "factorized_pair_order_cells": 314668800,
+    "factorized_pair_relations": 607,
+    "formula_assignment_raw_replays": 48,
+    "local_order_records": 81360,
+    "local_orders_per_catalog": 720,
+    "mechanisms_term_failure": 0,
+    "mechanisms_with_positive_pair_generalization": 45,
+    "mechanisms_with_retained_generalized_cover": 48,
+    "mechanisms_without_positive_pair_generalization": 3,
+    "multi_check_exact_relations": 48,
+    "multi_check_terms_generated": 96,
+    "pair_terms_generated": 600,
+    "participating_catalogs": 113,
+    "positive_pair_cells": 93888,
+    "positive_pair_configurations": 300,
+    "positive_pair_library_miss_ids": [
+      "iter11-Xerr",
+      "iter17-Xerr",
+      "iter19-Xerr"
+    ],
+    "positive_pair_relations": 272,
+    "round71_mechanisms": 48,
+    "schema": "round72-round71-generalization-summary-v1",
+    "status": "PASS",
+    "structural_pair_projections": 607,
+    "unary_only_pair_relations": 335,
+    "weight14_negative_results_used": 0,
+    "weight14_pair_configuration_count": 1,
+    "weight14_positive_pool_counts": {
+      "Xerr": 9438,
+      "Zerr": 9435
+    }
+  },
+  "outer_exhaustion_proved": false,
+  "repair_entered": false,
+  "root_closed": false,
+  "schema": "round72-result-v1",
+  "verdict": "MATERIAL-CHECKED-PROGRESS-NOT-CLOSED"
+}

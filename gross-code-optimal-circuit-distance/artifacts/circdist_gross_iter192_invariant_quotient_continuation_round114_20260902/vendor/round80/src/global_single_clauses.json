@@ -1,0 +1,51 @@
+{
+  "complete_for": "single residual plus weight-12 pool completion only",
+  "not_complete_for": "direct-360 effective absence",
+  "replay_wall_seconds": 8.043774843215942,
+  "schema": "circdist-gross-global-single-order-clauses-v1",
+  "sectors": [
+    {
+      "all_bad_orders_caught": true,
+      "atom_deletion_controls": 3600,
+      "atom_histogram": {
+        "5": 720
+      },
+      "bad_orders_per_check": 360,
+      "checks": 72,
+      "clauses_sha256": "b5c8562739038ab16273cece9f5048430bd106419f96cdcbaf116ca01fb483f8",
+      "deletion_controls_sha256": "e7f0a6769516c43d2bfa9ccc11347a4762ba7e0c105e8ad7ffa1868107d63b1b",
+      "generalized_clauses": 720,
+      "good_orders_per_check": 360,
+      "local_orders_per_check": 720,
+      "no_good_order_caught": true,
+      "order_cases_checked": 51840,
+      "raw_exact_suffix_patterns": 720,
+      "sector": "Xerr"
+    },
+    {
+      "all_bad_orders_caught": true,
+      "atom_deletion_controls": 3600,
+      "atom_histogram": {
+        "5": 720
+      },
+      "bad_orders_per_check": 360,
+      "checks": 72,
+      "clauses_sha256": "9290efb7781f3f044723f9b41b99088e1bd5892a01006ce97486e0f482c63d65",
+      "deletion_controls_sha256": "687a760c7c9c776d3be0ec96e9017bdff3ab143112ae8a33b821341fb714a361",
+      "generalized_clauses": 720,
+      "good_orders_per_check": 360,
+      "local_orders_per_check": 720,
+      "no_good_order_caught": true,
+      "order_cases_checked": 51840,
+      "raw_exact_suffix_patterns": 720,
+      "sector": "Zerr"
+    }
+  ],
+  "semantics": "Each listed antecedent is a conjunction of strict within-check edge comparisons. Every local order satisfying it has a suffix-three support completable with nine singleton columns to a frozen weight-12 logical, so its negation is a sound W<=10 outer block.",
+  "totals": {
+    "atom_deletion_controls": 7200,
+    "generalized_clauses": 1440,
+    "order_cases_checked": 103680,
+    "raw_exact_suffix_patterns": 1440
+  }
+}

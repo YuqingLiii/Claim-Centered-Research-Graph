@@ -1,0 +1,45 @@
+HOW MUCH OF THE 'MULTIPLY-DECIDED' FIGURE IS GENUINE RE-DECISION?
+The three repository log directories overlap: identical jsonl files appear in more than one.
+
+multiplicity histogram, RAW record count (what the artifact prints):
+    {1: 8, 2: 9, 3: 735, 4: 2, 5: 10, 6: 87, 8: 2, 9: 11}  -> sub-queries 864, records 2926, multiply 856
+
+multiplicity histogram, after DEDUPLICATING IDENTICAL RECORDS (same JSON body):
+    {1: 750, 2: 101, 3: 13}  -> sub-queries 864, distinct records 991, genuinely multiply 114
+
+sub-queries with >=2 records differing in (solver, seconds) -- i.e. an actual second solve: 96
+  of 864 sub-queries.  Examples: [('Z', 2, 12, 7), ('Z', 8, 14, 3), ('Z', 10, 14, 0), ('Z', 9, 14, 1), ('Z', 4, 12, 8), ('Z', 3, 12, 8), ('Z', 2, 12, 8), ('X', 2, 14, 4)]
+
+jsonl basenames appearing in more than one log directory: 13
+   live_b6.jsonl            ['logs_circdist_gross_final_20260823', 'logs_circdist_gross_verdict_20260823']
+   live_bench.jsonl         ['logs_circdist_gross_final_20260823', 'logs_circdist_gross_verdict_20260823']
+   live_final.jsonl         ['logs_circdist_gross_final_20260823', 'logs_circdist_gross_verdict_20260823']
+   live_full.jsonl          ['logs_circdist_gross_final_20260823', 'logs_circdist_gross_verdict_20260823']
+   live_full7.jsonl         ['logs_circdist_gross_final_20260823', 'logs_circdist_gross_verdict_20260823']
+   live_full7b.jsonl        ['logs_circdist_gross_final_20260823', 'logs_circdist_gross_verdict_20260823']
+   live_mine.jsonl          ['logs_circdist_gross_final_20260823', 'logs_circdist_gross_verdict_20260823']
+   live_mine2.jsonl         ['logs_circdist_gross_final_20260823', 'logs_circdist_gross_verdict_20260823']
+   live_rc.jsonl            ['logs_circdist_gross_final_20260823', 'logs_circdist_gross_verdict_20260823']
+   live_recheck_v2.jsonl    ['logs_circdist_gross_final_20260823', 'logs_circdist_gross_verdict_20260823']
+   live_t2.jsonl            ['logs_circdist_gross_final_20260823', 'logs_circdist_gross_verdict_20260823']
+   live_val.jsonl           ['logs_circdist_gross_final_20260823', 'logs_circdist_gross_verdict_20260823']
+   val.jsonl                ['logs_circdist_gross_drivers_20260823', 'logs_circdist_gross_harvest_20260823']
+
+--- TIGHTEST RECORD COUNT: dedup at the LINE level, across all directories ---
+raw lines read                         : 3021   (artifact: '3 000 records')
+after removing byte-identical FILES     : 1535
+after removing identical LINES          : 1026
+
+NOTE: some files overlap only PARTIALLY (e.g. final.jsonl is a prefix of live_final.jsonl),
+so file-level dedup is not enough; line-level dedup is the tightest honest count.
+
+--- HOW INDEPENDENT ARE THE 96 SECOND SOLVES? (line-deduplicated corpus) ---
+distinct decided sub-queries: 864 ; records: 991
+multiplicity histogram (line-dedup): {1: 750, 2: 101, 3: 13}
+multiply-decided: 114
+of the multiply-decided sub-queries:
+   decided under >1 DISTINCT solver label : 22
+   decided on >1 DISTINCT CNF (encoding)  : 9
+   both                                    : 5
+NOTE: 2889 of the raw records carry NO solver field at all, so 'different solvers' is
+      unverifiable for most of the corpus; the counts above are what the logs can support.

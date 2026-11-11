@@ -1,0 +1,15 @@
+set -euo pipefail
+NEW=circdist/artifacts/circdist_gross_iter187_invariant_continuation_round104_20260901
+OLD=circdist/artifacts/circdist_gross_global_closure_round102_20260901
+test ! -e "$NEW"
+mkdir -p "$NEW"/{bindings,inputs/round102/frontier,source,tooling,vendor,logs/process,logs/stdout,logs/stderr,solver/iter187,verification,controls,frontier,state,environment}
+cp -p operations/circdist/SCHEDULER.yaml "$NEW/bindings/SCHEDULER.yaml"
+cp -p circdist/proof-dag/nodes/CIRCDIST.gross.yaml "$NEW/bindings/CIRCDIST.gross.yaml"
+cp -p circdist/reviews/circdist_gross_global_closure_round102_exact_review_round103_20260901.md "$NEW/bindings/round103_review.md"
+cp -p "$OLD"/{SHA256SUMS.txt,PAYLOAD_SHA256SUMS.txt,FILE_INVENTORY.jsonl,INPUT_BINDINGS.json,RESULT.json,REPORT.md,GLOBAL_TRANSLATION_THEOREM.md,FAILURE_LEDGER.md} "$NEW/inputs/round102/"
+cp -Rp "$OLD/frontier/iter187_full_invariant" "$NEW/inputs/round102/frontier/"
+cp -Rp "$OLD/frontier/iter187_full_invariant_quotient" "$NEW/inputs/round102/frontier/"
+cp -Rp "$OLD/source/." "$NEW/source/"
+cp -Rp "$OLD/tooling/." "$NEW/tooling/"
+cp -Rp "$OLD/vendor/round80" "$NEW/vendor/"
+chmod +x "$NEW/tooling/"* "$NEW/source/"*.py

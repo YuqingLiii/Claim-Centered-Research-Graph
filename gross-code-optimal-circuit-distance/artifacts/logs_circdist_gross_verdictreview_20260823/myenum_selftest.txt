@@ -1,0 +1,13 @@
+SELF-TEST of the reviewer's enumeration criterion, on a case where a solution IS known.
+If my necessary condition were too strong, it would have wrongly excluded this witness.
+  witness: sector Z triple (1, 2, 2)  K=4  |E|=14  |d|=6  |rho_R|=8
+  a = |rho cap E| = 8 ; b = |rho \ E| = 0 ; a - b = 8
+  general requirement  a - b >= |E| - (W - K) = 14 - 6 = 8      satisfied: True
+  per-instance |r cap E| = [2, 2, 2, 2] ; SUM_OV = 8
+  my necessary condition SUM_OV >= a is satisfied (SUM_OV=8 >= a=8): True
+  and SUM_OV >= |E| - (W-K) + b = 8 : True
+
+  => on a genuine solution my pruning criterion is SATISFIED, so it would NOT have
+     excluded it.  The criterion is necessary, not accidentally over-strong.
+  NOTE this witness has |E| = 14, outside the |E| = 12 stratum my enumeration decides;
+  it validates the CRITERION, not the |E| = 12 search's coverage.

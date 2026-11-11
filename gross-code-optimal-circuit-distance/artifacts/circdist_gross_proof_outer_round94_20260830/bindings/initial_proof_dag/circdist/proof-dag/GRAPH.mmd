@@ -1,0 +1,49 @@
+%% CIRCDIST proof hypergraph (generated)
+flowchart BT
+  n0["CIRCDIST.cplx\nPROVED"]
+  n1["CIRCDIST.cplx.fixed-d\nPROVED"]
+  n2["CIRCDIST.cplx.islands\nPROVED"]
+  n3["CIRCDIST.cplx.sigma2\nPROVED"]
+  n4["CIRCDIST.cplx.upper\nPROVED"]
+  n5["CIRCDIST.gross\nCONJECTURED"]
+  n6["CIRCDIST.gross.dext-cap\nPROVED"]
+  n7["CIRCDIST.gross.mc-equiv\nREFUTED"]
+  n8["CIRCDIST.lift\nPROVED"]
+  n9["CIRCDIST.lift.gap-example\nPROVED"]
+  n10["CIRCDIST.lift.iff\nPROVED"]
+  n11["CIRCDIST.lift.nonint\nPROVED"]
+  n12["CIRCDIST.sat\nPROVED"]
+  n13["CIRCDIST.sat.instances\nPROVED"]
+  n14["CIRCDIST.sat.transfer\nPROVED"]
+  n15["CIRCDIST.sat.window\nPROVED"]
+  r1(("islands-floor\nCONJECTURED"))
+  n2 --> r1
+  r1 --> n0
+  r2(("classification-assembly\nPROVED"))
+  n4 --> r2
+  n1 --> r2
+  n3 --> r2
+  r2 --> n0
+  r3(("grouped-qsat-affine-rin\nPROVED"))
+  n4 --> r3
+  r3 --> n3
+  r4(("candidate-certification\nCERTIFIED*"))
+  n6 --> r4
+  r4 --> n5
+  r5(("gap-via-lift\nCONJECTURED"))
+  n6 --> r5
+  n10 --> r5
+  r5 --> n5
+  r6(("criterion-corollary-example\nPROVED"))
+  n10 --> r6
+  n11 --> r6
+  n9 --> r6
+  r6 --> n8
+  r7(("asymptotic-stability-assembly\nPROVED"))
+  n14 --> r7
+  n15 --> r7
+  n13 --> r7
+  r7 --> n12
+  r8(("finite-prefix-window-closure\nPROVED"))
+  n15 --> r8
+  r8 --> n13

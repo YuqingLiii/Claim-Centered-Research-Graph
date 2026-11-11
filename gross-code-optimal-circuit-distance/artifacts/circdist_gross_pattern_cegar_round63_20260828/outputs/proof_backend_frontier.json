@@ -1,0 +1,44 @@
+{
+  "schema": "circdist-gross-proof-backend-frontier-v1",
+  "checked_drup_drat_lrat_proofs": 0,
+  "absence_unsat_claims": 0,
+  "backend_probe": {
+    "pysat_version": "1.9.dev15",
+    "proof_text_observed_on_toy_formulas": ["Glucose4", "Glucose42", "Lingeling", "MapleSAT"],
+    "no_proof_text_observed": ["CaDiCaL153", "CaDiCaL195", "CaDiCaL300"],
+    "external_checker_installed": false
+  },
+  "direct_360_attempts": [
+    {
+      "schedule": "published candidate",
+      "sector": "Xerr",
+      "W": 10,
+      "encoding": "complete direct-360-column",
+      "clauses": 16317,
+      "formula_sha256": "02fa87c84193a7dcdc4ad1b681adbd27792fa0def8cfd422bd9981410b62f4cf",
+      "solver": "Glucose42",
+      "proof_requested": true,
+      "seconds": 131.688818,
+      "status": "ERROR",
+      "exception": "Caught keyboard interrupt",
+      "proof_lines_retained": 0,
+      "verdict_use": "none"
+    },
+    {
+      "schedule": "published candidate",
+      "sector": "Xerr",
+      "W": 10,
+      "encoding": "complete direct-360-column",
+      "clauses": 16317,
+      "formula_sha256": "02fa87c84193a7dcdc4ad1b681adbd27792fa0def8cfd422bd9981410b62f4cf",
+      "solver": "Lingeling",
+      "proof_requested": true,
+      "seconds": 97.033181,
+      "status": "ERROR",
+      "exception": "Caught keyboard interrupt",
+      "proof_lines_retained": 0,
+      "verdict_use": "none"
+    }
+  ],
+  "decision_rule": "UNKNOWN, ERROR, timeout, interruption, an unverified solver summary, or lack of a counterexample is no verdict. Any future UNSAT must ship DIMACS, proof, and a successful independent checker invocation."
+}

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/private/tmp/circdist_gross_r71/stage/circdist_gross_cegar_continuation_round71_20260829/verify.py", line 178, in <module>
+    if __name__=='__main__':main()
+  File "/private/tmp/circdist_gross_r71/stage/circdist_gross_cegar_continuation_round71_20260829/verify.py", line 175, in main
+    if not a.quick:result['cegar']=verify_cegar()
+  File "/private/tmp/circdist_gross_r71/stage/circdist_gross_cegar_continuation_round71_20260829/verify.py", line 111, in verify_cegar
+    smt=outer.s.to_smt2().encode();stored=data(d/'outer.smt2.gz');assert smt==stored,(i,len(smt),len(stored),sha_bytes(smt),sha_bytes(stored))
+AssertionError: (7, 3073752, 3055111, 'f5feafc370a77f7bcb280bbfe54f2b61fc00dcc5046cd9154ba98e15b0a997cb', 'de671a5064a024e14f50a6733e82bbc864bb905721263640dae5e61e671857ac')

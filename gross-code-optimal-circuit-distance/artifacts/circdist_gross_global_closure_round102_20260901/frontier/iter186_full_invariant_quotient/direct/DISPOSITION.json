@@ -1,0 +1,175 @@
+{
+  "both_direct_independently_proof_checked_unsat": false,
+  "candidate_schedule_sha256": "f6a806a1b90535d497da63b154960f9ebf172c6c740356470cdeda56866bd5cf",
+  "repair_entered": false,
+  "repair_gate": "forbidden unless both complete direct sectors have accepted DRAT and LRAT",
+  "schema": "circdist-gross-round102-corrected-candidate-direct-disposition-v1",
+  "sectors": {
+    "Xerr": {
+      "attempts": [
+        {
+          "certificate_disposition": "incomplete UNKNOWN prefix; not an absence certificate",
+          "clauses": 23144,
+          "command": [
+            "circdist/artifacts/circdist_gross_global_closure_round102_20260901/tooling/cadical-1.9.5-arm64-macos",
+            "-t",
+            "890",
+            "--no-binary",
+            "circdist/artifacts/circdist_gross_global_closure_round102_20260901/frontier/iter186_full_invariant_quotient/direct/direct360/Xerr.cnf",
+            "circdist/artifacts/circdist_gross_global_closure_round102_20260901/frontier/iter186_full_invariant_quotient/direct/solver/Xerr.drat"
+          ],
+          "complete_query": true,
+          "detached": false,
+          "ended_utc": "2026-09-01T05:46:42.177191+00:00",
+          "formula_sha256": "af4d1bddab1993402cd5b7118e4b9106416e14d06d09a61fb1f7d35ae4b92bb2",
+          "name": "iter186_full_invariant_quotient_direct_Xerr_cadical_proof",
+          "pid": 42760,
+          "proof_output_enabled_from_start": true,
+          "reaped": true,
+          "record": "logs/process/iter186_full_invariant_quotient_direct_Xerr_cadical_proof.json",
+          "returncode": 0,
+          "solver_reported_maximum_rss_value_and_label": {
+            "label": "MB",
+            "unit_warning": "CaDiCaL/macOS label appears to report KiB; retained verbatim",
+            "value": 683280.0
+          },
+          "solver_status": "UNKNOWN",
+          "started_utc": "2026-09-01T05:31:52.127796+00:00",
+          "stream": "frontier/iter186_full_invariant_quotient/direct/solver/Xerr.drat",
+          "stream_stats": {
+            "bytes": 6101477668,
+            "empty_clause_lines": 0,
+            "lf": 21263055,
+            "sha256": "a4c50c63e01fe6bbed082749561a3606de18c306db1f4c1cfcb6f4ef474e8c45"
+          },
+          "variables": 6141,
+          "wall_seconds": 890.049392
+        },
+        {
+          "certificate_disposition": "SAT-side output; not an absence certificate",
+          "clauses": 23144,
+          "command": [
+            "circdist/artifacts/circdist_gross_global_closure_round102_20260901/tooling/cadical-1.9.5-arm64-macos",
+            "--unsat",
+            "-t",
+            "3500",
+            "--no-binary",
+            "circdist/artifacts/circdist_gross_global_closure_round102_20260901/frontier/iter186_full_invariant_quotient/direct/direct360/Xerr.cnf",
+            "circdist/artifacts/circdist_gross_global_closure_round102_20260901/frontier/iter186_full_invariant_quotient/direct/retry_unsat_profile/Xerr.drat"
+          ],
+          "complete_query": true,
+          "detached": false,
+          "ended_utc": "2026-09-01T06:25:59.724038+00:00",
+          "formula_sha256": "af4d1bddab1993402cd5b7118e4b9106416e14d06d09a61fb1f7d35ae4b92bb2",
+          "name": "iter186_full_invariant_quotient_direct_Xerr_cadical_unsat_profile",
+          "pid": 43428,
+          "proof_output_enabled_from_start": true,
+          "reaped": true,
+          "record": "logs/process/iter186_full_invariant_quotient_direct_Xerr_cadical_unsat_profile.json",
+          "returncode": 10,
+          "solver_reported_maximum_rss_value_and_label": {
+            "label": "MB",
+            "unit_warning": "CaDiCaL/macOS label appears to report KiB; retained verbatim",
+            "value": 387232.0
+          },
+          "solver_status": "SATISFIABLE",
+          "started_utc": "2026-09-01T06:03:26.033297+00:00",
+          "stream": "frontier/iter186_full_invariant_quotient/direct/retry_unsat_profile/Xerr.drat",
+          "stream_stats": {
+            "bytes": 3862573115,
+            "empty_clause_lines": 0,
+            "lf": 26088755,
+            "sha256": "02e37d5517b2f5addeeb9e6999cd2475f5be89e96ffd0266fd6bbb0c3028947e"
+          },
+          "variables": 6141,
+          "wall_seconds": 1353.690736
+        }
+      ],
+      "disposition": "SATISFIABLE"
+    },
+    "Zerr": {
+      "attempts": [
+        {
+          "certificate_disposition": "incomplete UNKNOWN prefix; not an absence certificate",
+          "clauses": 23164,
+          "command": [
+            "circdist/artifacts/circdist_gross_global_closure_round102_20260901/tooling/cadical-1.9.5-arm64-macos",
+            "-t",
+            "890",
+            "--no-binary",
+            "circdist/artifacts/circdist_gross_global_closure_round102_20260901/frontier/iter186_full_invariant_quotient/direct/direct360/Zerr.cnf",
+            "circdist/artifacts/circdist_gross_global_closure_round102_20260901/frontier/iter186_full_invariant_quotient/direct/solver/Zerr.drat"
+          ],
+          "complete_query": true,
+          "detached": false,
+          "ended_utc": "2026-09-01T06:02:29.643575+00:00",
+          "formula_sha256": "0e44f84f95fdf9adf7c28aba6243b8cafc5056ba2fbb0279896a2b2c2ebc88a3",
+          "name": "iter186_full_invariant_quotient_direct_Zerr_cadical_proof",
+          "pid": 43068,
+          "proof_output_enabled_from_start": true,
+          "reaped": true,
+          "record": "logs/process/iter186_full_invariant_quotient_direct_Zerr_cadical_proof.json",
+          "returncode": 0,
+          "solver_reported_maximum_rss_value_and_label": {
+            "label": "MB",
+            "unit_warning": "CaDiCaL/macOS label appears to report KiB; retained verbatim",
+            "value": 687360.0
+          },
+          "solver_status": "UNKNOWN",
+          "started_utc": "2026-09-01T05:47:39.587326+00:00",
+          "stream": "frontier/iter186_full_invariant_quotient/direct/solver/Zerr.drat",
+          "stream_stats": {
+            "bytes": 6379134538,
+            "empty_clause_lines": 0,
+            "lf": 23410479,
+            "sha256": "3fceb8415b9c68437d3239d77bbc19262a070e904182556d1122ebff576c32fa"
+          },
+          "variables": 6146,
+          "wall_seconds": 890.056241
+        },
+        {
+          "certificate_disposition": "SAT-side output; not an absence certificate",
+          "clauses": 23164,
+          "command": [
+            "circdist/artifacts/circdist_gross_global_closure_round102_20260901/tooling/cadical-1.9.5-arm64-macos",
+            "--unsat",
+            "-t",
+            "3500",
+            "--no-binary",
+            "circdist/artifacts/circdist_gross_global_closure_round102_20260901/frontier/iter186_full_invariant_quotient/direct/direct360/Zerr.cnf",
+            "circdist/artifacts/circdist_gross_global_closure_round102_20260901/frontier/iter186_full_invariant_quotient/direct/retry_unsat_profile/Zerr.drat"
+          ],
+          "complete_query": true,
+          "detached": false,
+          "ended_utc": "2026-09-01T06:27:50.254319+00:00",
+          "formula_sha256": "0e44f84f95fdf9adf7c28aba6243b8cafc5056ba2fbb0279896a2b2c2ebc88a3",
+          "name": "iter186_full_invariant_quotient_direct_Zerr_cadical_unsat_profile",
+          "pid": 43871,
+          "proof_output_enabled_from_start": true,
+          "reaped": true,
+          "record": "logs/process/iter186_full_invariant_quotient_direct_Zerr_cadical_unsat_profile.json",
+          "returncode": 10,
+          "solver_reported_maximum_rss_value_and_label": {
+            "label": "MB",
+            "unit_warning": "CaDiCaL/macOS label appears to report KiB; retained verbatim",
+            "value": 343520.0
+          },
+          "solver_status": "SATISFIABLE",
+          "started_utc": "2026-09-01T06:26:56.801787+00:00",
+          "stream": "frontier/iter186_full_invariant_quotient/direct/retry_unsat_profile/Zerr.drat",
+          "stream_stats": {
+            "bytes": 274032152,
+            "empty_clause_lines": 0,
+            "lf": 2139634,
+            "sha256": "9e012699c4e406733e0d6f6473590ef7f1a1f29dfac19047c98af2690d5ac949"
+          },
+          "variables": 6146,
+          "wall_seconds": 53.452524
+        }
+      ],
+      "disposition": "SATISFIABLE"
+    }
+  },
+  "source_selector_count": 23868,
+  "status": "PASS"
+}

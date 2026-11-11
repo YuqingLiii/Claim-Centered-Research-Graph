@@ -1,0 +1,43 @@
+{
+  "base_cnf_sha256": "00a5f305166aded035442f689f2d8bd13d52622a258733e18342cb7ca3608dd9",
+  "encoding": {
+    "all_appended_clauses_reconstructed": true,
+    "appended_clauses": 4907591,
+    "base_prefix_clauses": 6867095,
+    "final_clauses": 11774686,
+    "final_variables": 2447800,
+    "truth_table_cases": 16,
+    "unique_extension": true
+  },
+  "finite_coverage_theorem": {
+    "lifting": "A named weight<=10 mechanism on C(S) maps by the inverse translation to a distinct-name mechanism of equal weight, zero syndrome, and nontrivial logical class on S.",
+    "root_use": "UNSAT of the checked quotient plus sound base exclusions would prove every legal schedule has a weight<=10 direct mechanism; SAT supplies only a canonical candidate.",
+    "statement": "For every bounded legal Gross schedule S, the finite orbit {d.S : d in Z_12 x Z_6} has a unique least schedule vector C(S). C(S) satisfies all 71 lex leaders. If multiple group elements attain C(S), they differ by the stabilizer and yield the same schedule vector."
+  },
+  "group": {
+    "name": "Z_12 x Z_6",
+    "nonidentity": 71,
+    "order": 72
+  },
+  "group_action": {
+    "direct_column_equivariance_cases": 51840,
+    "edge_bijections_checked": 72,
+    "edge_composition_cases": 4478976,
+    "edge_identity_cases": 864,
+    "geometry_check_and_incidence_cases": 20736,
+    "overlap_cases": 46656,
+    "schedule_action_cases": 72,
+    "stabilizer_detector_row_permutation_cases": 10368,
+    "translated_direct_witness_cases": 144
+  },
+  "integer_and_memory_safety": {
+    "final_clauses_below_signed_64": true,
+    "final_variables_below_signed_32": true,
+    "no_product_schedule_enumeration": true,
+    "streaming_clause_comparison": true
+  },
+  "quotient_cnf_sha256": "f6dec16c6ee19ee1a041d3eb78786171558f54805c3038ce9c311c62b82d7c13",
+  "schema": "circdist-gross-round102-translation-quotient-check-v1",
+  "status": "PASS",
+  "wall_seconds": 22.170887
+}

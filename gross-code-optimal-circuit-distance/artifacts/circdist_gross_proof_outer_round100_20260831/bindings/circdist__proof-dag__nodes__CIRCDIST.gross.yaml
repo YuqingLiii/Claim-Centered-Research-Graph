@@ -1,0 +1,938 @@
+id: CIRCDIST.gross
+role: outcome
+aliases:
+- GROSS-DSTAR
+claim: For the Gross code [[144,12,12]] with single-ancilla CNOT syndrome extraction (interleaving of X- and Z-check CNOTs
+  allowed; each required CNOT exactly once; one two-qubit gate per qubit per time step; no flag ancillas, cat states, or generating-set
+  changes; idle layers compressed), the optimum D*_Gross = max over legal schedules M of d_circ(C(M)) is determined with proof,
+  as either an explicit interleaved schedule with certified d_circ = 12, or a proof that every legal schedule satisfies d_circ
+  <= 11; and the published conjectured distance-11 circuit has a certified d_circ = 11.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - Do not cite SBB26 Appendix H.2 as proving circuit distance 12 for the original Gross code. Shaw-Terhal Table I reports
+    only tilde d_circ <= 12 for a different end-cycle “second gross” code; equality of n=144 and k=12 (or of the 288-qubit
+    total hardware count) is not code identity or S_Gross membership.
+  summary: 'The optimal circuit-distance question remains CONJECTURED, with D* in {11,12} unresolved. The universal d_ext
+    <= 11 cap is PROVED; the candidate-certification route is CERTIFIED*. The latest completion-gap candidate was killed by
+    the missed two-prefix shape. The three recorded no-go classes and search machinery are scoped by-products, not a universal
+    proof of D*=11. A fresh primary-source scope audit closes the Shaw-Terhal morphing lead negatively: its distance-12-labeled
+    endpoint is a different weight-9 [[144,12,12]] “second gross” code with alternating code frames, outside frozen S_Gross,
+    and Table I gives only a BP-OSD circuit-distance upper bound <=12. It supplies neither a legal distance-12 witness nor
+    a universal <=11 no-go. Round 61''s proposer-level clean-room audit refutes two further completion screens: absence of
+    all four individually gain-positive shapes does not exclude cancelling multi-check weight-10 mechanisms, and even a clean
+    |V|=12 / at-most-four-check stratum with diagonal short hooks does not exclude repair-zero minimum mechanisms. It also
+    finds that hunt2''s j<=4 recursion did not enforce distinct contributing checks; the earlier candidate kill survives because
+    its 144 decisive witnesses were separately rebuilt from raw schedules. These are filter no-go results, not a universal
+    theorem, so D* remains in {11,12}. Round 62 installs a proposer-level unrestricted 864-edge/648-MC CEGAR package with
+    direct-360 effective and arbitrary-round repair adversaries plus raw replay. Its first 20 exact outer schedules are all
+    legal, MC-valid and interleaved, and all are killed in Xerr by verified weight-10 mechanisms; 20 sound order-region blocks
+    and all 190 prior-block exclusions replay. This is quantitative search progress only: no effective-layer UNSAT, repair-layer
+    UNSAT or outer exhaustion was obtained. Round 63 adds a proposer-level library of 1,440 globally valid deletion-minimal
+    five-atom single-residual order clauses, exhaustively replayed over 103,680 local-order cases with 7,200 atom-deletion
+    controls. A separate ten-step experiment generated 15,874 witness-checked pair-pattern clauses but did not retain the
+    raw ledgers needed for absence use. No checked DRUP/DRAT/LRAT proof exists, so the exact residual is unchanged. Round
+    68 emits complete direct-360 DIMACS for one unrestricted clause-saturated candidate, but both sectors are SAT and raw
+    replay to weight-10 Xerr and weight-8 Zerr mechanisms. Five continuation candidates are likewise killed in both sectors.
+    Twelve new sound blocks are retained, for 1,472 total; no direct absence, repair entry or outer exhaustion exists, so
+    D* remains in {11,12}. Round 70''s fresh exact review clears the round-69 positive-witness block library as proposer-level
+    evidence and licenses strict continuation at outer iteration 6 with 6,212 installed sound blocks. It licenses no absence,
+    repair, outer exhaustion, D* narrowing, route change or level change. Round 71 continues through iterations 6--29: all
+    24 outer candidates and all 48 complete direct sectors are SAT and raw-replayed, adding 48 candidate-exact blocks. The
+    next reviewed-by-dispatcher frontier is iteration 30 with 6,260 blocks; no absence, repair, exhaustion or D* narrowing
+    exists. Round 73''s fresh exact review clears the round-72 566-term conservative positive library and iterations 30--41
+    as proposer-level evidence. The exact continuation frontier is iteration 42 with 6,850 installed blocks; no absence, repair,
+    exhaustion, D* narrowing, route change or level change is licensed. Round 75''s fresh independent exact review clears
+    the sealed round-74 online generalization package as proposer-level evidence. Iterations 42--53 add 134 sound generalized
+    terms and 24 candidate-exact blocks after twelve legal outer SAT schedules and twenty-four complete direct-sector SAT/raw
+    replays. The exact fresh-process continuation is iteration 54 with 7,008 installed blocks: 1,440 unary, 20 round-62, 4,740
+    round-69 generalized, 566 round-72 generalized, 134 round-74 generalized and 108 dynamic exact. The review literally replays
+    all 1,137,096 retained pair tuples and validates the factorized exhaustive proof for 2,985,984 retained multi tuples.
+    Deletion controls establish only candidate-relation or fixed-selector atom minimality, not installed-union or global physical-mechanism
+    minimality. No absence, repair, exhaustion, D* narrowing, route change or level change is licensed. Round 77''s fresh
+    independent exact review clears the sealed round-76 package as proposer-level evidence. Iterations 54--77 add 303 sound
+    generalized terms and 48 candidate-exact blocks after twenty-four legal outer SAT schedules and forty-eight complete direct-sector
+    SAT/raw replays. The exact fresh-process continuation is unstarted iteration 78 with G=5,743 generalized, D=156 dynamic
+    exact, registry=72 and 7,359 installed blocks. The review literally replays all 2,637,648 retained pair tuples and validates
+    two factorized exhaustive multi-domain proofs totaling 55,037,740,032 tuples. It corrects one non-load-bearing provenance
+    row: the final sealed compressor is 2,760 bytes with SHA-256 d4abdf75b066d8a2507d5c010f96c1c1760f36c6d1d242048fb45c5928cb8dde;
+    the stale pre-adaptation row must not be cited as final inventory. Deletion controls still license only candidate-relation
+    or fixed-selector atom minimality. No absence, repair, exhaustion, D* narrowing, route change or level change is licensed.
+    Round 79''s fresh independent exact review clears the sealed round-78 cross-registry package as proposer-level evidence.
+    Before iterations 78--89, synthesis across all 72 reviewed mechanisms retains 2,826 sound cross-registry terms; the twelve
+    legal outer schedules and twenty-four complete direct sectors are all SAT and raw-replayed, adding 24 candidate-exact
+    blocks, 62 online terms and 1,964 further cross-registry terms. The review''s non-importing checker actually visits all
+    43,834,872 literal selector tuples and validates four factorized exhaustive domains totaling 15,485,313,024 tuples, including
+    classification, dominance, union and zero-domain checks. The exact fresh-process continuation is unstarted iteration 90
+    with G=10,595 generalized, D=180 dynamic exact, registry/raw=96 and 12,235 installed blocks. One non-load-bearing wording
+    correction applies: the derivation''s word "permutation" denotes the encoded legal schedule with allowed parallel layers,
+    not a strict total order. No absence, repair, exhaustion, D* narrowing, route change or level change is licensed. Round
+    81''s fresh independent exact review clears the sealed round-80 whole-registry package as proposer-level evidence. Its
+    exact star synthesis retains 24 strict installed-union expansions, with all 304,704 literal raw-selector pair cells replayed
+    and 35,294,400 factorized tuples checked. Iterations 90--101 contain twelve legal outer SAT schedules and twenty-four
+    complete direct-sector SAT/raw replays, adding 94 online terms, 2,107 cross-registry terms and 24 candidate-exact blocks.
+    The review independently visits all 20,820,216 online/cross literal tuples and validates 55,037,740,032 factorized tuples,
+    plus the eight reconstructed multi-selector terms and their exact GF(2) domains. The exact fresh-process continuation
+    is unstarted iteration 102 with G=12,820 generalized, D=204 dynamic exact, registry/raw=120 and 14,484 installed blocks.
+    No direct query is UNSAT and no accepted absence proof exists, so no repair, exhaustion, D* narrowing, route change or
+    level change is licensed. Round 93''s fresh independent exact review clears the sealed Round-92 weight-9 synthesis and
+    finite-outer continuation package for proposer-level continuation only. Exact Phase-A enumeration retains 44 new ordinary
+    EFSSCs and zero relaxed cubes, with an explicit strict-union expansion witness; iterations 124--135 are twelve legal outer
+    SAT schedules with all twenty-four complete unrestricted direct-360 sectors SAT and physically replayed, including weight-9
+    mechanisms at iteration 124 Zerr and iteration 133 Xerr. The atomic frontier is fresh/unstarted iteration 136 with the
+    same 14,484 inherited order blocks, 232 exact EFSSC selectors, selector-state sha256:1692d905120d2dcf51b949ce4a70ed4b8f1b270c2d07a1ddbf5813d20d80fa81,
+    and a checked but unsolved 406,656-variable/1,372,232-clause CNF sha256:289acad6be1068d63369511e9c95b0b1df146471bf05a1e4128758508612b64e.
+    The review licenses no Gross UNSAT, direct absence, repair, exhaustion, D* narrowing, route promotion, or root promotion;
+    CIRCDIST.gross and gap-via-lift remain CONJECTURED with D*_Gross in {11,12}. Round 95''s fresh independent exact review clears the sealed Round-94 package for proposer-level continuation only: iterations 136--147 add 24 exact EFSSC selectors after twelve legal outer SAT schedules and twenty-four unrestricted direct-sector SAT/physical replays; the complete same-sector order-3 GF(2) search retains zero terms; and the fresh frontier is unstarted iteration 148 with 256 selectors and checked-unsolved CNF sha256:397c12b15859a62bbe4bacbcb43dd8680a93e3bcf0cdee62fea4687d2431c8e4. No Gross UNSAT, direct absence, repair, exhaustion, D* narrowing, route promotion, or root promotion is licensed; CIRCDIST.gross and gap-via-lift remain CONJECTURED with D*_Gross in {11,12}. Round 97''s fresh independent exact review clears the sealed Round-96 package for proposer-level continuation only: iterations 148--159 add 24 exact EFSSC selectors after twelve legal outer SAT schedules and twenty-four unrestricted direct-sector SAT/physical replays; the complete same-sector order-4 GF(2) search covers 15,254,626 distinct quadruples and retains zero novel terms; and the fresh frontier is unstarted iteration 160 with 280 selectors and checked-unsolved CNF sha256:aa18d2857ed5a7aefacd33bf4fbd42fded914393e123a87f00e84e4920e39d59. No Gross UNSAT, direct absence, repair, exhaustion, D* narrowing, route promotion, or root promotion is licensed; CIRCDIST.gross and gap-via-lift remain CONJECTURED with D*_Gross in {11,12}. Round 99''s fresh independent exact review clears the sealed Round-98 package for proposer-level continuation only: iterations 160--171 add 24 exact EFSSC selectors after twelve legal outer SAT schedules and twenty-four unrestricted direct-sector SAT/physical replays; the complete same-sector order-5 GF(2) search covers C(125,5)+C(109,5)=351,359,546 distinct quintuples, reconstructs 40,153 unique named-weight-1..10 results, finds zero canonical-syndrome-zero results in either sector, and retains zero selectors; and the fresh frontier is unstarted iteration 172 with 304 selectors and checked-unsolved CNF sha256:f86b8db36af1df3877ca1d9dbafb171b6173ddc8b6c2f045a808dd6c71f98342. No Gross UNSAT, direct absence, repair, exhaustion, D* narrowing, route promotion, or root promotion is licensed; CIRCDIST.gross and gap-via-lift remain CONJECTURED with D*_Gross in {11,12}.'
+  basis:
+    routes:
+    - candidate-certification
+    evidence:
+    - path: circdist/artifacts/circdist_gross_whole_registry_round80_20260830
+      kind: run
+      note: Sealed round-80 proposer package cleared by the fresh round-81 exact review. Whole-registry star synthesis retains
+        24 strict installed-union expansions over 304,704 literal raw-selector pair cells and 35,294,400 factorized tuples.
+        Iterations 90--101 contain twelve legal outer SAT schedules and twenty-four complete direct-sector SAT/raw replays,
+        adding 94 online terms, 2,107 cross-registry terms and 24 candidate-exact blocks. The exact fresh-process restart
+        is unstarted iteration 102 with G=12,820, D=204, registry/raw=120 and 14,484 installed blocks. The accepted root seal
+        is sha256:e086a828391361620eabfbd31b544606f7817826af546fb8779a500f95ec0426. Positive SAT mechanisms, misses, zero
+        domains and deletion controls remain non-absence evidence.
+    - path: circdist/reviews/circdist_gross_round80_whole_registry_exact_review_20260830.md
+      kind: review
+      note: Fresh independent round-81 review with non-importing clean-room checkers. It reconstructs 96 source raw mechanisms,
+        138 complete catalogs, all pair and star classifications, twelve outer formulas, twenty-four direct CNFs/assignments
+        and 120 final raw mechanisms. It actually visits 304,704 whole-star and 20,820,216 online/cross literal cells; validates
+        35,294,400 whole-star and 55,037,740,032 online/cross factorized tuples; and independently closes the eight multi-selector
+        GF(2) terms, atomic state chain and exact iteration-102 semantic hashes. All ten FIX-2 incidents and rollback boundaries
+        pass audit. Verdict CLEAR-PROPOSER-LEVEL-CONTINUATION; claim, routes, D* interval and level remain unchanged. Review
+        sha256:e0d6ad5b54768195516239f4d0a262135025a630ecd6292d91cb694baa51597e.
+    - path: circdist/artifacts/circdist_gross_cross_registry_round78_20260829
+      kind: run
+      note: Sealed round-78 proposer package cleared by the fresh round-79 exact review. Cross-registry synthesis over all
+        72 reviewed mechanisms retains 2,826 terms before the outer loop; iterations 78--89 contain twelve legal outer SAT
+        schedules and twenty-four complete direct-sector SAT/raw replays, adding 24 candidate-exact blocks, 62 online terms
+        and 1,964 further cross-registry terms. The exact fresh-process restart is unstarted iteration 90 with G=10,595, D=180,
+        registry/raw=96 and 12,235 installed blocks. The accepted root seal is sha256:db82c387493285e56eeddcef6e7bafc3e48954c4034e6ec2fc699cea1699c987;
+        both earlier defective seals remain forbidden. Positive SAT mechanisms and deletion controls remain non-absence evidence.
+    - path: circdist/reviews/circdist_gross_round78_cross_registry_exact_review_20260830.md
+      kind: review
+      note: Fresh independent round-79 review with non-importing clean-room checkers. It reconstructs all twelve outer formulas
+        and twenty-four direct CNFs/assignments plus 96 raw mechanisms, actually visits all 43,834,872 literal selector tuples
+        and validates four factorized exhaustive domains totaling 15,485,313,024 tuples. It verifies classification, dominance,
+        union, zero-domain handling, atomic state commits and the exact iteration-90 state and semantic hashes. All v1--v7
+        failures, proof-control incident, rejected seals and rollback boundaries pass audit. It records only a non-load-bearing
+        use of "permutation" for a schedule allowing parallel layers. Verdict CLEAR-PROPOSER-LEVEL-CONTINUATION; claim, routes,
+        D* interval and level remain unchanged. Review sha256:e90dc1a23c5c1740267c0ed21920ef4b4af05dab1aecd5eeef934c2a25d2a17a.
+    - path: circdist/artifacts/circdist_gross_online_generalizing_round76_20260829
+      kind: run
+      note: Sealed round-76 proposer package cleared by the fresh round-77 exact review. Iterations 54--77 contain twenty-four
+        legal outer SAT schedules and forty-eight complete direct-sector SAT/raw replays. Online generalization produces 420
+        candidates and retains 303 sound terms after exact semantic filtering; forty-eight candidate-exact blocks freeze a
+        fresh-process restart at iteration 78 with 7,359 installed blocks. The final compressor binding is the 2,760-byte
+        sealed file, not the stale pre-adaptation provenance row. Positive misses, zero cells and deletion countertuples remain
+        non-absence evidence.
+    - path: circdist/reviews/circdist_gross_round76_online_generalizing_exact_review_20260829.md
+      kind: review
+      note: Fresh independent round-77 review with non-importing clean-room checkers. It reconstructs all twenty-four outer
+        formulas and forty-eight direct CNFs/assignments/raw mechanisms, literally replays 2,637,648 retained pair tuples,
+        validates two factorized exhaustive multi proofs totaling 55,037,740,032 tuples and the exact state chain G=5,743,
+        D=156, registry=72, total=7,359. It records one non-load-bearing compressor provenance correction and limits deletion
+        minimality to the candidate relation or fixed selector. Verdict CLEAR-PROPOSER-LEVEL-CONTINUATION; claim, routes,
+        D* interval and level remain unchanged.
+    - path: circdist/artifacts/circdist_gross_online_generalizing_round74_20260829
+      kind: run
+      note: Sealed round-74 proposer package cleared by the fresh round-75 exact review. Iterations 42--53 contain twelve
+        legal outer SAT schedules and twenty-four complete direct-sector SAT/raw replays. Online generalization produces 188
+        candidates and retains 134 sound terms after exact semantic filtering; twenty-four candidate-exact blocks freeze a
+        fresh-process restart at iteration 54 with 7,008 installed blocks. Positive misses, zero cells and deletion countertuples
+        remain non-absence evidence.
+    - path: circdist/reviews/circdist_gross_round74_online_generalizing_exact_review_20260829.md
+      kind: review
+      note: Fresh independent round-75 review with non-importing clean-room checkers. It reconstructs all twelve outer formulas
+        and twenty-four direct CNFs/assignments/raw mechanisms, literally replays 1,137,096 retained pair tuples, validates
+        the factorized exhaustive 2,985,984-tuple multi proof and exact state chain G=5,440, D=108, total=7,008. It records
+        two non-load-bearing documentation corrections and limits deletion minimality to the candidate relation or fixed selector.
+        Verdict CLEAR-PROPOSER-LEVEL-CONTINUATION; claim, routes, D* interval and level remain unchanged.
+    - path: circdist/artifacts/circdist_gross_round71_generalization_round72_20260829
+      kind: run
+      note: Sealed round-72 proposer package cleared by the fresh round-73 exact review. It reconstructs all 48 round-71 mechanisms,
+        113 local-order catalogs, 607 conservative pair relations and 48 multi-check GF(2) relations, retaining 566 new sound
+        generalized terms after exact deduplication/dominance. Iterations 30--41 are twelve further dual-sector SAT/raw-replayed
+        candidates. The package licenses continuation at iteration 42 / 6,850 blocks but no absence, repair, exhaustion, D*
+        or level claim.
+    - path: circdist/reviews/circdist_gross_round72_generalization_exact_review_20260829.md
+      kind: review
+      note: Fresh independent round-73 review with a non-importing 863-line clean-room checker. It validates 314,668,800 pair
+        cells, 32,031,216 retained physical-selector tuples, all 48 source assignments, semantic deduplication from 696 candidates
+        to 566 retained terms, twelve outer schedules and twenty-four complete direct SAT/raw replays; verdict CLEAR-PROPOSER-LEVEL-CONTINUATION,
+        with claim, routes, D* interval and level unchanged.
+    - path: circdist/artifacts/circdist_gross_cegar_continuation_round71_20260829
+      kind: run
+      note: Sealed round-71 proposer package independently replayed by the dispatcher. Iterations 6--29 contain 24 legal 864-edge/648-MC
+        outer schedules; both complete unrestricted direct-360 sectors are SAT for every candidate, and all 48 assignments
+        pass every DIMACS clause and raw physical replay. The 48 new exact blocks license strict continuation at iteration
+        30 / 6,260 blocks but no absence, repair, exhaustion, D* or level claim.
+    - path: circdist/artifacts/circdist_gross_block_minimization_round69_20260829
+      kind: run
+      note: Sealed round-69 proposer package cleared for positive-witness use by the fresh round-70 exact review. It contains
+        4,740 conservative generalized sound blocks backed by 3,368 raw physical mechanisms and 1,197,120 explicit tuple witnesses,
+        plus twelve raw-replayed dynamic blocks from six complete dual-sector SAT CEGAR candidates. The 2,704 negative weight-14
+        solver observations are non-load-bearing. The package licenses continuation at iteration 6 / 6,212 blocks but no absence,
+        repair, exhaustion, D* or level claim.
+    - path: circdist/reviews/circdist_gross_block_minimization_exact_review_20260829.md
+      kind: review
+      note: Fresh independent round-70 review with a non-importing 478-line clean-room checker. It exhaustively validates
+        all 15,552,000 pair cells, 56,539,296 antecedent-tuple incidences, 3,368 raw mechanisms, six outer schedules, twelve
+        rebuilt direct-360 formulas and every SAT/raw replay; verdict CLEAR-PROPOSER-LEVEL-CONTINUATION, with claim, routes,
+        D* interval and level unchanged.
+    - path: circdist/artifacts/circdist_gross_direct360_proof_round68_20260829
+      kind: run
+      note: Sealed round-68 direct-360 package. Dispatcher independently verified the 101-entry manifest, 49 live bindings
+        expanding to 424 files, full 864-edge/648-MC model, both 1884-word pools, complete DIMACS and raw SAT assignments,
+        twelve new mechanisms/blocks, and DRAT/LRAT positive and corruption controls. Both primary sectors are SAT, so it
+        licenses no absence or level claim.
+    - path: circdist/artifacts/circdist_gross_pattern_cegar_round63_20260828
+      kind: run
+      note: Sealed round-63 proposer package. The independently replayed load-bearing output is a 1,440-clause single-residual
+        order library with exhaustive 6! local-order soundness checks and atom-deletion controls. The 15,874-clause two-residual
+        CEGAR output is explicitly exploratory because raw ledgers/exclusion replay were not retained. It contains zero checked
+        proof objects and licenses no absence or level claim.
+    - path: circdist/artifacts/circdist_gross_cegar_round62_20260828
+      kind: run
+      note: Sealed round-62 proposer package containing the unrestricted outer schedule model, direct-360 effective adversary,
+        arbitrary-round repair adversary, raw replay validators, 20 sound CEGAR blocks, named/negative controls and SHA manifest.
+        All 20 schedules are killed by positive Xerr witnesses; no absence-side UNSAT or outer exhaustion is claimed. Dispatcher
+        independently replayed verify.py in a clean dependency environment before linking the directory.
+    - path: circdist/artifacts/circdist_dstar_hunt3_20260828.md
+      kind: run
+      note: Round-61 proposer-level clean-room four-shape and bounded-stratum audit. Two explicit legal interleaved schedules
+        refute those filters as sufficient closure criteria; the report also identifies a distinct-check defect in the old
+        j<=4 recursion while preserving the raw-verified candidate kill. No exact D* branch closes, no solver UNSAT verdict
+        is claimed, and the residual remains {11,12}.
+    - path: circdist/artifacts/circdist_gross_morphing_scope_ruling_20260826.md
+      kind: text
+      note: Fresh primary-source Shaw-Terhal scope audit; the distance-12-labeled morphing endpoint is a different weight-9
+        [[144,12,12]] “second gross” code derived from a [[288,12,18]] mid-cycle code; Table I reports only BP-OSD d_circ
+        <= 12. The construction is outside frozen S_Gross, closes frontier task-002 negatively, and leaves D*_Gross in {11,12}.
+    - path: circdist/artifacts/history/pre_protocol_20260826/nodes/CIRCDIST.gross.yaml
+      kind: text
+      note: Immutable pre-migration record, including every original event, former summary and frontier; historical evidence,
+        not an additional completion review.
+    - path: circdist/artifacts/history/legacy_DAG_PROTOCOL.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/artifacts/circdist_gross_verdict_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/artifacts/logs_circdist_gross_verdict_20260823/SHA256SUMS.txt
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/artifacts/circdist_gross_final_decision_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/artifacts/logs_circdist_gross_final_20260823/SHA256SUMS.txt
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/artifacts/circdist_gross_candidate_decision_20260822.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/artifacts/logs_circdist_gross_drivers_20260823/SHA256SUMS.txt
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/artifacts/circdist_gross_candidate_unsat_20260822.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/artifacts/circdist_gross_phicert_20260822.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/reviews/circdist_sbbcert_review_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/artifacts/definitions/CIRCDIST_PROBLEMS.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/artifacts/circdist_gross_sbbcert_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/artifacts/circdist_lift_iff_proof_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/reviews/circdist_numerical_review_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/artifacts/circdist_lift_d3gate_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/artifacts/circdist_gross_g1_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/artifacts/circdist_gross_toolfeas_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/artifacts/circdist_gross_recon_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/reviews/circdist_gross_verdict_review_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/reviews/circdist_gross_links_review_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/artifacts/circdist_dstar_hunt1_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/artifacts/circdist_dstar_hunt2_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/artifacts/logs_circdist_dstar_hunt1_20260823
+      kind: text
+      note: Byte-preserved historical computation package (sources, inputs, outputs and original checksums). No mathematical
+        computation was rerun during migration.
+    - path: circdist/artifacts/logs_circdist_dstar_hunt2_20260823
+      kind: text
+      note: Byte-preserved historical computation package (sources, inputs, outputs and original checksums). No mathematical
+        computation was rerun during migration.
+    - path: circdist/artifacts/logs_circdist_gross_drivers_20260823
+      kind: text
+      note: Byte-preserved historical computation package (sources, inputs, outputs and original checksums). No mathematical
+        computation was rerun during migration.
+    - path: circdist/artifacts/logs_circdist_gross_final_20260823
+      kind: text
+      note: Byte-preserved historical computation package (sources, inputs, outputs and original checksums). No mathematical
+        computation was rerun during migration.
+    - path: circdist/artifacts/logs_circdist_gross_harvest_20260823
+      kind: text
+      note: Byte-preserved historical computation package (sources, inputs, outputs and original checksums). No mathematical
+        computation was rerun during migration.
+    - path: circdist/artifacts/logs_circdist_gross_links_20260823
+      kind: text
+      note: Byte-preserved historical computation package (sources, inputs, outputs and original checksums). No mathematical
+        computation was rerun during migration.
+    - path: circdist/artifacts/logs_circdist_gross_verdict_20260823
+      kind: text
+      note: Byte-preserved historical computation package (sources, inputs, outputs and original checksums). No mathematical
+        computation was rerun during migration.
+    - path: circdist/artifacts/logs_circdist_gross_verdictreview_20260823
+      kind: text
+      note: Byte-preserved historical computation package (sources, inputs, outputs and original checksums). No mathematical
+        computation was rerun during migration.
+    - path: circdist/artifacts/circdist_campaign4_closeout_20260823.md
+      kind: text
+      note: Preserved campaign context; not used as a new mathematical premise or completion review.
+    - path: circdist/artifacts/history/legacy_FILE_PROTOCOL.md
+      kind: text
+      note: Preserved campaign context; not used as a new mathematical premise or completion review.
+    - path: circdist/artifacts/history/notes/CAMPAIGN4_KICKOFF_20260822.md
+      kind: text
+      note: Preserved campaign context; not used as a new mathematical premise or completion review.
+    - path: circdist/artifacts/history/notes/CAMPAIGN_CLOSEOUT_20260820.md
+      kind: text
+      note: Preserved campaign context; not used as a new mathematical premise or completion review.
+    - path: circdist/artifacts/history/notes/HANDOFF_20260820.md
+      kind: text
+      note: Preserved campaign context; not used as a new mathematical premise or completion review.
+    - path: circdist/artifacts/history/notes/HANDOFF_20260823.md
+      kind: text
+      note: Preserved campaign context; not used as a new mathematical premise or completion review.
+    - path: circdist/artifacts/history/PATH_MAP.json
+      kind: text
+      note: Mechanical relocation map for immutable historical report references; not mathematical evidence.
+    - path: circdist/artifacts/circdist_gross_efssc_round86_20260830
+      kind: run
+      note: Sealed Round-86 EFSSC proposer package, independently cleared at proposer level in Round 87; root seal sha256:94322390a648262e8cc035f8e843617f134fe2d29ff36191720b646c021c89ff.
+        No distance-12 witness, universal distance-11 ceiling, UNSAT/exhaustion result, route promotion, or root promotion
+        is inferred.
+    - path: circdist/reviews/circdist_gross_efssc_exact_review_round87_20260830.md
+      kind: review
+      note: Fresh strict-serial Round-87 independent exact review licensing proposer-level continuation from iteration 109
+        only, with CIRCDIST.gross and gap-via-lift remaining CONJECTURED and D*_Gross in {11,12}.
+    - path: circdist/artifacts/circdist_gross_proof_outer_round88_20260830
+      kind: run
+      note: 'Sealed Round-88 proof-producing finite-outer continuation package independently cleared at proposer level in
+        Round 89; root seal sha256:c4061caff46b632b5c4beb7b6eb33281f3520d07c4dfaaa6eb7c6a33883c7e20 and payload seal sha256:d2de2f014954070f20bbba0e55caf49aed93b26986a63fab77955a75f62c8157.
+        Iterations 109--111 are complete outer SAT schedules with all six unrestricted direct-360 sectors SAT at weight 10
+        and physically replayed, adding six exact EFSSC selectors atomically. The exact fresh/unstarted frontier is iteration
+        112 with 14,484 inherited order blocks, 140 selectors, selector-state sha256:a0364547f846fd68ace7cdba85d89c0f8e6326145243fb0fea7ff543420994cb,
+        and an independently checked but unsolved 398,488-variable/1,330,104-clause CNF sha256:a8b917845427a0f746e72200a9a58eb5fac86d5e3c845eeaae69082038c86594.
+        This is positive continuation evidence only: no Gross UNSAT, direct absence, repair entry, outer exhaustion, D* narrowing,
+        route promotion, or root promotion is licensed.'
+    - path: circdist/reviews/circdist_gross_proof_outer_exact_review_round89_20260830.md
+      kind: review
+      note: Fresh independent Round-89 exact review. It re-derives the 864-event rank-compression theorem, reconstructs all
+        19,016/19,018/19,020/19,022 source roots and 14,484 inherited order blocks, exhaustively audits all four deterministic
+        Tseitin CNFs/source maps and complete iter109--111 SAT assignments, physically replays all six unrestricted direct-360
+        weight-10 mechanisms, verifies exact EFSSC soundness and the atomic 134--136--138--140 selector chain, and confirms
+        iteration 112 is fresh, checked, and unsolved. Verdict CLEAR-PROPOSER-LEVEL-CONTINUATION; CIRCDIST.gross and its live
+        gap route remain CONJECTURED with D*_Gross in {11,12}.
+    - path: circdist/artifacts/circdist_gross_proof_outer_round90_20260830
+      kind: run
+      note: 'Sealed Round-90 proof-producing finite-outer continuation package independently cleared at proposer level in
+        Round 91; root seal sha256:41ac5ad7f28895f09aae29a256d91aec241298ec7bfe0d1dec2e14709fa00ca7 and payload seal sha256:545efe756a51190aaa8877e1d0d9fa1100da48aa213811b75a62a1f6a9b6c4d4.
+        Iterations 112--123 are twelve complete outer SAT schedules; all twenty-four unrestricted direct-360 sectors are SAT
+        and physically replayed, with iteration-115 Zerr and iteration-119 Xerr at weight 9 and the other twenty-two at weight
+        10. Twenty-four exact EFSSC selectors were appended atomically. The exact fresh/unstarted frontier is iteration 124
+        with 14,484 inherited order blocks, 164 selectors, selector-state sha256:854c2b50a07fa955356932311eb3229a164e16f125e5b2991c6c2916d5fce2c3,
+        and an independently checked but unsolved 401,040-variable/1,345,190-clause CNF sha256:2dd07d33ff0b29c1f06a7452c3b1c7ca9b6df950e819046f8a712dacb0dd7e5a.
+        This is positive continuation evidence only: no Gross UNSAT, direct absence, repair entry, outer exhaustion, D* narrowing,
+        route promotion, or root promotion is licensed.'
+    - path: circdist/reviews/circdist_gross_proof_outer_exact_review_round91_20260830.md
+      kind: review
+      note: Fresh independent Round-91 exact review. Non-importing checkers reconstruct all thirteen semantic sources and
+        finite CNFs, satisfy every clause of the twelve complete outer assignments, re-audit every frozen legal-schedule condition,
+        rebuild all twenty-four unrestricted direct-360 formulas from Gross geometry, and physically replay all mechanisms,
+        including the two weight-9 cases. It proves the EFSSC iff semantics over each complete local-order domain, verifies
+        the atomic 140--142--...--164 chain, and confirms iteration 124 is fresh, checked, and unsolved. Verdict CLEAR-PROPOSER-LEVEL-CONTINUATION;
+        CIRCDIST.gross and its live gap route remain CONJECTURED with D*_Gross in {11,12}.
+    - path: circdist/artifacts/circdist_gross_proof_outer_round92_20260830
+      kind: run
+      note: Sealed Round-92 proposer package cleared at proposer level by the fresh Round-93 exact review; root seal sha256:4e255084bdab13ad0b9c295a9fe7cf2aea8231c4a56db656964f0695ddc6c982
+        and payload seal sha256:fbc881f0dc54744cb3cfd0c4497571592f8597326ce98362eb42a032ed289090. Exact weight-9 slack synthesis
+        retains 44 ordinary EFSSCs and zero relaxed cubes, and its strict-union witness is old164=false/new44=true. Iterations
+        124--135 are twelve complete outer SAT schedules with twenty-four complete unrestricted direct-360 SAT/physical replays;
+        twenty-four exact selectors are appended atomically after the pre-outer 44. The fresh unstarted frontier is iteration
+        136 with 14,484 inherited order blocks, 232 selectors, selector-state sha256:1692d905120d2dcf51b949ce4a70ed4b8f1b270c2d07a1ddbf5813d20d80fa81
+        and checked-unsolved CNF sha256:289acad6be1068d63369511e9c95b0b1df146471bf05a1e4128758508612b64e. SAT traces and synthesis
+        misses are non-absence evidence; no repair, exhaustion, D* narrowing, route promotion, or root promotion is licensed.
+    - path: circdist/reviews/circdist_gross_proof_outer_weight9_exact_review_round93_20260830.md
+      kind: review
+      note: Fresh independent Round-93 exact review. Clean-room standard-library checkers reconstruct both Round-90 weight-9
+        bases, every finite Phase-A domain and retained predicate, the strict-expansion witness, all thirteen outer sources/CNFs/maps,
+        all twelve complete outer assignments/legal schedules, all twenty-four direct-360 formulas and physical mechanisms,
+        and the exact 164->208->232 atomic selector lineage. It independently checks proof fixtures, SAT-trace negative controls,
+        process closure, input bindings, manifests, and repository gates, and confirms iteration 136 is fresh, checked, and
+        unsolved. Verdict CLEAR-PROPOSER-LEVEL-CONTINUATION; CIRCDIST.gross and gap-via-lift remain CONJECTURED with D*_Gross
+        in {11,12}.
+    - path: circdist/artifacts/circdist_gross_proof_outer_round94_20260830
+      kind: run
+      note: 'Sealed Round-94 proof-producing finite-outer continuation package independently cleared at proposer level in
+        Round 95; final root seal sha256:1e0a4af8591aa63ccccd1b2516c630eccb11a73fb9dea2e0ff1e0d32ed82ac1c and payload seal sha256:c39ef3552e461dd7513812b8296901e72369dfacbf6e71ae758b5bb58ed94c54.
+        Iterations 136--147 are twelve complete legal outer SAT schedules; all twenty-four unrestricted direct-360 sectors
+        are SAT and physically replayed, with iteration-138 Xerr at weight 9 and the other twenty-three mechanisms at weight
+        10. Twenty-four exact EFSSC selectors were appended atomically. The complete same-sector order-3 GF(2) search covers
+        C(125,3)+C(109,3)=527,684 triples, finds 4,232 novel unique outputs of named-location weight at most 10, rejects every
+        one by nonzero frozen-schedule syndrome, and retains zero terms. The exact fresh/unstarted frontier is iteration 148
+        with 14,484 inherited order blocks, 256 selectors, selector-state sha256:9337b0fe78a3f8af54cec263422fe1641b64094d861c87959a82e1dffe6f326f,
+        and independently checked but unsolved 409,157-variable/1,385,059-clause CNF sha256:397c12b15859a62bbe4bacbcb43dd8680a93e3bcf0cdee62fea4687d2431c8e4.
+        The superseded first seals are non-final. Positive SAT mechanisms, SAT traces, and the finite order-3 no-go prove no
+        Gross absence, repair, exhaustion, D* narrowing, route promotion, or root promotion.'
+    - path: circdist/reviews/circdist_gross_proof_outer_round94_exact_review_round95_20260830.md
+      kind: review
+      note: Fresh independent Round-95 exact review. A non-importing standard-library checker reconstructs all thirteen outer
+        semantic sources/CNFs/maps/traces, satisfies all 16,537,519 clauses of the twelve complete outer assignments, decodes
+        twelve distinct legal frozen schedules, rebuilds all twenty-four unrestricted direct-360 formulas and physical mechanisms,
+        proves the exact EFSSC domains and atomic 232--234--...--256 lineage, exhausts the 527,684-triple same-sector order-3
+        domain and replays all 4,232 novel weight-at-most-10 outputs. It also checks the fresh unsolved iteration-148 frontier,
+        manifests, environment, proof fixtures, all six disclosed incident classes, exact final 1,570-path prelink closure,
+        protected state, process closure, and the complete replacement on a disposable overlay. Verdict CLEAR-PROPOSER-LEVEL-CONTINUATION;
+        CIRCDIST.gross and gap-via-lift remain CONJECTURED with D*_Gross in {11,12}.
+    - path: circdist/artifacts/circdist_gross_proof_outer_round96_20260831
+      kind: run
+      note: 'Sealed Round-96 proof-producing finite-outer and exact same-sector order-4 continuation package independently
+        cleared at proposer level in Round 97; final root seal sha256:d992087072835e2651834aceb3012f8afd20442b2886673b45254e95e861a361
+        and payload seal sha256:9cf210a8dd392a57700a61b640ced0deda5d212173f88293083759f67cb77121. Iterations 148--159
+        are twelve complete legal outer SAT schedules; all twenty-four unrestricted direct-360 sectors are SAT and physically
+        replayed, with iteration-148 and iteration-152 Xerr/Zerr named weights 10/9 and every other sector weight 10. Twenty-four
+        exact EFSSC selectors were appended atomically. The exact same-sector order-4 GF(2) search covers C(125,4)+C(109,4)=15,254,626
+        distinct quadruples. Its sole conservative syndrome-zero result is Zerr logical action 100110100011 and is already
+        inherited, so zero novel selectors are retained. The exact fresh/unstarted frontier is iteration 160 with 14,484 inherited
+        order blocks, 280 selectors, selector-state sha256:ad3cf364dd9224c14ffb55046ba3dc8eb80035b1eaf997f1d7a5691297ad62a3,
+        and independently checked but unsolved 411,526-variable/1,396,722-clause CNF sha256:aa18d2857ed5a7aefacd33bf4fbd42fded914393e123a87f00e84e4920e39d59.
+        Positive SAT mechanisms, SAT streams, and the finite order-4 no-go prove no Gross absence, repair, exhaustion, D* narrowing,
+        route promotion, or root promotion.'
+    - path: circdist/reviews/circdist_gross_proof_outer_round96_exact_review_round97_20260831.md
+      kind: review
+      note: Fresh independent Round-97 exact review. A non-importing standard-library checker reconstructs all thirteen outer
+        semantic sources/CNFs/maps/traces, satisfies every clause of the twelve complete outer assignments, decodes twelve
+        distinct legal frozen schedules, rebuilds all twenty-four unrestricted direct-360 formulas and physical mechanisms,
+        proves the exact EFSSC semantics and atomic 256--258--...--280 lineage, and exhausts the 15,254,626-quadruple same-sector
+        order-4 domain with exact multiplicity and conservative schedule-validity checks. It also verifies the fresh unsolved
+        iteration-160 frontier, manifests, environment, proof fixtures, all disclosed incident classes, exact final 1,588-path
+        prelink closure, protected state, process closure, and the complete replacement on a disposable overlay. Verdict
+        CLEAR-PROPOSER-LEVEL-CONTINUATION; CIRCDIST.gross and gap-via-lift remain CONJECTURED with D*_Gross in {11,12}.
+    - path: circdist/artifacts/circdist_gross_proof_outer_round98_20260831
+      kind: run
+      note: 'Sealed Round-98 proof-producing finite-outer and exact same-sector order-5 continuation package independently
+        cleared at proposer level in Round 99; final root seal sha256:f64feb1b424b4aff938a1b5a0c1f9a799179e41f4ec99295c5c67376fad9142f
+        and payload seal sha256:2df276eb26dc569f830d0c95ac76aa5ed322bc9fcb525637a96196d66394e6ec. Iterations 160--171
+        are twelve complete legal outer SAT schedules; all twenty-four unrestricted direct-360 sectors are SAT and physically
+        replayed, with iteration-161 Xerr at named weight 9 and every other sector at named weight 10. Twenty-four exact EFSSC
+        selectors were appended atomically. The exact same-sector order-5 GF(2) search covers C(125,5)+C(109,5)=351,359,546
+        distinct quintuples, reconstructs 38,382 Xerr plus 1,771 Zerr unique named-weight-1..10 results, finds zero canonical-syndrome-zero
+        results in both sectors, and retains zero selectors. The exact fresh/unstarted frontier is iteration 172 with 14,484 inherited
+        order blocks, 304 selectors, selector-state sha256:a5c64ae41f474844ecd3ac41829331f54d419a81573e4f0e11528db0b49e25d1,
+        and independently checked but unsolved 413,646-variable/1,406,245-clause CNF sha256:f86b8db36af1df3877ca1d9dbafb171b6173ddc8b6c2f045a808dd6c71f98342.
+        Positive SAT mechanisms, SAT streams, and the finite order-5 no-go prove no Gross absence, repair, exhaustion, D* narrowing,
+        route promotion, or root promotion.'
+    - path: circdist/reviews/circdist_gross_proof_outer_round98_exact_review_round99_20260831.md
+      kind: review
+      note: Fresh independent Round-99 exact review. A non-importing standard-library checker reconstructs all thirteen outer
+        semantic sources/CNFs/maps/traces, satisfies all 16,805,239 clauses of the twelve complete outer assignments, decodes
+        twelve distinct legal frozen schedules, rebuilds all twenty-four unrestricted direct-360 formulas and physical mechanisms,
+        proves exact EFSSC semantics and the atomic 280--282--...--304 lineage, and confirms fresh iteration 172. A separately
+        compiled independent C++ enumerator uses lexicographic next-combination traversal, explicit little-endian I/O, 64-bit
+        counters with 128-bit binomial arithmetic, and an ordered full-six-word key map without hashing; it exhausts all 351,359,546
+        distinct same-sector quintuples and produces byte-identical eligible outputs before all 40,153 unique low-named-weight
+        results are independently replayed. The review also verifies both manifests, the reviewed Round-96 dependency, process/FIX-2
+        closure, proof controls, all rejected failures and packaging interruptions, exact prelink closure semantics, protected
+        state, repository gates, and the complete replacement on a disposable overlay. Verdict CLEAR-PROPOSER-LEVEL-CONTINUATION;
+        CIRCDIST.gross and gap-via-lift remain CONJECTURED with D*_Gross in {11,12}.
+routes:
+  candidate-certification:
+    premises:
+    - CIRCDIST.gross.dext-cap
+    assumptions:
+      sbb-thm1:
+        kind: external-theorem
+        statement: 'SBB Thm 1 (arXiv:2603.05481, Theorem 1): d_circ of the candidate circuit equals the minimum distance of
+          the associated extended code (two 360-column codes, one per sector) — the reduction this route''s entire certification
+          rides on. PROOF VERIFIED 2026-08-23 (wave 36, artifacts/circdist_gross_links_review_20260823.md): re-derived against
+          the frozen model, scoped to claim (11), R = E, NON-INTERLEAVED schedules, no 公共定义 mismatch; two published-proof
+          defects found and closed (double Prop-2-for-Prop-3 mis-citation — typo, the needed statement is proved in the paper;
+          the partition-by-idling step false as drawn for an LRC, closed by an order-preserving re-timing argument, 0/144
+          qubits without a consistent order). UNUSABLE for interleaved schedules (only the paper''s claim (12) applies there).
+          PDF on disk at <home>/Documents/ChatGPT/circcert/papers/.'
+        source:
+          note: arXiv:2603.05481 Theorem 1; local PDF under <home>/Documents/ChatGPT/circcert/papers/ (outside this
+            repository).
+    implication: Via SBB26 Thm 1 the statement d_circ = 11 for the candidate circuit reduces to an exact minimum-distance
+      certification on a 360-column extended code (not a circuit-level DEM search); combined with the universal d_ext cap
+      this certifies the first half of the claim and pins the achievable floor at 11.
+    proof:
+      sketch: Finite exact computation with a distance certificate; risk is solver scaling and recovering the actual published
+        schedule. Recon P 0.60, D 2 sessions.
+      sources:
+      - path: circdist/artifacts/circdist_gross_recon_20260820.md
+        kind: text
+      - path: circdist/artifacts/circdist_gross_sbbcert_20260820.md
+        kind: text
+    assessment:
+      level: CERTIFIED*
+      caveats:
+      - UNSAT verdicts are solver-grade certificates, not LRAT-checked (no DRAT toolchain on this machine).
+      - 'Reconstruction, not authorship: the candidate schedule is the phicert reading of SBB Figure 12 (pixel-verified wave
+        13; legality-filter uniqueness re-derived wave 36 over a LARGER space — 72 readings, one object), not a circuit published
+        as machine-readable data by the authors.'
+      - 'The shared colour-map constraint is LOAD-BEARING for uniqueness: with independent per-panel colour maps the reading
+        space grows to 528 with 12 extra pairings (wave-36 finding); the frozen reading keeps the shared map, as the paper''s
+        construction implies.'
+      - SBB Thm 1 is VERIFIED (wave 36) scoped to claim (11), R = E, NON-INTERLEAVED schedules — it is unusable for interleaved
+        schedules (only claim (12) applies there); the candidate is non-interleaved, so the route is unaffected, but no interleaved
+        conclusion may cite it.
+      - The implication text says "a 360-column extended code"; it is TWO 360-column codes, one per CSS sector (wave-36 precision
+        note; rewording would rebind the implication hash and is left to a future fold).
+      - 'Carried from wave 13: the verdict artifact''s cross-checking overstatement stands corrected (114 truly multiply-decided,
+        not 860; 1026 records, not 3000; max 3 real decisions per sub-query); Figure-12 fill-convention conflict recorded
+        and harmless.'
+      summary: 'Promoted NUMERICAL -> CERTIFIED* 2026-08-23 (wave 36, artifacts/circdist_gross_links_review_20260823.md):
+        the two inherited proposer-grade links are CLOSED — link 3 (phicert legality filter) CONFIRMED STRENGTHENED with the
+        reviewer''s own EXHAUSTIVE weight-12 pool (meet-in-the-middle C, 1884/sector — the artifacts'' heuristic ISD pool
+        shown exactly complete) and uniqueness re-derived over all 720 edge-maps per panel at t = 6,7,8 (72 readings, ONE
+        object, pairing invariant, phi forced to a + b, no second reading; phicert §2.5''s "moderate" sublattice flag retires);
+        link 4 (encoding fidelity) CONFIRMED as an exact reformulation of Def 2/3 (360 columns identical, 216/216 residual
+        columns, 60/60 + 60/60 witness round-trips both sectors, 5/5 recorded CNF hashes rebuilt, W = 11 UNSAT / W = 12 SAT
+        control); and SBB Thm 1''s PROOF IS VERIFIED against the frozen model (scoped: claim (11), R = E, non-interleaved;
+        no 公共定义 mismatch) with two published-proof defects found and closed — a double Prop-2-for-Prop-3 mis-citation (needed
+        statement proved in the paper), and the partition-by-idling step false as drawn for an LRC, closed by the reviewer''s
+        own re-timing argument (0/144 qubits lack a consistent order). Verdict clauses (d) d_circ = 11 and (f) D* >= 11 are
+        thereby lifted from PARTIAL. HISTORY: promoted CONJECTURED -> NUMERICAL 2026-08-23 by the wave-13 adversarial review
+        (990/990 UNSAT reproduced; Figure-12 pixel-verified; d_ext = 11 both sectors).'
+      basis:
+        reviews:
+        - path: circdist/reviews/circdist_gross_links_review_20260823.md
+          kind: review
+          scope: Wave-36 closure of the two inherited links (exhaustive-pool legality-filter uniqueness; encoding-fidelity
+            round-trips and CNF hash rebuilds) plus verification of the SBB Thm 1 proof against the frozen model with two
+            published-proof defects closed; licenses the route at CERTIFIED*.
+          locator: Section 5
+          reviewed_hash: sha256:4f40673227208c58d21650b3d685670019f5460b44ee52c0440b22293eec1598
+        - path: circdist/reviews/circdist_gross_verdict_review_20260823.md
+          kind: review
+          scope: Independent adversarial review of the final compute verdict — analytic 990-slot completeness re-derived,
+            orbit partition + equivariance closed, slot bookkeeping recomputed from SHA256-verified logs, 3+ adversarial spot
+            re-decisions with a different solver, 50/50 witness re-verification, Figure-12 pixel verification at 900 dpi,
+            inherited-links audit, per-clause verdicts with an honest downgrade of the verdict artifact's cross-checking claim.
+          locator: Per-clause verdicts
+          reviewed_hash: sha256:4f40673227208c58d21650b3d685670019f5460b44ee52c0440b22293eec1598
+        runs:
+        - path: circdist/artifacts/circdist_gross_sbbcert_20260820.md
+          kind: run
+          scope: Full certification sweep of the group-tiled representative class of the SBB candidate on the 360-column extended
+            code, both sectors, symmetry-quotiented SAT decision queries; 10/10 eliminated-assignment witnesses audited end-to-end.
+          result: d_ext <= 10 for all 8 survivors (hence all group-tiled assignments); d_ext(R) = 11 exactly for every <=
+            2-check subset; gross code d = 12 reproduced as method validation; no 6-layer gross SEC is measurement-consistent
+            (exact SAT, 55 s).
+        evidence:
+        - path: circdist/reviews/circdist_sbbcert_review_20260820.md
+          kind: text
+  gap-via-lift:
+    premises:
+    - CIRCDIST.gross.dext-cap
+    - CIRCDIST.lift.iff
+    implication: Given the universal d_ext <= 11 cap, D* = 12 holds iff some interleaved schedule has completion gap >= 1
+      at weight 12; the closed-lift criterion turns this into a voltage/monodromy condition checkable per witness family,
+      deciding the second half of the claim in either direction.
+    proof:
+      sketch: Cross-root import; inherits CIRCDIST.lift risk. Recon P 0.20, D 5 (about 2 sessions shared with the lift subtree).
+      sources:
+      - path: circdist/artifacts/circdist_gross_recon_20260820.md
+        kind: text
+    assessment:
+      level: CONJECTURED
+      summary: 'STAGE-2 VERDICT (wave 38): THE CANDIDATE IS DEAD IN BOTH SECTORS — d_eff <= 10, not 11 (Z: 72 configs at j
+        <= 3, 180 at j <= 4; X: 72/84; zero at weights 8-9; all 144 witnesses re-verified from raw CNOT times and re-derived
+        inside the campaign''s 360-column model), killed by the FOURTH gain-positive residual shape (the 2-prefix {i1,i2},
+        = 4-suffix mod stabiliser) which wave 37''s d_eff filter missed (it tested 2 of 4 shapes); decisively, every X-memory
+        weight-10 witness has exact repair = 1, so d_circ <= 11 for the candidate regardless. REPRICING: P(D* = 12) 0.30 ->
+        0.10; P(D* = 11) 0.10 -> 0.15 — three no-go walls now stand at proposer level (check-serial class repair-0 PROVED;
+        fully-TI cannot hold d_eff = 11 both sectors; all 297 interleaved re-timings of M_cand die on horizontal hooks, 100
+        percent repair-0). NEW LEMMA D (proposer): d_eff depends only on within-check orders, so M_cand''s certification TRANSFERS
+        to its interleaved re-timings (up to 504/648 interleaved) for free. D* remains OPEN in {11, 12}, evidence direction
+        tilted toward 11. STAGE-1 HISTORY (candidate since killed): a 3-colour-tiled annealed schedule — legal, 0/648 MC violations,
+        384/648 pairs interleaved, 72/72 hooks diagonal 0 vertical both sectors, no weight-<=10 configs — has repair-0 on
+        0/144 (Z) and 0/360 (X) canonical minimum-weight gamma (same-round and 2-group multi-round), the exact gap signature
+        the PROVED criterion demands. Schedule recorded in the hunt artifact. BINDING REMAINING CHECK (stage 2): SAT-certify
+        d_eff = 11 for this schedule in both sectors and close the two uncovered |gamma| = 11 shapes (weight-13 provably empty
+        — all gross logicals have even weight). Stage-1 no-go by-products: the whole CHECK-SERIAL (global-potential) class
+        is PROVED repair-0 (226/226 + 170/170, with the two-line u(S) argument) so cannot gap; no fully-TI schedule keeps
+        d_eff = 11 in both sectors (353/400 and 357/400 die on d_eff <= 10) — the binding constraint for a gap witness is
+        keeping d_eff UP, not making repair positive. Stage-2 pricing: P(D* = 12 witness) 0.30, P(D* = 11 no-go) 0.10.'
+      basis:
+        runs:
+        - path: circdist/artifacts/circdist_dstar_hunt2_20260823.md
+          kind: run
+          scope: 'Stage-2 certification attempt (logs: artifacts/logs_circdist_dstar_hunt2_20260823/, 45 SHA-summed entries;
+            predecessor logs re-verified 23/23): no SAT solver on the machine, so an exact combinatorial exhaustion of the
+            |V| = 12 stratum (complete 1884-logical pool per sector, j <= 4 contributing checks) on three proved reductions
+            plus Bound 1; second-source validation — the same code returns 0 configurations for the published candidate M_cand
+            (agreeing with its 990 all-UNSAT solver sub-queries) on both labelling readings, d = 12 on singleton-only columns,
+            144/360 canonical family reproduction.'
+          result: Candidate d_eff <= 10 both sectors (144 witnesses, 144/144 assertion checks); every X-memory weight-10 witness
+            has exact repair = 1 hence candidate d_circ <= 11; 297/297 interleaved re-timings of M_cand repair-0 via horizontal
+            hooks; Lemma D (d_eff order-only dependence) established at proposer level.
+        - path: circdist/artifacts/circdist_dstar_hunt1_20260823.md
+          kind: run
+          scope: 'Stage-1 hunt (logs: artifacts/logs_circdist_dstar_hunt1_20260823/, 23 SHA-summed entries): LIFT-prime/repair
+            decider built from scratch and validated on ground truth (Steane 21/21 criterion + 21/21 sandwich agreements vs
+            brute-force multi-round DEM; independently reproduces the known Steane gap, 1/68 random schedules); gross rebuilt
+            (overlaps {0:4536, 2:648}, k = 12, 1884 logicals/sector, 1080/1080 pair coverage); four families swept.'
+          result: 'Non-interleaved 4/4 repair-0; check-serial 60 schedules repair-0 PROVED class-wide; TI legal+MC 400 sampled
+            (1.15 percent acceptance), 0 gap survivors in both sectors; coset-TI 0/60000 pass MC; 3-colour-tiled annealed:
+            ONE candidate with zero repair-0 canonical gamma in both sectors.'
+frontier:
+  task-003:
+    task: 'Remaining after wave 36 closed links 3/4 and verified SBB Thm 1: (c) optionally LRAT-check a certificate sample
+      (the sole remaining verification-depth item on the route); and fold the two-codes-one-per-sector precision into the
+      implication text when next re-binding it.'
+    kind: task
+    since: '2026-08-20'
+  dstar-residual:
+    task: 'Continue only from the independently reviewed sealed fresh/unstarted iteration 172 state. The inherited sound order-block
+      library remains exactly 14,484 predicates (1,440 unary, 20 round-62, 12,820 generalized, and 204 dynamic), and the exact
+      fixed-selector frontier is 304 EFSSCs: the reviewed 280-selector Round-97 frontier plus the 24 exact candidate-domain
+      selectors from iterations 160--171. Bind selector-state sha256:a5c64ae41f474844ecd3ac41829331f54d419a81573e4f0e11528db0b49e25d1,
+      state-file sha256:9fd675be9712a28dd625fba7cce95f75a8a3b9bdf7edc3f398bfa8b13844d2be, iteration-172 semantic-source
+      sha256:cfa261df8b148622c80248d398df20f1ff5a4cf3f04eb76a31b2795185cc6412, and source-file sha256:99faca59521b675844d0c10eb12afcfe925f474d3eac9d5cac56e11537397b08
+      before use. Its deterministic 10-bit compressed finite-outer formula has 19,186 source assertions, 413,646 variables,
+      1,406,245 clauses and CNF sha256:f86b8db36af1df3877ca1d9dbafb171b6173ddc8b6c2f045a808dd6c71f98342; it was checked but deliberately
+      not solved, and no iteration-172 solver/model/DRAT/LRAT disposition is inherited. The complete same-sector order-5 GF(2)
+      search at the post-iteration-136 234-selector frontier exhaustively visits C(125,5)+C(109,5)=351,359,546 distinct quintuples,
+      reconstructs 38,382 Xerr and 1,771 Zerr unique named-weight-1..10 results, finds zero canonical-syndrome-zero results in
+      either sector, and retains zero selectors. This licenses a no-go only for that exact same-sector, five-distinct-selector
+      finite domain and frozen iteration-136 schedule; it does not cover mixed sectors, repeated indices, order 6 or higher,
+      arbitrary mechanisms, other schedules or frontiers, or global exhaustion. For a SAT result, retain the complete assignment,
+      replay every DIMACS clause and frozen schedule condition, then rebuild and adjudicate both complete unrestricted direct-360
+      sectors; a positive mechanism kills only that concrete candidate domain and proves no absence, and only exact source-schedule-valid
+      EFSSC selectors may be added atomically. For an UNSAT result, retain a complete DRAT proof, independently accept it, generate
+      LRAT, and independently accept the LRAT with valid/corrupt/truncated controls. Enter repair only after both direct sectors
+      have independently checked absence. Preserve frozen S_Gross, strict serialization, MC0, terminal residual semantics, both
+      CSS sectors, and every existing exclusion against morphing, Circ-Preserve substitutions, alternate conflict models, exploratory
+      pair clauses, retroactive cuts, stale compressor provenance, mixed-sector XOR, support-weight substitution, and schedule-globalized
+      dynamic predicates. Keep CIRCDIST.gross and gap-via-lift CONJECTURED and D*_Gross in {11,12}; this reviewed continuation
+      supplies no Gross UNSAT, absence, exhaustion, distance-12 witness, universal distance-11 ceiling, route promotion, or root
+      promotion.'
+    kind: task
+    since: '2026-08-31'
+events:
+  gross-whole-registry-round81-review-2026-08-30:
+    date: '2026-08-30'
+    type: review-completed
+    summary: Fresh independent exact review cleared the sealed round-80 whole-registry package as proposer-level evidence
+      and licensed strict fresh-process continuation from unstarted iteration 102 with 14,484 blocks. Non-importing clean-room
+      checkers rebuilt 96 source raw mechanisms, 138 complete catalogs, exact pair/star synthesis and classification, twelve
+      legal outer SAT schedules, twenty-four complete direct SAT/raw replays and 120 final raw mechanisms. They actually visited
+      304,704 whole-star and 20,820,216 online/cross literal cells; validated 35,294,400 whole-star and 55,037,740,032 online/cross
+      factorized tuples; and independently closed the eight multi-selector GF(2) terms, atomic commits and the state chain
+      G=12,820, D=204, registry/raw=120. All ten FIX-2 incidents and rollback boundaries pass audit. No absence, repair, exhaustion,
+      D* narrowing, route change or level change is licensed. Gross remains CONJECTURED with D*_Gross in {11,12}.
+    sources:
+    - path: circdist/artifacts/circdist_gross_whole_registry_round80_20260830
+      kind: run
+    - path: circdist/reviews/circdist_gross_round80_whole_registry_exact_review_20260830.md
+      kind: review
+  gross-cross-registry-round79-review-2026-08-30:
+    date: '2026-08-30'
+    type: review-completed
+    summary: Fresh independent exact review cleared the sealed round-78 cross-registry package as proposer-level evidence
+      and licensed strict fresh-process continuation from unstarted iteration 90 with 12,235 blocks. Non-importing clean-room
+      checkers rebuilt twelve legal outer SAT schedules, twenty-four complete direct SAT/raw replays and 96 raw mechanisms;
+      actually visited all 43,834,872 literal selector tuples; validated four factorized exhaustive domains totaling 15,485,313,024
+      tuples; and verified classification, dominance, union, zero-domain handling, atomic commits and the state chain G=10,595,
+      D=180, registry/raw=96. All synthesis v1--v7 failures, rollback boundaries, proof controls and both rejected seals pass
+      audit. One non-load-bearing wording correction limits "permutation" to the encoded legal schedule with allowed parallel
+      layers. No absence, repair, exhaustion, D* narrowing, route change or level change is licensed. Gross remains CONJECTURED
+      with D*_Gross in {11,12}.
+    sources:
+    - path: circdist/artifacts/circdist_gross_cross_registry_round78_20260829
+      kind: run
+    - path: circdist/reviews/circdist_gross_round78_cross_registry_exact_review_20260830.md
+      kind: review
+  gross-online-generalization-round77-review-2026-08-29:
+    date: '2026-08-29'
+    type: review-completed
+    summary: Fresh independent exact review cleared the sealed round-76 positive online-generalization package as proposer-level
+      evidence and licensed strict fresh-process continuation from unstarted iteration 78 with 7,359 blocks. Non-importing
+      clean-room checkers rebuilt twenty-four legal outer SAT schedules, forty-eight complete direct SAT/raw replays, exact
+      classification from 420 candidates to 303 retained terms, every one of 2,637,648 retained pair tuples, two factorized
+      exhaustive proofs totaling 55,037,740,032 multi tuples and the state chain G=5,743, D=156, registry=72. One stale pre-adaptation
+      compressor provenance row is corrected at review level; final sealed binding is 2,760 bytes / sha256:d4abdf75b066d8a2507d5c010f96c1c1760f36c6d1d242048fb45c5928cb8dde.
+      Deletion minimality is limited to candidate relations or fixed selectors. No absence, repair, exhaustion, D* narrowing,
+      route change or level change is licensed. Gross remains CONJECTURED with D*_Gross in {11,12}.
+    sources:
+    - path: circdist/artifacts/circdist_gross_online_generalizing_round76_20260829
+      kind: run
+    - path: circdist/reviews/circdist_gross_round76_online_generalizing_exact_review_20260829.md
+      kind: review
+  gross-online-generalization-round75-review-2026-08-29:
+    date: '2026-08-29'
+    type: review-completed
+    summary: Fresh independent exact review cleared the sealed round-74 positive online-generalization package as proposer-level
+      evidence and licensed strict fresh-process continuation from iteration 54 with 7,008 blocks. Non-importing clean-room
+      checkers rebuilt twelve legal outer SAT schedules, twenty-four complete direct SAT/raw replays, exact classification
+      from 188 candidates to 134 retained terms, every one of 1,137,096 retained pair tuples, the factorized exhaustive proof
+      for 2,985,984 retained multi tuples and the state chain G=5,440, D=108. Two documentation imprecisions are corrected
+      at review level, and deletion minimality is limited to candidate relations or fixed selectors. No absence, repair, exhaustion,
+      D* narrowing, route change or level change is licensed. Gross remains CONJECTURED with D*_Gross in {11,12}.
+    sources:
+    - path: circdist/artifacts/circdist_gross_online_generalizing_round74_20260829
+      kind: run
+    - path: circdist/reviews/circdist_gross_round74_online_generalizing_exact_review_20260829.md
+      kind: review
+  gross-round72-generalization-round73-review-2026-08-29:
+    date: '2026-08-29'
+    type: review-completed
+    summary: Fresh independent exact review cleared the sealed round-72 positive-witness generalization package as proposer-level
+      evidence and licensed strict continuation from iteration 42 with 6,850 blocks. A non-importing clean-room checker validated
+      314,668,800 pair cells, 32,031,216 retained physical-selector tuples, all 48 source assignments, exact semantic deduplication
+      from 696 candidates to 566 retained terms, twelve legal outer schedules and twenty-four complete direct SAT/raw replays.
+      Zero truth cells and failed positive completions remain non-load-bearing; no absence, repair, exhaustion, D* narrowing,
+      route change or level change is licensed. Gross remains CONJECTURED with D*_Gross in {11,12}.
+    sources:
+    - path: circdist/artifacts/circdist_gross_round71_generalization_round72_20260829
+      kind: run
+    - path: circdist/reviews/circdist_gross_round72_generalization_exact_review_20260829.md
+      kind: review
+  gross-cegar-continuation-round71-2026-08-29:
+    date: '2026-08-29'
+    type: repair-applied
+    summary: Linked the sealed round-71 exact CEGAR continuation after dispatcher manifest and full verifier replay, without
+      a level change. Iterations 6--29 give 24 legal outer schedules and 48 complete direct-sector SAT assignments, all clause-checked
+      and raw-replayed, yielding 48 candidate-exact sound blocks. No sector is UNSAT, no repair is entered and no outer exhaustion
+      exists. The exact restart is iteration 30 with 6,260 installed blocks. Gross remains CONJECTURED with D*_Gross in {11,12}.
+    sources:
+    - path: circdist/artifacts/circdist_gross_cegar_continuation_round71_20260829
+      kind: run
+  gross-block-minimization-round70-review-2026-08-29:
+    date: '2026-08-29'
+    type: review-completed
+    summary: Fresh independent exact review cleared the sealed round-69 positive-witness library as proposer-level evidence
+      and licensed strict continuation from iteration 6 with 6,212 blocks. A non-importing clean-room checker validated all
+      15,552,000 pair cells, 4,740 sound antecedents over 56,539,296 covered incidences, 3,368 raw mechanisms, six legal outer
+      schedules and twelve complete direct-360 SAT/raw replays. The 2,704 negative weight-14 observations remain non-load-bearing;
+      no absence, repair, outer exhaustion, D* narrowing, route change or level change is licensed. Gross remains CONJECTURED
+      with D*_Gross in {11,12}.
+    sources:
+    - path: circdist/artifacts/circdist_gross_block_minimization_round69_20260829
+      kind: run
+    - path: circdist/reviews/circdist_gross_block_minimization_exact_review_20260829.md
+      kind: review
+  gross-direct360-round68-2026-08-29:
+    date: '2026-08-29'
+    type: repair-applied
+    summary: Linked the sealed round-68 complete direct-360 package after dispatcher manifest and full verifier replay, without
+      a level change. One unrestricted clause-saturated candidate has SAT direct queries in both sectors and raw-verified
+      weight-10 Xerr and weight-8 Zerr mechanisms; five further exact candidates are also killed in both sectors. Twelve new
+      sound exact blocks raise the retained total to 1,472. The independent DRAT/LRAT toolchain accepts valid controls and
+      rejects truncated proofs, but no candidate-specific UNSAT, repair result or outer exhaustion exists. Gross remains CONJECTURED
+      with D*_Gross in {11,12}.
+    sources:
+    - path: circdist/artifacts/circdist_gross_direct360_proof_round68_20260829
+      kind: run
+  gross-pattern-cegar-round63-2026-08-28:
+    date: '2026-08-28'
+    type: repair-applied
+    summary: Linked the sealed round-63 pattern-CEGAR package after dispatcher replay, without a level change. The package
+      proves 1,440 globally valid five-atom single-residual order clauses by exhaustive local-order checks and deletion controls.
+      Its 15,874 pair-pattern clauses remain exploratory due to retention gaps, and it contains zero checked proof objects.
+      Gross remains CONJECTURED with D*_Gross in {11,12}; the frontier now requires a proof-logged and independently checked
+      direct-360 sector UNSAT on one exact outer candidate.
+    sources:
+    - path: circdist/artifacts/circdist_gross_pattern_cegar_round63_20260828
+      kind: run
+  gross-integrated-cegar-round62-2026-08-28:
+    date: '2026-08-28'
+    type: repair-applied
+    summary: Linked the sealed round-62 integrated CEGAR package after independent manifest and replay verification, without
+      a level change. The exact outer model produced 20 legal MC-valid interleaved schedules; each is killed by a raw-verified
+      Xerr weight-10 mechanism, yielding 20 sound order-region blocks. No UNSAT or outer exhaustion exists, so Gross remains
+      CONJECTURED with D*_Gross in {11,12}; the frontier now targets proof-producing residual-support-pattern clauses and
+      an incremental checked backend.
+    sources:
+    - path: circdist/artifacts/circdist_gross_cegar_round62_20260828
+      kind: run
+  gross-dstar-hunt3-screen-repair-2026-08-28:
+    date: '2026-08-28'
+    type: repair-applied
+    summary: Round-61 proposer audit linked without a level change. It refutes the four-positive-shape and bounded-|V|=12/at-most-four-check
+      screens by explicit legal interleaved counterexamples, records the hunt2 distinct-check recursion defect, preserves
+      the earlier candidate kill through separately raw-verified witnesses, and replaces the stale filter-based frontier with
+      the exact integrated CEGAR residual. Gross remains CONJECTURED with D*_Gross in {11,12}; every new theorem in the report
+      remains proposer-level.
+    sources:
+    - path: circdist/artifacts/circdist_dstar_hunt3_20260828.md
+      kind: run
+  gross-morphing-scope-ruling-2026-08-26:
+    date: '2026-08-26'
+    type: repair-applied
+    summary: Fresh primary-source audit corrected the prior second-hand morphing gloss. Shaw-Terhal's original Gross [[144,12,12]]
+      is only a mid-cycle input whose end-cycle code is [[72,12,6]]; their distance-12 endpoint is a different weight-9 [[144,12,12]]
+      “second gross” code derived from [[288,12,18]], and its reported morphing circuit distance is only the BP-OSD upper
+      bound <=12. The construction is outside frozen S_Gross. Frontier task-002 closes negative; the root stays CONJECTURED
+      with D*_Gross in {11,12}.
+    sources:
+    - path: circdist/artifacts/circdist_gross_morphing_scope_ruling_20260826.md
+      kind: text
+  gross-efssc-round87-review-2026-08-30:
+    date: '2026-08-30'
+    type: review-completed
+    summary: Fresh independent Round-87 review cleared the sealed Round-86 exact fixed-selector semantic-cut package for proposer-level
+      continuation only. It independently rederived the EFSSC iff theorem and canonical/physical stabilizer equivalence; checked
+      134 source truths, fourteen selector domains (nine strict expansions, five equal, maximum factor 320), seven legal MC0
+      globally interleaved schedules, fourteen unrestricted weight-10 mechanisms, atomic transitions, exact iteration-109
+      state, and 0/19,016 structural formula differences. No UNSAT, exhaustion, distance-12 witness, universal distance-11
+      ceiling, route change, inheritance, or level change is licensed. CIRCDIST.gross and gap-via-lift remain CONJECTURED
+      with D*_Gross in {11,12}.
+    sources:
+    - path: circdist/artifacts/circdist_gross_efssc_round86_20260830
+      kind: run
+    - path: circdist/reviews/circdist_gross_efssc_exact_review_round87_20260830.md
+      kind: review
+  gross-efssc-frontier-iteration109-2026-08-30:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: 'Canonical frontier bookkeeping synchronized to the reviewed fresh/unstarted iteration 109 state: 14,484 inherited
+      sound order blocks, 134 EFSSC selectors, selector-state sha256:9be75eba643ac167d5c51497ca8e5cd23eb1656f803a49cbd8e7f1285b004113
+      and preserved unsolved 19,016-assertion formula sha256:94d404da1777ef108a2a508dc55ca0f3fda68bc489482a00337d9acb7317ac4d.
+      This records continuation state only and leaves root/route status and D* residual unchanged.'
+    sources:
+    - path: circdist/artifacts/circdist_gross_efssc_round86_20260830
+      kind: run
+    - path: circdist/reviews/circdist_gross_efssc_exact_review_round87_20260830.md
+      kind: review
+  gross-proof-outer-round89-review-2026-08-30:
+    date: '2026-08-30'
+    type: review-completed
+    summary: 'Fresh independent Round-89 review clears the sealed Round-88 finite-outer package at proposer level and licenses
+      continuation only from fresh/unstarted iteration 112: 14,484 inherited order blocks, 140 exact EFSSC selectors, selector-state
+      sha256:a0364547f846fd68ace7cdba85d89c0f8e6326145243fb0fea7ff543420994cb, and checked-unsolved CNF sha256:a8b917845427a0f746e72200a9a58eb5fac86d5e3c845eeaae69082038c86594
+      (398,488 variables; 1,330,104 clauses; 19,022 source assertions). Iterations 109--111 and all six unrestricted direct
+      sectors are SAT; their exact physical mechanisms license only six candidate-domain cuts. No Gross UNSAT, direct absence,
+      repair, exhaustion, D* narrowing, route change or level change is licensed; CIRCDIST.gross remains CONJECTURED with
+      D*_Gross in {11,12}.'
+    sources:
+    - path: circdist/artifacts/circdist_gross_proof_outer_round88_20260830
+      kind: run
+    - path: circdist/reviews/circdist_gross_proof_outer_exact_review_round89_20260830.md
+      kind: review
+  gross-proof-outer-round91-review-2026-08-30:
+    date: '2026-08-30'
+    type: review-completed
+    summary: 'Fresh independent Round-91 review clears the sealed Round-90 finite-outer package at proposer level and licenses
+      continuation only from fresh/unstarted iteration 124: 14,484 inherited order blocks, 164 exact EFSSC selectors, selector-state
+      sha256:854c2b50a07fa955356932311eb3229a164e16f125e5b2991c6c2916d5fce2c3, and checked-unsolved CNF sha256:2dd07d33ff0b29c1f06a7452c3b1c7ca9b6df950e819046f8a712dacb0dd7e5a
+      (401,040 variables; 1,345,190 clauses; 19,046 source assertions). Iterations 112--123 and all twenty-four unrestricted
+      direct sectors are SAT; their exact physical mechanisms, including two weight-9 cases, license only twenty-four candidate-domain
+      cuts. No Gross UNSAT, direct absence, repair, exhaustion, D* narrowing, route change, or level change is licensed; CIRCDIST.gross
+      remains CONJECTURED with D*_Gross in {11,12}.'
+    sources:
+    - path: circdist/artifacts/circdist_gross_proof_outer_round90_20260830
+      kind: run
+    - path: circdist/reviews/circdist_gross_proof_outer_exact_review_round91_20260830.md
+      kind: review
+  gross-proof-outer-round93-review-2026-08-30:
+    date: '2026-08-30'
+    type: review-completed
+    summary: 'Fresh independent Round-93 review clears the sealed Round-92 weight-9 synthesis and finite-outer package at
+      proposer level and licenses continuation only from fresh/unstarted iteration 136: 14,484 inherited order blocks, 232
+      exact EFSSC selectors, selector-state sha256:1692d905120d2dcf51b949ce4a70ed4b8f1b270c2d07a1ddbf5813d20d80fa81, and checked-unsolved
+      CNF sha256:289acad6be1068d63369511e9c95b0b1df146471bf05a1e4128758508612b64e (406,656 variables; 1,372,232 clauses; 19,114
+      source assertions). Phase A adds 44 exact ordinary selectors and zero relaxed cubes; iterations 124--135 and all twenty-four
+      direct sectors are SAT, with two weight-9 mechanisms. No Gross UNSAT, direct absence, repair, exhaustion, D* narrowing,
+      route change, or level change is licensed; CIRCDIST.gross and gap-via-lift remain CONJECTURED with D*_Gross in {11,12}.'
+    sources:
+    - path: circdist/artifacts/circdist_gross_proof_outer_round92_20260830
+      kind: run
+    - path: circdist/reviews/circdist_gross_proof_outer_weight9_exact_review_round93_20260830.md
+      kind: review
+  gross-proof-outer-round95-review-2026-08-30:
+    date: '2026-08-30'
+    type: review-completed
+    summary: 'Fresh independent Round-95 review clears the sealed Round-94 finite-outer and same-sector order-3 GF(2) package
+      at proposer level and licenses continuation only from fresh/unstarted iteration 148: 14,484 inherited order blocks,
+      256 exact EFSSC selectors, selector-state sha256:9337b0fe78a3f8af54cec263422fe1641b64094d861c87959a82e1dffe6f326f,
+      and checked-unsolved CNF sha256:397c12b15859a62bbe4bacbcb43dd8680a93e3bcf0cdee62fea4687d2431c8e4 (409,157 variables;
+      1,385,059 clauses; 19,138 source assertions). Iterations 136--147 and all twenty-four unrestricted direct sectors are
+      SAT; their physically replayed mechanisms, including iteration-138 Xerr at weight 9, license only twenty-four candidate-domain
+      cuts. The exhaustive 527,684-triple investigation retains zero terms and proves a no-go only on its exact declared domain.
+      No Gross UNSAT, direct absence, repair, exhaustion, D* narrowing, route change, or level change is licensed; CIRCDIST.gross
+      and gap-via-lift remain CONJECTURED with D*_Gross in {11,12}.'
+    sources:
+    - path: circdist/artifacts/circdist_gross_proof_outer_round94_20260830
+      kind: run
+    - path: circdist/reviews/circdist_gross_proof_outer_round94_exact_review_round95_20260830.md
+      kind: review
+  gross-proof-outer-round97-review-2026-08-31:
+    date: '2026-08-31'
+    type: review-completed
+    summary: 'Fresh independent Round-97 review clears the sealed Round-96 finite-outer and same-sector order-4 GF(2) package
+      at proposer level and licenses continuation only from fresh/unstarted iteration 160: 14,484 inherited order blocks,
+      280 exact EFSSC selectors, selector-state sha256:ad3cf364dd9224c14ffb55046ba3dc8eb80035b1eaf997f1d7a5691297ad62a3,
+      and checked-unsolved CNF sha256:aa18d2857ed5a7aefacd33bf4fbd42fded914393e123a87f00e84e4920e39d59 (411,526 variables;
+      1,396,722 clauses; 19,162 source assertions). Iterations 148--159 and all twenty-four unrestricted direct sectors are
+      SAT; their physically replayed mechanisms, including iteration-148 and iteration-152 Zerr at weight 9, license only
+      twenty-four candidate-domain cuts. The exhaustive 15,254,626-quadruple investigation retains zero novel terms and proves
+      a no-go only on its exact declared same-sector order-4 domain. No Gross UNSAT, direct absence, repair, exhaustion, D*
+      narrowing, route change, or level change is licensed; CIRCDIST.gross and gap-via-lift remain CONJECTURED with D*_Gross
+      in {11,12}.'
+    sources:
+    - path: circdist/artifacts/circdist_gross_proof_outer_round96_20260831
+      kind: run
+    - path: circdist/reviews/circdist_gross_proof_outer_round96_exact_review_round97_20260831.md
+      kind: review
+  gross-proof-outer-round99-review-2026-08-31:
+    date: '2026-08-31'
+    type: review-completed
+    summary: 'Fresh independent Round-99 review clears the sealed Round-98 finite-outer and same-sector order-5 GF(2) package
+      at proposer level and licenses continuation only from fresh/unstarted iteration 172: 14,484 inherited order blocks,
+      304 exact EFSSC selectors, selector-state sha256:a5c64ae41f474844ecd3ac41829331f54d419a81573e4f0e11528db0b49e25d1,
+      and checked-unsolved CNF sha256:f86b8db36af1df3877ca1d9dbafb171b6173ddc8b6c2f045a808dd6c71f98342 (413,646 variables;
+      1,406,245 clauses; 19,186 source assertions). Iterations 160--171 and all twenty-four unrestricted direct sectors are
+      SAT; their physically replayed mechanisms, including iteration-161 Xerr at weight 9, license only twenty-four candidate-domain
+      cuts. The exhaustive 351,359,546-quintuple investigation reconstructs 40,153 unique eligible named-weight-1..10 results,
+      finds zero canonical-syndrome-zero results in either sector, retains zero selectors, and proves a no-go only on its exact
+      declared same-sector order-5 domain. No Gross UNSAT, direct absence, repair, exhaustion, D* narrowing, route change, or
+      level change is licensed; CIRCDIST.gross and gap-via-lift remain CONJECTURED with D*_Gross in {11,12}.'
+    sources:
+    - path: circdist/artifacts/circdist_gross_proof_outer_round98_20260831
+      kind: run
+    - path: circdist/reviews/circdist_gross_proof_outer_round98_exact_review_round99_20260831.md
+      kind: review

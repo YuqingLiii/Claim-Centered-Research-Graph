@@ -1,0 +1,81 @@
+id: CIRCDIST.gross.dext-cap
+role: proof
+aliases:
+- GROSS-DEXT-CAP
+claim: For the Gross code [[144,12,12]], every legal single-ancilla CNOT syndrome-extraction schedule
+  M — interleaved or not — satisfies d_ext(E(M)) <= 11.
+assessment:
+  level: PROVED
+  caveats:
+  - 'Repaired-schedule scope (adjudicated 2026-08-23): the weight-6 multi-hook witness is carried on the
+    REVIEWER''S repaired MC-valid non-interleaved depth-12 schedule (identical within-check orders), not
+    on the originally cited translation-invariant schedule (which, with its entire 25920-member class,
+    violates measurement consistency). This qualifies ONLY the refutation of the RETIRED parity-rigidity
+    clause; the surviving claim d_ext <= 11 is schedule-independent, needs no detector determinism, and
+    is untouched.'
+  - 'The [[144,12,12]] label''s d = 12 is randomised-ISD evidence, not proof — and is NOT load-bearing:
+    the argument needs only that explicit weight-12 zero-syndrome non-stabiliser operators exist, which
+    is witness-certified.'
+  - Absence-side readings of the G1 sweep (the "no smaller witness" histogram side; the 70.7/26.1/15.6
+    percent figures) are NOT-REVIEWED and lie outside this claim.
+  - 'Shared model design: proposer, reviewer, and adjudicator all read the frozen 公共定义 fault inventory;
+    a systematic modelling error at that level would survive every implementation. (The adjudicator''s
+    Gross-code rebuild is pure F2 linear algebra over the published polynomials and touches no circuit
+    model.)'
+  summary: The surviving universal d_ext <= 11 claim is PROVED by the linked independent reviews. The
+    former parity-rigidity clause and the measurement-inconsistent TI sweep are not part of the certified
+    claim. Circuit distance can still differ from d_ext through a completion gap.
+  basis:
+    reviews:
+    - path: circdist/reviews/circdist_numerical_review_20260820.md
+      kind: review
+      scope: Adversarial independent review (fresh instance, told to refute, no desired verdicts) of the
+        narrowed d_ext <= 11 claim and the multi-hook weight-6 mechanism, with the reviewer's own simulator;
+        found and repaired the MC-invalidity of the cited schedule.
+      locator: Item 3
+      reviewed_hash: sha256:4bc0b5eb3b74b174e60f641357f5bea5b9e6a4240c390ced1bf8fd17746bff42
+    - path: circdist/reviews/circdist_readjudication_20260823.md
+      kind: review
+      scope: Canonical-semantics re-adjudication (fresh independent session, no authorship of any circdist
+        artifact) — confirms complete argument and full review coverage of every load-bearing input; independently
+        rebuilt the Gross code with its own F2 linear algebra (k = 12, 72/72 automorphisms, 15/15 pair
+        coverage both sectors, explicit witnesses verified zero-syndrome and non-stabiliser) and re-derived
+        the suffix-residual hook fact; rules the repaired-schedule caveat a scope note on the retired
+        clause.
+      locator: Section 5
+      reviewed_hash: sha256:4bc0b5eb3b74b174e60f641357f5bea5b9e6a4240c390ced1bf8fd17746bff42
+    runs:
+    - path: circdist/artifacts/circdist_gross_recon_20260820.md
+      kind: run
+      scope: Witness-certified enumeration (code inline in the artifact, ~3s) over all 2-element subsets
+        of all check supports and all 90 inequivalent residual sets.
+      result: Every 2-element subset of every check support lies in a weight-12 logical, hence d_ext <=
+        11 for every schedule; 90 residual sets all <= 11, exactly 45 <= 10; all-ones in rowspace(H_X)
+        gives parity rigidity d_ext in {10,11,12}.
+    - path: circdist/artifacts/circdist_gross_g1_20260820.md
+      kind: run
+      scope: Full sweep of all 25920 translation-invariant minimum-depth schedules (979 s, code inline,
+        translation quotient validated 0/12 mismatches, counts reproduced two ways) plus an independent
+        Pauli-frame simulator adjudicating the multi-hook anomaly.
+      result: Witness-certified upper-bound histogram 6/8/9/10/11/12 = 360/6408/2324/9232/6068/1528; end-to-end
+        verified weight-6 witness; the original parity-rigidity clause refuted at NUMERICAL level; absence-side
+        certifications recorded as scope-limited (no reading beyond "the TI class is bad" cashed).
+    evidence:
+    - path: circdist/artifacts/circdist_gross_recon_20260820.md
+      kind: text
+    - path: circdist/artifacts/history/pre_protocol_20260826/nodes/CIRCDIST.gross.dext-cap.yaml
+      kind: text
+      note: Immutable pre-migration record, including every original event, former summary and frontier;
+        historical evidence, not an additional completion review.
+    - path: circdist/reviews/circdist_readjudication_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: circdist/reviews/circdist_numerical_review_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: circdist/artifacts/circdist_gross_g1_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.

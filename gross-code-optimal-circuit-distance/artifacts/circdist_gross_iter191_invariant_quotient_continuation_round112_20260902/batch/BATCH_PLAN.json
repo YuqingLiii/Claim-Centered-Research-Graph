@@ -1,0 +1,36 @@
+{
+  "blocking_rule": "For every previous complete model in the same sector, append one 360-literal clause that is false on exactly that primary selection vector; auxiliary variables are not part of the block.",
+  "candidate_acceptance": [
+    "SAT rc10",
+    "complete assignment assigns every declared variable exactly once",
+    "every clause of the cumulative CNF satisfied",
+    "selected primary mechanism has named fault weight <=10, empty detector syndrome, nonzero logical action, canonical and physical supports outside stabilizer span",
+    "complete translated selector orbit has size 72",
+    "translated schedules and mechanisms all replay",
+    "orbit has zero collision with installed registry and every earlier accepted batch orbit"
+  ],
+  "collision_rule": "An orbit collision does not count toward the target; its model remains retained and blocked before the next attempt.",
+  "created_utc": "2026-09-02T09:48:52.893206+00:00",
+  "enumeration_order": [
+    "Xerr",
+    "Zerr"
+  ],
+  "frontier_rule": "Atomically append only all complete accepted free 72-element orbits from both sectors, build/check an unstarted iteration-192 base and 71-root quotient, and do not solve iteration 192.",
+  "frozen_before_additional_batch_solves": true,
+  "group": "Z_12 x Z_6",
+  "group_order": 72,
+  "mandatory_parent_counts": {
+    "Xerr": 1,
+    "Zerr": 1
+  },
+  "maximum_additional_solver_attempts_per_sector": 11,
+  "maximum_total_attempts_per_sector_including_mandatory": 12,
+  "next_iteration": 192,
+  "root_scope": "This is a finite selector-batch continuation. It is not a root theorem and cannot change canonical Gross unless a separate complete branch proof appears.",
+  "schema": "circdist-gross-round112-predeclared-direct-selector-batch-v1",
+  "source_iteration": 191,
+  "stop_rule": "For each sector stop immediately at four accepted collision-free parents including mandatory, or at 12 total attempts, or on proof-checked UNSAT/UNKNOWN. Never expand.",
+  "target_collision_free_parents_per_sector": 4,
+  "unknown_rule": "UNKNOWN or timeout supplies no verdict and stops that sector without accepting the attempt.",
+  "unsat_rule": "An additional cumulative formula returning UNSAT counts only after DRAT and LRAT acceptance plus corrupt/truncated rejection; then enumeration stops for that sector because the blocking sequence is exhausted."
+}

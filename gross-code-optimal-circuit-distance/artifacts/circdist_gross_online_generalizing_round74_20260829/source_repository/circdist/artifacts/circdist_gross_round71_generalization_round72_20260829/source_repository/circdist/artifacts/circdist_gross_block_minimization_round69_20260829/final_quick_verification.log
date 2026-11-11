@@ -1,0 +1,62 @@
+$ python3 -m venv /tmp/circdist_round69_seal_check_venv_20260829
+
+$ /tmp/circdist_round69_seal_check_venv_20260829/bin/pip install --disable-pip-version-check -r <repo>/circdist/artifacts/circdist_gross_block_minimization_round69_20260829/requirements.txt
+Collecting numpy==2.0.2
+  Using cached numpy-2.0.2-cp39-cp39-macosx_14_0_arm64.whl (5.3 MB)
+Collecting python-sat==1.9.dev15
+  Using cached python_sat-1.9.dev15-cp39-cp39-macosx_11_0_arm64.whl (2.4 MB)
+Collecting six==1.17.0
+  Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+Collecting z3-solver==5.1.0.0
+  Using cached z3_solver-5.1.0.0-py3-none-macosx_13_0_arm64.whl (38.8 MB)
+Installing collected packages: six, z3-solver, python-sat, numpy
+Successfully installed numpy-2.0.2 python-sat-1.9.dev15 six-1.17.0 z3-solver-5.1.0.0
+
+$ /tmp/circdist_round69_seal_check_venv_20260829/bin/python <repo>/circdist/artifacts/circdist_gross_block_minimization_round69_20260829/verify.py --quick --repo-root <repo>
+{
+  "bindings": {
+    "binding_records": 50,
+    "live_files_checked": 526,
+    "offline_snapshots": 5,
+    "repo_checked": true
+  },
+  "checker_controls": {
+    "drat_corrupt": {
+      "exit_code": 1,
+      "marker": "NOT VERIFIED"
+    },
+    "drat_valid": {
+      "exit_code": 0,
+      "marker": "VERIFIED"
+    },
+    "lrat_corrupt": {
+      "exit_code": 1,
+      "marker": "NOT VERIFIED"
+    },
+    "lrat_valid": {
+      "exit_code": 0,
+      "marker": "VERIFIED"
+    }
+  },
+  "compression": {
+    "files": 110,
+    "uncompressed_bytes": 182544758
+  },
+  "manifest": {
+    "entries": 245,
+    "present": true
+  },
+  "preflight": {
+    "all_inherited_files_read": 154,
+    "run_exit_codes": {
+      "preflight_round62.run.json": 0,
+      "preflight_round63_full_static.run.json": 0,
+      "preflight_round68_full.run.json": 1,
+      "preflight_round68_sealed.run.json": 0
+    }
+  },
+  "schema": "round69-independent-package-verification-v1",
+  "status": "PASS",
+  "verdict": "MATERIAL-CHECKED-PROGRESS-NOT-CLOSED",
+  "wall_seconds": 0.25026612499999995
+}

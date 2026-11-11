@@ -1,0 +1,34 @@
+{
+  "schema": "circdist-gross-fix-2-ledger-v1",
+  "fix_2_status": "CLEAN_AT_SEAL_WITH_DISCLOSED_HISTORICAL_RETURN_CODE_GAP",
+  "background_or_detached_processes_started": [],
+  "handoff_compute": [],
+  "foreground_processes": [
+    {"kind": "round62 manifest check", "result": "26/26 OK", "return_code": 0},
+    {"kind": "round62 verifier", "result": "PASS", "return_code": 0},
+    {"kind": "round62 audit rerun", "result": "byte-equal", "return_code": 0},
+    {"kind": "round62 CEGAR20 rerun", "result": "equal modulo timing only", "return_code": 0},
+    {"kind": "round62 negative-control rerun", "result": "PASS", "return_code": 0},
+    {"kind": "fixed-schedule pattern enumeration", "result": "Xerr 754; Zerr 720 unique support clauses", "return_code": 0},
+    {"kind": "exact-outer pattern CEGAR", "result": "10 SAT iterations; 15874 unique support clauses", "return_code": 0},
+    {"kind": "global single-residual exhaustive derivation", "result": "1440 five-atom clauses; 103680 local order cases; 7200 atom deletion controls", "return_code": 0},
+    {"kind": "first-200 Xerr mechanism minimization", "result": "200 sound regions checked; certificate ledger not retained", "return_code": 0},
+    {"kind": "complete direct-360 proof attempt", "solver": "Glucose42", "result": "INTERRUPTED_NO_VERDICT", "solver_status": "ERROR", "wrapper_return_code": "not retained", "seconds": 131.688818},
+    {"kind": "complete direct-360 proof attempt", "solver": "Lingeling", "result": "INTERRUPTED_NO_VERDICT", "solver_status": "ERROR", "wrapper_return_code": "not retained", "seconds": 97.033181},
+    {"kind": "static-certificate seal replay", "result": "PASS", "return_code": 0, "seconds": 8.043775},
+    {"kind": "sealed manifest validation", "result": "23/23 entries OK before validation-output insertion", "return_code": 0},
+    {"kind": "sealed quick verifier", "result": "PASS", "return_code": 0, "wall_seconds": 3.2},
+    {"kind": "sealed full-static verifier", "result": "PASS", "return_code": 0, "wall_seconds": 11.4}
+  ],
+  "failed_launches_without_compute": [
+    {"kind": "drat-trim clone", "reason": "requested process working directory did not exist; tool rejected the call before process launch"}
+  ],
+  "proof_checkers_installed_or_run": [],
+  "historical_return_code_gap": "The two interrupted proof wrappers serialized ERROR JSON, but their shell wrapper return codes were not retained. They have zero evidentiary use.",
+  "seal_process_scan": "No Python, Z3, SAT solver, proof checker, or package script process remained; only unrelated macOS extension processes matched broad text filters.",
+  "scratch_directory": "/private/tmp/circdist_gross_pattern_round63.KBQJza",
+  "repository_mutation_policy": "exactly one new package directory; no pre-existing repository path modified by this worker",
+  "repository_mutations": [
+    "<repo>/circdist/artifacts/circdist_gross_pattern_cegar_round63_20260828/"
+  ]
+}

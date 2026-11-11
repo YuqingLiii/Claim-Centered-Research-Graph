@@ -1,0 +1,40 @@
+==============================================================================
+A.  VALIDATION -- singleton-only columns must reproduce the code distance d = 12
+==============================================================================
+  Zmem: min weight over the complete weight-12 nontrivial-logical pool = 12   (d_sec = 12, PROVED)  -> singleton-only d_ext = 12
+  Xmem: min weight over the complete weight-12 nontrivial-logical pool = 12   (d_sec = 12, PROVED)  -> singleton-only d_ext = 12
+
+==============================================================================
+B.  THE CORRECTED |V|=12 DISQUALIFIER, AS A PAIR/TRIPLE CONDITION
+==============================================================================
+  For |V| = 12 and pairwise-disjoint check contributions the exact cost identity
+      cost = 12 + sum_a (n_a - rho_a) + loss_in + gain_out
+  gives per option an effective gain  2*rho - |C| - n.  With Bound 1 (rho <= 3) the only
+  options of positive gain are, in the [SBB26] presentation,
+      {i5,i6} inside V   gain 1     (the 2-SUFFIX  -- wave 37 tested this)
+      {i1,i2} inside V   gain 1     (the 2-PREFIX  -- wave 37 did NOT test this)
+      {i4,i5,i6} in V    gain 2     (the 3-SUFFIX  -- wave 37 tested this)
+  and d_ext <= 10 in the |V|=12 stratum iff some V carries total gain >= 2.
+  Zmem: 2-suffix-in-V incidences  144   2-prefix-in-V incidences  888   3-suffix-in-V 0
+       DISJOINT gain-1 pairs inside one weight-12 logical: 132   [('2suf', 2, '2pre', 66), ('2suf', 5, '2pre', 69)]
+       -> corrected disqualifier fires: True   (wave 37's incomplete one did not)
+  Xmem: 2-suffix-in-V incidences  360   2-prefix-in-V incidences  456   3-suffix-in-V 0
+       DISJOINT gain-1 pairs inside one weight-12 logical: 84   [('2suf', 0, '2pre', 70), ('2suf', 3, '2pre', 67)]
+       -> corrected disqualifier fires: True   (wave 37's incomplete one did not)
+
+==============================================================================
+C.  THE KILL RE-DERIVED IN THE CAMPAIGN'S 360-COLUMN MODEL
+==============================================================================
+  Zmem witness: [SBB26] columns [('{i1,i2}', 66), ('{i5,i6}', 2)] + 8 singletons = 10 faults, |V'| = 12
+  Zmem witness: [SBB26] columns [('{i1,i2}', 69), ('{i5,i6}', 5)] + 8 singletons = 10 faults, |V'| = 12
+  Zmem: all 72 weight-10 witnesses survive the translation into the 360-column model, same fault count, target still a WEIGHT-12 nontrivial logical.
+  Xmem witness: [SBB26] columns [('{i1,i2}', 18), ('{i5,i6}', 26)] + 8 singletons = 10 faults, |V'| = 12
+  Xmem witness: [SBB26] columns [('{i1,i2}', 18), ('{i1}', 26), ('{i5,i6}', 26)] + 7 singletons = 10 faults, |V'| = 12
+  Xmem: all 72 weight-10 witnesses survive the translation into the 360-column model, same fault count, target still a WEIGHT-12 nontrivial logical.
+
+==============================================================================
+D.  EXACT SAME-ROUND repair OF EVERY WEIGHT-10 WITNESS  (repair 0 => d_circ = d_eff)
+==============================================================================
+  Zmem: 72 weight-10 witnesses; exact SAME-ROUND repair histogram {2: 48, 3: 24} ; 2-group multi-round repair-0 on 0 of the rest   (1.9s)
+  Xmem: 72 weight-10 witnesses; exact SAME-ROUND repair histogram {1: 72} ; 2-group multi-round repair-0 on 0 of the rest   (1.6s)
+python3 src/v1_model_and_repair.py  3.72s user 0.06s system 98% cpu 3.835 total

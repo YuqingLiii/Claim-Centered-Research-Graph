@@ -1,0 +1,92 @@
+ROUND 69 FINAL AUDIT
+Date: 2026-08-29
+
+SINGLE VERDICT
+MATERIAL-CHECKED-PROGRESS-NOT-CLOSED
+
+CLAIM BOUNDARY
+- Incoming exact interval: D*_Gross in {11,12}.
+- Outgoing exact interval: D*_Gross in {11,12}.
+- Complete outer exhaustion: absent.
+- Candidate-specific direct absence proofs: 0.
+- Arbitrary-round repair entered: no.
+- Distance-12 schedule plus repair certificate: absent.
+- Canonical promotion authorized: no.
+
+INHERITED SEALS AND REPLAYS
+- Round 62: all 27 files read, SHA seal PASS, verifier PASS, 20 raw blocks replayed.
+- Round 63: all 25 files read, SHA seal PASS, full-static verifier PASS, 1,440 clauses / 103,680 local cases / 7,200 controls.
+- Round 68: all 102 files read, SHA seal PASS, sealed verifier PASS.
+- Round-68 live binding mode exited 1 only because the current Gross node and scheduler postdate that seal. The failure is preserved and was not treated as sealed replay failure.
+
+PART A — POSITIVE SOUND LIBRARY
+- 12/12 round-68 mechanisms reconstructed.
+- 23 participating sector/check catalogs.
+- 720/720 orders per catalog; 16,560 local records.
+- 360 unary-bad and 360 unary-good orders per catalog.
+- 30 unique pair relations; 15,552,000 pair-order cells visited.
+- 3,368 explicit positive configurations: 3,347 weight-12 pool and 21 raw weight-14 SAT.
+- 3,368 canonical/physical mechanism replays PASS.
+- 1,197,120 certified good-good cells each assigned an explicit reconstructible configuration.
+- tuple selector SHA-256: bf023520379991fa597fba786d0505ccd71c85bd1f89f957298cefbbc65cdaed.
+- 4,740 sound deletion-minimal terms, atom range 4–12, atom total 40,180.
+- 40,180 atom-deletion controls PASS relative to the retained positive library.
+- 2,704 weight-14 UNSAT solver returns have no checked proofs and remain non-load-bearing observations.
+- No global negative truth-table or absence claim is made.
+
+PART B — COMPLETE OUTER/DIRECT CEGAR
+- Iterations completed: 0–5.
+- Installed outer blocks: 6,200, 6,202, 6,204, 6,206, 6,208, 6,210.
+- Every outer result: SAT with raw 864-edge / 648-MC / global-interleaving audit PASS.
+- Every candidate Xerr: complete direct-360 SAT and raw physical replay PASS.
+- Every candidate Zerr: complete direct-360 SAT and raw physical replay PASS.
+- New exact blocks: 12 (6 Xerr, 6 Zerr).
+- Forbidden exploratory round-63 pair-pattern clauses installed: 0.
+- Direct UNSAT candidate sectors: 0; candidate absence proofs: 0; repair gate remained closed.
+- Stop-loss: six complete dual-sector candidates. Restart is iteration 6 with 6,212 blocks.
+
+PROOF AND NEGATIVE CONTROLS
+- Fresh valid DRAT accepted; truncated DRAT rejected.
+- Fresh valid LRAT accepted; truncated LRAT rejected.
+- No absence inference was drawn from a positive-only routine.
+- Twelve SAT-run DRAT streams were identified as non-certificates, hashed, and omitted; their total was 811,176,127 bytes. Complete formulas, assignments, dictionaries, and raw replays are retained.
+
+INDEPENDENT PACKAGE REPLAYS
+- Pre-write full replay: PASS, 121.718334958 s external wall, 360 s hard limit.
+- Repository package full replay: PASS, 121.217327208 s external wall, 360 s hard limit.
+- Manifest-enabled repository full replay: PASS, 119.868777125 s external wall, 360 s hard limit; manifest then contained 243 entries.
+- After correcting manifest coverage to include tooling/SHA256SUMS.txt, fresh clean-venv quick replay: PASS, 0.586963292 s process wall, manifest 245 entries, live bindings 526 files, all checker controls PASS.
+- The final mathematical payload differs from the manifest-enabled full replay only by the manifest-coverage one-line fix in verify.py; its PAYLOAD_SHA256SUMS entry was updated. Final structural audit/scan files do not alter mathematical inputs.
+
+PROTOCOL CHECKS
+- `python3 tools/proof_dag_check.py --problem circdist`: PASS; 16 node files structurally valid.
+- `python3 tools/evidence_closure_check.py --problem circdist`: exit 1, expected. This new sealed package is intentionally unlinked because no canonical node/route/scheduler promotion was authorized. Full output is preserved.
+
+REPOSITORY INVENTORY
+- Baseline excluding .git and this future package: 3,012 files, 88,762,997 bytes.
+- Final excluding .git and this package: 3,012 files, 88,762,997 bytes.
+- Added/removed/changed outside package: 0/0/0.
+- Baseline and final tree SHA-256: 90845c573452f495d79e28d7748cb0fd0be01725542c2b7652cdf67aeffa96a7.
+- Authorized repository mutation: exactly `circdist/artifacts/circdist_gross_block_minimization_round69_20260829/`.
+- No canonical nodes, routes, scheduler, protocols, generated views, reviews, or earlier artifacts were edited.
+- No commit and no push were performed.
+
+FIX-2 / CLEANUP
+- Detached/background jobs: none.
+- Worker pools: none.
+- All solver and verifier processes were foreground, serial, and time-bounded.
+- Interrupted prototypes are named in PROCESS_LEDGER.md and produced no verdict.
+- All dedicated /tmp work, staging, solver traces, and clean virtual environments were deleted.
+- Final process scan: zero matching processes.
+- Final scratch glob: empty.
+
+SEAL
+- PAYLOAD_SHA256SUMS.txt entries: 233.
+- Final SHA256SUMS.txt entries: 249 (all package files except the root SHA256SUMS.txt itself).
+- Package files including the root checksum file: 250.
+- Deterministically compressed members inventoried: 110, representing 182,544,758 uncompressed bytes.
+- An initial `shasum -c` invocation from the repository root failed only because package-relative paths were resolved against the wrong cwd. No file changed. The final command was run from the package directory.
+- Final package-relative SHA-256 check: PASS.
+
+NEXT EXACT FRONTIER
+Use DISPATCHER_LICENSE.md. Start outer iteration 6 from cegar/dynamic_blocks.json with 6,212 installed sound blocks. Query both complete direct sectors for every candidate. Retain the same proof and repair gates.

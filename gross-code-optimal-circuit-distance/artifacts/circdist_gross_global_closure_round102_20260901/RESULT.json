@@ -1,0 +1,107 @@
+{
+  "canonical_state_modified": false,
+  "distance_status": {
+    "D_star_Gross": [
+      11,
+      12
+    ],
+    "CIRCDIST.gross": "CONJECTURED",
+    "gap-via-lift": "CONJECTURED"
+  },
+  "exact_residual": "Solve the sealed, fully invariant, lex-quotiented, fresh unstarted iteration-187 outer CNF with proof output enabled from launch; SAT requires complete Xerr/Zerr direct adjudication and orbit-valid selector continuation, while UNSAT requires independent DRAT and LRAT acceptance and the exact installed-exclusion theorem.",
+  "failures": {
+    "ledger": "FAILURE_LEDGER.md",
+    "recorded_corrections": 13,
+    "scientifically_material": "The initial non-invariant quotient was retracted and replaced by exact full orbit closure before lex quotienting."
+  },
+  "fresh_frontier": {
+    "base_cnf": {
+      "assertions": 545550,
+      "clauses": 6882039,
+      "sha256": "7f66b46643b6b10cce57358e4e66f7e95cdc1bfe52ee14f77884c56ddd5d5eab",
+      "variables": 1838894
+    },
+    "block_count": 517140,
+    "iteration": 187,
+    "lex_quotient_cnf": {
+      "clauses": 11789630,
+      "sha256": "e415b4c2c5b4923a47348a06ea9ebb06bbc85cea2c9c32bd3a9b25a1ce198234",
+      "variables": 2452334
+    },
+    "selector_count": 24012,
+    "selector_state_sha256": "7667fc8230b67224b1895180764680c5000dcef34b3c67352f904e5998e8879b",
+    "source_file_sha256": "d7a1f6bf63b328627362a70518f5beb77d3b4b32241ccaaab83d6d5d5c122124",
+    "source_semantic_sha256": "88c726321144b782ce7fb72d8b1ed0d361473ab6587bb7f3ba8ec6cd0079dfa3",
+    "started": false,
+    "state_file_sha256": "b7fa430f67bdcb8fdb034c8e42174ee219d0d77ecdbe57f99576de1518de9bea"
+  },
+  "global_coverage": {
+    "corrected_quotient_cnf_sha256": "f6dec16c6ee19ee1a041d3eb78786171558f54805c3038ce9c311c62b82d7c13",
+    "corrected_quotient_direct": {
+      "Xerr": "SATISFIABLE",
+      "Zerr": "SATISFIABLE"
+    },
+    "corrected_quotient_result": "SATISFIABLE",
+    "corrected_quotient_schedule_sha256": "f6a806a1b90535d497da63b154960f9ebf172c6c740356470cdeda56866bd5cf",
+    "full_invariant_blocks": 517140,
+    "full_invariant_selectors_iter186": 23868,
+    "group": "Z_12 x Z_6",
+    "group_order": 72,
+    "lex_quotient_equisatisfiable": true,
+    "theorem": "Exact finite group action, legal-schedule/direct-mechanism equivariance, exact installed-registry orbit closure, and orbit-minimal lex quotient with lifting.",
+    "theorem_file": "GLOBAL_TRANSLATION_THEOREM.md"
+  },
+  "iteration184": {
+    "direct": {
+      "Xerr": "SATISFIABLE",
+      "Zerr": "SATISFIABLE"
+    },
+    "new_exact_selectors": 2,
+    "outer": "SATISFIABLE",
+    "schedule_sha256": "5c13a6ef32fec263f6cdc5d10db1da30d6758a79f089194814fe99e360d55c23"
+  },
+  "package": "circdist/artifacts/circdist_gross_global_closure_round102_20260901",
+  "proof_disposition": {
+    "actual_Gross_UNSAT": false,
+    "absence_claim": false,
+    "proof_output_enabled_from_solver_launch": true,
+    "toolchain_controls": "PASS",
+    "unknown_direct_prefixes_are_certificates": false
+  },
+  "process_and_cleanup": {
+    "all_pid_bearing_children_reaped": true,
+    "corrected_raw_solver_stream_survivors": 0,
+    "detached_processes": 0,
+    "package_or_system_scratch_survivors": 0,
+    "retained_process_records": 106,
+    "solver_interval_count": 11,
+    "strict_solver_nonoverlap": true,
+    "surviving_science_processes": 0,
+    "wrapper_timeouts": 0
+  },
+  "repair_entered": false,
+  "repository_gates": {
+    "evidence_closure": {
+      "all_errors_under_new_package": true,
+      "expected_returncode": 1,
+      "raw_returncode": 1,
+      "unique_diagnostics": 688
+    },
+    "other_gate_returncodes": 0,
+    "serial_children": 11,
+    "status": "PASS"
+  },
+  "root_branches": {
+    "A_legal_schedule_distance_12": false,
+    "B_all_legal_schedules_distance_at_most_11": false
+  },
+  "schema": "circdist-gross-global-closure-round102-result-v1",
+  "strict_serial": true,
+  "verification": {
+    "all_replay_children_reaped": true,
+    "detached_replay_children": 0,
+    "preseal_replay_children": 13,
+    "preseal_replay_status": "PASS"
+  },
+  "verdict": "MATERIAL-CHECKED-GLOBAL-PROGRESS-NOT-CLOSED"
+}

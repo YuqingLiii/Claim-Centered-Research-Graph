@@ -1,0 +1,106 @@
+{
+  "files": {
+    "DAG_PROTOCOL.md": {
+      "bytes": 15377,
+      "sha256": "d8775b511431e6e9dc7a5be6200af80bd612e7e7d5f5ff10bb14ef748791a095"
+    },
+    "FILE_PROTOCOL.md": {
+      "bytes": 8523,
+      "sha256": "d9d6fb57a26fef3b70fc05bda74a29101d83a43df60e06eaeb345e76980fc595"
+    },
+    "circdist/artifacts/circdist_dstar_hunt1_20260823.md": {
+      "bytes": 17263,
+      "sha256": "d6d104c20d28c3fe29a3dd2cf53cfe50f3cc3cadc852e46c6ea00fc5ff4f4671"
+    },
+    "circdist/artifacts/circdist_dstar_hunt2_20260823.md": {
+      "bytes": 23799,
+      "sha256": "01f9e79226495ad837ecb8fa08066b4d96a2d7078e385d5831d827ddb6ba82da"
+    },
+    "circdist/artifacts/circdist_dstar_hunt3_20260828.md": {
+      "bytes": 34625,
+      "sha256": "add78a4d0caea89781c68f41c679b96be6d7cce2a13f70d004e4f07e95738943"
+    },
+    "circdist/artifacts/circdist_gross_cegar_round62_20260828/SHA256SUMS.txt": {
+      "bytes": 2481,
+      "sha256": "e888e7be694e2ef11b4148aa7f01a75ec9990d7b79b5c97cc36734686265eea1"
+    },
+    "circdist/artifacts/definitions/CIRCDIST_PROBLEMS.md": {
+      "bytes": 10199,
+      "sha256": "5f6dc37fcc33c0eb9f90e6267864740fc53b65c4acf1ee870c8d29ffd6d46c64"
+    },
+    "circdist/proof-dag/nodes/CIRCDIST.gross.dext-cap.yaml": {
+      "bytes": 5266,
+      "sha256": "a2c89dac0a66bee9f4055fece6d7d4e032203ca2ad38d8a70c071ff7afc16f0d"
+    },
+    "circdist/proof-dag/nodes/CIRCDIST.gross.mc-equiv.yaml": {
+      "bytes": 1986,
+      "sha256": "0c75299358a4f6c63a53ff5b96bf2d3646e42daeb4edd776207dfdfea46a0aa3"
+    },
+    "circdist/proof-dag/nodes/CIRCDIST.gross.yaml": {
+      "bytes": 28212,
+      "sha256": "b50fd9cef17effa317bd8b433ac07f53d61161dc68a0c7d5fcb388e6c6437e59"
+    },
+    "circdist/proof-dag/nodes/CIRCDIST.lift.iff.yaml": {
+      "bytes": 10858,
+      "sha256": "7b7929628c48e7c75997d33661989ed61e7bf83ca775802d807f211a224b3a68"
+    },
+    "circdist/reviews/circdist_gross_links_review_20260823.md": {
+      "bytes": 32609,
+      "sha256": "8668638473e349511eb428e20bf6bd0d8a5189c9c6477aeba6057ef2fbb1f898"
+    },
+    "circdist/reviews/circdist_gross_verdict_review_20260823.md": {
+      "bytes": 69866,
+      "sha256": "ce76a2ce88a4eef6690884b3195e58d56d07306932f836910d45a0a555c179b5"
+    },
+    "circdist/reviews/circdist_sbbcert_review_20260820.md": {
+      "bytes": 35424,
+      "sha256": "6847fb574afd312f3419bc14fc2ef8f8b9dd75ccbc7b5862fc78c46da506d397"
+    },
+    "operations/circdist/SCHEDULER.yaml": {
+      "bytes": 129753,
+      "sha256": "9b51ad558aec6c9fe986078c15723f2b0e2113974ed5f2b60d63e5c73bad3fc5"
+    }
+  },
+  "repository_head": "e40a7ac40972ad5186018797efa390a8e3f784f0",
+  "round62_binding_conflicts": [
+    {
+      "file": "operations/circdist/SCHEDULER.yaml",
+      "resolution": "DISK WINS; current scheduler bound",
+      "round62_sha256": "e798dc85815dd2ca3a941d1d720a600826c8b86f8ba76253beda3bca21739786",
+      "round63_disk_sha256": "9b51ad558aec6c9fe986078c15723f2b0e2113974ed5f2b60d63e5c73bad3fc5"
+    },
+    {
+      "file": "circdist/proof-dag/nodes/CIRCDIST.gross.yaml",
+      "resolution": "DISK WINS; current node bound; normalized load-bearing statement hashes unchanged",
+      "round62_sha256": "80fb6afb103d960818a7bc7fb7f1ac8f2acb1b888b8869d1ab7cfd77145109e6",
+      "round63_disk_sha256": "b50fd9cef17effa317bd8b433ac07f53d61161dc68a0c7d5fcb388e6c6437e59"
+    }
+  ],
+  "statements": {
+    "CIRCDIST.gross#candidate-certification.implication": {
+      "characters": 300,
+      "sha256": "4f40673227208c58d21650b3d685670019f5460b44ee52c0440b22293eec1598",
+      "text": "Via SBB26 Thm 1 the statement d_circ = 11 for the candidate circuit reduces to an exact minimum-distance certification on a 360-column extended code (not a circuit-level DEM search); combined with the universal d_ext cap this certifies the first half of the claim and pins the achievable floor at 11."
+    },
+    "CIRCDIST.gross#gap-via-lift.implication": {
+      "characters": 279,
+      "sha256": "915109fe708c63ce138b11d07aa87c3048d676c87d9d6b7a80d68c0e2025c5d1",
+      "text": "Given the universal d_ext <= 11 cap, D* = 12 holds iff some interleaved schedule has completion gap >= 1 at weight 12; the closed-lift criterion turns this into a voltage/monodromy condition checkable per witness family, deciding the second half of the claim in either direction."
+    },
+    "CIRCDIST.gross.claim": {
+      "characters": 586,
+      "sha256": "fc22f602b9bfd9e38fa69d7fc1d00b973c7a634e6c400662eaccd38c8ec0f180",
+      "text": "For the Gross code [[144,12,12]] with single-ancilla CNOT syndrome extraction (interleaving of X- and Z-check CNOTs allowed; each required CNOT exactly once; one two-qubit gate per qubit per time step; no flag ancillas, cat states, or generating-set changes; idle layers compressed), the optimum D*_Gross = max over legal schedules M of d_circ(C(M)) is determined with proof, as either an explicit interleaved schedule with certified d_circ = 12, or a proof that every legal schedule satisfies d_circ <= 11; and the published conjectured distance-11 circuit has a certified d_circ = 11."
+    },
+    "CIRCDIST.gross.dext-cap.claim": {
+      "characters": 148,
+      "sha256": "4bc0b5eb3b74b174e60f641357f5bea5b9e6a4240c390ced1bf8fd17746bff42",
+      "text": "For the Gross code [[144,12,12]], every legal single-ancilla CNOT syndrome-extraction schedule M \u2014 interleaved or not \u2014 satisfies d_ext(E(M)) <= 11."
+    },
+    "CIRCDIST.lift.iff.claim": {
+      "characters": 544,
+      "sha256": "0c4c466b895d938d2028140967d87974ee2216b3cebcc48967804f530e227240",
+      "text": "In graph-like detector error models with fixed boundaries, for memory experiments C_R(M) with R >= d_sec (the spatial distance of the sector's own logical class: d_X for the Z-memory, d_Z for the X-memory), d_circ equals the minimum over nontrivial effective logicals gamma of the length of the shortest closed spacetime lift of gamma, with an intrinsic zero-voltage/monodromy condition characterizing same-weight liftability at minimum weight \u2014 and the voltage is computable without constructing the full multi-round circuit (non-vacuity bar)."
+    }
+  }
+}

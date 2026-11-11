@@ -1,0 +1,2121 @@
+{
+  "absence_semantics": {
+    "completion_misses_used": 0,
+    "deletion_countertuples_used": 0,
+    "positive_finder_misses_used": 0,
+    "solver_negatives_used": 0,
+    "zero_domains_used": 0,
+    "zero_truth_cells_used": 0
+  },
+  "classification_deletion_controls": "embedded in every retained term; each removed atom exposes a tuple invalid for the named positive relation or fixed selector; this licenses only candidate relation/fixed-selector atom minimality and never installed-union/global physical minimality or absence",
+  "counts": {
+    "assignment_flip_rejected": 24,
+    "cross_registry_retained_term_deletion_controls": 46952,
+    "fault_removal_rejected": 24,
+    "online_retained_term_deletion_controls": 762,
+    "proof_checker_corrupt_rejects": 2,
+    "proof_checker_truncated_rejects": 2,
+    "proof_checker_valid_accepts": 2,
+    "retained_term_deletion_controls_total": 47714,
+    "schedule_collision_rejected": 12,
+    "truncated_assignment_rejected": 1
+  },
+  "cross_registry_zero_domain_regression": {
+    "accepted_v7_zero_domain_terms": 0,
+    "development_v6_rejected_terms": 3,
+    "rule": "a candidate with an empty exact local-order product is rejected before semantic classification or state mutation"
+  },
+  "direct_controls": [
+    {
+      "flip_assignment_control": {
+        "failed_clause_count": 7,
+        "first_failed_clause": 1697,
+        "variable": 213
+      },
+      "iteration": 78,
+      "remove_fault_control": {
+        "logical_parities": [
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        "net_support": [
+          32,
+          33,
+          36,
+          40,
+          41,
+          42,
+          50,
+          57,
+          59,
+          63,
+          65,
+          74,
+          75,
+          114,
+          117,
+          119
+        ],
+        "net_weight": 16,
+        "nontrivial": true,
+        "ok": false,
+        "selected": [
+          239,
+          240,
+          261,
+          262,
+          268,
+          279,
+          283,
+          331,
+          335
+        ],
+        "selected_names": [
+          "R:31:2",
+          "R:32:0",
+          "R:39:0",
+          "R:39:1",
+          "R:41:1",
+          "R:45:0",
+          "R:46:1",
+          "R:62:1",
+          "R:63:2"
+        ],
+        "syndrome": [
+          20,
+          21,
+          30,
+          35,
+          37,
+          52
+        ],
+        "weight": 9
+      },
+      "sector": "Xerr"
+    },
+    {
+      "flip_assignment_control": {
+        "failed_clause_count": 4,
+        "first_failed_clause": 2366,
+        "variable": 114
+      },
+      "iteration": 78,
+      "remove_fault_control": {
+        "logical_parities": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "net_support": [
+          0,
+          6,
+          31,
+          32,
+          34,
+          40,
+          41,
+          88,
+          89,
+          100,
+          107,
+          109,
+          117,
+          123,
+          126,
+          129,
+          135
+        ],
+        "net_weight": 17,
+        "nontrivial": true,
+        "ok": false,
+        "selected": [
+          117,
+          155,
+          171,
+          246,
+          249,
+          282,
+          300,
+          303,
+          309
+        ],
+        "selected_names": [
+          "D:117",
+          "R:3:2",
+          "R:9:0",
+          "R:34:0",
+          "R:35:0",
+          "R:46:0",
+          "R:52:0",
+          "R:53:0",
+          "R:55:0"
+        ],
+        "syndrome": [
+          29,
+          35,
+          38
+        ],
+        "weight": 9
+      },
+      "sector": "Zerr"
+    },
+    {
+      "flip_assignment_control": {
+        "failed_clause_count": 5,
+        "first_failed_clause": 98,
+        "variable": 62
+      },
+      "iteration": 79,
+      "remove_fault_control": {
+        "logical_parities": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0
+        ],
+        "net_support": [
+          14,
+          60,
+          63,
+          64,
+          66,
+          67,
+          74,
+          80,
+          132,
+          133,
+          135,
+          136,
+          143
+        ],
+        "net_weight": 13,
+        "nontrivial": true,
+        "ok": false,
+        "selected": [
+          66,
+          67,
+          132,
+          133,
+          136,
+          299,
+          331,
+          341,
+          349
+        ],
+        "selected_names": [
+          "D:66",
+          "D:67",
+          "D:132",
+          "D:133",
+          "D:136",
+          "R:51:2",
+          "R:62:1",
+          "R:65:2",
+          "R:68:1"
+        ],
+        "syndrome": [
+          1,
+          64,
+          67
+        ],
+        "weight": 9
+      },
+      "sector": "Xerr"
+    },
+    {
+      "flip_assignment_control": {
+        "failed_clause_count": 8,
+        "first_failed_clause": 9,
+        "variable": 76
+      },
+      "iteration": 79,
+      "remove_fault_control": {
+        "logical_parities": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "net_support": [
+          9,
+          12,
+          15,
+          16,
+          20,
+          78,
+          82,
+          86,
+          88,
+          93,
+          94
+        ],
+        "net_weight": 11,
+        "nontrivial": true,
+        "ok": false,
+        "selected": [
+          78,
+          82,
+          88,
+          94,
+          97,
+          189,
+          212,
+          225,
+          242
+        ],
+        "selected_names": [
+          "D:78",
+          "D:82",
+          "D:88",
+          "D:94",
+          "D:97",
+          "R:15:0",
+          "R:22:2",
+          "R:27:0",
+          "R:32:2"
+        ],
+        "syndrome": [
+          0,
+          63,
+          69
+        ],
+        "weight": 9
+      },
+      "sector": "Zerr"
+    },
+    {
+      "flip_assignment_control": {
+        "failed_clause_count": 4,
+        "first_failed_clause": 572,
+        "variable": 134
+      },
+      "iteration": 80,
+      "remove_fault_control": {
+        "logical_parities": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1
+        ],
+        "net_support": [
+          6,
+          12,
+          15,
+          64,
+          65,
+          75,
+          78,
+          81,
+          134,
+          135,
+          136,
+          137,
+          141
+        ],
+        "net_weight": 13,
+        "nontrivial": true,
+        "ok": false,
+        "selected": [
+          134,
+          135,
+          136,
+          137,
+          324,
+          334,
+          342,
+          344,
+          353
+        ],
+        "selected_names": [
+          "D:134",
+          "D:135",
+          "D:136",
+          "D:137",
+          "R:60:0",
+          "R:63:1",
+          "R:66:0",
+          "R:66:2",
+          "R:69:2"
+        ],
+        "syndrome": [
+          7,
+          62,
+          63
+        ],
+        "weight": 9
+      },
+      "sector": "Xerr"
+    },
+    {
+      "flip_assignment_control": {
+        "failed_clause_count": 4,
+        "first_failed_clause": 4354,
+        "variable": 138
+      },
+      "iteration": 80,
+      "remove_fault_control": {
+        "logical_parities": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "net_support": [
+          54,
+          60,
+          61,
+          63,
+          71,
+          120,
+          127,
+          129,
+          133,
+          138,
+          139
+        ],
+        "net_weight": 11,
+        "nontrivial": true,
+        "ok": false,
+        "selected": [
+          176,
+          295,
+          312,
+          322,
+          325,
+          335,
+          347,
+          348,
+          350
+        ],
+        "selected_names": [
+          "R:10:2",
+          "R:50:1",
+          "R:56:0",
+          "R:59:1",
+          "R:60:1",
+          "R:63:2",
+          "R:67:2",
+          "R:68:0",
+          "R:68:2"
+        ],
+        "syndrome": [
+          53,
+          59,
+          62
+        ],
+        "weight": 9
+      },
+      "sector": "Zerr"
+    },
+    {
+      "flip_assignment_control": {
+        "failed_clause_count": 4,
+        "first_failed_clause": 1078,
+        "variable": 140
+      },
+      "iteration": 81,
+      "remove_fault_control": {
+        "logical_parities": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "net_support": [
+          9,
+          25,
+          33,
+          40,
+          41,
+          42,
+          48,
+          57,
+          64,
+          75,
+          82,
+          84,
+          85,
+          109,
+          117,
+          122,
+          124,
+          131,
+          137
+        ],
+        "net_weight": 19,
+        "nontrivial": true,
+        "ok": false,
+        "selected": [
+          166,
+          191,
+          217,
+          261,
+          262,
+          266,
+          303,
+          305,
+          335
+        ],
+        "selected_names": [
+          "R:7:1",
+          "R:15:2",
+          "R:24:1",
+          "R:39:0",
+          "R:39:1",
+          "R:40:2",
+          "R:53:0",
+          "R:53:2",
+          "R:63:2"
+        ],
+        "syndrome": [
+          13,
+          68,
+          69
+        ],
+        "weight": 9
+      },
+      "sector": "Xerr"
+    },
+    {
+      "flip_assignment_control": {
+        "failed_clause_count": 4,
+        "first_failed_clause": 4083,
+        "variable": 69
+      },
+      "iteration": 81,
+      "remove_fault_control": {
+        "logical_parities": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "net_support": [
+          67,
+          70,
+          71,
+          133,
+          134,
+          136,
+          137,
+          139,
+          140,
+          142,
+          143
+        ],
+        "net_weight": 11,
+        "nontrivial": true,
+        "ok": false,
+        "selected": [
+          134,
+          136,
+          139,
+          140,
+          142,
+          167,
+          179,
+          347
+        ],
+        "selected_names": [
+          "D:134",
+          "D:136",
+          "D:139",
+          "D:140",
+          "D:142",
+          "R:7:2",
+          "R:11:2",
+          "R:67:2"
+        ],
+        "syndrome": [
+          50,
+          66,
+          67
+        ],
+        "weight": 8
+      },
+      "sector": "Zerr"
+    },
+    {
+      "flip_assignment_control": {
+        "failed_clause_count": 7,
+        "first_failed_clause": 3232,
+        "variable": 37
+      },
+      "iteration": 82,
+      "remove_fault_control": {
+        "logical_parities": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "net_support": [
+          17,
+          23,
+          32,
+          39,
+          45,
+          49,
+          90,
+          94,
+          95,
+          109,
+          111,
+          115,
+          123,
+          124,
+          140
+        ],
+        "net_weight": 15,
+        "nontrivial": true,
+        "ok": false,
+        "selected": [
+          95,
+          109,
+          123,
+          124,
+          140,
+          192,
+          208,
+          227,
+          238
+        ],
+        "selected_names": [
+          "D:95",
+          "D:109",
+          "D:123",
+          "D:124",
+          "D:140",
+          "R:16:0",
+          "R:21:1",
+          "R:27:2",
+          "R:31:1"
+        ],
+        "syndrome": [
+          39,
+          42,
+          48
+        ],
+        "weight": 9
+      },
+      "sector": "Xerr"
+    },
+    {
+      "flip_assignment_control": {
+        "failed_clause_count": 5,
+        "first_failed_clause": 1948,
+        "variable": 42
+      },
+      "iteration": 82,
+      "remove_fault_control": {
+        "logical_parities": [
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "net_support": [
+          30,
+          34,
+          36,
+          37,
+          40,
+          96,
+          100,
+          103,
+          107,
+          111,
+          113
+        ],
+        "net_weight": 11,
+        "nontrivial": true,
+        "ok": false,
+        "selected": [
+          100,
+          103,
+          107,
+          256,
+          266,
+          270,
+          271,
+          272,
+          275
+        ],
+        "selected_names": [
+          "D:100",
+          "D:103",
+          "D:107",
+          "R:37:1",
+          "R:40:2",
+          "R:42:0",
+          "R:42:1",
+          "R:42:2",
+          "R:43:2"
+        ],
+        "syndrome": [
+          23,
+          39,
+          40
+        ],
+        "weight": 9
+      },
+      "sector": "Zerr"
+    },
+    {
+      "flip_assignment_control": {
+        "failed_clause_count": 6,
+        "first_failed_clause": 2054,
+        "variable": 29
+      },
+      "iteration": 83,
+      "remove_fault_control": {
+        "logical_parities": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        "net_support": [
+          28,
+          30,
+          35,
+          37,
+          40,
+          45,
+          47,
+          48,
+          57,
+          103,
+          111,
+          113,
+          114,
+          117,
+          123
+        ],
+        "net_weight": 15,
+        "nontrivial": true,
+        "ok": false,
+        "selected": [
+          32,
+          226,
+          233,
+          239,
+          245,
+          248,
+          252,
+          262,
+          303
+        ],
+        "selected_names": [
+          "D:32",
+          "R:27:1",
+          "R:29:2",
+          "R:31:2",
+          "R:33:2",
+          "R:34:2",
+          "R:36:0",
+          "R:39:1",
+          "R:53:0"
+        ],
+        "syndrome": [
+          25,
+          34,
+          40
+        ],
+        "weight": 9
+      },
+      "sector": "Xerr"
+    },
+    {
+      "flip_assignment_control": {
+        "failed_clause_count": 4,
+        "first_failed_clause": 1604,
+        "variable": 38
+      },
+      "iteration": 83,
+      "remove_fault_control": {
+        "logical_parities": [
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "net_support": [
+          41,
+          42,
+          43,
+          44,
+          47,
+          103,
+          107,
+          108,
+          110,
+          114,
+          118
+        ],
+        "net_weight": 11,
+        "nontrivial": true,
+        "ok": false,
+        "selected": [
+          42,
+          44,
+          47,
+          108,
+          110,
+          114,
+          118,
+          291,
+          303
+        ],
+        "selected_names": [
+          "D:42",
+          "D:44",
+          "D:47",
+          "D:108",
+          "D:110",
+          "D:114",
+          "D:118",
+          "R:49:0",
+          "R:53:0"
+        ],
+        "syndrome": [
+          19,
+          36,
+          41
+        ],
+        "weight": 9
+      },
+      "sector": "Zerr"
+    },
+    {
+      "flip_assignment_control": {
+        "failed_clause_count": 6,
+        "first_failed_clause": 584,
+        "variable": 79
+      },
+      "iteration": 84,
+      "remove_fault_control": {
+        "logical_parities": [
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        "net_support": [
+          2,
+          56,
+          57,
+          64,
+          71,
+          82,
+          99,
+          100,
+          116,
+          130,
+          132,
+          133,
+          140
+        ],
+        "net_weight": 13,
+        "nontrivial": true,
+        "ok": false,
+        "selected": [
+          82,
+          99,
+          100,
+          116,
+          306,
+          309,
+          313,
+          335,
+          351
+        ],
+        "selected_names": [
+          "D:82",
+          "D:99",
+          "D:100",
+          "D:116",
+          "R:54:0",
+          "R:55:0",
+          "R:56:1",
+          "R:63:2",
+          "R:69:0"
+        ],
+        "syndrome": [
+          7,
+          8,
+          24
+        ],
+        "weight": 9
+      },
+      "sector": "Xerr"
+    },
+    {
+      "flip_assignment_control": {
+        "failed_clause_count": 4,
+        "first_failed_clause": 1636,
+        "variable": 38
+      },
+      "iteration": 84,
+      "remove_fault_control": {
+        "logical_parities": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0
+        ],
+        "net_support": [
+          0,
+          6,
+          11,
+          16,
+          21,
+          22,
+          71,
+          87,
+          89,
+          96,
+          99,
+          102,
+          111,
+          125,
+          131,
+          134,
+          138
+        ],
+        "net_weight": 17,
+        "nontrivial": true,
+        "ok": false,
+        "selected": [
+          96,
+          111,
+          160,
+          168,
+          181,
+          195,
+          198,
+          229,
+          288
+        ],
+        "selected_names": [
+          "D:96",
+          "D:111",
+          "R:5:1",
+          "R:8:0",
+          "R:12:1",
+          "R:17:0",
+          "R:18:0",
+          "R:28:1",
+          "R:48:0"
+        ],
+        "syndrome": [
+          19,
+          36,
+          41
+        ],
+        "weight": 9
+      },
+      "sector": "Zerr"
+    },
+    {
+      "flip_assignment_control": {
+        "failed_clause_count": 4,
+        "first_failed_clause": 1005,
+        "variable": 16
+      },
+      "iteration": 85,
+      "remove_fault_control": {
+        "logical_parities": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "net_support": [
+          15,
+          16,
+          24,
+          32,
+          49,
+          56,
+          66,
+          76,
+          98,
+          106,
+          108,
+          113,
+          131,
+          132,
+          139
+        ],
+        "net_weight": 15,
+        "nontrivial": true,
+        "ok": false,
+        "selected": [
+          56,
+          106,
+          117,
+          131,
+          187,
+          233,
+          261,
+          289,
+          355
+        ],
+        "selected_names": [
+          "D:56",
+          "D:106",
+          "D:117",
+          "D:131",
+          "R:14:1",
+          "R:29:2",
+          "R:39:0",
+          "R:48:1",
+          "R:70:1"
+        ],
+        "syndrome": [
+          12,
+          21,
+          27
+        ],
+        "weight": 9
+      },
+      "sector": "Xerr"
+    },
+    {
+      "flip_assignment_control": {
+        "failed_clause_count": 4,
+        "first_failed_clause": 3682,
+        "variable": 130
+      },
+      "iteration": 85,
+      "remove_fault_control": {
+        "logical_parities": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "net_support": [
+          0,
+          2,
+          53,
+          59,
+          62,
+          66,
+          70,
+          73,
+          74,
+          75,
+          76,
+          119,
+          129,
+          132,
+          135,
+          140,
+          142
+        ],
+        "net_weight": 17,
+        "nontrivial": true,
+        "ok": false,
+        "selected": [
+          132,
+          140,
+          142,
+          144,
+          154,
+          156,
+          159,
+          339,
+          340
+        ],
+        "selected_names": [
+          "D:132",
+          "D:140",
+          "D:142",
+          "R:0:0",
+          "R:3:1",
+          "R:4:0",
+          "R:5:0",
+          "R:65:0",
+          "R:65:1"
+        ],
+        "syndrome": [
+          45,
+          51,
+          54
+        ],
+        "weight": 9
+      },
+      "sector": "Zerr"
+    },
+    {
+      "flip_assignment_control": {
+        "failed_clause_count": 8,
+        "first_failed_clause": 191,
+        "variable": 6
+      },
+      "iteration": 86,
+      "remove_fault_control": {
+        "logical_parities": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "net_support": [
+          3,
+          7,
+          9,
+          14,
+          16,
+          73,
+          74,
+          75,
+          76,
+          80,
+          82
+        ],
+        "net_weight": 11,
+        "nontrivial": true,
+        "ok": false,
+        "selected": [
+          7,
+          9,
+          14,
+          16,
+          74,
+          75,
+          76,
+          150,
+          156
+        ],
+        "selected_names": [
+          "D:7",
+          "D:9",
+          "D:14",
+          "D:16",
+          "D:74",
+          "D:75",
+          "D:76",
+          "R:2:0",
+          "R:4:0"
+        ],
+        "syndrome": [
+          2,
+          11,
+          17
+        ],
+        "weight": 9
+      },
+      "sector": "Xerr"
+    },
+    {
+      "flip_assignment_control": {
+        "failed_clause_count": 7,
+        "first_failed_clause": 1175,
+        "variable": 17
+      },
+      "iteration": 86,
+      "remove_fault_control": {
+        "logical_parities": [
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "net_support": [
+          32,
+          33,
+          48,
+          50,
+          64,
+          65,
+          66,
+          130,
+          131,
+          133,
+          140
+        ],
+        "net_weight": 11,
+        "nontrivial": true,
+        "ok": false,
+        "selected": [
+          32,
+          33,
+          48,
+          50,
+          133,
+          140,
+          144,
+          158,
+          160
+        ],
+        "selected_names": [
+          "D:32",
+          "D:33",
+          "D:48",
+          "D:50",
+          "D:133",
+          "D:140",
+          "R:0:0",
+          "R:4:2",
+          "R:5:1"
+        ],
+        "syndrome": [
+          14,
+          15,
+          70
+        ],
+        "weight": 9
+      },
+      "sector": "Zerr"
+    },
+    {
+      "flip_assignment_control": {
+        "failed_clause_count": 5,
+        "first_failed_clause": 1207,
+        "variable": 18
+      },
+      "iteration": 87,
+      "remove_fault_control": {
+        "logical_parities": [
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "net_support": [
+          2,
+          18,
+          26,
+          67,
+          76,
+          77,
+          78,
+          92,
+          102,
+          107,
+          124
+        ],
+        "net_weight": 11,
+        "nontrivial": true,
+        "ok": false,
+        "selected": [
+          75,
+          76,
+          78,
+          102,
+          107,
+          124,
+          145,
+          170,
+          357
+        ],
+        "selected_names": [
+          "D:75",
+          "D:76",
+          "D:78",
+          "D:102",
+          "D:107",
+          "D:124",
+          "R:0:1",
+          "R:8:2",
+          "R:71:0"
+        ],
+        "syndrome": [
+          14,
+          23,
+          29
+        ],
+        "weight": 9
+      },
+      "sector": "Xerr"
+    },
+    {
+      "flip_assignment_control": {
+        "failed_clause_count": 4,
+        "first_failed_clause": 1782,
+        "variable": 106
+      },
+      "iteration": 87,
+      "remove_fault_control": {
+        "logical_parities": [
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        "net_support": [
+          9,
+          16,
+          19,
+          25,
+          29,
+          32,
+          35,
+          42,
+          65,
+          76,
+          92,
+          95,
+          98,
+          99,
+          102,
+          112,
+          115
+        ],
+        "net_weight": 17,
+        "nontrivial": true,
+        "ok": false,
+        "selected": [
+          161,
+          207,
+          229,
+          238,
+          267,
+          268,
+          277,
+          307,
+          308
+        ],
+        "selected_names": [
+          "R:5:2",
+          "R:21:0",
+          "R:28:1",
+          "R:31:1",
+          "R:41:0",
+          "R:41:1",
+          "R:44:1",
+          "R:54:1",
+          "R:54:2"
+        ],
+        "syndrome": [
+          21,
+          27,
+          30
+        ],
+        "weight": 9
+      },
+      "sector": "Zerr"
+    },
+    {
+      "flip_assignment_control": {
+        "failed_clause_count": 6,
+        "first_failed_clause": 3049,
+        "variable": 40
+      },
+      "iteration": 88,
+      "remove_fault_control": {
+        "logical_parities": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "net_support": [
+          31,
+          35,
+          41,
+          42,
+          46,
+          102,
+          105,
+          106,
+          107,
+          108,
+          112
+        ],
+        "net_weight": 11,
+        "nontrivial": true,
+        "ok": false,
+        "selected": [
+          41,
+          42,
+          46,
+          102,
+          105,
+          106,
+          107,
+          234,
+          246
+        ],
+        "selected_names": [
+          "D:41",
+          "D:42",
+          "D:46",
+          "D:102",
+          "D:105",
+          "D:106",
+          "D:107",
+          "R:30:0",
+          "R:34:0"
+        ],
+        "syndrome": [
+          36,
+          45,
+          51
+        ],
+        "weight": 9
+      },
+      "sector": "Xerr"
+    },
+    {
+      "flip_assignment_control": {
+        "failed_clause_count": 6,
+        "first_failed_clause": 2795,
+        "variable": 53
+      },
+      "iteration": 88,
+      "remove_fault_control": {
+        "logical_parities": [
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "net_support": [
+          44,
+          52,
+          54,
+          55,
+          63,
+          110,
+          116,
+          120,
+          121,
+          122,
+          125,
+          128,
+          129,
+          136,
+          137
+        ],
+        "net_weight": 15,
+        "nontrivial": true,
+        "ok": false,
+        "selected": [
+          110,
+          125,
+          137,
+          281,
+          295,
+          298,
+          319,
+          323,
+          325
+        ],
+        "selected_names": [
+          "D:110",
+          "D:125",
+          "D:137",
+          "R:45:2",
+          "R:50:1",
+          "R:51:1",
+          "R:58:1",
+          "R:59:2",
+          "R:60:1"
+        ],
+        "syndrome": [
+          34,
+          50,
+          51
+        ],
+        "weight": 9
+      },
+      "sector": "Zerr"
+    },
+    {
+      "flip_assignment_control": {
+        "failed_clause_count": 5,
+        "first_failed_clause": 252,
+        "variable": 64
+      },
+      "iteration": 89,
+      "remove_fault_control": {
+        "logical_parities": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "net_support": [
+          29,
+          37,
+          45,
+          69,
+          80,
+          89,
+          111,
+          119,
+          120,
+          121,
+          136,
+          138,
+          139
+        ],
+        "net_weight": 13,
+        "nontrivial": true,
+        "ok": false,
+        "selected": [
+          69,
+          111,
+          119,
+          138,
+          178,
+          254,
+          273,
+          329
+        ],
+        "selected_names": [
+          "D:69",
+          "D:111",
+          "D:119",
+          "D:138",
+          "R:11:1",
+          "R:36:2",
+          "R:43:0",
+          "R:61:2"
+        ],
+        "syndrome": [
+          3,
+          60,
+          69
+        ],
+        "weight": 8
+      },
+      "sector": "Xerr"
+    },
+    {
+      "flip_assignment_control": {
+        "failed_clause_count": 4,
+        "first_failed_clause": 3496,
+        "variable": 128
+      },
+      "iteration": 89,
+      "remove_fault_control": {
+        "logical_parities": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "net_support": [
+          61,
+          65,
+          68,
+          69,
+          70,
+          71,
+          131,
+          133,
+          134,
+          135,
+          136,
+          139,
+          141
+        ],
+        "net_weight": 13,
+        "nontrivial": true,
+        "ok": false,
+        "selected": [
+          133,
+          139,
+          173,
+          175,
+          179,
+          310,
+          311,
+          338,
+          358
+        ],
+        "selected_names": [
+          "D:133",
+          "D:139",
+          "R:9:2",
+          "R:10:1",
+          "R:11:2",
+          "R:55:1",
+          "R:55:2",
+          "R:64:2",
+          "R:71:1"
+        ],
+        "syndrome": [
+          43,
+          49,
+          58
+        ],
+        "weight": 9
+      },
+      "sector": "Zerr"
+    }
+  ],
+  "schedule_mutation_controls": [
+    {
+      "accepted": false,
+      "audit": {
+        "conflicts": [
+          [
+            "X:4:0",
+            "X:54:0",
+            5
+          ]
+        ],
+        "edge_count": 864,
+        "errors": [],
+        "global_interleaved": true,
+        "max_time": 152,
+        "mc_violations": [],
+        "min_time": 0,
+        "ok": false,
+        "overlap_interleaved_pairs": 21,
+        "overlaps": 648,
+        "used_layers": 153,
+        "whole_check_interleaved_pairs": 116
+      },
+      "iteration": 78,
+      "mutation": {
+        "collides_with": "X:4:0",
+        "corrupted_time": 5,
+        "edge": "X:54:0",
+        "original_time": 48
+      }
+    },
+    {
+      "accepted": false,
+      "audit": {
+        "conflicts": [
+          [
+            "X:4:0",
+            "X:54:0",
+            9
+          ]
+        ],
+        "edge_count": 864,
+        "errors": [],
+        "global_interleaved": true,
+        "max_time": 168,
+        "mc_violations": [],
+        "min_time": 0,
+        "ok": false,
+        "overlap_interleaved_pairs": 18,
+        "overlaps": 648,
+        "used_layers": 169,
+        "whole_check_interleaved_pairs": 101
+      },
+      "iteration": 79,
+      "mutation": {
+        "collides_with": "X:4:0",
+        "corrupted_time": 9,
+        "edge": "X:54:0",
+        "original_time": 55
+      }
+    },
+    {
+      "accepted": false,
+      "audit": {
+        "conflicts": [
+          [
+            "X:4:0",
+            "X:54:0",
+            6
+          ]
+        ],
+        "edge_count": 864,
+        "errors": [],
+        "global_interleaved": true,
+        "max_time": 156,
+        "mc_violations": [],
+        "min_time": 0,
+        "ok": false,
+        "overlap_interleaved_pairs": 23,
+        "overlaps": 648,
+        "used_layers": 157,
+        "whole_check_interleaved_pairs": 115
+      },
+      "iteration": 80,
+      "mutation": {
+        "collides_with": "X:4:0",
+        "corrupted_time": 6,
+        "edge": "X:54:0",
+        "original_time": 60
+      }
+    },
+    {
+      "accepted": false,
+      "audit": {
+        "conflicts": [
+          [
+            "X:4:0",
+            "X:54:0",
+            9
+          ]
+        ],
+        "edge_count": 864,
+        "errors": [],
+        "global_interleaved": true,
+        "max_time": 167,
+        "mc_violations": [],
+        "min_time": 0,
+        "ok": false,
+        "overlap_interleaved_pairs": 18,
+        "overlaps": 648,
+        "used_layers": 168,
+        "whole_check_interleaved_pairs": 94
+      },
+      "iteration": 81,
+      "mutation": {
+        "collides_with": "X:4:0",
+        "corrupted_time": 9,
+        "edge": "X:54:0",
+        "original_time": 109
+      }
+    },
+    {
+      "accepted": false,
+      "audit": {
+        "conflicts": [
+          [
+            "X:4:0",
+            "X:54:0",
+            8
+          ]
+        ],
+        "edge_count": 864,
+        "errors": [],
+        "global_interleaved": true,
+        "max_time": 152,
+        "mc_violations": [],
+        "min_time": 0,
+        "ok": false,
+        "overlap_interleaved_pairs": 24,
+        "overlaps": 648,
+        "used_layers": 153,
+        "whole_check_interleaved_pairs": 134
+      },
+      "iteration": 82,
+      "mutation": {
+        "collides_with": "X:4:0",
+        "corrupted_time": 8,
+        "edge": "X:54:0",
+        "original_time": 47
+      }
+    },
+    {
+      "accepted": false,
+      "audit": {
+        "conflicts": [
+          [
+            "X:4:0",
+            "X:54:0",
+            9
+          ]
+        ],
+        "edge_count": 864,
+        "errors": [],
+        "global_interleaved": true,
+        "max_time": 174,
+        "mc_violations": [],
+        "min_time": 0,
+        "ok": false,
+        "overlap_interleaved_pairs": 19,
+        "overlaps": 648,
+        "used_layers": 175,
+        "whole_check_interleaved_pairs": 97
+      },
+      "iteration": 83,
+      "mutation": {
+        "collides_with": "X:4:0",
+        "corrupted_time": 9,
+        "edge": "X:54:0",
+        "original_time": 136
+      }
+    },
+    {
+      "accepted": false,
+      "audit": {
+        "conflicts": [
+          [
+            "X:4:0",
+            "X:54:0",
+            2
+          ]
+        ],
+        "edge_count": 864,
+        "errors": [],
+        "global_interleaved": true,
+        "max_time": 143,
+        "mc_violations": [],
+        "min_time": 0,
+        "ok": false,
+        "overlap_interleaved_pairs": 25,
+        "overlaps": 648,
+        "used_layers": 144,
+        "whole_check_interleaved_pairs": 138
+      },
+      "iteration": 84,
+      "mutation": {
+        "collides_with": "X:4:0",
+        "corrupted_time": 2,
+        "edge": "X:54:0",
+        "original_time": 43
+      }
+    },
+    {
+      "accepted": false,
+      "audit": {
+        "conflicts": [
+          [
+            "X:4:0",
+            "X:54:0",
+            8
+          ]
+        ],
+        "edge_count": 864,
+        "errors": [],
+        "global_interleaved": true,
+        "max_time": 157,
+        "mc_violations": [],
+        "min_time": 0,
+        "ok": false,
+        "overlap_interleaved_pairs": 25,
+        "overlaps": 648,
+        "used_layers": 158,
+        "whole_check_interleaved_pairs": 133
+      },
+      "iteration": 85,
+      "mutation": {
+        "collides_with": "X:4:0",
+        "corrupted_time": 8,
+        "edge": "X:54:0",
+        "original_time": 59
+      }
+    },
+    {
+      "accepted": false,
+      "audit": {
+        "conflicts": [
+          [
+            "X:4:0",
+            "X:54:0",
+            2
+          ]
+        ],
+        "edge_count": 864,
+        "errors": [],
+        "global_interleaved": true,
+        "max_time": 165,
+        "mc_violations": [],
+        "min_time": 0,
+        "ok": false,
+        "overlap_interleaved_pairs": 17,
+        "overlaps": 648,
+        "used_layers": 166,
+        "whole_check_interleaved_pairs": 107
+      },
+      "iteration": 86,
+      "mutation": {
+        "collides_with": "X:4:0",
+        "corrupted_time": 2,
+        "edge": "X:54:0",
+        "original_time": 51
+      }
+    },
+    {
+      "accepted": false,
+      "audit": {
+        "conflicts": [
+          [
+            "X:4:0",
+            "X:54:0",
+            2
+          ]
+        ],
+        "edge_count": 864,
+        "errors": [],
+        "global_interleaved": true,
+        "max_time": 159,
+        "mc_violations": [],
+        "min_time": 0,
+        "ok": false,
+        "overlap_interleaved_pairs": 20,
+        "overlaps": 648,
+        "used_layers": 160,
+        "whole_check_interleaved_pairs": 95
+      },
+      "iteration": 87,
+      "mutation": {
+        "collides_with": "X:4:0",
+        "corrupted_time": 2,
+        "edge": "X:54:0",
+        "original_time": 50
+      }
+    },
+    {
+      "accepted": false,
+      "audit": {
+        "conflicts": [
+          [
+            "X:4:0",
+            "X:54:0",
+            3
+          ]
+        ],
+        "edge_count": 864,
+        "errors": [],
+        "global_interleaved": true,
+        "max_time": 161,
+        "mc_violations": [],
+        "min_time": 0,
+        "ok": false,
+        "overlap_interleaved_pairs": 6,
+        "overlaps": 648,
+        "used_layers": 162,
+        "whole_check_interleaved_pairs": 53
+      },
+      "iteration": 88,
+      "mutation": {
+        "collides_with": "X:4:0",
+        "corrupted_time": 3,
+        "edge": "X:54:0",
+        "original_time": 95
+      }
+    },
+    {
+      "accepted": false,
+      "audit": {
+        "conflicts": [
+          [
+            "X:4:0",
+            "X:54:0",
+            2
+          ]
+        ],
+        "edge_count": 864,
+        "errors": [],
+        "global_interleaved": true,
+        "max_time": 152,
+        "mc_violations": [],
+        "min_time": 0,
+        "ok": false,
+        "overlap_interleaved_pairs": 19,
+        "overlaps": 648,
+        "used_layers": 153,
+        "whole_check_interleaved_pairs": 102
+      },
+      "iteration": 89,
+      "mutation": {
+        "collides_with": "X:4:0",
+        "corrupted_time": 2,
+        "edge": "X:54:0",
+        "original_time": 104
+      }
+    }
+  ],
+  "schema": "round78-negative-controls-v1",
+  "status": "PASS",
+  "truncated_assignment": {
+    "accepted": false,
+    "assignment_variables_present": 5943,
+    "expected_variables": 5944,
+    "path": "controls/truncated_assignment_iter78_Xerr.solver.log",
+    "reason": "complete assignment cardinality mismatch",
+    "removed_literal": 5944,
+    "uncompressed_sha256": "7b84544edbe239c139ea8d1161ec4494a847f908006d1f8021cd71677bb144b2"
+  }
+}

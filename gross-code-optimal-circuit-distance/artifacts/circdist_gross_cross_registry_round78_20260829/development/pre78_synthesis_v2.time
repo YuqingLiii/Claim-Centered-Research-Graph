@@ -1,0 +1,31 @@
+Traceback (most recent call last):
+  File "/private/tmp/circdist_round78_cross_registry_20260829/stage/package/src/synthesize_cross_registry.py", line 303, in <module>
+    t=minimize_union(m1,m2,base,rev);t['seed_base']=base_id;terms.append(t)
+  File "/private/tmp/circdist_round78_cross_registry_20260829/stage/package/src/synthesize_cross_registry.py", line 286, in minimize_union
+    if vector_union_dp(m1,m2,trial)['sound']:cur=trial
+  File "/private/tmp/circdist_round78_cross_registry_20260829/stage/package/src/synthesize_cross_registry.py", line 271, in vector_union_dp
+    good2=sum(n for e,(n,w) in a2.items() if valid_signature(const2^ss[1]^e));bad2=total2-good2
+  File "/private/tmp/circdist_round78_cross_registry_20260829/stage/package/src/synthesize_cross_registry.py", line 271, in <genexpr>
+    good2=sum(n for e,(n,w) in a2.items() if valid_signature(const2^ss[1]^e));bad2=total2-good2
+KeyboardInterrupt
+time: command terminated abnormally
+real 292.84
+user 286.96
+sys 5.17
+          9262628864  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+             1078564  page reclaims
+                  17  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   1  signals received
+                  14  voluntary context switches
+               88416  involuntary context switches
+       7145957291707  instructions retired
+       1256389710420  cycles elapsed
+          9258146584  peak memory footprint

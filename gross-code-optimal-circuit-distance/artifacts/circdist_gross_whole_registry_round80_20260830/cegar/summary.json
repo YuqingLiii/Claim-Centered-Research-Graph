@@ -1,0 +1,795 @@
+{
+  "accepted_absence_proofs": 0,
+  "assignment_clause_replays": 24,
+  "branch_closed": false,
+  "candidate_exact_blocks_added": 24,
+  "candidate_specific_direct_absence_attempts": 12,
+  "completed_dual_sector_candidates": 12,
+  "direct_sector_verdicts": {
+    "SATISFIABLE": 24,
+    "UNKNOWN_OR_TIMEOUT": 0,
+    "UNSAT_PROOFS_ACCEPTED": 0
+  },
+  "fresh_outer_processes": 12,
+  "iteration_range": [
+    90,
+    101
+  ],
+  "iterations": [
+    {
+      "after_counts": {
+        "dynamic": 182,
+        "generalized": 10806,
+        "raw_mechanisms": 98,
+        "registry": 98,
+        "total_blocks": 12448
+      },
+      "after_semantic_sha256": {
+        "dynamic": "81e56b5e7097689e0b089740f8aa037b8ea8e1d893024ab0d0ab4b50ff4499be",
+        "generalized": "7cba4a414a0088dbb2ceeabf24625bb01470564870fa37e962ed87457b4d9ce3",
+        "raw_mechanisms": "419f64b55de6d4c7333c28a5a344c317d5d2e7fb154296e6ea7085fe7c0c310d",
+        "registry": "b563ee277101403271403f5367533b144fe299f6346639b58906362e0024028e"
+      },
+      "all_dimacs_clauses_satisfied": {
+        "Xerr": true,
+        "Zerr": true
+      },
+      "before_counts": {
+        "dynamic": 180,
+        "generalized": 10619,
+        "raw_mechanisms": 96,
+        "registry": 96,
+        "total_blocks": 12259
+      },
+      "before_semantic_sha256": {
+        "dynamic": "30227f09a28c318ea392ae0473cc7644c294ea02aac6007d30eaddd1884ee348",
+        "generalized": "b71eb0509a99016a1718aa2f03ba19193c9b88ef359b47898c3d3517127e9a5f",
+        "raw_mechanisms": "6746258d7e045c211596ec264a1bcf9a748357e6b7a8f76008e532e189179f1f",
+        "registry": "6663a3a3036199de684255c622690ebf00e02b7e5fd0249af6bbafcfece42cdd"
+      },
+      "candidate_sha256": "88d3eb6ba8c2a2b6ac0a04660c44c405927ee598128c5458de25f4a64db0c555",
+      "commit_complete_file_sha256": "c578b7bab808b9418b02fa23919033060698abe23e4e74456436fe2eb248b402",
+      "direct_absence_attempt": {
+        "absence_accepted": false,
+        "proof_output_bytes": 248948763,
+        "proof_output_requested": true,
+        "selected_sector": "Xerr",
+        "status": "SAT"
+      },
+      "direct_fault_weights": {
+        "Xerr": 10,
+        "Zerr": 10
+      },
+      "direct_sector_statuses": {
+        "Xerr": "SATISFIABLE",
+        "Zerr": "SATISFIABLE"
+      },
+      "increments": {
+        "candidate_exact": 2,
+        "cross_registry": 180,
+        "online_generalized": 7
+      },
+      "iteration": 90,
+      "mc_constraints": 648,
+      "outer_smt2_sha256": "a67a6c3e48bd3ff9adf99ec7f0fa66240bed00b7233092e70c4b46d58ac2cd1e",
+      "outer_status": "SAT",
+      "raw_replay": "PASS",
+      "schedule_edges": 864,
+      "schedule_sha256": "88d3eb6ba8c2a2b6ac0a04660c44c405927ee598128c5458de25f4a64db0c555",
+      "state_bundle_commit": "PASS"
+    },
+    {
+      "after_counts": {
+        "dynamic": 184,
+        "generalized": 11049,
+        "raw_mechanisms": 100,
+        "registry": 100,
+        "total_blocks": 12693
+      },
+      "after_semantic_sha256": {
+        "dynamic": "12f972d4cf75bac26f5ca0ee6ab663d04ec99d709d9cb3a50807f93b0a85b6ae",
+        "generalized": "b86591138256a7d82cd0c22c71190375ac2591d7b0c29e9bd1254f111c80fb4d",
+        "raw_mechanisms": "6951049da8fb125e2af1d8bf7923cb4d480642bfefcbdfaaedc2238764c54bca",
+        "registry": "de168d18b29a5482938f4ffd9db97c25df57a173c561c34d432c8d5e86f6edd3"
+      },
+      "all_dimacs_clauses_satisfied": {
+        "Xerr": true,
+        "Zerr": true
+      },
+      "before_counts": {
+        "dynamic": 182,
+        "generalized": 10806,
+        "raw_mechanisms": 98,
+        "registry": 98,
+        "total_blocks": 12448
+      },
+      "before_semantic_sha256": {
+        "dynamic": "81e56b5e7097689e0b089740f8aa037b8ea8e1d893024ab0d0ab4b50ff4499be",
+        "generalized": "7cba4a414a0088dbb2ceeabf24625bb01470564870fa37e962ed87457b4d9ce3",
+        "raw_mechanisms": "419f64b55de6d4c7333c28a5a344c317d5d2e7fb154296e6ea7085fe7c0c310d",
+        "registry": "b563ee277101403271403f5367533b144fe299f6346639b58906362e0024028e"
+      },
+      "candidate_sha256": "fc37e1a97194b32ba767637edc352d9fb3f04b32c8e9fc63c97636b4bc5bd387",
+      "commit_complete_file_sha256": "ed68c217ddd0a965d6a9fbb7830b9181d8e2407175c281c131dd206127c79ab8",
+      "direct_absence_attempt": {
+        "absence_accepted": false,
+        "proof_output_bytes": 0,
+        "proof_output_requested": false,
+        "selected_sector": "Zerr",
+        "status": "SAT"
+      },
+      "direct_fault_weights": {
+        "Xerr": 10,
+        "Zerr": 10
+      },
+      "direct_sector_statuses": {
+        "Xerr": "SATISFIABLE",
+        "Zerr": "SATISFIABLE"
+      },
+      "increments": {
+        "candidate_exact": 2,
+        "cross_registry": 229,
+        "online_generalized": 14
+      },
+      "iteration": 91,
+      "mc_constraints": 648,
+      "outer_smt2_sha256": "49125e49319f7d2dea6c0362d5509a576602b8bfd38c394a66ad99bb82b9c4c7",
+      "outer_status": "SAT",
+      "raw_replay": "PASS",
+      "schedule_edges": 864,
+      "schedule_sha256": "fc37e1a97194b32ba767637edc352d9fb3f04b32c8e9fc63c97636b4bc5bd387",
+      "state_bundle_commit": "PASS"
+    },
+    {
+      "after_counts": {
+        "dynamic": 186,
+        "generalized": 11242,
+        "raw_mechanisms": 102,
+        "registry": 102,
+        "total_blocks": 12888
+      },
+      "after_semantic_sha256": {
+        "dynamic": "bf33bb965e18d90dd3fa29344959541b6deaecdaf56f8835a51aa9824a0589cc",
+        "generalized": "a6a5e6d5a201b769a114829f83160fa8ac92511a799de7703381e28e83566c4e",
+        "raw_mechanisms": "95eebdb02c8dd4a47ae958009336471f8ed23487267f668df1024ac91c251bc1",
+        "registry": "0c1aafa912b4a5e1c3b7258e6c93c52f6f12fb5a9a7bb6e07cdc60fad1eea28c"
+      },
+      "all_dimacs_clauses_satisfied": {
+        "Xerr": true,
+        "Zerr": true
+      },
+      "before_counts": {
+        "dynamic": 184,
+        "generalized": 11049,
+        "raw_mechanisms": 100,
+        "registry": 100,
+        "total_blocks": 12693
+      },
+      "before_semantic_sha256": {
+        "dynamic": "12f972d4cf75bac26f5ca0ee6ab663d04ec99d709d9cb3a50807f93b0a85b6ae",
+        "generalized": "b86591138256a7d82cd0c22c71190375ac2591d7b0c29e9bd1254f111c80fb4d",
+        "raw_mechanisms": "6951049da8fb125e2af1d8bf7923cb4d480642bfefcbdfaaedc2238764c54bca",
+        "registry": "de168d18b29a5482938f4ffd9db97c25df57a173c561c34d432c8d5e86f6edd3"
+      },
+      "candidate_sha256": "c2cd5427842cab44833e44f477de91121720fb97e329ba65959dfe5c8ead3f3e",
+      "commit_complete_file_sha256": "5a737880491afbba837b0ae883da182c126e545e7f22a083baed45bb265aa582",
+      "direct_absence_attempt": {
+        "absence_accepted": false,
+        "proof_output_bytes": 0,
+        "proof_output_requested": false,
+        "selected_sector": "Zerr",
+        "status": "SAT"
+      },
+      "direct_fault_weights": {
+        "Xerr": 10,
+        "Zerr": 10
+      },
+      "direct_sector_statuses": {
+        "Xerr": "SATISFIABLE",
+        "Zerr": "SATISFIABLE"
+      },
+      "increments": {
+        "candidate_exact": 2,
+        "cross_registry": 190,
+        "online_generalized": 3
+      },
+      "iteration": 92,
+      "mc_constraints": 648,
+      "outer_smt2_sha256": "e2030da70a7909f50df9e88ca9a355219e961062bef98662c6087b084fc5f73b",
+      "outer_status": "SAT",
+      "raw_replay": "PASS",
+      "schedule_edges": 864,
+      "schedule_sha256": "c2cd5427842cab44833e44f477de91121720fb97e329ba65959dfe5c8ead3f3e",
+      "state_bundle_commit": "PASS"
+    },
+    {
+      "after_counts": {
+        "dynamic": 188,
+        "generalized": 11371,
+        "raw_mechanisms": 104,
+        "registry": 104,
+        "total_blocks": 13019
+      },
+      "after_semantic_sha256": {
+        "dynamic": "a510e867b6d4ba13c29b5d402db6d3d5a3b1aa4851e051ed4ab30286523529ef",
+        "generalized": "825911055dea3d073d2981a76f7224544213ab789e821cf5de7ac0bd463a6b91",
+        "raw_mechanisms": "1161bc43fb9194fc80254353115b225095d06a725cfaf18f2c4e5f96d994a1a8",
+        "registry": "f9f5a95a45c55bb7e62afe69adb6ad396f77544d4a56748bddc959711fc06c17"
+      },
+      "all_dimacs_clauses_satisfied": {
+        "Xerr": true,
+        "Zerr": true
+      },
+      "before_counts": {
+        "dynamic": 186,
+        "generalized": 11242,
+        "raw_mechanisms": 102,
+        "registry": 102,
+        "total_blocks": 12888
+      },
+      "before_semantic_sha256": {
+        "dynamic": "bf33bb965e18d90dd3fa29344959541b6deaecdaf56f8835a51aa9824a0589cc",
+        "generalized": "a6a5e6d5a201b769a114829f83160fa8ac92511a799de7703381e28e83566c4e",
+        "raw_mechanisms": "95eebdb02c8dd4a47ae958009336471f8ed23487267f668df1024ac91c251bc1",
+        "registry": "0c1aafa912b4a5e1c3b7258e6c93c52f6f12fb5a9a7bb6e07cdc60fad1eea28c"
+      },
+      "candidate_sha256": "fb329dc53f12deb263d40994e68dad2b726975f5b0111501645d79834366ae85",
+      "commit_complete_file_sha256": "19782a46ea5c33495692f25c73a2b1a777d9be5436fce38a71de07a1cee10c8f",
+      "direct_absence_attempt": {
+        "absence_accepted": false,
+        "proof_output_bytes": 0,
+        "proof_output_requested": false,
+        "selected_sector": "Zerr",
+        "status": "SAT"
+      },
+      "direct_fault_weights": {
+        "Xerr": 10,
+        "Zerr": 10
+      },
+      "direct_sector_statuses": {
+        "Xerr": "SATISFIABLE",
+        "Zerr": "SATISFIABLE"
+      },
+      "increments": {
+        "candidate_exact": 2,
+        "cross_registry": 126,
+        "online_generalized": 3
+      },
+      "iteration": 93,
+      "mc_constraints": 648,
+      "outer_smt2_sha256": "ce9fac7781641d54ac66a3bb1403c69c0d986a4b536916125f69f4288c2ee47d",
+      "outer_status": "SAT",
+      "raw_replay": "PASS",
+      "schedule_edges": 864,
+      "schedule_sha256": "fb329dc53f12deb263d40994e68dad2b726975f5b0111501645d79834366ae85",
+      "state_bundle_commit": "PASS"
+    },
+    {
+      "after_counts": {
+        "dynamic": 190,
+        "generalized": 11548,
+        "raw_mechanisms": 106,
+        "registry": 106,
+        "total_blocks": 13198
+      },
+      "after_semantic_sha256": {
+        "dynamic": "edc9d5e6faf7bf677a839d74fc36fe7ad2f3879bf1099be5177ba36c9c4f53de",
+        "generalized": "87af0ae3ecb0a4746fa91037aa1c7b0c52abd0896fcc999ff4e497a057ebdb35",
+        "raw_mechanisms": "3224b2eb2709351e5806620691ca9d9330ce3484f351bf3f4620f1f9a4376db8",
+        "registry": "ffc8f2e8d5c9a99975760d18f757bf20ad11477520aca176b510193a4bd3be69"
+      },
+      "all_dimacs_clauses_satisfied": {
+        "Xerr": true,
+        "Zerr": true
+      },
+      "before_counts": {
+        "dynamic": 188,
+        "generalized": 11371,
+        "raw_mechanisms": 104,
+        "registry": 104,
+        "total_blocks": 13019
+      },
+      "before_semantic_sha256": {
+        "dynamic": "a510e867b6d4ba13c29b5d402db6d3d5a3b1aa4851e051ed4ab30286523529ef",
+        "generalized": "825911055dea3d073d2981a76f7224544213ab789e821cf5de7ac0bd463a6b91",
+        "raw_mechanisms": "1161bc43fb9194fc80254353115b225095d06a725cfaf18f2c4e5f96d994a1a8",
+        "registry": "f9f5a95a45c55bb7e62afe69adb6ad396f77544d4a56748bddc959711fc06c17"
+      },
+      "candidate_sha256": "038cff0f1158342a8d3c0c2ae6bbb8fc01393733b39556b17753b22fe4889518",
+      "commit_complete_file_sha256": "6eaa62d54094655afdb2413dac30e2960de8987cedf2e9e71bf76f0769e0dea2",
+      "direct_absence_attempt": {
+        "absence_accepted": false,
+        "proof_output_bytes": 0,
+        "proof_output_requested": false,
+        "selected_sector": "Zerr",
+        "status": "SAT"
+      },
+      "direct_fault_weights": {
+        "Xerr": 10,
+        "Zerr": 10
+      },
+      "direct_sector_statuses": {
+        "Xerr": "SATISFIABLE",
+        "Zerr": "SATISFIABLE"
+      },
+      "increments": {
+        "candidate_exact": 2,
+        "cross_registry": 164,
+        "online_generalized": 13
+      },
+      "iteration": 94,
+      "mc_constraints": 648,
+      "outer_smt2_sha256": "a421567623bb87c7d414c230439fbb10c09111807d926b8b210899e0948d6c0d",
+      "outer_status": "SAT",
+      "raw_replay": "PASS",
+      "schedule_edges": 864,
+      "schedule_sha256": "038cff0f1158342a8d3c0c2ae6bbb8fc01393733b39556b17753b22fe4889518",
+      "state_bundle_commit": "PASS"
+    },
+    {
+      "after_counts": {
+        "dynamic": 192,
+        "generalized": 11621,
+        "raw_mechanisms": 108,
+        "registry": 108,
+        "total_blocks": 13273
+      },
+      "after_semantic_sha256": {
+        "dynamic": "da5b996c9b86fd047ab10192554f3a336dc91ef1fccd7bbca5fda5651ad4394a",
+        "generalized": "68d5f910bb708d9c24d348c2862e891c888184d789ddd989ba6104e2ffe0cd81",
+        "raw_mechanisms": "c6eeebd8ef2ebef90113427b9f45d19efc7dfb5606920dc2162ce89df06cdaa8",
+        "registry": "00ddbe1f970d3cc1497d5d7d18fe4be66bb5881f64dd3a4b39f9bc307c5f61ff"
+      },
+      "all_dimacs_clauses_satisfied": {
+        "Xerr": true,
+        "Zerr": true
+      },
+      "before_counts": {
+        "dynamic": 190,
+        "generalized": 11548,
+        "raw_mechanisms": 106,
+        "registry": 106,
+        "total_blocks": 13198
+      },
+      "before_semantic_sha256": {
+        "dynamic": "edc9d5e6faf7bf677a839d74fc36fe7ad2f3879bf1099be5177ba36c9c4f53de",
+        "generalized": "87af0ae3ecb0a4746fa91037aa1c7b0c52abd0896fcc999ff4e497a057ebdb35",
+        "raw_mechanisms": "3224b2eb2709351e5806620691ca9d9330ce3484f351bf3f4620f1f9a4376db8",
+        "registry": "ffc8f2e8d5c9a99975760d18f757bf20ad11477520aca176b510193a4bd3be69"
+      },
+      "candidate_sha256": "ad35aac9668197268ce614a64aa80f2d8f056dda7951aedd9d3c98b8a161ae08",
+      "commit_complete_file_sha256": "9d3287e7552371559fd88b2f15f48d9fa38c0d2a0275eec9c574f1618bab8423",
+      "direct_absence_attempt": {
+        "absence_accepted": false,
+        "proof_output_bytes": 0,
+        "proof_output_requested": false,
+        "selected_sector": "Zerr",
+        "status": "SAT"
+      },
+      "direct_fault_weights": {
+        "Xerr": 10,
+        "Zerr": 10
+      },
+      "direct_sector_statuses": {
+        "Xerr": "SATISFIABLE",
+        "Zerr": "SATISFIABLE"
+      },
+      "increments": {
+        "candidate_exact": 2,
+        "cross_registry": 71,
+        "online_generalized": 2
+      },
+      "iteration": 95,
+      "mc_constraints": 648,
+      "outer_smt2_sha256": "351607be5fc12e6ce7ec954a69e470c58bc4697ca357ef6bf32f430cbff0500a",
+      "outer_status": "SAT",
+      "raw_replay": "PASS",
+      "schedule_edges": 864,
+      "schedule_sha256": "ad35aac9668197268ce614a64aa80f2d8f056dda7951aedd9d3c98b8a161ae08",
+      "state_bundle_commit": "PASS"
+    },
+    {
+      "after_counts": {
+        "dynamic": 194,
+        "generalized": 11833,
+        "raw_mechanisms": 110,
+        "registry": 110,
+        "total_blocks": 13487
+      },
+      "after_semantic_sha256": {
+        "dynamic": "69d94eaa1c69523a075837e3caef396527c34e593485b1f9f05d43e8c5d7b724",
+        "generalized": "b85c8fb10840d1043a2a6d71eaefcb0f7ffdfe8da72f5cc2b5cb50c16f05c608",
+        "raw_mechanisms": "9e424bb87457dbf46766a05ed19017f4d8e1a6f764d6014b546c1819ee07b072",
+        "registry": "456260d9d2d5be3c92a94bafd033680aed6ff303e0f8e34f55729a023151bd3b"
+      },
+      "all_dimacs_clauses_satisfied": {
+        "Xerr": true,
+        "Zerr": true
+      },
+      "before_counts": {
+        "dynamic": 192,
+        "generalized": 11621,
+        "raw_mechanisms": 108,
+        "registry": 108,
+        "total_blocks": 13273
+      },
+      "before_semantic_sha256": {
+        "dynamic": "da5b996c9b86fd047ab10192554f3a336dc91ef1fccd7bbca5fda5651ad4394a",
+        "generalized": "68d5f910bb708d9c24d348c2862e891c888184d789ddd989ba6104e2ffe0cd81",
+        "raw_mechanisms": "c6eeebd8ef2ebef90113427b9f45d19efc7dfb5606920dc2162ce89df06cdaa8",
+        "registry": "00ddbe1f970d3cc1497d5d7d18fe4be66bb5881f64dd3a4b39f9bc307c5f61ff"
+      },
+      "candidate_sha256": "5f10c2f6a6366f222e39807a37d7f6712a4dbe5d13d070263734ff3da945b3a5",
+      "commit_complete_file_sha256": "f9009bcf7b2d7f7bfe46e3f58931f3d38880bca6220489b7aa8080ebcd39ff9b",
+      "direct_absence_attempt": {
+        "absence_accepted": false,
+        "proof_output_bytes": 0,
+        "proof_output_requested": false,
+        "selected_sector": "Zerr",
+        "status": "SAT"
+      },
+      "direct_fault_weights": {
+        "Xerr": 10,
+        "Zerr": 10
+      },
+      "direct_sector_statuses": {
+        "Xerr": "SATISFIABLE",
+        "Zerr": "SATISFIABLE"
+      },
+      "increments": {
+        "candidate_exact": 2,
+        "cross_registry": 201,
+        "online_generalized": 11
+      },
+      "iteration": 96,
+      "mc_constraints": 648,
+      "outer_smt2_sha256": "5a42324d6970dc142dd4736f1fe9fcd2cfad456065b4876f10184509ad693088",
+      "outer_status": "SAT",
+      "raw_replay": "PASS",
+      "schedule_edges": 864,
+      "schedule_sha256": "5f10c2f6a6366f222e39807a37d7f6712a4dbe5d13d070263734ff3da945b3a5",
+      "state_bundle_commit": "PASS"
+    },
+    {
+      "after_counts": {
+        "dynamic": 196,
+        "generalized": 11958,
+        "raw_mechanisms": 112,
+        "registry": 112,
+        "total_blocks": 13614
+      },
+      "after_semantic_sha256": {
+        "dynamic": "3ee3eb7b147a37df4dcfde61eb5a990882905e7643a0ae0536b9cc41812e6046",
+        "generalized": "3192537a2047f6e0932c0157d4a45f7dd4ff5642657d24bd8c02904f227e5c18",
+        "raw_mechanisms": "a81972cf18b97809ca331392eb2a7d717cabcab3a5270688205bf560ae626398",
+        "registry": "5acccedc5af179c7e9850b75ea577b277e05afe185f5eb21dc77dd8c509dfda4"
+      },
+      "all_dimacs_clauses_satisfied": {
+        "Xerr": true,
+        "Zerr": true
+      },
+      "before_counts": {
+        "dynamic": 194,
+        "generalized": 11833,
+        "raw_mechanisms": 110,
+        "registry": 110,
+        "total_blocks": 13487
+      },
+      "before_semantic_sha256": {
+        "dynamic": "69d94eaa1c69523a075837e3caef396527c34e593485b1f9f05d43e8c5d7b724",
+        "generalized": "b85c8fb10840d1043a2a6d71eaefcb0f7ffdfe8da72f5cc2b5cb50c16f05c608",
+        "raw_mechanisms": "9e424bb87457dbf46766a05ed19017f4d8e1a6f764d6014b546c1819ee07b072",
+        "registry": "456260d9d2d5be3c92a94bafd033680aed6ff303e0f8e34f55729a023151bd3b"
+      },
+      "candidate_sha256": "3f1a285e0d208f2b2d5c43641229f2d3aa022c096d24ae7c290ff729a2f60991",
+      "commit_complete_file_sha256": "606999284e05adc1696e2b0de8f42bee9130965baba33c1b3d2ccde2dd87a5cb",
+      "direct_absence_attempt": {
+        "absence_accepted": false,
+        "proof_output_bytes": 0,
+        "proof_output_requested": false,
+        "selected_sector": "Zerr",
+        "status": "SAT"
+      },
+      "direct_fault_weights": {
+        "Xerr": 10,
+        "Zerr": 10
+      },
+      "direct_sector_statuses": {
+        "Xerr": "SATISFIABLE",
+        "Zerr": "SATISFIABLE"
+      },
+      "increments": {
+        "candidate_exact": 2,
+        "cross_registry": 115,
+        "online_generalized": 10
+      },
+      "iteration": 97,
+      "mc_constraints": 648,
+      "outer_smt2_sha256": "ab48c07874b4f7e74664cd9e1ba8dd544ea596ceca3127fa08e11efee9a31a6f",
+      "outer_status": "SAT",
+      "raw_replay": "PASS",
+      "schedule_edges": 864,
+      "schedule_sha256": "3f1a285e0d208f2b2d5c43641229f2d3aa022c096d24ae7c290ff729a2f60991",
+      "state_bundle_commit": "PASS"
+    },
+    {
+      "after_counts": {
+        "dynamic": 198,
+        "generalized": 12157,
+        "raw_mechanisms": 114,
+        "registry": 114,
+        "total_blocks": 13815
+      },
+      "after_semantic_sha256": {
+        "dynamic": "809b3111249217bb6f756e18e8b3c7544aa66979b219a70a4018de9e8ac8b124",
+        "generalized": "14b9d2daa3fc0e5fedbf715f9cc955a005d537f653fc87cb4157f5ad1c28f728",
+        "raw_mechanisms": "489fb6d7621b464368fa6fc8b7009668d8166abcd7edb3f1c09971d29cb7c0a9",
+        "registry": "823c5b301db8ac64f59f7f41ff93af9020318a258a438eeea66696df7fd1277e"
+      },
+      "all_dimacs_clauses_satisfied": {
+        "Xerr": true,
+        "Zerr": true
+      },
+      "before_counts": {
+        "dynamic": 196,
+        "generalized": 11958,
+        "raw_mechanisms": 112,
+        "registry": 112,
+        "total_blocks": 13614
+      },
+      "before_semantic_sha256": {
+        "dynamic": "3ee3eb7b147a37df4dcfde61eb5a990882905e7643a0ae0536b9cc41812e6046",
+        "generalized": "3192537a2047f6e0932c0157d4a45f7dd4ff5642657d24bd8c02904f227e5c18",
+        "raw_mechanisms": "a81972cf18b97809ca331392eb2a7d717cabcab3a5270688205bf560ae626398",
+        "registry": "5acccedc5af179c7e9850b75ea577b277e05afe185f5eb21dc77dd8c509dfda4"
+      },
+      "candidate_sha256": "06a1bb8ed4bd018809a039fc4de3d740bf9ef1fec25ddfa908a23a0d1defde5a",
+      "commit_complete_file_sha256": "54cc3a4ac7eeba286d8a3363d235ffee2b2e7867eb5af72e6bb94e634262d63f",
+      "direct_absence_attempt": {
+        "absence_accepted": false,
+        "proof_output_bytes": 0,
+        "proof_output_requested": false,
+        "selected_sector": "Zerr",
+        "status": "SAT"
+      },
+      "direct_fault_weights": {
+        "Xerr": 10,
+        "Zerr": 10
+      },
+      "direct_sector_statuses": {
+        "Xerr": "SATISFIABLE",
+        "Zerr": "SATISFIABLE"
+      },
+      "increments": {
+        "candidate_exact": 2,
+        "cross_registry": 194,
+        "online_generalized": 5
+      },
+      "iteration": 98,
+      "mc_constraints": 648,
+      "outer_smt2_sha256": "4709adaca6216b40ef62fe7b041640b20a645bc9c49215a72569ad3f478edc1b",
+      "outer_status": "SAT",
+      "raw_replay": "PASS",
+      "schedule_edges": 864,
+      "schedule_sha256": "06a1bb8ed4bd018809a039fc4de3d740bf9ef1fec25ddfa908a23a0d1defde5a",
+      "state_bundle_commit": "PASS"
+    },
+    {
+      "after_counts": {
+        "dynamic": 200,
+        "generalized": 12321,
+        "raw_mechanisms": 116,
+        "registry": 116,
+        "total_blocks": 13981
+      },
+      "after_semantic_sha256": {
+        "dynamic": "0d2a38dace2d354c41d873c9fbb3fb4e1e2c90df8ef75c1f4e89b50a5e1ece5d",
+        "generalized": "df0aeecb5e4306c39381aa5e7d8f76f09127b2c3f661597442a8034ae7207f58",
+        "raw_mechanisms": "9467cb2d339713f46049c1e43b17fc3caae23b710ef473c5dda1af2904270161",
+        "registry": "f75116a9eba3000e5847b3af592c84ebb164b1410f990d263834df2939ad9641"
+      },
+      "all_dimacs_clauses_satisfied": {
+        "Xerr": true,
+        "Zerr": true
+      },
+      "before_counts": {
+        "dynamic": 198,
+        "generalized": 12157,
+        "raw_mechanisms": 114,
+        "registry": 114,
+        "total_blocks": 13815
+      },
+      "before_semantic_sha256": {
+        "dynamic": "809b3111249217bb6f756e18e8b3c7544aa66979b219a70a4018de9e8ac8b124",
+        "generalized": "14b9d2daa3fc0e5fedbf715f9cc955a005d537f653fc87cb4157f5ad1c28f728",
+        "raw_mechanisms": "489fb6d7621b464368fa6fc8b7009668d8166abcd7edb3f1c09971d29cb7c0a9",
+        "registry": "823c5b301db8ac64f59f7f41ff93af9020318a258a438eeea66696df7fd1277e"
+      },
+      "candidate_sha256": "b47a09d860ceeda72cd9ec59470cdcb72ce9594d375c2687b47acce133078406",
+      "commit_complete_file_sha256": "05d4f9ac8982330d222fe042b5042fb142fc9862f244e4774ca0d1227f305e9a",
+      "direct_absence_attempt": {
+        "absence_accepted": false,
+        "proof_output_bytes": 0,
+        "proof_output_requested": false,
+        "selected_sector": "Xerr",
+        "status": "SAT"
+      },
+      "direct_fault_weights": {
+        "Xerr": 10,
+        "Zerr": 10
+      },
+      "direct_sector_statuses": {
+        "Xerr": "SATISFIABLE",
+        "Zerr": "SATISFIABLE"
+      },
+      "increments": {
+        "candidate_exact": 2,
+        "cross_registry": 159,
+        "online_generalized": 5
+      },
+      "iteration": 99,
+      "mc_constraints": 648,
+      "outer_smt2_sha256": "f0bdc2b06c9db35d788716927bffa66221273abfb174fdf827f3b84fc1703e5f",
+      "outer_status": "SAT",
+      "raw_replay": "PASS",
+      "schedule_edges": 864,
+      "schedule_sha256": "b47a09d860ceeda72cd9ec59470cdcb72ce9594d375c2687b47acce133078406",
+      "state_bundle_commit": "PASS"
+    },
+    {
+      "after_counts": {
+        "dynamic": 202,
+        "generalized": 12562,
+        "raw_mechanisms": 118,
+        "registry": 118,
+        "total_blocks": 14224
+      },
+      "after_semantic_sha256": {
+        "dynamic": "5ad71671658bfd7ab709aeb5cf5cd02deba18bd629c50adef8c88071c098366e",
+        "generalized": "71ca934db27d9f11aaa05362409e12954f8088272a1c31ac02047be5fc797f1e",
+        "raw_mechanisms": "1e45382a4e3c5476aee298e285afe66f6659955b03f6bd7e8bc2af395b1bbdc1",
+        "registry": "453cdbcfa4c55079ca975ad70a227f517c36054cd34edf62be3df8a8a69e959d"
+      },
+      "all_dimacs_clauses_satisfied": {
+        "Xerr": true,
+        "Zerr": true
+      },
+      "before_counts": {
+        "dynamic": 200,
+        "generalized": 12321,
+        "raw_mechanisms": 116,
+        "registry": 116,
+        "total_blocks": 13981
+      },
+      "before_semantic_sha256": {
+        "dynamic": "0d2a38dace2d354c41d873c9fbb3fb4e1e2c90df8ef75c1f4e89b50a5e1ece5d",
+        "generalized": "df0aeecb5e4306c39381aa5e7d8f76f09127b2c3f661597442a8034ae7207f58",
+        "raw_mechanisms": "9467cb2d339713f46049c1e43b17fc3caae23b710ef473c5dda1af2904270161",
+        "registry": "f75116a9eba3000e5847b3af592c84ebb164b1410f990d263834df2939ad9641"
+      },
+      "candidate_sha256": "6684196727c483eaf3df5cc8448f93aeaaf032d4664f2c612c8cb2d35228af56",
+      "commit_complete_file_sha256": "0319977c2016b4ce71be31d3b4b5f4d47d940cfbff188140870982809bc0539a",
+      "direct_absence_attempt": {
+        "absence_accepted": false,
+        "proof_output_bytes": 0,
+        "proof_output_requested": false,
+        "selected_sector": "Zerr",
+        "status": "SAT"
+      },
+      "direct_fault_weights": {
+        "Xerr": 10,
+        "Zerr": 10
+      },
+      "direct_sector_statuses": {
+        "Xerr": "SATISFIABLE",
+        "Zerr": "SATISFIABLE"
+      },
+      "increments": {
+        "candidate_exact": 2,
+        "cross_registry": 229,
+        "online_generalized": 12
+      },
+      "iteration": 100,
+      "mc_constraints": 648,
+      "outer_smt2_sha256": "c7f1e3d30c9c21f14a947c2326893c8bdaa9590a04b0d10819f8cb16f9bbcdc9",
+      "outer_status": "SAT",
+      "raw_replay": "PASS",
+      "schedule_edges": 864,
+      "schedule_sha256": "6684196727c483eaf3df5cc8448f93aeaaf032d4664f2c612c8cb2d35228af56",
+      "state_bundle_commit": "PASS"
+    },
+    {
+      "after_counts": {
+        "dynamic": 204,
+        "generalized": 12820,
+        "raw_mechanisms": 120,
+        "registry": 120,
+        "total_blocks": 14484
+      },
+      "after_semantic_sha256": {
+        "dynamic": "62cabe5f2925fc0caadd340848ea439219c13dc3d397c67762f852d36b6560e2",
+        "generalized": "4547a39d560358ce24c1615f5db99f17735c717a2b10d67ad2cfac515731acf3",
+        "raw_mechanisms": "fff897136200a97d12ae1756ca07a8aadd10e80cf11e4cce8e7ba30f8e428600",
+        "registry": "b9816477e347ed095e26fd4a521be8a951e92e1b3aa66c668cd2fa315d652604"
+      },
+      "all_dimacs_clauses_satisfied": {
+        "Xerr": true,
+        "Zerr": true
+      },
+      "before_counts": {
+        "dynamic": 202,
+        "generalized": 12562,
+        "raw_mechanisms": 118,
+        "registry": 118,
+        "total_blocks": 14224
+      },
+      "before_semantic_sha256": {
+        "dynamic": "5ad71671658bfd7ab709aeb5cf5cd02deba18bd629c50adef8c88071c098366e",
+        "generalized": "71ca934db27d9f11aaa05362409e12954f8088272a1c31ac02047be5fc797f1e",
+        "raw_mechanisms": "1e45382a4e3c5476aee298e285afe66f6659955b03f6bd7e8bc2af395b1bbdc1",
+        "registry": "453cdbcfa4c55079ca975ad70a227f517c36054cd34edf62be3df8a8a69e959d"
+      },
+      "candidate_sha256": "82503241e132b563dd5144802841d36bbc09f7ff7261c2eab4f0ef6bc2b4fa14",
+      "commit_complete_file_sha256": "2b3da8df8733c0736fcaf86741b9d9d34897a60058e4dc2b9829d0873bc99e15",
+      "direct_absence_attempt": {
+        "absence_accepted": false,
+        "proof_output_bytes": 0,
+        "proof_output_requested": false,
+        "selected_sector": "Xerr",
+        "status": "SAT"
+      },
+      "direct_fault_weights": {
+        "Xerr": 10,
+        "Zerr": 10
+      },
+      "direct_sector_statuses": {
+        "Xerr": "SATISFIABLE",
+        "Zerr": "SATISFIABLE"
+      },
+      "increments": {
+        "candidate_exact": 2,
+        "cross_registry": 249,
+        "online_generalized": 9
+      },
+      "iteration": 101,
+      "mc_constraints": 648,
+      "outer_smt2_sha256": "e31fec63da60ebadb0391a246d2bd1e841267f59d7102ff81e7c406213009cce",
+      "outer_status": "SAT",
+      "raw_replay": "PASS",
+      "schedule_edges": 864,
+      "schedule_sha256": "82503241e132b563dd5144802841d36bbc09f7ff7261c2eab4f0ef6bc2b4fa14",
+      "state_bundle_commit": "PASS"
+    }
+  ],
+  "online_generalized_terms_added": 94,
+  "outer_solve_seconds_total": 33.610286,
+  "outer_verdicts": {
+    "SAT": 12,
+    "TIMEOUT": 0,
+    "UNKNOWN": 0,
+    "UNSAT": 0
+  },
+  "post_outer_cross_registry_terms_added": 2107,
+  "pre_outer_whole_registry_terms_added": 24,
+  "raw_canonical_physical_replays": 24,
+  "repair_entered": false,
+  "restart": {
+    "base_blocks": 1460,
+    "dynamic_blocks": 204,
+    "dynamic_state": "restart/dynamic_blocks_iteration102.json",
+    "generalized_blocks": 12820,
+    "generalized_state": "restart/installed_generalized_terms_iteration102.json",
+    "next_iteration": 102,
+    "next_outer_total_blocks": 14484,
+    "raw_mechanisms": 120,
+    "raw_mechanisms_state": "restart/full_raw_mechanisms_iteration102.json",
+    "registry_mechanisms": 120,
+    "registry_state": "restart/online_mechanism_registry_iteration102.json"
+  },
+  "root_closed": false,
+  "schema": "round80-whole-registry-cegar-summary-v1",
+  "sector_fault_weight_histogram": {
+    "10": 24
+  },
+  "status": "PASS"
+}

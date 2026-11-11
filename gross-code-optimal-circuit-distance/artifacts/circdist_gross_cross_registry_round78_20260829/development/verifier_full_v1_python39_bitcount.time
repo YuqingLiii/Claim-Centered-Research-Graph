@@ -1,0 +1,36 @@
+Traceback (most recent call last):
+  File "/private/tmp/circdist_round78_cross_registry_20260829/stage/package/verify.py", line 297, in <module>
+    if __name__=='__main__':main()
+  File "/private/tmp/circdist_round78_cross_registry_20260829/stage/package/verify.py", line 295, in main
+    if a.full or not a.quick:result['full']=verify_full()
+  File "/private/tmp/circdist_round78_cross_registry_20260829/stage/package/verify.py", line 289, in verify_full
+    return {'fresh_process_outer_replays':outer,'direct':verify_direct_full(),'raw_mechanisms':verify_all_raw_mechanisms(),'term_domains':verify_all_term_domains()}
+  File "/private/tmp/circdist_round78_cross_registry_20260829/stage/package/verify.py", line 196, in verify_all_raw_mechanisms
+    atoms=sorted(set(atoms));assert [list(x) for x in atoms]==m['source_atoms'] and M.bits(cv)==m['canonical_support'] and M.bits(pv)==m['physical_support'];cs=signature(lab,cv,lx,lz);ps=signature(lab,pv,lx,lz);assert cs==ps and valid_signature(cs)
+  File "/private/tmp/circdist_round78_cross_registry_20260829/stage/package/verify.py", line 183, in signature
+    det=M.HZ if lab=='Xerr' else M.HX;duals=lz if lab=='Xerr' else lx;return sum(((pc(v&r)&1)<<j) for j,r in enumerate(det))|(sum(((pc(v&r)&1)<<j) for j,r in enumerate(duals))<<72)
+  File "/private/tmp/circdist_round78_cross_registry_20260829/stage/package/verify.py", line 183, in <genexpr>
+    det=M.HZ if lab=='Xerr' else M.HX;duals=lz if lab=='Xerr' else lx;return sum(((pc(v&r)&1)<<j) for j,r in enumerate(det))|(sum(((pc(v&r)&1)<<j) for j,r in enumerate(duals))<<72)
+  File "/private/tmp/circdist_round78_cross_registry_20260829/stage/package/verify.py", line 30, in pc
+    def pc(z):return z.bit_count()
+AttributeError: 'int' object has no attribute 'bit_count'
+real 192.62
+user 191.33
+sys 1.00
+           305512448  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              284278  page reclaims
+                 554  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                 261  voluntary context switches
+               15143  involuntary context switches
+        514415177707  instructions retired
+         83814371734  cycles elapsed
+           300532264  peak memory footprint

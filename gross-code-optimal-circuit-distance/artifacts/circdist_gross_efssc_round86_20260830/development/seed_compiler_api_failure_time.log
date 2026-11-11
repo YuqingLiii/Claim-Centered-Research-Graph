@@ -1,0 +1,28 @@
+Traceback (most recent call last):
+  File "/private/tmp/circdist_gross_round86_residual_20260830.julCoP/efssc_outer.py", line 116, in <module>
+    bits,data_sig,local=selector_signature_bits(m)
+  File "/private/tmp/circdist_gross_round86_residual_20260830.julCoP/efssc_outer.py", line 107, in selector_signature_bits
+    bits=[parity(terms[b],bool((data_sig>>b)&1)) for b in range(84)]
+  File "/private/tmp/circdist_gross_round86_residual_20260830.julCoP/efssc_outer.py", line 107, in <listcomp>
+    bits=[parity(terms[b],bool((data_sig>>b)&1)) for b in range(84)]
+  File "/private/tmp/circdist_gross_round86_residual_20260830.julCoP/efssc_outer.py", line 34, in parity
+    else: v=z3.Xor(*args)
+TypeError: Xor() takes from 2 to 3 positional arguments but 4 were given
+       16.24 real        16.15 user         0.06 sys
+           188956672  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+               15862  page reclaims
+                 262  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   1  voluntary context switches
+                 385  involuntary context switches
+        399347546502  instructions retired
+         62303550815  cycles elapsed
+           179831216  peak memory footprint

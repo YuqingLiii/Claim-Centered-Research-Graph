@@ -1,0 +1,42 @@
+THE ARTIFACT SAYS: 'the same sub-query was decided up to NINE times -- different drivers,
+different encodings, different solvers -- the answers always agreed.'  Is that so?
+
+  maximum RAW record count for one sub-query          : 9
+  maximum DISTINCT record bodies for one sub-query    : 3
+  maximum distinct (solver, seconds, cnf hash) triples: 3
+
+  example sub-query with raw multiplicity 9: ('Z', 2, 12, 7)
+     distinct record bodies: 3
+       logs_circdist_gross_drivers_20260823/b6.jsonl  solver=None   s=4.2      hash=fdbc403c2d8f
+       logs_circdist_gross_drivers_20260823/bench.jsonl solver=None   s=63.1     hash=c60cd780d5fc
+       logs_circdist_gross_drivers_20260823/full.jsonl solver=None   s=71.4     hash=1d34c536ebd7
+       logs_circdist_gross_final_20260823/live_b6.jsonl solver=None   s=4.2      hash=fdbc403c2d8f
+       logs_circdist_gross_final_20260823/live_bench.jsonl solver=None   s=63.1     hash=c60cd780d5fc
+       logs_circdist_gross_final_20260823/live_full.jsonl solver=None   s=71.4     hash=1d34c536ebd7
+       logs_circdist_gross_verdict_20260823/live_b6.jsonl solver=None   s=4.2      hash=fdbc403c2d8f
+       logs_circdist_gross_verdict_20260823/live_bench.jsonl solver=None   s=63.1     hash=c60cd780d5fc
+       logs_circdist_gross_verdict_20260823/live_full.jsonl solver=None   s=71.4     hash=1d34c536ebd7
+
+  example sub-query with raw multiplicity 9: ('Z', 8, 14, 3)
+     distinct record bodies: 3
+       logs_circdist_gross_drivers_20260823/b6.jsonl  solver=None   s=227.5    hash=9b46ecdcb843
+       logs_circdist_gross_drivers_20260823/full.jsonl solver=None   s=599.5    hash=8a73bbe9e651
+       logs_circdist_gross_drivers_20260823/rc.jsonl  solver=cd19   s=540.1    hash=8a73bbe9e651
+       logs_circdist_gross_final_20260823/live_b6.jsonl solver=None   s=227.5    hash=9b46ecdcb843
+       logs_circdist_gross_final_20260823/live_full.jsonl solver=None   s=599.5    hash=8a73bbe9e651
+       logs_circdist_gross_final_20260823/live_rc.jsonl solver=cd19   s=540.1    hash=8a73bbe9e651
+       logs_circdist_gross_verdict_20260823/live_b6.jsonl solver=None   s=227.5    hash=9b46ecdcb843
+       logs_circdist_gross_verdict_20260823/live_full.jsonl solver=None   s=599.5    hash=8a73bbe9e651
+       logs_circdist_gross_verdict_20260823/live_rc.jsonl solver=cd19   s=540.1    hash=8a73bbe9e651
+
+  example sub-query with raw multiplicity 9: ('Z', 10, 14, 0)
+     distinct record bodies: 3
+       logs_circdist_gross_drivers_20260823/b6.jsonl  solver=None   s=252.6    hash=4611cc5e9e0d
+       logs_circdist_gross_drivers_20260823/full.jsonl solver=None   s=260.0    hash=13985a37eddf
+       logs_circdist_gross_drivers_20260823/rc.jsonl  solver=m22    s=1466.2   hash=13985a37eddf
+       logs_circdist_gross_final_20260823/live_b6.jsonl solver=None   s=252.6    hash=4611cc5e9e0d
+       logs_circdist_gross_final_20260823/live_full.jsonl solver=None   s=260.0    hash=13985a37eddf
+       logs_circdist_gross_final_20260823/live_rc.jsonl solver=m22    s=1466.2   hash=13985a37eddf
+       logs_circdist_gross_verdict_20260823/live_b6.jsonl solver=None   s=252.6    hash=4611cc5e9e0d
+       logs_circdist_gross_verdict_20260823/live_full.jsonl solver=None   s=260.0    hash=13985a37eddf
+       logs_circdist_gross_verdict_20260823/live_rc.jsonl solver=m22    s=1466.2   hash=13985a37eddf

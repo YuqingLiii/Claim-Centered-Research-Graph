@@ -1,0 +1,13 @@
+# Round124 failure ledger
+
+All failures below are disclosed and receive zero positive scientific credit.
+
+- **F124-001 — unified exec session handle not retained.** The iter198 frontier builder's first 30-second yield was projected to stdout without retaining its unified session id. The builder actually reaped rc0 after 114.576172708 seconds, but work remained paused until the durable ledger was safely recovered. No overlapping local process was launched.
+- **F124-002 — first lead census blocked.** A minimal restricted `ps` census failed rc127 with operation-not-permitted before producing process data. It has no scientific role.
+- **F124-003 — approved lead census empty.** The escalated read-only `ps -p 67611,67614` returned rc1 with empty stdout, correctly showing both prior PIDs absent. It is management evidence only and has no scientific credit.
+- **F124-004 — first iter198 quotient checker, rc1.** The builder writes roots as plain JSONL and the build trace as gzip regardless of suffix. The first invocation had those two extensions reversed and failed while decoding the trace, before any quotient-check result was emitted. The bytes and metadata hashes were unchanged; the two files were renamed to `.jsonl` and `.json.gz`, and a complete corrected checker rerun reaped rc0. The failed branch receives zero credit.
+- **F124-005 — first packaged result checker, rc1.** Every structural and numeric assertion before the final report-phrase audit passed. The report expressed the correct boundary as `UNSAT credit zero`, while the checker required the literal phrase `zero UNSAT-certificate credit`. The report wording was made explicit and the whole result checker was rerun. The partial first check receives zero completion credit.
+- **F124-006 — first finalization capture, rc1.** The inherited guard required the final installed basename while the valid mutable staging tree intentionally used `circdist-round124-package-preseal`. It failed before copying any evidence. The guard was restricted to those two exact approved basenames and the capture was rerun from the same passing replay/gate inputs.
+- **F124-007 — first final stage sync, rc1.** Source, verification, and log refreshes completed, but the final write of the already executable read-only `replay.sh` was denied. The partial sync receives zero completion credit. The sync now makes that single preseal file writable before replacement and restores mode 0555; a complete corrected sync was run.
+
+SAT return code 10 is an expected solver result, not a failure. The three proof-output streams are classified `SAT_SEARCH_TRACE` with zero UNSAT-certificate credit. No repair/gap branch was entered after the bilateral SAT kill.

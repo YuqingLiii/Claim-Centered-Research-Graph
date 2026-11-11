@@ -1,0 +1,96 @@
+{
+  "base": {
+    "clauses_header": 6929888,
+    "clauses_streamed": 6929888,
+    "variables": 1853886
+  },
+  "conclusion": "Fresh reconstruction reproduces every load-bearing byte; only measured runtime fields in metadata vary. Solver may start only on the exact quotient hash.",
+  "forbidden_solver_artifacts": [],
+  "generated_files": [
+    {
+      "byte_identical": true,
+      "bytes": 186165500,
+      "path": "iter191_full_invariant/formula/outer.cnf",
+      "sha256": "d1e68e88eb4c22ffda58d3a1c73cb7dbf6082690c594e8c538f8cc70c432e223"
+    },
+    {
+      "path": "iter191_full_invariant/formula/metadata.json",
+      "reconstructed_sha256": "ac7a7bdd15c2edac543265a2520e007a7f24fe9d6024a918f548ebb566890813",
+      "sealed_sha256": "4fd895c2b5319d5fc4eb2b9df4527a619a398047b302a1daa5fdd3a7b9356528",
+      "semantic_non_timing_identical": true,
+      "timing_fields": {
+        "compile_seconds": {
+          "reconstructed": 34.51981,
+          "sealed": 34.332796
+        }
+      }
+    },
+    {
+      "byte_identical": true,
+      "bytes": 188632865,
+      "path": "iter191_full_invariant/formula/assertion_map.jsonl",
+      "sha256": "b0e72d70236ec23de257a86a794f00d60d38b847c6dea0a8c6135d75a071d077"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 33274935,
+      "path": "iter191_full_invariant/formula/definitions.json.gz",
+      "sha256": "b8d0a5eb7ad88af89a6d7618c72785bd31146692410826e7021d5438e223fc82"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 332134259,
+      "path": "iter191_full_invariant_quotient/outer.cnf",
+      "sha256": "30ce7d14d96349e61d7105255cddc8899b8927ce728dfd147b641c75c97fe10f"
+    },
+    {
+      "path": "iter191_full_invariant_quotient/metadata.json",
+      "reconstructed_sha256": "ea2287985f87a7f472706cb0c7089d4c6fb92b541ef49ff1fc941c6ebd8434ab",
+      "sealed_sha256": "cced4ad11c2ac568f9d68c8ba328938f7f75ae3124567850af5b4c347c2e2eb5",
+      "semantic_non_timing_identical": true,
+      "timing_fields": {
+        "compile_seconds": {
+          "reconstructed": 7.554295,
+          "sealed": 7.617944
+        }
+      }
+    },
+    {
+      "byte_identical": true,
+      "bytes": 35582,
+      "path": "iter191_full_invariant_quotient/translation_roots.jsonl",
+      "sha256": "60a5f5243d69675e358afefe7e2285e819202788df05f0e94a6dc0d9556dfb64"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 6832,
+      "path": "iter191_full_invariant_quotient/translation_trace.json.gz",
+      "sha256": "9cf8c1974f50abe91997fe647eb7ac351457a7d993c5185f3a6a09974e48e9df"
+    }
+  ],
+  "governance": {
+    "circdist/artifacts/circdist_gross_iter190_invariant_quotient_continuation_round110_20260902/SHA256SUMS.txt": "8ce014a0bc1b4273cec02e2af7d9da54691290dd35a82d7c3bfe6c522a031bc5",
+    "circdist/proof-dag/nodes/CIRCDIST.gross.yaml": "7cc45da6ae90deb2f44aee40fa28a17c5f0a74a36970f4cef795d6ae317883d4",
+    "circdist/reviews/circdist_gross_iter190_invariant_quotient_continuation_round110_exact_review_round111_20260902.md": "36f2fdac0c74a0bfa3f67013590e21fd24c445295c488edc95c2114edef72e9e",
+    "operations/circdist/SCHEDULER.yaml": "e5b55acfbbc21380b28aa6758c6e9cf180491a51af0b1bf93bd597fd930be196"
+  },
+  "lex_roots": 71,
+  "quotient": {
+    "clauses_header": 11837479,
+    "clauses_streamed": 11837479,
+    "variables": 2467326
+  },
+  "schema": "circdist-gross-round112-iter191-reconstruction-binding-v1",
+  "source": {
+    "blocks": 517140,
+    "edges": 864,
+    "selector_state_sha256": "41bb458a1b9a31aba7d70f063165221a9ae9c989421682320826dbc5d166f9e6",
+    "selectors": 24588,
+    "semantic_sha256": "02da1bcb87a45637afa8434a8dfa4e4c8092489ace7f5a7fd1ba3266f9615532",
+    "sha256": "0b0ac7e6daa69d8d3ab1b98b7228c43690a5406c52defe57e46027b185984a47",
+    "started": false,
+    "state_sha256": "6059554d307e7c503bd1792dd77718a205346f5dce243e719ae057f402cf6c9f",
+    "stop": null
+  },
+  "status": "PASS"
+}

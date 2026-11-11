@@ -1,0 +1,76 @@
+{
+  "dispatch": {
+    "bindings": {
+      "canonical_gross": {
+        "path": "bindings/CIRCDIST.gross.yaml",
+        "sha256": "792c2db47abbb62fa1db07c1d3ebf780501fb1c8356d33e371c3c6ad80d19f5b"
+      },
+      "proofpilot": {
+        "path": "bindings/round118_proofpilot_rank.json",
+        "sha256": "165edab1701c04e1ac79e3b5eb7d5634c5a8f20d99332d552878164565296525"
+      },
+      "round116_root_manifest": {
+        "path": "bindings/round116_SHA256SUMS.txt",
+        "sha256": "2d214dc846b5cf8e7ef329e0baf9ed5204ad6340bcb9e93ac495e8e9e7a87143"
+      },
+      "round117_review": {
+        "path": "bindings/round117_exact_review.md",
+        "sha256": "26fd4c8c39910dae235348efc30e237c7f9ea3d93146076f3580b8c4459cf925"
+      },
+      "scheduler": {
+        "path": "bindings/SCHEDULER.yaml",
+        "sha256": "9053f6d7de5acfccfed840381681991ad88f068b5f250f92b1e266ec2b936591"
+      }
+    },
+    "score": 0.001373516289473971,
+    "sole_authorized_winner": true,
+    "winner": "CIRCDIST.gross@dstar-residual"
+  },
+  "iteration194": {
+    "base": {
+      "assertions": 869622,
+      "clauses": 11438824,
+      "path": "input/iter194/formula/outer.cnf",
+      "sha256": "2e72b7bdd8702340fcac7cc706ebb777d5d2a10cc6e670bbd196565e0ece725f",
+      "variables": 3117683
+    },
+    "quotient": {
+      "assertions": 869765,
+      "clauses": 21323127,
+      "group_order": 144,
+      "path": "input/iter194/order144_quotient/outer.cnf",
+      "reviewed_equisatisfiable_without_orbit_freeness": true,
+      "roots": 143,
+      "sha256": "7fade55daeabb8e2a6702552ce8fc9f0c899091cba64bc1d6806f6f93e7af8db",
+      "variables": 4353203
+    },
+    "source": {
+      "blocks": 814392,
+      "path": "input/iter194/source.json.gz",
+      "selectors": 50832,
+      "semantic_sha256": "b1e7b4677de2549e3802b0e91af35d91f9d735218cd7630b5d9f9b284b15d9cc",
+      "sha256": "f4aafe384ae0a626671b95400f66727007942241cb6988ec9b68bb1a77893091"
+    },
+    "state": {
+      "path": "input/iter194/state.json",
+      "selector_state_sha256": "a0bf27750c0cf74196c2bb161ed70ad879b3bb7e117172adc34c13d8f02236d1",
+      "sha256": "522848f50de5f9d7015ca326be4a8f0a69e1342bf7c5e27886c6b4dcdaf25c4f"
+    }
+  },
+  "schema": "circdist-gross-round118-input-bindings-v1",
+  "status": "PASS",
+  "toolchain": {
+    "cadical_1_9_5": {
+      "path": "tooling/cadical-1.9.5-arm64-macos",
+      "sha256": "fafdf4fb95a54ccee9b59f346544761896e40b076780a93f000e0357f20080c9"
+    },
+    "drat_trim": {
+      "path": "tooling/drat-trim-arm64-macos",
+      "sha256": "f58f63b0f76945d4c4c9ff6e87afaf870f579e67c0f7cca589492df8fc7ebd47"
+    },
+    "lrat_check": {
+      "path": "tooling/lrat-check-arm64-macos",
+      "sha256": "bd7eb8052623525814a0a37502b47f05375d9d9dfaf96ddc2fcd858958517cea"
+    }
+  }
+}

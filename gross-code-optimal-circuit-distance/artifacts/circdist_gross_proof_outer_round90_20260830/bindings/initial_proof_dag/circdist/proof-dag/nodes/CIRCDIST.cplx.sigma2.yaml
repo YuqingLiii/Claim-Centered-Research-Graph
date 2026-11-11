@@ -1,0 +1,143 @@
+id: CIRCDIST.cplx.sigma2
+role: proof
+aliases:
+- EFFP-SIGMA2
+claim: Eff-Preserve with d as part of the input is Sigma_2^P-hard (hence, with CIRCDIST.cplx.upper, Sigma_2^P-complete).
+routes:
+  grouped-qsat-affine-rin:
+    premises:
+    - CIRCDIST.cplx.upper
+    assumptions:
+      qsat2-3dnf-completeness:
+        kind: external-theorem
+        statement: The language of 3DNF formulas Phi with prefix exists x forall y is Sigma_2^P-complete under polynomial-time many-one reductions; equivalently this is obtained by complementing the standard Pi_2^P-complete forall-exists 3CNF quantified-Boolean-formula language.
+        source:
+          path: circdist/artifacts/circdist_cplx_sigma2_r5_deep_seed_round82_20260830.md
+          kind: text
+          locator: Section 3.1, standard QSAT_{2,3DNF} source form
+    implication: >-
+      The normalized grouped QSAT_{2,3DNF} construction, affine-plane/full-kernel fixed-coordinate-RREF bookend compiler, RIN theorem, R_d expansion, and d-by-d grid give a total promise-preserving polynomial-time many-one reduction from QSAT_{2,3DNF} to input-d Eff-Preserve, proving Sigma_2^P-hardness; CIRCDIST.cplx.upper supplies Sigma_2^P membership for the same promise problem, yielding Sigma_2^P-completeness.
+    proof:
+      sketch: >-
+        Normalize the negated 3DNF matrix to a nonconstant width-at-most-three CNF, with fixed promised outputs for the two constant cases. Group markers force any target representation of weight at most K to choose exactly one variable value and one locally satisfying option per clause. A selectable affine plane makes the schedule choose each existential value; fixed planes realize every universal value, clause option and the flagged anchor. Stabilizing the full physical label kernel with the deterministic fixed-coordinate RREF complement basis gives the exact one-logical-qubit quotient. Group-block bookend orders make every nonanchor indexed fault carry marker weight at most one, so every pure-flag mechanism has at least K+1 faults. At equality, the sole flag fault is the private-free anchor hook; selector private coordinates exclude broken selector entries; fixed r coordinates exclude v_j+r_j; and fixed p_j parity cancels every entire v_j=p_j+a_j contributed by local or complement suffix faults. Their distinct group markers then force the nonintended set empty. The surviving intended hooks give one global satisfying beta by occurrence parity. Thus a schedule alpha is safe below d=K+2 exactly when forall beta Phi(alpha,beta). Cluster expansion R_d preserves the X problem, raises static and effective Z distance to at least d, and a direct-summed d-by-d grid pins both static sector distances and the safe effective distance to exactly d. With no optional depth bound, serialization makes every emitted local-order tuple legal under qubit-sharing conflicts. The construction is total and polynomial: O(s^3) sparse support incidences and at most O(s^4) dense matrix bits.
+      sources:
+      - path: circdist/artifacts/circdist_cplx_sigma2_r5_deep_seed_round82_20260830.md
+        kind: text
+        locator: Sections 3-9 and embedded exact harnesses
+      - path: circdist/reviews/circdist_cplx_sigma2_rin_exact_review_round83_20260830.md
+        kind: text
+        locator: F83-R82-CLEAR, F83-RIN-NEW, F83-SIZE-REPAIR
+      - path: circdist/reviews/circdist_cplx_sigma2_rin_final_exact_review_round84_20260830.md
+        kind: review
+        locator: Finding F84-ROUTE
+    assessment:
+      level: PROVED
+      caveats:
+      - PROVED is bound to the unchanged 411-character implication at sha256:be6890b9433bc9a94eab2d5874556d83b83677635bfdef34e03b46ee3227b53c and consumes the current PROVED CIRCDIST.cplx.upper premise under the same frozen Eff-Preserve promise and reduction convention.
+      - The hardness proof is the direct grouped-QSAT/affine-full-kernel/RIN route. It does not inherit from CIRCDIST.cplx.fixed-d and does not use the historical covering-radius, Q1 padding or DEEP-FLAG routes.
+      - The output uses the ordinary qubit-sharing conflict relation and no optional depth bound T. Sparse support-list incidence count is O(s^3), while a dense explicit matrix encoding is at worst O(s^4); either encoding is polynomial.
+      - This route proves only CIRCDIST.cplx.sigma2. The CIRCDIST.cplx root requires a later fresh composition review even though its classification-assembly implication and all three premise nodes are then PROVED.
+      summary: Fresh strict-serial round-84 review independently rederived the complete indexed fault taxonomy, sharp K+1 bound, zero-slack RIN theorem, both reduction directions, total normalization and constants, full-kernel quotient, R_d two-sector repair, exact grid/direct-sum promise, legality and polynomial output size. The exact conditional implication and its current upper premise entail the unchanged sigma2 claim.
+      basis:
+        reviews:
+        - path: circdist/reviews/circdist_cplx_sigma2_rin_final_exact_review_round84_20260830.md
+          kind: review
+          scope: Fresh independent exact review of the full grouped-QSAT reduction and every indexed singleton/local/complement suffix family, including RREF pivots, group-block orders, sharp zero slack, all private-coordinate exclusions and cross-row cancellation, repeated labels/rows, both truth directions, constants, normalization, quotient/rank/static sectors, R_d layer-major multi-fault Z behavior, exact grid/direct sum, schedule legality, totality and corrected sparse/dense size.
+          locator: Finding F84-ROUTE
+          reviewed_hash: sha256:be6890b9433bc9a94eab2d5874556d83b83677635bfdef34e03b46ee3227b53c
+assessment:
+  level: PROVED
+  caveats:
+  - PROVED is bound to the unchanged 113-character claim at sha256:9e76a1224bea068a1910bdabe189fab022282cca9a2d85df538612db79305a29 and to route grouped-qsat-affine-rin at implication hash sha256:be6890b9433bc9a94eab2d5874556d83b83677635bfdef34e03b46ee3227b53c.
+  - The theorem concerns input-d Eff-Preserve in the frozen single-ancilla terminal-residual model, with ordinary qubit-sharing conflicts and total promise-preserving polynomial-time many-one reductions. It proves no Circ-Preserve or arbitrary-conflict-graph variant.
+  - The direct proof bypasses covering radius, Q1 repetition padding, DEEP-FLAG and the fixed-d theorem. Those historical paths are neither premises nor inherited evidence.
+  - The parenthetical completeness conclusion uses the independently PROVED CIRCDIST.cplx.upper membership claim. No CIRCDIST.cplx root promotion is licensed without a separate fresh review of the assembled parent.
+  summary: Fresh round-84 review proves the unchanged hierarchy-hardness claim. The direct compiler maps normalized QSAT_{2,3DNF} to promised input-d Eff-Preserve instances, with schedule alpha safe exactly when every beta satisfies Phi; constants, both CSS sectors, exact static distance, legal schedules and polynomial output are total. Together with current PROVED membership, the parenthetical Sigma_2^P-completeness conclusion is valid.
+  basis:
+    routes:
+    - grouped-qsat-affine-rin
+    reviews:
+    - path: circdist/reviews/circdist_cplx_sigma2_rin_final_exact_review_round84_20260830.md
+      kind: review
+      scope: Fresh independent exact-claim and assembled-route review, including the new Round-83 RIN theorem, all previously cleared construction components, both Karp directions and current upper-premise composition; excludes root promotion and all historical alternative routes.
+      locator: Finding F84-SIGMA2
+      reviewed_hash: sha256:9e76a1224bea068a1910bdabe189fab022282cca9a2d85df538612db79305a29
+    evidence:
+    - path: circdist/artifacts/history/pre_protocol_20260826/nodes/CIRCDIST.cplx.sigma2.yaml
+      kind: text
+      note: Immutable pre-migration record, including every original event, former summary and frontier;
+        historical evidence, not an additional completion review.
+    - path: circdist/artifacts/circdist_cplx_q1_20260822.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: circdist/artifacts/circdist_cplx_sigma2_20260822.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: circdist/artifacts/circdist_cplx_recon_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: circdist/artifacts/circdist_cplx_sigma2_covering_radius_primary_source_20260826.md
+      kind: text
+      note: Round-58 source audit. IEEE publisher metadata and official/peer-reviewed later sources strongly support exact upper-bound binary linear-code covering radius as Π₂^P-complete, but no faithful McLoughlin full text was lawfully accessible on 2026-08-26; exact theorem hypotheses and reduction details remain primary-unverified.
+    - path: circdist/artifacts/circdist_cplx_sigma2_r5_deep_seed_round82_20260830.md
+      kind: text
+      note: Sealed proposer construction supplying the grouped QSAT, affine/full-kernel, R_d, grid and deterministic bookend compiler source.
+    - path: circdist/reviews/circdist_cplx_sigma2_rin_exact_review_round83_20260830.md
+      kind: text
+      note: Independent clearance of unchanged Round-82 components and public author source for F83-RIN-NEW; not by itself the independent review of that new theorem.
+events:
+  covering-radius-primary-source-audit-access-blocked-2026-08-26:
+    date: '2026-08-26'
+    type: repair-applied
+    summary: Round-58 strict-serial source audit located the stable IEEE DOI record and publisher abstract and cross-checked an official GMR journal PDF plus later sources. The evidence strongly supports the standard exact upper-bound binary linear-code covering-radius Π₂^P-completeness attribution, with Σ₂^P-complete lower-bound complement, but no faithful McLoughlin full text was lawfully accessible. Exact theorem hypotheses and the reported Π₂-SAT/AE-3DM Karp chain remain primary-unverified; task-001 is retained. This source audit proves no Eff-Preserve reduction, no DEEP-FLAG result, and no level change.
+    sources:
+    - path: circdist/artifacts/circdist_cplx_sigma2_covering_radius_primary_source_20260826.md
+      kind: text
+      locator: Primary-source verdict; exact derivation; GMR cross-check; dispatcher installation contract
+  sigma2-grouped-qsat-route-added-round84-2026-08-30:
+    date: '2026-08-30'
+    type: route-added
+    route: grouped-qsat-affine-rin
+    summary: Registered the direct grouped-QSAT/affine-full-kernel/RIN route with CIRCDIST.cplx.upper as its sole premise. The route bypasses the covering-radius, Q1 padding, DEEP-FLAG and fixed-d paths.
+    sources:
+    - path: circdist/artifacts/circdist_cplx_sigma2_r5_deep_seed_round82_20260830.md
+      kind: text
+    - path: circdist/reviews/circdist_cplx_sigma2_rin_exact_review_round83_20260830.md
+      kind: text
+      locator: F83-RIN-NEW
+    - path: circdist/reviews/circdist_cplx_sigma2_rin_final_exact_review_round84_20260830.md
+      kind: review
+      locator: Finding F84-ROUTE
+  sigma2-rin-final-reviewed-round84-2026-08-30:
+    date: '2026-08-30'
+    type: review-completed
+    route: grouped-qsat-affine-rin
+    summary: Fresh strict-serial round-84 review independently proved the Round-83 RIN theorem and rechecked the entire total promise-preserving reduction, both sectors, exact promise, legality, size and current-claim entailment.
+    sources:
+    - path: circdist/reviews/circdist_cplx_sigma2_rin_final_exact_review_round84_20260830.md
+      kind: review
+      locator: Finding F84-ROUTE
+  sigma2-grouped-qsat-route-proved-round84-2026-08-30:
+    date: '2026-08-30'
+    type: level-change
+    route: grouped-qsat-affine-rin
+    from: OPEN
+    to: PROVED
+    summary: Promoted the exact 411-character direct route implication after the proposer construction, public RIN proof and fresh independent final review completed every load-bearing step.
+    sources:
+    - path: circdist/reviews/circdist_cplx_sigma2_rin_final_exact_review_round84_20260830.md
+      kind: review
+      locator: Finding F84-ROUTE
+  sigma2-proved-round84-2026-08-30:
+    date: '2026-08-30'
+    type: level-change
+    from: OPEN
+    to: PROVED
+    summary: Promoted only CIRCDIST.cplx.sigma2 after the direct hierarchy-hardness route and current PROVED upper premise entailed the unchanged claim. CIRCDIST.cplx remains CONJECTURED pending its own fresh composition review; no parent level is inherited.
+    sources:
+    - path: circdist/reviews/circdist_cplx_sigma2_rin_final_exact_review_round84_20260830.md
+      kind: review
+      locator: Finding F84-SIGMA2

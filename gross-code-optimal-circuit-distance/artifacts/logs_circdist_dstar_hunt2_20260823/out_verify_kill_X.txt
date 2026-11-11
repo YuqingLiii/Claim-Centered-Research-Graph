@@ -1,0 +1,19 @@
+sector=X   configurations in file: 72   min cost: 10
+
+--- witness 1 : cost 10, |V| = 12, logical index 240
+    V = [6, 20, 21, 28, 30, 52, 68, 69, 72, 80, 96, 104]
+    hook  check 18  4-suffix  qubits [6, 21, 72, 94]        times [18, 27, 28, 33]   (full order [12, 95, 6, 21, 72, 94] / times [1, 16, 18, 27, 28, 33])
+    hook  check 26  2-suffix  qubits [80, 96]               times [28, 33]   (full order [20, 97, 14, 29, 80, 96] / times [1, 16, 18, 27, 28, 33])
+    singletons (8): [20, 28, 30, 52, 68, 69, 94, 104]
+    fault count = 2 hooks + 8 singletons = 10
+
+--- witness 2 : cost 10, |V| = 12, logical index 242
+    V = [6, 14, 21, 28, 29, 30, 52, 68, 69, 72, 97, 104]
+    hook  check 18  4-suffix  qubits [6, 21, 72, 94]        times [18, 27, 28, 33]   (full order [12, 95, 6, 21, 72, 94] / times [1, 16, 18, 27, 28, 33])
+    hook  check 26  5-suffix  qubits [97, 14, 29, 80, 96]   times [16, 18, 27, 28, 33]   (full order [20, 97, 14, 29, 80, 96] / times [1, 16, 18, 27, 28, 33])
+    hook  check 26  2-suffix  qubits [80, 96]               times [28, 33]   (full order [20, 97, 14, 29, 80, 96] / times [1, 16, 18, 27, 28, 33])
+    singletons (7): [28, 30, 52, 68, 69, 94, 104]
+    fault count = 3 hooks + 7 singletons = 10
+
+VERIFIED 72 / 72 configurations (all assertions passed)
+minimum verified fault count in this file: 10  ->  d_eff(X-memory) <= 10

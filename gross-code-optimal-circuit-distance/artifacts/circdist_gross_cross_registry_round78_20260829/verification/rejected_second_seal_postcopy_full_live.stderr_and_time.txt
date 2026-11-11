@@ -1,0 +1,28 @@
+Traceback (most recent call last):
+  File "<repo>/circdist/artifacts/circdist_gross_cross_registry_round78_20260829/verify.py", line 298, in <module>
+    if __name__=='__main__':main()
+  File "<repo>/circdist/artifacts/circdist_gross_cross_registry_round78_20260829/verify.py", line 295, in main
+    result={'schema':'round78-cross-registry-self-contained-verification-v1','manifest':verify_manifest(a.allow_unsealed),'compression':verify_compression(a.allow_unsealed),'bindings':verify_bindings(a.repo_root.resolve() if a.repo_root else None),'state_and_ledgers':verify_state_and_ledgers(),'processes':verify_processes(),'negative_controls':verify_negative_controls(),'proof_checker_controls':verify_proof_controls()}
+  File "<repo>/circdist/artifacts/circdist_gross_cross_registry_round78_20260829/verify.py", line 41, in verify_manifest
+    expected=sorted(q.relative_to(ROOT).as_posix() for q in ROOT.rglob('*') if q.is_file() and q.name!='SHA256SUMS.txt');assert sorted(rows)==expected,(len(rows),len(expected))
+AssertionError: (1138, 1136)
+real 0.16
+user 0.12
+sys 0.04
+            73613312  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                6080  page reclaims
+                  17  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                  24  involuntary context switches
+          1770660300  instructions retired
+           699063958  cycles elapsed
+            68534680  peak memory footprint

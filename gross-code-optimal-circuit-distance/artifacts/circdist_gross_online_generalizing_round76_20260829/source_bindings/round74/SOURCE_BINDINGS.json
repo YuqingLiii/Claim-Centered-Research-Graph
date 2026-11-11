@@ -1,0 +1,88 @@
+{
+  "classification_generator": "src/generalize_online.py",
+  "classification_input_mode": "incremental against frozen current installed generalized state; final full verifier recomputes all 12 online generalizations sequentially; prior reviewed 314,668,800 cell library is not redundantly repriced per round",
+  "frozen_inputs": [
+    {
+      "bytes": 8523,
+      "path": "FILE_PROTOCOL.md",
+      "sha256": "d9d6fb57a26fef3b70fc05bda74a29101d83a43df60e06eaeb345e76980fc595",
+      "snapshot": "bindings/snapshots/FILE_PROTOCOL.md"
+    },
+    {
+      "bytes": 15377,
+      "path": "DAG_PROTOCOL.md",
+      "sha256": "d8775b511431e6e9dc7a5be6200af80bd612e7e7d5f5ff10bb14ef748791a095",
+      "snapshot": "bindings/snapshots/DAG_PROTOCOL.md"
+    },
+    {
+      "bytes": 163195,
+      "path": "operations/circdist/SCHEDULER.yaml",
+      "sha256": "c4fc05184b60c0f0345ba11321a22be7b4baaebdae146f884647666c00e1ff7e",
+      "snapshot": "bindings/snapshots/SCHEDULER.yaml"
+    },
+    {
+      "bytes": 10199,
+      "path": "circdist/artifacts/definitions/CIRCDIST_PROBLEMS.md",
+      "sha256": "5f6dc37fcc33c0eb9f90e6267864740fc53b65c4acf1ee870c8d29ffd6d46c64",
+      "snapshot": "bindings/snapshots/CIRCDIST_PROBLEMS.md"
+    },
+    {
+      "bytes": 38537,
+      "path": "circdist/proof-dag/nodes/CIRCDIST.gross.yaml",
+      "sha256": "5c606056242729196a5104964722e0c0c2e4945ca4221fb025091cce0d7fc07a",
+      "snapshot": "bindings/snapshots/CIRCDIST.gross.yaml"
+    },
+    {
+      "bytes": 25112,
+      "path": "circdist/artifacts/circdist_gross_block_minimization_round69_20260829/SHA256SUMS.txt",
+      "sha256": "aad4434050b1b64d3907b990e8279a2b25b2b4e29abcebf585fb885f3dbab647",
+      "snapshot": "bindings/snapshots/round69_SHA256SUMS.txt"
+    },
+    {
+      "bytes": 36570,
+      "path": "circdist/reviews/circdist_gross_block_minimization_exact_review_20260829.md",
+      "sha256": "b2fe38fd6adb1ef974624a49b84b7a61620a5c97a531155aac01fc39dbfbaabe",
+      "snapshot": "bindings/snapshots/round70_review.md"
+    },
+    {
+      "bytes": 82136,
+      "path": "circdist/artifacts/circdist_gross_cegar_continuation_round71_20260829/SHA256SUMS.txt",
+      "sha256": "4b8e33dac3ab823f7efc8ebde9a8271b81314e2b9e0a8e5b27ba828c2068df3a",
+      "snapshot": "bindings/snapshots/round71_SHA256SUMS.txt"
+    },
+    {
+      "bytes": 245457,
+      "path": "circdist/artifacts/circdist_gross_round71_generalization_round72_20260829/SHA256SUMS.txt",
+      "sha256": "bc2bf8bdc2da199e348b0471ef4f0367e52e1a7e5eefe1294adb51ab25a4f7f6",
+      "snapshot": "bindings/snapshots/round72_SHA256SUMS.txt"
+    },
+    {
+      "bytes": 55164,
+      "path": "circdist/reviews/circdist_gross_round72_generalization_exact_review_20260829.md",
+      "sha256": "92e2b6306f7181b2c61fa02b3eba0624a74864f19045e6e72b208754115224d3",
+      "snapshot": "bindings/snapshots/round73_review.md"
+    }
+  ],
+  "repo_root_at_execution": "<repo>",
+  "required_input_stream_audit": "preflight/all_required_inputs_read.json.gz",
+  "round69_root_seal_sha256": "aad4434050b1b64d3907b990e8279a2b25b2b4e29abcebf585fb885f3dbab647",
+  "round70_review_sha256": "b2fe38fd6adb1ef974624a49b84b7a61620a5c97a531155aac01fc39dbfbaabe",
+  "round71_root_seal_sha256": "4b8e33dac3ab823f7efc8ebde9a8271b81314e2b9e0a8e5b27ba828c2068df3a",
+  "round72_clean_full_replay": {
+    "log": "preflight/round72_clean_full_verifier.log",
+    "record": "preflight/round72_clean_full_verifier.run.json",
+    "status": "PASS",
+    "wall_seconds": 1326.432404875
+  },
+  "round72_root_seal_sha256": "bc2bf8bdc2da199e348b0471ef4f0367e52e1a7e5eefe1294adb51ab25a4f7f6",
+  "round73_review_sha256": "92e2b6306f7181b2c61fa02b3eba0624a74864f19045e6e72b208754115224d3",
+  "schema": "round74-source-bindings-v1",
+  "self_contained_source_packages": [
+    {
+      "name": "round72",
+      "path": "source_repository/circdist/artifacts/circdist_gross_round71_generalization_round72_20260829",
+      "seal_file": "SHA256SUMS.txt",
+      "seal_sha256": "bc2bf8bdc2da199e348b0471ef4f0367e52e1a7e5eefe1294adb51ab25a4f7f6"
+    }
+  ]
+}

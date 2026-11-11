@@ -1,0 +1,359 @@
+{
+  "all_children_reaped": true,
+  "check_count": 9,
+  "checks": [
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "tools/proof_dag_check.py",
+        "--problem",
+        "circdist"
+      ],
+      "child_pid": 695,
+      "cwd": "<repo>",
+      "detached": false,
+      "duration_ns": 366805076,
+      "end_utc": "2026-09-06T00:01:38.769722+00:00",
+      "environment": {
+        "LANG": "C.UTF-8",
+        "LC_ALL": "C.UTF-8",
+        "PATH": "/usr/bin:/bin:/usr/sbin:/sbin",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "TMPDIR": "/private/tmp/circdist-round126-proposer-20260905/work/recovery/REPOSITORY_GATES_PRESEAL/tmp",
+        "TZ": "UTC"
+      },
+      "expected_returncodes": [
+        0
+      ],
+      "name": "proof_dag_circdist",
+      "parent_pid": 694,
+      "reaped": true,
+      "returncode": 0,
+      "returncode_matches": true,
+      "start_utc": "2026-09-06T00:01:38.402917+00:00",
+      "stderr": "/private/tmp/circdist-round126-proposer-20260905/work/recovery/REPOSITORY_GATES_PRESEAL/proof_dag_circdist.stderr",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "/private/tmp/circdist-round126-proposer-20260905/work/recovery/REPOSITORY_GATES_PRESEAL/proof_dag_circdist.stdout",
+      "stdout_bytes": 43,
+      "stdout_sha256": "c43e0a23f474af4c5b8e013612205d543c71c16b623dd0e3dde3d38615667068",
+      "timeout_configured": false,
+      "timeout_triggered": false
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "tools/proof_dag_check.py",
+        "--problem",
+        "all"
+      ],
+      "child_pid": 696,
+      "cwd": "<repo>",
+      "detached": false,
+      "duration_ns": 2111145019,
+      "end_utc": "2026-09-06T00:01:40.881623+00:00",
+      "environment": {
+        "LANG": "C.UTF-8",
+        "LC_ALL": "C.UTF-8",
+        "PATH": "/usr/bin:/bin:/usr/sbin:/sbin",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "TMPDIR": "/private/tmp/circdist-round126-proposer-20260905/work/recovery/REPOSITORY_GATES_PRESEAL/tmp",
+        "TZ": "UTC"
+      },
+      "expected_returncodes": [
+        0
+      ],
+      "name": "proof_dag_all",
+      "parent_pid": 694,
+      "reaped": true,
+      "returncode": 0,
+      "returncode_matches": true,
+      "start_utc": "2026-09-06T00:01:38.770478+00:00",
+      "stderr": "/private/tmp/circdist-round126-proposer-20260905/work/recovery/REPOSITORY_GATES_PRESEAL/proof_dag_all.stderr",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "/private/tmp/circdist-round126-proposer-20260905/work/recovery/REPOSITORY_GATES_PRESEAL/proof_dag_all.stdout",
+      "stdout_bytes": 534,
+      "stdout_sha256": "14d2a52a753d53149fb24d702a34aecbaaf99f533929c828f98a2e4160b75eff",
+      "timeout_configured": false,
+      "timeout_triggered": false
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "tools/check_circdist_migration.py"
+      ],
+      "child_pid": 699,
+      "cwd": "<repo>",
+      "detached": false,
+      "duration_ns": 954950809,
+      "end_utc": "2026-09-06T00:01:41.837126+00:00",
+      "environment": {
+        "LANG": "C.UTF-8",
+        "LC_ALL": "C.UTF-8",
+        "PATH": "/usr/bin:/bin:/usr/sbin:/sbin",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "TMPDIR": "/private/tmp/circdist-round126-proposer-20260905/work/recovery/REPOSITORY_GATES_PRESEAL/tmp",
+        "TZ": "UTC"
+      },
+      "expected_returncodes": [
+        0
+      ],
+      "name": "circdist_migration",
+      "parent_pid": 694,
+      "reaped": true,
+      "returncode": 0,
+      "returncode_matches": true,
+      "start_utc": "2026-09-06T00:01:40.882175+00:00",
+      "stderr": "/private/tmp/circdist-round126-proposer-20260905/work/recovery/REPOSITORY_GATES_PRESEAL/circdist_migration.stderr",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "/private/tmp/circdist-round126-proposer-20260905/work/recovery/REPOSITORY_GATES_PRESEAL/circdist_migration.stdout",
+      "stdout_bytes": 84,
+      "stdout_sha256": "abee5d9ee3574c0ae64911a0e4035bac035b2deef8b347d85552760609c0bf24",
+      "timeout_configured": false,
+      "timeout_triggered": false
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "tools/test_release_contracts.py"
+      ],
+      "child_pid": 700,
+      "cwd": "<repo>",
+      "detached": false,
+      "duration_ns": 262764215,
+      "end_utc": "2026-09-06T00:01:42.100622+00:00",
+      "environment": {
+        "LANG": "C.UTF-8",
+        "LC_ALL": "C.UTF-8",
+        "PATH": "/usr/bin:/bin:/usr/sbin:/sbin",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "TMPDIR": "/private/tmp/circdist-round126-proposer-20260905/work/recovery/REPOSITORY_GATES_PRESEAL/tmp",
+        "TZ": "UTC"
+      },
+      "expected_returncodes": [
+        0
+      ],
+      "name": "release_contracts",
+      "parent_pid": 694,
+      "reaped": true,
+      "returncode": 0,
+      "returncode_matches": true,
+      "start_utc": "2026-09-06T00:01:41.837858+00:00",
+      "stderr": "/private/tmp/circdist-round126-proposer-20260905/work/recovery/REPOSITORY_GATES_PRESEAL/release_contracts.stderr",
+      "stderr_bytes": 113,
+      "stderr_sha256": "a45da4d08f395e21f05afd39cd585c04f033334efe0e6b891d71e1bb85f40608",
+      "stdout": "/private/tmp/circdist-round126-proposer-20260905/work/recovery/REPOSITORY_GATES_PRESEAL/release_contracts.stdout",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timeout_configured": false,
+      "timeout_triggered": false
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "tools/test_dag_contracts.py"
+      ],
+      "child_pid": 702,
+      "cwd": "<repo>",
+      "detached": false,
+      "duration_ns": 471421003,
+      "end_utc": "2026-09-06T00:01:42.572500+00:00",
+      "environment": {
+        "LANG": "C.UTF-8",
+        "LC_ALL": "C.UTF-8",
+        "PATH": "/usr/bin:/bin:/usr/sbin:/sbin",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "TMPDIR": "/private/tmp/circdist-round126-proposer-20260905/work/recovery/REPOSITORY_GATES_PRESEAL/tmp",
+        "TZ": "UTC"
+      },
+      "expected_returncodes": [
+        0
+      ],
+      "name": "dag_contracts",
+      "parent_pid": 694,
+      "reaped": true,
+      "returncode": 0,
+      "returncode_matches": true,
+      "start_utc": "2026-09-06T00:01:42.101079+00:00",
+      "stderr": "/private/tmp/circdist-round126-proposer-20260905/work/recovery/REPOSITORY_GATES_PRESEAL/dag_contracts.stderr",
+      "stderr_bytes": 123,
+      "stderr_sha256": "fab373c0fdfa9c18c33514451b08add691da984890b4c137c5f34bdde6f770b6",
+      "stdout": "/private/tmp/circdist-round126-proposer-20260905/work/recovery/REPOSITORY_GATES_PRESEAL/dag_contracts.stdout",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timeout_configured": false,
+      "timeout_triggered": false
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "tools/lean_dag_check.py",
+        "--selftest"
+      ],
+      "child_pid": 705,
+      "cwd": "<repo>",
+      "detached": false,
+      "duration_ns": 225705862,
+      "end_utc": "2026-09-06T00:01:42.798678+00:00",
+      "environment": {
+        "LANG": "C.UTF-8",
+        "LC_ALL": "C.UTF-8",
+        "PATH": "/usr/bin:/bin:/usr/sbin:/sbin",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "TMPDIR": "/private/tmp/circdist-round126-proposer-20260905/work/recovery/REPOSITORY_GATES_PRESEAL/tmp",
+        "TZ": "UTC"
+      },
+      "expected_returncodes": [
+        0
+      ],
+      "name": "lean_dag_selftest",
+      "parent_pid": 694,
+      "reaped": true,
+      "returncode": 0,
+      "returncode_matches": true,
+      "start_utc": "2026-09-06T00:01:42.572972+00:00",
+      "stderr": "/private/tmp/circdist-round126-proposer-20260905/work/recovery/REPOSITORY_GATES_PRESEAL/lean_dag_selftest.stderr",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "/private/tmp/circdist-round126-proposer-20260905/work/recovery/REPOSITORY_GATES_PRESEAL/lean_dag_selftest.stdout",
+      "stdout_bytes": 36931,
+      "stdout_sha256": "6b6af7115d22da03011ac29ca3ffaca7975d9ee627ead4957f8a113ba978109d",
+      "timeout_configured": false,
+      "timeout_triggered": false
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/private/tmp/circdist_gross_iter198_order144_continuation_round126_20260905/source/round120_reviewed/round118_reviewed/round116_reviewed/parent_duplicate_yaml_scan.py",
+        "--root",
+        "<repo>",
+        "--output",
+        "/private/tmp/circdist-round126-proposer-20260905/work/recovery/REPOSITORY_GATES_PRESEAL/duplicate_yaml.json"
+      ],
+      "child_pid": 707,
+      "cwd": "<repo>",
+      "detached": false,
+      "duration_ns": 11934442043,
+      "end_utc": "2026-09-06T00:01:54.734045+00:00",
+      "environment": {
+        "LANG": "C.UTF-8",
+        "LC_ALL": "C.UTF-8",
+        "PATH": "/usr/bin:/bin:/usr/sbin:/sbin",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "TMPDIR": "/private/tmp/circdist-round126-proposer-20260905/work/recovery/REPOSITORY_GATES_PRESEAL/tmp",
+        "TZ": "UTC"
+      },
+      "expected_returncodes": [
+        0
+      ],
+      "name": "duplicate_yaml",
+      "parent_pid": 694,
+      "reaped": true,
+      "returncode": 0,
+      "returncode_matches": true,
+      "start_utc": "2026-09-06T00:01:42.799603+00:00",
+      "stderr": "/private/tmp/circdist-round126-proposer-20260905/work/recovery/REPOSITORY_GATES_PRESEAL/duplicate_yaml.stderr",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "/private/tmp/circdist-round126-proposer-20260905/work/recovery/REPOSITORY_GATES_PRESEAL/duplicate_yaml.stdout",
+      "stdout_bytes": 115,
+      "stdout_sha256": "fcb034c0124ae7a513194b4cd73a824e15abc1e4e3e2597c73b341a762fb2b9f",
+      "timeout_configured": false,
+      "timeout_triggered": false
+    },
+    {
+      "argv": [
+        "/usr/bin/git",
+        "diff",
+        "--check"
+      ],
+      "child_pid": 708,
+      "cwd": "<repo>",
+      "detached": false,
+      "duration_ns": 22918939,
+      "end_utc": "2026-09-06T00:01:54.757469+00:00",
+      "environment": {
+        "LANG": "C.UTF-8",
+        "LC_ALL": "C.UTF-8",
+        "PATH": "/usr/bin:/bin:/usr/sbin:/sbin",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "TMPDIR": "/private/tmp/circdist-round126-proposer-20260905/work/recovery/REPOSITORY_GATES_PRESEAL/tmp",
+        "TZ": "UTC"
+      },
+      "expected_returncodes": [
+        0
+      ],
+      "name": "git_diff_check",
+      "parent_pid": 694,
+      "reaped": true,
+      "returncode": 0,
+      "returncode_matches": true,
+      "start_utc": "2026-09-06T00:01:54.734550+00:00",
+      "stderr": "/private/tmp/circdist-round126-proposer-20260905/work/recovery/REPOSITORY_GATES_PRESEAL/git_diff_check.stderr",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "/private/tmp/circdist-round126-proposer-20260905/work/recovery/REPOSITORY_GATES_PRESEAL/git_diff_check.stdout",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timeout_configured": false,
+      "timeout_triggered": false
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "tools/evidence_closure_check.py",
+        "--problem",
+        "circdist"
+      ],
+      "child_pid": 709,
+      "cwd": "<repo>",
+      "detached": false,
+      "duration_ns": 925757884,
+      "end_utc": "2026-09-06T00:01:55.683668+00:00",
+      "environment": {
+        "LANG": "C.UTF-8",
+        "LC_ALL": "C.UTF-8",
+        "PATH": "/usr/bin:/bin:/usr/sbin:/sbin",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "TMPDIR": "/private/tmp/circdist-round126-proposer-20260905/work/recovery/REPOSITORY_GATES_PRESEAL/tmp",
+        "TZ": "UTC"
+      },
+      "expected_returncodes": [
+        0,
+        1
+      ],
+      "name": "evidence_closure_raw",
+      "parent_pid": 694,
+      "reaped": true,
+      "returncode": 0,
+      "returncode_matches": true,
+      "start_utc": "2026-09-06T00:01:54.757910+00:00",
+      "stderr": "/private/tmp/circdist-round126-proposer-20260905/work/recovery/REPOSITORY_GATES_PRESEAL/evidence_closure_raw.stderr",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "/private/tmp/circdist-round126-proposer-20260905/work/recovery/REPOSITORY_GATES_PRESEAL/evidence_closure_raw.stdout",
+      "stdout_bytes": 91,
+      "stdout_sha256": "1bda4951564dad37e3930ba017691f02727ea21cf18c535a0b61c4a336fdfb64",
+      "timeout_configured": false,
+      "timeout_triggered": false
+    }
+  ],
+  "detached_children": 0,
+  "evidence_closure_interpretation": {
+    "all_errors_under_new_package": true,
+    "error_count": 0,
+    "meaning": "repository evidence closure passed directly",
+    "raw_exit_code": 0,
+    "schema": "circdist-round126-evidence-closure-interpretation-v1",
+    "status": "PASS"
+  },
+  "evidence_closure_raw_exit": 0,
+  "schema": "circdist-gross-round126-repository-gates-v1",
+  "solver_invocations": 0,
+  "status": "PASS",
+  "strict_serial": true,
+  "timeouts_configured": 0,
+  "timeouts_triggered": 0
+}

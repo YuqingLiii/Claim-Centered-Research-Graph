@@ -1,0 +1,38 @@
+ROUND 76 FINAL AUDIT CONTRACT
+
+Verdict: MATERIAL-CHECKED-PROGRESS-NOT-CLOSED.
+Branch closure: no. D*_Gross remains {11,12}.
+Fresh independent exact review required before canonical use or restart: yes.
+
+MATHEMATICAL RESULT
+- 24 fresh outer SAT results at iterations 54..77.
+- 48 complete unrestricted direct-360 SAT sectors, each clause checked and raw canonical/physical replayed.
+- 48 candidate-exact blocks preserved.
+- 303 retained generalized terms from 420 raw candidates.
+- Exact restart: unstarted iteration 78, G=5743, D=156, registry=72, total blocks=7359.
+- No outer/direct UNSAT, no accepted Gross absence proof, and no repair entry.
+
+DEVELOPMENT/PRECOMPRESSION FULL (NOT THE ACCEPTED RELEASE GATE)
+- exit 0; status PASS; wall 3416.156687416 seconds.
+- stdout bytes 97633; SHA-256 936a4344b1be550eb28c88dca5ef98356aad989c04f699804d5796b1351d0343.
+- 24 fresh outer processes; 48 direct formula rebuilds and assignment/raw replays;
+  24 online generalization recomputations; 336 output files byte-compared; final state equal.
+- Sealed evidence: verification/development_precompression_full.log.gz and its run JSON.
+
+ACCEPTED PRESEAL GATE
+- Run only after final deterministic gzip and COMPRESSED_INVENTORY.json exist.
+- Required command and predicates are in verification/RELEASE_GATES.json.
+- It must exit 0 and print status PASS before seal creation and atomic installation.
+- Its external stdout binds the exact final gzip inventory without mutating the certified tree.
+
+POST-COPY SEALED GATES
+- Run full with live repository bindings after atomic installation.
+- Run quick with live repository bindings after the full replay.
+- Both must exit 0 and print status PASS. Their logs remain external because the sealed tree is immutable.
+
+INVENTORY / FIX-2
+- Package-excluding prewrite and preinstall-recheck inventories are byte-identical:
+  7810 files, 346679281 bytes, JSONL SHA-256
+  dc5f0a69838019444cdd77ead3116dc3c138285022b83d61e76d963f098f0e3b.
+- Final post-copy exclusion equality and Git-status target-only filtering are release gates reported by the operator.
+- The sole corrected nonzero attempt is the read-only round-74 quick-with-live scheduler-drift check documented in FIX-2.md.

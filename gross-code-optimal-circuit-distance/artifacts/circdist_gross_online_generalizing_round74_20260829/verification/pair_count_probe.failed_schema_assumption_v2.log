@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "<stdin>", line 16, in <module>
+AssertionError
+
+Correction: structural_pair_cells_represented counts the full relation domains (relations * 720 * 720), whereas truth_cell_count counts conservative-positive truth cells. The final verifier separately checks full-domain size, each truth-row bit count, explicit-row subset inclusion, explicit-positive counts, configurations, and positive relations.

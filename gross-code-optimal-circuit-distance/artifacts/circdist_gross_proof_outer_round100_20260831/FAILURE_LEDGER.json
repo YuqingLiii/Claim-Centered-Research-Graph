@@ -1,0 +1,121 @@
+{
+  "failure_count": 12,
+  "failures": [
+    {
+      "attempt": "Read a guessed formulas/iter172/source.json path.",
+      "correction": "Used the manifest-bound gzip path and completed the prior-package manifest check.",
+      "failure": "FileNotFoundError; the commissioned source is source.json.gz.",
+      "id": "F001",
+      "phase": "pre-science binding audit",
+      "retained_evidence": "FAILURE_LEDGER.md",
+      "scientific_effect": "None; no solver or model was run and partial output supports no verdict."
+    },
+    {
+      "attempt": "Initial direct-Z3 span validator used positional Xor with more than three arguments under z3 5.1.0.",
+      "correction": "Replaced it with an explicit binary left fold and reran both sectors to checked UNSAT.",
+      "failure": "API arity exception, return code 1, before solver.check().",
+      "id": "F002",
+      "phase": "synthesis independent validation",
+      "retained_evidence": "failures/F002_span_validator_z3_api/",
+      "scientific_effect": "The failed attempt produced no SAT/UNSAT result and supports no theorem."
+    },
+    {
+      "attempt": "A line-extraction helper requested one line past the source length.",
+      "correction": "Bounded the extraction to the actual line count.",
+      "failure": "IndexError in an inspection-only loop.",
+      "id": "F003",
+      "phase": "read-only source audit",
+      "retained_evidence": "FAILURE_LEDGER.md",
+      "scientific_effect": "None; no file mutation and no scientific process."
+    },
+    {
+      "attempt": "A generated audit draft contained a placeholder source hash.",
+      "correction": "Replaced the placeholder with the commissioned exact source binding before first execution.",
+      "failure": "Manual pre-execution review rejected the draft.",
+      "id": "F004",
+      "phase": "audit authoring",
+      "retained_evidence": "FAILURE_LEDGER.md",
+      "scientific_effect": "None; rejected code never executed."
+    },
+    {
+      "attempt": "First Round100 compressor draft had a malformed f-string.",
+      "correction": "Corrected the delimiter, recompiled, then compressed all 222 streams with byte-roundtrip checks.",
+      "failure": "py_compile SyntaxError before compression.",
+      "id": "F005",
+      "phase": "compression authoring",
+      "retained_evidence": "FAILURE_LEDGER.md",
+      "scientific_effect": "None; no evidence file was compressed by the failed draft."
+    },
+    {
+      "attempt": "Replay resolved the virtual-environment Python symlink to its base interpreter.",
+      "correction": "Preserved the supplied interpreter path with absolute() rather than resolve().",
+      "failure": "First physical replay could not import z3 after 28 successful binding/compression/formula children; replay child 29 returned 1.",
+      "id": "F006",
+      "phase": "preseal replay attempt 1",
+      "retained_evidence": "failures/F006_replay_venv_resolution/",
+      "scientific_effect": "All 13 formula replays passed; the incomplete run supports no package verdict."
+    },
+    {
+      "attempt": "The immutable science audit counted later packaging process records.",
+      "correction": "Explicitly separated the closed 204-record science census from later round100_* packaging records.",
+      "failure": "Hard-coded 204 science-record assertion failed after 123 successful direct replay children and 12 proof grandchildren.",
+      "id": "F007",
+      "phase": "preseal replay attempt 2",
+      "retained_evidence": "failures/F007_replay_science_census_scope/",
+      "scientific_effect": "Every science and synthesis replay stage through the mixed-sector theorem passed; incomplete package run supports no final replay verdict."
+    },
+    {
+      "attempt": "Toy cardinality control used int.bit_count under the system Python.",
+      "correction": "Used bin(value).count(\"1\") and reran all 256 controls to PASS.",
+      "failure": "AttributeError before the checker result.",
+      "id": "F008",
+      "phase": "mixed-sector checker authoring",
+      "retained_evidence": "FAILURE_LEDGER.md",
+      "scientific_effect": "None; proof statement and science artifacts were unchanged."
+    },
+    {
+      "attempt": "Invoked validate_span.py --help with system Python lacking z3.",
+      "correction": "Used the bound z3-capable environment for all actual span validations.",
+      "failure": "Import-time ModuleNotFoundError; no validation was requested or run.",
+      "id": "F009",
+      "phase": "read-only CLI inspection",
+      "retained_evidence": "FAILURE_LEDGER.md",
+      "scientific_effect": "None; this was a help probe."
+    },
+    {
+      "attempt": "Invoked order6_mitm with no arguments to obtain its usage string.",
+      "correction": "All theorem runs supplied INPUT ELIGIBLE SUMMARY SECTOR.",
+      "failure": "Expected usage exit; no input was read.",
+      "id": "F010",
+      "phase": "read-only binary inspection",
+      "retained_evidence": "FAILURE_LEDGER.md",
+      "scientific_effect": "None; this was a usage probe."
+    },
+    {
+      "attempt": "An apply_patch request tried delete-and-add operations on one path.",
+      "correction": "Wrote the draft, then compiled and corrected it before execution.",
+      "failure": "Patch tool rejected the request without changing a file.",
+      "id": "F011",
+      "phase": "packaging edit",
+      "retained_evidence": "FAILURE_LEDGER.md",
+      "scientific_effect": "None; no OS science process and no artifact mutation from the rejected patch."
+    },
+    {
+      "attempt": "The launch setup included an rm -rf cleanup of a proposed external replay directory.",
+      "correction": "Used a fresh unique directory and no deletion command; the sealed replay then passed with 145 known children.",
+      "failure": "The host command policy rejected the command before creating an OS process.",
+      "id": "F012",
+      "phase": "first sealed-replay launch",
+      "retained_evidence": "FAILURE_LEDGER.md",
+      "scientific_effect": "None; the rejected launch did not execute and did not touch the package or filesystem."
+    }
+  ],
+  "no_failure_omitted_to_the_best_of_the_proposer_audit": true,
+  "round98_disclosure": {
+    "description": "Round98 had three post-science model-capacity interruptions during packaging/recovery.",
+    "events": 3,
+    "inherited_as_round100_failures": false
+  },
+  "schema": "circdist-round100-failure-ledger-v1",
+  "status": "COMPLETE"
+}

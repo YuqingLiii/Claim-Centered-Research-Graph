@@ -1,0 +1,530 @@
+{
+  "canonical_state_modified": false,
+  "distance_status": {
+    "CIRCDIST.gross": "CONJECTURED",
+    "D_star_Gross": [
+      11,
+      12
+    ],
+    "gap-via-lift": "CONJECTURED"
+  },
+  "exact_residual": "Solve the exact fresh iteration-191 71-root quotient proof-first; if SAT, replay the legal schedule and adjudicate unrestricted Xerr then Zerr strictly serially.",
+  "failures": {
+    "disclosed_ids": [
+      "F110-001",
+      "F110-002",
+      "F110-003",
+      "F110-004",
+      "F110-005",
+      "F110-006",
+      "F110-007",
+      "F110-008",
+      "F110-009",
+      "F110-010"
+    ],
+    "ledger": "FAILURE_LEDGER.md",
+    "scientific_failures_or_unknowns": 0
+  },
+  "fresh_frontier": {
+    "base": {
+      "assertions": 546126,
+      "clauses": 6929888,
+      "encoding_check": "PASS",
+      "path": "frontier/iter191_full_invariant/formula/outer.cnf",
+      "sha256": "d1e68e88eb4c22ffda58d3a1c73cb7dbf6082690c594e8c538f8cc70c432e223",
+      "variables": 1853886
+    },
+    "base_formula_exact_file_set": [
+      "assertion_map.jsonl",
+      "definitions.json.gz",
+      "encoding_check.json",
+      "metadata.json",
+      "outer.cnf"
+    ],
+    "blocks": 517140,
+    "forbidden_solver_artifacts_absent": true,
+    "fresh_unstarted": true,
+    "iter191_solved": false,
+    "iteration": 191,
+    "lex_leaders": 71,
+    "quotient": {
+      "assertions": 546197,
+      "clauses": 11837479,
+      "independent_check": "PASS",
+      "path": "frontier/iter191_full_invariant_quotient/outer.cnf",
+      "sha256": "30ce7d14d96349e61d7105255cddc8899b8927ce728dfd147b641c75c97fe10f",
+      "variables": 2467326
+    },
+    "quotient_exact_file_set": [
+      "independent_check.json",
+      "metadata.json",
+      "outer.cnf",
+      "translation_roots.jsonl",
+      "translation_trace.json.gz"
+    ],
+    "schema": "circdist-gross-round110-fresh-frontier-v1",
+    "selector_state_sha256": "41bb458a1b9a31aba7d70f063165221a9ae9c989421682320826dbc5d166f9e6",
+    "selectors": 24588,
+    "smallest_honest_residual": "Solve the exact fresh iteration-191 71-root quotient proof-first; if SAT, replay the legal schedule and adjudicate unrestricted Xerr then Zerr strictly serially.",
+    "source_file_sha256": "0b0ac7e6daa69d8d3ab1b98b7228c43690a5406c52defe57e46027b185984a47",
+    "source_semantic_payload_sha256": "02da1bcb87a45637afa8434a8dfa4e4c8092489ace7f5a7fd1ba3266f9615532",
+    "started": false,
+    "state_file_sha256": "6059554d307e7c503bd1792dd77718a205346f5dce243e719ae057f402cf6c9f",
+    "status": "PASS",
+    "stop": null,
+    "translation_group": "Z_12 x Z_6",
+    "translation_group_order": 72
+  },
+  "iteration190": {
+    "candidate_distance_upper_bound": 10,
+    "candidate_excluded": true,
+    "compressed_schedule_sha256": "843f3a156476027bce38d9bdd97a7d9bdc496d9d3e4d0acfcedb0f6014210d58",
+    "direct": {
+      "Xerr": {
+        "all_clauses_satisfied": true,
+        "assignment_sha256": "9cca8da6aa23024ab343fe8c591f339f75e52297be3610c4b94c8910d4376d67",
+        "canonical_net_support": [
+          1,
+          14,
+          29,
+          35,
+          69,
+          74,
+          78,
+          79,
+          88,
+          89,
+          101,
+          103,
+          104,
+          120
+        ],
+        "canonical_nonstabilizer": true,
+        "canonical_syndrome": [],
+        "clauses": 23100,
+        "cnf_sha256": "8bbe080ff3e6eadf65f7da0180daa686386237f4b64a23f05e9fe41dd932ff67",
+        "fault_count": 10,
+        "logical_parities": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        "physical_net_support": [
+          1,
+          14,
+          27,
+          28,
+          29,
+          35,
+          44,
+          69,
+          74,
+          78,
+          79,
+          88,
+          89,
+          103,
+          110,
+          120
+        ],
+        "physical_nonstabilizer": true,
+        "physical_syndrome": [],
+        "selected_names": [
+          "D:14",
+          "D:29",
+          "D:35",
+          "D:78",
+          "D:88",
+          "D:103",
+          "D:120",
+          "R:5:1",
+          "R:26:0",
+          "R:67:2"
+        ],
+        "status": "SATISFIABLE",
+        "variables": 6130
+      },
+      "Zerr": {
+        "all_clauses_satisfied": true,
+        "assignment_sha256": "f13cf3e68cbf8278a7b29dd94bce8c537182e77603d16596ecbe72ed628bf8e1",
+        "canonical_net_support": [
+          0,
+          1,
+          5,
+          65,
+          67,
+          72,
+          75,
+          131,
+          133,
+          137,
+          138,
+          140
+        ],
+        "canonical_nonstabilizer": true,
+        "canonical_syndrome": [],
+        "clauses": 22932,
+        "cnf_sha256": "ddec622ceef752c73696c327a09c50768a331a9ff78e7fbcd5d1445afe8c0006",
+        "fault_count": 10,
+        "logical_parities": [
+          0,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "physical_net_support": [
+          0,
+          1,
+          62,
+          65,
+          67,
+          68,
+          73,
+          75,
+          128,
+          131,
+          133,
+          137,
+          138,
+          140
+        ],
+        "physical_nonstabilizer": true,
+        "physical_syndrome": [],
+        "selected_names": [
+          "D:0",
+          "D:65",
+          "D:75",
+          "D:131",
+          "D:133",
+          "D:137",
+          "D:138",
+          "D:140",
+          "R:2:0",
+          "R:7:2"
+        ],
+        "status": "SATISFIABLE",
+        "variables": 6088
+      }
+    },
+    "distance12_result": false,
+    "quotient": {
+      "all_clauses_checked": 11827887,
+      "all_clauses_satisfied": true,
+      "all_variables_assigned_exactly_once": true,
+      "assigned_variables": 2464197,
+      "assignment_sha256": "975dbb72397674377b2ef7a5c81156701b04e0667d6ac744e0238ebd9f7e2429",
+      "solver_log_sha256": "969d938f5997baf06a3492a07e16a4fb53dd8f182636c43b93b1d14c83f45a57",
+      "status": "SATISFIABLE"
+    },
+    "quotient_orbit_controls": {
+      "negative_controls": {
+        "corrupt_assignment_mutation": {
+          "first_failing_clause": 1,
+          "operation": "flip variable 1",
+          "rejected": true
+        },
+        "missing_root_control": {
+          "other_70_nonidentity_roots_hold": true,
+          "second_orbit_schedule_sha256": "037d2634bf8ba12f86647336be4520373f6188bf7300555056ea09af77404ea7",
+          "sole_failed_root_delta": [
+            9,
+            5
+          ]
+        },
+        "reversed_lex_direction_rejected": true,
+        "truncated_assignment": {
+          "missing_variable": 2464197,
+          "operation": "omit the last retained assignment literal",
+          "rejected_by_complete_domain_check": true
+        }
+      },
+      "orbit": {
+        "candidate_compressed_schedule_sha256": "843f3a156476027bce38d9bdd97a7d9bdc496d9d3e4d0acfcedb0f6014210d58",
+        "candidate_is_lexicographically_least": true,
+        "candidate_raw_schedule_sha256": "6fddc1da7772a5c68fb565e34f55c508d8a1aab154ac43ab372c951fdf1585d5",
+        "distinct_schedule_vectors": 72,
+        "group_order": 72,
+        "orbit_stabilizer_product": 72,
+        "stabilizer_deltas": [
+          [
+            0,
+            0
+          ]
+        ],
+        "stabilizer_size": 1,
+        "strict_nonidentity_roots": 71
+      },
+      "positive_model": {
+        "all_clauses_satisfied": true,
+        "assigned_variables": 2464197,
+        "checked_clauses": 11827887,
+        "clauses": 11827887,
+        "primary_time_bits_checked": 8640,
+        "recurrence_values_checked": 613440,
+        "root_values_checked": 71,
+        "variables": 2464197
+      },
+      "schema": "circdist-gross-round102-sat-orbit-controls-v1",
+      "status": "PASS"
+    },
+    "raw_schedule_sha256": "6fddc1da7772a5c68fb565e34f55c508d8a1aab154ac43ab372c951fdf1585d5",
+    "repair_entered": false,
+    "repair_reason": "forbidden: complete unrestricted Xerr and Zerr direct queries are both SAT",
+    "schedule": {
+      "conflicts": [],
+      "edge_count": 864,
+      "errors": [],
+      "global_interleaved": true,
+      "max_time": 476,
+      "mc_violations": [],
+      "min_time": 0,
+      "ok": true,
+      "overlap_interleaved_pairs": 75,
+      "overlaps": 648,
+      "used_layers": 477,
+      "whole_check_interleaved_pairs": 321
+    }
+  },
+  "mandatory_input": {
+    "base_assertions": 545982,
+    "base_clauses": 6920296,
+    "base_cnf_sha256": "e3ec0d0b146fc4ade428052d1a14737ffade9974dfc37dd79fa8411841d45fc8",
+    "base_variables": 1850757,
+    "blocks": 517140,
+    "quotient_assertions": 546053,
+    "quotient_clauses": 11827887,
+    "quotient_cnf_sha256": "12f2fe58f4bfcaff19d543cdb60411f1659e86c8b4f16f599a2d1679aeeca767",
+    "quotient_variables": 2464197,
+    "selector_state_sha256": "02b71bfed57c070359b77d69514397a021734aec7563057c02eeff29f4b6cdbd",
+    "selectors": 24444,
+    "semantic_sha256": "76881a021258e6fda565ecfe0ad61c1fe0e6f6a97a418ea806c6d3193b692c00",
+    "source_sha256": "5231e7f5b4cd2a74390a5d137b9927276ce73829dc599ddc064ab8f2c94a2d2e",
+    "state_sha256": "af31130cbb6f0f80d2b37b3ba27d1b1d86fa5b18a80c1e02aa3de02504863be4"
+  },
+  "orbit_continuation": {
+    "added_selectors": 144,
+    "block_generator_cases": 1034280,
+    "collisions": 0,
+    "full_registry_invariant": true,
+    "new_selectors": 24588,
+    "old_selectors": 24444,
+    "parent_orbit_sizes": {
+      "Xerr": 72,
+      "Zerr": 72
+    },
+    "selector_generator_cases": 49176,
+    "translated_physical_mechanism_replays": 144,
+    "translated_schedule_replays": 72
+  },
+  "package": "circdist/artifacts/circdist_gross_iter190_invariant_quotient_continuation_round110_20260902",
+  "preseal_replay_binding": {
+    "bytes": 50306,
+    "external_record": "work/verification/preseal_replay.json",
+    "sha256": "d9d01f8e7bad1579150e4e69902fb075b12633b5914411e175083bed0cde2724",
+    "status": "PASS"
+  },
+  "proof_disposition": {
+    "actual_Gross_UNSAT": false,
+    "all_nested_control_children_reaped": true,
+    "drat_or_lrat_claim_for_iteration190": false,
+    "empty_clause_lines": 0,
+    "nested_control_children": 6,
+    "proof_output_enabled_from_all_solver_launches": true,
+    "sat_stream_count": 3,
+    "sat_streams_are_search_traces_not_certificates": true,
+    "sat_trace_gzip_bytes": 2406711083,
+    "sat_trace_raw_bytes": 10443528805,
+    "valid_corrupt_truncated_toolchain_controls": "PASS"
+  },
+  "proposed_canonical_yaml": {
+    "identical_to_bound_canonical": true,
+    "installed": false,
+    "level": "CONJECTURED",
+    "path": "PROPOSED_CIRCDIST.gross.yaml",
+    "residual": [
+      11,
+      12
+    ],
+    "sha256": "7302da9e4726bd2c62a9e335d75d6a9098780888ed91a87a66d503b5938f607b"
+  },
+  "repository_gates": {
+    "all_children_reaped": true,
+    "check_count": 9,
+    "status": "PASS",
+    "summary": "work/verification/repository_validators/summary.json"
+  },
+  "root_branch_A_closed": false,
+  "root_branch_B_closed": false,
+  "root_closed": false,
+  "schema": "circdist-gross-round110-result-v1",
+  "solver_processes": [
+    {
+      "argv": [
+        "<repo>/circdist/artifacts/circdist_gross_iter189_invariant_quotient_continuation_round108_20260901/tooling/cadical-1.9.5-arm64-macos",
+        "-t",
+        "21600",
+        "--no-binary",
+        "<repo>/circdist/artifacts/circdist_gross_iter189_invariant_quotient_continuation_round108_20260901/frontier/iter190_full_invariant_quotient/outer.cnf",
+        "solver/iter190/outer.drat"
+      ],
+      "child_maxrss_raw": 7730429952,
+      "child_pid": 14419,
+      "child_system_seconds": 8.817294,
+      "child_user_seconds": 813.211892,
+      "cwd": "<home>/Documents/Codex/.circdist-round110-iter190-20260902/work",
+      "detached": false,
+      "ended_unix": 1788328625.3978539,
+      "ended_utc": "2026-09-02T05:57:05.397991+00:00",
+      "environment": {
+        "LANG": "C.UTF-8",
+        "LC_ALL": "C.UTF-8",
+        "PATH": "/usr/bin:/bin:/usr/sbin:/sbin",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "expected_returncodes": [
+        10,
+        20
+      ],
+      "final_status": "exited_and_reaped",
+      "kill_sent": false,
+      "name": "solve_iter190_full_invariant_quotient_cadical_proof",
+      "parent_pid": 70180,
+      "reaped": true,
+      "returncode": 10,
+      "returncode_matches": true,
+      "runner_pid": 14417,
+      "schema": "circdist-gross-round110-process-record-v1",
+      "started_unix": 1788327801.841575,
+      "started_utc": "2026-09-02T05:43:21.841579+00:00",
+      "stderr": "solver/iter190/solver.stderr.log",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "solver/iter190/solver.log",
+      "stdout_bytes": 20833068,
+      "stdout_sha256": "969d938f5997baf06a3492a07e16a4fb53dd8f182636c43b93b1d14c83f45a57",
+      "term_sent": false,
+      "timed_out": false,
+      "timeout_seconds": 21600.0,
+      "wall_seconds": 823.558288
+    },
+    {
+      "argv": [
+        "<repo>/circdist/artifacts/circdist_gross_iter189_invariant_quotient_continuation_round108_20260901/tooling/cadical-1.9.5-arm64-macos",
+        "--unsat",
+        "-t",
+        "7200",
+        "--no-binary",
+        "solver/iter190/direct/direct360/Xerr.cnf",
+        "solver/iter190/direct/solver/Xerr.drat"
+      ],
+      "child_maxrss_raw": 346750976,
+      "child_pid": 14843,
+      "child_system_seconds": 6.411036,
+      "child_user_seconds": 1059.465224,
+      "cwd": "<home>/Documents/Codex/.circdist-round110-iter190-20260902/work",
+      "detached": false,
+      "ended_unix": 1788329909.8985689,
+      "ended_utc": "2026-09-02T06:18:29.898691+00:00",
+      "environment": {
+        "LANG": "C.UTF-8",
+        "LC_ALL": "C.UTF-8",
+        "PATH": "/usr/bin:/bin:/usr/sbin:/sbin",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "expected_returncodes": [
+        10,
+        20
+      ],
+      "final_status": "exited_and_reaped",
+      "kill_sent": false,
+      "name": "solve_iter190_Xerr_complete_direct360_cadical_proof",
+      "parent_pid": 70180,
+      "reaped": true,
+      "returncode": 10,
+      "returncode_matches": true,
+      "runner_pid": 14840,
+      "schema": "circdist-gross-round110-process-record-v1",
+      "started_unix": 1788328841.934108,
+      "started_utc": "2026-09-02T06:00:41.934113+00:00",
+      "stderr": "solver/iter190/direct/solver/Xerr.solver.stderr.log",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "solver/iter190/direct/solver/Xerr.solver.log",
+      "stdout_bytes": 93810,
+      "stdout_sha256": "110593e7591b5286a33c8a7835898b4bc19b6bd282f11bdf97b4eef004e4233e",
+      "term_sent": false,
+      "timed_out": false,
+      "timeout_seconds": 7200.0,
+      "wall_seconds": 1067.949165
+    },
+    {
+      "argv": [
+        "<repo>/circdist/artifacts/circdist_gross_iter189_invariant_quotient_continuation_round108_20260901/tooling/cadical-1.9.5-arm64-macos",
+        "--unsat",
+        "-t",
+        "7200",
+        "--no-binary",
+        "solver/iter190/direct/direct360/Zerr.cnf",
+        "solver/iter190/direct/solver/Zerr.drat"
+      ],
+      "child_maxrss_raw": 612843520,
+      "child_pid": 15147,
+      "child_system_seconds": 4.02162,
+      "child_user_seconds": 761.279046,
+      "cwd": "<home>/Documents/Codex/.circdist-round110-iter190-20260902/work",
+      "detached": false,
+      "ended_unix": 1788330724.6191769,
+      "ended_utc": "2026-09-02T06:32:04.619292+00:00",
+      "environment": {
+        "LANG": "C.UTF-8",
+        "LC_ALL": "C.UTF-8",
+        "PATH": "/usr/bin:/bin:/usr/sbin:/sbin",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "expected_returncodes": [
+        10,
+        20
+      ],
+      "final_status": "exited_and_reaped",
+      "kill_sent": false,
+      "name": "solve_iter190_Zerr_complete_direct360_cadical_proof",
+      "parent_pid": 70180,
+      "reaped": true,
+      "returncode": 10,
+      "returncode_matches": true,
+      "runner_pid": 15145,
+      "schema": "circdist-gross-round110-process-record-v1",
+      "started_unix": 1788329957.737092,
+      "started_utc": "2026-09-02T06:19:17.737095+00:00",
+      "stderr": "solver/iter190/direct/solver/Zerr.solver.stderr.log",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "solver/iter190/direct/solver/Zerr.solver.log",
+      "stdout_bytes": 89155,
+      "stdout_sha256": "623393807e78173acd47b4194318378506a77d83ee996a668540a249477941f8",
+      "term_sent": false,
+      "timed_out": false,
+      "timeout_seconds": 7200.0,
+      "wall_seconds": 766.880087
+    }
+  ],
+  "status": "MATERIAL-CHECKED-CONTINUATION-NOT-CLOSED",
+  "strict_solver_nonoverlap": true
+}

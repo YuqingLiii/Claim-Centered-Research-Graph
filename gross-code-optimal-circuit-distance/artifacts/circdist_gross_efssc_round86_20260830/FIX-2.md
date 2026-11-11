@@ -1,0 +1,11 @@
+# FIX-2 process and incident disclosure
+
+The accepted scientific path was strict serial. No two load-bearing schedule searches ran concurrently, no process was handed off, and no network request was made. `PROCESS_LEDGER.json` gives commands, known PIDs, logs, runtime bounds, final dispositions, and harvest/kill instructions.
+
+Three incidents are disclosed and bounded.
+
+1. **Z3 5.1 arity rejection.** The first compiler used variadic `z3.Xor`, but the bound Z3 5.1 Python API accepts only two or three positional arguments. It failed before any solve or state write. The parity constructor was changed to a binary fold and the seed run restarted from the verified iteration-102 inputs.
+2. **Full-DP memory stop.** The first all-selector census materialized complete 84-bit terminal maps. It completed eight selectors, then reached 14,361,591,808 bytes maximum RSS on the nine-check selector. PID 97169 was explicitly declared, TERM-killed, and fully reaped; no aggregate file existed and none of its partial lines is used as the aggregate certificate. The replacement meet-in-the-middle proof joins exact half distributions by 72-bit detector bucket and subtracts the unique cancelling 12-bit logical signature. It finished all fourteen selectors in 3.61 seconds at 79,577,088 bytes and is independently replayed by `replay.sh`.
+3. **SMT printer serialization rejection.** The first independent formula checker demanded the fresh SMT-LIB byte hash equal the compiler’s hash. It rejected because the original printer emitted nested `let` abbreviations while the fresh printer expanded an equivalent `or`. The two parsed vectors have 19,016 assertions in the same order, zero structurally unequal pairs under `z3.eq`, and the identical normalized AST hash `6ac624f2acb35a6311034829970b4d2993fcdf208080898a8e1dbeff1dcb3c7d`. The repaired checker preserves both different raw hashes and requires exact parsed identity. This is serialization drift, not state or semantic drift.
+
+None of these attempts changed the sealed Round80 package, canonical scheduler, canonical node YAML, generated proof-DAG files, or prior artifacts. No rejected output entered the continuation state. The final process scan is recorded before sealing.

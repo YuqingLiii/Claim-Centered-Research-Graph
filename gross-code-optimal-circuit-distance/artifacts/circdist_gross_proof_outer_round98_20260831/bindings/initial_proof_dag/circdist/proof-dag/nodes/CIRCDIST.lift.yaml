@@ -1,0 +1,161 @@
+id: CIRCDIST.lift
+role: outcome
+aliases:
+- CLOSED-LIFT
+claim: In graph-like detector error models with fixed boundaries — graph-like read per-sector (iff Def
+  1.12) and quantified over memory experiments C_R(M) of legal (iff Def 1.3), measurement-consistent (MC,
+  iff Def 2.1) schedules M with R >= d_sec rounds, d_sec the sector's own spatial distance (d_X for the
+  Z-memory, d_Z for the X-memory) — an independently reviewed necessary-and-sufficient structural criterion
+  (in graph-covering, voltage-graph, or chain-complex form) characterizes when d_circ = d_eff, of the
+  shape "d_circ equals the minimum over nontrivial effective logicals gamma of the length of the shortest
+  closed spacetime lift of gamma", with vanishing minimal time-direction repair cost as the equal-weight
+  liftability condition at minimum weight; the criterion recovers the non-interleaved equality d_circ
+  = d_eff as a corollary and is accompanied by an explicit interleaved example with d_circ > d_eff.
+assessment:
+  level: PROVED
+  caveats:
+  - 'Decision-sheet sweep CLOSED (wave-32): 25 rows — 15 applied, 6 unapplied items folded or discharged
+    in the final edit (both R6 halves incl. (MC) in claim AND implication; the wave-17 implication-adequacy
+    audit; digest binding), 5 rows/13 caveats ruled out-of-claim with reasons, 1 superseded. Nothing accepted
+    remains unapplied. (MC) had TWO loss carriers (R6 and assembly caveat C-M6, both never transferred).'
+  - 'S2 (conservative scoping): the folded R >= d_sec quantifier heads the sentence and scopes over all
+    three clauses, while C-M7 scoped it to the criterion clause only — the claim asserts less than provable;
+    honest scope note, non-blocking.'
+  - The repair >= 3 regime, min-cost-covering extension, and large proposer scans remain excluded, per
+    the children's certifications.
+  - Under the min-over-sectors convention the [[4,2,2]] witness is the sole load-bearing example for the
+    existential clause (its repair = 1 re-derived from Def 5.2 by the wave-31 reviewer; the existential
+    clause is now ENTAILED, not merely corroborated).
+  - Per-sector scope, as pinned in the claim text.
+  - 'Shared model design is not independence (standing campaign limitation): every independent implementation
+    re-implements the frozen 公共定义 fault inventory, so a shared misreading of the frozen text would survive
+    all of them. SPOT-VALIDATED AGAINST STIM 1.16.0 (artifacts/circdist_stim_crossval_20260823.md, 2026-08-25):
+    the [[4,2,2]] arm (176 (MC) schedules re-enumerated, 3 gap witnesses, 1 both-sector, d_circ = 2 at
+    R = 2..5, partners 1) and the Steane arm (M_IL Z-memory d_circ = 3 at R = 2..5, 149/285/421/557 DEM
+    columns exact; M_NI 2) reproduce under stim with 0 disagreements between two independent distance
+    extractors; perturbing the fault inventory (data idle at the reset/measure layers, +84 to +300 elementary
+    faults) and breaking the ideal-readout boundary (noisy terminal readout) changed 0 DEM columns and
+    0 distances. Systematic-mismatch risk is bounded to untested regions (gross arm, d >= 7, repair >=
+    2). The prior wording "no stim cross-check exists anywhere in this subtree" was FACTUALLY WRONG —
+    CIRCDIST.lift.gap-example already recorded stim 1.16.0 cross-validation (its lines 71 and 121).'
+  - 'Disjunct availability: of the claim''s three offered forms (graph-covering, voltage-graph, chain-complex),
+    only the chain-complex disjunct is delivered by the children.'
+  summary: 'The closed-lift root is PROVED for the exact current claim: the three premises and assembled
+    implication are independently reviewed and PROVED. The statement carries the sector, legality/(MC),
+    crossed d_sec window, and minimum-weight hypotheses. Larger-repair formulas and untested regimes remain
+    excluded as stated in the caveats.'
+  basis:
+    routes:
+    - criterion-corollary-example
+    reviews:
+    - path: circdist/reviews/circdist_lift_root_final_20260823.md
+      kind: review
+      scope: Final decision-sheet sweep (25 rows, exhaustive by construction) + the (MC) fold blessed
+        against Theorem 5.7's printed hypotheses ((MC) load-bearing twice; the narrowing verified non-free
+        on the existential conjunct with the [[4,2,2]] witness checked inside scope twice, nonint automatic);
+        licenses node PROVED on the repaired claim with all premises PROVED and the route re-bound.
+      locator: Section 5
+      reviewed_hash: sha256:6e463ba06227fbca209a301fb48cfad6bf72efff822d21d95e594faa9b1cac95
+    evidence:
+    - path: circdist/reviews/circdist_amendments4_review_20260822.md
+      kind: text
+    - path: circdist/reviews/circdist_lift_claimrepair2_review_20260823.md
+      kind: text
+    - path: circdist/reviews/circdist_iff_amendment3_review_20260823.md
+      kind: text
+    - path: circdist/reviews/circdist_endtoend2_review_20260823.md
+      kind: text
+    - path: circdist/reviews/circdist_lift_root_rebind_20260823.md
+      kind: text
+    - path: circdist/artifacts/history/pre_protocol_20260826/nodes/CIRCDIST.lift.yaml
+      kind: text
+      note: Immutable pre-migration record, including every original event, former summary and frontier;
+        historical evidence, not an additional completion review.
+    - path: circdist/reviews/circdist_readjudication_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: circdist/artifacts/history/legacy_DAG_PROTOCOL.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: circdist/artifacts/circdist_lift_root_assembly_amendment1_20260822.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: circdist/reviews/circdist_lift_root_review_20260822.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: circdist/artifacts/circdist_lift_root_assembly_20260822.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: circdist/artifacts/definitions/CIRCDIST_PROBLEMS.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: circdist/artifacts/circdist_lift_recon_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: circdist/artifacts/circdist_lift_d3gate_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: circdist/artifacts/circdist_lift_litverify_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: circdist/reviews/circdist_lift_root_final_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: circdist/reviews/circdist_stim_crossval_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+routes:
+  criterion-corollary-example:
+    premises:
+    - CIRCDIST.lift.iff
+    - CIRCDIST.lift.nonint
+    - CIRCDIST.lift.gap-example
+    implication: 'The claim is the conjunction of its three components — the iff criterion with the intrinsic-voltage
+      non-vacuity bar, the non-interleaved corollary derived inside the same framework, and the explicit
+      strict-inequality example. Assembling them is a clause-to-child map plus two scope arguments: the
+      universal clauses restrict downward for free, while the existence clause requires the exhibited
+      witness to be verified graph-like in the per-sector sense of iff Definition 1.12 ([[4,2,2]]: yes,
+      structurally; Steane: no). Formalization consistency was checked and one contradiction was found
+      and repaired (R_sat <= d versus Corollary 7.3). The assembly inherits two hypotheses from the certified
+      criterion — measurement consistency (MC) and R >= d_sec — which bind every clause and which the
+      root claim now carries in its own text.'
+    proof:
+      sketch: Near-definitional assembly; the only content is that all three components speak the same
+        framework language (the winning iff formalization).
+      sources:
+      - path: circdist/artifacts/circdist_lift_recon_20260820.md
+        kind: text
+    assessment:
+      level: PROVED
+      summary: 'Route re-bound and promoted by the wave-32 final review: the R6-repaired implication (naming
+        (MC) and R >= d_sec) is the reviewed composition argument — the wave-26-era assembly chain plus
+        the wave-30/31/32 audits; all three premises PROVED.'
+      basis:
+        reviews:
+        - path: circdist/reviews/circdist_lift_root_final_20260823.md
+          kind: review
+          scope: Final sweep-and-fold review — constructs and blesses the repaired implication, verifies
+            the (MC) fold against Theorem 5.7's printed hypotheses, and licenses the route at PROVED;
+            supersedes the lapsed amendments4 binding (demoted to evidence).
+          locator: Section 5
+          reviewed_hash: sha256:b80da45d027e41942a3b20d60d8c6ffb693e9cb5a934e1267cb14d4ca1cc21ce
+        evidence:
+        - path: circdist/reviews/circdist_amendments4_review_20260822.md
+          kind: text
+frontier:
+  task-002:
+    task: Prove the overlap>=4 voltage criterion and the distance formula rigorously inside the Laurent-framework
+      formalization (both are theorem-shaped with 5129/5129 numerical backing; see event gate-d3-2026-08-20).
+    kind: task
+    since: '2026-08-20'

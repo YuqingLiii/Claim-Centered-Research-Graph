@@ -1,0 +1,31 @@
+Traceback (most recent call last):
+  File "/private/tmp/circdist_round78_cross_registry_20260829/stage/package/src/synthesize_cross_registry.py", line 400, in <module>
+    cv,pv,ft,wk,src=pair_selector(rel,i,j);sg=validate_support(t['sector'],cv,pv);h.update(struct.pack('>HH',i,j)+cv.to_bytes(18,'big')+pv.to_bytes(18,'big')+struct.pack('>BB',ft,wk));count+=1;hist[ft]+=1;selhist[src['kind']]+=1;sigs.add(sg)
+  File "/private/tmp/circdist_round78_cross_registry_20260829/stage/package/src/synthesize_cross_registry.py", line 372, in validate_support
+    rows,det,stabs,duals,pool=sector_context(lab);cs=signature(cv,det,duals);ps=signature(pv,det,duals);assert cs==ps and valid_signature(cs) and not M.inspan(cv,stabs) and not M.inspan(pv,stabs);return cs
+  File "/private/tmp/circdist_round78_cross_registry_20260829/stage/package/src/round63_src/model.py", line 101, in inspan
+    rr, piv = rref(rows, n)
+  File "/private/tmp/circdist_round78_cross_registry_20260829/stage/package/src/round63_src/model.py", line 87, in rref
+    if k != r and ((rows[k] >> c) & 1):
+KeyboardInterrupt
+time: command terminated abnormally
+real 715.44
+user 705.33
+sys 8.26
+          1073250304  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+               71137  page reclaims
+                  17  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   1  signals received
+                  27  voluntary context switches
+              223391  involuntary context switches
+      19060741736708  instructions retired
+       3052992958347  cycles elapsed
+          1069401120  peak memory footprint

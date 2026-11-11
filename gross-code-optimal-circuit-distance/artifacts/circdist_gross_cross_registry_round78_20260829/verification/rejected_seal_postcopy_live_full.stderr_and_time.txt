@@ -1,0 +1,30 @@
+Traceback (most recent call last):
+  File "<repo>/circdist/artifacts/circdist_gross_cross_registry_round78_20260829/verify.py", line 298, in <module>
+    if __name__=='__main__':main()
+  File "<repo>/circdist/artifacts/circdist_gross_cross_registry_round78_20260829/verify.py", line 295, in main
+    result={'schema':'round78-cross-registry-self-contained-verification-v1','manifest':verify_manifest(a.allow_unsealed),'compression':verify_compression(a.allow_unsealed),'bindings':verify_bindings(a.repo_root.resolve() if a.repo_root else None),'state_and_ledgers':verify_state_and_ledgers(),'processes':verify_processes(),'negative_controls':verify_negative_controls(),'proof_checker_controls':verify_proof_controls()}
+  File "<repo>/circdist/artifacts/circdist_gross_cross_registry_round78_20260829/verify.py", line 86, in verify_bindings
+    sp=repo_root/s['round76_source']['live_repo_path'];assert verify_nested_manifest(sp,s['round76_source']['seal_file_sha256'])==s['round76_source']['source_manifest_entries'];live+=1
+  File "<repo>/circdist/artifacts/circdist_gross_cross_registry_round78_20260829/verify.py", line 62, in verify_nested_manifest
+    expected=sorted(q.relative_to(pkg).as_posix() for q in pkg.rglob('*') if q.is_file() and q.name!='SHA256SUMS.txt');assert sorted(rows)==expected;return len(rows)
+AssertionError
+real 5.65
+user 5.29
+sys 0.34
+          4412735488  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              287603  page reclaims
+                  17  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   1  voluntary context switches
+                 461  involuntary context switches
+         64912554431  instructions retired
+         24172304531  cycles elapsed
+          4113698272  peak memory footprint

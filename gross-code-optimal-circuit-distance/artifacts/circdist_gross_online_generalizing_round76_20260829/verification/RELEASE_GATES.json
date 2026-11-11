@@ -1,0 +1,48 @@
+{
+  "accepted_preseal_full": {
+    "command": [
+      "VENV/python",
+      "PACKAGE/verify.py",
+      "--full",
+      "--allow-unsealed"
+    ],
+    "must_exit": 0,
+    "must_status": "PASS",
+    "scope": "final deterministic-gzip staging tree, before seal manifests"
+  },
+  "accepted_preseal_quick": {
+    "command": [
+      "VENV/python",
+      "PACKAGE/verify.py",
+      "--quick",
+      "--allow-unsealed"
+    ],
+    "must_exit": 0,
+    "must_status": "PASS"
+  },
+  "external_run_log_reason": "Accepted preseal and post-copy outputs are retained outside the immutable package during release; inserting their logs would change the tree they certify.",
+  "package_mutation_after_accepted_preseal_full": "only PAYLOAD_SHA256SUMS.txt and SHA256SUMS.txt may be created; no gzip member or mathematical payload may change",
+  "post_copy_sealed_full_live": {
+    "command": [
+      "VENV/python",
+      "INSTALLED/verify.py",
+      "--full",
+      "--repo-root",
+      "REPOSITORY"
+    ],
+    "must_exit": 0,
+    "must_status": "PASS"
+  },
+  "post_copy_sealed_quick_live": {
+    "command": [
+      "VENV/python",
+      "INSTALLED/verify.py",
+      "--quick",
+      "--repo-root",
+      "REPOSITORY"
+    ],
+    "must_exit": 0,
+    "must_status": "PASS"
+  },
+  "schema": "round76-release-verification-gates-v1"
+}

@@ -1,0 +1,43 @@
+{
+  "architecture": "arm64",
+  "base_python": {
+    "executable": "/Library/Developer/CommandLineTools/usr/bin/python3",
+    "sha256": "b8763cf250e607a778bb4603cecb5b90338814d0a3dfcba0d57b1de242f610e9",
+    "version": "3.9.6",
+    "z3_available_without_bound_pythonpath": false
+  },
+  "bound_python_environment": {
+    "invocation_prefix": [
+      "/usr/bin/env",
+      "PYTHONPATH=<repo>/circdist/artifacts/circdist_gross_global_closure_round102_20260901/python/site-packages",
+      "/usr/bin/python3"
+    ],
+    "libz3_dylib_sha256": "715f569dde1f66ae1784bb3d801824cdd7a76288d0473cac4e7503e1978d9a72",
+    "post_prune_import_and_sat_smoke": "PASS",
+    "site_packages": "python/site-packages",
+    "z3_module": "python/site-packages/z3/__init__.py",
+    "z3_version": "5.1.0"
+  },
+  "hostname": "MBP.local",
+  "max_parallel_solvers": 1,
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "proof_checkers": {
+    "drat_trim": {
+      "path": "tooling/drat-trim-arm64-macos",
+      "sha256": "f58f63b0f76945d4c4c9ff6e87afaf870f579e67c0f7cca589492df8fc7ebd47"
+    },
+    "lrat_check": {
+      "path": "tooling/lrat-check-arm64-macos",
+      "sha256": "bd7eb8052623525814a0a37502b47f05375d9d9dfaf96ddc2fcd858958517cea"
+    }
+  },
+  "proof_production_required_from_start": true,
+  "schema": "circdist-gross-round102-environment-v2",
+  "solver": {
+    "path": "tooling/cadical-1.9.5-arm64-macos",
+    "sha256": "fafdf4fb95a54ccee9b59f346544761896e40b076780a93f000e0357f20080c9",
+    "version": "1.9.5"
+  },
+  "status": "PASS",
+  "strict_serial": true
+}

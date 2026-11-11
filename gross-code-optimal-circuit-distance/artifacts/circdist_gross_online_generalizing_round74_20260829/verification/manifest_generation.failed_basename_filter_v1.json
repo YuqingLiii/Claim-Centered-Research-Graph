@@ -1,0 +1,16 @@
+{
+  "accepted_as_seal": false,
+  "archived_payload_path": "verification/manifest_generation.failed_basename_filter_v1.PAYLOAD_SHA256SUMS.txt",
+  "archived_root_path": "verification/manifest_generation.failed_basename_filter_v1.SHA256SUMS.txt",
+  "correction": "exclude only exact relative paths PAYLOAD_SHA256SUMS.txt and SHA256SUMS.txt; retain nested predecessor manifests",
+  "exit_code": 0,
+  "incorrect_external_root_sha256": "549b5b033d36ce787edecfacb52968d9306685a414891ada3cac065acc59fceb",
+  "incorrect_payload_manifest_sha256": "9733d2a5e4d9080dc763a53437864e556f56c28e248d468ba29eca83e06db2db",
+  "load_bearing": false,
+  "observed_payload_entries": 2247,
+  "observed_root_entries": 2251,
+  "reason": "draft generator excluded every nested file sharing the root manifest basenames instead of only the two exact package-root relative paths",
+  "research_payload_mutated": false,
+  "schema": "round74-manifest-generation-correction-v1",
+  "status": "REJECTED_AND_CORRECTED"
+}

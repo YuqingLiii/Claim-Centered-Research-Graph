@@ -1,0 +1,100 @@
+c --- [ banner ] -------------------------------------------------------------
+c 
+c CaDiCaL SAT Solver
+c Copyright (c) 2016-2023 A. Biere, M. Fleury, N. Froleyks, K. Fazekas, F. Pollitt
+c 
+c Version 1.9.5 146207318796f094dcded87349a64f0c6927309e
+c Apple clang version 21.0.0 (clang-2100.1.1.101) -Wall -Wextra -O3 -DNDEBUG
+c Sat Aug 29 01:43:05 EDT 2026 Darwin MBP.local 25.6.0 arm64
+c 
+c --- [ proof tracing ] ------------------------------------------------------
+c 
+c opening file to write '/private/tmp/circdist_round78_cross_registry_20260829/stage/package/controls/round78_proof_checker/php6_5.fresh.drat'
+c writing non-binary proof trace to '/private/tmp/circdist_round78_cross_registry_20260829/stage/package/controls/round78_proof_checker/php6_5.fresh.drat'
+c 
+c --- [ parsing input ] ------------------------------------------------------
+c 
+c reading DIMACS file from '/private/tmp/circdist_round78_cross_registry_20260829/stage/package/controls/round78_proof_checker/php6_5.cnf'
+c opening file to read '/private/tmp/circdist_round78_cross_registry_20260829/stage/package/controls/round78_proof_checker/php6_5.cnf'
+c found 'p cnf 30 141' header
+c parsed 141 clauses in 0.00 seconds process time
+c 
+c --- [ options ] ------------------------------------------------------------
+c 
+c   --binary=false                 (different from default 'true')
+c 
+c --- [ solving ] ------------------------------------------------------------
+c 
+c time measured in process time since initialization
+c 
+c  seconds  reductions  redundant irredundant
+c         MB    restarts       trail    variables
+c          level   conflicts       glue     remaining
+c 
+c *  0.00  0  0 0   0    0    0  0% 0  141  30 100%
+c {  0.00  0  0 0   0    0    0  0% 0  141  30 100%
+c i  0.00  0  3 0   0   27   12 100% 3  141  29 97%
+c i  0.00  0  4 0   1   67   37 100% 3  141  28 93%
+c i  0.00  0  4 0   1   77   41 99% 3  141  27 90%
+c i  0.00  0  4 0   1  126   73 99% 3  141  17 57%
+c i  0.00  0  4 0   1  132   77 99% 3  141  16 53%
+c i  0.00  0  4 0   1  138   78 99% 3  141   9 30%
+c }  0.00  0  4 0   1  140   78 99% 3  141   0  0%
+c 0  0.00  0  4 0   1  140   78 99% 3  141   0  0%
+c 
+c --- [ closing proof ] ------------------------------------------------------
+c 
+c DRAT proof file '/private/tmp/circdist_round78_cross_registry_20260829/stage/package/controls/round78_proof_checker/php6_5.fresh.drat' closed
+c DRAT 164 added clauses 74.89%
+c DRAT 55 deleted clauses 25.11%
+c DRAT 3114 bytes (0.00 MB)
+c 
+c --- [ result ] -------------------------------------------------------------
+c 
+s UNSATISFIABLE
+c 
+c --- [ run-time profiling ] -------------------------------------------------
+c 
+c process time taken by individual solving procedures
+c (percentage relative to process time for solving)
+c 
+c         0.00   93.17% search
+c         0.00   88.05% unstable
+c         0.00   12.97% parse
+c         0.00    2.39% lucky
+c         0.00    0.00% simplify
+c   =================================
+c         0.00   57.56% solve
+c 
+c last line shows process time for solving
+c (percentage relative to total process time)
+c 
+c --- [ statistics ] ---------------------------------------------------------
+c 
+c chronological:                23        16.43 %  of conflicts
+c conflicts:                   140    477815.70    per second
+c decisions:                   147    501706.48    per second
+c fixed:                        30       100.00 %  of all variables
+c learned:                     135        96.43 %  per conflict
+c learned_lits:                920       100.00 %  learned literals
+c minimized:                     0         0.00 %  learned literals
+c shrunken:                    353        38.37 %  learned literals
+c minishrunken:                  7         0.76 %  learned literals
+c otfs:                          6         4.29 %  of conflict
+c propagations:               1549         5.29 M  per second
+c restarts:                      1       140.00    interval
+c subsumed:                     51        18.96 %  of all clauses
+c strengthened:                  5         1.86 %  of all clauses
+c trail reuses:                  0         0.00 %  of incremental calls
+c 
+c seconds are measured in process time for solving
+c 
+c --- [ resources ] ----------------------------------------------------------
+c 
+c total process time since initialization:         0.00    seconds
+c total real time since initialization:            0.00    seconds
+c maximum resident set size of process:         2176.00    MB
+c 
+c --- [ shutting down ] ------------------------------------------------------
+c 
+c exit 20

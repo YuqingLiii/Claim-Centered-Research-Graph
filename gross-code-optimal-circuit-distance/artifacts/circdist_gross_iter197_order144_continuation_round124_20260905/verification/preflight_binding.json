@@ -1,0 +1,100 @@
+{
+  "dispatch": {
+    "observed": {
+      "base": {
+        "bytes": 310893485,
+        "path": "<repo>/circdist/artifacts/circdist_gross_iter196_order144_continuation_round122_20260904/frontier/iter197/formula/outer.cnf",
+        "sha256": "f46bc3862e2c4db10570d73d5a364750fa1892d90ecd0fa3d08fe411c3755ef3"
+      },
+      "gross": {
+        "bytes": 174488,
+        "path": "<repo>/circdist/proof-dag/nodes/CIRCDIST.gross.yaml",
+        "sha256": "1ff87b5e421e72c8df4557f23efac5becbf1da35cd6077577b8c211ce5a2b140"
+      },
+      "proofpilot": {
+        "bytes": 47855,
+        "path": "/private/tmp/circdist-round124-proofpilot-rank.json",
+        "sha256": "c363db975d3436eccbdbc57e6d952bee52bf49f0c010484369cb5c0ad46ddbdf"
+      },
+      "quotient": {
+        "bytes": 604886899,
+        "path": "<repo>/circdist/artifacts/circdist_gross_iter196_order144_continuation_round122_20260904/frontier/iter197/order144_quotient/outer.cnf",
+        "sha256": "fe73a93b7a171fd2afcffe210729f165684297d3d85f4260d883e5ed69ffd334"
+      },
+      "review": {
+        "bytes": 205855,
+        "path": "<repo>/circdist/reviews/circdist_gross_iter196_order144_continuation_round122_exact_review_round123_20260905.md",
+        "sha256": "436ee1dc38e0506d0048dd07084417964637de50de848ed076449fdf0311b0cb"
+      },
+      "root_manifest": {
+        "bytes": 84466,
+        "path": "<repo>/circdist/artifacts/circdist_gross_iter196_order144_continuation_round122_20260904/SHA256SUMS.txt",
+        "sha256": "8871b88af19ea26b051f9fc1cdeea12e2fcb00dc43e486710748e2493ec36a28"
+      },
+      "scheduler": {
+        "bytes": 412210,
+        "path": "<repo>/operations/circdist/SCHEDULER.yaml",
+        "sha256": "614e571512506e8b5e0306fbd01fa52077a98eef449939fb784bfe06d4f4e6f3"
+      },
+      "solver": {
+        "bytes": 967144,
+        "path": "<repo>/circdist/artifacts/circdist_gross_iter196_order144_continuation_round122_20260904/tooling/cadical-1.9.5-arm64-macos",
+        "sha256": "fafdf4fb95a54ccee9b59f346544761896e40b076780a93f000e0357f20080c9"
+      },
+      "source": {
+        "bytes": 62121545,
+        "path": "<repo>/circdist/artifacts/circdist_gross_iter196_order144_continuation_round122_20260904/frontier/iter197/source.json.gz",
+        "sha256": "6ce8b8593fabc80ce0917f342126e351da30114802765a46773da348115aec44"
+      },
+      "state": {
+        "bytes": 789,
+        "path": "<repo>/circdist/artifacts/circdist_gross_iter196_order144_continuation_round122_20260904/frontier/iter197/state.json",
+        "sha256": "cd005e436ff92c66badefb5a30e83531d81d9339bfbc047ebbdbb32627eb1ed0"
+      },
+      "unstarted_audit": {
+        "bytes": 2938,
+        "path": "<repo>/circdist/artifacts/circdist_gross_iter196_order144_continuation_round122_20260904/frontier/iter197/CHECKED_UNSTARTED.json",
+        "sha256": "68e06e13c5242beb3d0170565968b911ba68e2b0715d8c3b91a33c4a8f8761b5"
+      }
+    },
+    "score": "0.00014884524515336767",
+    "winner": "CIRCDIST.gross@dstar-residual"
+  },
+  "frontier": {
+    "assertions": 870342,
+    "base": {
+      "bytes": 310893485,
+      "clauses": 11511680,
+      "raw": "p cnf 3140244 11511680",
+      "sha256": "f46bc3862e2c4db10570d73d5a364750fa1892d90ecd0fa3d08fe411c3755ef3",
+      "variables": 3140244
+    },
+    "blocks": 814392,
+    "equisatisfiable_with_exact_base": true,
+    "forbidden_artifacts": [],
+    "iteration": 197,
+    "prior_round124_solver_starts": 0,
+    "quotient": {
+      "bytes": 604886899,
+      "clauses": 21395983,
+      "raw": "p cnf 4375764 21395983",
+      "roots": 143,
+      "sha256": "fe73a93b7a171fd2afcffe210729f165684297d3d85f4260d883e5ed69ffd334",
+      "variables": 4375764
+    },
+    "selector_state_sha256": "2b5d1178c5532d62f8e6266d627aaa4c228fa18526e7f79156cc667b1e207608",
+    "selectors": 51552,
+    "semantic_source_sha256": "bee49435279caa3fb6cc02e0f1b145e3568eb54e6d3ac02c49e5bae3c5fa42f4",
+    "source_sha256": "6ce8b8593fabc80ce0917f342126e351da30114802765a46773da348115aec44",
+    "state_sha256": "cd005e436ff92c66badefb5a30e83531d81d9339bfbc047ebbdbb32627eb1ed0",
+    "status_before_science": "CHECKED_UNSTARTED",
+    "unstarted_audit_sha256": "68e06e13c5242beb3d0170565968b911ba68e2b0715d8c3b91a33c4a8f8761b5"
+  },
+  "limitations": [
+    "This preflight does not solve either formula.",
+    "The quotient theorem is scoped only to the exact invariant iteration-197 base."
+  ],
+  "root_manifest_rows": 667,
+  "schema": "circdist-gross-round124-iter197-preflight-binding-v1",
+  "status": "PASS"
+}

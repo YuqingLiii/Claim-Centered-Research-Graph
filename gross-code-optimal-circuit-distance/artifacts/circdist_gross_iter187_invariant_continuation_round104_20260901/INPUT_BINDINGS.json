@@ -1,0 +1,81 @@
+{
+  "created_utc": "2026-09-01T08:59:41.696676+00:00",
+  "environment": {
+    "cwd": "<repo>",
+    "machine": "arm64",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "python": "3.9.6"
+  },
+  "expected_and_observed": {
+    "bindings/CIRCDIST.gross.yaml": {
+      "bytes": 99195,
+      "lf": 1080,
+      "sha256": "dd367bf93e59e10588a824d4f530a0b07c3707d43886004bb3ddb754f0ff7d91"
+    },
+    "bindings/SCHEDULER.yaml": {
+      "bytes": 283898,
+      "lf": 3346,
+      "sha256": "d9bcb7affe40ed12a479785f5a102673108b4322fe0d20a1cf6da4483069c31f"
+    },
+    "bindings/round103_review.md": {
+      "bytes": 146715,
+      "lf": 1707,
+      "sha256": "a7e027b228d785fae5280b33ab95f7999bb4e9b3e001cd30a5816444637db48e"
+    },
+    "inputs/round102/SHA256SUMS.txt": {
+      "bytes": 85304,
+      "lf": 724,
+      "sha256": "80e70f62075a852355029b765cbe7ebfa4f8156d25b6d9fa2ea1ddbb9e19b4f4"
+    },
+    "inputs/round102/frontier/iter187_full_invariant/formula/outer.cnf": {
+      "bytes": 185106677,
+      "lf": 6882040,
+      "sha256": "7f66b46643b6b10cce57358e4e66f7e95cdc1bfe52ee14f77884c56ddd5d5eab"
+    },
+    "inputs/round102/frontier/iter187_full_invariant_quotient/outer.cnf": {
+      "bytes": 331075436,
+      "lf": 11789631,
+      "sha256": "e415b4c2c5b4923a47348a06ea9ebb06bbc85cea2c9c32bd3a9b25a1ce198234"
+    }
+  },
+  "frontier": {
+    "base_clauses": 6882039,
+    "base_variables": 1838894,
+    "blocks": 517140,
+    "fresh_unstarted": true,
+    "iteration": 187,
+    "quotient_clauses": 11789630,
+    "quotient_directory_exact_unstarted_file_set": [
+      "independent_check.json",
+      "metadata.json",
+      "outer.cnf",
+      "translation_roots.jsonl",
+      "translation_trace.json.gz"
+    ],
+    "quotient_variables": 2452334,
+    "selectors": 24012,
+    "source_sha256": "d7a1f6bf63b328627362a70518f5beb77d3b4b32241ccaaab83d6d5d5c122124",
+    "state_sha256": "b7fa430f67bdcb8fdb034c8e42174ee219d0d77ecdbe57f99576de1518de9bea"
+  },
+  "package": "<repo>/circdist/artifacts/circdist_gross_iter187_invariant_continuation_round104_20260901",
+  "round102_root_sha256sums_digest": "80e70f62075a852355029b765cbe7ebfa4f8156d25b6d9fa2ea1ddbb9e19b4f4",
+  "schema": "circdist-gross-round104-input-bindings-v1",
+  "status": "PASS",
+  "tooling": {
+    "cadical-1.9.5-arm64-macos": {
+      "bytes": 967144,
+      "lf": 6780,
+      "sha256": "fafdf4fb95a54ccee9b59f346544761896e40b076780a93f000e0357f20080c9"
+    },
+    "drat-trim-arm64-macos": {
+      "bytes": 70120,
+      "lf": 249,
+      "sha256": "f58f63b0f76945d4c4c9ff6e87afaf870f579e67c0f7cca589492df8fc7ebd47"
+    },
+    "lrat-check-arm64-macos": {
+      "bytes": 36552,
+      "lf": 72,
+      "sha256": "bd7eb8052623525814a0a37502b47f05375d9d9dfaf96ddc2fcd858958517cea"
+    }
+  }
+}

@@ -1,0 +1,169 @@
+id: CIRCDIST.lift.iff
+role: proof
+aliases:
+- LIFT-IFF
+claim: 'In graph-like detector error models with fixed boundaries, for memory experiments C_R(M) with
+  R >= d_sec (the spatial distance of the sector''s own logical class: d_X for the Z-memory, d_Z for the
+  X-memory), d_circ equals the minimum over nontrivial effective logicals gamma of the length of the shortest
+  closed spacetime lift of gamma, with an intrinsic zero-voltage/monodromy condition characterizing same-weight
+  liftability at minimum weight — and the voltage is computable without constructing the full multi-round
+  circuit (non-vacuity bar).'
+assumptions:
+  model-fact-v:
+    kind: model-fact
+    statement: '(V): U(empty) subset {0} union {e_b} — the empty-residual voltage inventory contains only
+      the zero vector and single-basis vectors. Load-bearing ("(V) is everything", proof §7.3); ESTABLISHED,
+      not assumed: attacked by the base review §4.2 numerically (440/440 empty-residual voltage vectors
+      of weight <= 1) and structurally (a 2-qubit fault lives on one CNOT whose two qubits are never two
+      Z-ancillas, so no elementary fault puts X on two Z-ancillas at once — a derivation from the frozen
+      公共定义 fault menu).'
+    source:
+      path: circdist/reviews/circdist_lift_proofs_review_20260820.md
+      kind: review
+      locator: Section 4.2
+assessment:
+  level: PROVED
+  caveats:
+  - 'The d_X != d_Z regime, previously never probed (all 282 base-review instances had d_X = d_Z), is
+    now TRIPLY swept: 194 (wave 22) + 128 (wave 23) + 405 (wave-29 end-to-end review, on two families
+    no prior sweep touched — hypergraph-product + rectangular Shor), 0 ceiling violations in all three;
+    the old constant fails 43/128 and 63/405.'
+  - 'Shared model design is not independence (wave-29, standing campaign limitation): every independent
+    implementation re-implements the frozen 公共定义 Definition 1.8 DESIGN (which locations exist, which Paulis
+    are available), so a systematic mismatch between the frozen model and a real compiler would survive
+    all of them — a stim cross-check now exists but is NARROW: artifacts/circdist_stim_crossval_20260823.md
+    (stim 1.16.0) confirms d_circ = d_eff on six repair-0 (non-interleaved) sector-instances across [[4,2,2]],
+    Steane and rotated surface, and separately shows the frozen inventory to be DEM-column-complete against
+    reset/measure idle locations and against a noisy terminal readout. This is a REPAIR-0 SPOT CHECK ONLY:
+    the criterion at repair >= 1 (the node''s own load-bearing regime) has NO stim cross-check, and d_eff
+    there was imported rather than recomputed.'
+  - The dossier is a FIVE-FILE append-only composition (base + Amendments 1-4, with Amendment 2 §3.2 a
+    discharged no-op), byte-verified but not consolidated; a consolidation pass is recommended, non-blocking.
+  - 'EXCLUSION (adjudicated 2026-08-23, artifacts/circdist_iff_scope_adjudication_20260823.md): the general
+    lift-length formula for repair >= 3 and its min-cost-covering replacement lie OUTSIDE this claim.
+    All three conjuncts are repair-0-scoped: conjunct 1 is Theorem 5.6(a), in which no repair term occurs;
+    conjunct 2 is Theorem 5.7, whose (=>) needs no hypothesis on repair and whose (<=) uses only min(repair,2)
+    >= 1; conjunct 3''s "voltage" is the (LIFT'')/repair data of Definition 5.2, one-round computable
+    unconditionally, with 5.10(2) supplying a repair-free decision procedure for d_circ. The hash-bound
+    review states the same boundary (§7.1: repair >= 3 "outside this claim/review"). This REVERSES the
+    wave-11 reading of the repair >= 3 gap as a scope caveat.'
+  - Certification is for the exact current node claim and the reviewed minimum-weight repair-0/closed-lift
+    criterion, not for stronger formulas mentioned as future work.
+  - Large proposer scans (98811 surface schedules, 3855/3855, the 321059/321059 symmetry) were not independently
+    reproduced; the reviewer reproduced 282 instances at repair in {0,1} only.
+  - The pre-existing 5.6(d) concern is unreviewed but is NOT a premise of this claim (hash-bound review
+    limitations item 2 states this explicitly; adjudication confirms).
+  - Model fact (V) is registered in this node's assumptions block (lead-approved §2 amendment 2026-08-23,
+    node-level assumptions for direct-proof nodes) with its establishing evidence.
+  - Per-sector scope — everything is stated for one memory sector.
+  summary: The exact minimum-weight repair-zero/closed-lift criterion and its one-round decision construction
+    are PROVED after the end-to-end review of the five-file dossier. The corrected window is d_sec with
+    crossed sector pairing. This does not prove the proposed general lift-length formula for repair >=
+    3; that extension and the (MC) wording fold remain separate work.
+  basis:
+    reviews:
+    - path: circdist/reviews/circdist_iff_endtoend_review_20260823.md
+      kind: review
+      scope: End-to-end claim-level review of the assembled dossier (base + Amendments 1-4) against the
+        exact claim — per-conjunct derivation-level verification with four holes filled, two load-bearing
+        computations re-verified on fresh families (405-instance sweep; independent (LIFT')-only program
+        139/139), composition audit, caveat audit; verdict PROVED-QUALIFIES conditional on the D1/D2 record
+        repairs, executed at promotion.
+      locator: Section 8
+      reviewed_hash: sha256:0c4c466b895d938d2028140967d87974ee2216b3cebcc48967804f530e227240
+    - path: circdist/reviews/circdist_iff_amendment3_review_20260823.md
+      kind: review
+      scope: Focused independent re-review of Amendment 3 (own simulator, no shared code) — Lemma A confirmed
+        128/128 incl. 48 non-MC and 74 non-graph-like instances with the crossed pairing load-bearing
+        on 43; the whole-circuit 5.10 reading confirmed 26/26; the wave-17 unargued band shown CLOSED
+        twice; Q_m tightness verified and extended to m = 6; 128 fresh d_X != d_Z triples with 0 violations
+        of d_sec (43 of the old d); R1-R12 drift-checked 17/17; blesses and binds the corrected R >= d_sec
+        claim; licenses CERTIFIED* with two residual amendment defects recorded.
+      locator: Section 4.1
+      reviewed_hash: sha256:0c4c466b895d938d2028140967d87974ee2216b3cebcc48967804f530e227240
+    runs:
+    - path: circdist/artifacts/circdist_lift_iff_proof_20260820.md
+      kind: run
+      scope: Corroboration of the two theorems (not the proofs themselves) — minimum-weight logical sweep
+        across the MC surface-schedule family plus independent reproduction of the d3-gate Steane numbers.
+      result: 3855/3855 minimum-weight logicals satisfy (LIFT') and the weight accounting; 148370/790488
+        hook classes diagonal and 0 vertical over 98811 MC surface schedules (as Theorem 1 requires);
+        d3-gate Steane numbers reproduced.
+    evidence:
+    - path: circdist/artifacts/circdist_lift_iff_proof_20260820.md
+      kind: text
+    - path: circdist/reviews/circdist_lift_proofs_review_20260820.md
+      kind: text
+    - path: circdist/reviews/circdist_amendments2_review_20260820.md
+      kind: text
+    - path: circdist/reviews/circdist_lift_claimrepair2_review_20260823.md
+      kind: text
+    - path: circdist/artifacts/circdist_lift_iff_amendment1_20260820.md
+      kind: text
+    - path: circdist/artifacts/circdist_lift_iff_amendment2_20260820.md
+      kind: text
+    - path: circdist/artifacts/circdist_lift_iff_amendment3_20260823.md
+      kind: text
+    - path: circdist/artifacts/circdist_lift_iff_amendment4_20260823.md
+      kind: text
+    - path: circdist/reviews/circdist_iff_scope_adjudication_20260823.md
+      kind: text
+    - path: circdist/artifacts/history/pre_protocol_20260826/nodes/CIRCDIST.lift.iff.yaml
+      kind: text
+      note: Immutable pre-migration record, including every original event, former summary and frontier;
+        historical evidence, not an additional completion review.
+    - path: circdist/reviews/circdist_readjudication_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: circdist/reviews/circdist_amendments_review_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: circdist/artifacts/circdist_lift_d3gate_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: circdist/artifacts/circdist_lift_litverify2_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: circdist/artifacts/circdist_lift_recon_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: circdist/artifacts/history/legacy_DAG_PROTOCOL.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: circdist/reviews/circdist_iff_amendment3_review_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: circdist/reviews/circdist_iff_endtoend_review_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: circdist/reviews/circdist_stim_crossval_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+frontier:
+  task-008:
+    task: 'Post-campaign hygiene (wave-32 finding, non-propagating): this claim shares the (MC) omission
+      the root repaired — Theorem 5.7''s printed hypothesis "legal, measurement-consistent" is not named
+      in the claim text (the root is now narrower, so nothing false is asserted anywhere). Fold "legal,
+      measurement-consistent (MC)" into the quantification via the blessed-then-installed pattern when
+      next touched.'
+    kind: task
+    since: '2026-08-23'
+  task-006:
+    task: 'Extend Theorem 2 past repair >= 3: retarget at the min-cost-covering form (the weight-2 pair
+      gadget shows the naive formula likely fails; split-pair mechanisms survive graph-likeness).'
+    kind: task
+    since: '2026-08-20'
+  task-003:
+    task: Gap formula and equality-decision algorithm (g(C) = voltage repair cost; test without building
+      C_R(M)) — registered as the extension target, P 0.25, D 3; matching lower bound is the hard part.
+    kind: task
+    since: '2026-08-20'

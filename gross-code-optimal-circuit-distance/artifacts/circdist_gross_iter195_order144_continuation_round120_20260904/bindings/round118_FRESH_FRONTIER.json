@@ -1,0 +1,75 @@
+{
+  "base": {
+    "assertions": 869838,
+    "clauses": 11459291,
+    "encoding_check": "PASS",
+    "path": "frontier/iter195/formula/outer.cnf",
+    "sha256": "952b2dc06d859cb8fa30a51ce3a6e32cd47ac6ffc310e6465ab205a0b084c099",
+    "variables": 3124223
+  },
+  "closure": {
+    "css": "PASS",
+    "nonfree_orbits_explicitly_handled": true,
+    "orbit_sizes": [
+      72,
+      36,
+      72,
+      36
+    ],
+    "order144": true,
+    "stabilizer_sizes": [
+      1,
+      2,
+      1,
+      2
+    ],
+    "translation": "PASS"
+  },
+  "iteration": 195,
+  "next_mandatory_action": "Solve exactly frontier/iter195/order144_quotient/outer.cnf proof-first before rebuilding or substituting any formula.",
+  "quotient": {
+    "clauses": 21343594,
+    "equisatisfiable_with_full_iter195_base": true,
+    "group_order": 144,
+    "independent_check": "PASS",
+    "path": "frontier/iter195/order144_quotient/outer.cnf",
+    "roots": 143,
+    "sha256": "cbab91a2bd7ba5e89db0e6cf52f8b5d3daaa9d6d1a33b1388b1db423e11cdbd6",
+    "variables": 4359743
+  },
+  "root_verdict_unchanged": {
+    "CIRCDIST.gross": "CONJECTURED",
+    "Dstar_Gross": [
+      11,
+      12
+    ],
+    "branch_A_legal_distance12_schedule_established": false,
+    "branch_B_universal_distance_at_most11_established": false,
+    "fresh_review_required": true,
+    "gap_via_lift": "CONJECTURED",
+    "precise_result": "one exact legal iter194 schedule is killed in both direct sectors; no root branch closes",
+    "promotion_or_narrowing": null
+  },
+  "schema": "circdist-gross-round118-fresh-frontier-v1",
+  "source": {
+    "assertions": 869838,
+    "blocks": 814392,
+    "path": "frontier/iter195/source.json.gz",
+    "selector_state_sha256": "231a37783821b049e50f3f9920413010bd497382f4c02f4beee7637757124857",
+    "selectors": 51048,
+    "semantic_sha256": "fa3a1b80b6b33a6ef14fa314aba2fd8acc394af588bb670a36d8bcffb44cb55b",
+    "sha256": "e32f3e98e8c7b1a73a59a2e75b963abf080abcf23457aeb90bf25f17bcfdc16a",
+    "state_sha256": "4ad41e85dcb37973caec6ac8cc9939f3e3b9aa842ba2ff00e1c8c0007bd44be0"
+  },
+  "status": "CHECKED_UNSTARTED",
+  "unstarted": {
+    "audit_path": "frontier/iter195/CHECKED_UNSTARTED.json",
+    "audit_sha256": "4f712ae48b154682cdc3d793c9ca53d324892d476d2a07702ff833e40da6cd73",
+    "sat": null,
+    "solver_invocations": 0,
+    "solver_model_assignment_proof_artifacts": [],
+    "solver_status": null,
+    "state_started": false,
+    "unsat": null
+  }
+}

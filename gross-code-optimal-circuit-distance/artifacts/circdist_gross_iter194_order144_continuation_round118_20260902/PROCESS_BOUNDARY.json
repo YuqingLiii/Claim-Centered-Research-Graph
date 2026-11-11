@@ -1,0 +1,25 @@
+{
+  "all_started_have_exactly_one_reap": true,
+  "excluded_by_design": [
+    "the active cutpoint snapshot operation itself",
+    "post-cutpoint administrative audit installation",
+    "sealing and read-only seal verification",
+    "installed-root read-only replay",
+    "scratch cleanup"
+  ],
+  "ledger": "logs/process/session_process.jsonl",
+  "note": "Post-cutpoint operations are separately reported from their wrapper/replay outputs; none may invoke a solver or change retained science.",
+  "post_cutpoint_science_permitted": false,
+  "processes": 142,
+  "rows": 284,
+  "schema": "circdist-gross-round118-process-ledger-cutpoint-v1",
+  "science_complete_before_cutpoint": true,
+  "solver_processes": 3,
+  "solver_returncodes": [
+    10,
+    10,
+    10
+  ],
+  "status": "PASS",
+  "strict_serial_nonoverlap": true
+}

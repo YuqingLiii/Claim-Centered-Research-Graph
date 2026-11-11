@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/tmp/circdist-r74-work/verify.py", line 216, in <module>
+    if __name__=='__main__':main()
+  File "/tmp/circdist-r74-work/verify.py", line 213, in main
+    result={'schema':'round74-self-contained-verification-v1','manifest':verify_manifest(a.allow_unsealed),'compression':verify_compression(),'bindings':verify_bindings(a.repo_root.resolve() if a.repo_root else None),'cegar_quick':verify_cegar_quick(),'generalization_quick':verify_generalization_quick(),'processes':verify_process_ledger(),'negative_controls':verify_negative_controls(),'proof_checker_controls':verify_proof_controls()}
+  File "/tmp/circdist-r74-work/verify.py", line 109, in verify_generalization_quick
+    wbc={x['sector']:x['count'] for x in wb['sectors']};assert wbc=={'Xerr':9438,'Zerr':9435}
+AssertionError

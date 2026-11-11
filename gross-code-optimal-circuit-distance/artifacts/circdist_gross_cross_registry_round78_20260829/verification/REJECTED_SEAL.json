@@ -1,0 +1,139 @@
+{
+  "diagnosis": {
+    "erroneous_expected_files_excluding_every_basename_SHA256SUMS_txt": 1348,
+    "extra_actual_files": [],
+    "manifest_extra_under_erroneous_rule": [
+      "source_bindings/round74/SHA256SUMS.txt"
+    ],
+    "missing_files": [],
+    "round76_actual_files_excluding_only_root_seal": 1349,
+    "round76_manifest_rows": 1349,
+    "row_hash_mismatches": [],
+    "source_seal_sha256": "e966770d8839eeeabbd672a4c4a647d1b92fb9a2955b6750834d7f6bda1cb87e"
+  },
+  "manifest_site_audit": {
+    "all_sites_root_relative_after_fix": true,
+    "compression_basename_filters_are_not_manifest_self_exclusion": true,
+    "load_bearing_sites": 3,
+    "remaining_manifest_basename_exclusions": 0,
+    "sites": [
+      {
+        "excludes_exact_relative_paths": [
+          "SHA256SUMS.txt"
+        ],
+        "function": "verify_manifest",
+        "set": "seal"
+      },
+      {
+        "excludes_exact_relative_paths": [
+          "SHA256SUMS.txt",
+          "PAYLOAD_SHA256SUMS.txt"
+        ],
+        "function": "verify_manifest",
+        "set": "payload"
+      },
+      {
+        "excludes_exact_relative_paths": [
+          "SHA256SUMS.txt"
+        ],
+        "function": "verify_nested_manifest",
+        "set": "nested seal"
+      }
+    ]
+  },
+  "rejected_gate": {
+    "command": [
+      "VENV/python",
+      "INSTALLED/verify.py",
+      "--full",
+      "--repo-root",
+      "REPOSITORY"
+    ],
+    "exit_code": 1,
+    "failure": "verify_nested_manifest expected-set assertion for round76 live source",
+    "maximum_resident_set_bytes": 4412735488,
+    "peak_memory_footprint_bytes": 4113698272,
+    "real_seconds": 5.65,
+    "stderr_and_time_path": "verification/rejected_seal_postcopy_live_full.stderr_and_time.txt",
+    "stderr_and_time_sha256": "ebb7ae47fc1cc7b32cd483b037ed1162dea5303610c37e52bd2b703e17f608e0",
+    "stdout_bytes": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "rejected_package_bytes": 198760581,
+  "rejected_package_files": 1135,
+  "rejected_payload_manifest_sha256": "7a51f8a2f7fc9ed7d04267fed0398e1f2749756de2f50e0c233d3c7e5f0de4a7",
+  "rejected_seal_no_live_full": {
+    "direct_assignments": 24,
+    "exit_code": 0,
+    "factorized_tuples": 15485313024,
+    "literal_tuple_replays": 43834872,
+    "live_bindings_checked": 0,
+    "maximum_resident_set_bytes": 4528914432,
+    "operator_note": "The intended quick diagnostic omitted --quick; default verifier behavior is FULL. It was allowed to finish naturally; no signal or timeout.",
+    "outer_replays": 12,
+    "peak_memory_footprint_bytes": 4229942848,
+    "raw_mechanisms": 96,
+    "real_seconds": 428.77,
+    "result_path": "verification/rejected_seal_postcopy_full_no_live.json",
+    "result_sha256": "e01df232762ad15f3bfbc030b194c0ccab8b5dd3e443ee784fb3484aea5006a5",
+    "status": "PASS",
+    "time_path": "verification/rejected_seal_postcopy_full_no_live.time.txt",
+    "time_sha256": "d8b8120890b42c0a91ee57c2303ac5cdd6595cf0de882f8d7a8fa6fd05f154b0",
+    "wall_seconds": 428.716715041
+  },
+  "rejected_seal_sha256": "1f4c0e3dd75b3aaed8551be79be92191478fd0ecaaad6f860dcf859634d85f5b",
+  "rejected_second_seal": {
+    "correct_manifest_set": true,
+    "manifest_extra_paths": [],
+    "manifest_missing_paths": [],
+    "manifest_row_hash_mismatches": [],
+    "package_bytes": 198796526,
+    "package_files": 1139,
+    "payload_manifest_sha256": "62163cb371dcbcbc73dc87041739fb55ec037e05480e5b80b872b7632d51bcae",
+    "payload_rows": 1137,
+    "postcopy_full_live": {
+      "erroneous_expected_paths": 1136,
+      "exit_code": 1,
+      "failure": "root verify_manifest expected-set assertion",
+      "manifest_rows": 1138,
+      "maximum_resident_set_bytes": 73613312,
+      "peak_memory_footprint_bytes": 68534680,
+      "real_seconds": 0.16,
+      "stderr_and_time_path": "verification/rejected_second_seal_postcopy_full_live.stderr_and_time.txt",
+      "stderr_and_time_sha256": "44b572246018a536dcb65634be2e50ebe7bee80a343e8e622a4e3347f9f62a44",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "preseal_full_live": {
+      "live_bindings_checked": 6,
+      "maximum_resident_set_bytes": 4528963584,
+      "real_seconds": 426.44,
+      "result_sha256": "e86434b3a4b7811437417fa7467fa7c705b51b16b9acab37f9c94793febc1d66",
+      "status": "PASS"
+    },
+    "preseal_quick_live": {
+      "live_bindings_checked": 6,
+      "real_seconds": 6.01,
+      "result_sha256": "993db76cd420ad68d5cab35131614ccb2e24828b1e996ac38ab8e36b51fb5516",
+      "status": "PASS"
+    },
+    "seal_rows": 1138,
+    "seal_sha256": "9f703d88470629decbf8304fd5e723b2790bae4c6707842879e0ae3be487d7df",
+    "stale_basename_rule_omitted": [
+      "source_bindings/round74/SHA256SUMS.txt",
+      "source_bindings/round76/SHA256SUMS.txt"
+    ],
+    "status": "REJECTED_NOT_LICENSED"
+  },
+  "release_policy": "Both rejected seals are not licensed for review or restart. Only the later seal produced after all three manifest sites are root-relative and fresh compressed preseal quick/FULL gates pass is accepted.",
+  "repair": {
+    "meaning": "exclude only the root seal while retaining nested manifests",
+    "monkeypatch_or_shadow_repo_used": false,
+    "new_condition": "q.relative_to(pkg).as_posix()!='SHA256SUMS.txt'",
+    "old_condition": "q.name!='SHA256SUMS.txt'",
+    "scope": "verify.py only plus complete release-incident disclosures; no mathematical payload recomputation",
+    "source_package_mutated": false
+  },
+  "schema": "round78-rejected-seals-live-and-root-manifest-fixes-v2",
+  "status": "REJECTED_SEALS_RECORDED"
+}

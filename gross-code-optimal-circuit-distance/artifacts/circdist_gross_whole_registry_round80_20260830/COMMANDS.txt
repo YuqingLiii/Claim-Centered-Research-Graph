@@ -1,0 +1,13 @@
+# Representative commands; all paths were package-local or disposable scratch.
+python src/synthesize_cross_registry.py --root PACKAGE --generalized-state START_G --registry-state START_R --raw-mechanisms-state START_RAW --dynamic-blocks-state START_D --output-root whole_registry/pair_leaf_reconstruction --batch-id pair-leaf-pre090
+python src/synthesize_whole_registry.py --root PACKAGE --leaf-root whole_registry/pair_leaf_reconstruction --generalized-state classification/installed_generalized_terms.json --output-root whole_registry/hitting_synthesis --batch-id pre090 --max-retained 24
+python src/run_round80_range.py --start 90 --end 101 --root PACKAGE --python VENV/python
+python src/build_round80_aggregate.py --root PACKAGE
+python src/build_round80_proof_controls.py --root PACKAGE
+python src/build_round80_negative_controls.py --root PACKAGE
+python verify.py --quick --allow-unsealed --repo-root REPOSITORY
+python verify.py --full --allow-unsealed --repo-root REPOSITORY
+python src/compress_round80.py --root PACKAGE
+python verify.py --quick --allow-unsealed --repo-root REPOSITORY
+python verify.py --full --allow-unsealed --repo-root REPOSITORY
+# Then generate root-relative payload/root manifests, hash SHA256SUMS.txt externally, atomically install, and repeat quick/full with live bindings.

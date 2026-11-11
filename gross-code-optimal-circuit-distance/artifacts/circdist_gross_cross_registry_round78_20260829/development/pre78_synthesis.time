@@ -1,0 +1,29 @@
+Traceback (most recent call last):
+  File "/private/tmp/circdist_round78_cross_registry_20260829/stage/package/src/synthesize_cross_registry.py", line 287, in <module>
+    t=minimize_union(m1,m2,base,rev);t['seed_base']=base_id;terms.append(t)
+  File "/private/tmp/circdist_round78_cross_registry_20260829/stage/package/src/synthesize_cross_registry.py", line 270, in minimize_union
+    if vector_union_dp(m1,m2,trial)['sound']:cur=trial
+  File "/private/tmp/circdist_round78_cross_registry_20260829/stage/package/src/synthesize_cross_registry.py", line 254, in vector_union_dp
+    else:nd[ns]=(con,w+(next(bits(z['mask'])),))
+KeyboardInterrupt
+time: command terminated abnormally
+real 508.46
+user 305.22
+sys 149.42
+         17801838592  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+            54657424  page reclaims
+                  19  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   2  signals received
+                1533  voluntary context switches
+              783649  involuntary context switches
+       7536165856076  instructions retired
+       1944900742936  cycles elapsed
+         40066248976  peak memory footprint

@@ -1,0 +1,13 @@
+%% GROSS-CODE-OPTIMAL-CIRCUIT-DISTANCE proof hypergraph (generated)
+flowchart BT
+  n0["CIRCDIST.gross\nCONJECTURED"]
+  n1["CIRCDIST.gross.dext-cap\nPROVED"]
+  n2["CIRCDIST.gross.mc-equiv\nREFUTED"]
+  n3["CIRCDIST.lift.iff\nPROVED"]
+  r1(("candidate-certification\nCERTIFIED*"))
+  n1 --> r1
+  r1 --> n0
+  r2(("gap-via-lift\nCONJECTURED"))
+  n1 --> r2
+  n3 --> r2
+  r2 --> n0

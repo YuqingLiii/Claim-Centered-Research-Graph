@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/private/tmp/circdist_gross_iter198_order144_continuation_round126_20260905/source/round120_reviewed/round118_reviewed/check_sat_order144_orbit_controls_round118.py", line 291, in <module>
+    main()
+  File "/private/tmp/circdist_gross_iter198_order144_continuation_round126_20260905/source/round120_reviewed/round118_reviewed/check_sat_order144_orbit_controls_round118.py", line 101, in main
+    trace = load(args.trace)
+  File "/private/tmp/circdist_gross_iter198_order144_continuation_round126_20260905/source/round120_reviewed/round118_reviewed/check_sat_order144_orbit_controls_round118.py", line 20, in load
+    raw = Path(path).read_bytes()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/pathlib.py", line 1249, in read_bytes
+    with self.open(mode='rb') as f:
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/pathlib.py", line 1242, in open
+    return io.open(self, mode, buffering, encoding, errors, newline,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/pathlib.py", line 1110, in _opener
+    return self._accessor.open(self, flags, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/private/tmp/circdist_gross_iter198_order144_continuation_round126_20260905/input/iter198/order144_quotient/trace.json.gz'

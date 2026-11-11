@@ -1,0 +1,32 @@
+Traceback (most recent call last):
+  File "/private/tmp/circdist_round78_cross_registry_20260829/stage/package/verify.py", line 297, in <module>
+    if __name__=='__main__':main()
+  File "/private/tmp/circdist_round78_cross_registry_20260829/stage/package/verify.py", line 295, in main
+    if a.full or not a.quick:result['full']=verify_full()
+  File "/private/tmp/circdist_round78_cross_registry_20260829/stage/package/verify.py", line 289, in verify_full
+    return {'fresh_process_outer_replays':outer,'direct':verify_direct_full(),'raw_mechanisms':verify_all_raw_mechanisms(),'term_domains':verify_all_term_domains()}
+  File "/private/tmp/circdist_round78_cross_registry_20260829/stage/package/verify.py", line 278, in verify_all_term_domains
+    rt=verify_pair_batch(base,kind,lx,lz);literal+=rt['literal_tuples'];multi={'multi_terms':0,'factorized_tuples':0}
+  File "/private/tmp/circdist_round78_cross_registry_20260829/stage/package/verify.py", line 255, in verify_pair_batch
+    q=tuplemap[t['term_id']];assert count==q['tuples_instantiated']==t['covered_tuple_count'] and h.hexdigest()==q['selector_stream_sha256'] and {str(k):v for k,v in hist.items()}==q['fault_count_histogram'] and sha_obj([hex(s) for s in sorted(sigs)])==q['signature_set_sha256'] and len(sigs)==q['signature_count'] and samples==q['samples']
+KeyError: 'fault_count_histogram'
+real 254.07
+user 252.61
+sys 1.28
+          1464729600  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              369685  page reclaims
+                 227  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                  31  voluntary context switches
+               20324  involuntary context switches
+       1965116743622  instructions retired
+        331759390478  cycles elapsed
+          1448789360  peak memory footprint

@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/private/tmp/circdist_gross_r71/stage/circdist_gross_cegar_continuation_round71_20260829/verify.py", line 178, in <module>
+    if __name__=='__main__':main()
+  File "/private/tmp/circdist_gross_r71/stage/circdist_gross_cegar_continuation_round71_20260829/verify.py", line 174, in main
+    result={'schema':'round71-full-independent-verification-v1','manifest':verify_manifest(a.allow_unsealed),'compression':verify_compression(),'bindings':verify_bindings(a.repo_root.resolve() if a.repo_root else None),'processes':verify_process_ledger(),'negative_controls':verify_negative_controls(),'proof_checker_controls':verify_proof_controls()}
+  File "/private/tmp/circdist_gross_r71/stage/circdist_gross_cegar_continuation_round71_20260829/verify.py", line 70, in verify_bindings
+    audit=load(ROOT/'preflight/round69_all_file_read.json');assert (audit['file_count'],audit['gzip_count'],audit['tar_member_count'])==(250,112,472)
+  File "/private/tmp/circdist_gross_r71/stage/circdist_gross_cegar_continuation_round71_20260829/verify.py", line 21, in load
+    def load(path):return json.loads(data(path))
+  File "/private/tmp/circdist_gross_r71/stage/circdist_gross_cegar_continuation_round71_20260829/verify.py", line 20, in data
+    return p.read_bytes()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/pathlib.py", line 1249, in read_bytes
+    with self.open(mode='rb') as f:
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/pathlib.py", line 1242, in open
+    return io.open(self, mode, buffering, encoding, errors, newline,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/pathlib.py", line 1110, in _opener
+    return self._accessor.open(self, flags, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/private/tmp/circdist_gross_r71/stage/circdist_gross_cegar_continuation_round71_20260829/preflight/round69_all_file_read.json'

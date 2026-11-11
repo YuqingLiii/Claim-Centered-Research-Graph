@@ -1,0 +1,585 @@
+{
+  "candidate_sha256": "e52aa6f1aceb1fde6d39e06f124b738dd574eb83e0066d498e6788593d414ed2",
+  "new_selector_catalog_sha256": "5fb94da4360b9c0450e6b0eb0447dcb1220cf4449b5b04ac154932327bc4fc4e",
+  "schema": "round86-fixed-selector-domain-analysis-v1",
+  "sectors": {
+    "Xerr": {
+      "dp_layers": [
+        {
+          "multiplicity_sum": 720,
+          "states": 10
+        },
+        {
+          "multiplicity_sum": 518400,
+          "states": 150
+        },
+        {
+          "multiplicity_sum": 373248000,
+          "states": 2250
+        }
+      ],
+      "exact_cut_to_source_cube_factor": 2,
+      "full_cartesian_order_tuples": 373248000,
+      "invalid_order_tuples": 373082112,
+      "local_domains": [
+        {
+          "check": 25,
+          "distinct_supports": 20,
+          "kinds": [
+            1
+          ],
+          "orders_per_support": 36,
+          "position_parity": [
+            3,
+            4,
+            5
+          ],
+          "signature_class_order_multiplicities": {
+            "0x3000000040c300000000": 72,
+            "0x3000000200c021000000": 72,
+            "0x30000080000321000000": 72,
+            "0x8240c321000000": 72,
+            "0xd0000002404201000000": 72,
+            "0xd0000080408101000000": 72,
+            "0xd0000082008220000000": 72,
+            "0xe0000002408120000000": 72,
+            "0xe0000080404220000000": 72,
+            "0xe0000082004101000000": 72
+          },
+          "signature_classes": 10,
+          "support_size": 3
+        },
+        {
+          "check": 63,
+          "distinct_supports": 15,
+          "kinds": [
+            0
+          ],
+          "orders_per_support": 48,
+          "position_parity": [
+            0,
+            1
+          ],
+          "signature_class_order_multiplicities": {
+            "0x340006000000000200070": 48,
+            "0x340006000000000208000": 48,
+            "0x340402000000000200020": 48,
+            "0x340402000000000208050": 48,
+            "0x340804000000000200010": 48,
+            "0x340804000000000208060": 48,
+            "0x340c00000000000200040": 48,
+            "0x340c00000000000208030": 48,
+            "0x404000000000000050": 48,
+            "0x404000000000008020": 48,
+            "0x802000000000000060": 48,
+            "0x802000000000008010": 48,
+            "0x8070": 48,
+            "0xc06000000000000030": 48,
+            "0xc06000000000008040": 48
+          },
+          "signature_classes": 15,
+          "support_size": 2
+        },
+        {
+          "check": 71,
+          "distinct_supports": 15,
+          "kinds": [
+            0
+          ],
+          "orders_per_support": 48,
+          "position_parity": [
+            0,
+            1
+          ],
+          "signature_class_order_multiplicities": {
+            "0x1006000000000200040c0": 48,
+            "0x200600000000020800000": 48,
+            "0x3000000000000008040c0": 48,
+            "0x400200000000020000081": 48,
+            "0x500400000000000004041": 48,
+            "0x600400000000000800081": 48,
+            "0x700200000000020804041": 48,
+            "0x800400000000020804082": 48,
+            "0x900200000000000800042": 48,
+            "0xa00200000000000004082": 48,
+            "0xb00400000000020000042": 48,
+            "0xc00600000000000804003": 48,
+            "0xd000000000000208000c3": 48,
+            "0xe00000000000020004003": 48,
+            "0xf006000000000000000c3": 48
+          },
+          "signature_classes": 15,
+          "support_size": 2
+        }
+      ],
+      "participating_checks": 3,
+      "reachable_terminal_signature_states": 2250,
+      "selector": {
+        "canonical_support": [
+          2,
+          43,
+          49,
+          65,
+          78,
+          83,
+          100,
+          123,
+          124,
+          125,
+          132,
+          140
+        ],
+        "data_support": [
+          2,
+          49,
+          78,
+          103,
+          123,
+          124,
+          125
+        ],
+        "fault_count": 10,
+        "group_kinds": {
+          "25": [
+            1
+          ],
+          "63": [
+            0
+          ],
+          "71": [
+            0
+          ]
+        },
+        "iteration": 102,
+        "mechanism_id": "iter102-Xerr",
+        "physical_support": [
+          2,
+          9,
+          17,
+          43,
+          49,
+          64,
+          66,
+          67,
+          75,
+          77,
+          78,
+          100,
+          123,
+          124,
+          125,
+          141
+        ],
+        "sector": "Xerr",
+        "selected_names": [
+          "D:2",
+          "D:49",
+          "D:78",
+          "D:103",
+          "D:123",
+          "D:124",
+          "D:125",
+          "R:25:1",
+          "R:63:0",
+          "R:71:0"
+        ],
+        "source_atom_count": 25,
+        "source_atoms": [
+          [
+            "X:25:109",
+            "<",
+            "X:25:100"
+          ],
+          [
+            "X:25:109",
+            "<",
+            "X:25:103"
+          ],
+          [
+            "X:25:109",
+            "<",
+            "X:25:43"
+          ],
+          [
+            "X:25:26",
+            "<",
+            "X:25:100"
+          ],
+          [
+            "X:25:26",
+            "<",
+            "X:25:103"
+          ],
+          [
+            "X:25:26",
+            "<",
+            "X:25:43"
+          ],
+          [
+            "X:25:27",
+            "<",
+            "X:25:100"
+          ],
+          [
+            "X:25:27",
+            "<",
+            "X:25:103"
+          ],
+          [
+            "X:25:27",
+            "<",
+            "X:25:43"
+          ],
+          [
+            "X:63:132",
+            "<",
+            "X:63:141"
+          ],
+          [
+            "X:63:132",
+            "<",
+            "X:63:64"
+          ],
+          [
+            "X:63:132",
+            "<",
+            "X:63:75"
+          ],
+          [
+            "X:63:132",
+            "<",
+            "X:63:9"
+          ],
+          [
+            "X:63:65",
+            "<",
+            "X:63:141"
+          ],
+          [
+            "X:63:65",
+            "<",
+            "X:63:64"
+          ],
+          [
+            "X:63:65",
+            "<",
+            "X:63:75"
+          ],
+          [
+            "X:63:65",
+            "<",
+            "X:63:9"
+          ],
+          [
+            "X:71:140",
+            "<",
+            "X:71:17"
+          ],
+          [
+            "X:71:140",
+            "<",
+            "X:71:66"
+          ],
+          [
+            "X:71:140",
+            "<",
+            "X:71:67"
+          ],
+          [
+            "X:71:140",
+            "<",
+            "X:71:77"
+          ],
+          [
+            "X:71:83",
+            "<",
+            "X:71:17"
+          ],
+          [
+            "X:71:83",
+            "<",
+            "X:71:66"
+          ],
+          [
+            "X:71:83",
+            "<",
+            "X:71:67"
+          ],
+          [
+            "X:71:83",
+            "<",
+            "X:71:77"
+          ]
+        ],
+        "source_schedule_sha256": "e52aa6f1aceb1fde6d39e06f124b738dd574eb83e0066d498e6788593d414ed2"
+      },
+      "source_candidate_exact_cube_tuples": 82944,
+      "source_cube_local_counts": {
+        "25": {
+          "allowed_orders": 36,
+          "atoms": 9
+        },
+        "63": {
+          "allowed_orders": 48,
+          "atoms": 8
+        },
+        "71": {
+          "allowed_orders": 48,
+          "atoms": 8
+        }
+      },
+      "strict_installed_union_expansion_witness": "e52aa6f1aceb1fde6d39e06f124b738dd574eb83e0066d498e6788593d414ed2",
+      "strict_reason": "source schedule falsifies all 14,484 reviewed installed antecedents and all 120 prior exact fixed-selector cuts, yet this selector is direct-360 valid there",
+      "valid_fraction_denominator": 373248000,
+      "valid_fraction_numerator": 165888,
+      "valid_order_tuples": 165888
+    },
+    "Zerr": {
+      "dp_layers": [
+        {
+          "multiplicity_sum": 720,
+          "states": 15
+        },
+        {
+          "multiplicity_sum": 518400,
+          "states": 225
+        }
+      ],
+      "exact_cut_to_source_cube_factor": 1,
+      "full_cartesian_order_tuples": 518400,
+      "invalid_order_tuples": 516096,
+      "local_domains": [
+        {
+          "check": 45,
+          "distinct_supports": 15,
+          "kinds": [
+            2
+          ],
+          "orders_per_support": 48,
+          "position_parity": [
+            4,
+            5
+          ],
+          "signature_class_order_multiplicities": {
+            "0x11000000006001008000": 48,
+            "0x11000000006180208000": 48,
+            "0x11000000404080200000": 48,
+            "0x11000000404101000000": 48,
+            "0x11000000802081000000": 48,
+            "0x11000000802100200000": 48,
+            "0x11000000c00000208000": 48,
+            "0x11000000c00181008000": 48,
+            "0x181200000": 48,
+            "0x402081208000": 48,
+            "0x402100008000": 48,
+            "0x804080008000": 48,
+            "0x804101208000": 48,
+            "0xc06001200000": 48,
+            "0xc06180000000": 48
+          },
+          "signature_classes": 15,
+          "support_size": 2
+        },
+        {
+          "check": 52,
+          "distinct_supports": 15,
+          "kinds": [
+            0
+          ],
+          "orders_per_support": 48,
+          "position_parity": [
+            0,
+            1
+          ],
+          "signature_class_order_multiplicities": {
+            "0x1208090400000": 48,
+            "0x20000000300080400000": 48,
+            "0x20000001108010000000": 48,
+            "0x200000030c010400000": 48,
+            "0x2000001104080000000": 48,
+            "0x20000020204010000000": 48,
+            "0x2000002100c080400000": 48,
+            "0x2000020208080000000": 48,
+            "0x2000021000010400000": 48,
+            "0x20104090400000": 48,
+            "0x2130c000000000": 48,
+            "0x2200000000c090000000": 48,
+            "0x22000001204000400000": 48,
+            "0x22000020108000400000": 48,
+            "0x22000021300090000000": 48
+          },
+          "signature_classes": 15,
+          "support_size": 2
+        }
+      ],
+      "participating_checks": 2,
+      "reachable_terminal_signature_states": 225,
+      "selector": {
+        "canonical_support": [
+          1,
+          23,
+          24,
+          40,
+          42,
+          46,
+          47,
+          57,
+          84,
+          99,
+          122,
+          131
+        ],
+        "data_support": [
+          1,
+          23,
+          24,
+          47,
+          57,
+          84,
+          122,
+          131
+        ],
+        "fault_count": 10,
+        "group_kinds": {
+          "45": [
+            2
+          ],
+          "52": [
+            0
+          ]
+        },
+        "iteration": 102,
+        "mechanism_id": "iter102-Zerr",
+        "physical_support": [
+          1,
+          23,
+          24,
+          42,
+          47,
+          49,
+          57,
+          84,
+          99,
+          106,
+          123,
+          131
+        ],
+        "sector": "Zerr",
+        "selected_names": [
+          "D:1",
+          "D:23",
+          "D:24",
+          "D:47",
+          "D:57",
+          "D:84",
+          "D:122",
+          "D:131",
+          "R:45:2",
+          "R:52:0"
+        ],
+        "source_atom_count": 16,
+        "source_atoms": [
+          [
+            "Z:45:115",
+            "<",
+            "Z:45:42"
+          ],
+          [
+            "Z:45:115",
+            "<",
+            "Z:45:99"
+          ],
+          [
+            "Z:45:116",
+            "<",
+            "Z:45:42"
+          ],
+          [
+            "Z:45:116",
+            "<",
+            "Z:45:99"
+          ],
+          [
+            "Z:45:33",
+            "<",
+            "Z:45:42"
+          ],
+          [
+            "Z:45:33",
+            "<",
+            "Z:45:99"
+          ],
+          [
+            "Z:45:39",
+            "<",
+            "Z:45:42"
+          ],
+          [
+            "Z:45:39",
+            "<",
+            "Z:45:99"
+          ],
+          [
+            "Z:52:40",
+            "<",
+            "Z:52:106"
+          ],
+          [
+            "Z:52:40",
+            "<",
+            "Z:52:122"
+          ],
+          [
+            "Z:52:40",
+            "<",
+            "Z:52:123"
+          ],
+          [
+            "Z:52:40",
+            "<",
+            "Z:52:49"
+          ],
+          [
+            "Z:52:46",
+            "<",
+            "Z:52:106"
+          ],
+          [
+            "Z:52:46",
+            "<",
+            "Z:52:122"
+          ],
+          [
+            "Z:52:46",
+            "<",
+            "Z:52:123"
+          ],
+          [
+            "Z:52:46",
+            "<",
+            "Z:52:49"
+          ]
+        ],
+        "source_schedule_sha256": "e52aa6f1aceb1fde6d39e06f124b738dd574eb83e0066d498e6788593d414ed2"
+      },
+      "source_candidate_exact_cube_tuples": 2304,
+      "source_cube_local_counts": {
+        "45": {
+          "allowed_orders": 48,
+          "atoms": 8
+        },
+        "52": {
+          "allowed_orders": 48,
+          "atoms": 8
+        }
+      },
+      "strict_installed_union_expansion_witness": "e52aa6f1aceb1fde6d39e06f124b738dd574eb83e0066d498e6788593d414ed2",
+      "strict_reason": "source schedule falsifies all 14,484 reviewed installed antecedents and all 120 prior exact fixed-selector cuts, yet this selector is direct-360 valid there",
+      "valid_fraction_denominator": 518400,
+      "valid_fraction_numerator": 2304,
+      "valid_order_tuples": 2304
+    }
+  },
+  "source_avoids_all_prior_120_full_selector_cuts": true,
+  "source_avoids_all_reviewed_blocks": true
+}

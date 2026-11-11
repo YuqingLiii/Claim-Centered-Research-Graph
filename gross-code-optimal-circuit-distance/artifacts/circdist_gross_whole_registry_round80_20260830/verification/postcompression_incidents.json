@@ -1,0 +1,45 @@
+{
+  "accepted_mathematical_state_mutations": 0,
+  "accepted_verifications": [
+    "precompression_quick",
+    "postcompression_quick",
+    "preinstall_full",
+    "postcopy_quick",
+    "postcopy_full"
+  ],
+  "canonical_edits": 0,
+  "incidents": [
+    {
+      "disposition": "REJECTED",
+      "effect": "zero-byte output exposed missing main() invocation; no mathematical/state/canonical mutation; fixed before any accepted verification",
+      "evidence": [
+        "verification/precompression_quick_v1_noop.log",
+        "verification/precompression_quick_v1_noop.time.txt"
+      ],
+      "id": 8,
+      "name": "verifier-v1-noop-main-invocation"
+    },
+    {
+      "disposition": "REJECTED",
+      "effect": "binding metadata path corrected to circdist/proof-dag/nodes/CIRCDIST.gross.yaml; commissioned snapshot and canonical file remained exact",
+      "evidence": [
+        "verification/precompression_quick_v2_bad_live_path.log",
+        "verification/precompression_quick_v2_bad_live_path.time.txt"
+      ],
+      "id": 9,
+      "name": "verifier-v2-bad-live-dispatcher-path"
+    },
+    {
+      "disposition": "REJECTED",
+      "effect": "audit exited before scan/mutation; corrected reader consumed deterministic gzip; subsequent parsed audits PASS",
+      "evidence": [
+        "verification/preinstall_repository_audit_v1_compressed_input.log",
+        "verification/preinstall_repository_audit_v1_disposition.json"
+      ],
+      "id": 10,
+      "name": "repository-audit-v1-compressed-input"
+    }
+  ],
+  "schema": "round80-postcompression-incident-disclosure-v1",
+  "status": "PASS"
+}

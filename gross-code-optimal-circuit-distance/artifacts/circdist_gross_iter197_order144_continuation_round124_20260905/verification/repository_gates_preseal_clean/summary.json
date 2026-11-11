@@ -1,0 +1,359 @@
+{
+  "all_children_reaped": true,
+  "check_count": 9,
+  "checks": [
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "tools/proof_dag_check.py",
+        "--problem",
+        "circdist"
+      ],
+      "child_pid": 70571,
+      "cwd": "<repo>",
+      "detached": false,
+      "duration_ns": 367011785,
+      "end_utc": "2026-09-05T19:15:34.798289+00:00",
+      "environment": {
+        "LANG": "C.UTF-8",
+        "LC_ALL": "C.UTF-8",
+        "PATH": "/usr/bin:/bin:/usr/sbin:/sbin",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "TMPDIR": "/private/tmp/circdist-round124-preseal-gates-1/tmp",
+        "TZ": "UTC"
+      },
+      "expected_returncodes": [
+        0
+      ],
+      "name": "proof_dag_circdist",
+      "parent_pid": 70570,
+      "reaped": true,
+      "returncode": 0,
+      "returncode_matches": true,
+      "start_utc": "2026-09-05T19:15:34.431277+00:00",
+      "stderr": "/private/tmp/circdist-round124-preseal-gates-1/proof_dag_circdist.stderr",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "/private/tmp/circdist-round124-preseal-gates-1/proof_dag_circdist.stdout",
+      "stdout_bytes": 43,
+      "stdout_sha256": "c43e0a23f474af4c5b8e013612205d543c71c16b623dd0e3dde3d38615667068",
+      "timeout_configured": false,
+      "timeout_triggered": false
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "tools/proof_dag_check.py",
+        "--problem",
+        "all"
+      ],
+      "child_pid": 70572,
+      "cwd": "<repo>",
+      "detached": false,
+      "duration_ns": 2152669906,
+      "end_utc": "2026-09-05T19:15:36.951676+00:00",
+      "environment": {
+        "LANG": "C.UTF-8",
+        "LC_ALL": "C.UTF-8",
+        "PATH": "/usr/bin:/bin:/usr/sbin:/sbin",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "TMPDIR": "/private/tmp/circdist-round124-preseal-gates-1/tmp",
+        "TZ": "UTC"
+      },
+      "expected_returncodes": [
+        0
+      ],
+      "name": "proof_dag_all",
+      "parent_pid": 70570,
+      "reaped": true,
+      "returncode": 0,
+      "returncode_matches": true,
+      "start_utc": "2026-09-05T19:15:34.799006+00:00",
+      "stderr": "/private/tmp/circdist-round124-preseal-gates-1/proof_dag_all.stderr",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "/private/tmp/circdist-round124-preseal-gates-1/proof_dag_all.stdout",
+      "stdout_bytes": 534,
+      "stdout_sha256": "14d2a52a753d53149fb24d702a34aecbaaf99f533929c828f98a2e4160b75eff",
+      "timeout_configured": false,
+      "timeout_triggered": false
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "tools/check_circdist_migration.py"
+      ],
+      "child_pid": 70573,
+      "cwd": "<repo>",
+      "detached": false,
+      "duration_ns": 927733659,
+      "end_utc": "2026-09-05T19:15:37.879899+00:00",
+      "environment": {
+        "LANG": "C.UTF-8",
+        "LC_ALL": "C.UTF-8",
+        "PATH": "/usr/bin:/bin:/usr/sbin:/sbin",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "TMPDIR": "/private/tmp/circdist-round124-preseal-gates-1/tmp",
+        "TZ": "UTC"
+      },
+      "expected_returncodes": [
+        0
+      ],
+      "name": "circdist_migration",
+      "parent_pid": 70570,
+      "reaped": true,
+      "returncode": 0,
+      "returncode_matches": true,
+      "start_utc": "2026-09-05T19:15:36.952165+00:00",
+      "stderr": "/private/tmp/circdist-round124-preseal-gates-1/circdist_migration.stderr",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "/private/tmp/circdist-round124-preseal-gates-1/circdist_migration.stdout",
+      "stdout_bytes": 84,
+      "stdout_sha256": "abee5d9ee3574c0ae64911a0e4035bac035b2deef8b347d85552760609c0bf24",
+      "timeout_configured": false,
+      "timeout_triggered": false
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "tools/test_release_contracts.py"
+      ],
+      "child_pid": 70574,
+      "cwd": "<repo>",
+      "detached": false,
+      "duration_ns": 279598951,
+      "end_utc": "2026-09-05T19:15:38.160594+00:00",
+      "environment": {
+        "LANG": "C.UTF-8",
+        "LC_ALL": "C.UTF-8",
+        "PATH": "/usr/bin:/bin:/usr/sbin:/sbin",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "TMPDIR": "/private/tmp/circdist-round124-preseal-gates-1/tmp",
+        "TZ": "UTC"
+      },
+      "expected_returncodes": [
+        0
+      ],
+      "name": "release_contracts",
+      "parent_pid": 70570,
+      "reaped": true,
+      "returncode": 0,
+      "returncode_matches": true,
+      "start_utc": "2026-09-05T19:15:37.880995+00:00",
+      "stderr": "/private/tmp/circdist-round124-preseal-gates-1/release_contracts.stderr",
+      "stderr_bytes": 113,
+      "stderr_sha256": "4db05a2b26f8ed89d50521e7bf2a7da269c69a8ea2416a980a4e83ccc6f9f229",
+      "stdout": "/private/tmp/circdist-round124-preseal-gates-1/release_contracts.stdout",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timeout_configured": false,
+      "timeout_triggered": false
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "tools/test_dag_contracts.py"
+      ],
+      "child_pid": 70575,
+      "cwd": "<repo>",
+      "detached": false,
+      "duration_ns": 493370056,
+      "end_utc": "2026-09-05T19:15:38.654478+00:00",
+      "environment": {
+        "LANG": "C.UTF-8",
+        "LC_ALL": "C.UTF-8",
+        "PATH": "/usr/bin:/bin:/usr/sbin:/sbin",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "TMPDIR": "/private/tmp/circdist-round124-preseal-gates-1/tmp",
+        "TZ": "UTC"
+      },
+      "expected_returncodes": [
+        0
+      ],
+      "name": "dag_contracts",
+      "parent_pid": 70570,
+      "reaped": true,
+      "returncode": 0,
+      "returncode_matches": true,
+      "start_utc": "2026-09-05T19:15:38.161108+00:00",
+      "stderr": "/private/tmp/circdist-round124-preseal-gates-1/dag_contracts.stderr",
+      "stderr_bytes": 123,
+      "stderr_sha256": "962e142268b6005178c6d37a3940c3d5df057b5be71152f2899b5c59c1e3923d",
+      "stdout": "/private/tmp/circdist-round124-preseal-gates-1/dag_contracts.stdout",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timeout_configured": false,
+      "timeout_triggered": false
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "tools/lean_dag_check.py",
+        "--selftest"
+      ],
+      "child_pid": 70576,
+      "cwd": "<repo>",
+      "detached": false,
+      "duration_ns": 219480037,
+      "end_utc": "2026-09-05T19:15:38.874693+00:00",
+      "environment": {
+        "LANG": "C.UTF-8",
+        "LC_ALL": "C.UTF-8",
+        "PATH": "/usr/bin:/bin:/usr/sbin:/sbin",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "TMPDIR": "/private/tmp/circdist-round124-preseal-gates-1/tmp",
+        "TZ": "UTC"
+      },
+      "expected_returncodes": [
+        0
+      ],
+      "name": "lean_dag_selftest",
+      "parent_pid": 70570,
+      "reaped": true,
+      "returncode": 0,
+      "returncode_matches": true,
+      "start_utc": "2026-09-05T19:15:38.655213+00:00",
+      "stderr": "/private/tmp/circdist-round124-preseal-gates-1/lean_dag_selftest.stderr",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "/private/tmp/circdist-round124-preseal-gates-1/lean_dag_selftest.stdout",
+      "stdout_bytes": 36931,
+      "stdout_sha256": "6b6af7115d22da03011ac29ca3ffaca7975d9ee627ead4957f8a113ba978109d",
+      "timeout_configured": false,
+      "timeout_triggered": false
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/private/tmp/circdist-round124-package-preseal/source/round120_reviewed/round118_reviewed/round116_reviewed/parent_duplicate_yaml_scan.py",
+        "--root",
+        "<repo>",
+        "--output",
+        "/private/tmp/circdist-round124-preseal-gates-1/duplicate_yaml.json"
+      ],
+      "child_pid": 70577,
+      "cwd": "<repo>",
+      "detached": false,
+      "duration_ns": 11232933282,
+      "end_utc": "2026-09-05T19:15:50.108128+00:00",
+      "environment": {
+        "LANG": "C.UTF-8",
+        "LC_ALL": "C.UTF-8",
+        "PATH": "/usr/bin:/bin:/usr/sbin:/sbin",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "TMPDIR": "/private/tmp/circdist-round124-preseal-gates-1/tmp",
+        "TZ": "UTC"
+      },
+      "expected_returncodes": [
+        0
+      ],
+      "name": "duplicate_yaml",
+      "parent_pid": 70570,
+      "reaped": true,
+      "returncode": 0,
+      "returncode_matches": true,
+      "start_utc": "2026-09-05T19:15:38.875195+00:00",
+      "stderr": "/private/tmp/circdist-round124-preseal-gates-1/duplicate_yaml.stderr",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "/private/tmp/circdist-round124-preseal-gates-1/duplicate_yaml.stdout",
+      "stdout_bytes": 115,
+      "stdout_sha256": "237dbe1ecdaaebbbcbeb182d871c49b842423768aeb145c69564d1c3816174ac",
+      "timeout_configured": false,
+      "timeout_triggered": false
+    },
+    {
+      "argv": [
+        "/usr/bin/git",
+        "diff",
+        "--check"
+      ],
+      "child_pid": 70594,
+      "cwd": "<repo>",
+      "detached": false,
+      "duration_ns": 23032903,
+      "end_utc": "2026-09-05T19:15:50.131650+00:00",
+      "environment": {
+        "LANG": "C.UTF-8",
+        "LC_ALL": "C.UTF-8",
+        "PATH": "/usr/bin:/bin:/usr/sbin:/sbin",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "TMPDIR": "/private/tmp/circdist-round124-preseal-gates-1/tmp",
+        "TZ": "UTC"
+      },
+      "expected_returncodes": [
+        0
+      ],
+      "name": "git_diff_check",
+      "parent_pid": 70570,
+      "reaped": true,
+      "returncode": 0,
+      "returncode_matches": true,
+      "start_utc": "2026-09-05T19:15:50.108617+00:00",
+      "stderr": "/private/tmp/circdist-round124-preseal-gates-1/git_diff_check.stderr",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "/private/tmp/circdist-round124-preseal-gates-1/git_diff_check.stdout",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timeout_configured": false,
+      "timeout_triggered": false
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "tools/evidence_closure_check.py",
+        "--problem",
+        "circdist"
+      ],
+      "child_pid": 70595,
+      "cwd": "<repo>",
+      "detached": false,
+      "duration_ns": 967123270,
+      "end_utc": "2026-09-05T19:15:51.099407+00:00",
+      "environment": {
+        "LANG": "C.UTF-8",
+        "LC_ALL": "C.UTF-8",
+        "PATH": "/usr/bin:/bin:/usr/sbin:/sbin",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "TMPDIR": "/private/tmp/circdist-round124-preseal-gates-1/tmp",
+        "TZ": "UTC"
+      },
+      "expected_returncodes": [
+        0,
+        1
+      ],
+      "name": "evidence_closure_raw",
+      "parent_pid": 70570,
+      "reaped": true,
+      "returncode": 0,
+      "returncode_matches": true,
+      "start_utc": "2026-09-05T19:15:50.132284+00:00",
+      "stderr": "/private/tmp/circdist-round124-preseal-gates-1/evidence_closure_raw.stderr",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "/private/tmp/circdist-round124-preseal-gates-1/evidence_closure_raw.stdout",
+      "stdout_bytes": 91,
+      "stdout_sha256": "02e35bdae63daeee15c0259cad64c321516e237b003fe25738c26c3235c26bf6",
+      "timeout_configured": false,
+      "timeout_triggered": false
+    }
+  ],
+  "detached_children": 0,
+  "evidence_closure_interpretation": {
+    "all_errors_under_new_package": true,
+    "error_count": 0,
+    "meaning": "repository evidence closure passed directly",
+    "raw_exit_code": 0,
+    "schema": "circdist-round124-evidence-closure-interpretation-v1",
+    "status": "PASS"
+  },
+  "evidence_closure_raw_exit": 0,
+  "schema": "circdist-gross-round124-repository-gates-v1",
+  "solver_invocations": 0,
+  "status": "PASS",
+  "strict_serial": true,
+  "timeouts_configured": 0,
+  "timeouts_triggered": 0
+}

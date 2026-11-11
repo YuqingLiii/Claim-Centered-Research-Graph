@@ -1,0 +1,14 @@
+REVIEWER CHECK: does the 9-orbit residual decomposition PARTITION all residual columns?
+(if it did not, the 9-slots-per-cell scheme would be incomplete and 990 the wrong denominator)
+
+[Z] triple (1, 2, 62)
+   |S| = 24 ; total orbits 15 ; residual orbits 9 ; residual orbit sizes [24]
+   residual columns listed 216 ; distinct 216 ; expected 72 checks x 3 = 216
+   DISJOINT : True     COVERS EVERY (check,k) : True     missing 0  extra 0
+   => 9-orbit cover IS a partition of the 216 residual columns : True
+
+[X] triple (14, 0, 2)
+   |S| = 24 ; total orbits 15 ; residual orbits 9 ; residual orbit sizes [24]
+   residual columns listed 216 ; distinct 216 ; expected 72 checks x 3 = 216
+   DISJOINT : True     COVERS EVERY (check,k) : True     missing 0  extra 0
+   => 9-orbit cover IS a partition of the 216 residual columns : True

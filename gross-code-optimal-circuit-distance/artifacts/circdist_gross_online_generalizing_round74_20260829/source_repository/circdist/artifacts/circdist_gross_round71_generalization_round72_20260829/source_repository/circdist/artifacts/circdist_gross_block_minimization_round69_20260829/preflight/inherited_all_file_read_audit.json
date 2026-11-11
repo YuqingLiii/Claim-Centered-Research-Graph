@@ -1,0 +1,1732 @@
+{
+  "packages": [
+    {
+      "bytes": 733974,
+      "file_count": 27,
+      "files": [
+        {
+          "bytes": 27914,
+          "lines": 418,
+          "path": "README.md",
+          "sha256": "4a62db6bbc5462463e7322901ec4ecf958d0da2792def2e0fb14a89a0b75fa57",
+          "utf8": true
+        },
+        {
+          "bytes": 2481,
+          "lines": 26,
+          "path": "SHA256SUMS.txt",
+          "sha256": "e888e7be694e2ef11b4148aa7f01a75ec9990d7b79b5c97cc36734686265eea1",
+          "utf8": true
+        },
+        {
+          "bytes": 5197,
+          "json_top_keys": [
+            "files",
+            "repository_head",
+            "statements"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 88,
+          "path": "bindings.json",
+          "sha256": "ad73da75d5335ed6b42cfa6f974045ceb4d1f3874169b5d560eea3239e7822ea",
+          "utf8": true
+        },
+        {
+          "bytes": 10743,
+          "lines": 372,
+          "path": "inputs/w12X.txt",
+          "sha256": "1460a15c2ae372fa602fca810aa05bf9fb62426aba121b84931d8fec5c3d6697",
+          "utf8": true
+        },
+        {
+          "bytes": 11175,
+          "lines": 372,
+          "path": "inputs/w12Z.txt",
+          "sha256": "981be6c7aa8a42ab00a8925007a4a0567724ab7b46bd157383087f18b0af8125",
+          "utf8": true
+        },
+        {
+          "bytes": 3581,
+          "json_top_keys": [
+            "model",
+            "schedules"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 137,
+          "path": "outputs/audit.json",
+          "sha256": "32a4d84e347648cfaee8bd32cad6c63d1bec049eb2ebe9b263e908c501b22ace",
+          "utf8": true
+        },
+        {
+          "bytes": 879,
+          "json_top_keys": [
+            "result",
+            "schedule",
+            "schedule_audit"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 37,
+          "path": "outputs/bounded_direct_effective_unknown.json",
+          "sha256": "72d89ccdeec8992cf9320c17db8adb37b758304dc3b053411ed9315a9505d2b2",
+          "utf8": true
+        },
+        {
+          "bytes": 505193,
+          "json_top_keys": [
+            "architecture",
+            "effective_conf_budget",
+            "iterations_completed",
+            "iterations_requested",
+            "ledger",
+            "outer_blocks",
+            "repair_conf_budget",
+            "solver"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 22672,
+          "path": "outputs/cegar20.json",
+          "sha256": "c05ddbc13645d31c754417942305324ecc2e6aa243ae1c1a967b112d7d2b505f",
+          "utf8": true
+        },
+        {
+          "bytes": 29155,
+          "json_top_keys": [
+            "all_outer_raw_audit_ok",
+            "all_outer_sat",
+            "all_witnesses_raw_verified",
+            "block_atom_count_range",
+            "block_atom_count_total",
+            "counterexample_mechanism_weight_counts",
+            "counterexample_method_counts",
+            "counterexample_net_weight_counts",
+            "counterexample_sector_counts",
+            "exact_residual",
+            "final_outer_assertions",
+            "final_outer_block_count",
+            "iterations_completed",
+            "last_schedule_sha256",
+            "outer_seconds_range",
+            "outer_seconds_total",
+            "rows",
+            "verdict"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 1479,
+          "path": "outputs/cegar20_summary.json",
+          "sha256": "9ae14d04a58093b9146d94d501e44ac4d38dd7e82f8e33e0618393301c3cf6f4",
+          "utf8": true
+        },
+        {
+          "bytes": 2656,
+          "json_top_keys": [
+            "prefilter",
+            "result",
+            "schedule",
+            "schedule_audit"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 173,
+          "path": "outputs/controls/control_c1_zerr_effective.json",
+          "sha256": "0085c95c9d0f142f5ece32262d11e33fd2be5fa7d4d65d0e646cd89a0182d9fc",
+          "utf8": true
+        },
+        {
+          "bytes": 8364,
+          "json_top_keys": [
+            "prefilter",
+            "result",
+            "schedule",
+            "schedule_audit"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 451,
+          "path": "outputs/controls/control_c2_xerr_repair.json",
+          "sha256": "d87c4a74e57dd70ce96f9fa03af0882b8c2173b2f131380238861cd73104e71a",
+          "utf8": true
+        },
+        {
+          "bytes": 8406,
+          "json_top_keys": [
+            "prefilter",
+            "result",
+            "schedule",
+            "schedule_audit"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 451,
+          "path": "outputs/controls/control_c2_zerr_repair.json",
+          "sha256": "f6259b8ba3aabe845bf580a5da904e673c1faaa2441d9e8cd9ef6e35a1134728",
+          "utf8": true
+        },
+        {
+          "bytes": 2351,
+          "json_top_keys": [
+            "prefilter",
+            "result",
+            "schedule",
+            "schedule_audit"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 149,
+          "path": "outputs/controls/control_hunt1_xerr_effective.json",
+          "sha256": "3cf30889313808286eb954237d56ee0ea27aa2b882ba3c71f42bd48f5d60f8f3",
+          "utf8": true
+        },
+        {
+          "bytes": 2381,
+          "json_top_keys": [
+            "prefilter",
+            "result",
+            "schedule",
+            "schedule_audit"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 149,
+          "path": "outputs/controls/control_hunt1_zerr_effective.json",
+          "sha256": "975ddbcef4662df04efdfb5b0cff3bd1d201de279c9237ad31f9bff46d8f6cee",
+          "utf8": true
+        },
+        {
+          "bytes": 8488,
+          "json_top_keys": [
+            "prefilter",
+            "result",
+            "schedule",
+            "schedule_audit"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 453,
+          "path": "outputs/controls/control_published_xerr_repair.json",
+          "sha256": "70685f71f6834197344775a5abb278592800e40da02f487fe7f518cdf26f6d35",
+          "utf8": true
+        },
+        {
+          "bytes": 8396,
+          "json_top_keys": [
+            "prefilter",
+            "result",
+            "schedule",
+            "schedule_audit"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 453,
+          "path": "outputs/controls/control_published_zerr_repair.json",
+          "sha256": "e78eeae1e9accad68f2785e5c8067d29144c668fa672e1a28b4a256feacc3c0d",
+          "utf8": true
+        },
+        {
+          "bytes": 4551,
+          "json_top_keys": [
+            "all_negative_controls_pass",
+            "controls"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 175,
+          "path": "outputs/negative_controls.json",
+          "sha256": "397bbc1aad565dd9f2781471bdc90bd4c400998fc3b7fcb92d75a3c0b3da5ac5",
+          "utf8": true
+        },
+        {
+          "bytes": 17008,
+          "json_top_keys": [
+            "assertions",
+            "audit",
+            "blocks",
+            "compressed_schedule",
+            "compressed_schedule_sha256",
+            "edge_variables",
+            "model_complete_requested",
+            "raw_used_values",
+            "reason_unknown",
+            "seconds",
+            "smt2_sha256",
+            "status",
+            "timeout_ms"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 893,
+          "path": "outputs/outer_fixed_C1.json",
+          "sha256": "3ff99de5d505554042340c859407ca98ff0cf8e883fa95bb799eb3ddd3838faf",
+          "utf8": true
+        },
+        {
+          "bytes": 17005,
+          "json_top_keys": [
+            "assertions",
+            "audit",
+            "blocks",
+            "compressed_schedule",
+            "compressed_schedule_sha256",
+            "edge_variables",
+            "model_complete_requested",
+            "raw_used_values",
+            "reason_unknown",
+            "seconds",
+            "smt2_sha256",
+            "status",
+            "timeout_ms"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 893,
+          "path": "outputs/outer_free.json",
+          "sha256": "f06b6e40bf9870e0622afa718bab873a64eb6f16149a622601c64a22ea5e2dd2",
+          "utf8": true
+        },
+        {
+          "bytes": 877,
+          "json_top_keys": [
+            "result",
+            "schedule",
+            "schedule_audit"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 37,
+          "path": "outputs/rejected_pre_fix_repair_unsat_DO_NOT_USE.json",
+          "sha256": "7433edba2319a21af54427c4af91adae23828884ffd1c61d051408c1e2b42560",
+          "utf8": true
+        },
+        {
+          "bytes": 3155,
+          "json_top_keys": [
+            "background_or_detached_processes_started",
+            "failed_launches_without_compute",
+            "fix_2_status",
+            "foreground_processes",
+            "handoff_compute",
+            "historical_scheduler_processes_checked",
+            "repository_mutation_policy",
+            "repository_mutations",
+            "scratch_directory",
+            "scratch_retention",
+            "seal_process_scan"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 75,
+          "path": "process_accounting.json",
+          "sha256": "a470a9b865a7d78844ca7336085b756fbb53303371ac36c3b069ff0ff2a18491",
+          "utf8": true
+        },
+        {
+          "bytes": 66,
+          "lines": 4,
+          "path": "requirements.txt",
+          "sha256": "e5ace88d19150ff07d84704ca6e9f4a4a070c2f588a6502e4ca0bfe99ebf6ee6",
+          "utf8": true
+        },
+        {
+          "bytes": 31007,
+          "lines": 789,
+          "path": "src/model.py",
+          "sha256": "60663244444b5ee43eb811592b45f4dbfa39f7cec7583f9ad340ae2b45d26829",
+          "utf8": true
+        },
+        {
+          "bytes": 5237,
+          "lines": 124,
+          "path": "src/negative_controls.py",
+          "sha256": "6c4026dc2489fc88a752164cd9cd5cc4d51820b141a49bb85e788f219ddf4108",
+          "utf8": true
+        },
+        {
+          "bytes": 3799,
+          "lines": 80,
+          "path": "src/outer.py",
+          "sha256": "82255250c845f5470fa7396ed6926ba4189d99775fd95f439c0c1ea1e04d3bd9",
+          "utf8": true
+        },
+        {
+          "bytes": 9873,
+          "lines": 195,
+          "path": "src/run.py",
+          "sha256": "33e8289309d40825d0161512315fb4820526a7ec429c74173f70ca0408afedc9",
+          "utf8": true
+        },
+        {
+          "bytes": 4036,
+          "lines": 102,
+          "path": "verify.py",
+          "sha256": "c22cbf2f0ce7efcc4c3bee572b4f744a100eda853095985ea6a941bcc6e3d3ec",
+          "utf8": true
+        }
+      ],
+      "package": "circdist/artifacts/circdist_gross_cegar_round62_20260828"
+    },
+    {
+      "bytes": 678695,
+      "file_count": 25,
+      "files": [
+        {
+          "bytes": 20205,
+          "lines": 307,
+          "path": "README.md",
+          "sha256": "c6360cd3fbb1824cdde2f098ae91262ce4eb7409fc4f07276c257ac879f71b07",
+          "utf8": true
+        },
+        {
+          "bytes": 2202,
+          "lines": 24,
+          "path": "SHA256SUMS.txt",
+          "sha256": "13fc352c03e1abbad501abb7a7d0aeca7922a3e8798857f75733b1b95843f378",
+          "utf8": true
+        },
+        {
+          "bytes": 6101,
+          "json_top_keys": [
+            "files",
+            "repository_head",
+            "round62_binding_conflicts",
+            "statements"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 106,
+          "path": "bindings.json",
+          "sha256": "273a2c07dd82ac1c8a321261eae760df63aade97032967d05fc49ef5bccea691",
+          "utf8": true
+        },
+        {
+          "bytes": 10743,
+          "lines": 372,
+          "path": "inputs/w12X.txt",
+          "sha256": "1460a15c2ae372fa602fca810aa05bf9fb62426aba121b84931d8fec5c3d6697",
+          "utf8": true
+        },
+        {
+          "bytes": 11175,
+          "lines": 372,
+          "path": "inputs/w12Z.txt",
+          "sha256": "981be6c7aa8a42ab00a8925007a4a0567724ab7b46bd157383087f18b0af8125",
+          "utf8": true
+        },
+        {
+          "bytes": 821,
+          "json_top_keys": [
+            "prefilter",
+            "result",
+            "schedule",
+            "schedule_audit"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 33,
+          "path": "outputs/direct360_published_x_glucose42_interrupted.json",
+          "sha256": "cb79e0afddd1cc923e34dd8016c53d4de2b1e6310d1dddf5429f53b92590f083",
+          "utf8": true
+        },
+        {
+          "bytes": 925,
+          "json_top_keys": [
+            "prefilter",
+            "result",
+            "schedule",
+            "schedule_audit"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 34,
+          "path": "outputs/direct360_published_x_lingeling_interrupted.json",
+          "sha256": "fcbc352d060c6387c9448b4bfc9312d9f383a55e05e73820ff73612e5004a70d",
+          "utf8": true
+        },
+        {
+          "bytes": 1952,
+          "json_top_keys": [
+            "complete_for",
+            "not_complete_for",
+            "replay_wall_seconds",
+            "schema",
+            "sectors",
+            "semantics",
+            "totals"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 51,
+          "path": "outputs/global_single_clauses.json",
+          "sha256": "b403b238f7e82b2ba116fc6e413aa540cf01efea5c6cfb1dda83da96092b3394",
+          "utf8": true
+        },
+        {
+          "bytes": 3417,
+          "json_top_keys": [
+            "backend",
+            "command",
+            "exploratory_generalization",
+            "fixed_first_schedule_enumeration",
+            "iterations_completed",
+            "new_distinct_support_clauses_by_iteration",
+            "outer_model",
+            "outer_solve_seconds_as_printed",
+            "outer_statuses",
+            "retention_limitations",
+            "return_code",
+            "schema",
+            "status",
+            "totals",
+            "verdict_use"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 83,
+          "path": "outputs/pattern_cegar10_frontier.json",
+          "sha256": "f2190691c459612d4959b397a972e1e15a312a0e9723c1e4bb0d9dd55f1562ff",
+          "utf8": true
+        },
+        {
+          "bytes": 1610,
+          "json_top_keys": [
+            "absence_unsat_claims",
+            "backend_probe",
+            "checked_drup_drat_lrat_proofs",
+            "decision_rule",
+            "direct_360_attempts",
+            "schema"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 44,
+          "path": "outputs/proof_backend_frontier.json",
+          "sha256": "ce2824f0cf3ae21276ef08b0a9090c0589ee3ad3157c296b41aace8916c981b1",
+          "utf8": true
+        },
+        {
+          "bytes": 3581,
+          "json_top_keys": [
+            "model",
+            "schedules"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 137,
+          "path": "outputs/round62_audit.json",
+          "sha256": "32a4d84e347648cfaee8bd32cad6c63d1bec049eb2ebe9b263e908c501b22ace",
+          "utf8": true
+        },
+        {
+          "bytes": 505193,
+          "json_top_keys": [
+            "architecture",
+            "effective_conf_budget",
+            "iterations_completed",
+            "iterations_requested",
+            "ledger",
+            "outer_blocks",
+            "repair_conf_budget",
+            "solver"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 22672,
+          "path": "outputs/round62_cegar20.json",
+          "sha256": "c05ddbc13645d31c754417942305324ecc2e6aa243ae1c1a967b112d7d2b505f",
+          "utf8": true
+        },
+        {
+          "bytes": 29155,
+          "json_top_keys": [
+            "all_outer_raw_audit_ok",
+            "all_outer_sat",
+            "all_witnesses_raw_verified",
+            "block_atom_count_range",
+            "block_atom_count_total",
+            "counterexample_mechanism_weight_counts",
+            "counterexample_method_counts",
+            "counterexample_net_weight_counts",
+            "counterexample_sector_counts",
+            "exact_residual",
+            "final_outer_assertions",
+            "final_outer_block_count",
+            "iterations_completed",
+            "last_schedule_sha256",
+            "outer_seconds_range",
+            "outer_seconds_total",
+            "rows",
+            "verdict"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 1479,
+          "path": "outputs/round62_cegar20_summary.json",
+          "sha256": "9ae14d04a58093b9146d94d501e44ac4d38dd7e82f8e33e0618393301c3cf6f4",
+          "utf8": true
+        },
+        {
+          "bytes": 4551,
+          "json_top_keys": [
+            "all_negative_controls_pass",
+            "controls"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 175,
+          "path": "outputs/round62_negative_controls.json",
+          "sha256": "397bbc1aad565dd9f2781471bdc90bd4c400998fc3b7fcb92d75a3c0b3da5ac5",
+          "utf8": true
+        },
+        {
+          "bytes": 1230,
+          "json_top_keys": [
+            "fresh_reruns",
+            "round62_block_atom_counts",
+            "round62_total_block_atoms",
+            "schema",
+            "source_manifest_check",
+            "source_manifest_entries",
+            "source_manifest_sha256",
+            "source_package",
+            "source_verify",
+            "source_verify_return_code",
+            "source_verify_status"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 31,
+          "path": "outputs/round62_reproduction.json",
+          "sha256": "0151d2d29484c904644e7c3ab6c743bb4f2c11dc17b54c52397e8cbf56623576",
+          "utf8": true
+        },
+        {
+          "bytes": 1713,
+          "json_top_keys": [
+            "commands",
+            "schema"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 46,
+          "path": "outputs/validation.json",
+          "sha256": "54acfba9afe3fe4a4f3452e0b51d2e0bbcda3c4194f74ed368f9834ee9e16473",
+          "utf8": true
+        },
+        {
+          "bytes": 2980,
+          "json_top_keys": [
+            "background_or_detached_processes_started",
+            "failed_launches_without_compute",
+            "fix_2_status",
+            "foreground_processes",
+            "handoff_compute",
+            "historical_return_code_gap",
+            "proof_checkers_installed_or_run",
+            "repository_mutation_policy",
+            "repository_mutations",
+            "schema",
+            "scratch_directory",
+            "seal_process_scan"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 34,
+          "path": "process_accounting.json",
+          "sha256": "20c46c4402ff5bc01500b2feabdce5f021aad3c9e2112536781e22aaf2e0ff32",
+          "utf8": true
+        },
+        {
+          "bytes": 66,
+          "lines": 4,
+          "path": "requirements.txt",
+          "sha256": "e5ace88d19150ff07d84704ca6e9f4a4a070c2f588a6502e4ca0bfe99ebf6ee6",
+          "utf8": true
+        },
+        {
+          "bytes": 31007,
+          "lines": 789,
+          "path": "src/model.py",
+          "sha256": "60663244444b5ee43eb811592b45f4dbfa39f7cec7583f9ad340ae2b45d26829",
+          "utf8": true
+        },
+        {
+          "bytes": 5237,
+          "lines": 124,
+          "path": "src/negative_controls.py",
+          "sha256": "6c4026dc2489fc88a752164cd9cd5cc4d51820b141a49bb85e788f219ddf4108",
+          "utf8": true
+        },
+        {
+          "bytes": 3799,
+          "lines": 80,
+          "path": "src/outer.py",
+          "sha256": "82255250c845f5470fa7396ed6926ba4189d99775fd95f439c0c1ea1e04d3bd9",
+          "utf8": true
+        },
+        {
+          "bytes": 8197,
+          "lines": 191,
+          "path": "src/pattern.py",
+          "sha256": "e3ab219cba69d218dc1fd6f7d9a9a5b0575fd30e004dfdb74f17bfba2de88540",
+          "utf8": true
+        },
+        {
+          "bytes": 4527,
+          "lines": 120,
+          "path": "src/pattern_cegar.py",
+          "sha256": "bf33dc547a11673c6394a1b4ad07889f9b4d9db773d4564d43cc2b736605a4f4",
+          "utf8": true
+        },
+        {
+          "bytes": 9873,
+          "lines": 195,
+          "path": "src/run.py",
+          "sha256": "33e8289309d40825d0161512315fb4820526a7ec429c74173f70ca0408afedc9",
+          "utf8": true
+        },
+        {
+          "bytes": 8435,
+          "lines": 201,
+          "path": "verify.py",
+          "sha256": "450aa475f70a8e32a83657eefad16572eefc29b9417eb1fca6acd0dbe7f57520",
+          "utf8": true
+        }
+      ],
+      "package": "circdist/artifacts/circdist_gross_pattern_cegar_round63_20260828"
+    },
+    {
+      "bytes": 34305998,
+      "file_count": 102,
+      "files": [
+        {
+          "bytes": 4222,
+          "lines": 62,
+          "path": "ATTACK_LEDGER.md",
+          "sha256": "40bbf18cb7ee40f008e1947b383a7de71088ca7db57d853171a63bd0079ce85b",
+          "utf8": true
+        },
+        {
+          "bytes": 7853,
+          "json_top_keys": [
+            "changed_count",
+            "files",
+            "normalized_load_bearing_statements",
+            "resolution",
+            "schema",
+            "unchanged_count"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 208,
+          "path": "BINDING_DRIFT.json",
+          "sha256": "0a31c80b17b8a5a13f9c7702265cc44b7c72a3037b99196800ec6b50e2970c59",
+          "utf8": true
+        },
+        {
+          "bytes": 3520,
+          "lines": 51,
+          "path": "COMMANDS.txt",
+          "sha256": "718758968472bd64c9aec09693480b1f39f3c2cc76929b1840eba5e21ad0b9db",
+          "utf8": true
+        },
+        {
+          "bytes": 4239,
+          "lines": 72,
+          "path": "FINAL_AUDIT.txt",
+          "sha256": "2e3cbf09330df8d5e74f9906c6a04f5f27a26f1439f00c85efde414658c409c3",
+          "utf8": true
+        },
+        {
+          "bytes": 13493,
+          "lines": 144,
+          "path": "MANIFEST.md",
+          "sha256": "cf8a5a4243c58d7a4691cdc03e74dc306469a07c16e846cce15cac5f765e740d",
+          "utf8": true
+        },
+        {
+          "bytes": 9464,
+          "lines": 98,
+          "path": "PAYLOAD_SHA256SUMS.txt",
+          "sha256": "de8d5ac285e6f3152bf564dc30f9c9e49611006db6a3f9697b1950c509349cae",
+          "utf8": true
+        },
+        {
+          "bytes": 4375,
+          "lines": 42,
+          "path": "PROCESS_LEDGER.md",
+          "sha256": "84e1a61b90f95a585c14f0e9a7e7520c4386f468eade1b36e98e76c70983855e",
+          "utf8": true
+        },
+        {
+          "bytes": 17513,
+          "lines": 327,
+          "path": "README.md",
+          "sha256": "86dfaf012e7a1598c9a0a0ee0157ffe84f4491d83c05fc496580e121f9ed83fd",
+          "utf8": true
+        },
+        {
+          "bytes": 1227,
+          "lines": 18,
+          "path": "REVIEW_LICENSE.txt",
+          "sha256": "3145a39ed0495a499f5b0743b7c54410debb6dbc2d36ebfd4581805338408e0b",
+          "utf8": true
+        },
+        {
+          "bytes": 9713,
+          "lines": 101,
+          "path": "SHA256SUMS.txt",
+          "sha256": "4555bf1c8b1f9c1c206d9df9f3da587d23b5553e21c61eac67b82f40abcecbcd",
+          "utf8": true
+        },
+        {
+          "bytes": 103636,
+          "json_top_keys": [
+            "all_paths_exist",
+            "bindings",
+            "canonical_root_bound_sources",
+            "repository_root_at_run",
+            "schema"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 2356,
+          "path": "SOURCE_BINDINGS.json",
+          "sha256": "622eeee8830af481efe5c2ee40c1c7a4d05b99d0878caf08f3477276283712e7",
+          "utf8": true
+        },
+        {
+          "bytes": 310,
+          "lines": 4,
+          "path": "VERDICT.txt",
+          "sha256": "c2b99af588d96b14045f2484496747cd689b13b74c5b447716190549643eb3b0",
+          "utf8": true
+        },
+        {
+          "bytes": 3083,
+          "json_top_keys": [
+            "candidate",
+            "control_C1_Zerr",
+            "direct"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 80,
+          "path": "build_summary.json",
+          "sha256": "92bc10e5ea24f55b86e5c36f1bcc878537e2d378e7f22cee46e0fdf275863434",
+          "utf8": true
+        },
+        {
+          "bytes": 777856,
+          "json_top_keys": [
+            "audit",
+            "columns",
+            "model_metadata",
+            "order_bindings",
+            "outer_result",
+            "outer_smt2_sha256",
+            "pool_bindings",
+            "retained_clause_scope",
+            "schedule_sha256",
+            "schedule_times",
+            "schedule_times_sorted",
+            "schema"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 38671,
+          "path": "candidate/candidate.json",
+          "sha256": "df79a45177f6dbc0610e11e87c531070d9863562928982089a59a720fe148959",
+          "utf8": true
+        },
+        {
+          "bytes": 652238,
+          "lines": 19194,
+          "path": "candidate/candidate_outer.smt2",
+          "sha256": "528d8de887cf63d3bd3cda3409157720d4197e24a5e1f817764edb7b8f2cb6df",
+          "utf8": true
+        },
+        {
+          "bytes": 5120142,
+          "json_top_keys": [
+            "records",
+            "records_sha256",
+            "schema",
+            "sealed_summary_sha256",
+            "sectors"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 273645,
+          "path": "candidate/global_single_clause_certificates.json",
+          "sha256": "37ad518c2455d55e57bc5758ad1131ee8e9cb7f244ca0579307b156225ede775",
+          "utf8": true
+        },
+        {
+          "bytes": 50865,
+          "json_top_keys": [
+            "block_count",
+            "blocks",
+            "prior_exclusions",
+            "replayed"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 3038,
+          "path": "candidate/round62_blocks_replay.json",
+          "sha256": "5736e6d2ed92f6d01f5aa0515308590fcfe50697684979d0ac5548d4f1cde62b",
+          "utf8": true
+        },
+        {
+          "bytes": 207751,
+          "json_top_keys": [
+            "all_source_mechanisms_raw_replayed",
+            "iterations_completed",
+            "iterations_requested",
+            "ledger",
+            "new_sound_blocks",
+            "no_exploratory_round63_pair_clauses_used",
+            "outer_exhausted",
+            "schema",
+            "scope",
+            "starting_blocks"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 8397,
+          "path": "cegar_continuation5.json",
+          "sha256": "6a1947455997c9e4f028abce018015f811ca38020876a58fd01c2993232b8f65",
+          "utf8": true
+        },
+        {
+          "bytes": 376,
+          "lines": 5,
+          "path": "controls/C1_Zerr.run.txt",
+          "sha256": "55f192ce27b3d939013837d0d9706e8dd3714a001561aac4062a673908a50157",
+          "utf8": true
+        },
+        {
+          "bytes": 24052,
+          "lines": 461,
+          "path": "controls/C1_Zerr.solver.log",
+          "sha256": "c6105934855f3a835aaaf1d98fd08cc1b1390b7f74508b4a22527f65fbaebf6f",
+          "utf8": true
+        },
+        {
+          "bytes": 897,
+          "json_top_keys": [
+            "W",
+            "candidate_sha256",
+            "clauses",
+            "complete_query",
+            "dimacs_sha256",
+            "excluded_restrictions",
+            "families",
+            "formula_body_sha256",
+            "logical_output_variables",
+            "primary_selection_variables",
+            "schema",
+            "sector",
+            "variables"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 25,
+          "path": "controls/C1_Zerr.summary.json",
+          "sha256": "0bcf980c06d0231c8bdd3234122b0e41a1127fd41349d306682ceb15b418df40",
+          "utf8": true
+        },
+        {
+          "bytes": 2429,
+          "json_top_keys": [
+            "formula_summary",
+            "known_direct_witness",
+            "schedule_T",
+            "schedule_audit",
+            "schedule_sha256"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 141,
+          "path": "controls/C1_Zerr_expected_witness.json",
+          "sha256": "ca23be67c74a257c9d9a8185766a88cee8768fbb6283b13cef16a15a90258c89",
+          "utf8": true
+        },
+        {
+          "bytes": 63536,
+          "json_top_keys": [
+            "clauses",
+            "model",
+            "seconds",
+            "solver",
+            "stats",
+            "status",
+            "variables"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 5984,
+          "path": "controls/Zerr_glucose42.json",
+          "sha256": "f3d8ab605def0883cc902b780e8b4d4ec35e58cd7643b15c197bd19d48206f89",
+          "utf8": true
+        },
+        {
+          "bytes": 590,
+          "json_top_keys": [
+            "command",
+            "ended_utc",
+            "exit_code",
+            "started_utc",
+            "status",
+            "timeout_seconds"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 17,
+          "path": "controls/Zerr_glucose42.run.json",
+          "sha256": "27fa8c867db61144d74f7eedfaa95940c1b4a13491cafae98bfd6c09ea1b303f",
+          "utf8": true
+        },
+        {
+          "bytes": 0,
+          "lines": 0,
+          "path": "controls/Zerr_glucose42.stdout.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "utf8": true
+        },
+        {
+          "bytes": 13504,
+          "json_top_keys": [
+            "agreement_with_cadical_selected_indices",
+            "raw_replay",
+            "solver",
+            "status"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 763,
+          "path": "controls/Zerr_glucose42_raw_replay.json",
+          "sha256": "c16dacb4983c959cc5ce44d46285cca7be3eba99c63fedacd8a415b21c3ad0df",
+          "utf8": true
+        },
+        {
+          "bytes": 1229,
+          "json_top_keys": [
+            "atmost_controls",
+            "schema",
+            "xor2"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 82,
+          "path": "controls/encoding_controls.json",
+          "sha256": "264909d7ccca9212d84a8363e7bf95375ca4be94adc0d3a437fe4f0fcaf08f78",
+          "utf8": true
+        },
+        {
+          "bytes": 1445,
+          "dimacs_headers": [
+            "p cnf 30 141"
+          ],
+          "lines": 143,
+          "path": "controls/proof_checker/php6_5.cnf",
+          "sha256": "d9357f5203d4bd8315b7287b7543ad97072386a92980d498d1b36b3d39fb1fa9",
+          "utf8": true
+        },
+        {
+          "bytes": 3114,
+          "lines": 219,
+          "path": "controls/proof_checker/php6_5.drat",
+          "sha256": "b6c2e560bb08c84d583ca94799951a21c8cae5de35d6d04d77bc4842e9c18ecd",
+          "utf8": true
+        },
+        {
+          "bytes": 369,
+          "lines": 16,
+          "path": "controls/proof_checker/php6_5.drat_trim.log",
+          "sha256": "940932dca350ffc4d207936f773f7f2a2b29571f65fcd30c177b79365c1a6553",
+          "utf8": true
+        },
+        {
+          "bytes": 469,
+          "lines": 5,
+          "path": "controls/proof_checker/php6_5.drat_trim.run.txt",
+          "sha256": "f00891c4941665445c886ed75e70c72259dc98fee5b870122cab553cc9425df6",
+          "utf8": true
+        },
+        {
+          "bytes": 10851,
+          "lines": 208,
+          "path": "controls/proof_checker/php6_5.lrat",
+          "sha256": "0723e34b24bfa7b1b8432f1606f5ba9c43e325e1c8e9eab6195b45d3cedcfd0f",
+          "utf8": true
+        },
+        {
+          "bytes": 192,
+          "lines": 5,
+          "path": "controls/proof_checker/php6_5.lrat_check.log",
+          "sha256": "54b78d5976475e8834663f5cc7cc530ff2338fd46f3d678f0feac39315512c1c",
+          "utf8": true
+        },
+        {
+          "bytes": 478,
+          "json_top_keys": [
+            "command",
+            "ended_utc",
+            "exit_code",
+            "started_utc",
+            "status",
+            "timeout_seconds"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 12,
+          "path": "controls/proof_checker/php6_5.lrat_check.run.json",
+          "sha256": "7cd91d6e6c1eb6b22c8bbfec206d39d72658aa3b6bbc0e75f58161174cd9162b",
+          "utf8": true
+        },
+        {
+          "bytes": 4630,
+          "lines": 104,
+          "path": "controls/proof_checker/php6_5.solver.log",
+          "sha256": "d982d1278b4dc5a8802bf285a138614007d6764db1a46052ab03c07730e54717",
+          "utf8": true
+        },
+        {
+          "bytes": 389,
+          "lines": 5,
+          "path": "controls/proof_checker/php6_5.solver.run.txt",
+          "sha256": "996a4b4f2703785edfc2df0ff573ec6071e34c6d8c31dfcdf754d95c19f91f8b",
+          "utf8": true
+        },
+        {
+          "bytes": 369,
+          "lines": 16,
+          "path": "controls/proof_checker/php6_5_corrupted.drat_trim.log",
+          "sha256": "f8279870f3ed14d9e0f6380dd102a7195479642239c08aa08261524c83d1a1eb",
+          "utf8": true
+        },
+        {
+          "bytes": 462,
+          "lines": 7,
+          "path": "controls/proof_checker/php6_5_corrupted.drat_trim.run.txt",
+          "sha256": "0c55a732546a54185bdafbf7245bd620de8a6557570d9cf66792b4193cd8c203",
+          "utf8": true
+        },
+        {
+          "bytes": 255,
+          "lines": 6,
+          "path": "controls/proof_checker/php6_5_corrupted.lrat_check.log",
+          "sha256": "ec5553864144a099068519043983a9fa1272d0bf1c246a663a9fe3e6b0f55094",
+          "utf8": true
+        },
+        {
+          "bytes": 507,
+          "json_top_keys": [
+            "command",
+            "ended_utc",
+            "exit_code",
+            "started_utc",
+            "status",
+            "timeout_seconds"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 12,
+          "path": "controls/proof_checker/php6_5_corrupted.lrat_check.run.json",
+          "sha256": "208d905a6576533b1581aac6607974b19e79f7fa5f0a00dda75ded76f3dc41d2",
+          "utf8": true
+        },
+        {
+          "bytes": 3112,
+          "lines": 218,
+          "path": "controls/proof_checker/php6_5_corrupted_missing_empty_clause.drat",
+          "sha256": "903ae3f0191bc1f4dd1697f718f6cf2714225f76371601f0c0e19676b449d7a0",
+          "utf8": true
+        },
+        {
+          "bytes": 153,
+          "lines": 10,
+          "path": "controls/proof_checker/php6_5_corrupted_truncated.drat_trim.log",
+          "sha256": "ace8c757b1a689ff3c6795ae42edee8734af62a20da23a008dc57b6ccb5cbaca",
+          "utf8": true
+        },
+        {
+          "bytes": 469,
+          "lines": 7,
+          "path": "controls/proof_checker/php6_5_corrupted_truncated.drat_trim.run.txt",
+          "sha256": "a0606a0f1d0daca244fbd34c39a72dd35d307062e4dae9d3edc96ccba3fb1f97",
+          "utf8": true
+        },
+        {
+          "bytes": 158,
+          "lines": 10,
+          "path": "controls/proof_checker/php6_5_corrupted_truncated_10_lines.drat",
+          "sha256": "16960f5aa9d84658b25c9b0544e51d6dc848a96a97cae19549a585421a660081",
+          "utf8": true
+        },
+        {
+          "bytes": 646,
+          "lines": 10,
+          "path": "controls/proof_checker/php6_5_corrupted_truncated_10_lines.lrat",
+          "sha256": "4e749aa5afffba5c1bfa0444021170527ad83b2bcd0857f845b1a5bcb73fdee7",
+          "utf8": true
+        },
+        {
+          "bytes": 2489781,
+          "jsonl_records": 22232,
+          "lines": 22232,
+          "path": "direct360/Xerr.clauses.jsonl",
+          "sha256": "97efc95c4ad410fbbe4812bfa5dbc9c6c0d4af91c5969255e1e82f9270e3b0a3",
+          "utf8": true
+        },
+        {
+          "bytes": 360573,
+          "dimacs_headers": [
+            "p cnf 5913 22232"
+          ],
+          "lines": 22236,
+          "path": "direct360/Xerr.cnf",
+          "sha256": "23baae8614d921d1289dbeff77c8ef893007b35e7b97cbd9f3c693d28bd86ecb",
+          "utf8": true
+        },
+        {
+          "bytes": 364818,
+          "json_top_keys": [
+            "candidate_sha256",
+            "column_count",
+            "columns",
+            "detector_rows",
+            "logical_duals",
+            "logical_equations",
+            "schema",
+            "sector",
+            "stabilizer_rows",
+            "syndrome_equations"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 22051,
+          "path": "direct360/Xerr.columns.json",
+          "sha256": "75e5b5409576de8af1af4b0e3b41878faba5cf41dde90d422c6569c8108e55dc",
+          "utf8": true
+        },
+        {
+          "bytes": 897,
+          "json_top_keys": [
+            "W",
+            "candidate_sha256",
+            "clauses",
+            "complete_query",
+            "dimacs_sha256",
+            "excluded_restrictions",
+            "families",
+            "formula_body_sha256",
+            "logical_output_variables",
+            "primary_selection_variables",
+            "schema",
+            "sector",
+            "variables"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 25,
+          "path": "direct360/Xerr.summary.json",
+          "sha256": "68e2f07d9546521404deccf6abd1f52a44cdfe4482c1a6c690f04cd663e36a0f",
+          "utf8": true
+        },
+        {
+          "bytes": 1342980,
+          "json_top_keys": [
+            "candidate_sha256",
+            "schema",
+            "sector",
+            "variable_count",
+            "variables"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 62804,
+          "path": "direct360/Xerr.variables.json",
+          "sha256": "cdaab4ecd89e74a7ec70bcb88d7322dbe6563ee9f61969033b01c0fd8ee47241",
+          "utf8": true
+        },
+        {
+          "bytes": 2520971,
+          "jsonl_records": 22456,
+          "lines": 22456,
+          "path": "direct360/Zerr.clauses.jsonl",
+          "sha256": "929ad13ffb845cb494e0761f3bbc70d4c955206d89e872794f4b276256b8749d",
+          "utf8": true
+        },
+        {
+          "bytes": 364415,
+          "dimacs_headers": [
+            "p cnf 5969 22456"
+          ],
+          "lines": 22460,
+          "path": "direct360/Zerr.cnf",
+          "sha256": "ef7401f7d05e6e7ce84c6bcb07eecdfbfaecdff65d653b97529bea7d54a6022d",
+          "utf8": true
+        },
+        {
+          "bytes": 343922,
+          "json_top_keys": [
+            "candidate_sha256",
+            "column_count",
+            "columns",
+            "detector_rows",
+            "logical_duals",
+            "logical_equations",
+            "schema",
+            "sector",
+            "stabilizer_rows",
+            "syndrome_equations"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 20878,
+          "path": "direct360/Zerr.columns.json",
+          "sha256": "73a94b271456f5ff94dcaf70d1a5486afebd4f435c7d0509612d95083d2e76d2",
+          "utf8": true
+        },
+        {
+          "bytes": 897,
+          "json_top_keys": [
+            "W",
+            "candidate_sha256",
+            "clauses",
+            "complete_query",
+            "dimacs_sha256",
+            "excluded_restrictions",
+            "families",
+            "formula_body_sha256",
+            "logical_output_variables",
+            "primary_selection_variables",
+            "schema",
+            "sector",
+            "variables"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 25,
+          "path": "direct360/Zerr.summary.json",
+          "sha256": "6755526b89f99b34cb8e3b198c4fcf0c8e161cd9967b848b1fe535fc41f6cbf0",
+          "utf8": true
+        },
+        {
+          "bytes": 1357074,
+          "json_top_keys": [
+            "candidate_sha256",
+            "schema",
+            "sector",
+            "variable_count",
+            "variables"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 63476,
+          "path": "direct360/Zerr.variables.json",
+          "sha256": "2b9d47641c212f56476cbadfe3b0c5a414063597ab3af547b472b21581d341d1",
+          "utf8": true
+        },
+        {
+          "bytes": 12455,
+          "lines": 93,
+          "path": "evidence_closure_check.log",
+          "sha256": "0351964463117c7a7b039ec22726e96d13e84d2afccb4249848ba6439fdfd418",
+          "utf8": true
+        },
+        {
+          "bytes": 277,
+          "json_top_keys": [
+            "command",
+            "cwd",
+            "exit_code",
+            "timed_out",
+            "timeout_seconds",
+            "wall_seconds"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 13,
+          "path": "evidence_closure_check.run.json",
+          "sha256": "b64d43118a34c7ffede610cbb4b3abe478b2788dc7998e5edf1f00cb1b739c6a",
+          "utf8": true
+        },
+        {
+          "bytes": 1561,
+          "lines": 73,
+          "path": "final_verification.log",
+          "sha256": "7a5f70522a5fa875f647080e0a9ec232eb0f93226cd2715f6b58ee26700396a1",
+          "utf8": true
+        },
+        {
+          "bytes": 591,
+          "json_top_keys": [
+            "command",
+            "cwd",
+            "exit_code",
+            "timed_out",
+            "timeout_seconds",
+            "wall_seconds"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 14,
+          "path": "final_verification.run.json",
+          "sha256": "a92129a8a7d60745a1f54dc7e8cff91363749f9850d29b0de0be783510e99b8c",
+          "utf8": true
+        },
+        {
+          "bytes": 2404,
+          "lines": 44,
+          "path": "preflight_replays.log",
+          "sha256": "c59b1b4d9e3bcc3b79425e6876349747470db38fdf3d1e0fb693c6b584c98afb",
+          "utf8": true
+        },
+        {
+          "bytes": 745,
+          "lines": 35,
+          "path": "preflight_round63_sealed_static.log",
+          "sha256": "3deb441c9fa33016be30044540c9014358190d954a160d25f3dcff1b78e2df8f",
+          "utf8": true
+        },
+        {
+          "bytes": 1789,
+          "lines": 52,
+          "path": "preflight_seals.log",
+          "sha256": "0568276f69ab3d72d8d3e38b7b4348967dbff2a5163fe88f050fd0db206a8280",
+          "utf8": true
+        },
+        {
+          "bytes": 1561,
+          "lines": 73,
+          "path": "preseal_verification.log",
+          "sha256": "7a5f70522a5fa875f647080e0a9ec232eb0f93226cd2715f6b58ee26700396a1",
+          "utf8": true
+        },
+        {
+          "bytes": 43,
+          "lines": 1,
+          "path": "proof_dag_check.log",
+          "sha256": "c43e0a23f474af4c5b8e013612205d543c71c16b623dd0e3dde3d38615667068",
+          "utf8": true
+        },
+        {
+          "bytes": 270,
+          "json_top_keys": [
+            "command",
+            "cwd",
+            "exit_code",
+            "timed_out",
+            "timeout_seconds",
+            "wall_seconds"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 13,
+          "path": "proof_dag_check.run.json",
+          "sha256": "aa2a80804279dd67e5b40364dff665bb8fdbb6adb3e2e0ceb6eeef86c4dd3c02",
+          "utf8": true
+        },
+        {
+          "bytes": 66,
+          "lines": 4,
+          "path": "requirements.txt",
+          "sha256": "e5ace88d19150ff07d84704ca6e9f4a4a070c2f588a6502e4ca0bfe99ebf6ee6",
+          "utf8": true
+        },
+        {
+          "bytes": 7995294,
+          "magic_hex": "1f8b08086273926a0203586572722e72",
+          "path": "solver/Xerr.drat.gz",
+          "sha256": "426189a67f48a9a7d0974e53f3408fc0d426abbafd42a08627094599d93ea94d",
+          "utf8": false
+        },
+        {
+          "bytes": 290,
+          "lines": 6,
+          "path": "solver/Xerr.run.txt",
+          "sha256": "a034b8a1a03a1cfaa96efe4faec7bdd4462092901e236d45bc0d7a7bf1f906ae",
+          "utf8": true
+        },
+        {
+          "bytes": 44255,
+          "lines": 662,
+          "path": "solver/Xerr.solver.log",
+          "sha256": "5f97fa5a9e128a0c89063efd3b1e67bc727f99b24cf641079203ff8f788b4940",
+          "utf8": true
+        },
+        {
+          "bytes": 817,
+          "magic_hex": "1f8b08086b73926a02035a6572722e72",
+          "path": "solver/Zerr.drat.gz",
+          "sha256": "b58dca69b07dfd4dc6c3e9afa4829bfc304c22be38917b4a18d6d6dc37d6c7c6",
+          "utf8": false
+        },
+        {
+          "bytes": 290,
+          "lines": 6,
+          "path": "solver/Zerr.run.txt",
+          "sha256": "3c79c4128f7a5afdd7b50c249fbf9d061aee89d2e34deaac4c09d0db382da8cb",
+          "utf8": true
+        },
+        {
+          "bytes": 37577,
+          "lines": 536,
+          "path": "solver/Zerr.solver.log",
+          "sha256": "ff8dd82affd03b0e45371f538e074a983150147f639c6cc7a933ff8af9d59ae2",
+          "utf8": true
+        },
+        {
+          "bytes": 3375,
+          "lines": 57,
+          "path": "src/continue_cegar.py",
+          "sha256": "3784117694ed2aa01db2709123c3b02465d35308de366878e52753f472e678fd",
+          "utf8": true
+        },
+        {
+          "bytes": 1611,
+          "lines": 31,
+          "path": "src/encoding_controls.py",
+          "sha256": "3fdf3125f996a1d5ad0973c0f5df0299dd36347fc8b1c6f0137ac38ac27640bf",
+          "utf8": true
+        },
+        {
+          "bytes": 1952,
+          "json_top_keys": [
+            "complete_for",
+            "not_complete_for",
+            "replay_wall_seconds",
+            "schema",
+            "sectors",
+            "semantics",
+            "totals"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 51,
+          "path": "src/global_single_clauses.json",
+          "sha256": "b403b238f7e82b2ba116fc6e413aa540cf01efea5c6cfb1dda83da96092b3394",
+          "utf8": true
+        },
+        {
+          "bytes": 10743,
+          "lines": 372,
+          "path": "src/inputs/w12X.txt",
+          "sha256": "1460a15c2ae372fa602fca810aa05bf9fb62426aba121b84931d8fec5c3d6697",
+          "utf8": true
+        },
+        {
+          "bytes": 11175,
+          "lines": 372,
+          "path": "src/inputs/w12Z.txt",
+          "sha256": "981be6c7aa8a42ab00a8925007a4a0567724ab7b46bd157383087f18b0af8125",
+          "utf8": true
+        },
+        {
+          "bytes": 2057,
+          "lines": 39,
+          "path": "src/make_bindings.py",
+          "sha256": "7cfc0339b0fd0b10baf145340b6745cd2678a82abeace82bcff54cb8c288672e",
+          "utf8": true
+        },
+        {
+          "bytes": 676,
+          "lines": 10,
+          "path": "src/pysat_control.py",
+          "sha256": "2ee6b23de245927bd9975ba2e530ab1d325820dae27aef8b1cc84972a807bf64",
+          "utf8": true
+        },
+        {
+          "bytes": 505193,
+          "json_top_keys": [
+            "architecture",
+            "effective_conf_budget",
+            "iterations_completed",
+            "iterations_requested",
+            "ledger",
+            "outer_blocks",
+            "repair_conf_budget",
+            "solver"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 22672,
+          "path": "src/round62_cegar20.json",
+          "sha256": "c05ddbc13645d31c754417942305324ecc2e6aa243ae1c1a967b112d7d2b505f",
+          "utf8": true
+        },
+        {
+          "bytes": 31007,
+          "lines": 789,
+          "path": "src/round63_src/model.py",
+          "sha256": "60663244444b5ee43eb811592b45f4dbfa39f7cec7583f9ad340ae2b45d26829",
+          "utf8": true
+        },
+        {
+          "bytes": 5237,
+          "lines": 124,
+          "path": "src/round63_src/negative_controls.py",
+          "sha256": "6c4026dc2489fc88a752164cd9cd5cc4d51820b141a49bb85e788f219ddf4108",
+          "utf8": true
+        },
+        {
+          "bytes": 3799,
+          "lines": 80,
+          "path": "src/round63_src/outer.py",
+          "sha256": "82255250c845f5470fa7396ed6926ba4189d99775fd95f439c0c1ea1e04d3bd9",
+          "utf8": true
+        },
+        {
+          "bytes": 8197,
+          "lines": 191,
+          "path": "src/round63_src/pattern.py",
+          "sha256": "e3ab219cba69d218dc1fd6f7d9a9a5b0575fd30e004dfdb74f17bfba2de88540",
+          "utf8": true
+        },
+        {
+          "bytes": 4527,
+          "lines": 120,
+          "path": "src/round63_src/pattern_cegar.py",
+          "sha256": "bf33dc547a11673c6394a1b4ad07889f9b4d9db773d4564d43cc2b736605a4f4",
+          "utf8": true
+        },
+        {
+          "bytes": 9873,
+          "lines": 195,
+          "path": "src/round63_src/run.py",
+          "sha256": "33e8289309d40825d0161512315fb4820526a7ec429c74173f70ca0408afedc9",
+          "utf8": true
+        },
+        {
+          "bytes": 22509,
+          "lines": 476,
+          "path": "src/round68_build.py",
+          "sha256": "67efd99a354dec6ef7639b6a7fa9bab0590ef41cab7cbab1e6a55e87434c2404",
+          "utf8": true
+        },
+        {
+          "bytes": 8004,
+          "lines": 153,
+          "path": "src/round68_verify.py",
+          "sha256": "896ab0284d6394e11bd110240451e240a6b70cdf5412ad28e1c0bfdeb70ed957",
+          "utf8": true
+        },
+        {
+          "bytes": 934,
+          "lines": 16,
+          "path": "src/run_limited.py",
+          "sha256": "ef6b75cf21cd74df6ad2b58f9972334a8366d3e4fa16933050a13144af0a9421",
+          "utf8": true
+        },
+        {
+          "bytes": 821,
+          "lines": 9,
+          "path": "tooling/SHA256SUMS.txt",
+          "sha256": "69c110c1a171b966c6a5f205d001534a5416bd2656ab3f79d8c1efe39058086f",
+          "utf8": true
+        },
+        {
+          "bytes": 967144,
+          "magic_hex": "cffaedfe0c0000010000000002000000",
+          "path": "tooling/cadical-1.9.5-arm64-macos",
+          "sha256": "fafdf4fb95a54ccee9b59f346544761896e40b076780a93f000e0357f20080c9",
+          "utf8": false
+        },
+        {
+          "bytes": 689601,
+          "magic_hex": "1f8b0800000000000003ec7d6b7b1347",
+          "path": "tooling/cadical-rel-1.9.5-source.tar.gz",
+          "sha256": "ea4c7fd0151060725fde7bfe391fb18372255bee94ea4c7e354e1f73b54387ed",
+          "utf8": false
+        },
+        {
+          "bytes": 199342,
+          "lines": 4388,
+          "path": "tooling/cadical_make_test.log",
+          "sha256": "919b63171a0475ab7974b411178280f64e4e20c89d8e6af0873fbb337b48323c",
+          "utf8": true
+        },
+        {
+          "bytes": 30,
+          "lines": 2,
+          "path": "tooling/cadical_make_test.run.txt",
+          "sha256": "bff544d4a1ab492303250bfafa75816e03b7099cbf7d2255ccb3057b3ca68491",
+          "utf8": true
+        },
+        {
+          "bytes": 349,
+          "lines": 9,
+          "path": "tooling/cadical_source_build.txt",
+          "sha256": "25c47a48359c770acde53ff8703cdc0bf99bcde4be8f8de1654e339d7664e762",
+          "utf8": true
+        },
+        {
+          "bytes": 70120,
+          "magic_hex": "cffaedfe0c0000010000000002000000",
+          "path": "tooling/drat-trim-arm64-macos",
+          "sha256": "f58f63b0f76945d4c4c9ff6e87afaf870f579e67c0f7cca589492df8fc7ebd47",
+          "utf8": false
+        },
+        {
+          "bytes": 7294515,
+          "magic_hex": "1f8b0800000000000003ecbd096094d5",
+          "path": "tooling/drat-trim-source.tar.gz",
+          "sha256": "bfe65f9028c772614888daace1985cb66555018c8e77b9bf6b15e6ab91c4f7e1",
+          "utf8": false
+        },
+        {
+          "bytes": 256,
+          "lines": 5,
+          "path": "tooling/drat_trim_source_build.txt",
+          "sha256": "83680e380b01b25d50dfd079df31f3ef604830deb32da39b3e0b603a4ce6e367",
+          "utf8": true
+        },
+        {
+          "bytes": 36552,
+          "magic_hex": "cffaedfe0c0000010000000002000000",
+          "path": "tooling/lrat-check-arm64-macos",
+          "sha256": "bd7eb8052623525814a0a37502b47f05375d9d9dfaf96ddc2fcd858958517cea",
+          "utf8": false
+        },
+        {
+          "bytes": 32493,
+          "json_top_keys": [
+            "candidate_sha256",
+            "repair_gate",
+            "schedule_audit",
+            "schema",
+            "sectors",
+            "verdict"
+          ],
+          "json_top_type": "dict",
+          "json_valid": true,
+          "lines": 1459,
+          "path": "verification.json",
+          "sha256": "8b2f256b24b2df9a064aea0324cb0386ed73a76ed8703a17906f3a267c646c41",
+          "utf8": true
+        },
+        {
+          "bytes": 1561,
+          "lines": 73,
+          "path": "verification_replay.log",
+          "sha256": "7a5f70522a5fa875f647080e0a9ec232eb0f93226cd2715f6b58ee26700396a1",
+          "utf8": true
+        },
+        {
+          "bytes": 9551,
+          "lines": 138,
+          "path": "verify.py",
+          "sha256": "f83ee01a1d8617a641b44ddc7ca5a997335019c531dce3861088fb5e0a23e713",
+          "utf8": true
+        }
+      ],
+      "package": "circdist/artifacts/circdist_gross_direct360_proof_round68_20260829"
+    }
+  ],
+  "schema": "round69-all-inherited-file-read-v1"
+}

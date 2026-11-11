@@ -1,0 +1,45 @@
+    logs/val.jsonl               Z    [1, 2, 9]    K=8  |E|=16  orbit=-1   oncand=False  flags=(None, None, None)
+    logs/verdictbox.jsonl        Z    [1, 2, 2]    K=4  |E|=14  orbit=0    oncand=False  flags=(None, None, None)
+    SAT records: 34   distinct (sector,triple,K,|E|,orbit): 6   ON CANDIDATE: 0
+
+--- dedup on the candidate ---
+    distinct decided sub-queries       : 864
+    contributing records               : 2926
+    multiplicity histogram             : {1: 8, 2: 9, 3: 735, 4: 2, 5: 10, 6: 87, 8: 2, 9: 11}
+    sub-queries with >1 record         : 856   max multiplicity 9
+    VERDICT CONFLICTS across duplicates : 0
+    distinct-CNF-hash count per sub-query: {1: 855, 2: 8, 3: 1}   (>1 = same sub-query under >1 encoding)
+    SAME-HASH verdict disagreements     : 0
+    union verdicts                      : {'UNSAT': 864}
+
+--- the COMPLETE sub-query space ---
+    cert4.cells(10) : 55 cells per sector, 110 over both sectors
+    K values present : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]        K=0 cells: []   (K>=1 everywhere: True)
+    |E| values       : [12, 14, 16, 18, 20, 22, 24, 26, 28, 30]
+    cells per K      : {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10}
+    |E|=12 cells     : 10 per sector (90 slots/sector) -- closed en bloc by enum12.py
+    TOTAL SLOTS      : 2 x 55 x 9 = 990
+
+--- classification of all 990 slots ---
+    SATDEC  (recorded solver verdict)   : 864
+    ENUM12  (|E|=12, closed by enum12)  : 126
+    OPEN                                 : 0
+    ---------------------------------------------
+    accounted                            : 990 / 990
+
+    denominator used by the wave-6 tables (SATDEC + OPEN, i.e. excluding the
+    126 |E|=12 slots that carry no individual solver record) : 864
+
+--- cell verdicts ---
+    sector Z : 55/55 cells decided;  cells containing a SAT sub-query: 0
+    sector X : 55/55 cells decided;  cells containing a SAT sub-query: 0
+    open cells (both sectors) : 0
+
+--- THE EXACT OPEN LIST ---
+    *** EMPTY -- the complete W=10 sub-query space is decided ***
+
+--- solver time ---
+    all distinct records : 1791504 s  (497.6 CPU-hours)
+    best-of per sub-query: 574888 s  (159.7 CPU-hours)
+
+wrote acct11.json

@@ -1,0 +1,19 @@
+================================================================================================
+KNOWN CELL: the campaign's own reconstructed [SBB26] candidate M_cand
+  Z-sector order-class triple (1,2,62), X-sector (14,0,2), phi = a+b
+  campaign verdict (990/990 UNSAT at W = 10): d_ext = 11 in BOTH sectors
+================================================================================================
+  M_cand Z-check 0 CNOT order (qubits): [3, 66, 60, 77, 126, 76]  (phicert prints 3,6,12,73,90,74)
+  M_cand X-check 0 CNOT order (qubits): [18, 2, 1, 84, 75, 78]  (phicert prints 54,4,5,132,75,138)
+
+  M_cand  Z-memory (X-check hooks)   3-suffix-in-V   0 | 2-suffix-in-V  360 | 2-prefix-in-V  360 | DISJOINT gain-1 pairs    0 
+  M_cand  X-memory (Z-check hooks)   3-suffix-in-V   0 | 2-suffix-in-V  360 | 2-prefix-in-V  360 | DISJOINT gain-1 pairs    0 
+  M_cand  |V|=12 stratum, j<=3, W=10 :  Z-memory 0 configurations, X-memory 0 configurations   
+  M_cand  |V|=12 stratum, j<=3, W=11 :  Z-memory 4800 configurations, X-memory 3168 configurations   ex [(11, [(1, (5,)), (3, (5,)), (1, (2,))]), (11, [(15, (4,))])]
+
+================================================================================================
+THE WAVE-37 CANDIDATE, same report, for contrast
+================================================================================================
+  wave-37 cand  Z-memory             3-suffix-in-V   0 | 2-suffix-in-V  144 | 2-prefix-in-V  888 | DISJOINT gain-1 pairs  132 [('2pre', 0, '2pre', 21)]
+  wave-37 cand  X-memory             3-suffix-in-V   0 | 2-suffix-in-V  360 | 2-prefix-in-V  456 | DISJOINT gain-1 pairs   84 [('2pre', 0, '2suf', 8)]
+python3 src/v2_knowncell.py  76.41s user 1.45s system 97% cpu 1:19.56 total

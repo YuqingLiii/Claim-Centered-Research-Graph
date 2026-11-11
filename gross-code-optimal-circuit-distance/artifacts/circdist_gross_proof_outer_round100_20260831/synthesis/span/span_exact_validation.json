@@ -1,0 +1,40 @@
+{
+  "cardinality_recurrence_cases": 544766,
+  "gate_truth_table_cases": 8,
+  "schema": "circdist-round100-full-span-independent-validation-v1",
+  "sector_results": {
+    "Xerr": {
+      "cnf_clauses": 43827,
+      "cnf_sha256": "c689883518b2abbf28aadbc9f13025d032f6f1e792e469b7a584517cfc4f48e5",
+      "cnf_variables": 12949,
+      "coefficient_domain_size": "2^125",
+      "combined_syndrome_matrix_rank": 65,
+      "drat_sha256": "b14ece4b00c0c0ade83e8477fc2b6b97a230cb8622c928b4d5bd3d616d34ebb8",
+      "existing_full_named_masks_blocked": 125,
+      "lrat_sha256": "88cde84e0153be278136e17c5f2c733b134b20ec8b8142318da657566d4eb2b1",
+      "name_matrix_rank": 125,
+      "row_count": 125,
+      "status": "UNSAT",
+      "z3_direct_semantics": "UNSAT",
+      "z3_seconds": 2.188678
+    },
+    "Zerr": {
+      "cnf_clauses": 40443,
+      "cnf_sha256": "ce2113182676ab6063006a60d0fb4a6fc60447056ea2449b351eb6e9024c01b9",
+      "cnf_variables": 12089,
+      "coefficient_domain_size": "2^109",
+      "combined_syndrome_matrix_rank": 65,
+      "drat_sha256": "718512fdfc7e3c4695e0ac866f27fbfba95dad848d6c5131a1e013a2870bb58e",
+      "existing_full_named_masks_blocked": 109,
+      "lrat_sha256": "14502bc70ab7f0ced69f90ec8504ef555c3cb8a18b1f0e548576b71c7b7dfd7c",
+      "name_matrix_rank": 108,
+      "row_count": 109,
+      "status": "UNSAT",
+      "z3_direct_semantics": "UNSAT",
+      "z3_seconds": 1.567805
+    }
+  },
+  "status": "PASS",
+  "theorem": "For each sector on the reviewed post-iteration-136 schedule, no GF(2) combination of the entire reviewed 125-row Xerr or 109-row Zerr basis yields a new full named mask of weight 1..10 with both canonical and physical syndrome zero and equal nonzero logical action. Existing selector named masks are explicitly quotiented; the theorem does not exclude arbitrary mechanisms outside either selector span.",
+  "z3_version": "5.1.0"
+}

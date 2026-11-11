@@ -1,0 +1,21 @@
+{
+  "changes": [
+    {
+      "after_path": "source/serial_run_round126_v2.py",
+      "after_sha256": "dca8a5b4057ce742b9525d1be13328a7592c2eb20d50fc528af92c7f0ca9bc26",
+      "before_path": "source/serial_run_round126.py",
+      "before_sha256": "6c3c856d027d3ee79e0d53e75e6972c646e522c0dea0aed3c5091456f1b9308c",
+      "reason": "The interrupted runner buffered both streams in memory and persisted only stdout. V2 streams stdout and stderr directly to distinct exclusive-create files, forwards termination signals, reaps the child, uses a nonblocking advisory lock, fsyncs the append-only ledger, and atomically publishes a recovery checkpoint. The original runner and its ledger remain unchanged."
+    }
+  ],
+  "disclosed_non_scientific_failure": {
+    "class": "F126-R001",
+    "effect": "none on formulas, solvers, or verdicts",
+    "event": "A first syntax-check attempt used python -m py_compile and failed before parsing because the managed interpreter tried to create __pycache__ below a sandbox-blocked user cache path.",
+    "repair": "A no-write ast.parse check then passed on the exact v2 bytes."
+  },
+  "parent_history_preserved": true,
+  "recovery_utc": "2026-09-05T21:34:15Z",
+  "schema": "circdist-gross-round126-recovery-amendment-v1",
+  "status": "PASS"
+}

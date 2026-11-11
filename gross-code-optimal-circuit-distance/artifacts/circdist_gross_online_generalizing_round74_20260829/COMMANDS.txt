@@ -1,0 +1,17 @@
+# Frozen predecessor full replay
+PYTHONDONTWRITEBYTECODE=1 /tmp/circdist-r74-venv-20260829-a/bin/python circdist/artifacts/circdist_gross_round71_generalization_round72_20260829/verify.py --full
+
+# One online iteration (executed serially for 42..53)
+PYTHONDONTWRITEBYTECODE=1 /tmp/circdist-r74-venv-20260829-a/bin/python src/run_online_iteration.py --iteration N --engine-root PACKAGE --work-root PACKAGE --python /tmp/circdist-r74-venv-20260829-a/bin/python
+
+# Quick package verification
+PYTHONDONTWRITEBYTECODE=1 python verify.py --quick
+
+# Full offline self-contained recomputation
+PYTHONDONTWRITEBYTECODE=1 python verify.py --full
+
+# Full recomputation plus live frozen bindings
+PYTHONDONTWRITEBYTECODE=1 python verify.py --full --repo-root <repo>
+
+# External seal
+shasum -a 256 SHA256SUMS.txt

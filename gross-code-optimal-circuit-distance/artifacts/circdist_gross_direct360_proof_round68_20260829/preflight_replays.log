@@ -1,0 +1,44 @@
+$ round62 verify.py
+{
+  "cegar_iterations_replayed": 20,
+  "frozen_pool_sizes": {
+    "X": 1884,
+    "Z": 1884
+  },
+  "manifest_entries_verified": 26,
+  "named_controls_rebuilt": [
+    "C1/Zerr effective",
+    "C2/Xerr repair0",
+    "C2/Zerr repair0"
+  ],
+  "negative_controls_pass": true,
+  "prior_block_exclusions_checked": 190,
+  "status": "PASS",
+  "unique_counterexample_traces": 20,
+  "unique_schedules": 20
+}
+round62_exit=0
+$ round63 verify.py
+Traceback (most recent call last):
+  File "<repo>/circdist/artifacts/circdist_gross_pattern_cegar_round63_20260828/verify.py", line 201, in <module>
+    main()
+  File "<repo>/circdist/artifacts/circdist_gross_pattern_cegar_round63_20260828/verify.py", line 188, in main
+    'live_bindings_verified': verify_bindings(args.repo_root),
+  File "<repo>/circdist/artifacts/circdist_gross_pattern_cegar_round63_20260828/verify.py", line 53, in verify_bindings
+    fail('live binding mismatch: ' + rel)
+  File "<repo>/circdist/artifacts/circdist_gross_pattern_cegar_round63_20260828/verify.py", line 27, in fail
+    raise AssertionError(message)
+AssertionError: live binding mismatch: circdist/proof-dag/nodes/CIRCDIST.gross.yaml
+round63_exit=1
+$ round63 verify.py --full-static
+Traceback (most recent call last):
+  File "<repo>/circdist/artifacts/circdist_gross_pattern_cegar_round63_20260828/verify.py", line 201, in <module>
+    main()
+  File "<repo>/circdist/artifacts/circdist_gross_pattern_cegar_round63_20260828/verify.py", line 188, in main
+    'live_bindings_verified': verify_bindings(args.repo_root),
+  File "<repo>/circdist/artifacts/circdist_gross_pattern_cegar_round63_20260828/verify.py", line 53, in verify_bindings
+    fail('live binding mismatch: ' + rel)
+  File "<repo>/circdist/artifacts/circdist_gross_pattern_cegar_round63_20260828/verify.py", line 27, in fail
+    raise AssertionError(message)
+AssertionError: live binding mismatch: circdist/proof-dag/nodes/CIRCDIST.gross.yaml
+round63_full_exit=1

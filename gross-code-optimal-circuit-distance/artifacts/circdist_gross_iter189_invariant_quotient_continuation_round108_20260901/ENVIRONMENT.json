@@ -1,0 +1,137 @@
+{
+  "captured_utc": "2026-09-02T03:35:59.271358+00:00",
+  "cwd": "<repo>/circdist/artifacts/circdist_gross_iter189_invariant_quotient_continuation_round108_20260901",
+  "machine": "arm64",
+  "network_used": false,
+  "os": {
+    "uname": [
+      "Darwin",
+      "Mac",
+      "25.6.0",
+      "Darwin Kernel Version 25.6.0: Fri Jul 31 19:19:08 PDT 2026; root:xnu-12377.161.14~5/RELEASE_ARM64_T6050",
+      "arm64",
+      "arm"
+    ]
+  },
+  "package": "<repo>/circdist/artifacts/circdist_gross_iter189_invariant_quotient_continuation_round108_20260901",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "python": {
+    "executable": "/Library/Developer/CommandLineTools/usr/bin/python3",
+    "sha256": "bdea59019a38eb6600cc9e71e984a97fedadc406448431281e7657030f54987e",
+    "version": "3.9.6"
+  },
+  "retained_process_records_seen": 30,
+  "schema": "circdist-gross-round108-environment-v1",
+  "selected_environment": {
+    "LANG": "C.UTF-8",
+    "LC_ALL": "C.UTF-8",
+    "LC_CTYPE": "C.UTF-8",
+    "PATH": "/opt/local/bin:/opt/local/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/pkg/env/global/bin:/Applications/Privileges.app/Contents/MacOS:/Library/TeX/texbin:<home>/.codex/tmp/arg0/codex-arg02otew6:<home>/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override:<home>/bin:<home>/.local/bin:/opt/local/bin:/opt/local/sbin:<home>/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback:<home>/Applications/ChatGPT.app/Contents/Resources",
+    "SHELL": "/bin/zsh",
+    "TMPDIR": "<tmpdir>/T/"
+  },
+  "solver_interval_count": 3,
+  "solver_processes": [
+    {
+      "child_maxrss_raw": 7773650944,
+      "child_pid": 6378,
+      "child_system_seconds": 5.642387,
+      "child_user_seconds": 478.082586,
+      "command": [
+        "circdist/artifacts/circdist_gross_iter189_invariant_quotient_continuation_round108_20260901/tooling/cadical-1.9.5-arm64-macos",
+        "-t",
+        "21600",
+        "--no-binary",
+        "circdist/artifacts/circdist_gross_iter189_invariant_quotient_continuation_round108_20260901/inputs/round106/frontier/iter189_full_invariant_quotient/outer.cnf",
+        "circdist/artifacts/circdist_gross_iter189_invariant_quotient_continuation_round108_20260901/solver/iter189/outer.drat"
+      ],
+      "detached": false,
+      "ended_unix": 1788312985.5631008,
+      "ended_utc": "2026-09-02T01:36:25.563249+00:00",
+      "name": "solve_iter189_full_invariant_quotient_cadical_proof",
+      "reaped": true,
+      "returncode": 10,
+      "started_unix": 1788312500.613131,
+      "started_utc": "2026-09-02T01:28:20.613133+00:00",
+      "timed_out": false,
+      "wall_seconds": 484.950212
+    },
+    {
+      "child_maxrss_raw": 273022976,
+      "child_pid": 6568,
+      "child_system_seconds": 2.662352,
+      "child_user_seconds": 389.678208,
+      "command": [
+        "circdist/artifacts/circdist_gross_iter189_invariant_quotient_continuation_round108_20260901/tooling/cadical-1.9.5-arm64-macos",
+        "--unsat",
+        "-t",
+        "7200",
+        "--no-binary",
+        "circdist/artifacts/circdist_gross_iter189_invariant_quotient_continuation_round108_20260901/solver/iter189/direct/direct360/Xerr.cnf",
+        "circdist/artifacts/circdist_gross_iter189_invariant_quotient_continuation_round108_20260901/solver/iter189/direct/solver/Xerr.drat"
+      ],
+      "detached": false,
+      "ended_unix": 1788313497.0870988,
+      "ended_utc": "2026-09-02T01:44:57.087211+00:00",
+      "name": "solve_iter189_Xerr_complete_direct360_cadical_proof",
+      "reaped": true,
+      "returncode": 10,
+      "started_unix": 1788313103.7637918,
+      "started_utc": "2026-09-02T01:38:23.763794+00:00",
+      "timed_out": false,
+      "wall_seconds": 393.323492
+    },
+    {
+      "child_maxrss_raw": 251936768,
+      "child_pid": 6712,
+      "child_system_seconds": 2.474029,
+      "child_user_seconds": 256.776323,
+      "command": [
+        "circdist/artifacts/circdist_gross_iter189_invariant_quotient_continuation_round108_20260901/tooling/cadical-1.9.5-arm64-macos",
+        "--unsat",
+        "-t",
+        "7200",
+        "--no-binary",
+        "circdist/artifacts/circdist_gross_iter189_invariant_quotient_continuation_round108_20260901/solver/iter189/direct/direct360/Zerr.cnf",
+        "circdist/artifacts/circdist_gross_iter189_invariant_quotient_continuation_round108_20260901/solver/iter189/direct/solver/Zerr.drat"
+      ],
+      "detached": false,
+      "ended_unix": 1788313955.902508,
+      "ended_utc": "2026-09-02T01:52:35.902815+00:00",
+      "name": "solve_iter189_Zerr_complete_direct360_cadical_proof",
+      "reaped": true,
+      "returncode": 10,
+      "started_unix": 1788313510.8825579,
+      "started_utc": "2026-09-02T01:45:10.882563+00:00",
+      "timed_out": false,
+      "wall_seconds": 261.00184
+    }
+  ],
+  "status": "PASS",
+  "strict_serial": true,
+  "strict_solver_nonoverlap": true,
+  "subagents_used": false,
+  "tooling": [
+    {
+      "bytes": 967144,
+      "executable": true,
+      "lf": 6780,
+      "path": "tooling/cadical-1.9.5-arm64-macos",
+      "sha256": "fafdf4fb95a54ccee9b59f346544761896e40b076780a93f000e0357f20080c9"
+    },
+    {
+      "bytes": 70120,
+      "executable": true,
+      "lf": 249,
+      "path": "tooling/drat-trim-arm64-macos",
+      "sha256": "f58f63b0f76945d4c4c9ff6e87afaf870f579e67c0f7cca589492df8fc7ebd47"
+    },
+    {
+      "bytes": 36552,
+      "executable": true,
+      "lf": 72,
+      "path": "tooling/lrat-check-arm64-macos",
+      "sha256": "bd7eb8052623525814a0a37502b47f05375d9d9dfaf96ddc2fcd858958517cea"
+    }
+  ]
+}

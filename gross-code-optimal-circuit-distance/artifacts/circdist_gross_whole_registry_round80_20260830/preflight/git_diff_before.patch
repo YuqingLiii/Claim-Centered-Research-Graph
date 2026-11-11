@@ -1,0 +1,1420 @@
+diff --git a/BUILD_STATUS.md b/BUILD_STATUS.md
+index f564fa4..5f95657 100644
+--- a/BUILD_STATUS.md
++++ b/BUILD_STATUS.md
+@@ -5,7 +5,6 @@ Validated on 2026-08-23 for the current public release.
+ | Check | Result |
+ |---|---|
+ | Public-boundary, manifest, and evidence-closure audit | Passed |
+-| Cost-aggregate arithmetic | Passed; private-log attribution remains outside the public trust boundary |
+ | Validator self-tests | Passed: 23/23 |
+ | Set Equality proof-DAG validation | Passed: 85 nodes |
+ | k-Sum proof-DAG validation | Passed: 144 nodes |
+diff --git a/Makefile b/Makefile
+index c331158..298c53e 100644
+--- a/Makefile
++++ b/Makefile
+@@ -2,7 +2,6 @@
+ 
+ audit:
+ 	python3 tools/verify_public_release.py
+-	python3 tools/verify_cost_summary.py
+ 	python3 tools/test_release_contracts.py
+ 	python3 tools/lean_dag_check.py --selftest
+ 
+diff --git a/PUBLIC_MANIFEST.sha256 b/PUBLIC_MANIFEST.sha256
+index e2412b0..d57b0b0 100644
+--- a/PUBLIC_MANIFEST.sha256
++++ b/PUBLIC_MANIFEST.sha256
+@@ -1,12 +1,12 @@
+ 429f9f1cabe5a6fa8a1caa92ec009666410c5e2c26006f02189e7616b5f637a1  .gitattributes
+ 000b00067d5a1691e6127f57d188d826cbf6a46d5a9c493e5b2fb50f5d98def9  .github/workflows/proof-dag-audit.yml
+ c8f50ab4cd303d09f3266625e074b3dd04cc944bc2f0f0a9c2196f6f4f9f00d1  .gitignore
+-d49e64ce0385084c3619369b5d0642d0206da56fe98254c24538f07ca1c0e944  BUILD_STATUS.md
++0718f03404d8c3d957ecd437ab5ea70935c2fe935af99f352211b63ca3f4b3bf  BUILD_STATUS.md
+ f9fab78f17b8fbf06fe03194bd5014cf82d9483310f3d4ec10680983191d9f41  CONTRIBUTING.md
+-4eb23181dcaf0a4c538cac7efb3b500673e3ba3e8685903bbb07ac24518ed04b  Makefile
+-594071ec57c6e1e7783e0cf4d712c7f2fde1edcb722a7b3a256f5b4b6199046c  PUBLIC_RELEASE.md
+-8ff6a6437c42075c4afe4d94a2416978e476aa5994e0ca60f052f8fccca9a9b7  README.md
+-4361b9be538a635a32f9210654116b9feece0a331f7f0e9b6479093729507968  RELEASE_CHECKLIST.md
++95771c4a44c51bddb4811848dd6bb4a6b42528049a82d1f9cd178d0e3f103d93  Makefile
++8314356de2a00e22dfe951568d739dc16a4f381fee3136626a0683754ac10d85  PUBLIC_RELEASE.md
++4de14ce68fcb39cbecae5a1860406cbdd60c1afb66ae3c397378444169c0525f  README.md
++9540895e9dbdd3c943ea70ac22efe97aaabad1dc4a49cfc0a5fbd8bc3924e56a  RELEASE_CHECKLIST.md
+ c1937804b0f99726b7560f5c0ec02c2cec4877039f7bdba29e7b87bd51fef866  artifacts/ksum_B4_review.md
+ ad08bce9ab7674792cfa491db7c76baf2867a5140e7cc5c8dc415b984aa9e2cc  artifacts/ksum_B4_review2.md
+ c99c681233b5795b089338532ca58f57d6c64a781ac35d7719be37b90ba91e84  artifacts/ksum_B4_upper_note.md
+@@ -516,7 +516,6 @@ e07dfa09926c5df53603bbefc3ff2da82d1eca8e31f5f282841f29e6d6ee064b  artifacts/logs
+ d6b60968fc9135043712702acb024866b4bf5b64973c05ccb0fb1b085aada269  artifacts/logs_se_trace_t5_uniform_ta_two_frame_20260722/verify_artifact.py
+ 9f4bf650e4d7f0d57df79c2c78c255592472d7fe65a5828fd1bab3e439b20732  artifacts/logs_se_trace_t6_joint_review_20260722/REPORT.md
+ 2ef112cdd526b3474106151eacb578fd096f20a3354c3af3848bd378b0f8a9df  artifacts/mdh_phi_tower_n4.json
+-e5afb4127c2027ad354e3e728892636cd134b9f4a176b0d39850f01c8e541de2  artifacts/model_cost_accounting_summary.yaml
+ 121e6f303d0a4edbb835a32d8ce96cb60ff3a9bcf6e98c64cb557b2e25de9a69  artifacts/proof_dag_v6_external_audit_20260816.md
+ 7cb6c1b79915c83fdc776673d087c16cf85d576a4b1d270899a52bb6eeea6088  artifacts/references/rosmanis_small_range_ed.txt
+ 38837232594b7ffac478b7c1de894743ef38f71659c5468300ca8fcf8de31f27  artifacts/se_br_num_n3_ground_truth_run_20260819.md
+@@ -994,8 +993,8 @@ fd547b6dd9cf23fb85008a5c23e77a45a2128314c86f79e918f6ffe9191d6cbd  research/ksum/
+ bb6bb2a8e3afc2b4daa62938ba28a4824920a8b0855f1d782ba3ff45c29df07e  research/ksum/proof-dag/nodes/KSUM.k3.donor.dream.yaml
+ a28d42fd7cd50099680e68e9a3d5f6972642a547f3da764f29185d4ebf96b43d  research/ksum/proof-dag/nodes/KSUM.k3.donor.yaml
+ 0d492003c00e117668659c24a3878633d565ebe45bdb8bf676586664573c0dcd  research/ksum/proof-dag/nodes/KSUM.k3.donor.zhang-tani.yaml
+-88afaae310353cd55aee263e2376b7b53d93253f72f0128d85c99536f80df488  research/literature/papers/ambainis-balodis-iraids-2021-small-range-claw/proof-dag/recurrence.md
+-2d30ae7200a1eace1d090419577b9ed886f48cb655ceecbef5c2cb1826577411  research/literature/papers/childs-eisenberg-2005-subset-finding/README.md
++e4f53764c147c9e489d5dfde93107bc41e157c524a2bf7885174e34794b6c5a8  research/literature/papers/ambainis-balodis-iraids-2021-small-range-claw/proof-dag/recurrence.md
++7ae108f00921e9e19f3e43ba38f172ffb6835a9dff18e7c4256073959520c536  research/literature/papers/childs-eisenberg-2005-subset-finding/README.md
+ 0de7a56c24ee63f07e2d1837e43ffd63709b8a9ddcdcadf189c5a40558a62623  research/se/notes/SE_PROOF_DAG.md
+ fbb54a844327f70971f71547a6aaf36f2654c7b7ff33f767cf67fae1d87d3c59  research/se/proof-dag/GRAPH.mmd
+ 88d5ec71b304e6eb45e125c084a2a227c64c5d39e2d75036bb49a47a445d96f6  research/se/proof-dag/NODE_INDEX.md
+@@ -1115,7 +1114,7 @@ a9671c4e464673c55eb1ca49f7f27a549dfee0e3ea4aa05ceb13c973609757a4  research/se/pr
+ da68ae4183cc6201643968e5de6e84725e3c712018a37f5cc8fe85b0dadc14f7  research/se/proof-dag/nodes/SE.related.collision.yaml
+ 47c0dd1169f3d38aeb89461fcd9ecb91c411a9da31d2723278db5c6f99b6ce77  research/se/proof-dag/nodes/SE.ros.yaml
+ f4cddc78253632a8b3cea611cc72edfd93e435c809ca0adc7919a4a81c15f305  research/se/proof-dag/nodes/SE.sdp.yaml
+-ecf1ddaba305c3a3cbef7220bf384250802d51dac5de5feb58ea1462f7e7ab23  tools/build_public_release.py
++364998e4208469eac89b99570535393b4579b9e2656a80aac02e8ee23dcfa563  tools/build_public_release.py
+ 19fa2d42febed0e38af5c038ab3ae3cd8d43fb652f91b5809f83b03817663753  tools/check_event_append_only.py
+ 7c7416ed3598dbdf32addfcf5267d0c6662f5f99e578dd3f8c3236ef323030a0  tools/exact_simplex.py
+ 9786156592c1d13575b570743a893e2670bb67ec9e9727687544b7a0a816ea65  tools/ksum_b4v2_artifacts.py
+@@ -1219,5 +1218,4 @@ da8ea6407f2d73329dae07d7182ce146fc6a4c8910cf871464bc0a11469afe21  tools/se_cance
+ 099eaaf789ad002fe4196aae88de1456417c042987cee2a0a50ceb492604ab87  tools/se_matched_degree_lemma_check.py
+ 06f652f4357103ba00d6791d20c11b88d1dbb7761f32feda0ff9fd50a0bed7fd  tools/se_n3_ground_truth.py
+ 3ebc44f4ad2a2320071c48f60bc92f054f6ad16a8e62b7acc47aa0cf27f2c543  tools/test_release_contracts.py
+-144473d093a7588bccc23bc5961a285139b7f32e3118a8dea1d91bcc8b922c45  tools/verify_cost_summary.py
+ a130a0846ec05b082e07ced892271544c5c2bcd0b5f28c99a6705820fed799a1  tools/verify_public_release.py
+diff --git a/PUBLIC_RELEASE.md b/PUBLIC_RELEASE.md
+index a55eb48..91f9b20 100644
+--- a/PUBLIC_RELEASE.md
++++ b/PUBLIC_RELEASE.md
+@@ -10,7 +10,6 @@ This repository contains the smallest self-contained public surface needed to in
+ - both node-linked Lean 4 developments, without build caches;
+ - every available artifact, review, run output, source excerpt, or verification program referenced by a canonical node;
+ - graph, evidence-closure, Lean-alignment, and release-boundary validators;
+-- the aggregate model-cost record and its arithmetic checker; and
+ - privacy-redacted snapshots of historical node records cited by migration events.
+ 
+ The export follows claim-level reference closure: evidence is included because a canonical node points to it, not merely because it existed in the internal workspace.
+@@ -25,6 +24,8 @@ The following material is deliberately outside the public boundary:
+ - absolute-path build records and recovered-drive metadata;
+ - Python caches, Lean `.lake/` directories, `.olean` files, and rendered QA images;
+ - unrelated research programs and proof graphs;
++- third-party e-print sources and PDFs quoted by literature claim cards, which are cited by
++  arXiv identifier and DOI instead of redistributed;
+ - duplicate archives, obsolete migration bundles, and unlinked exploratory output; and
+ - private token-accounting logs and request-level attribution data.
+ 
+diff --git a/README.md b/README.md
+index 9260987..2e95e53 100644
+--- a/README.md
++++ b/README.md
+@@ -14,7 +14,6 @@ The repository contains the protocols, graph data, Lean developments, validators
+ - [Small-alphabet k-Sum node index](research/ksum/proof-dag/NODE_INDEX.md)
+ - [Release validation status](BUILD_STATUS.md)
+ - [Code-release boundary](PUBLIC_RELEASE.md)
+-- [Model-cost summary](artifacts/model_cost_accounting_summary.yaml)
+ 
+ ## Included research records
+ 
+@@ -53,7 +52,7 @@ make audit
+ make validate
+ ```
+ 
+-The checks cover the public boundary, evidence closure, cost-summary arithmetic, validator self-tests, graph structure, identifiers, links, review requirements, event history, and Lean-to-node synchronization.
++The checks cover the public boundary, evidence closure, validator self-tests, graph structure, identifiers, links, review requirements, event history, and Lean-to-node synchronization.
+ 
+ To run the complete Lean 4 builds:
+ 
+diff --git a/RELEASE_CHECKLIST.md b/RELEASE_CHECKLIST.md
+index fa0da6a..7ecf986 100644
+--- a/RELEASE_CHECKLIST.md
++++ b/RELEASE_CHECKLIST.md
+@@ -3,7 +3,7 @@
+ - [x] Public repository name: `Claim-Centered-Research-Graph`.
+ - [x] Exclude architecture and case-study manuscripts, bibliographies, figures, and PDFs.
+ - [x] Include all canonical nodes and their available evidence closure.
+-- [x] Run the public-boundary, graph, cost, and Lean-alignment validators.
++- [x] Run the public-boundary, graph, and Lean-alignment validators.
+ - [x] Perform a credential, absolute-path, session-identifier, and large-file scan.
+ - [ ] Choose and add a software/data license after confirming author consent.
+ - [ ] Obtain external expert assessment for the mathematical claims before presenting repository-local levels as external validation.
+diff --git a/artifacts/model_cost_accounting_summary.yaml b/artifacts/model_cost_accounting_summary.yaml
+deleted file mode 100644
+index e3e6354..0000000
+--- a/artifacts/model_cost_accounting_summary.yaml
++++ /dev/null
+@@ -1,94 +0,0 @@
+-schema: model-cost-accounting-v1
+-scope: API-equivalent model cost, not the actual subscription bill
+-currency: USD
+-method:
+-  common:
+-    - Read client-recorded API usage fields; do not estimate tokens from text.
+-    - Price each request separately because the long-context tier is request-local.
+-    - Attribute sessions to one research project by keyword voting; child-agent records inherit the parent label.
+-  codex:
+-    usage_field: payload.type=token_count / last_token_usage
+-    cached_input_rule: fresh_input = input - cached_input
+-    duplicate_rules:
+-      - Remove immediately repeated identical usage events.
+-      - Remove cross-file duplicates keyed by timestamp, input, and output.
+-    attribution: All Codex usage is assigned to mathematics.
+-    attribution_bias: This convention lowers the reported DAG-maintenance share.
+-    pricing_per_million_tokens:
+-      short_context: {fresh_input: 5.0, cached_input: 0.5, output: 30.0}
+-      long_context: {fresh_input: 10.0, cached_input: 1.0, output: 45.0}
+-    assumed_long_context_threshold: 128000
+-  claude:
+-    duplicate_rule: Merge all content blocks sharing a message id and retain the maximum reported output count.
+-    attribution: Classify each assistant record from its tool-call targets; mixed or support work is reported as an uncertainty.
+-    cache_rule: Price 5-minute and 1-hour cache writes from the recorded cache_creation details.
+-limitations:
+-  - Raw conversation and usage logs are excluded from the public release for privacy.
+-  - Session labeling and tool-target attribution are heuristic.
+-  - Prices are stated assumptions used for cross-project comparison, not verified invoices.
+-  - The public aggregate permits arithmetic verification but not independent reconstruction of task attribution.
+-  - Per-model Claude costs are rounded to whole dollars, so their displayed sum may differ from the
+-    provider total by at most USD 1.
+-  - The 3.3 percent lower endpoint of the k-Sum DAG-share sensitivity range is an attribution estimate;
+-    the alternative per-record numerator was not retained and cannot be independently recomputed from
+-    this public aggregate.
+-projects:
+-  se:
+-    total_cost: 16841.0
+-    codex_cost: 14149.0
+-    claude_cost: 2692.0
+-    dag_maintenance_cost: 850.0
+-    undecomposed_process_cost: 720.0
+-    process_total_cost: 1570.0
+-    mathematics_cost: 15271.0
+-    reported_shares_percent:
+-      dag_maintenance: 5.0
+-      process_total: 9.3
+-      mathematics: 90.7
+-    source_scope: >-
+-      Aggregate supplied by the SE accounting run; the USD 720 difference between process_total_cost
+-      and dag_maintenance_cost was not retained as separate coordination and reporting components.
+-      SE codex_usage and claude_usage subtotals were likewise not retained in this public aggregate,
+-      and the per-request private logs are not published.
+-  ksum:
+-    total_cost: 22424.0
+-    codex_cost: 17276.0
+-    claude_cost: 5148.0
+-    dag_maintenance_cost: 1261.0
+-    coordination_cost: 193.0
+-    reporting_cost: 530.0
+-    process_total_cost: 1984.0
+-    mathematics_cost: 20440.0
+-    reported_shares_percent:
+-      dag_maintenance: 5.62
+-      coordination: 0.86
+-      reporting: 2.36
+-      process_total: 8.85
+-      mathematics: 91.15
+-    sensitivity:
+-      claude_cost_range: [2700.0, 5148.0]
+-      dag_share_percent_range: [3.3, 5.6]
+-      reason: Mixed Claude sessions make project attribution the dominant uncertainty.
+-      lower_endpoint_reconstructable: false
+-      upper_endpoint_reconstructable: true
+-    codex_usage:
+-      sessions: 172
+-      requests: 108945
+-      fresh_input_tokens: 404352265
+-      cached_input_tokens: 13883615360
+-      output_tokens: 54068983
+-      long_context_request_percent: 53.6
+-      all_short_price_lower_bound: 10586.0
+-    claude_usage:
+-      calls: 7909
+-      fresh_input_tokens: 847206
+-      cache_write_tokens: 88424252
+-      cache_read_tokens: 2040558972
+-      output_tokens: 15015212
+-      cache_creation_records: {one_hour: 4182, five_minute: 11860}
+-      models:
+-        fable-5: {calls: 3936, fresh: 602998, cache_write: 53203638, cache_read: 1147145109, output: 7239745, cost: 2488.0}
+-        opus-5: {calls: 2549, fresh: 206375, cache_write: 21022450, cache_read: 630352723, output: 3724049, cost: 1665.0}
+-        opus-4.8: {calls: 1346, fresh: 37721, cache_write: 13746555, cache_read: 261809774, output: 3645072, cost: 955.0}
+-        sonnet-5: {calls: 23, fresh: 46, cache_write: 412465, cache_read: 1030836, output: 399954, cost: 39.0}
+-        haiku-4.5: {calls: 8, fresh: 66, cache_write: 39144, cache_read: 220530, output: 6392, cost: 2.0}
+diff --git a/research/literature/papers/ambainis-balodis-iraids-2021-small-range-claw/proof-dag/recurrence.md b/research/literature/papers/ambainis-balodis-iraids-2021-small-range-claw/proof-dag/recurrence.md
+index 56256d4..22af7e5 100755
+--- a/research/literature/papers/ambainis-balodis-iraids-2021-small-range-claw/proof-dag/recurrence.md
++++ b/research/literature/papers/ambainis-balodis-iraids-2021-small-range-claw/proof-dag/recurrence.md
+@@ -2,6 +2,8 @@
+ 
+ - **Type:** leaf
+ - **Claim:** Iterating the recursive algorithm yields exponents T_i converging to the stated n^(1/2+epsilon)k^(1/4) envelope.
+-- **Source evidence:** [arXiv v1 source, lines 240-286](../../../../../artifacts/references/abi_2103.16390_src/claw.tex)
+-- **Parent:** [ABI upper](upper-root.md)
++- **Source evidence:** arXiv:2103.16390v1 e-print source (`claw.tex`), lines 240-286.
++  The third-party source is not redistributed with this release; retrieve it from
++  <https://arxiv.org/abs/2103.16390>.
++- **Role:** leaf of the ABI upper-bound line.
+ - **Local import:** [KSUM.B4a](../../../../ksum/proof-dag/nodes/KSUM.B4a.yaml)
+diff --git a/research/literature/papers/childs-eisenberg-2005-subset-finding/README.md b/research/literature/papers/childs-eisenberg-2005-subset-finding/README.md
+index 99e3414..26575e9 100755
+--- a/research/literature/papers/childs-eisenberg-2005-subset-finding/README.md
++++ b/research/literature/papers/childs-eisenberg-2005-subset-finding/README.md
+@@ -5,7 +5,9 @@
+ - **Version checked:** arXiv quant-ph/0311038v2
+ - **Source:** https://arxiv.org/abs/quant-ph/0311038
+ - **DOI:** https://doi.org/10.26421/QIC5.7
+-- **Local evidence:** [tracked v2 LaTeX](../../../../artifacts/references/ksum_W_walkopt/childs_eisenberg_quant-ph_0311038v2_eprint_src/subset.tex)
++- **Evidence checked:** the v2 e-print LaTeX source (`subset.tex`), obtained from arXiv.
++  The third-party source is not redistributed with this release; retrieve it from the
++  **Source** link above.
+ - **Verification:** verified on 2026-07-18
+ 
+ ## Claim card — general L-subset upper bound
+@@ -20,11 +22,15 @@
+ 
+ ## Relationships
+ 
+-- provides-upper-bound matching [Belovs–Spalek 2013](../belovs-spalek-2013-k-sum/README.md) when |G| >= N^k.
++- provides-upper-bound matching Belovs–Špalek 2013 (arXiv:1206.6528, doi:10.1145/2422436.2422474)
++  when |G| >= N^k.
+ - method ancestry includes Ambainis's element-distinctness walk.
+ - does not provide a k >= 3 k-claw lower-bound donor; its lower-bound discussion records only the then-known square-root scale for general subset finding.
+ 
+ ## Used by (local)
+ 
+-- [Local manuscript](../../../ksum/paper/ksum_small_alphabet.tex)
+-- [k-Sum topic map](../../topics/k-sum/README.md)
++- The range-independent `O(N^(2/3))` half of the linear-alphabet threshold, recorded as the
++  `range-independent-upper-bound` assumption of
++  [`KSUM.k2.threshold`](../../../ksum/proof-dag/nodes/KSUM.k2.threshold.yaml).
++- The case-study manuscript, which is outside this release's boundary
++  (see [PUBLIC_RELEASE.md](../../../../PUBLIC_RELEASE.md)).
+diff --git a/tools/build_public_release.py b/tools/build_public_release.py
+index 1c8fbdd..24ed988 100755
+--- a/tools/build_public_release.py
++++ b/tools/build_public_release.py
+@@ -2,7 +2,7 @@
+ """Build the code-only public claim-graph release.
+ 
+ The exporter updates the protocols, canonical proof DAGs, Lean sources,
+-validators, cost aggregate, and every repository path cited by a node.
++validators, and every repository path cited by a node.
+ Manuscripts, private logs, and build caches remain outside the release.
+ """
+ 
+@@ -36,7 +36,6 @@ PUBLIC_TOOLS = {
+     "proof_dag_v6.py",
+     "repair_audit_records_20260819.py",
+     "test_release_contracts.py",
+-    "verify_cost_summary.py",
+     "verify_public_release.py",
+ }
+ TOOL_TOKEN = re.compile(
+@@ -370,7 +369,6 @@ def prune_managed_release(destination: Path, references: set[Path]) -> None:
+     desired: set[Path] = {
+         Path("research/DAG_PROTOCOL.md"),
+         Path("research/FILE_PROTOCOL.md"),
+-        Path("artifacts/model_cost_accounting_summary.yaml"),
+         Path("provenance/EXPORT_REDACTIONS.tsv"),
+         Path("provenance/REDACTIONS.md"),
+         Path("provenance/REFERENCE_CLOSURE.tsv"),
+@@ -438,8 +436,6 @@ def main() -> int:
+ 
+     for name in sorted(PUBLIC_TOOLS):
+         copy_one(Path("tools") / name, destination, redactions)
+-    copy_one(Path("artifacts/model_cost_accounting_summary.yaml"), destination, redactions)
+-
+     references, tool_references = expand_text_references(canonical_references())
+     for relative in sorted(references):
+         copy_reference(relative, destination, redactions)
+diff --git a/tools/proof_dag_check.py b/tools/proof_dag_check.py
+index 947150e..e9589f8 100755
+--- a/tools/proof_dag_check.py
++++ b/tools/proof_dag_check.py
+@@ -1,933 +1,93 @@
+-"""Validate canonical per-node proof-DAG records.
+-
+-The validator is deliberately structural.  It never promotes, demotes, or
+-recomputes a mathematical status.  Under the single-status model
+-(DAG_PROTOCOL section 1, lead merge 2026-08-08) statuses are hand-written per
+-node; the old min/max propagation is gone.  Two mechanisms replace it here:
+-
+-- LINT-COMPLETION (hard error): a CERTIFIED*/PROVED AND-node with a
+-  load-bearing child below completion tier and no explicit relative-hypothesis
+-  display in its structured record fails validation.  A CERTIFIED*/PROVED OR node with
+-  children but no completion-tier child gets a warning (a direct whole-claim
+-  proof is legal there, so it cannot be a hard error).
+-- ``--diagnose chain-strength``: an on-demand, read-only bottom-up report of
+-  how solid the subtree under each node actually is (old-style min/max), for
+-  humans; it never changes exit status.
+-"""
++#!/usr/bin/env python3
++"""Validate current claim-centered projects and the unchanged legacy SE/k-Sum records."""
+ 
+ from __future__ import annotations
+ 
+ import argparse
+-import json
+ from pathlib import Path
+-import re
+-import sys
++import yaml
+ 
+-from proof_dag_v6 import (
+-    chain_strength_report as chain_strength_report_v6,
+-    validate_problem as validate_problem_v6,
+-    write_generated as write_generated_v6,
+-)
++from proof_dag_schema import load_problem, validate_preservation, validate_problem, write_generated
++# Preserve the import interface used by the existing Lean checker.
++from proof_dag_legacy import normalize_grouped, parse_front_matter, parse_node
++import proof_dag_legacy
+ 
+ 
+ ROOT = Path(__file__).resolve().parents[1]
+-PROBLEM_DIRS = {
+-    "se": "research/se",
+-    "ksum": "research/ksum",
+-}
+-try:
+-    from private_problem_registry import EXTRA_PROBLEM_DIRS
+-except ImportError:
+-    EXTRA_PROBLEM_DIRS = {}
+-PROBLEM_DIRS.update(EXTRA_PROBLEM_DIRS)
+-LEGACY_REQUIRED_FIELDS = {
+-    "id",
+-    "node_file",
+-    "aliases",
+-    "kind",
+-    "role",
+-    "status",
+-    "status_source",
+-    "disposition",
+-    "parents",
+-    "children",
+-    "related",
+-}
+-LEGACY_OPTIONAL_FIELDS = {"composition", "lean", "lean_reason", "reason", "caveat"}
+-LEGACY_ALLOWED_FIELDS = LEGACY_REQUIRED_FIELDS | LEGACY_OPTIONAL_FIELDS
+-GROUPED_V4_SCHEMA = {
+-    "identity": {"id", "node_file", "aliases", "role"},
+-    "graph": {"kind", "children", "composition", "related"},
+-    "assessment": {"status", "source", "disposition", "reason", "caveat"},
+-    "formalization": {"lean", "reason"},
+-}
+-STRUCTURED_SCHEMA = {
+-    "identity": {"id", "aliases", "role"},
+-    "claim": {"statement"},
+-    "graph": {
+-        "kind", "children", "composition", "related", "rationale",
+-        "dependency_notes"
+-    },
+-    "assessment": {"status", "source", "reason", "caveat", "details"},
+-    "workflow": {"disposition"},
+-    "artifacts": {"work_record", "evidence", "reviews"},
+-    "formalization": {"lean", "absence_reason"},
+-    "open_obligations": None,
+-    "history": None,
+-    "notes": None,
+-}
+-COMPOSITION_FIELDS = {"arguments", "absence_reason"}
+-ARGUMENT_FIELDS = {
+-    "premises", "claim", "proof", "relative_hypotheses", "assessment",
+-    "workflow", "notes"
+-}
+-ARGUMENT_ASSESSMENT_FIELDS = {
+-    "status", "source", "reason", "caveat"
+-}
+-ARGUMENT_WORKFLOW_FIELDS = {"disposition"}
+-LEGACY_REQUIRED_SECTIONS = {
+-    "Claim",
+-    "Role in DAG",
+-    "Current status",
+-    "Dependencies",
+-    "Work record",
+-    "Evidence",
+-    "Adversarial reviews",
+-    "Open obligations",
+-    "Status history",
+-}
+-ALLOWED_KINDS = {None, "OR", "AND", "GOAL", "LEAF"}
+-ALLOWED_ROLES = {
+-    "proof", "obstruction", "tool", "outcome", "history", "constraint", "related"
+-}
+-ALLOWED_STATUSES = {
+-    "PROVED",
+-    "NUMERICAL",
+-    "CERTIFIED*",
+-    "CONJECTURED",
+-    "OPEN",
+-    "REFUTED",
++PROBLEMS = {
++    "se": ROOT / "research/se",
++    "ksum": ROOT / "research/ksum",
++    "circdist": ROOT / "circdist",
++    "holevo-additivity-equality": ROOT / "holevo-additivity-equality",
++    "holevo-counterexample-prevalence": ROOT / "holevo-counterexample-prevalence",
++    "holevo-extensive-violation": ROOT / "holevo-extensive-violation",
++    "werner-holevo-capacity-threshold": ROOT / "werner-holevo-capacity-threshold",
++    "grothendieck-d4": ROOT / "grothendieck-d4",
++    "grothendieck-e8": ROOT / "grothendieck-e8",
++    "grothendieck-group-orbit": ROOT / "grothendieck-group-orbit",
+ }
+-ALLOWED_DISPOSITIONS = {None, "DEAD", "PARKED"}
+-COMPLETION_TIERS = {"CERTIFIED*", "PROVED"}
+-LADDER_RANK = {"REFUTED": -1, "OPEN": 0, "CONJECTURED": 1, "NUMERICAL": 2, "CERTIFIED*": 3, "PROVED": 4}
+-RELATIVE_DISPLAY = re.compile(r"relative hypothes|rel-hypothesis", re.IGNORECASE)
+-MARKDOWN_LINK = re.compile(r"\[[^\]]*\]\(([^)]+)\)")
+-
+-
+-def uses_v6_schema(problem_root: Path) -> bool:
+-    """Select the route-based validator from the repository schema marker, not a project name."""
+-    return (problem_root / "proof-dag" / "PROJECT.yaml").is_file()
+-
+-
+-def strip_comment(value: str) -> str:
+-    """Remove an unquoted YAML-style trailing comment."""
+-    out: list[str] = []
+-    in_quote = False
+-    for char in value:
+-        if char == '"':
+-            in_quote = not in_quote
+-        if char == "#" and not in_quote:
+-            break
+-        out.append(char)
+-    return "".join(out).strip()
+-
+-
+-def parse_scalar(value: str):
+-    value = strip_comment(value)
+-    if value == "null":
+-        return None
+-    if value in {"true", "false"}:
+-        return value == "true"
+-    if value.startswith(("[", "{", '"')):
+-        return json.loads(value)
+-    return value
+-
+-
+-FRONT_KEY = re.compile(
+-    r'^(\s*)(?:"((?:\\.|[^"\\])*)"|([A-Za-z_][A-Za-z0-9_-]*)):\s*(.*)$'
+-)
+-
+-
+-def parse_front_matter(front: str) -> dict:
+-    """Parse the mapping-only YAML subset used by canonical node records.
+-
+-    In addition to nested mappings and JSON-style inline lists, this accepts
+-    literal block scalars (``|``/``|-``).  It deliberately excludes YAML
+-    aliases, tags, and sequence-of-mapping syntax so the public node contract
+-    remains small and deterministic without an external YAML dependency.
+-    """
+-    root: dict = {}
+-    mappings: dict[int, dict] = {0: root}
+-    lines = front.splitlines()
+-    i = 0
+-    while i < len(lines):
+-        line = lines[i]
+-        if not line.strip() or line.lstrip().startswith("#"):
+-            i += 1
+-            continue
+-        match = FRONT_KEY.match(line)
+-        if not match:
+-            raise ValueError(f"invalid front matter line: {line!r}")
+-        indent = len(match.group(1))
+-        if indent % 2 or indent not in mappings:
+-            raise ValueError(f"invalid front matter indentation: {line!r}")
+-        quoted, plain, value = match.group(2), match.group(3), match.group(4)
+-        key = json.loads(f'"{quoted}"') if quoted is not None else plain
+-        parent = mappings[indent]
+-        for depth in [depth for depth in mappings if depth > indent]:
+-            del mappings[depth]
+-        scalar = value.strip()
+-        if scalar in {"|", "|-"}:
+-            block: list[str] = []
+-            j = i + 1
+-            block_indent = indent + 2
+-            while j < len(lines):
+-                candidate = lines[j]
+-                candidate_indent = len(candidate) - len(candidate.lstrip(" "))
+-                if candidate.strip() and candidate_indent <= indent:
+-                    break
+-                if candidate.strip() and candidate_indent < block_indent:
+-                    raise ValueError(
+-                        f"invalid block-scalar indentation: {candidate!r}"
+-                    )
+-                block.append(candidate[block_indent:] if len(candidate) >= block_indent else "")
+-                j += 1
+-            text = "\n".join(block)
+-            parent[key] = text if scalar == "|-" else text + "\n"
+-            i = j
+-            continue
+-        if scalar == "":
+-            child: dict = {}
+-            parent[key] = child
+-            mappings[indent + 2] = child
+-        else:
+-            parent[key] = parse_scalar(value)
+-        i += 1
+-    return root
+-
+-
+-def normalize_grouped(raw: dict) -> dict:
+-    identity = raw.get("identity", {})
+-    graph = raw.get("graph", {})
+-    assessment = raw.get("assessment", {})
+-    formalization = raw.get("formalization", {})
+-    return {
+-        "id": identity.get("id"),
+-        "node_file": identity.get("node_file"),
+-        "aliases": identity.get("aliases"),
+-        "role": identity.get("role"),
+-        "kind": graph.get("kind"),
+-        "children": graph.get("children"),
+-        "composition": graph.get("composition"),
+-        "related": graph.get("related"),
+-        "status": assessment.get("status"),
+-        "status_source": assessment.get("source"),
+-        "disposition": assessment.get("disposition"),
+-        "reason": assessment.get("reason"),
+-        "caveat": assessment.get("caveat"),
+-        "lean": formalization.get("lean"),
+-        "lean_reason": formalization.get("reason"),
+-        "__schema__": "grouped-v4",
+-        "__raw__": raw,
+-    }
+-
+-
+-def normalize_structured(raw: dict) -> dict:
+-    identity = raw.get("identity", {})
+-    claim = raw.get("claim", {})
+-    graph = raw.get("graph", {})
+-    assessment = raw.get("assessment", {})
+-    workflow = raw.get("workflow", {})
+-    formalization = raw.get("formalization", {})
+-    return {
+-        "id": identity.get("id"),
+-        "node_file": None,
+-        "aliases": identity.get("aliases"),
+-        "role": identity.get("role"),
+-        "claim": claim.get("statement"),
+-        "kind": graph.get("kind"),
+-        "children": graph.get("children"),
+-        "composition": graph.get("composition"),
+-        "related": graph.get("related"),
+-        "status": assessment.get("status"),
+-        "status_source": assessment.get("source"),
+-        "disposition": workflow.get("disposition"),
+-        "reason": assessment.get("reason"),
+-        "caveat": assessment.get("caveat"),
+-        "lean": formalization.get("lean"),
+-        "lean_reason": formalization.get("absence_reason"),
+-        "__schema__": "structured-v5",
+-        "__raw__": raw,
+-    }
+-
+-
+-def parse_node(path: Path) -> tuple[dict, str]:
+-    text = path.read_text(encoding="utf-8").replace("\r\n", "\n")
+-    if path.suffix in {".yaml", ".yml"}:
+-        raw = parse_front_matter(text)
+-        return normalize_structured(raw), text
+-    if not text.startswith("---\n"):
+-        raise ValueError("missing opening front matter delimiter")
+-    try:
+-        front, body = text[4:].split("\n---\n", 1)
+-    except ValueError as exc:
+-        raise ValueError("missing closing front matter delimiter") from exc
+-    raw = parse_front_matter(front)
+-    if any(group in raw for group in GROUPED_V4_SCHEMA):
+-        metadata = normalize_grouped(raw)
+-    else:
+-        legacy_raw = raw.copy()
+-        metadata = raw.copy()
+-        metadata["__schema__"] = "legacy-flat"
+-        metadata["__raw__"] = legacy_raw
+-    return metadata, body
+-
+-
+-def schema_errors(metadata: dict, strict_grouped: bool) -> list[str]:
+-    """Return structural schema errors before mathematical graph validation."""
+-    errors: list[str] = []
+-    raw = metadata.get("__raw__", {})
+-    schema = metadata.get("__schema__")
+-    if schema != "structured-v5":
+-        if strict_grouped:
+-            return ["KSUM/SE nodes must use the pure-YAML structured-v5 schema"]
+-        missing = LEGACY_REQUIRED_FIELDS - raw.keys()
+-        unknown = raw.keys() - LEGACY_ALLOWED_FIELDS
+-        if missing:
+-            errors.append(f"missing {sorted(missing)}")
+-        if unknown:
+-            errors.append(f"fields outside the legacy schema {sorted(unknown)}")
+-        return errors
+-
+-    top_missing = STRUCTURED_SCHEMA.keys() - raw.keys()
+-    top_unknown = raw.keys() - STRUCTURED_SCHEMA.keys()
+-    if top_missing:
+-        errors.append(f"missing top-level groups {sorted(top_missing)}")
+-    if top_unknown:
+-        errors.append(f"unknown top-level groups {sorted(top_unknown)}")
+-    for group, required in STRUCTURED_SCHEMA.items():
+-        block = raw.get(group)
+-        if not isinstance(block, dict):
+-            errors.append(f"{group} must be a mapping")
+-            continue
+-        if required is None:
+-            continue
+-        missing = required - block.keys()
+-        unknown = block.keys() - required
+-        if missing:
+-            errors.append(f"{group} missing {sorted(missing)}")
+-        if unknown:
+-            errors.append(f"{group} has unknown fields {sorted(unknown)}")
+-    statement = raw.get("claim", {}).get("statement") \
+-        if isinstance(raw.get("claim"), dict) else None
+-    if not isinstance(statement, str) or not statement.strip():
+-        errors.append("claim.statement must be a nonempty string")
+-    composition = raw.get("graph", {}).get("composition") if isinstance(raw.get("graph"), dict) else None
+-    if not isinstance(composition, dict):
+-        errors.append("graph.composition must be a mapping")
+-        return errors
+-    missing = COMPOSITION_FIELDS - composition.keys()
+-    unknown = composition.keys() - COMPOSITION_FIELDS
+-    if missing:
+-        errors.append(f"graph.composition missing {sorted(missing)}")
+-    if unknown:
+-        errors.append(f"graph.composition has unknown fields {sorted(unknown)}")
+-    arguments = composition.get("arguments")
+-    if not isinstance(arguments, dict):
+-        errors.append("graph.composition.arguments must be a mapping")
+-        return errors
+-    for argument_id, argument in arguments.items():
+-        if not isinstance(argument, dict):
+-            errors.append(f"composition argument {argument_id!r} must be a mapping")
+-            continue
+-        missing = ARGUMENT_FIELDS - argument.keys()
+-        unknown = argument.keys() - ARGUMENT_FIELDS
+-        if missing:
+-            errors.append(f"composition argument {argument_id!r} missing {sorted(missing)}")
+-        if unknown:
+-            errors.append(f"composition argument {argument_id!r} has unknown fields {sorted(unknown)}")
+-        route_assessment = argument.get("assessment")
+-        if not isinstance(route_assessment, dict):
+-            errors.append(f"composition argument {argument_id!r}.assessment must be a mapping")
+-            continue
+-        missing = ARGUMENT_ASSESSMENT_FIELDS - route_assessment.keys()
+-        unknown = route_assessment.keys() - ARGUMENT_ASSESSMENT_FIELDS
+-        if missing:
+-            errors.append(f"composition argument {argument_id!r}.assessment missing {sorted(missing)}")
+-        if unknown:
+-            errors.append(f"composition argument {argument_id!r}.assessment has unknown fields {sorted(unknown)}")
+-        route_workflow = argument.get("workflow")
+-        if not isinstance(route_workflow, dict):
+-            errors.append(f"composition argument {argument_id!r}.workflow must be a mapping")
+-            continue
+-        missing = ARGUMENT_WORKFLOW_FIELDS - route_workflow.keys()
+-        unknown = route_workflow.keys() - ARGUMENT_WORKFLOW_FIELDS
+-        if missing:
+-            errors.append(f"composition argument {argument_id!r}.workflow missing {sorted(missing)}")
+-        if unknown:
+-            errors.append(f"composition argument {argument_id!r}.workflow has unknown fields {sorted(unknown)}")
+-    return errors
+-
+-
+-def mermaid_variables(dag_path: Path) -> set[str]:
+-    text = dag_path.read_text(encoding="utf-8")
+-    block = text.split("```mermaid", 1)[1].split("```", 1)[0]
+-    variables = set()
+-    for line in block.splitlines():
+-        stripped = line.lstrip()
+-        if stripped.startswith(("class ", "classDef ", "subgraph ", "flowchart ", "end")):
+-            continue
+-        match = re.search(
+-            r"\b([A-Za-z][A-Za-z0-9]*)\s*(?:\(\[|\[|\()\s*\"", line
+-        )
+-        if match:
+-            variables.add(match.group(1))
+-    return variables
+-
+-
+-def find_cycle(children: dict[str, list[str]]) -> list[str] | None:
+-    visiting: set[str] = set()
+-    visited: set[str] = set()
+-    trail: list[str] = []
+-
+-    def visit(node: str) -> list[str] | None:
+-        if node in visiting:
+-            start = trail.index(node)
+-            return trail[start:] + [node]
+-        if node in visited:
+-            return None
+-        visiting.add(node)
+-        trail.append(node)
+-        # A node whose file failed to parse is reported separately; do not crash the sweep on it.
+-        for child in children.get(node, ()):
+-            cycle = visit(child)
+-            if cycle:
+-                return cycle
+-        trail.pop()
+-        visiting.remove(node)
+-        visited.add(node)
+-        return None
+-
+-    for node in children:
+-        cycle = visit(node)
+-        if cycle:
+-            return cycle
+-    return None
+-
+-
+-import hashlib
+-
+-
+-# Harmonization note (2026-08-01, WHGAP M7-F1/F2 adjudication): this check_lean is the
+-# ADVISORY v1 layer. For problems that enable it (currently werner-holevo-gap), the
+-# AUTHORITATIVE DAG_PROTOCOL §7.6 gate is tools/lean_dag_check.py --problem <p>, which
+-# additionally checks state-vs-content backing (the R11 MAJOR-2 class) and frozen-body
+-# drift. Severity divergences between the two tools resolve in lean_dag_check's favor.
+-LEAN_NON_NODE_BASENAMES = {"Interface", "Trust", "SelfTest", "Defs", "Model", "Scratch"}
+-LEAN_KEYS = {
+-    "module", "file", "claim", "composition", "state", "rel",
+-    "build", "claim_hash", "synced",
+-}
+-
+-
+-def extract_lean_block(path: Path):
+-    """Return the node's `lean:` metadata: None (absent), "none" (declared none), or dict."""
+-    if path.suffix in {".yaml", ".yml"}:
+-        metadata, _ = parse_node(path)
+-        lean = metadata.get("lean")
+-        return "none" if lean is None else lean
+-    text = path.read_text(encoding="utf-8")
+-    if not text.startswith("---\n"):
+-        return None
+-    front = text[4:].split("\n---\n", 1)[0]
+-    raw = parse_front_matter(front)
+-    if "formalization" in raw:
+-        lean = raw.get("formalization", {}).get("lean")
+-        return "none" if lean is None else lean
+-    lines = front.splitlines()
+-    for i, line in enumerate(lines):
+-        if line.startswith("lean:"):
+-            value = line[len("lean:"):].strip()
+-            if value:
+-                return "none" if value.split("#", 1)[0].strip() in ("none", "null") else value
+-            block: dict = {}
+-            for sub in lines[i + 1:]:
+-                if not sub.startswith((" ", "\t")):
+-                    break
+-                sub = sub.strip()
+-                if ":" not in sub:
+-                    continue
+-                key, val = sub.split(":", 1)
+-                if key.strip() in LEAN_KEYS:
+-                    try:
+-                        block[key.strip()] = parse_scalar(val)
+-                    except (ValueError, json.JSONDecodeError):
+-                        block[key.strip()] = val.strip()
+-            return block
+-    return None
+-
+-
+-def frozen_claim_hash(claim: str | None) -> str | None:
+-    """DAG_PROTOCOL section 7.6 freeze rule: claim.statement LF bytes, stripped."""
+-    if not isinstance(claim, str):
+-        return None
+-    frozen = claim.replace("\r\n", "\n").strip()
+-    return hashlib.sha256(frozen.encode("utf-8")).hexdigest()
+-
+-
+-def check_lean(
+-    problem_root: Path,
+-    records: dict[str, dict],
+-    bodies: dict[str, str],
+-    errors: list[str],
+-    warnings: list[str],
+-) -> None:
+-    """DAG_PROTOCOL section 7.6 checks. v1 rollout: structural non-existence of DECLARED
+-    objects is an error; orphan modules, OR-route mismatch and undeclared imports are
+-    warnings (multiple problems share this tool mid-migration).
+-
+-    PROMOTED TO ERROR 2026-07-31 (statement-fidelity review section 12.2, closeout item C-3):
+-    check 3a, frozen-Claim hash drift.  A warning that campaign records routinely summarize as
+-    "validators exit 0" is not a gate: two live section 7.6 anti-drift breaks (KSUM.A2b, KSUM.B1)
+-    sat undetected behind exit 0 for a day, one of them making a Lean docstring's word "verbatim"
+-    false.  Drift between a node's `claim.statement` and the `lean.claim_hash` frozen over it now
+-    FAILS validation.  Check 3b (Lean docstring hash vs node metadata) stays a warning: it compares
+-    two records of the same freeze rather than a record against the source of truth."""
+-    lean_root = problem_root / "proof-dag" / "lean"
+-    prefix = None
+-    for node_id in records:
+-        prefix = node_id.split(".", 1)[0]
+-        break
+-    lean_meta: dict[str, object] = {}
+-    for node_id, metadata in records.items():
+-        node_path = ROOT / metadata["node_file"]
+-        lean_meta[node_id] = extract_lean_block(node_path)
+-
+-    # 7.6 check 1: declared module file / Claim / composition theorems exist.
+-    for node_id, block in lean_meta.items():
+-        if not isinstance(block, dict):
+-            continue
+-        file_field = block.get("file")
+-        if file_field:
+-            target = ROOT / str(file_field)
+-            if not target.exists():
+-                errors.append(f"{node_id}: lean.file does not exist: {file_field}")
+-                continue
+-            if target.is_file():
+-                lean_text = target.read_text(encoding="utf-8")
+-                claim = block.get("claim")
+-                if claim and not re.search(
+-                    rf"^\s*(?:def|abbrev)\s+{re.escape(str(claim))}\b", lean_text, re.MULTILINE
+-                ):
+-                    errors.append(f"{node_id}: declared lean.claim {claim!r} not found in {file_field}")
+-                comp = block.get("composition")
+-                comp_names = comp if isinstance(comp, list) else ([comp] if comp else [])
+-                for name in comp_names:
+-                    if name and not re.search(
+-                        rf"^\s*theorem\s+{re.escape(str(name))}\b", lean_text, re.MULTILINE
+-                    ):
+-                        errors.append(
+-                            f"{node_id}: declared lean.composition {name!r} not found in {file_field}"
+-                        )
+-                # 7.6 check 3b: hash quoted in the Lean docstring vs node metadata.
+-                declared_hash = str(block.get("claim_hash") or "").removeprefix("sha256:")
+-                doc_hashes = re.findall(r"\b[0-9a-f]{64}\b", lean_text[:4000])
+-                if declared_hash and doc_hashes and declared_hash not in doc_hashes:
+-                    warnings.append(
+-                        f"{node_id}: lean docstring hash differs from node lean.claim_hash"
+-                    )
+-        # 7.6 check 3a: freeze-rule hash agreement with the node's own Claim section.
+-        declared_hash = str(block.get("claim_hash") or "").removeprefix("sha256:")
+-        if declared_hash and len(declared_hash) == 64:
+-            claim = records[node_id].get("claim")
+-            if claim is None:
+-                match = re.search(
+-                    r"^## Claim\n(.*?)(?=^## )",
+-                    bodies.get(node_id, ""),
+-                    flags=re.MULTILINE | re.DOTALL,
+-                )
+-                claim = match.group(1).strip("\n") if match else None
+-            computed = frozen_claim_hash(claim)
+-            if computed and computed != declared_hash:
+-                # ERROR since 2026-07-31 (was a warning): see this function's docstring.
+-                errors.append(
+-                    f"{node_id}: frozen-Claim hash drift (node claim.statement hashes {computed[:8]}..., "
+-                    f"lean.claim_hash records {declared_hash[:8]}...) - re-sync the Lean docstring "
+-                    f"quotation and lean.claim_hash in the same change (DAG_PROTOCOL 7.6 check 3)"
+-                )
+-        # 7.6 check 4: OR composition_via_* set vs children.
+-        meta = records[node_id]
+-        comp = block.get("composition") if isinstance(block, dict) else None
+-        if meta["kind"] == "OR" and isinstance(comp, list):
+-            expected = {f"composition_via_{child.rsplit('.', 1)[-1]}" for child in meta["children"]}
+-            actual = {str(name) for name in comp}
+-            if not actual <= expected:
+-                warnings.append(
+-                    f"{node_id}: composition_via names not matching any child: {sorted(actual - expected)}"
+-                )
+-            for child in meta["children"]:
+-                name = f"composition_via_{child.rsplit('.', 1)[-1]}"
+-                if name in actual:
+-                    continue
+-                child_block = lean_meta.get(child)
+-                if child_block == "none" or (
+-                    isinstance(child_block, dict) and str(child_block.get("state")) == "none"
+-                ):
+-                    continue  # route justified by the child's own `lean: none` record
+-                warnings.append(
+-                    f"{node_id}: route via {child} has no composition_via theorem and the child "
+-                    f"carries no lean:none justification"
+-                )
+-    if not lean_root.is_dir() or prefix is None:
+-        return
+-    # 7.6 check 2: node-shaped Lean modules must have a matching node.
+-    module_ids: dict[str, Path] = {}
+-    for lean_file in lean_root.rglob("*.lean"):
+-        if ".lake" in lean_file.parts:
+-            continue
+-        rel = lean_file.relative_to(lean_root)
+-        parts = list(rel.with_suffix("").parts)
+-        if parts[0] != prefix or len(parts) == 1:
+-            continue
+-        if parts[-1] in LEAN_NON_NODE_BASENAMES or "Support" in parts:
+-            continue
+-        dotted = ".".join(parts)
+-        module_ids[dotted] = lean_file
+-        if dotted not in records:
+-            warnings.append(
+-                f"orphan lean module {rel.as_posix()} (derived id {dotted} matches no node)"
+-            )
+-    # 7.6 check 5: node-module imports must be children or declared relative hypotheses.
+-    for dotted, lean_file in module_ids.items():
+-        if dotted not in records:
+-            continue
+-        meta = records[dotted]
+-        block = lean_meta.get(dotted)
+-        rel_text = " ".join(str(r) for r in block.get("rel", [])) if isinstance(block, dict) else ""
+-        text = lean_file.read_text(encoding="utf-8")
+-        for match in re.finditer(rf"^import\s+({re.escape(prefix)}\.[A-Za-z0-9_.]+)", text, re.MULTILINE):
+-            imported = match.group(1)
+-            if imported not in records:
+-                continue
+-            if imported in meta["children"] or imported in rel_text:
+-                continue
+-            warnings.append(
+-                f"{dotted}: imports node module {imported} that is neither a child "
+-                f"nor declared in lean.rel"
+-            )
+-
+-
+-def check_problem(problem: str, verify_git: bool = False) -> tuple[list[str], list[str], int]:
+-    problem_root = ROOT / PROBLEM_DIRS[problem]
+-    if uses_v6_schema(problem_root):
+-        return validate_problem_v6(ROOT, problem_root, problem, verify_git=verify_git)
+-    base = problem_root / "proof-dag"
+-    nodes_dir = base / "nodes"
+-    dag_name = f"{problem.upper()}_PROOF_DAG.md"
+-    dag_path = problem_root / "notes" / dag_name
+-    errors: list[str] = []
+-    warnings: list[str] = []
+-    records: dict[str, dict] = {}
+-    bodies: dict[str, str] = {}
+-    aliases: dict[str, str] = {}
+-
+-    if not nodes_dir.is_dir():
+-        return [f"{problem}: missing {nodes_dir.relative_to(ROOT)}"], [], 0
+-
+-    node_suffix = ".md"
+-    for path in sorted(nodes_dir.glob(f"*{node_suffix}")):
+-        try:
+-            metadata, body = parse_node(path)
+-        except (ValueError, json.JSONDecodeError) as exc:
+-            errors.append(f"{path.relative_to(ROOT)}: {exc}")
+-            continue
+-
+-        record_schema_errors = schema_errors(
+-            metadata, strict_grouped=False
+-        )
+-        if record_schema_errors:
+-            errors.extend(
+-                f"{path.relative_to(ROOT)}: {message}"
+-                for message in record_schema_errors
+-            )
+-            continue
+-        node_id = metadata["id"]
+-        if node_id in records:
+-            errors.append(f"{node_id}: duplicate id")
+-        records[node_id] = metadata
+-        bodies[node_id] = body
+-        if path.name != f"{node_id}{node_suffix}":
+-            errors.append(f"{node_id}: filename is {path.name!r}")
+-        expected_node_file = path.relative_to(ROOT).as_posix()
+-        if metadata.get("node_file") is not None and metadata["node_file"] != expected_node_file:
+-            errors.append(
+-                f"{node_id}: node_file is {metadata['node_file']!r}, "
+-                f"expected {expected_node_file!r}"
+-            )
+-        metadata["node_file"] = expected_node_file
+-        if metadata["kind"] not in ALLOWED_KINDS:
+-            errors.append(f"{node_id}: invalid kind {metadata['kind']!r}")
+-        if metadata["role"] not in ALLOWED_ROLES:
+-            errors.append(f"{node_id}: invalid role {metadata['role']!r}")
+-        for field in ("aliases", "children", "related"):
+-            if not isinstance(metadata[field], list):
+-                errors.append(f"{node_id}: {field} must be a list")
+-        if uses_v6_schema(problem_root):
+-            kind = metadata["kind"]
+-            children = metadata["children"]
+-            if kind in {"GOAL", "LEAF"}:
+-                errors.append(
+-                    f"{node_id}: deprecated kind {kind!r}; use OR/AND decomposition "
+-                    "semantics, or null when children is empty"
+-                )
+-            if children and kind not in {"OR", "AND"}:
+-                errors.append(
+-                    f"{node_id}: nodes with children require kind OR or AND"
+-                )
+-            if not children and kind is not None:
+-                errors.append(
+-                    f"{node_id}: nodes without children require kind null"
+-                )
+-            composition = metadata["composition"]
+-            arguments = composition.get("arguments", {})
+-            if not children and arguments:
+-                errors.append(
+-                    f"{node_id}: nodes without children require composition.arguments: {{}}"
+-                )
+-            if children and not arguments:
+-                errors.append(
+-                    f"{node_id}: nodes with children require composition arguments"
+-                )
+-            if children and kind == "AND":
+-                if set(arguments) != {"joint"}:
+-                    errors.append(
+-                        f"{node_id}: AND composition must contain exactly the 'joint' argument"
+-                    )
+-                elif arguments["joint"].get("premises") != children:
+-                    errors.append(
+-                        f"{node_id}: joint argument premises must equal graph.children"
+-                    )
+-            if children and kind == "OR":
+-                for child in children:
+-                    route = arguments.get(child)
+-                    if route is None:
+-                        errors.append(f"{node_id}: missing OR route argument for {child}")
+-                    elif route.get("premises") != [child]:
+-                        errors.append(
+-                            f"{node_id}: OR route {child} must have premises: [{child!r}]"
+-                        )
+-                for route_id in sorted(set(arguments) - set(children)):
+-                    route = arguments[route_id]
+-                    route_status = route.get("assessment", {}).get("status")
+-                    if route_status != "RETIRED-EDGE" or route.get("premises") != []:
+-                        errors.append(
+-                            f"{node_id}: non-child argument {route_id!r} must be a "
+-                            "RETIRED-EDGE record with no active premises"
+-                        )
+-            for argument_id, argument in arguments.items():
+-                route_assessment = argument.get("assessment", {})
+-                route_workflow = argument.get("workflow", {})
+-                route_status = route_assessment.get("status")
+-                if route_status not in ALLOWED_STATUSES | {"RETIRED-EDGE"}:
+-                    errors.append(
+-                        f"{node_id}: composition argument {argument_id!r} has invalid "
+-                        f"status {route_status!r}"
+-                    )
+-                if route_workflow.get("disposition") not in ALLOWED_DISPOSITIONS:
+-                    errors.append(
+-                        f"{node_id}: composition argument {argument_id!r} has invalid "
+-                        f"disposition {route_workflow.get('disposition')!r}"
+-                    )
+-                if route_status in COMPLETION_TIERS | {"REFUTED", "RETIRED-EDGE"} \
+-                        and not route_assessment.get("source"):
+-                    errors.append(
+-                        f"{node_id}: composition argument {argument_id!r} at {route_status} "
+-                        "requires assessment.source"
+-                    )
+-        if metadata["status"] not in ALLOWED_STATUSES:
+-            errors.append(f"{node_id}: invalid status {metadata['status']!r}")
+-        if metadata["disposition"] not in ALLOWED_DISPOSITIONS:
+-            errors.append(
+-                f"{node_id}: invalid disposition {metadata['disposition']!r}"
+-            )
+-        for alias in metadata["aliases"]:
+-            if alias in aliases:
+-                errors.append(
+-                    f"{node_id}: alias {alias!r} also belongs to {aliases[alias]}"
+-                )
+-            aliases[alias] = node_id
+-
+-        if path.suffix == ".md":
+-            sections = set(re.findall(r"^## (.+)$", body, flags=re.MULTILINE))
+-            missing_sections = LEGACY_REQUIRED_SECTIONS - sections
+-            if missing_sections:
+-                errors.append(
+-                    f"{node_id}: missing sections {sorted(missing_sections)}"
+-                )
+-
+-        for target in MARKDOWN_LINK.findall(body):
+-            if "://" in target or target.startswith("#"):
+-                continue
+-            local = target.split("#", 1)[0]
+-            if local and not (path.parent / local).resolve().exists():
+-                errors.append(f"{node_id}: broken local link {target!r}")
+-
+-    # Build the reverse index on demand from the sole stored structural edge
+-    # list.  It is intentionally not written back into node metadata.
+-    derived_reverse_dependencies = {node_id: [] for node_id in records}
+-    for node_id, metadata in records.items():
+-        for field in ("children", "related"):
+-            for target in metadata[field]:
+-                if target not in records:
+-                    errors.append(f"{node_id}: unknown {field} target {target}")
+-        for child in metadata["children"]:
+-            if child in derived_reverse_dependencies:
+-                derived_reverse_dependencies[child].append(node_id)
+-
+-    if records:
+-        cycle = find_cycle(
+-            {node_id: metadata["children"] for node_id, metadata in records.items()}
+-        )
+-        if cycle:
+-            errors.append("propagating graph cycle: " + " -> ".join(cycle))
+-
+-    # LINT-COMPLETION (DAG_PROTOCOL section 1, single-status model 2026-08-08).
+-    for node_id, metadata in records.items():
+-        if metadata["status"] not in COMPLETION_TIERS or not metadata["children"]:
+-            continue
+-        child_statuses = {c: records.get(c, {}).get("status") for c in metadata["children"]}
+-        if metadata["kind"] == "AND":
+-            below = sorted(c for c, s in child_statuses.items() if s not in COMPLETION_TIERS)
+-            if below and not RELATIVE_DISPLAY.search(bodies.get(node_id, "")):
+-                errors.append(
+-                    f"{node_id}: LINT-COMPLETION: {metadata['status']} AND-node with load-bearing "
+-                    f"children below completion tier {below} and no relative-hypothesis display"
+-                )
+-        elif metadata["kind"] == "OR":
+-            if not any(s in COMPLETION_TIERS for s in child_statuses.values()):
+-                warnings.append(
+-                    f"{node_id}: {metadata['status']} {metadata['kind']}-node has no "
+-                    f"completion-tier route child - verify it holds a direct whole-claim review"
+-                )
+-
+-    mermaid = mermaid_variables(dag_path)
+-    missing_aliases = mermaid - aliases.keys()
+-    extra_aliases = aliases.keys() - mermaid
+-    if missing_aliases:
+-        errors.append(f"{problem}: Mermaid nodes without files: {sorted(missing_aliases)}")
+-    if extra_aliases:
+-        errors.append(f"{problem}: node aliases absent from Mermaid: {sorted(extra_aliases)}")
+-
+-    check_lean(problem_root, records, bodies, errors, warnings)
+-
+-    index = (base / "NODE_INDEX.md").read_text(encoding="utf-8")
+-    for node_id in records:
+-        row_pattern = re.compile(
+-            rf"^\|\s*`[^`]+`\s*\|\s*`{re.escape(node_id)}`\s*\|",
+-            re.MULTILINE,
+-        )
+-        if len(row_pattern.findall(index)) != 1:
+-            errors.append(f"{node_id}: NODE_INDEX table-row count is not one")
+-
+-    return errors, warnings, len(records)
+-
+-
+-def chain_strength_report(problem: str) -> None:
+-    """On-demand read-only diagnostic (DAG_PROTOCOL section 1, single-status model):
+-    old-style bottom-up subtree support.  A node with no children has its own ladder rank;
+-    chain(AND) = min over child chains; chain(OR) = max over non-REFUTED child
+-    chains (a REFUTED route is dead, not evidence against the claim).  Prints every
+-    internal node whose hand-written status outranks its subtree support.  That is
+-    LEGAL under the single-status model (e.g. NUMERICAL on direct whole-claim gates
+-    while children are OPEN) - this report exists so a human can see where the
+-    chain is thinner than the label, not to fail anything."""
+-    problem_root = ROOT / PROBLEM_DIRS[problem]
+-    if uses_v6_schema(problem_root):
+-        chain_strength_report_v6(problem_root, problem)
+-        return
+-    nodes_dir = problem_root / "proof-dag" / "nodes"
+-    records: dict[str, dict] = {}
+-    node_suffix = ".md"
+-    for path in sorted(nodes_dir.glob(f"*{node_suffix}")):
+-        try:
+-            metadata, _ = parse_node(path)
+-            records[metadata["id"]] = metadata
+-        except (ValueError, json.JSONDecodeError):
+-            continue
+-    memo: dict[str, int] = {}
+-
+-    def chain(nid: str, stack: tuple = ()) -> int:
+-        if nid in memo:
+-            return memo[nid]
+-        meta = records.get(nid)
+-        if meta is None or nid in stack:
+-            return LADDER_RANK["OPEN"]
+-        children = meta["children"]
+-        if not children:
+-            memo[nid] = LADDER_RANK.get(meta["status"], 0)
+-            return memo[nid]
+-        ranks = [chain(c, stack + (nid,)) for c in children]
+-        if meta["kind"] == "AND":
+-            support = min(ranks)
+-        else:
+-            live = [r for r in ranks if r >= 0]
+-            support = max(live) if live else -1
+-        memo[nid] = support
+-        return support
+-
+-    inv = {v: k for k, v in LADDER_RANK.items()}
+-    rows = []
+-    for nid, meta in records.items():
+-        if not meta["children"]:
+-            continue
+-        own = LADDER_RANK.get(meta["status"], 0)
+-        support = chain(nid)
+-        if own > support:
+-            rows.append((nid, meta["status"], inv.get(support, str(support))))
+-    print(f"[chain-strength] {problem}: {len(rows)} internal node(s) whose status outranks subtree support")
+-    for nid, status, support in sorted(rows):
+-        print(f"  {nid}: status {status}, subtree support {support}")
++LEGACY_PROBLEMS = {"se", "ksum"}
+ 
+ 
+ def main() -> int:
+     parser = argparse.ArgumentParser()
+-    parser.add_argument("--problem", choices=tuple(PROBLEM_DIRS) + ("all",), default="all")
+-    parser.add_argument("--diagnose", choices=("chain-strength",), default=None,
+-                        help="print the read-only chain-strength report after validation")
+-    parser.add_argument("--write-generated", action="store_true",
+-                        help="regenerate v6 NODE_INDEX.md and GRAPH.mmd before validation")
++    parser.add_argument("--problem", choices=tuple(PROBLEMS) + ("all",), default="all")
+     parser.add_argument("--verify-git", action="store_true",
+-                        help="resolve every git:<commit>:<path> source with git cat-file")
++                        help="resolve historical git sources for legacy SE/k-Sum records")
++    parser.add_argument("--diagnose", choices=("chain-strength",), default=None,
++                        help="legacy SE/k-Sum diagnostic; does not modify assessments")
++    parser.add_argument(
++        "--previous-state",
++        type=Path,
++        help="earlier repository snapshot for node, route, and append-only event retention checks",
++    )
++    parser.add_argument(
++        "--write-generated",
++        action="store_true",
++        help="regenerate NODE_INDEX.md and GRAPH.mmd before validation",
++    )
+     args = parser.parse_args()
+-    problems = tuple(PROBLEM_DIRS) if args.problem == "all" else (args.problem,)
+-    if args.write_generated:
+-        for problem in problems:
+-            if uses_v6_schema(ROOT / PROBLEM_DIRS[problem]):
+-                write_generated_v6(ROOT / PROBLEM_DIRS[problem], problem)
++
++    names = tuple(PROBLEMS) if args.problem == "all" else (args.problem,)
+     all_errors: list[str] = []
+     all_warnings: list[str] = []
+-    total = 0
+-    for problem in problems:
+-        errors, warnings, count = check_problem(problem, verify_git=args.verify_git)
++
++    for name in names:
++        legacy = name in LEGACY_PROBLEMS
++        if args.write_generated:
++            if legacy:
++                proof_dag_legacy.write_generated_v6(PROBLEMS[name], name)
++            else:
++                write_generated(PROBLEMS[name], name)
++        if legacy:
++            errors, warnings, count = proof_dag_legacy.check_problem(name, verify_git=args.verify_git)
++        else:
++            errors, warnings, count = validate_problem(ROOT, PROBLEMS[name], name)
+         all_errors.extend(errors)
+         all_warnings.extend(warnings)
+-        total += count
++        if args.previous_state is not None:
++            previous_project = args.previous_state / PROBLEMS[name].relative_to(ROOT)
++            try:
++                previous = load_problem(previous_project)
++                if not previous.nodes:
++                    raise ValueError("previous snapshot contains no canonical node files")
++                retention_errors = validate_preservation(previous, load_problem(PROBLEMS[name]))
++            except (OSError, ValueError, yaml.YAMLError) as exc:
++                retention_errors = [f"{name}: cannot compare previous state: {exc}"]
++            all_errors.extend(retention_errors)
++            if not retention_errors:
++                print(f"{name}: prior nodes, routes, and events retained")
+         if not errors:
+-            print(f"{problem}: {count} node files structurally valid")
++            print(f"{name}: {count} node files structurally valid")
++        if args.diagnose and legacy:
++            proof_dag_legacy.chain_strength_report(name)
++
+     for warning in all_warnings:
+         print(f"WARNING: {warning}")
+-    if args.diagnose == "chain-strength":
+-        for problem in problems:
+-            chain_strength_report(problem)
+-    if all_errors:
+-        print("Proof-DAG validation failed:")
+-        for error in all_errors:
+-            print(f"- {error}")
+-        return 1
+-    print(f"Proof-DAG validation OK: {total} nodes")
+-    return 0
++    for error in all_errors:
++        print(f"ERROR: {error}")
++    return 1 if all_errors else 0
+ 
+ 
+ if __name__ == "__main__":
+-    sys.exit(main())
++    raise SystemExit(main())
+diff --git a/tools/verify_cost_summary.py b/tools/verify_cost_summary.py
+deleted file mode 100755
+index 64ddff4..0000000
+--- a/tools/verify_cost_summary.py
++++ /dev/null
+@@ -1,87 +0,0 @@
+-#!/usr/bin/env python3
+-"""Verify arithmetic and internal consistency of the public cost aggregate.
+-
+-The raw usage logs are intentionally private.  This checker therefore verifies
+-the published aggregate and makes that trust boundary explicit; it does not
+-claim to reproduce the session-labeling decisions from undisclosed logs.
+-"""
+-
+-from __future__ import annotations
+-
+-from pathlib import Path
+-import sys
+-
+-import yaml
+-
+-
+-ROOT = Path(__file__).resolve().parents[1]
+-SUMMARY = ROOT / "artifacts/model_cost_accounting_summary.yaml"
+-
+-
+-def close(actual: float, expected: float, tolerance: float = 0.06) -> bool:
+-    return abs(actual - expected) <= tolerance
+-
+-
+-def main() -> int:
+-    document = yaml.safe_load(SUMMARY.read_text(encoding="utf-8"))
+-    errors: list[str] = []
+-    for name, project in document["projects"].items():
+-        total = float(project["total_cost"])
+-        provider_total = float(project["codex_cost"]) + float(project["claude_cost"])
+-        if not close(provider_total, total, 0.01):
+-            errors.append(f"{name}: provider costs sum to {provider_total}, not {total}")
+-
+-        process = float(project["process_total_cost"])
+-        mathematics = float(project["mathematics_cost"])
+-        if not close(process + mathematics, total, 0.01):
+-            errors.append(f"{name}: process + mathematics does not equal total")
+-
+-        shares = project["reported_shares_percent"]
+-        recomputed = {
+-            "dag_maintenance": 100 * float(project["dag_maintenance_cost"]) / total,
+-            "process_total": 100 * process / total,
+-            "mathematics": 100 * mathematics / total,
+-        }
+-        for key, value in recomputed.items():
+-            if not close(value, float(shares[key])):
+-                errors.append(
+-                    f"{name}: {key} share is {value:.3f}%, not {shares[key]}%"
+-                )
+-
+-    ksum = document["projects"]["ksum"]
+-    se = document["projects"]["se"]
+-    if not close(
+-        float(se["dag_maintenance_cost"]) + float(se["undecomposed_process_cost"]),
+-        float(se["process_total_cost"]),
+-        0.01,
+-    ):
+-        errors.append("se: named and undecomposed process costs do not sum to process total")
+-    if "not retained" not in str(se.get("source_scope", "")):
+-        errors.append("se: missing disclosure for unavailable process/usage decomposition")
+-    model_cost = sum(float(row["cost"]) for row in ksum["claude_usage"]["models"].values())
+-    if not close(model_cost, float(ksum["claude_cost"]), 1.0):
+-        errors.append(f"ksum: model costs sum to {model_cost}, not {ksum['claude_cost']}")
+-
+-    limitations = " ".join(str(item) for item in document.get("limitations", []))
+-    if "rounded to whole dollars" not in limitations or "USD 1" not in limitations:
+-        errors.append("ksum: the USD 1 per-model rounding tolerance is not disclosed")
+-
+-    sensitivity = ksum.get("sensitivity") or {}
+-    share_range = sensitivity.get("dag_share_percent_range") or []
+-    if len(share_range) != 2 or float(share_range[0]) > float(share_range[1]):
+-        errors.append("ksum: invalid DAG-share sensitivity range")
+-    if sensitivity.get("lower_endpoint_reconstructable") is not False:
+-        errors.append("ksum: sensitivity lower-endpoint reconstruction limit is not disclosed")
+-
+-    if errors:
+-        print("Cost-summary verification failed:")
+-        for error in errors:
+-            print(f"- {error}")
+-        return 1
+-    print("Cost-summary arithmetic OK")
+-    print("Trust boundary: raw private logs and heuristic task attribution are not reproduced.")
+-    return 0
+-
+-
+-if __name__ == "__main__":
+-    sys.exit(main())

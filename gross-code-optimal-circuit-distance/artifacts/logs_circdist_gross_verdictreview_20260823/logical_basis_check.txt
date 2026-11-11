@@ -1,0 +1,19 @@
+REVIEWER CHECK: the non-triviality constraint in cert4/cert7 uses ctx.Lrows (12 logical basis
+rows), NOT the 1884-word weight-12 pool.  The 864 certificates therefore do NOT depend on pool
+completeness.  What they DO depend on is that Lrows correctly detects non-stabiliser-ness:
+   for E with H_det E = 0 :   Lrows . E = 0   <=>   E in rowspace(H_stab)
+Sufficient and checkable: (a) Lrows . H_stab^T = 0 ; (b) rank([H_stab ; Lrows]) = dim ker(H_det)
+
+[Z]  H_det = H_X , H_stab = H_Z
+   Lrows shape (12, 144) ; rank(Lrows) = 12
+   (a) Lrows . H_stab^T = 0                      : True
+   (b) rank(H_stab) = 66 ; rank([H_stab;Lrows]) = 78 ; dim ker(H_det) = 78
+       rank([H_stab;Lrows]) == dim ker(H_det)    : True
+   => Lrows.E = 0 iff E in rowspace(H_stab), for every zero-syndrome E : True
+
+[X]  H_det = H_Z , H_stab = H_X
+   Lrows shape (12, 144) ; rank(Lrows) = 12
+   (a) Lrows . H_stab^T = 0                      : True
+   (b) rank(H_stab) = 66 ; rank([H_stab;Lrows]) = 78 ; dim ker(H_det) = 78
+       rank([H_stab;Lrows]) == dim ker(H_det)    : True
+   => Lrows.E = 0 iff E in rowspace(H_stab), for every zero-syndrome E : True
