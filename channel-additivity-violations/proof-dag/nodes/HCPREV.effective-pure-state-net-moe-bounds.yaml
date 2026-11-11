@@ -1,0 +1,52 @@
+id: HCPREV.effective-pure-state-net-moe-bounds
+role: proof
+aliases:
+- certified-sphere-net-moe
+claim: >-
+  For every finite-dimensional CPTP map Phi and every rational delta in (0,1), there is an
+  effectively constructible finite rational delta-net of its complex pure-input unit sphere with
+  a finite rational covering-radius certificate. Minimum output entropy is attained on pure
+  inputs. If Phi has output dimension b>=2 and delta<=1-1/b, directed pointwise entropy intervals
+  [l_(Phi,phi),u_(Phi,phi)] on the net give certified global bounds
+  min_phi l_(Phi,phi)-omega_b(delta)<=S_min(Phi)<=min_phi u_(Phi,phi), where all entropies are
+  base two, omega_b(delta)=delta log_2(b-1)+h_2(delta), and omega_1=0. Applying the construction to
+  a product channel uses the full joint pure-state sphere and therefore includes entangled inputs.
+assumptions:
+  audenaert-base-two-entropy-continuity:
+    kind: external-theorem
+    statement: >-
+      For d-dimensional density operators rho,sigma and T=(1/2)||rho-sigma||_1, the base-two
+      entropy difference is at most T log_2(d-1)+h_2(T). On the range
+      0<=T<=delta<=1-1/d this is bounded by omega_d(delta).
+    source:
+      path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/primary-sources/audenaert-0610146.pdf
+      kind: pdf
+      locator: Theorem 1, PDF p. 2
+assessment:
+  level: CONJECTURED
+  caveats:
+  - Pointwise entropy intervals are supplied by a separate premise; this node proves the net and optimization wrapper.
+  summary: >-
+    The proposer proof gives pure-state reduction, an explicit stereographic rational grid,
+    checkable radius inequalities, input-to-output trace-distance conversion, the exact base-two
+    Audenaert modulus and both directions of the global S_min bounds.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/ALGEBRAIC_WITNESS_EFFECTIVE_CERTIFICATION_REPAIR_20260831.md
+      kind: text
+      locator: "## 4. Pure-state reduction and a certified rational sphere net"
+frontier:
+  independent-net-review:
+    task: Independently check the stereographic cover, radius constants, entropy modulus and bound directions.
+    kind: review
+    since: 2026-08-31
+events:
+  effective-pure-state-net-node-created:
+    date: '2026-08-31'
+    type: created
+    summary: >-
+      Isolated pure-state reduction and certified rational sphere-net bounds for global minimum output entropy.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/ALGEBRAIC_WITNESS_EFFECTIVE_CERTIFICATION_REPAIR_20260831.md
+      kind: text
+      locator: "## 4. Pure-state reduction and a certified rational sphere net"

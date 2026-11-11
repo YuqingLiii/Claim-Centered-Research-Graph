@@ -1,0 +1,61 @@
+id: HEXT.real-orthogonal-self-purity-n2-obstruction
+role: obstruction
+aliases:
+- simultaneously-real-product-haar-n2-no-go
+claim: >-
+  Let L be a finite random-unitary channel with q equally weighted unitary words that are
+  simultaneously real orthogonal up to a common orientation and phases, and let C be its
+  complement. A maximally entangled input to two repeated uses satisfies
+  Tr[C^(tensor 2)(Omega)^2]>=2/q^2-1/q^3. Consequently the proposed bound
+  mu_2(C tensor C)<=(A/q)^2 fails whenever A^2<2-1/q; for J=1, eta=0 and A=1+9/q this includes
+  every integer q>=23.
+assessment:
+  level: PROVED
+  caveats:
+  - >-
+    This proposer-side obstruction covers simultaneously real/orthogonal tuples only. Generic
+    complex Haar tuples are almost surely outside this subclass, so it does not refute the
+    existential all-copy physical-purity node.
+  - The statement concerns n=2 and does not classify higher-copy behavior.
+  - >-
+    "Common orientation" means W_v=e^(i theta_v) U O_v V for fixed U,V and real orthogonal O_v;
+    the Bell input is correspondingly rotated by V.
+  summary: >-
+    Equal Kraus labels collide on a maximally entangled input for a real tuple, producing an exact
+    physical two-copy purity lower bound. The collision, rank estimate, complementary-spectrum
+    transfer and q>=23 threshold passed independent adversarial review.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/PRODUCT_HAAR_PHYSICAL_SELF_PURITY_N2_ANALYSIS_20260830.md
+      kind: text
+      locator: "## 6. A strict physical obstruction: simultaneously real tuples"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/REAL_ORTHOGONAL_SELF_PURITY_N2_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: ROSP-N2-IR-VERDICT
+      scope: >-
+        Independently reconstructed the equal-label Bell collision, positive-remainder rank and
+        purity bounds, complement transfer, orientation semantics and exact integer threshold,
+        while auditing the exclusion of generic complex-Haar conclusions.
+      reviewed_hash: sha256:9272414f78a59e474e65b9fe1257dc7d7c9e2b051300631be8cf97f20c9beb62
+events:
+  independent-review-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      Independent adversarial review passed the exact n=2 real/orthogonal Bell obstruction and
+      its restricted quantifier scope.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/REAL_ORTHOGONAL_SELF_PURITY_N2_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+  real-tuple-n2-obstruction-created:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Registered the exact proposer-side Bell obstruction excluding simultaneously real/orthogonal
+      tuples from the physical self-purity route at n=2.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/PRODUCT_HAAR_PHYSICAL_SELF_PURITY_N2_ANALYSIS_20260830.md
+      kind: text

@@ -1,0 +1,73 @@
+id: HEXT.antisymmetric-slater-convex-cost-no-go
+role: constraint
+aliases:
+- fermionic-separable-cost-gate
+- slater-frame-no-go
+claim: >-
+  Any antisymmetric state on C^d tensor C^d with maximally mixed d-dimensional marginal that lies
+  in the convex hull of Slater determinants has E_C<=1 and, for d>=4, fails the strict
+  entanglement-cost gate required by the fixed-channel conjugate-Bell route.
+routes:
+  one-ebit-ensemble-route:
+    premises:
+    - HEXT.gram-channel-entanglement-cost-gate
+    implication: >-
+      A Slater ensemble has average pure-state entanglement one, so E_F<=1 and regularization gives
+      E_C<=1. The maximally mixed marginal has entropy log_2 d, making E_C>S(E)/2 impossible for
+      every d>=4.
+    proof:
+      sketch: >-
+        Evaluate the Schmidt spectrum of each normalized wedge, apply the convex-roof definition
+        of E_F, use subadditivity to upper-bound E_C, and compare with the strict cost premise.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/ANTISYMMETRIC_SLATER_CONVEX_HULL_COST_NO_GO_20260830.md
+        kind: text
+        locator: "## Proof"
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The proposer-side implication is elementary and complete, but has not received independent
+        hash-bound review.
+      basis:
+        evidence:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/ANTISYMMETRIC_SLATER_CONVEX_HULL_COST_NO_GO_20260830.md
+          kind: text
+          locator: "## Consequences for candidate search"
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The node does not assert that every antisymmetric support state is Slater-convex.
+  - It applies to the fixed-channel conjugate-Bell cost screen, not arbitrary collective inputs.
+  - The proof is proposer-side and has not received independent review.
+  summary: >-
+    Fermionic separability is a dimension-uniform rejection certificate for the regularized Bell
+    route; any d>=5 antisymmetric survivor must lie outside the Slater convex hull.
+  basis:
+    routes:
+    - one-ebit-ensemble-route
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/ANTISYMMETRIC_SLATER_CONVEX_HULL_COST_NO_GO_20260830.md
+      kind: text
+      locator: "## Consequences for candidate search"
+frontier:
+  slater-convexity-test:
+    task: >-
+      For proposed rank-d antisymmetric supports with d>=5 and maximally mixed marginals, decide
+      Slater convex-hull membership before attempting entanglement-cost, polar, CP-factor, or
+      all-copy entropy calculations.
+    kind: task
+    since: 2026-08-30
+  independent-review:
+    task: Independently verify the convex-roof and regularization inequalities and their strict d=4 boundary.
+    kind: review
+    since: 2026-08-30
+events:
+  slater-convex-cost-screen-registered:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Registered fermionic Slater-convexity as a general one-ebit entanglement-cost rejection
+      certificate for all d>=4 antisymmetric fixed-channel Bell candidates.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/ANTISYMMETRIC_SLATER_CONVEX_HULL_COST_NO_GO_20260830.md
+      kind: text

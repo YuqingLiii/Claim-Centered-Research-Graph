@@ -1,0 +1,89 @@
+id: HEXT.same-tuple-real-werner-sector-large-m
+role: proof
+aliases:
+- repeated-tuple-real-werner-large-m
+claim: >-
+  For every integer m>e^18 and every fixed eta>=0, with U_j^(d), R_U, and A as in HEXT.same-tuple-werner-centered-bound-large-m, the probability tends to one as d tends to infinity that ||M_U(Y)||_infinity<=(A/m)||Y||_2 holds simultaneously for every real Werner coefficient Y=alpha I_(m^2)+beta F_m with alpha,beta in R.
+routes:
+  centered-event-plus-spectral-equivalence:
+    premises:
+    - HEXT.same-tuple-werner-centered-bound-large-m
+    - HEXT.same-tuple-werner-spectral-reduction
+    implication: >-
+      On the event asserted by HEXT.same-tuple-werner-centered-bound-large-m, the proved equivalence in HEXT.same-tuple-werner-spectral-reduction identifies the centered spectral inequality exactly with the simultaneous coefficient inequality for all real alpha,beta. Since the event probability tends to one, the node claim follows.
+    proof:
+      sources:
+      - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_CENTERED_SCOPE_BRIDGE_REVIEW_20260830.md
+        kind: review
+        locator: "Finding WCSB-04"
+    assessment:
+      level: PROVED
+      caveats:
+      - The implication is proved, but its large-m centered premise is not yet at completion level.
+      summary: >-
+        Independent scope review verified the exact deterministic spectral-equivalence propagation
+        and its fixed-m>e^18, fixed-eta probability quantifiers.
+      basis:
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_CENTERED_SCOPE_BRIDGE_REVIEW_20260830.md
+          kind: review
+          locator: "Finding WCSB-04"
+          scope: >-
+            Independently checked the direct event-level use of the already proved spectral
+            equivalence and prohibited any propagation beyond the real two-dimensional Werner span.
+          reviewed_hash: sha256:78bcb08e2f33b40bf8abd232ca2b51b4238da7abffd878bd7008cf9672141126
+assessment:
+  level: PROVED
+  caveats:
+  - This does not imply the arbitrary-Hermitian same-tuple or physical all-input n=2 claim.
+  summary: >-
+    The now-proved large-m centered event and independently reviewed exact spectral equivalence
+    establish the simultaneous norm inequality on the real two-dimensional Werner coefficient span.
+  basis:
+    routes:
+    - centered-event-plus-spectral-equivalence
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_CENTERED_SCOPE_BRIDGE_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WCSB-04--WCSB-05"
+      scope: >-
+        Independently verified the exact real-Werner consequence and separated it from all broader
+        same-tuple, physical purity, absolute-unbounded and full-size claims.
+      reviewed_hash: sha256:ad940ef6f776d5a94f7ecb3e679332863bdac1efde961c34ac3dc4ec855b0411
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_CENTERED_MOMENT_FINAL_CONDITIONAL_ASSEMBLY_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WCMF-IR-09"
+      scope: >-
+        Independently approved propagation only to the exact fixed-m>e^18 real-Werner sector and
+        prohibited arbitrary-Hermitian, all-copy, absolute-unbounded or full-size conclusions.
+      reviewed_hash: sha256:ad940ef6f776d5a94f7ecb3e679332863bdac1efde961c34ac3dc4ec855b0411
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_CENTERED_CANONICAL_INTEGRATION_AMENDMENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WCCIA-03"
+      scope: >-
+        Independently verified the canonical real-Werner claim and route hashes and the strict
+        prohibition on propagation beyond the two-dimensional coefficient span.
+      reviewed_hash: sha256:ad940ef6f776d5a94f7ecb3e679332863bdac1efde961c34ac3dc4ec855b0411
+events:
+  real-werner-large-m-consequence-independently-proved:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      After both route premises reached PROVED, the independently reviewed event-level spectral
+      equivalence completed exactly the fixed-m>e^18 real-Werner coefficient sector.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_CENTERED_MOMENT_FINAL_CONDITIONAL_ASSEMBLY_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WCMF-IR-09"
+  real-werner-large-m-consequence-created:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Registered the exact real-Werner two-dimensional coefficient corollary with a proved route
+      implication and an unresolved large-m centered premise.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_CENTERED_SCOPE_BRIDGE_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WCSB-04"

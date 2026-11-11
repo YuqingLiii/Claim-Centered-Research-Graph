@@ -1,0 +1,23 @@
+id: HEXT.additive-bound-amplification-no-go
+role: obstruction
+aliases:
+- multiplicative-bound-no-go
+claim: >-
+  A tensor-multiplicative lower bound on minimum output entropy cannot, together with repeated
+  copies of a joint witness, certify a positive linear defect when the same functional is used on
+  both sides. In particular the Fukuda--Nechita additivity-rate bounds cannot amplify a random
+  channel/conjugate-channel Bell witness.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    An elementary proposer-side argument shows that the common multiplicative lower bound also
+    lower-bounds the joint witness entropy by the sum of the two side bounds. The result closes this
+    proof route but does not constrain the true regularized defect.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/ADDITIVE_BOUND_AMPLIFICATION_NO_GO_20260829.md
+      kind: text
+      locator: "## Proof"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/primary-sources/fukuda-nechita-1411.6881.pdf
+      kind: pdf
+      locator: "Lemma 4.2 and Proposition 4.4, PDF pp. 15-17"

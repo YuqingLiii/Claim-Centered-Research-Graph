@@ -1,0 +1,52 @@
+id: HEXT.same-tuple-maximal-schmidt-complement-projector
+role: proof
+aliases:
+- repeated-tuple-maximal-osr-projector
+claim: >-
+  For m>=2, the normalized coefficient projector
+  (I-|Omega><Omega|)/sqrt(m^2-1) is positive, Hilbert--Schmidt normalized, has coefficient
+  spectral rank m^2-1 and operator-Schmidt rank exactly m^2, and satisfies the same-tuple A/m
+  target deterministically for every unitary tuple and eta>=0.
+assessment:
+  level: PROVED
+  caveats:
+  - This is one explicit maximal operator-Schmidt-rank coefficient, not the arbitrary high-rank class.
+  summary: >-
+    Removing the canonical maximally entangled coefficient direction gives a concrete maximal-OSR
+    positive example controlled directly by coefficient spectral flatness.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SAME_TUPLE_HIGH_SCHMIDT_SPECTRAL_FLAT_EXTENSION_20260830.md
+      kind: text
+      locator: "### 3.2 An explicit maximal operator-Schmidt-rank positive example"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_HIGH_SCHMIDT_SPECTRAL_FLAT_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding HSSF-IR-03"
+      scope: >-
+        Independently verified projection positivity and normalization, the full-rank realignment
+        calculation, maximal operator-Schmidt rank and the uniform target comparison.
+      reviewed_hash: sha256:eddd21711e6c99128e861a89c5079863d2801334dea5f5b45ff801b20c015de7
+frontier:
+  independent-complement-projector-review:
+    task: Verify positivity, normalization, realignment full rank and the uniform A/m comparison.
+    kind: review
+    since: 2026-08-30
+events:
+  complement-projector-independent-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Independent review verified the explicit maximal-OSR complement projector.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_HIGH_SCHMIDT_SPECTRAL_FLAT_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding HSSF-IR-03"
+  complement-projector-created:
+    date: '2026-08-30'
+    type: created
+    summary: Registered an explicit proposer-side positive coefficient of maximal operator-Schmidt rank.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SAME_TUPLE_HIGH_SCHMIDT_SPECTRAL_FLAT_EXTENSION_20260830.md
+      kind: text

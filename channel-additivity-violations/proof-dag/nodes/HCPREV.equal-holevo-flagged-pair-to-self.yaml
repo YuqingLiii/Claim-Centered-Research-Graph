@@ -1,0 +1,61 @@
+id: HCPREV.equal-holevo-flagged-pair-to-self
+role: proof
+aliases:
+- symmetric-equal-chi-one-bit-reduction
+claim: >-
+  Let A,B be finite-dimensional channels with chi(A)=chi(B)=x and
+  g=chi(A tensor B)-2x>=0. For the symmetric classical-flag direct-sum channel T=A direct_sum B,
+  chi(T)=x+1 and chi(T tensor T)-2chi(T)>=log_2(1+(2^g-1)/2)>=g-1, with strict positivity
+  whenever g>0. If the output dimensions of A,B are d_A,d_B, then
+  log_2(d_A+d_B)<=max{log_2(d_A),log_2(d_B)}+1; for equal d-dimensional outputs the direct sum
+  adds exactly one output-dimension bit.
+assessment:
+  level: PROVED
+  caveats:
+  - The one-bit loss uses exact equality chi(A)=chi(B); no unbalanced-pair claim is made.
+  - The result concerns the two-copy one-shot Holevo self defect, not MOE or an all-copy rate.
+  - Applied to random pairs it produces a deterministic pushforward law, not the original sampling law.
+  summary: >-
+    A Q2-local proposer proof derives the finite flagged direct-sum Holevo log-sum-exp identity
+    from arbitrary branch ensembles and applies it to the four tensor-square blocks, yielding the
+    exact symmetric lower bound, one-bit loss and at-most-one-bit output log-dimension overhead.
+    Fresh independent review passed the equality, strictness and dimension-scope details.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/EQUAL_HOLEVO_FLAGGED_PAIR_TO_SELF_20260830.md
+      kind: text
+      locator: "## 1. Exact statement"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/WEYL_FLAGGED_PRODUCT_HAAR_ASSEMBLY_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Findings HCP-WF-IR-05--HCP-WF-IR-06
+      scope: >-
+        Independently passed the flagged log-sum-exp identity, equal-Holevo four-block algebra,
+        strict positivity, g-1 bound and one-bit output-log-dimension overhead.
+      reviewed_hash: sha256:d598b38e12441325f6f51955be5080e1cbc3400739eba59dc01bd755ed4587d3
+events:
+  equal-holevo-flagged-reduction-independently-proved:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      Independent review passed the exact equal-Holevo pair-to-self reduction and its strict
+      pushforward-law and output-dimension boundaries.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/WEYL_FLAGGED_PRODUCT_HAAR_ASSEMBLY_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Findings HCP-WF-IR-05--HCP-WF-IR-06
+  equal-holevo-flagged-reduction-created:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Registered the missing project-local equal-Holevo pair-to-self atom with an internal proof
+      of the direct-sum identity, exact self-gap formula and one-bit output log-dimension overhead.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/EQUAL_HOLEVO_FLAGGED_PAIR_TO_SELF_20260830.md
+      kind: text
+      locator: "## 1. Exact statement"
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/PRODUCT_HAAR_UNBOUNDED_PREVALENCE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding HCP-PH-IR-06"

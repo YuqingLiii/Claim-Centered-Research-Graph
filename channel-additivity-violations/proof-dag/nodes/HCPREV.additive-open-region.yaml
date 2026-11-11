@@ -1,0 +1,112 @@
+id: HCPREV.additive-open-region
+role: obstruction
+aliases:
+- not-dense
+claim: >-
+  The full finite-dimensional CPTP space contains a nonempty relative-open region of strongly
+  additive channels, for example inside the entanglement-breaking region; therefore additivity
+  counterexamples are not dense, residual/generic or full-measure in that ambient-space sense.
+assumptions:
+  gurvits-barnum-separable-ball:
+    kind: external-theorem
+    statement: >-
+      In every finite bipartite dimension, a nonzero Frobenius-norm ball around the maximally mixed
+      bipartite state consists entirely of separable states.
+    source:
+      path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/primary-sources/gurvits-barnum-0204159.pdf
+      kind: pdf
+      locator: Theorem 1 and Corollary 3, PDF pp. 4-5
+  shor-entanglement-breaking-strong-additivity:
+    kind: external-theorem
+    statement: >-
+      For every finite-dimensional channel Psi and entanglement-breaking channel Phi, both
+      S_min(Psi tensor Phi)=S_min(Psi)+S_min(Phi) and
+      chi(Psi tensor Phi)=chi(Psi)+chi(Phi) hold for the one-shot Holevo quantity.
+    source:
+      path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/primary-sources/shor-eb-0201149.pdf
+      kind: pdf
+      locator: Theorems 1 and 2, PDF pp. 2 and 4
+  choi-entanglement-breaking-correspondence:
+    kind: model-fact
+    statement: >-
+      Normalized Choi states of CPTP maps are precisely positive bipartite states with the fixed
+      trace-preserving input marginal, and a channel is entanglement breaking exactly when its Choi
+      state is separable.
+    source:
+      path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/ADDITIVE_OPEN_REGION_PROOF_20260829.md
+      kind: text
+      locator: "`## Entanglement-breaking interior`"
+assessment:
+  level: PROVED
+  caveats:
+  - >-
+    The claim uses relative topology and intrinsic measure on a fixed-dimensional CPTP affine hull;
+    it is not a statement across a disjoint union of all dimensions.
+  summary: >-
+    Independent repair review passed the Gurvits--Barnum separable-ball input, the Choi affine-slice
+    argument, Shor's strong-additivity theorems, and the fixed-dimensional topology consequences.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/ADDITIVE_OPEN_REGION_PROOF_20260829.md
+      kind: text
+      locator: "## Entanglement-breaking interior"
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/ADDITIVE_OPEN_REGION_PROOF_20260829.md
+      kind: text
+      locator: "## Strong additivity on that region"
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/ADDITIVE_OPEN_REGION_PROOF_20260829.md
+      kind: text
+      locator: "## Consequences for prevalence language"
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/PRIMARY_SOURCE_AUDIT_20260829.md
+      kind: text
+      locator: "## Source ledger"
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/TOPOLOGY_MEASURE_ADVERSARIAL_AUDIT_20260830.md
+      kind: text
+      locator: "## Verdict"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/FULL_SUPPORT_FIXED_DIMENSION_PROBABILITY_DICHOTOMY_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Findings HCP-FS-IR-04 and HCP-FS-IR-06"
+      scope: >-
+        Independently passed the EB-interior and strong-additivity mathematics but withheld
+        completion until the three external/model inputs were machine-visible in this node.
+      reviewed_hash: sha256:9d5a1f22a2f633e0b931441177a99c8b704b63fef0a3ad7ca99c190db9adb9a4
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/FULL_SUPPORT_FIXED_DIMENSION_PROBABILITY_DICHOTOMY_REPAIR_AMENDMENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding HCP-FS-AMD-03"
+      scope: >-
+        Independently rechecked all registered external and model inputs, the correct
+        trace-preserving Choi slice, and the strong-additivity conclusion for every finite partner.
+      reviewed_hash: sha256:9d5a1f22a2f633e0b931441177a99c8b704b63fef0a3ad7ca99c190db9adb9a4
+events:
+  additive-open-region-independently-proved:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      Independent repair review passed the repaired theorem registry and exact additive-region
+      claim hash.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/FULL_SUPPORT_FIXED_DIMENSION_PROBABILITY_DICHOTOMY_REPAIR_AMENDMENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding HCP-FS-AMD-03"
+  review-inputs-registered:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Registered the exact Gurvits--Barnum, Shor and Choi inputs requested by independent review;
+      level remains CONJECTURED pending rereview of the repaired dossier.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/FULL_SUPPORT_FIXED_DIMENSION_PROBABILITY_DICHOTOMY_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding HCP-FS-IR-06"
+  affine-slice-audit-completed:
+    date: '2026-08-30'
+    type: review-completed
+    summary: >-
+      Verified that the Gurvits--Barnum separable ball is intersected with the correct
+      trace-preserving Choi affine slice and that the non-dense, non-residual and non-full-measure
+      conclusions use one fixed-dimensional ambient space.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/TOPOLOGY_MEASURE_ADVERSARIAL_AUDIT_20260830.md
+      kind: text

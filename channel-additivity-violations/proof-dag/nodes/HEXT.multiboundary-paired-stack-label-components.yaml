@@ -1,0 +1,51 @@
+id: HEXT.multiboundary-paired-stack-label-components
+role: proof
+aliases:
+- paired-boundary-label-component-count
+claim: >-
+  For a planar sliced skeleton on 2N tuple-label slots satisfying the stated b-boundary
+  paired-stack certificate, the equality graph has at most N+2b connected components and hence
+  at most m^(N+2b) valid label assignments.
+assessment:
+  level: PROVED
+  caveats:
+  - The claim assumes the paired-stack certificate and does not show that every Werner skeleton has one.
+  summary: >-
+    At most four fixed slots occur per paired boundary rank map; every remaining component uses at
+    least two slots, yielding the exact N+2b component bound.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_MINIMAL_SKELETON_MAP_COUNT_20260830.md
+      kind: text
+      locator: "### Proposition 2"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_MINIMAL_SKELETON_MAP_COUNT_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WMSC-IR-02"
+      scope: >-
+        Independently verified the cyclic rank-map monotonicity, four-fixed-slot bound,
+        component count and exact certificate-conditional scope.
+      reviewed_hash: sha256:70827847a3713182a56d45810adac1c4d1adce022f8ac7e18dca69c7406f7924
+frontier:
+  independent-multiboundary-stack-review:
+    task: Verify cyclic rank-map monotonicity, the four-fixed-slot bound and component counting.
+    kind: review
+    since: 2026-08-30
+events:
+  multiboundary-stack-independent-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Independent review verified the deterministic multi-boundary label-component theorem.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_MINIMAL_SKELETON_MAP_COUNT_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WMSC-IR-02"
+  multiboundary-stack-count-created:
+    date: '2026-08-30'
+    type: created
+    summary: Registered the proposer-side multi-boundary paired-stack label count.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_MINIMAL_SKELETON_MAP_COUNT_20260830.md
+      kind: text

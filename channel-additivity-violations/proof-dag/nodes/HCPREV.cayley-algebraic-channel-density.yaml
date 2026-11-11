@@ -1,0 +1,39 @@
+id: HCPREV.cayley-algebraic-channel-density
+role: proof
+aliases:
+- effective-cayley-density
+claim: >-
+  In every fixed dimension d and for every fixed tuple length m, equal-weight random-unitary
+  channels whose unitaries are Cayley transforms C(A)=(I-A)(I+A)^(-1) of Gaussian-rational
+  skew-Hermitian matrices are effectively enumerable, have algebraic Kraus entries and are dense
+  in diamond norm among all equal-weight m-term random-unitary channels on M_d. If corresponding
+  unitary entries differ by at most eta, the channel diamond distance is at most 2d eta; conjugate
+  channels obey the same bound, and pair tensor products obey the sum of the two channel diamond
+  distances.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    A direct proposer proof covers automatic Cayley invertibility, exact Gaussian-rational
+    arithmetic, the eigenvalue-minus-one chart boundary, effective enumeration, the
+    entrywise-to-operator-to-diamond estimate, conjugation and tensor-pair perturbations.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/ALGEBRAIC_WITNESS_EFFECTIVE_CERTIFICATION_REPAIR_20260831.md
+      kind: text
+      locator: "## 3. Effective algebraic Cayley enumeration"
+frontier:
+  independent-effective-density-review:
+    task: Independently review the exact claim, density proof and all norm constants.
+    kind: review
+    since: 2026-08-31
+events:
+  cayley-algebraic-channel-density-created:
+    date: '2026-08-31'
+    type: created
+    summary: >-
+      Isolated the effective algebraic channel enumeration and entrywise-to-diamond interface
+      required by the algebraic-witness semidecision.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/ALGEBRAIC_WITNESS_EFFECTIVE_CERTIFICATION_REPAIR_20260831.md
+      kind: text
+      locator: "## 3. Effective algebraic Cayley enumeration"

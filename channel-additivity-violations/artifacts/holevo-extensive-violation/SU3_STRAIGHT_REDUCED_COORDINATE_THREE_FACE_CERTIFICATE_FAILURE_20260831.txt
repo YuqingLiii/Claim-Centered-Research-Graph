@@ -1,0 +1,70 @@
+Direction: straight-reduced-coordinate-fixed-three
+Terminal status: certificate-resolution failure, not a mathematical counterexample
+
+Attempt 1: registered driver depth 6
+Command:
+python3 holevo-extensive-violation/tools/certify_su3_chain_three_face_sixdim_covers.py straight-reduced-coordinate
+Session: unified terminal 86570
+Process: PID 25003
+
+Terminal output:
+endpoint Gram branches reconstructed: 24; degrees=(12, 14, 2, 2, 2, 2)
+retained side distributions reconstructed: 3; degrees=(6, 6, 1, 1, 1, 1)
+straight-reduced-coordinate-fixed-three: processed=1000, certified=492, pending=15
+Traceback (most recent call last):
+  File "<repo>/holevo-extensive-violation/tools/certify_su3_input_centered_triangle_sixdim.py", line 312, in main
+    raise AssertionError((
+AssertionError: ('uncertified box', ((Fraction(63, 64), Fraction(1, 1)), (Fraction(45, 64), Fraction(23, 32)), (Fraction(1, 2), Fraction(33, 64)), (Fraction(3, 4), Fraction(49, 64)), (Fraction(57, 64), Fraction(29, 32)), (Fraction(3, 4), Fraction(49, 64))), 0.601641085054191, -2.48325593076882e-05)
+Exit status: 1
+
+Attempt 2: runtime-only depth 7 override; no source file modified
+Command:
+python3 -c 'import sys; sys.path.insert(0, "holevo-extensive-violation/tools"); import certify_su3_chain_three_face_sixdim_covers as driver; import certify_su3_input_centered_triangle_sixdim as core; core.CONFIG = driver.CONFIGURATIONS["straight-reduced-coordinate"]; core.MAX_DEPTH_PER_AXIS = 7; core.main()'
+Session: unified terminal 93352
+Process: PID 34531
+
+Terminal output:
+endpoint Gram branches reconstructed: 24; degrees=(12, 14, 2, 2, 2, 2)
+retained side distributions reconstructed: 3; degrees=(6, 6, 1, 1, 1, 1)
+straight-reduced-coordinate-fixed-three: processed=1000, certified=492, pending=15
+straight-reduced-coordinate-fixed-three: processed=2000, certified=989, pending=21
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "<repo>/holevo-extensive-violation/tools/certify_su3_input_centered_triangle_sixdim.py", line 312, in main
+    raise AssertionError((
+AssertionError: ('uncertified box', ((Fraction(127, 128), Fraction(1, 1)), (Fraction(21, 32), Fraction(85, 128)), (Fraction(65, 128), Fraction(33, 64)), (Fraction(3, 4), Fraction(97, 128)), (Fraction(115, 128), Fraction(29, 32)), (Fraction(3, 4), Fraction(97, 128))), 0.6017417405400078, -2.0529833068348998e-05)
+Exit status: 1
+
+Attempt 3: runtime-only depth 10 override; no source file modified
+Command:
+python3 -c 'import sys; sys.path.insert(0, "holevo-extensive-violation/tools"); import certify_su3_chain_three_face_sixdim_covers as driver; import certify_su3_input_centered_triangle_sixdim as core; core.CONFIG = driver.CONFIGURATIONS["straight-reduced-coordinate"]; core.MAX_DEPTH_PER_AXIS = 10; core.main()'
+Session: unified terminal 19638
+Process: PID 40248
+
+Complete terminal output:
+endpoint Gram branches reconstructed: 24; degrees=(12, 14, 2, 2, 2, 2)
+retained side distributions reconstructed: 3; degrees=(6, 6, 1, 1, 1, 1)
+straight-reduced-coordinate-fixed-three: processed=1000, certified=492, pending=15
+straight-reduced-coordinate-fixed-three: processed=2000, certified=989, pending=21
+straight-reduced-coordinate-fixed-three: processed=3000, certified=1490, pending=19
+straight-reduced-coordinate-fixed-three: processed=4000, certified=1988, pending=23
+straight-reduced-coordinate-fixed-three: processed=5000, certified=2489, pending=21
+straight-reduced-coordinate-fixed-three: processed=6000, certified=2987, pending=25
+straight-reduced-coordinate-fixed-three: processed=7000, certified=3487, pending=25
+straight-reduced-coordinate-fixed-three: processed=8000, certified=3986, pending=27
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "<repo>/holevo-extensive-violation/tools/certify_su3_input_centered_triangle_sixdim.py", line 312, in main
+    raise AssertionError((
+AssertionError: ('uncertified box', ((Fraction(1023, 1024), Fraction(1, 1)), (Fraction(5, 8), Fraction(641, 1024)), (Fraction(65, 128), Fraction(521, 1024)), (Fraction(769, 1024), Fraction(385, 512)), (Fraction(917, 1024), Fraction(459, 512)), (Fraction(777, 1024), Fraction(389, 512))), 0.6017369749589875, -9.173335876151267e-06)
+Exit status: 1
+
+Depth-10 terminal box in common denominator 1024:
+((1023/1024,1024/1024), (640/1024,641/1024), (520/1024,521/1024),
+ (769/1024,770/1024), (917/1024,918/1024), (777/1024,778/1024))
+
+Every coordinate width is exactly 1/1024, so all six axes reached the runtime ceiling depth 10.
+The value 0.6017369749589875 is the printed t_upper diagnostic. The printed certified lower-margin
+diagnostic is -9.173335876151267e-06. The assertion says only that this enclosure did not prove
+strict positivity at the registered depth; it does not evaluate the true pointwise margin as
+negative and does not constitute a mathematical counterexample.

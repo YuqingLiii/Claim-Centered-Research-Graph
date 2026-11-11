@@ -1,0 +1,49 @@
+id: HEXT.werner-even-identity-label-component-obstruction
+role: obstruction
+aliases:
+- werner-even-moment-kappa-linear-genus-obstruction
+claim: >-
+  For every even N>=4, the identity pairings sigma=tau=id define a connected admissible Werner
+  constellation with equality-graph component count kappa=2N and genus h=(N-2)/2, and admit
+  [m(m-1)]^N physical edge-label sequences. Hence no uniform bound kappa<=N+O(1) holds on the
+  connected even-moment sector, although this family does not refute a bound
+  kappa<=N+b+Lh with L>=2 or the centered spectral bound.
+assessment:
+  level: PROVED
+  caveats:
+  - >-
+    The normalized leading mass is ((m-1)/m)^N d^{-(N-2)}, so this family is strongly suppressed
+    and is not a counterexample to the centered spectral claim.
+  - The obstruction rules out only a genus-independent equality-component allowance.
+  summary: >-
+    Independent review extended the identity-pairing obstruction to the even-moment sector and
+    proved that any linear-genus component bound must have asymptotic coefficient at least two.
+  basis:
+    counterexamples:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_TWO_BOUNDARY_CONSTELLATION_WEIGHTED_COUNT_20260830.md
+      kind: counterexample
+      locator: "## 8. Equality-graph components: the remaining centered-bound obstruction"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_TWO_BOUNDARY_CONSTELLATION_WEIGHTED_COUNT_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WTBC-IR-07"
+      scope: >-
+        Independently verified connectedness for every N, the even-N cycle count and genus,
+        equality components, label multiplicity and the limited normalized-mass consequence.
+      reviewed_hash: sha256:932db446425cb53de07e3a043bac0670aff523e875221f8ea94012e1be3c6be8
+frontier:
+  linear-genus-component-bound:
+    task: >-
+      Prove or refute kappa<=N+b+Lh with finite universal b and L>=2, or replace it by a joint
+      label-and-genus weighted sum sufficient for the centered moment.
+    kind: gate
+    since: 2026-08-30
+events:
+  even-identity-obstruction-created-and-reviewed:
+    date: '2026-08-30'
+    type: created
+    summary: Registered the independently proved even-moment equality-component obstruction.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_TWO_BOUNDARY_CONSTELLATION_WEIGHTED_COUNT_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WTBC-IR-07"

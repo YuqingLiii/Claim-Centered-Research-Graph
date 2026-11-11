@@ -1,0 +1,120 @@
+id: HEXT.same-tuple-werner-centered-bound-large-m
+role: proof
+aliases:
+- repeated-tuple-werner-centered-large-m
+claim: >-
+  For every integer m>e^18 and every fixed eta>=0, let U_1^(d),...,U_m^(d) be independent Haar-distributed unitaries in U(d), define R_U=m^(-2)sum_(v,a=1)^m U_v^*U_a tensor U_a^*U_v, A=1+9(1+eta)^2/m, and H=sqrt((A^2-1)(1-m^(-2))). Then lim_(d->infinity) Pr{||R_U-I_(d^2)/m||_infinity>H}=0.
+routes:
+  reviewed-all-genus-log-moment:
+    premises:
+    - HEXT.werner-centered-reversal-return-bound
+    - HEXT.werner-two-boundary-constellation-count
+    - HEXT.werner-admissible-equality-component-genus-bound
+    - HEXT.werner-two-component-low-genus-return-separation
+    - HEXT.werner-two-component-nonreturn-weighted-count
+    - HEXT.werner-monotone-weingarten-tail-summability
+    - HEXT.werner-constellation-euler-deficit
+    implication: >-
+      The exact centered forward/block-reversal expansion and return estimate, combined with the listed proved connected every-genus weighted-count, equality-component, low-genus return-separation, residual two-component, monotone-tail, and Euler-deficit premises, imply the following. Let D,alpha be witnesses for HEXT.werner-two-boundary-constellation-count, and set u=(3m-4)/(m^2H), b_D=D/(mH), a=4096/(mH), x_alpha=m^2N^alpha/d^2, x_24=m^2N^24/d^2, and theta=6(2N)^(7/2)/d^2. For every even N with x_alpha,x_24,theta<1, E Tr[(R_U-I_(d^2)/m)^N]/H^N <= 2d^2u^N + m^2(1-theta)^(-1)[b_D^N(1-x_alpha)^(-1)+a^N N^24 x_24(1-x_24)^(-1)]. For m>e^18 and fixed eta>=0, 0<u<1, 0<a<1, and 0<b_D<1. Choosing the even order N(d)=2ceil(gamma log(d)/2) with gamma>2/log(1/u) makes every term tend to zero, and even-moment domination plus Markov's inequality proves the node claim.
+    proof:
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_CENTERED_MOMENT_ALL_GENUS_ASSEMBLY_20260830.md
+        kind: text
+        locator: "## 3. Shortened master inequality"
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_CENTERED_GROWING_TRACE_METHOD_GATE_20260830.md
+        kind: text
+        locator: "## 3. The return sector is rigorously safe"
+    assessment:
+      level: PROVED
+      summary: >-
+        Final independent mathematical review verified the exhaustive sector partition, connected
+        and disconnected sums, monotone tail, constants, logarithmic even-moment choice and Markov
+        step using only the public existential D,alpha interface.
+      basis:
+        evidence:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_CENTERED_MOMENT_ALL_GENUS_ASSEMBLY_20260830.md
+          kind: text
+          locator: "## 4. Logarithmic even moment and exact threshold"
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_CENTERED_MOMENT_FINAL_CONDITIONAL_ASSEMBLY_INDEPENDENT_REVIEW_20260830.md
+          kind: review
+          locator: "Findings WCMF-IR-01--WCMF-IR-06, WCMF-IR-08, and WCMF-IR-10"
+          scope: >-
+            Independently checked the exact seven-premise implication, all sector sums and powers,
+            the existential connected-count interface, the fixed-m constants, even-moment choice,
+            and Markov conclusion.
+          reviewed_hash: sha256:0c09e4e2f6afb70b6364c7e69b7e1892fa113826a91dc1474ceaa824bb58a937
+assessment:
+  level: PROVED
+  caveats:
+  - This claim is restricted to fixed integer m>e^18 and fixed eta>=0 before d tends to infinity.
+  - It is a real-Werner centered subtheorem, not the arbitrary-Hermitian or all-copy purity claim.
+  summary: >-
+    The seven proved structural premises and the independently reviewed shortened logarithmic-
+    moment route establish the high-probability centered spectral bound for every fixed integer
+    m>e^18 and fixed eta>=0.
+  basis:
+    routes:
+    - reviewed-all-genus-log-moment
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_CENTERED_MOMENT_ALL_GENUS_ASSEMBLY_20260830.md
+      kind: text
+      locator: "## 5. Protocol consequence and remaining review"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_CENTERED_SCOPE_BRIDGE_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WCSB-01--WCSB-03"
+      scope: >-
+        Independently separated the all-fixed-m claim from the exact fixed-m>e^18 proposition and
+        verified the latter's downstream boundary without reviewing the master algebra itself.
+      reviewed_hash: sha256:d882dca3c30783b1a7d9f6a6cec79a66317b23ea26800fe2a2306263d1eb6670
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_CENTERED_MOMENT_FINAL_CONDITIONAL_ASSEMBLY_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Findings WCMF-IR-01--WCMF-IR-10"
+      scope: >-
+        Independently proved the exact large-m claim through the reviewed seven-premise route while
+        explicitly excluding the all-fixed-m, arbitrary-Hermitian, all-copy and full-size claims.
+      reviewed_hash: sha256:d882dca3c30783b1a7d9f6a6cec79a66317b23ea26800fe2a2306263d1eb6670
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_CENTERED_CANONICAL_INTEGRATION_AMENDMENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WCCIA-02"
+      scope: >-
+        Independently verified the canonical claim hash, the seven exact premises, and use of the
+        repaired existential-interface route hash rather than the superseded stronger wording.
+      reviewed_hash: sha256:d882dca3c30783b1a7d9f6a6cec79a66317b23ea26800fe2a2306263d1eb6670
+events:
+  large-m-centered-route-independently-proved:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    route: reviewed-all-genus-log-moment
+    summary: >-
+      Final independent review proved the current existential-interface implication after the
+      exact return atom and all six structural inputs reached PROVED.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_CENTERED_MOMENT_FINAL_CONDITIONAL_ASSEMBLY_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Findings WCMF-IR-01--WCMF-IR-06, WCMF-IR-08, and WCMF-IR-10"
+  large-m-centered-claim-independently-proved:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      The reviewed logarithmic-moment route proves the exact fixed-m>e^18 centered probability
+      statement; no broader centered or full-size claim is promoted.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_CENTERED_MOMENT_FINAL_CONDITIONAL_ASSEMBLY_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Findings WCMF-IR-01--WCMF-IR-10"
+  large-m-centered-node-created:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Registered the exact fixed-m>e^18 centered proposition and all-genus logarithmic-moment route
+      after independent scope audit prohibited promotion of the broader underspecified node.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_CENTERED_SCOPE_BRIDGE_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WCSB-03"

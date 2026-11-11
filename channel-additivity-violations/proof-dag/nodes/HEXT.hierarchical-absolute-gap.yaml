@@ -1,0 +1,51 @@
+id: HEXT.hierarchical-absolute-gap
+role: proof
+aliases:
+- hierarchy-absolute
+claim: >-
+  Assuming fixed-partner asymptotic additivity for one random family with a uniform positive
+  co-varying channel/conjugate-channel p=1 defect, construct finite-dimensional pairs whose
+  minimum-output-entropy defect is unbounded in absolute size as hierarchy depth grows.
+routes:
+  fixed-partner-induction:
+    premises:
+    - HEXT.fixed-partner-global-entropy
+    assumptions:
+      matched-bcn-gap:
+        kind: external-theorem
+        statement: >-
+          For a suitable fixed BCN parameter pair, a random channel and its co-varying conjugate
+          retain a uniform positive p=1 minimum-output-entropy defect with high probability.
+        source:
+          note: "Belinschi--Collins--Nechita random-channel conjugate-pair theorem; exact parameter statement must be rebound from arXiv:1305.1567."
+    implication: >-
+      Fixed-dimension uniformization permits a deterministic scale at every level that works for
+      all earlier histories of those dimensions. Summable failure probabilities leave a realization
+      with bounded side leakage and matched gain linear in depth.
+    proof:
+      sketch: >-
+        At level j choose n_j after the previous product dimensions are fixed. Use the common
+        continuity modulus to make the fixed-partner bound uniform over possible histories, take
+        summable failure probabilities, and conjugate the successful inequality for the second side.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/round-5-audit.md
+        kind: text
+        locator: "### 5. Conditional hierarchy — absolute-unbounded conclusion is sound in outline"
+    assessment:
+      level: CONJECTURED
+      summary: The conditional induction is explicit; its sole new entropy premise remains open.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - This claim is conditional on HEXT.fixed-partner-global-entropy and does not imply full-size extensivity.
+  summary: >-
+    The induction and probability bookkeeping are credible proposer-side arguments. The fixed-partner
+    premise and independent review are outstanding.
+  basis:
+    routes:
+    - fixed-partner-induction
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/round-5-audit.md
+      kind: text
+      locator: "### 5. Conditional hierarchy — absolute-unbounded conclusion is sound in outline"
+

@@ -1,0 +1,41 @@
+id: HCPREV.algebraic-entropy-interval-verifier
+role: tool
+aliases:
+- exact-algebraic-entropy-intervals
+claim: >-
+  There is a Turing algorithm and finite certificate verifier which, given an exactly represented
+  finite-dimensional algebraic Hermitian positive-semidefinite trace-one matrix rho and an integer
+  q>=1, returns rationals l_q<=S_bits(rho)<=u_q with u_q-l_q<=2^(-q), where
+  S_bits(rho)=-Tr(rho log_2 rho) is von Neumann entropy in bits. The certificate uses exact
+  algebraic Hermitian spectral isolation with multiplicities and directed rational logarithm
+  intervals. Exact zero eigenvalues use 0 log_2(0)=0; an isolating interval touching zero receives
+  a certified upper bound tending to zero under refinement, so zero causes no termination gap.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    The proposer proof specifies algebraic-number representation, exact sign and root-count
+    operations, Hermitian eigenvalue isolation, directed logarithm proof objects, the zero branch,
+    entropy summation and the finite verifier's accepted data.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/ALGEBRAIC_WITNESS_EFFECTIVE_CERTIFICATION_REPAIR_20260831.md
+      kind: text
+      locator: "## 5. Finite entropy intervals for algebraic output states"
+frontier:
+  independent-interval-verifier-review:
+    task: >-
+      Independently check the exact algebraic spectral algorithm, logarithm interval verifier,
+      zero-eigenvalue branch and arbitrary-precision termination.
+    kind: review
+    since: 2026-08-31
+events:
+  algebraic-entropy-interval-verifier-created:
+    date: '2026-08-31'
+    type: created
+    summary: >-
+      Isolated the exact spectral and directed entropy-interval effectivity interface required by
+      finite global MOE certificates.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/ALGEBRAIC_WITNESS_EFFECTIVE_CERTIFICATION_REPAIR_20260831.md
+      kind: text
+      locator: "## 5. Finite entropy intervals for algebraic output states"

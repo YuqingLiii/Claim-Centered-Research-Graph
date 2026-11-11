@@ -1,0 +1,76 @@
+id: HEXT.complex-haar-global-n2-output-dual-gate
+role: constraint
+aliases:
+- global-two-copy-output-coefficient-duality
+claim: >-
+  For N=C tensor C with output dimension m^2, the global two-copy purity target
+  sup_rho ||N(rho)||_2<=A/m is exactly equivalent to
+  sup_(Y=Y^*,||Y||_2=1)||N^*(Y)||_infinity<=A/m. The ambient Hermitian coefficient space has real
+  dimension m^4 and its unit sphere has intrinsic dimension m^4-1, independently of the input
+  dimension d, so pointwise same-tuple scalar strong-norm convergence with uniform free-model
+  slack can be upgraded by a finite coefficient net.
+assessment:
+  level: PROVED
+  caveats:
+  - >-
+    The output-duality and finite-net reduction are proved, but the required same-tuple convergence
+    premise is a separate OPEN node; this node does not assert that premise.
+  - This establishes at most global n=2 and gives no inference for n>=3 or all-copy regularization.
+  summary: >-
+    Dualizing the output replaces the failed d^2-dimensional pure-input net by a fixed m^4-dimensional
+    scalar coefficient net without relaxing to the false unrestricted replica operator norm.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/COMPLEX_HAAR_GLOBAL_N2_CONCENTRATION_GATE_20260830.md
+      kind: text
+      locator: "## 9. Minimal viable replacement: dualize the output, not the input sphere"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/COMPLEX_HAAR_GLOBAL_N2_GATE_POST_REPAIR_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding CHG2-PRR-VERDICT-OUTPUT-DUAL"
+      scope: >-
+        Independently reconstructed the exact output duality, Hermitian coefficient-space
+        dimensions, Lipschitz estimate and finite-net implication; it did not establish the
+        separately open same-tuple convergence premise.
+      reviewed_hash: sha256:b91aeedc542797eda56f8895c548ebe33bd68121ed1bf2626506650d15e10bb3
+frontier:
+  same-tuple-strong-norm:
+    task: >-
+      Resolve HEXT.same-tuple-two-leg-scalar-strong-norm and then carry out the finite m^4-dimensional
+      coefficient-net uniformization with the Collins--Youn slack.
+    kind: gate
+    since: 2026-08-30
+events:
+  post-repair-independent-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      Independent post-repair review reconstructed the exact duality and finite coefficient-net
+      argument at the repaired claim hash. The same-tuple convergence premise remains OPEN.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/COMPLEX_HAAR_GLOBAL_N2_GATE_POST_REPAIR_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding CHG2-PRR-VERDICT-OUTPUT-DUAL"
+  independent-review-repair-applied:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Applied the independent review's off-by-one wording correction for the Hermitian coefficient
+      sphere and its quantitative correction from the ordinary d^4/k de Finetti scale to the
+      sharper symmetric-bosonic d^2/k scale. Assessment remains CONJECTURED pending review rebinding
+      to the repaired claim hash.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/COMPLEX_HAAR_GLOBAL_N2_GATE_INDEPENDENT_REVIEW_20260830.md
+      kind: text
+      locator: "Finding CHG2-IR-02"
+  output-dual-gate-created:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Replaced input-state concentration and replica operator-norm relaxations by an exact finite
+      output-coefficient dual formulation of the global n=2 target.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/COMPLEX_HAAR_GLOBAL_N2_CONCENTRATION_GATE_20260830.md
+      kind: text

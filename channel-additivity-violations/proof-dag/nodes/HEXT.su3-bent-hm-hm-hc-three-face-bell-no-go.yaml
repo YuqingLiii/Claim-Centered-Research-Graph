@@ -1,0 +1,110 @@
+id: HEXT.su3-bent-hm-hm-hc-three-face-bell-no-go
+role: obstruction
+aliases:
+- bent-hm-hm-hc-three-face-no-go
+claim: >-
+  Every SU(3)-covariant qutrit channel supported on the bent cluster
+  ((-3,0),(-1,-1),(0,0)) satisfies the Bell-input no-gap inequality for all labels and weights.
+routes:
+  fixed-three-original-side-cover:
+    premises:
+    - HEXT.su3-three-face-cluster-classification
+    - HEXT.su3-fixed-original-side-endpoint-lemma
+    implication: >-
+      Retain the h/m, h/m, and h/c binary blocks, reduce the rest to 36 Gram endpoints, and
+      certify the resulting five-variable compact inequality.
+    proof:
+      sources:
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/certify_su3_bent_chain_hm_hm_hc_cover.py
+        kind: code
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CHAIN_THREE_FACE_SCAN_20260830.md
+        kind: text
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_BENT_HM_HM_HC_THREE_FACE_BELL_NO_GO_20260830.md
+        kind: text
+    assessment:
+      level: CONJECTURED
+      caveats:
+      - >-
+        Static independent review passed the route mathematics, but the historical 3435-leaf run
+        is not bound to the source bytes that actually executed; a fresh hash-bound exit-zero run
+        is required before promotion.
+      summary: >-
+        A proposer-side exact 36-branch, 3435-box compact rational certificate has strictly
+        positive natural-log margin. Independent review accepted the mathematical checker and
+        route logic but blocked promotion on execution provenance.
+      basis:
+        evidence:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_BENT_HM_HM_HC_THREE_FACE_CERTIFICATE_20260830.txt
+          kind: text
+          locator: smallest certified natural-log margin
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-extensive-violation/SU3_BENT_HM_HM_HC_THREE_FACE_INDEPENDENT_REVIEW_20260830.md
+          kind: review
+          locator: "FINDING-HMHC-05"
+          scope: >-
+            Static adversarial review accepted the configuration, endpoint reduction, retained
+            original-side spectra, rational compactification, Bernstein subdivision and directed
+            entropy bounds, but found the historical execution was not source-bound.
+          reviewed_hash: sha256:2f84ea289d4d3a8dae619253822ff1cfb7ed0458b28f843eef8cbceddaf53481
+assessment:
+  level: CONJECTURED
+  caveats:
+  - >-
+    Independent review passed the mathematics but blocked promotion because the historical run
+    is not bound to the code bytes that executed; a fresh source-bound run is still required.
+  - This is one atomic bent orientation and does not establish the aggregate bent-chain claim.
+  summary: >-
+    This bent h/m, h/m, h/c orientation is closed proposer-side by an exact all-label,
+    all-weight compact certificate.
+  basis:
+    routes:
+    - fixed-three-original-side-cover
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_BENT_HM_HM_HC_THREE_FACE_CERTIFICATE_20260830.txt
+      kind: text
+      locator: adaptive compact boxes certified
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SU3_BENT_HM_HM_HC_THREE_FACE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "FINDING-HMHC-05"
+      scope: >-
+        Independent review passed the claim mathematics but withheld promotion solely because
+        the historical certificate transcript lacks a credible binding to the executed source.
+      reviewed_hash: sha256:b9b116d1379ad530aa917636fe211c736131665b981dd47d4b241bf950bb66be
+frontier:
+  source-bound-rerun:
+    task: >-
+      Complete and preserve a fresh hash-bound exit-zero execution of the reviewed seven-file
+      checker closure, then ask the independent reviewer to verify provenance and promotion.
+    kind: task
+    since: 2026-08-30
+events:
+  independent-review-provenance-blocker:
+    date: '2026-08-30'
+    type: review-completed
+    summary: >-
+      Independent review passed the mathematical route but withheld promotion because the
+      historical 3435-leaf execution is not bound to its loaded source bytes.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SU3_BENT_HM_HM_HC_THREE_FACE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "FINDING-HMHC-05"
+  orientation-node-created:
+    date: '2026-08-30'
+    type: created
+    summary: Split this orientation from the aggregate bent-chain claim.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CHAIN_THREE_FACE_COVER_COMPLEXITY_20260830.md
+      kind: text
+  exact-certificate-completed:
+    date: '2026-08-30'
+    type: level-change
+    from: NUMERICAL
+    to: CONJECTURED
+    route: fixed-three-original-side-cover
+    summary: >-
+      Recorded the exact 36-branch, 3435-box compact certificate with minimum natural-log margin
+      greater than 1.891740238876e-05.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_BENT_HM_HM_HC_THREE_FACE_BELL_NO_GO_20260830.md
+      kind: text

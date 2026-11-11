@@ -1,0 +1,49 @@
+id: HEXT.same-tuple-positive-partial-trace-contraction
+role: proof
+aliases:
+- repeated-tuple-positive-partial-trace-order
+claim: >-
+  For every deterministic unitary tuple and every positive coefficient Y, the same-tuple output
+  satisfies 0<=M_U(Y)<=I tensor C^*(Tr_1 Y) and
+  0<=M_U(Y)<=C^*(Tr_2 Y) tensor I. Consequently its operator norm is at most the smaller of the
+  two one-leg partial-trace norms.
+assessment:
+  level: PROVED
+  caveats:
+  - >-
+    Matrix Cauchy--Schwarz may lose cancellations and this claim alone does not give the target for
+    an arbitrary positive Hilbert--Schmidt-normalized coefficient.
+  summary: >-
+    Spectral factorization and block Cauchy--Schwarz extend the rank-one Gram contraction to every
+    positive coefficient through its two coefficient partial traces.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SAME_TUPLE_POSITIVE_POLARIZED_GRAM_EXTENSION_20260830.md
+      kind: text
+      locator: "## 2. Exact positive partial-trace contraction"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_POSITIVE_WERNER_TRACE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STPW-IR-01"
+      scope: >-
+        Independently reconstructed both Loewner inequalities, coefficient partial-trace
+        conventions and the norm corollary without claiming target-tightness for arbitrary Y.
+      reviewed_hash: sha256:69e84f82cbdadc4bb50f3a1ab0685fd426c1111e667cf1c964ce7875db838ce2
+events:
+  positive-contraction-independent-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Independent review verified the deterministic positive partial-trace contraction.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_POSITIVE_WERNER_TRACE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STPW-IR-01"
+  positive-partial-trace-contraction-created:
+    date: '2026-08-30'
+    type: created
+    summary: Registered the exact proposer-side positive partial-trace contraction.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SAME_TUPLE_POSITIVE_POLARIZED_GRAM_EXTENSION_20260830.md
+      kind: text

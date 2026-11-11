@@ -1,0 +1,57 @@
+id: HEXT.same-tuple-rook-truncation-positivity-obstruction
+role: obstruction
+aliases:
+- repeated-tuple-rook-inclusion-exclusion-nonpositive
+claim: >-
+  The inclusion--exclusion projection Delta_1+Delta_2-Delta_1Delta_2 onto entries with v=w or
+  a=b is not positive: it maps the projector onto the uniform product coefficient vector to an
+  operator with eigenvalue -1/m^2 on e^perp tensor e^perp. Therefore the positive rook-support
+  theorem cannot be extended to arbitrary positive coefficients by declaring the rook truncation
+  positive and treating the remainder through a positive Schur decomposition.
+assessment:
+  level: PROVED
+  caveats:
+  - >-
+    This rules out only positivity of the inclusion--exclusion truncation, not every structured
+    block/Schur refinement or the general positive target.
+  summary: >-
+    Two commuting positive pinchings have a nonpositive inclusion--exclusion union, so a tempting
+    formal extension of the rook theorem fails at its first positivity step.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SAME_TUPLE_POSITIVE_ROOK_SUPPORT_20260830.md
+      kind: text
+      locator: "## 7. A precise obstruction to extending by rook truncation"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_ROOK_WERNER_COLLISION_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STRC-IR-04"
+      scope: >-
+        Independently verified the uniform-product negative eigenvalue and scoped it only to
+        positivity of the inclusion--exclusion rook truncation.
+      reviewed_hash: sha256:496b1e3e4946b9f4244eff9cf371ea22aeaac1ba076e22f279f43c1bee96ed86
+frontier:
+  structured-double-off-diagonal-control:
+    task: >-
+      Control the double-off-diagonal sector jointly with a retained structured part, or impose a
+      separately verifiable positivity condition instead of assuming rook truncation is positive.
+    kind: gate
+    since: 2026-08-30
+events:
+  rook-truncation-independent-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Independent review verified the exact nonpositivity counterexample and route scope.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_ROOK_WERNER_COLLISION_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STRC-IR-04"
+  rook-truncation-obstruction-created:
+    date: '2026-08-30'
+    type: created
+    summary: Registered the exact nonpositivity counterexample with route-level scope.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SAME_TUPLE_POSITIVE_ROOK_SUPPORT_20260830.md
+      kind: text

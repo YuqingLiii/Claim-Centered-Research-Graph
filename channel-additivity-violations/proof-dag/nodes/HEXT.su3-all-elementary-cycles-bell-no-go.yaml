@@ -1,0 +1,74 @@
+id: HEXT.su3-all-elementary-cycles-bell-no-go
+role: obstruction
+aliases:
+- translated-pieri-hexagon-no-go
+- all-elementary-covariant-cycles-no-go
+claim: >-
+  For every pair of integers p>=0 and q>=2, every SU(3)-covariant qutrit channel supported on the
+  translated elementary six-edge Pieri cycle with environment labels (p,q), (p+2,q-1),
+  (p+1,q-2) and input labels (p+1,q), (p+2,q-2), (p,q-1) satisfies
+  2 barS_min(Phi)<=2S_min(Phi)<S((Phi tensor barPhi)(Omega)) for all edge weights and phases.
+routes:
+  compact-rational-bernstein-route:
+    premises:
+    - HEXT.su3-inequivalent-environment-mixture-reduction
+    implication: >-
+      The three single-input mixture formulas plus the shared-environment cross terms make the
+      Gram parameter separately convex in two weights. The four corner functions compactify to
+      rational Bernstein forms on a cube. Exact subdivision bounds each Bell entropy below by
+      more than twice the entropy of one explicit highest-weight side output.
+    proof:
+      sketch: >-
+        Reconstruct the exact rational corner numerators from their proved degree bounds, verify
+        the interpolation off-grid, compactify p and q, and use rational Bernstein control-point
+        ratios. Dyadic de Casteljau subdivision gives 204 leaf boxes; rigorous atanh-series log
+        intervals leave a strictly positive margin in all boxes.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_ALL_TRANSLATED_ELEMENTARY_CYCLES_BELL_NO_GO_20260830.md
+        kind: text
+        locator: "## 2. Exact Gram reduction through ## 4. Compact exact certificate"
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/certify_su3_all_elementary_cycles.py
+        kind: code
+        locator: exact interpolation, compactification, rational Bernstein subdivision and log bounds
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The all-parameter proof has a reproducible exact rational certificate, but it has not
+        received independent adversarial review.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - Multi-face branching graphs, repeated vertices, and cycle multiplicity are not covered.
+  - Noncovariant qutrit Gram factors and non-Bell collective inputs are not covered.
+  - The proof is proposer-side and has not received independent review.
+  summary: >-
+    Every translation of the elementary SU(3) Pieri hexagon is closed for the conjugate-Bell route.
+  basis:
+    routes:
+    - compact-rational-bernstein-route
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_ALL_TRANSLATED_ELEMENTARY_CYCLES_BELL_NO_GO_20260830.md
+      kind: text
+      locator: "## 4. Compact exact certificate"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_ALL_TRANSLATED_ELEMENTARY_CYCLES_CERTIFICATE_20260830.txt
+      kind: text
+      locator: all four corners and 204 compact boxes certified
+frontier:
+  multi-face-graphs:
+    task: >-
+      Extend the certificate to two adjacent elementary faces and determine whether a graph
+      decomposition can reduce every finite Pieri branching subgraph to certified one-face bounds.
+    kind: gate
+    since: 2026-08-30
+events:
+  all-translated-elementary-cycles-closed:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Replaced the finite translated-cycle scan by an exact compact rational Bernstein/logarithm
+      certificate covering all integer labels and all continuous edge weights.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_ALL_TRANSLATED_ELEMENTARY_CYCLES_BELL_NO_GO_20260830.md
+      kind: text
+    - path: channel-additivity-violations/tools/holevo-extensive-violation/certify_su3_all_elementary_cycles.py
+      kind: code

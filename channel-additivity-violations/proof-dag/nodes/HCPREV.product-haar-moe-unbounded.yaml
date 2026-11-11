@@ -1,0 +1,104 @@
+id: HCPREV.product-haar-moe-unbounded
+role: proof
+aliases:
+- atomic-product-haar-moe-gaps
+claim: >-
+  For every integer m>e^18, define c_m=log_2(m)/m-2log_2(1+9/m)>0. For every fixed integer
+  J>=1 and every D, draw independent Haar U_(i,j)^(D) in U(D), i in [m], j in [J], define
+  Phi_(j,D)(rho)=m^(-1)sum_i U_(i,j)^(D) rho U_(i,j)^(D)* and
+  L_(J,D)=tensor_(j=1)^J Phi_(j,D), and let bar(L_(J,D)) be its entrywise-conjugate channel.
+  Then lim_(D->infinity) Pr{S_min(L_(J,D))+S_min(bar(L_(J,D)))-
+  S_min(L_(J,D) tensor bar(L_(J,D)))>=J c_m/2}=1. Consequently, for every G>0 there is a
+  fixed J such that the same probability with gap>G tends to one as D tends to infinity.
+assumptions:
+  collins-youn-direct-product-traceless-bound:
+    kind: external-theorem
+    statement: >-
+      For fixed integers m>=1 and J>=1, take the left regular representation of F_infinity^J
+      and restrict each factor to its first m canonical generators, equivalently the regular
+      representation norm on the subgroup F_m^J; let u_v, v in [m]^J, be the corresponding
+      direct-product words. For every scalar coefficient matrix a=(a_(v,w)) in M_(m^J)(C)
+      with Tr(a)=0,
+      ||sum_(v,w) a_(v,w) u_v^*u_w||_infinity <=
+      m^(J/2)sqrt((1+9/m)^J-1)||a||_2, where ||a||_2=(Tr(a^*a))^(1/2).
+    source:
+      path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/primary-sources/collins-youn-1907.07856.pdf
+      kind: pdf
+      locator: Theorem 3.3, PDF pp. 11-12, specialized from N=m and k=J
+  bordenave-collins-product-haar-strong-convergence:
+    kind: external-theorem
+    statement: >-
+      Fix integers m>=2 and J>=1. For each D let U_(i,j)^(D), i in [m], j in [J], be
+      independent Haar unitaries in U(D), and set V_(i,j)^(D)=I_D^(tensor(j-1)) tensor
+      U_(i,j)^(D) tensor I_D^(tensor(J-j)). As D tends to infinity, the tuple V^(D)
+      converges strongly in probability to the left-regular generator tuple of the direct
+      product F_m^J: for every fixed matrix size and every fixed matrix-valued
+      noncommutative star-polynomial P, ||P(V^(D))|| converges in probability to the
+      corresponding regular-representation norm.
+    source:
+      path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/primary-sources/bordenave-collins-2304.05714.pdf
+      kind: pdf
+      locator: Section 9.1 Eqs. (66)-(68), Eq. (69), and Theorem 9.2, PDF pp. 60-63
+assessment:
+  level: PROVED
+  caveats:
+  - The order is fixed m, then fixed target gap and depth J, then D tends to infinity; no J=J(D) statement is claimed.
+  - The result is MOE-only and does not preserve the sampled model under any Holevo or pair-to-self reduction.
+  - The law is a specified product-Haar ensemble, not a full-support or generic law on the whole CPTP body.
+  summary: >-
+    An exact proposer-side direct proof combines the trace-zero Collins--Youn direct-product norm
+    bound with Bordenave--Collins product-Haar strong convergence, a finite-net uniformization,
+    a global complementary-output entropy bound and a conjugate Bell witness. Fresh independent
+    hash-bound review passed the exact atomic claim and both corrected source interfaces.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/PRODUCT_HAAR_MOE_ATOMIC_THEOREM_20260830.md
+      kind: text
+      locator: "## 1. Atomic theorem"
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/PRIMARY_SOURCE_INTERFACE_ERRATA_20260907.md
+      kind: text
+      locator: "## Collins--Youn, arXiv:1907.07856v2, Theorem 3.3"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/PRODUCT_HAAR_MOE_ATOMIC_THEOREM_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "## Executive verdict"
+      scope: >-
+        Independently passed the exact MOE-only claim, source interfaces, finite-net uniformization,
+        all-input entropy bound, Bell witness, probability limit and absolute-unbounded quantifiers.
+      reviewed_hash: sha256:d440f868f357ab31ba91a26b622eb020b69f597a4f5c62e69c53661689c0bc9e
+events:
+  post-audit-source-interface-link-added:
+    date: '2026-09-07'
+    type: repair-applied
+    summary: >-
+      Linked the project-local Collins--Youn interface erratum from the precise node that imports
+      Theorem 3.3. The reviewed claim, proof and completion level are unchanged.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/POST_AUDIT_CLEANUP_20260907.md
+      kind: text
+      locator: "## Repairs"
+  atomic-product-haar-moe-independently-proved:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      Fresh independent review passed the exact isolated product-Haar MOE theorem while preserving
+      its no-Holevo, no-same-sampled-channel and no-compound-parent scope boundaries.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/PRODUCT_HAAR_MOE_ATOMIC_THEOREM_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "## Executive verdict"
+  atomic-product-haar-moe-node-created:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Split the mathematically passing MOE-only product-Haar theorem from the blocked Holevo and
+      pair-to-self conclusions, and exposed the exact Collins--Youn and Bordenave--Collins interfaces.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/PRODUCT_HAAR_MOE_ATOMIC_THEOREM_20260830.md
+      kind: text
+      locator: "## 1. Atomic theorem"
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/PRODUCT_HAAR_UNBOUNDED_PREVALENCE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Promotion disposition and minimal repair"

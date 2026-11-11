@@ -1,0 +1,169 @@
+id: HCPREV.random-models
+role: outcome
+aliases:
+- random-abundance
+claim: >-
+  Five model-specific p=1 minimum-output-entropy statements hold: the Hastings random-unitary
+  model has strict violation with positive probability; the ASW quadratic-dimension Haar-isometry
+  model has strict violation with probability tending to one and exponentially small exceptional
+  probability; the BCN fixed-output Haar-Stinespring model has conjugate/Bell violation with
+  probability tending to one in its k>=183 detected regimes; the LLW locally normalized
+  Haar-projection model has conjugate/Bell violation almost surely eventually for analytically
+  sufficiently large output dimension, with k_high(1)=182 only a separate numerical threshold for
+  that criterion; and the specified product-Haar model has arbitrarily large finite-dimensional
+  gaps with probability tending to one after the target gap and depth are fixed. Every clause is
+  model-, dimension-, witness- and quantifier-order-specific and none is a same-law Holevo claim.
+routes:
+  product-haar-unbounded-route:
+    premises:
+    - HCPREV.product-haar-unbounded
+    implication: >-
+      The product-Haar theorem directly supplies the arbitrarily-large high-probability clause in
+      the random-model classification.
+    assessment:
+      level: CONJECTURED
+      caveats:
+      - The implication supplies only the product-Haar conjunct and cannot establish the compound parent claim.
+      summary: >-
+        Independent review found this route invalid as a route to the whole compound parent, even
+        though its product-Haar clause is mathematically meaningful; the route is retired and that
+        clause is now owned by HCPREV.product-haar-moe-unbounded.
+      basis:
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/PRODUCT_HAAR_UNBOUNDED_PREVALENCE_INDEPENDENT_REVIEW_20260830.md
+          kind: review
+          locator: "Finding HCP-PH-IR-08"
+          scope: >-
+            Independently checked that the exact implication covers only one conjunct of the
+            parent and therefore is not a valid assembled route to the compound classification.
+          reviewed_hash: sha256:b1418ad7bdb5616942a0cff29ac6e6a8c918477b72eeffc2dd11cf0b1cdd9f58
+    retired:
+      date: '2026-08-30'
+      sources:
+      - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/PRODUCT_HAAR_UNBOUNDED_PREVALENCE_INDEPENDENT_REVIEW_20260830.md
+        kind: review
+        locator: "Finding HCP-PH-IR-08"
+  complete-named-model-and-route:
+    premises:
+    - HCPREV.hastings-random-unitary-p1
+    - HCPREV.asw-random-isometry-p1
+    - HCPREV.bcn-random-stinespring-p1
+    - HCPREV.llw-local-projection-p1
+    - HCPREV.product-haar-moe-unbounded
+    implication: >-
+      The first four premises establish, respectively and without identifying their probability
+      spaces, every Hastings, ASW, BCN and LLW conjunct in the parent claim. The fifth premise
+      supplies the arbitrarily-large product-Haar conjunct with the exact order fixed target,
+      fixed depth, then large per-leg dimension. Taking the logical conjunction proves the whole
+      classification. The route performs no Shor transfer: all named-source probability clauses
+      remain p=1 MOE statements, and the fifth premise is itself the narrow MOE-only product-Haar
+      atom. No Holevo transfer or transformed-law conclusion is used anywhere in this route.
+    proof:
+      sketch: >-
+        Match the five parent clauses one-to-one with the five premises using the frozen source
+        interfaces and quantifier table; no cross-model inference or probability-space comparison
+        is required.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/NAMED_RANDOM_MODEL_ATOMIC_ASSEMBLY_20260831.md
+        kind: text
+        locator: "## 8. Exact AND assembly"
+    assessment:
+      level: CONJECTURED
+      caveats:
+      - All four newly isolated source atoms still require independent source review.
+      - The route is an AND assembly and proves no genericity statement outside the five named models.
+      summary: >-
+        A complete five-premise route now covers every conjunct of the revised compound claim, but
+        proposer-side source extraction and assembly have not yet passed independent review.
+      basis:
+        evidence:
+        - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/NAMED_RANDOM_MODEL_ATOMIC_ASSEMBLY_20260831.md
+          kind: text
+          locator: "## 8. Exact AND assembly"
+assessment:
+  level: CONJECTURED
+  caveats:
+  - >-
+    Shor's universal equivalence does not preserve the same random channel, dimensions, witness or
+    probability statement when passing from MOE to Holevo quantity.
+  summary: >-
+    The Hastings, ASW, BCN and LLW statements now have separate atomic owners with exact ensemble,
+    dimension scaling, limit order, probability, partner, witness and p=1 scope. Together with the
+    independently proved product-Haar premise they form a complete proposer-side AND route. The
+    prior one-premise route remains retired; the new atoms, route and revised parent await fresh
+    independent review.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/PRIMARY_SOURCE_AUDIT_20260829.md
+      kind: text
+      locator: "## Random-model quantifiers"
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/PRIMARY_SOURCE_AUDIT_20260829.md
+      kind: text
+      locator: "## Holevo-transfer caveat"
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/PRODUCT_HAAR_UNBOUNDED_PREVALENCE_PROOF_20260829.md
+      kind: text
+      locator: "## What “many” now means, and what it does not"
+    - node: HCPREV.product-haar-moe-unbounded
+      kind: node-evidence
+      note: >-
+        Non-load-bearing cross-reference to the isolated product-Haar MOE clause; it is not an
+        assembled proof of the other named-model conjuncts in this parent claim.
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/NAMED_RANDOM_MODEL_ATOMIC_ASSEMBLY_20260831.md
+      kind: text
+      locator: "## 8. Exact AND assembly"
+    routes:
+    - complete-named-model-and-route
+frontier:
+  independent-named-model-assembly-review:
+    task: >-
+      Independently review the four source atoms, all exact PDF interfaces, the five-premise AND
+      route and the revised compound claim; bind every reviewed claim and route implication hash.
+    kind: review
+    since: 2026-08-31
+events:
+  complete-named-model-and-route-added:
+    date: '2026-08-31'
+    type: route-added
+    route: complete-named-model-and-route
+    summary: >-
+      Added a five-premise AND route covering Hastings, ASW, BCN, LLW and product-Haar clauses while
+      keeping all new source atoms, the route and the parent at CONJECTURED pending independent review.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/NAMED_RANDOM_MODEL_ATOMIC_ASSEMBLY_20260831.md
+      kind: text
+      locator: "## 8. Exact AND assembly"
+  random-model-compound-claim-atomized:
+    date: '2026-08-31'
+    type: repair-applied
+    summary: >-
+      Rewrote the compound claim as five explicit conjuncts and froze each named model's dimensions,
+      witness and probability quantifier, without inferring same-law Holevo prevalence.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/NAMED_RANDOM_MODEL_ATOMIC_ASSEMBLY_20260831.md
+      kind: text
+      locator: "## 1. Common quantity and scope"
+  invalid-compound-product-haar-route-retired:
+    date: '2026-08-30'
+    type: route-retired
+    route: product-haar-unbounded-route
+    summary: >-
+      Independent review showed that the one-premise route proves only the product-Haar conjunct,
+      not the parent claim's several earlier named-model conjuncts; the scoped clause was split to
+      its own atomic node and this non-exhaustive compound route was retired.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/PRODUCT_HAAR_UNBOUNDED_PREVALENCE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding HCP-PH-IR-08"
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/PRODUCT_HAAR_MOE_ATOMIC_THEOREM_20260830.md
+      kind: text
+      locator: "## 7. Relation to the two broader canonical records"
+  arbitrary-gap-route-added:
+    date: '2026-08-29'
+    type: route-added
+    route: product-haar-unbounded-route
+    summary: >-
+      Strengthened named-model abundance from strict/near-one-bit violations to arbitrary fixed
+      target gaps with probability tending to one in a product-Haar family.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/PRODUCT_HAAR_UNBOUNDED_PREVALENCE_PROOF_20260829.md
+      kind: text

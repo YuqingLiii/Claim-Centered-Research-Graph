@@ -1,0 +1,69 @@
+id: HEXT.su3-conjugate-symmetric-complement-no-go
+role: obstruction
+aliases:
+- su3-conjugate-bosonic-tower-no-go
+- qutrit-conjugate-symmetric-lower-summands
+claim: >-
+  For every n>=1, let Phi_n:M_{n(n+1)/2}->M_3 be the partial-trace channel from the lower
+  Sym^{n-1}(bar3) summand in 3 tensor Sym^n(bar3). Its Gram contraction is
+  (n-1)/[4(n+2)] and its minimum output entropy is
+  H(n/(n+2),1/(n+2),1/(n+2)); the conjugate-Bell inequality is saturated at n=1 and strictly
+  fails for every n>=2.
+routes:
+  bosonic-creation-route:
+    premises:
+    - HEXT.conjugate-bell-realignment-constraint
+    implication: >-
+      The equivariant creation-operator isometry gives the Gram contraction by an exact bosonic
+      occupation trace. Every output is (I plus a one-particle density matrix)/(n+2), so a coherent
+      state gives and majorizes the exact minimum-entropy spectrum. The resulting side entropy is
+      strictly below half the isotropic Choi entropy for all n>=2.
+    proof:
+      sketch: >-
+        Write W_n=(n+2)^(-1/2) sum_i |i> tensor a_i^dagger. Then
+        Phi_n^*(X)=dGamma(X^T)/(n+2) for traceless X and the occupation trace yields
+        t_n=(n-1)/[4(n+2)]. The output spectrum is (1+mu_i)/(n+2), where the mu_i form a
+        positive vector of sum n-1; the coherent spectrum majorizes all others. A three-regime
+        scalar comparison proves the Bell inequality is strict after n=1.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CONJUGATE_SYMMETRIC_COMPLEMENT_NO_GO_20260830.md
+        kind: text
+        locator: "## 1. Maximally mixed output and depolarizing Gram form through ## 3. Bell spectrum"
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The family formulas and entropy comparison are complete proposer-side but have not received
+        independent adversarial review.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - Only the lower summands in 3 tensor Sym^n(bar3) are classified.
+  - The theorem concerns the conjugate-Bell witness and not non-Bell collective inputs.
+  - The proof is proposer-side and has not received independent review.
+  summary: >-
+    The full conjugate-bosonic qutrit tower is closed for the Bell route; only its trivial first
+    member saturates, and every nontrivial member has a strict negative defect.
+  basis:
+    routes:
+    - bosonic-creation-route
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CONJUGATE_SYMMETRIC_COMPLEMENT_NO_GO_20260830.md
+      kind: text
+      locator: "## Family and theorem"
+frontier:
+  mixed-highest-weight-couplings:
+    task: >-
+      Analyze lower summands in 3 tensor V_(p,q) with p,q>0 beyond the adjoint, or prove a general
+      covariant-qutrit Bell no-go from Casimir and product-overlap data.
+    kind: gate
+    since: 2026-08-30
+events:
+  conjugate-symmetric-tower-excluded:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Derived exact Gram and minimum-output-entropy formulas from the bosonic creation isometry and
+      proved that every nontrivial lower conjugate-symmetric summand has a negative Bell defect.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CONJUGATE_SYMMETRIC_COMPLEMENT_NO_GO_20260830.md
+      kind: text

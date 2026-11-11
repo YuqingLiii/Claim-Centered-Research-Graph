@@ -1,0 +1,94 @@
+id: HEXT.su3-straight-three-face-clusters-bell-no-go
+role: obstruction
+aliases:
+- straight-three-face-no-go
+claim: >-
+  Every SU(3)-covariant qutrit channel supported on a straight chain of three distinct elementary
+  Pieri faces satisfies 2 barS_min(Phi)<=2S_min(Phi)<S((Phi tensor barPhi)(Omega)) for all allowed
+  labels, weights, and phases.
+routes:
+  orientation-conjunction:
+    premises:
+    - HEXT.su3-straight-all-hm-three-face-bell-no-go
+    - HEXT.su3-straight-ternary-three-face-bell-no-go
+    - HEXT.su3-straight-reduced-coordinate-three-face-bell-no-go
+    implication: >-
+      The exact translation classification has three straight orientations; proving each atomic
+      orientation node establishes the universal straight-chain claim.
+    assessment:
+      level: OPEN
+      summary: All three atomic orientation nodes await exact certificates before conjunction.
+  full-incidence-fixed-three-cover-scan:
+    premises:
+    - HEXT.su3-three-face-cluster-classification
+    implication: >-
+      Evaluate the full labelled union incidence on every straight orientation and retain a fixed
+      set of original side outputs as a candidate lower bound on minimum output entropy.
+    proof:
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CHAIN_THREE_FACE_SCAN_20260830.md
+        kind: text
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/scan_su3_chain_three_face_clusters.py
+        kind: code
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/stress_su3_chain_three_face_fixed_three_covers.py
+        kind: code
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/audit_su3_chain_three_face_cover_complexity.py
+        kind: code
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CHAIN_THREE_FACE_COVER_COMPLEXITY_20260830.md
+        kind: text
+    assessment:
+      level: NUMERICAL
+      summary: >-
+        All three straight orientations have positive sampled fixed-cover margins, including
+        million-label stress, but continuous weights and the compact boundary remain uncertified.
+      basis:
+        runs:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CHAIN_THREE_FACE_SCAN_RUN_20260830.txt
+          kind: run
+          result: The full-incidence scan found positive fixed-three margins in all orientations.
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CHAIN_THREE_FACE_FIXED_THREE_STRESS_RUN_20260830.txt
+          kind: run
+          result: The selected covers survived the registered million-label stress test.
+assessment:
+  level: NUMERICAL
+  caveats:
+  - Finite scans do not certify all continuous weights or the compactified label boundary.
+  summary: The three atomic straight orientations are registered and numerically excluded.
+  basis:
+    routes:
+    - full-incidence-fixed-three-cover-scan
+    runs:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CHAIN_THREE_FACE_SCAN_RUN_20260830.txt
+      kind: run
+      result: The full-incidence scan found positive fixed-cover margins in all three orientations.
+frontier:
+  certify-three-atomic-orientations:
+    task: >-
+      Complete and independently review the three atomic exact certificates, then promote this
+      parent only through their conjunction.
+    kind: task
+    since: 2026-08-30
+events:
+  atomic-orientations-split:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Replaced orientation-specific parent routes by three atomic claims and an explicit
+      conjunction, preventing one direction from being mistaken for the full class.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CHAIN_THREE_FACE_COVER_COMPLEXITY_20260830.md
+      kind: text
+  full-incidence-scan-completed:
+    date: '2026-08-30'
+    type: route-added
+    summary: A full-incidence scan identified positive candidate covers in all orientations.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CHAIN_THREE_FACE_SCAN_20260830.md
+      kind: text
+  straight-three-face-route-registered:
+    date: '2026-08-30'
+    type: created
+    summary: Registered the three oriented straight-chain clusters.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_THREE_FACE_CLUSTER_CLASSIFICATION_20260830.md
+      kind: text

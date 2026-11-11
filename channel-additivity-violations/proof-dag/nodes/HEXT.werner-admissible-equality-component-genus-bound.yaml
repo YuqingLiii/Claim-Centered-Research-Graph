@@ -1,0 +1,77 @@
+id: HEXT.werner-admissible-equality-component-genus-bound
+role: proof
+aliases:
+- werner-kappa-linear-genus-bound
+claim: >-
+  For every admissible Werner contraction skeleton on E=2N physical slots, with c in {1,2}
+  topological constellation components, total genus h, and q_N=1 for odd N and q_N=2 for even N,
+  the tuple-label equality graph satisfies
+  kappa(sigma,tau)<=N-2c+q_N+2+2h-|C|. In particular every connected skeleton has
+  kappa<=N+2+2h. The universal constants b=2 and L=2 are optimal in the parity-uniform bound
+  kappa<=N+b+Lh.
+routes:
+  admissibility-euler-length-budget:
+    premises:
+    - HEXT.werner-contraction-skeleton-ribbon-injection
+    - HEXT.werner-constellation-euler-deficit
+    implication: >-
+      For every admissible Werner contraction skeleton on E=2N physical slots, with c in {1,2}
+      topological constellation components, total genus h, and q_N=1 for odd N and q_N=2 for even N,
+      the tuple-label equality graph satisfies
+      kappa(sigma,tau)<=N-2c+q_N+2+2h-|C|. In particular every connected skeleton has
+      kappa<=N+2+2h. The universal constants b=2 and L=2 are optimal in the parity-uniform bound
+      kappa<=N+b+Lh.
+    proof:
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_EQUALITY_COMPONENT_GENUS_GATE_20260830.md
+        kind: text
+        locator: "## 4. Proof of the universal component theorem"
+    assessment:
+      level: PROVED
+      caveats:
+      - Admissibility is essential; the theorem is false for arbitrary uncolored constellations.
+      summary: >-
+        Independent review verified the fixed-point obstruction, exact Euler length budget,
+        transposition-metric inequalities, parity refinement and sharpness family.
+      basis:
+        evidence:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_EQUALITY_COMPONENT_GENUS_GATE_20260830.md
+          kind: text
+          locator: "## 4. Proof of the universal component theorem"
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_EQUALITY_COMPONENT_GENUS_GATE_INDEPENDENT_REVIEW_20260830.md
+          kind: review
+          locator: "Finding WECG-IR-03"
+          scope: >-
+            Independently verified every inequality direction, the exact parity-refined bound,
+            connected (b,L)=(2,2) corollary and its stated optimality.
+          reviewed_hash: sha256:443c7023066be044f8795ef5d036a159f652ccb78bb6b51d15d0a95904791651
+assessment:
+  level: PROVED
+  caveats:
+  - The result bounds equality-component multiplicity but does not count structural constellations.
+  summary: >-
+    The previously missing connected equality-label gate is independently proved with sharp
+    parity-uniform constants b=2 and L=2.
+  basis:
+    routes:
+    - admissibility-euler-length-budget
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_EQUALITY_COMPONENT_GENUS_GATE_20260830.md
+      kind: text
+      locator: "## 4. Proof of the universal component theorem"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_EQUALITY_COMPONENT_GENUS_GATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WECG-IR-04"
+      scope: Independently verified the full claim and sharpness scope with explicit proved premises.
+      reviewed_hash: sha256:443c7023066be044f8795ef5d036a159f652ccb78bb6b51d15d0a95904791651
+events:
+  equality-component-genus-bound-created-and-reviewed:
+    date: '2026-08-30'
+    type: created
+    summary: Registered the independently proved admissible equality-component genus theorem.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_EQUALITY_COMPONENT_GENUS_GATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WECG-IR-04"

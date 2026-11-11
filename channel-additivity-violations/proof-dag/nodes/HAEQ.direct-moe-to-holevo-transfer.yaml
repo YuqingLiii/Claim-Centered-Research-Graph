@@ -1,0 +1,136 @@
+id: HAEQ.direct-moe-to-holevo-transfer
+role: proof
+aliases:
+- shor-weyl-transfer
+claim: >-
+  Every finite-dimensional p=1 minimum-output-entropy pair defect can be transferred by Shor's
+  finite Weyl-labelled extension to an exactly equal numerical Holevo pair defect; the extension
+  changes the channels but remains finite dimensional.
+routes:
+  explicit-weyl-extension:
+    premises:
+    - HAEQ.weyl-extension-moe-preservation
+    assumptions:
+      shor-section-9:
+        kind: external-theorem
+        statement: >-
+          Shor defines the finite Weyl-labelled channel extensions and the uniform labelled
+          ensembles built from one-channel and product minimum-output-entropy inputs.
+        source:
+          path: channel-additivity-violations/artifacts/holevo-additivity-equality/primary-sources/shor-quant-ph-0305035.pdf
+          kind: pdf
+          locator: Section 9, PDF pp. 18-19
+    implication: >-
+      The premise identifies the exact one-channel and product minimum output entropies of the
+      dephasing Weyl extensions. The output-dimension Holevo upper bound and Shor's uniform Weyl
+      ensembles attain log d minus those minima singly and 2 log d minus the product minimum;
+      subtracting the identities preserves the original numerical MOE pair defect exactly.
+    proof:
+      sketch: >-
+        Use the Weyl twirl to make each ensemble's average output maximally mixed, use the premise
+        to bind the global minimum entropies of the extended channels, and subtract the attained
+        one-channel identities from the attained product identity.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-additivity-equality/WEYL_EXTENSION_GLOBAL_MOE_PRESERVATION_20260830.md
+        kind: text
+        locator: "## Consequence for the exact Holevo transfer"
+      - path: channel-additivity-violations/artifacts/holevo-additivity-equality/DIRECT_MOE_TO_HOLEVO_TRANSFER_20260830.md
+        kind: text
+        locator: "## Product identity"
+    assessment:
+      level: PROVED
+      summary: >-
+        Independent review verified the Weyl twirl, global Holevo upper bounds and achievability,
+        exact defect subtraction, dimensions and source scope; its preservation premise is PROVED.
+      basis:
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-additivity-equality/WEYL_EXTENSION_GLOBAL_MOE_AND_HOLEVO_TRANSFER_INDEPENDENT_REVIEW_20260830.md
+          kind: review
+          locator: Findings Q1WR-04--Q1WR-06
+          scope: >-
+            Independently checked the Weyl twirl, Holevo upper bound and exact achievability,
+            product output dimension, defect sign, finite-dimensional quantifiers, and the precise
+            scope supported by Shor Section 9.
+          reviewed_hash: sha256:f68eee218351e32e87ea69e57de9806d6fe84791b4f253afb46759d805ac6f51
+assessment:
+  level: PROVED
+  caveats:
+  - The extension changes the channels and their input dimensions; it does not identify the
+    original Hastings random pair as a Holevo witness.
+  summary: >-
+    Independent review passed the exact transfer claim and route: uniform Weyl orbits attain the
+    single and product Holevo upper bounds, the preservation premise controls the global minima,
+    and subtraction preserves the numerical defect for every finite-dimensional pair.
+  basis:
+    routes:
+    - explicit-weyl-extension
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-additivity-equality/DIRECT_MOE_TO_HOLEVO_TRANSFER_20260830.md
+      kind: text
+      locator: "## Product identity"
+    - path: channel-additivity-violations/artifacts/holevo-additivity-equality/WEYL_EXTENSION_GLOBAL_MOE_PRESERVATION_20260830.md
+      kind: text
+      locator: "## Consequence for the exact Holevo transfer"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-additivity-equality/WEYL_EXTENSION_GLOBAL_MOE_AND_HOLEVO_TRANSFER_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Findings Q1WR-04--Q1WR-07
+      scope: >-
+        Independently checked the assembled one-shot Holevo transfer, exact defect arithmetic,
+        source quantifiers, and boundaries excluding original-channel, pair-to-self, regularized
+        capacity, Q2, Q3, and unrelated capacity-threshold claims.
+      reviewed_hash: sha256:0a165d2114f2c448697a4ec9d71063260da689a00571772202b8b84b48289e3d
+events:
+  explicit-weyl-extension-route-independently-proved:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    route: explicit-weyl-extension
+    summary: >-
+      With the preservation premise proved, independent review establishes the exact Holevo
+      identities and numerical-defect transfer implication.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-additivity-equality/WEYL_EXTENSION_GLOBAL_MOE_AND_HOLEVO_TRANSFER_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Findings Q1WR-04--Q1WR-06
+  direct-transfer-independently-proved:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      The reviewed dephasing Weyl construction transfers every finite p=1 MOE pair defect to an
+      exactly equal one-shot Holevo pair defect while changing the finite channels.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-additivity-equality/WEYL_EXTENSION_GLOBAL_MOE_AND_HOLEVO_TRANSFER_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Findings Q1WR-04--Q1WR-07
+  direct-transfer-recorded:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Replaced the purely existential Shor-equivalence step in the root route by Shor's explicit
+      finite Weyl extension, preserving the numerical MOE pair defect as a Holevo pair defect.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-additivity-equality/DIRECT_MOE_TO_HOLEVO_TRANSFER_20260830.md
+      kind: text
+  global-minimum-gap-repaired:
+    date: '2026-08-30'
+    type: route-added
+    route: explicit-weyl-extension
+    summary: >-
+      Made the global minimum-output-entropy preservation step explicit as a premise and completed
+      its arbitrary-input proposer-side proof; no evidence level was promoted.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-additivity-equality/WEYL_EXTENSION_GLOBAL_MOE_PRESERVATION_20260830.md
+      kind: text
+  direct-transfer-review-completed:
+    date: '2026-08-30'
+    type: review-completed
+    summary: >-
+      Independent adversarial review passed the exact route implication and parent claim at their
+      current hashes; no evidence level was changed by the reviewer.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-additivity-equality/WEYL_EXTENSION_GLOBAL_MOE_AND_HOLEVO_TRANSFER_INDEPENDENT_REVIEW_20260830.md
+      kind: review

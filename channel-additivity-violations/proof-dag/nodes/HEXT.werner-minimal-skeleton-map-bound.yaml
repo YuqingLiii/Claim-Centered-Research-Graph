@@ -1,0 +1,117 @@
+id: HEXT.werner-minimal-skeleton-map-bound
+role: proof
+aliases:
+- werner-conditional-minimal-genus-mass-bound
+claim: >-
+  Assuming the lossless Werner ribbon injection and the b<=2+4h handle-sliced paired-stack
+  certificate, the genus-h minimal nonreturn absolute mass is at most
+  64N^3(2N+1)m^4(4096/m)^N[m^8(16N)^3/d^2]^h. Therefore its positive-genus sum is geometric for
+  fixed m and N<=c_m log d; allowing one binary decoration per ribbon replaces 4096 by 16384.
+routes:
+  explicit-handle-stack-route:
+    premises:
+    - HEXT.rooted-orientable-map-handle-count
+    - HEXT.multiboundary-paired-stack-label-components
+    - HEXT.werner-minimal-catalan-weight
+    - HEXT.werner-contraction-skeleton-ribbon-injection
+    - HEXT.werner-handle-sliced-paired-stack-certificate
+    implication: >-
+      Assuming the lossless Werner ribbon injection and the b<=2+4h handle-sliced paired-stack
+      certificate, the genus-h minimal nonreturn absolute mass is at most
+      64N^3(2N+1)m^4(4096/m)^N[m^8(16N)^3/d^2]^h. Therefore its positive-genus sum is geometric for
+      fixed m and N<=c_m log d; allowing one binary decoration per ribbon replaces 4096 by 16384.
+    proof:
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_MINIMAL_SKELETON_MAP_COUNT_20260830.md
+        kind: text
+        locator: "## 5. Conditional minimal-skeleton bound"
+    assessment:
+      level: OPEN
+      caveats:
+      - The exact rooted constellation has 4N ordinary incidence edges, not the provisional 2N used in the favorable generic-map constant.
+      - The corrected edge count invalidates the attached proof instantiation but is not a counterexample to the numerical implication itself.
+      summary: >-
+        The route is retired because its provisional 2N-edge generic-map proof does not apply to
+        the exact 4N-edge constellation; whether the sharper structured numerical bound is true
+        by another argument remains open.
+      basis:
+        evidence:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_20260830.md
+          kind: text
+          locator: "## 9. What the exact encoding does to the previous map route"
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_INDEPENDENT_REVIEW_20260830.md
+          kind: review
+          locator: "Finding WPCS-IR-07"
+          scope: >-
+            Independently verified the 4N-edge correction, failure of the attached generic-map
+            proof and the absence of a counterexample to the route implication itself.
+          reviewed_hash: sha256:3402909496a53e97299edc96799cfb442eb02f2018827316443a8100022088fa
+    retired:
+      date: '2026-08-30'
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_20260830.md
+        kind: text
+        locator: "## 9. What the exact encoding does to the previous map route"
+assessment:
+  level: OPEN
+  caveats:
+  - The favorable 4096^N generic-map route is retired because the exact constellation has 4N ordinary incidence edges.
+  - A sharp structured weighted-constellation count or higher-support surgery remains OPEN.
+  summary: >-
+    The conditional algebra remains historically correct, but its provisional 2N-edge map
+    instantiation is not the actual Werner constellation and is no longer an active route.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_20260830.md
+      kind: text
+      locator: "## 9. What the exact encoding does to the previous map route"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WPCS-IR-07"
+      scope: >-
+        Independently verified that the node remains OPEN: the old proof is retired, while neither
+        the exact encoding nor the generic upper bound refutes the sharper structured claim.
+      reviewed_hash: sha256:3402909496a53e97299edc96799cfb442eb02f2018827316443a8100022088fa
+events:
+  retired-route-semantics-independent-repair:
+    date: '2026-08-30'
+    type: repair-applied
+    route: explicit-handle-stack-route
+    summary: >-
+      Independent review repaired the retired route from REFUTED to OPEN: the 4N-edge correction
+      invalidates its attached proof but supplies no counterexample to the numerical implication.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WPCS-IR-07"
+  provisional-two-n-edge-route-retired:
+    date: '2026-08-30'
+    type: route-retired
+    route: explicit-handle-stack-route
+    summary: >-
+      Exact permutation/halfedge encoding shows 4N ordinary incidence edges, invalidating the
+      favorable 2N-edge generic-map instantiation while leaving the abstract map theorem intact.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_20260830.md
+      kind: text
+      locator: "## 9. What the exact encoding does to the previous map route"
+  conditional-map-bound-route-repaired:
+    date: '2026-08-30'
+    type: repair-applied
+    route: explicit-handle-stack-route
+    summary: >-
+      Replaced load-bearing node-evidence links with formal route premises and attached the
+      independent CERTIFIED* implication review; the node remains CONJECTURED because premises are OPEN.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_MINIMAL_SKELETON_MAP_COUNT_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WMSC-IR-04"
+  conditional-minimal-map-bound-created:
+    date: '2026-08-30'
+    type: created
+    summary: Registered the proposer-side conditional minimal-skeleton mass bound without promoting the OPEN interfaces.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_MINIMAL_SKELETON_MAP_COUNT_20260830.md
+      kind: text

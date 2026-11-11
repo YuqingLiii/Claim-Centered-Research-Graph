@@ -1,0 +1,130 @@
+id: HEXT.finite-dimensional-unbounded-gap
+role: proof
+aliases:
+- tensor-strong-convergence-amplification
+- absolute-unbounded-gap
+claim: >-
+  Finite-dimensional p=1 minimum-output-entropy pair defects are unbounded: for every G>0 there
+  are finite-dimensional channels L,R with S_min(L)+S_min(R)-S_min(L tensor R)>G.
+assumptions:
+  product-free-group-haagerup-bound:
+    kind: external-theorem
+    statement: >-
+      For fixed integers m>=2 and J>=1, let u_v, v in [m]^J, be the direct-product words in the
+      left regular representation of the direct product of J free groups, restricted to the first
+      m generators in each factor. Every scalar coefficient matrix a in M_(m^J)(C) with Tr(a)=0
+      satisfies ||sum_(v,w) a_(v,w)u_v^*u_w||_infinity <=
+      m^(J/2)sqrt((1+9/m)^J-1)||a||_2, where ||a||_2 is the Hilbert--Schmidt norm.
+    source:
+      path: channel-additivity-violations/artifacts/holevo-extensive-violation/primary-sources/collins-youn-1907.07856.pdf
+      kind: pdf
+      locator: Theorem 3.3, statement and proof, PDF pp. 11-12
+  tensor-strong-convergence:
+    kind: external-theorem
+    statement: >-
+      For every fixed generator count m and tensor-leg count J, independent Haar unitary tuples
+      placed on separate finite-dimensional tensor legs converge strongly in probability to the
+      canonical generators of the direct product F_m^J.
+    source:
+      path: channel-additivity-violations/artifacts/holevo-extensive-violation/primary-sources/bordenave-collins-2304.05714.pdf
+      kind: pdf
+      locator: Theorem 9.2 and Lemmas 9.3-9.4, PDF pp. 62-65
+assessment:
+  level: PROVED
+  caveats:
+  - >-
+    The proof is nonconstructive: for each fixed depth it establishes existence of a sufficiently
+    large finite matrix dimension and a successful Haar realization, but gives no explicit matrices.
+  - >-
+    Fixed-depth strong convergence supplies no audited growth rate for the required matrix
+    dimension as depth increases, so the result is absolute-unbounded but not yet full-size extensive.
+  summary: >-
+    A complete proposer-side derivation uses tensor strong convergence to import the Collins--Youn
+    all-input entropy lower bound into finite dimensions, while a product Bell state supplies a
+    matched upper bound. For any fixed integer m>e^18 the resulting defect is at least J*c_m-o(1),
+    where c_m=(log_2 m)/m-2 log_2(1+9/m)>0. Independent review passed the proof and the repaired
+    trace-zero source interface.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FINITE_DIMENSIONAL_UNBOUNDED_GAP_PROOF_20260829.md
+      kind: text
+      locator: "## Step 4: linear-in-depth defect"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FINITE_DIMENSIONAL_UNBOUNDED_GAP_PROOF_20260829.md
+      kind: text
+      locator: "## What this does not prove"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/UNBOUNDED_GAP_ADVERSARIAL_AUDIT_20260830.md
+      kind: text
+      locator: "## Verdict and remaining review boundary"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/PRIMARY_SOURCE_INTERFACE_ERRATA_20260907.md
+      kind: text
+      locator: "## Collins--Youn, arXiv:1907.07856v2, Theorem 3.3"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/ABSOLUTE_UNBOUNDED_CHAIN_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Findings AU-IR-01--AU-IR-03"
+      scope: >-
+        Independently passed the source theorem match, finite-net all-input uniformization, entropy
+        calculation, Bell witness and absolute-unbounded quantifiers, while requiring the now
+        applied trace-zero source-interface repair before completion.
+      reviewed_hash: sha256:1c62d358652bad37148e75956362e3f31c46c886eb7616620bceecc342ef40d2
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/ABSOLUTE_UNBOUNDED_CHAIN_REPAIR_AMENDMENT_REVIEW_20260830.md
+      kind: review
+      locator: Finding AUR-A01
+      scope: >-
+        Independently passed the repaired exact trace-zero Collins--Youn source interface and
+        authorized promotion at the unchanged exact claim hash.
+      reviewed_hash: sha256:1c62d358652bad37148e75956362e3f31c46c886eb7616620bceecc342ef40d2
+events:
+  post-audit-source-interface-cleanup:
+    date: '2026-09-07'
+    type: repair-applied
+    summary: >-
+      Restated the source theorem's m>=2 scope, narrowed the locator to the exact two printed
+      pages and linked the already-used Collins--Youn interface erratum. The claim, proof and
+      completion level are unchanged.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/POST_AUDIT_CLEANUP_20260907.md
+      kind: text
+      locator: "## Repairs"
+  absolute-unbounded-moe-pair-independently-proved:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      Independent review passed the finite-dimensional product-Haar construction and the repaired
+      trace-zero external theorem interface at the exact claim hash.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/ABSOLUTE_UNBOUNDED_CHAIN_REPAIR_AMENDMENT_REVIEW_20260830.md
+      kind: review
+      locator: Finding AUR-A01
+  trace-zero-source-interface-repaired:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Replaced the abbreviated Collins--Youn assumption by the exact direct-product trace-zero
+      coefficient estimate identified by independent review; level remains CONJECTURED pending
+      amendment review of the repaired interface.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/ABSOLUTE_UNBOUNDED_CHAIN_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Finding AU-IR-01
+  proposer-proof-added:
+    date: '2026-08-29'
+    type: created
+    summary: >-
+      Combined Collins--Youn's product-free-group Haagerup bound with Bordenave--Collins tensor
+      strong convergence to obtain a finite-dimensional absolute-unbounded gap construction.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FINITE_DIMENSIONAL_UNBOUNDED_GAP_PROOF_20260829.md
+      kind: text
+  proposer-adversarial-audit-added:
+    date: '2026-08-30'
+    type: review-completed
+    summary: >-
+      Rechecked the direct-product model, coefficient-net uniformization, complementary-channel
+      duality, entropy bound, Bell witness, probability order and finite Holevo reductions against
+      the local primary PDFs; no failure was found, but independent review remains outstanding.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/UNBOUNDED_GAP_ADVERSARIAL_AUDIT_20260830.md
+      kind: text

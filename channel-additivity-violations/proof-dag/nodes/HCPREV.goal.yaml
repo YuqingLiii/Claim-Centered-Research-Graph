@@ -1,0 +1,105 @@
+id: HCPREV.goal
+role: outcome
+aliases:
+- prevalence-question
+claim: >-
+  Classify the prevalence of finite-dimensional p=1 additivity counterexamples separately by
+  existence, random-model probability, relative topology and measure, dense/generic behavior,
+  explicit deterministic witnesses and minimum-dimension claims.
+routes:
+  current-landscape:
+    premises:
+    - HCPREV.algebraic-witness-existence
+    - HCPREV.product-haar-unbounded
+    - HCPREV.random-models
+    - HCPREV.open-set-stability
+    - HCPREV.additive-open-region
+    - HCPREV.full-support-probability-dichotomy
+    - HCPREV.explicit-witness-frontier
+    - HCPREV.dimension-threshold-scope
+    implication: >-
+      Together the premises justify the qualified answer: counterexamples are abundant in some
+      high-dimensional random ensembles, with arbitrarily large high-probability gaps in a specified
+      product-Haar model, and form nonempty relative-open positive-measure sets near every strict
+      witness. Under any full-support law on one fixed-dimensional CPTP ambient space, a nonempty
+      strict-violation set has probability strictly between zero and one. They are not dense in the
+      full CPTP space. Algebraic witnesses are computably guaranteed, but compact exhibited p=1
+      witnesses and global minimum dimensions remain unresolved.
+    proof:
+      sketch: >-
+        Keep every abundance quantifier attached to its own ambient space and random model. Never
+        infer Holevo-witness prevalence for the same sampled channels merely from Shor's universal
+        equivalence with minimum-output entropy.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/PRIMARY_SOURCE_AUDIT_20260829.md
+        kind: text
+        locator: "## Qualified verdict"
+      - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/STABILITY_AND_MEASURE_PROOF_20260829.md
+        kind: text
+        locator: "## Positive intrinsic measure"
+      - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/ADDITIVE_OPEN_REGION_PROOF_20260829.md
+        kind: text
+        locator: "## Consequences for prevalence language"
+      - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/FULL_SUPPORT_FIXED_DIMENSION_PROBABILITY_DICHOTOMY_20260830.md
+        kind: text
+        locator: "## Conditional dichotomy"
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The logical classification is coherent, but several literature-status statements still
+        require primary-source and date-bounded review.
+assessment:
+  level: OPEN
+  summary: >-
+    The random/topological distinctions are substantially organized, and a new proposer-side model
+    gives arbitrarily large finite-dimensional gaps with probability tending to one after fixing
+    the target depth. The explicit deterministic frontier and any true global minimum-dimension
+    statement remain open.
+  basis:
+    routes:
+    - current-landscape
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/PRIMARY_SOURCE_AUDIT_20260829.md
+      kind: text
+      locator: "## Qualified verdict"
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/STABILITY_AND_MEASURE_PROOF_20260829.md
+      kind: text
+      locator: "## Scope limits"
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/ADDITIVE_OPEN_REGION_PROOF_20260829.md
+      kind: text
+      locator: "## Consequences for prevalence language"
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/PRODUCT_HAAR_UNBOUNDED_PREVALENCE_PROOF_20260829.md
+      kind: text
+      locator: "## What “many” now means, and what it does not"
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/ALGEBRAIC_WITNESS_EXISTENCE_PROOF_20260829.md
+      kind: text
+      locator: "## Why the practical explicit-witness frontier remains open"
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/FULL_SUPPORT_FIXED_DIMENSION_PROBABILITY_DICHOTOMY_20260830.md
+      kind: text
+      locator: "## What full support does not quantify"
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence
+      kind: text
+      note: Migrated historical source bundle; retained for auditability, not as a verdict.
+frontier:
+  explicit-instance:
+    task: >-
+      Produce and rigorously certify a concrete finite-dimensional p=1 Kraus or Stinespring
+      witness, or document a primary-source explicit witness if one now exists.
+    kind: task
+    since: 2026-08-29
+  primary-threshold-audit:
+    task: >-
+      Obtain an independent review of the now page- and hash-bound 182/183 threshold audit,
+      including its numerical-versus-analytic distinction.
+    kind: review
+    since: 2026-08-29
+events:
+  full-support-probability-bridge-integrated:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Refined the current-landscape route with a separate fixed-dimensional full-support
+      probability premise, without changing any named random-model or explicitness claim.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/FULL_SUPPORT_FIXED_DIMENSION_PROBABILITY_DICHOTOMY_20260830.md
+      kind: text

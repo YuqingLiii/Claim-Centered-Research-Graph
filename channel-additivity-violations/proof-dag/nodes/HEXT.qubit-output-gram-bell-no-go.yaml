@@ -1,0 +1,99 @@
+id: HEXT.qubit-output-gram-bell-no-go
+role: obstruction
+aliases:
+- qubit-output-bell-no-go
+- qubit-gram-factor-classification
+claim: >-
+  For every maximally-mixed-preserving channel Phi:M_d->M_2, the conjugate-Bell output satisfies
+  2 barS_min(Phi)<=2S_min(Phi)<=S((Phi tensor barPhi)(Omega_d)). Hence no qubit-output channel can
+  have a positive fixed-channel conjugate-Bell regularized defect, for any finite input dimension
+  or rectangular Gram factorization.
+routes:
+  factor-norm-route:
+    premises:
+    - HEXT.conjugate-bell-realignment-constraint
+    implication: >-
+      Diagonalize the positive qubit Gram channel with eigenvalues lambda_i. Pairing the Gram
+      identity with a Pauli eigenoperator at t=max lambda_i forces
+      ||Phi^*(sigma_i)||_infinity>=sqrt(t), hence S_min(Phi)<=h_2((1+sqrt(t))/2).
+    proof:
+      sketch: >-
+        The Gram identity fixes the adjoint Pauli operator's Hilbert-Schmidt norm to sqrt(dt);
+        comparison with operator norm supplies a pure input with the required Bloch coordinate.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/QUBIT_OUTPUT_GRAM_BELL_NO_GO_20260830.md
+        kind: text
+        locator: "## 2. Every rectangular factor has a low-entropy pure output"
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The factor-norm estimate is a complete dimension-uniform proposer-side proof but has not
+        received independent adversarial review.
+  cp-polytope-entropy-route:
+    premises:
+    - HEXT.gram-channel-correlation-identities
+    implication: >-
+      For every Hilbert-Schmidt-positive unital qubit Gram channel with largest Bloch eigenvalue t,
+      its Bell-diagonal Choi entropy is at least 2h_2((1+sqrt(t))/2). Concavity reduces the claim to
+      CP-polytope vertices; King handles the depolarizing vertex and two scalar derivative lemmas
+      handle the remaining vertex types.
+    proof:
+      sketch: >-
+        Parameterize the nonnegative-eigenvalue CP tetrahedron at fixed t, enumerate its square or
+        hexagon vertices, use majorization and strong unital-qubit additivity where available, and
+        prove the two residual binary-entropy inequalities by concavity.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/QUBIT_OUTPUT_GRAM_BELL_NO_GO_20260830.md
+        kind: text
+        locator: "## 3. Reduction of the scalar inequality to CP-polytope vertices"
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/primary-sources/king-unital-qubit-additivity-quant-ph-0103156.pdf
+        kind: pdf
+        locator: "Theorem 1 on page 4 and tetrahedron discussion on pages 11-13"
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The primary source supplies strong additivity and the qubit-channel normal form. The new
+        vertex reduction and scalar inequalities are complete proposer-side but unreviewed.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The theorem is restricted to the product maximally entangled witness and does not bound
+    arbitrary optimized collective joint inputs.
+  - The channel must map the maximally mixed input to the maximally mixed qubit output, as required
+    by the current Gram route.
+  - The proof is proposer-side and has not received independent review.
+  summary: >-
+    A full three-parameter classification closes every qubit-output fixed-channel conjugate-Bell
+    route and raises the surviving output-dimension lower bound to three.
+  basis:
+    routes:
+    - factor-norm-route
+    - cp-polytope-entropy-route
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/QUBIT_OUTPUT_GRAM_BELL_NO_GO_20260830.md
+      kind: text
+      locator: "## 4. Conclusion"
+frontier:
+  qutrit-output-search:
+    task: >-
+      Search qutrit-output Hilbert-Schmidt-positive Gram channels for strict entanglement-cost
+      surplus and rectangular factors with a global side-entropy lower bound. For a depolarizing
+      qutrit Gram channel, the separate small-input theorem has already excluded d<=3.
+    kind: task
+    since: 2026-08-30
+  non-bell-qubit-output:
+    task: >-
+      Decide separately whether a genuinely collective non-Bell witness can evade the qubit-output
+      Bell no-go; the present theorem does not address that route.
+    kind: gate
+    since: 2026-08-30
+events:
+  qubit-output-route-closed:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Proved a dimension-uniform entropy inequality closing every maximally-mixed-preserving
+      qubit-output conjugate-Bell factor, not just the previously audited Pauli example.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/QUBIT_OUTPUT_GRAM_BELL_NO_GO_20260830.md
+      kind: text

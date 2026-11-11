@@ -1,0 +1,340 @@
+id: HEXT.same-tuple-werner-centered-bound
+role: proof
+aliases:
+- repeated-tuple-werner-random-spectrum-bound
+claim: >-
+  For fixed m and independent complex Haar U_1,...,U_m, the probability that
+  ||R_U-I/m||_infinity exceeds sqrt((A^2-1)(1-m^(-2))) tends to zero as d tends to infinity.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The asymptotic quantifier fixes both m and eta before d tends to infinity.
+  - >-
+    Expectation safety and fixed normalized moments do not exclude adaptive extreme-eigenvalue
+    outliers; no proof or generic complex-Haar counterexample is currently known.
+  - >-
+    The all-equal deterministic tuple violates the P_+ target in the relevant regime but has Haar
+    probability zero and does not refute this probabilistic claim.
+  summary: >-
+    The exact subclaim under mH>4096 is independently PROVED, uniformly including every integer
+    m>=932064 and strictly improving the earlier m>e^18 range. This broader all-fixed-m statement
+    remains unresolved and needs a smaller planar base, cancellation, or a different method.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_FLIP_SECTOR_SAME_TUPLE_GATE_20260830.md
+      kind: text
+      locator: "## 9. What would close the sector"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_CENTERED_GROWING_TRACE_METHOD_GATE_20260830.md
+      kind: text
+      locator: "## 7. Smallest sufficient growing-order lemma"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_CENTERED_MOMENT_ALL_GENUS_ASSEMBLY_20260830.md
+      kind: text
+      locator: "## 3. Shortened master inequality"
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.same-tuple-werner-centered-bound-large-m.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing PROVED large-m subclaim: the reviewed result is restricted to fixed integer
+        m>e^18 and cannot promote this broader all-fixed-m node.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.same-tuple-werner-centered-bound-4096-threshold.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing PROVED refinement: retaining the planar polynomial gives the exact
+        sufficient condition mH>4096 and eta-uniform corollary m>=932064, without reaching every
+        fixed m or any broader coefficient sector.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.werner-modulus-square-majorant-obstruction.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing method boundary: the positive modulus-square moment majorant is too large,
+        so a successful trace route must retain the signed reversal correlation.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.werner-reversal-cyclic-collision-count.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing reviewed progress: fixed-word reduction-plus-reversal label entropy is
+        exponentially bounded; only uniform positive-genus finite-d control remains.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.werner-monotone-weingarten-tail-summability.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing reviewed reduction: for each fixed contraction skeleton, monotone
+        Weingarten excess paths form a vanishing geometric tail through logarithmic moment order,
+        without bounding the minimal skeletons.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.werner-uniform-cn-per-genus-obstruction.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing reviewed route boundary: repeated-edge backtracking rules out a
+        genus-independent coefficientwise C^N target but does not imply a bad exact moment.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.rooted-orientable-map-handle-count.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing conditionally reviewed combinatorics: the internal rooted-map count has
+        the required polynomial-per-handle entropy, but its trisection input lacks a primary source.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.multiboundary-paired-stack-label-components.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing reviewed conditional label count: a b-boundary paired-stack certificate
+        leaves at most N+2b label components.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.werner-minimal-catalan-weight.yaml
+      kind: node-evidence
+      note: Non-load-bearing reviewed minimal path-weight bound with archived primary theorem binding.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.werner-contraction-skeleton-ribbon-injection.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing independently proved exact lossless constellation encoding: it removes
+        factorial ambiguity and has 4N ordinary incidence edges.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.werner-constellation-euler-deficit.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing independently proved exact Euler interface: connected minimal terms carry d^(-2h).
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.werner-common-cycle-local-surgery.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing independently proved conditional support-two surgery on common-cycle pairs.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.werner-ab-reducible-subclass-count.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing independently proved count closing a genuine recursively reducible subclass only.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.werner-pairwise-surgery-obstruction.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing independently proved repeated-edge obstruction to universal support-two surgery.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.werner-boundary-surgery-normal-form.yaml
+      kind: node-evidence
+      note: Non-load-bearing independently proved normal form and label-defect cost for every fixed-rho structural move.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.werner-support-four-surgery-obstruction.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing independently proved N=4 obstruction showing a universal one-step
+        normal-form theorem must allow union support at least five.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.werner-support-five-genus-one-base-case.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing independently proved structural support-five reduction for that singleton;
+        it neither preserves the original coloring nor establishes universality.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.werner-two-boundary-constellation-count.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing independently PROVED all-genus structural count with D=32768 and
+        alpha=43; it does not by itself include tuple-label components or disconnected sectors.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.werner-positive-genus-two-boundary-weighted-count.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing independently proved h>=1 structural weighted count
+        4096^N N^(43h), without compatible label-component weights.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.werner-even-identity-label-component-obstruction.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing independently proved even-moment obstruction: genus-independent
+        kappa<=N+O(1) is impossible, but a linear-genus allowance with L>=2 remains viable.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.werner-admissible-equality-component-genus-bound.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing independently proved sharp connected label bound
+        kappa<=N+2+2h, exactly supplying the positive-genus equality-component factor.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.werner-two-component-low-genus-return-separation.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing independently proved that c=2,h<=1 lies in the safe forward/reverse return union.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.werner-two-component-nonreturn-weighted-count.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing independently proved count and normalized absolute mass for the residual c=2,h>=2 sector.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.werner-handle-sliced-paired-stack-certificate.yaml
+      kind: node-evidence
+      note: Load-bearing OPEN trace-preserving paired-stack slicing interface.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.werner-boundary-preserving-genus-reduction.yaml
+      kind: node-evidence
+      note: Weaker OPEN alternative requiring only bounded local surgery per handle.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.werner-minimal-skeleton-map-bound.yaml
+      kind: node-evidence
+      note: >-
+        Historical conditional algebra whose favorable 2N-edge generic-map instantiation is retired.
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_GRAM_WERNER_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STGW-IR-07"
+      scope: >-
+        Independently confirmed that expectation, fixed moments and concentration around an unknown
+        median do not settle the extreme-spectrum claim; no proof or counterexample was found.
+      reviewed_hash: sha256:c221c71b9f3cb3294d7c9c7d979cf1a154042ea4ec013f95d3fc7955c2c38da5
+frontier:
+  growing-moment-or-delocalization-proof:
+    task: >-
+      Control moments through order Theta(log d) with the needed constant, prove an
+      instance-specific partial-transpose delocalization theorem, or specialize the same-tuple
+      strong-norm lemma to the flip coefficient.
+    kind: gate
+    since: 2026-08-30
+  growing-centered-reversal-moment:
+    task: >-
+      Extend the now-PROVED mH>4096 argument below the current planar-base barrier by a sharper
+      weighted planar count, signed cancellation, or a spectral argument valid for every fixed m.
+    kind: gate
+    since: 2026-08-30
+events:
+  centered-threshold-independently-improved:
+    date: '2026-08-30'
+    type: review-completed
+    summary: >-
+      Independent review proved the exact mH>4096 subclaim and eta-uniform endpoint m>=932064
+      while preserving this broader all-fixed-m node as CONJECTURED.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_CENTERED_THRESHOLD_REFINEMENT_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Findings WCTR-IR-01--WCTR-IR-09"
+  unabsorbed-planar-threshold-refinement-proposed:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      A proposer-side route kept the proved 16N^2 planar factor explicit instead of absorbing it
+      into 32768^N, lowering the sufficient Werner-sector condition to mH>4096 while leaving this
+      all-fixed-m claim CONJECTURED.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_CENTERED_THRESHOLD_REFINEMENT_20260830.md
+      kind: text
+      locator: "## 6. What determines the threshold, and what does not"
+  large-m-centered-subclaim-independently-proved:
+    date: '2026-08-30'
+    type: review-completed
+    summary: >-
+      Final independent review proved the exact fixed-m>e^18 centered subclaim while explicitly
+      withholding this broader all-fixed-m claim.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_CENTERED_MOMENT_FINAL_CONDITIONAL_ASSEMBLY_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WCMF-IR-07"
+  all-genus-structural-count-independently-closed:
+    date: '2026-08-30'
+    type: review-completed
+    summary: >-
+      Independent review proved the repaired planar deletion code and every-genus structural
+      weighted count. The later signed-moment review proves only the fixed-m>e^18 subclaim; this
+      event does not promote the broader centered claim.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_TWO_BOUNDARY_PLANAR_ROOTED_MAP_REPAIR_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WTPR-IR-05"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_CENTERED_MOMENT_FINAL_CONDITIONAL_ASSEMBLY_20260830.md
+      kind: text
+      locator: "## 12. Final status"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_CENTERED_MOMENT_ALL_GENUS_ASSEMBLY_20260830.md
+      kind: text
+      locator: "## 5. Protocol consequence and remaining review"
+  equality-and-two-component-gates-independently-closed:
+    date: '2026-08-30'
+    type: review-completed
+    summary: >-
+      Independent review proved the sharp admissible equality-component bound, the c=2 low-genus
+      return separation, and the residual c=2,h>=2 weighted absolute-mass bound. The centered node
+      remains unresolved pending planar repair review and final signed-moment assembly.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_EQUALITY_COMPONENT_GENUS_GATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WECG-IR-10"
+  positive-genus-weighted-count-reviewed:
+    date: '2026-08-30'
+    type: review-completed
+    summary: >-
+      Independent review proved the complete h>=1 structural weighted count, isolated a false
+      planar coefficient blocking h=0, and proved an even-moment obstruction to any
+      genus-independent equality-component allowance.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_TWO_BOUNDARY_CONSTELLATION_WEIGHTED_COUNT_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WTBC-IR-08"
+  support-five-singleton-threshold-reviewed:
+    date: '2026-08-30'
+    type: review-completed
+    summary: >-
+      Independent review proved the fixed-boundary normal form, ruled out all support-at-most-four
+      moves on one physical genus-one skeleton and verified a structural support-five move for
+      that singleton, without proving a universal reduction.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_BOUNDARY_PRESERVING_SUPPORT_FIVE_GATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WBPS5-IR-07"
+  exact-constellation-and-surgery-independent-review:
+    date: '2026-08-30'
+    type: review-completed
+    summary: >-
+      Independent review promoted the lossless encoding, Euler deficit, conditional surgery,
+      reducible-subclass count and repeated-edge obstruction while leaving both global replacement
+      interfaces OPEN.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Executive verdict"
+  exact-constellation-and-surgery-gate-registered:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Proposer-side permutation algebra removed the factorial ambiguity and proved the exact
+      connected d^(-2h) Euler power, but corrected the bare object to 4N ordinary incidence edges.
+      The favorable 2N-edge generic-map route is retired; a support-two surgery closes a recursive
+      subclass but an odd repeated-edge family forces support at least three for a universal move.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_20260830.md
+      kind: text
+  minimal-skeleton-map-gate-refined:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Independent review proved the paired-stack label and Catalan-weight theorems, conditionally
+      checked the rooted-map count, and certified the conditional mass implication. The live gate is now the
+      lossless two-boundary Werner ribbon encoding plus trace-preserving O(h) genus reduction;
+      the centered claim remains CONJECTURED.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_MINIMAL_SKELETON_MAP_COUNT_20260830.md
+      kind: text
+  finite-d-weingarten-gate-refined:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Independently reviewed analysis made the excess monotone-path tail skeletonwise summable through
+      logarithmic order and disproved an overstrong genus-independent coefficient target. The
+      live finite-d gate is now the minimal-length nonplanar contraction-skeleton count
+      C_0^N N^(alpha h); the centered claim remains CONJECTURED.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_FINITE_D_WEINGARTEN_REMAINDER_GATE_20260830.md
+      kind: text
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/primary-sources/collins-matsumoto-1701.04493.pdf
+      kind: pdf
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_DOUBLE_OFF_WERNER_WEINGARTEN_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STDW-IR-06"
+  reversal-collision-count-completed-proposer-side:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Proposer-side combinatorics bounded the full fixed-word reversal collision set exponentially,
+      narrowing the live trace-method gate to logarithmic-degree positive-genus Weingarten control.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_REVERSAL_COLLISION_ENCODING_20260830.md
+      kind: text
+  growing-trace-route-refined:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Derived the exact forward/block-reversal trace expansion, bounded the return sector safely,
+      and isolated the modulus-square majorant failure and the remaining logarithmic-degree joint
+      collision estimate; the centered claim remains unresolved.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_CENTERED_GROWING_TRACE_METHOD_GATE_20260830.md
+      kind: text
+  centered-bound-independent-review:
+    date: '2026-08-30'
+    type: review-completed
+    summary: >-
+      Independent review confirmed the expectation/bulk/median gap and kept the probabilistic
+      centered-spectrum claim unresolved at CONJECTURED.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_GRAM_WERNER_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STGW-IR-07"
+  werner-centered-bound-created:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Isolated the high-probability centered-spectrum statement after exact Werner reduction;
+      expectation and bulk-moment evidence leave it unresolved.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_FLIP_SECTOR_SAME_TUPLE_GATE_20260830.md
+      kind: text

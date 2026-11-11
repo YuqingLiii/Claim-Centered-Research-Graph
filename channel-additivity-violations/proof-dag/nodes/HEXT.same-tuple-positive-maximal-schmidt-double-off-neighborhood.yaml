@@ -1,0 +1,52 @@
+id: HEXT.same-tuple-positive-maximal-schmidt-double-off-neighborhood
+role: proof
+aliases:
+- repeated-tuple-off-diagonal-flip-neighborhood
+claim: >-
+  Let E_x be the off-diagonal coefficient flip. The Hilbert--Schmidt normalized family
+  Y_q=(I+q E_x)/sqrt(m^2+q^2 m(m-1)) is positive semidefinite for |q|<=1, is positive definite
+  for |q|<1, has operator-Schmidt rank 1+m(m-1) for q nonzero, and satisfies the same-tuple A/m
+  target deterministically whenever |q|<=min{1,A-1}.
+assessment:
+  level: PROVED
+  caveats:
+  - The amplitude restriction is load-bearing and does not settle the constant-amplitude Werner direction.
+  summary: >-
+    A positive double-off neighborhood of Theta(m^2) operator-Schmidt rank evades the projective
+    triangle bottleneck through coefficient operator-norm control.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SAME_TUPLE_HIGH_SCHMIDT_SPECTRAL_FLAT_EXTENSION_20260830.md
+      kind: text
+      locator: "## 5. A positive-definite double-off family of Schmidt rank `Theta(m^2)`"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_HIGH_SCHMIDT_SPECTRAL_FLAT_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding HSSF-IR-05"
+      scope: >-
+        Independently verified the off-diagonal flip spectrum and norms, exact
+        operator-Schmidt rank, positivity interval, normalization and target amplitude bound.
+      reviewed_hash: sha256:4ca2ed5626897e8321f20db4ccc4af753cbbf6de03da211f1f0bcffd18ef8800
+frontier:
+  independent-maximal-schmidt-neighborhood-review:
+    task: Verify the flip spectrum, normalization, exact operator-Schmidt rank and amplitude bound.
+    kind: review
+    since: 2026-08-30
+events:
+  maximal-schmidt-neighborhood-independent-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Independent review verified the high-Schmidt positive double-off neighborhood.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_HIGH_SCHMIDT_SPECTRAL_FLAT_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding HSSF-IR-05"
+  maximal-schmidt-double-off-neighborhood-created:
+    date: '2026-08-30'
+    type: created
+    summary: Registered proposer-side deterministic control of a high-Schmidt double-off family.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SAME_TUPLE_HIGH_SCHMIDT_SPECTRAL_FLAT_EXTENSION_20260830.md
+      kind: text

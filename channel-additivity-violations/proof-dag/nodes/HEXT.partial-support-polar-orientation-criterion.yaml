@@ -1,0 +1,69 @@
+id: HEXT.partial-support-polar-orientation-criterion
+role: constraint
+aliases:
+- kernel-compatible-polar-orientation
+- noninvertible-support-polar-criterion
+claim: >-
+  A Hilbert-Schmidt-self-adjoint square support channel T with support S=(ker T)^perp has a
+  positive-semidefinite input/output unitary orientation exactly when its polar sign on S is the
+  restriction of an inner automorphism Ad_R that preserves S.
+routes:
+  partial-polar-route:
+    premises:
+    - HEXT.support-channel-polar-orientation-criterion
+    implication: >-
+      Positivity makes the oriented channel's initial and final supports coincide and makes its
+      polar partial isometry the projector onto that support. Transporting the polar decomposition
+      through both unitary conjugations yields a kernel-preserving inner extension of the sign.
+      Conversely, such an extension orients T exactly to its positive modulus.
+    proof:
+      sketch: >-
+        Track initial and final spaces under left and right unitary superoperators, restrict the
+        polar partial isometry identity to the original support, and use self-adjointness to commute
+        the sign with the modulus for the converse.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/PARTIAL_SUPPORT_POLAR_ORIENTATION_CRITERION_20260830.md
+        kind: text
+        locator: "## Proof of necessity"
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/PARTIAL_SUPPORT_POLAR_ORIENTATION_CRITERION_20260830.md
+        kind: text
+        locator: "## Proof of sufficiency"
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The finite-dimensional polar-support argument is complete proposer-side and awaits an
+        independent adversarial review.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The theorem assumes a square Hilbert-Schmidt-self-adjoint support channel.
+  - It is only the Hilbert-Schmidt Gram-positivity gate; CP square roots, rectangular factors, and
+    all-copy entropy bounds are separate.
+  - The proof is proposer-side and has not received independent review.
+  summary: >-
+    The invertible inner-polar criterion extends to kernels by requiring an inner extension of the
+    sign that preserves the support.
+  basis:
+    routes:
+    - partial-polar-route
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/PARTIAL_SUPPORT_POLAR_ORIENTATION_CRITERION_20260830.md
+      kind: text
+      locator: "## Criterion"
+frontier:
+  independent-review:
+    task: >-
+      Independently verify the transported partial-isometry formula, support equality, and the
+      converse on the kernel.
+    kind: review
+    since: 2026-08-30
+events:
+  partial-polar-criterion-registered:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Extended the square polar-orientation criterion to self-adjoint support channels with a
+      nontrivial kernel.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/PARTIAL_SUPPORT_POLAR_ORIENTATION_CRITERION_20260830.md
+      kind: text

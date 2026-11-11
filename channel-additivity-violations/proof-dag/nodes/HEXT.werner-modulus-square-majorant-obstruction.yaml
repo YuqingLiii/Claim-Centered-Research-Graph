@@ -1,0 +1,64 @@
+id: HEXT.werner-modulus-square-majorant-obstruction
+role: obstruction
+aliases:
+- werner-positive-square-moment-majorant-gate
+claim: >-
+  Although the Cauchy modulus-square quantity Q_(2k) pointwise majorizes
+  Tr((R_U-I/m)^(2k)), its expectation has an explicit singleton-label floor
+  E Q_(2k)>=q_m^(2k)/(m-2), so the ordinary Markov bound
+  h_W^(-2k) E Q_(2k) is vacuous at the Werner target scale in the intended large-m regime. This
+  obstructs only the positive modulus-square majorant route, not the exact reversal-correlated
+  moment or the centered high-probability claim.
+assessment:
+  level: PROVED
+  caveats:
+  - The singleton-label formula assumes m>=3 and makes the Markov candidate vacuous at the relevant k>=2/growing orders in the intended large-m regime.
+  - >-
+    The lower bound concerns the majorant expectation, not the exact moment for order at least four
+    and not the typical operator norm.
+  summary: >-
+    Taking absolute squares destroys the reversal correlation and introduces an invariant
+    contraction whose explicit label family makes the resulting positive-moment Markov route
+    quantitatively useless.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_CENTERED_GROWING_TRACE_METHOD_GATE_20260830.md
+      kind: text
+      locator: "## 4. A rigorous obstruction to modulus-square majorization"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_POSITIVE_WERNER_TRACE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STPW-IR-06"
+      scope: >-
+        Independently verified Cauchy majorization, singleton-label counting and its Markov-scale
+        failure for m>=3, while excluding any lower bound on the original reversal moment.
+      reviewed_hash: sha256:c6227c81050e97f42becbf354a9835efa570ea80558817bf5e18106f19cc20b0
+frontier:
+  signed-reversal-moment:
+    task: >-
+      Retain the signed forward/block-reversal correlation and prove exponential joint-collision
+      and growing-degree Weingarten bounds instead of using Q_(2k).
+    kind: gate
+    since: 2026-08-30
+events:
+  majorant-obstruction-independent-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      Independent review verified the singleton-label majorant floor in the intended growing-order
+      regime without propagating it to the original centered-spectrum claim.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_POSITIVE_WERNER_TRACE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STPW-IR-06"
+  modulus-square-majorant-obstruction-created:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Registered the exact singleton-label floor as a route obstruction without propagating it to
+      the original centered-spectrum claim.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_CENTERED_GROWING_TRACE_METHOD_GATE_20260830.md
+      kind: text

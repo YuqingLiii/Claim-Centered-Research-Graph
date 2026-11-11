@@ -1,0 +1,84 @@
+id: HEXT.four-dimensional-antisymmetric-square-support-no-go
+role: obstruction
+aliases:
+- d4-proper-antisymmetric-support-no-go
+claim: >-
+  Every rank-four projector supported in wedge^2 C^4 with maximally mixed four-dimensional
+  marginals has entanglement cost at most one ebit and therefore fails the strict
+  E_C>S(E)/2 gate required by the fixed-channel conjugate-Bell route.
+routes:
+  complement-classification-route:
+    premises:
+    - HEXT.gram-channel-entanglement-cost-gate
+    implication: >-
+      The two-dimensional antisymmetric complement of such a support has partial trace I_4/2.
+      Skew-Takagi and Pfaffian-pencil arguments put that complement in the unitary-congruence orbit
+      of span{e_1 wedge e_2,e_3 wedge e_4}. Its orthogonal complement consequently has four
+      orthonormal Slater determinants, yielding E_C<=E_F<=1=S(E)/2 and violating the strict gate.
+    proof:
+      sketch: >-
+        Use the marginal constraint to obtain AA^dagger+BB^dagger=I/2 on an orthonormal complement
+        basis. Rule out an everywhere-singular pencil, split the skew-Takagi form into unequal and
+        equal singular-value cases, and in the equal case use the square characteristic polynomial
+        of a skew pencil to get two double eigenvalues. Both cases give the same two-block normal
+        form and hence a Slater basis of the original support.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FOUR_DIMENSIONAL_ANTISYMMETRIC_SQUARE_SUPPORT_NO_GO_20260830.md
+        kind: text
+        locator: "## 2. The complement contains an invertible skew matrix"
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FOUR_DIMENSIONAL_ANTISYMMETRIC_SQUARE_SUPPORT_NO_GO_20260830.md
+        kind: text
+        locator: "## 3. Simultaneous canonical form"
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FOUR_DIMENSIONAL_ANTISYMMETRIC_SQUARE_SUPPORT_NO_GO_20260830.md
+        kind: text
+        locator: "## 4. A one-ebit orthonormal basis of the original support"
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        A complete proposer-side finite-dimensional classification is recorded; independent
+        adversarial review is pending.
+      basis:
+        evidence:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FOUR_DIMENSIONAL_ANTISYMMETRIC_SQUARE_SUPPORT_NO_GO_20260830.md
+          kind: text
+          locator: "## Verdict and limitations"
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The result assumes a rank-four support inside the full d=4 antisymmetric sector and maximally
+    mixed four-dimensional marginals.
+  - It does not cover d>=5 proper supports, coherent multi-sector supports, or non-Bell witnesses.
+  - The proof is proposer-side and has not received independent review.
+  summary: >-
+    The marginal constraint rigidly classifies the two-dimensional complement and exposes a
+    four-vector one-ebit Slater ensemble, closing the d=4 square proper-support cost route.
+  basis:
+    routes:
+    - complement-classification-route
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FOUR_DIMENSIONAL_ANTISYMMETRIC_SQUARE_SUPPORT_NO_GO_20260830.md
+      kind: text
+      locator: "## Verdict and limitations"
+frontier:
+  independent-review:
+    task: >-
+      Independently verify the skew-pencil canonicalization, especially the equal-singular-value
+      symplectic eigenspace step, and the resulting one-ebit Slater decomposition.
+    kind: review
+    since: 2026-08-30
+  higher-dimensional-proper-supports:
+    task: >-
+      Decide whether rank-d proper antisymmetric supports with maximally mixed marginals can pass
+      E_C>log_2(d)/2 for any d>=5 before attempting Gram orientation and CP-factor tests.
+    kind: task
+    since: 2026-08-30
+events:
+  d4-proper-support-no-go-registered:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Classified every rank-four maximally-mixed-marginal antisymmetric support through its
+      two-dimensional complement and derived a one-ebit ensemble that closes the strict cost gate.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FOUR_DIMENSIONAL_ANTISYMMETRIC_SQUARE_SUPPORT_NO_GO_20260830.md
+      kind: text

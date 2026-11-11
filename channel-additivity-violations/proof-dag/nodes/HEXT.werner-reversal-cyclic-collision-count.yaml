@@ -1,0 +1,49 @@
+id: HEXT.werner-reversal-cyclic-collision-count
+role: proof
+aliases:
+- centered-reversal-free-reduction-count
+claim: >-
+  For every m and N, the number of edge-block sequences whose forward free-group word and
+  block-reversed word have cyclically equal reduced cores is at most
+  (2N+1)81^N m^(N+2), and hence at most 243^N m^(N+2).
+assessment:
+  level: PROVED
+  caveats:
+  - >-
+    The count controls the fixed-word genus-zero collision support but provides no finite-d
+    positive-genus Weingarten remainder uniform for N=Theta(log d).
+  summary: >-
+    Two circular noncrossing cancellation matchings and a cyclic-core equality graph leave at most
+    N+2 free label components, proving the needed exponential rather than factorial collision count.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_REVERSAL_COLLISION_ENCODING_20260830.md
+      kind: text
+      locator: "## 5. Proof of the exponential count"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_ROOK_WERNER_COLLISION_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STRC-IR-07"
+      scope: >-
+        Independently verified both circular cancellation encodings, the four-fixed-point and
+        N+2-component bounds, and the final exponential count; no logarithmic-degree finite-d
+        Weingarten estimate was reviewed as proved.
+      reviewed_hash: sha256:913a8467944b1e977aeca2c5f8bc7bb4b1ea3f7f71f7154f50f65035f7907ac3
+events:
+  reversal-count-independent-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Independent review verified the universal exponential reversal-collision count.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_ROOK_WERNER_COLLISION_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STRC-IR-07"
+  reversal-collision-count-created:
+    date: '2026-08-30'
+    type: created
+    summary: Registered the proposer-side exponential free-reduction collision count.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_REVERSAL_COLLISION_ENCODING_20260830.md
+      kind: text

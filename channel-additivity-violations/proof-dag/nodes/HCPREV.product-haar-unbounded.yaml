@@ -1,0 +1,156 @@
+id: HCPREV.product-haar-unbounded
+role: proof
+aliases:
+- arbitrarily-large-random-gaps
+claim: >-
+  For every target G>0 there is a fixed product depth J such that, as the per-leg matrix dimension
+  tends to infinity, an explicitly specified product-Haar finite-dimensional channel/conjugate-
+  channel model has p=1 minimum-output-entropy gap greater than G with probability tending to one;
+  deterministic finite-dimensional reductions transfer the statement to Holevo pair and
+  same-channel gaps, with at most one bit of loss for this symmetric conjugate family.
+routes:
+  atomic-moe-weyl-symmetric-self:
+    premises:
+    - HCPREV.product-haar-moe-unbounded
+    - HCPREV.finite-weyl-moe-to-holevo-pair-transfer
+    - HCPREV.equal-holevo-flagged-pair-to-self
+    implication: >-
+      The first premise gives, for every target, a fixed-depth product-Haar channel/conjugate-
+      channel family whose p=1 MOE pair defect exceeds that target with probability tending to
+      one as the per-leg dimension tends to infinity. Apply the second premise deterministically
+      to each sampled pair: its pushforward finite Weyl-extension law has an exactly equal Holevo
+      pair defect, and the conjugate pair has equal one-shot Holevo quantities because its two
+      minimum output entropies are equal. Apply the third premise sample-by-sample to the symmetric
+      flagged direct sum. A pair defect g yields self defect at least
+      log_2(1+(2^g-1)/2)>=g-1 and adds at most one output log-dimension bit. Choosing the original
+      target one bit larger gives every desired same-channel target with probability tending to
+      one. These are deterministic pushforward random models, not Holevo claims about the original
+      sampled channels.
+    proof:
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/PRODUCT_HAAR_MOE_ATOMIC_THEOREM_20260830.md
+        kind: text
+        locator: "## 1. Atomic theorem"
+      - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/FINITE_WEYL_MOE_TO_HOLEVO_PAIR_TRANSFER_20260830.md
+        kind: text
+        locator: "## 7. Conjugate-pair balance and transformed law"
+      - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/EQUAL_HOLEVO_FLAGGED_PAIR_TO_SELF_20260830.md
+        kind: text
+        locator: "## 5. Pushforward random-family consequence"
+      - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/PRODUCT_HAAR_HOLEVO_PUSHFORWARD_ASSEMBLY_20260830.md
+        kind: text
+        locator: "## 2. Exact probability-preserving composition"
+    assessment:
+      level: PROVED
+      caveats:
+      - Both transformed ensembles are pushforwards of the product-Haar law, not statements about Holevo quantities of the original sampled channels.
+      summary: >-
+        Independent review proves that the assembly preserves the MOE pair defect exactly under finite Weyl
+        extension and loses at most one bit under the equal-Holevo flagged pair-to-self step;
+        all three atomic premises and the exact route hash are now completion-level.
+      basis:
+        evidence:
+        - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/FINITE_WEYL_MOE_TO_HOLEVO_PAIR_TRANSFER_20260830.md
+          kind: text
+          locator: "## 7. Conjugate-pair balance and transformed law"
+        - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/EQUAL_HOLEVO_FLAGGED_PAIR_TO_SELF_20260830.md
+          kind: text
+          locator: "## 5. Pushforward random-family consequence"
+        - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/PRODUCT_HAAR_HOLEVO_PUSHFORWARD_ASSEMBLY_20260830.md
+          kind: text
+          locator: "## 4. Random-law boundary"
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/WEYL_FLAGGED_PRODUCT_HAAR_ASSEMBLY_INDEPENDENT_REVIEW_20260830.md
+          kind: review
+          locator: Finding HCP-WF-IR-07
+          scope: >-
+            Independently passed the exact three-premise route, equal-Holevo bridge, deterministic
+            pushforward probabilities and G/G+1 quantifier order.
+          reviewed_hash: sha256:13d1a2d71d7fa4d9b5324bf6c8ab836ec09e0636fb84b62c314eb238b612e0ad
+assessment:
+  level: PROVED
+  caveats:
+  - The target gap/depth is fixed before the large-matrix limit.
+  - The induced random model is not Haar or Lebesgue measure on the whole CPTP body.
+  - The proof is probabilistic and does not output a compact deterministic certified matrix tuple.
+  - The Holevo pair and self-channel random models are deterministic pushforwards, not the original sampled channels.
+  summary: >-
+    Independent review proves the product-Haar MOE theorem and both deterministic finite transfer
+    atoms, giving arbitrarily large high-probability MOE gaps and transformed-law Holevo pair and
+    same-channel gaps with at most one bit loss.
+  basis:
+    routes:
+    - atomic-moe-weyl-symmetric-self
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/PRODUCT_HAAR_UNBOUNDED_PREVALENCE_PROOF_20260829.md
+      kind: text
+      locator: "## Proof and quantifier order"
+    - node: HCPREV.product-haar-moe-unbounded
+      kind: node-evidence
+      note: >-
+        Non-load-bearing cross-reference to the isolated MOE core; the missing Holevo transfers
+        must be registered as premises before they can support this broader claim.
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/WEYL_FLAGGED_PRODUCT_HAAR_ASSEMBLY_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Finding HCP-WF-IR-08
+      scope: >-
+        Independently passed the unchanged broader claim after the exact MOE, Weyl-transfer,
+        equal-Holevo pair-to-self atoms and assembled route all became eligible in dependency order.
+      reviewed_hash: sha256:e50f0b1cf0c3a7640ca404b494d7a0f8a3d1a8cdcbaf9e7ee6cb9967097a78a9
+events:
+  product-haar-pushforward-chain-independently-proved:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    route: atomic-moe-weyl-symmetric-self
+    summary: >-
+      Independent review passed both local transfer atoms, the exact three-premise route and the
+      broader claim; no conclusion propagates to the original sampled channels, random-models
+      compound parent, or HCPREV.goal.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/WEYL_FLAGGED_PRODUCT_HAAR_ASSEMBLY_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Findings HCP-WF-IR-07--HCP-WF-IR-08
+  atomic-transfer-route-added:
+    date: '2026-08-30'
+    type: route-added
+    route: atomic-moe-weyl-symmetric-self
+    summary: >-
+      Added a three-premise local assembly from the product-Haar MOE theorem through exact finite
+      Weyl transfer and equal-Holevo flagged pair-to-self reduction, while preserving CONJECTURED
+      levels and making the transformed-law boundary explicit.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/FINITE_WEYL_MOE_TO_HOLEVO_PAIR_TRANSFER_20260830.md
+      kind: text
+      locator: "## 7. Conjugate-pair balance and transformed law"
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/EQUAL_HOLEVO_FLAGGED_PAIR_TO_SELF_20260830.md
+      kind: text
+      locator: "## 5. Pushforward random-family consequence"
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/PRODUCT_HAAR_HOLEVO_PUSHFORWARD_ASSEMBLY_20260830.md
+      kind: text
+      locator: "## 2. Exact probability-preserving composition"
+  moe-core-split-after-independent-review:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Preserved the broader claim at CONJECTURED while splitting its mathematically passing MOE
+      core into an atomic node with exact external-theorem interfaces; the two missing local
+      Holevo-transfer obligations remain explicit frontier work.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/PRODUCT_HAAR_UNBOUNDED_PREVALENCE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Findings HCP-PH-IR-06--HCP-PH-IR-07"
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/PRODUCT_HAAR_MOE_ATOMIC_THEOREM_20260830.md
+      kind: text
+      locator: "## 7. Relation to the two broader canonical records"
+  product-haar-theorem-created:
+    date: '2026-08-29'
+    type: created
+    summary: >-
+      Added the proposer-side high-probability arbitrary-gap theorem obtained from product-free-
+      group entropy bounds and finite-dimensional tensor strong convergence.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/PRODUCT_HAAR_UNBOUNDED_PREVALENCE_PROOF_20260829.md
+      kind: text

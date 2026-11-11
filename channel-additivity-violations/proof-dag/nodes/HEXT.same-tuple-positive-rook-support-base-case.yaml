@@ -1,0 +1,46 @@
+id: HEXT.same-tuple-positive-rook-support-base-case
+role: proof
+aliases:
+- repeated-tuple-positive-rook-class
+claim: >-
+  On the uniform one-leg trace-zero coefficient event with constant sqrt((A-1)/m), every positive
+  Hilbert--Schmidt unit two-leg coefficient supported only on entries with v=w or a=b satisfies
+  ||M_U(Y)||_infinity<=sqrt(2A-1)/m<=A/m, without any restriction on Tr(Y).
+assessment:
+  level: PROVED
+  caveats:
+  - Positivity, rook support and the uniform one-leg event are all load-bearing.
+  summary: >-
+    An exact inclusion--exclusion output identity and one shared Hilbert--Schmidt budget control a
+    broad positive class containing full-rank, high operator-Schmidt-rank examples with trace>A.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SAME_TUPLE_POSITIVE_ROOK_SUPPORT_20260830.md
+      kind: text
+      locator: "## 5. Target-tight theorem, including `tau>A`"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_ROOK_WERNER_COLLISION_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STRC-IR-02"
+      scope: >-
+        Independently verified the exact rook identity, shared Hilbert--Schmidt budget,
+        sqrt(2A-1) constant and trace-unrestricted scope including full-rank examples.
+      reviewed_hash: sha256:cbe076658098ba4cf5732a06f9ae9a0bfeefbc0f433152fb9703fbd86c7e419a
+events:
+  positive-rook-independent-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Independent review verified the conditional positive rook-support theorem and scope.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_ROOK_WERNER_COLLISION_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STRC-IR-02"
+  positive-rook-class-created:
+    date: '2026-08-30'
+    type: created
+    summary: Registered a target-tight positive rook-support class with no trace restriction.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SAME_TUPLE_POSITIVE_ROOK_SUPPORT_20260830.md
+      kind: text

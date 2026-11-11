@@ -1,0 +1,32 @@
+id: HEXT.fixed-partner-global-entropy
+role: proof
+aliases:
+- FCEA
+claim: >-
+  For every fixed finite-dimensional channel Xi and a selected BCN random channel family Phi_n,
+  Smin(Xi tensor Phi_n) is at least Smin(Xi) + Smin(Phi_n) - epsilon_n(Xi), with
+  epsilon_n(Xi) tending to zero in the stated almost-sure or in-probability mode.
+assessment:
+  level: OPEN
+  summary: >-
+    CFN gives convergence of the entire product output set and hence a deterministic limiting
+    defect, but does not identify that defect as zero. The equivalent deterministic free-compression
+    support-function inequality FCEA-2 remains unproved, and no fixed-Xi counterexample is known.
+    The gate is settled exactly for isometric and entanglement-breaking fixed partners, so the first
+    unresolved class is fixed non-EB, non-isometric Xi.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/PRIMARY_SOURCE_AUDIT_20260829.md
+      kind: text
+      locator: "## Fixed-partner gate"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/round-5-audit.md
+      kind: text
+      locator: "### 3. FCEA-1/FCEA-2 — a valid reformulation, still the missing theorem"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FIXED_PARTNER_SPECIAL_CASES_PROOF_20260829.md
+      kind: text
+      locator: "## Consequence for FCEA"
+frontier:
+  fcea-dichotomy:
+    task: Prove FCEA-2 for all fixed Xi or produce one fixed Xi with positive limiting defect.
+    kind: gate
+    since: 2026-08-29

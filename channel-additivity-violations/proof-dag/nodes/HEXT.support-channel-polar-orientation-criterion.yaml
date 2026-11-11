@@ -1,0 +1,71 @@
+id: HEXT.support-channel-polar-orientation-criterion
+role: constraint
+aliases:
+- support-polar-inner-criterion
+- gram-positive-orientation-criterion
+claim: >-
+  For an invertible square support channel T with Hilbert-Schmidt polar unitary Q, input/output
+  unitary conjugations can make T Hilbert-Schmidt positive definite if and only if Q is itself an
+  inner automorphism Ad_R. This is an exact orientation gate before the stronger rectangular
+  CP-square test.
+routes:
+  polar-decomposition-route:
+    premises:
+    - HEXT.conjugate-bell-realignment-constraint
+    implication: >-
+      The polar unitary of Ad_W T Ad_U is Ad_W Q Ad_U. A positive definite orientation has identity
+      polar unitary, which is possible exactly when Q belongs to the adjoint representation of the
+      unitary group.
+    proof:
+      sketch: >-
+        Compute the modulus after right multiplication by Ad_U, use uniqueness of the invertible
+        polar decomposition, and prove both directions by cancelling inner automorphisms.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SUPPORT_CHANNEL_POLAR_ORIENTATION_CRITERION_20260830.md
+        kind: text
+        locator: "## Proof"
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The finite-dimensional polar-decomposition proof is complete proposer-side but has not
+        received independent adversarial review.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The theorem assumes the support channel is invertible.
+  - Passing the criterion does not imply that the positive square root is completely positive.
+  - Passing the criterion does not supply the required all-copy minimum-output-entropy bound.
+  - The proof is proposer-side and has not received independent review.
+  summary: >-
+    The theorem replaces an uncontrolled local-basis search by a necessary-and-sufficient inner
+    polar-unitary test for the first Gram-positivity stage.
+  basis:
+    routes:
+    - polar-decomposition-route
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SUPPORT_CHANNEL_POLAR_ORIENTATION_CRITERION_20260830.md
+      kind: text
+      locator: "## The criterion"
+frontier:
+  noninvertible-extension:
+    task: >-
+      Extend the criterion to noninvertible support channels by classifying polar partial
+      isometries and kernel compatibility under left/right inner automorphisms.
+    kind: task
+    since: 2026-08-30
+  cp-square-survivors:
+    task: >-
+      For support channels whose polar unitary is inner, decide whether the resulting positive
+      orientation has a completely positive square root or a more general rectangular CP factor.
+    kind: gate
+    since: 2026-08-30
+events:
+  polar-orientation-criterion-created:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Derived an exact inner-automorphism criterion for orienting an invertible support channel into
+      the Hilbert-Schmidt-positive cone required by Gram constructions.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SUPPORT_CHANNEL_POLAR_ORIENTATION_CRITERION_20260830.md
+      kind: text

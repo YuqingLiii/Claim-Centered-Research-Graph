@@ -1,0 +1,74 @@
+id: HEXT.su3-boundary-environment-mixture-bell-no-go
+role: obstruction
+aliases:
+- symmetric-input-covariant-mixture-no-go
+- boundary-input-inequivalent-environment-no-go
+claim: >-
+  For every r>=1, every SU(3)-covariant qutrit-output channel with irreducible input V_(r,0) or
+  V_(0,r), including arbitrary convex mixtures of the two inequivalent irreducible-environment
+  extreme channels, satisfies 2 barS_min(Phi)<=2S_min(Phi)<=S((Phi tensor barPhi)(Omega)).
+routes:
+  depolarizing-square-route:
+    premises:
+    - HEXT.depolarizing-gram-small-input-no-go
+    - HEXT.su3-equivalent-environment-multiplicity-no-go
+    implication: >-
+      On a highest-weight input every two-extreme boundary mixture has a qutrit depolarizing output
+      spectrum H_3(z), while the conjugate-Bell Gram parameter is t=((r+3)/(4r))z^2<=z^2.
+      Depolarizing strong additivity gives B(z^2)>=2H_3(|z|), and the negative-z spectrum has no
+      larger entropy than its positive-z reflection.
+    proof:
+      sketch: >-
+        Use the two Clebsch--Gordan extreme spectra and the dimension barycenter to parameterize the
+        mixture by z. The Gram chi-square formula gives t=((r+3)/(4r))z^2. Bell-entropy
+        monotonicity and the one-variable derivative of H_3(z)-H_3(-z) finish the comparison.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_BOUNDARY_ENVIRONMENT_MIXTURE_BELL_NO_GO_20260830.md
+        kind: text
+        locator: "## 1. Symmetric input `R_(r,0)` through ## 3. Entropy inequality"
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/check_su3_boundary_environment_mixtures.py
+        kind: code
+        locator: deterministic boundary-weight entropy audit through r=100
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The all-parameter boundary reduction is complete proposer-side and numerically audited,
+        but it has not received independent review.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - Interior inputs V_(r,s) with r,s>=1 and three inequivalent environment extremes are not covered.
+  - Noncovariant qutrit Gram factors and non-Bell collective inputs are not covered.
+  - The proof is proposer-side and has not received independent review.
+  summary: >-
+    Inequivalent-environment mixing cannot create a conjugate-Bell gap on either SU(3) boundary
+    input tower.
+  basis:
+    routes:
+    - depolarizing-square-route
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_BOUNDARY_ENVIRONMENT_MIXTURE_BELL_NO_GO_20260830.md
+      kind: text
+      locator: "## Theorem"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_BOUNDARY_ENVIRONMENT_MIXTURE_CHECK_20260830.txt
+      kind: text
+      locator: SU(3) boundary inequivalent-environment mixture inequality passed
+frontier:
+  interior-inequivalent-environment-mixtures:
+    task: >-
+      Prove or refute the exact two-parameter highest-weight entropy inequality for V_(r,s),
+      r,s>=1, whose three extreme-channel Gram parameter is a chi-square divergence.
+    kind: gate
+    since: 2026-08-30
+events:
+  boundary-environment-mixtures-closed:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Parameterized both boundary mixture families by one depolarizing spectrum variable and
+      reduced their Bell comparison to arbitrary-dimensional depolarizing strong additivity.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_BOUNDARY_ENVIRONMENT_MIXTURE_BELL_NO_GO_20260830.md
+      kind: text
+    - path: channel-additivity-violations/tools/holevo-extensive-violation/check_su3_boundary_environment_mixtures.py
+      kind: code

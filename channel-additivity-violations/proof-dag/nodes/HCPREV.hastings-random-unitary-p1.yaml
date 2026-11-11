@@ -1,0 +1,54 @@
+id: HCPREV.hastings-random-unitary-p1
+role: proof
+aliases:
+- hastings-positive-probability
+claim: >-
+  Choose D sufficiently large and then N sufficiently large depending on D. Draw independent Haar
+  unitaries U_i in U(N), i in [D], and independent l_i>=0 with density proportional to
+  l_i^(2N-1)exp(-ND l_i^2); set P_i=l_i^2/sum_j l_j^2 and
+  E(rho)=sum_i P_i U_i^*rho U_i. At p=1, with strictly positive probability,
+  S_min(E)+S_min(bar(E))-S_min(E tensor bar(E))>0, where bar(E) is the entrywise-conjugate
+  channel and the joint upper bound is witnessed by the maximally entangled input on
+  C^N tensor C^N. This claim is positive-probability only.
+assumptions:
+  hastings-random-unitary-theorem:
+    kind: external-theorem
+    statement: >-
+      In the stated random-unitary model, with input and output dimension N and D random-unitary
+      terms, Theorem 1 proves that after D and then N are sufficiently large, a Haar/random-weight
+      sample has p=1 minimum-output-entropy nonadditivity with its conjugate channel with nonzero
+      probability; Eqs. (9)--(10) use the maximally entangled input, and the supplemental equations
+      specify the l_i distribution and P_i normalization.
+    source:
+      path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/primary-sources/hastings-0809.3972.pdf
+      kind: pdf
+      locator: Main-text Eqs. (6)--(11) and Theorem 1, PDF p. 2; Supplemental Eqs. (15)--(22), PDF p. 4
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The theorem gives nonzero probability, not probability tending to one.
+  - This is a p=1 MOE statement and does not give a same-sampled-channel Holevo gap.
+  summary: >-
+    The exact ensemble, dimensions, limit order, conjugate partner, maximally entangled witness and
+    positive-probability quantifier are frozen in a proposer-side primary-source interface.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/NAMED_RANDOM_MODEL_ATOMIC_ASSEMBLY_20260831.md
+      kind: text
+      locator: "## 3. Hastings atom: positive probability only"
+frontier:
+  independent-source-review:
+    task: >-
+      Independently check the exact claim and Hastings source interface against the hash-bound local PDF.
+    kind: review
+    since: 2026-08-31
+events:
+  hastings-random-unitary-atom-created:
+    date: '2026-08-31'
+    type: created
+    summary: >-
+      Registered the Hastings p=1 random-unitary theorem as an isolated positive-probability MOE atom.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/NAMED_RANDOM_MODEL_ATOMIC_ASSEMBLY_20260831.md
+      kind: text
+      locator: "## 3. Hastings atom: positive probability only"

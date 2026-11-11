@@ -1,0 +1,48 @@
+id: HEXT.isotropic-bell-one-bit-cap
+role: obstruction
+aliases:
+- isotropic-bell-cap
+claim: >-
+  For every finite channel whose channel/conjugate-channel maximally-entangled output is an
+  isotropic state with nonnegative isotropic parameter, the p=1 MOE defect certified by that Bell
+  input is at most one bit. The same uniform cap holds for every LLW limiting output body and Bell
+  state, for all admissible k,t and arbitrary boundary scalings t=t_k.
+assumptions:
+  llw-output-and-bell-limits:
+    kind: external-theorem
+    statement: >-
+      For fixed admissible k,t, the LLW one-channel output sets converge to K_{k,t} and the
+      channel/conjugate-channel Bell output converges to an isotropic state.
+    source:
+      path: channel-additivity-violations/artifacts/holevo-extensive-violation/primary-sources/leung-lovitz-wu-2607.15210.pdf
+      kind: text
+      locator: Theorem 3.1, Corollary 3.2, Theorem 4.1, and Corollary 4.2
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The theorem caps the isotropic Bell certificate, not arbitrary joint inputs or arbitrary pairs.
+  - A tensor product of several isotropic states is generally not one isotropic state, so the theorem
+    does not forbid a constant gap accumulating over heterogeneous layers.
+  - For LLW sequences the quantifier order is fixed k,t followed by the auxiliary-dimension limit;
+    no simultaneous finite k,n(k) rate is asserted.
+  - The elementary proof is proposer-side and has not received independent review.
+  summary: >-
+    Measuring one output leg of the isotropic Bell state steers the conjugate channel to a legal
+    one-channel output with a k-point spike spectrum. A two-case scalar entropy comparison bounds
+    twice this conditional entropy minus the k^2-point isotropic entropy by one bit. The bound is
+    parameter-uniform and closes the remaining LLW t=t_k boundary-scaling gate.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/ISOTROPIC_BELL_ONE_BIT_CAP_20260830.md
+      kind: text
+      locator: "## 2. Scalar entropy inequality"
+events:
+  isotropic-cap-recorded:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Proved a parameter-uniform one-bit upper bound for every exact or limiting isotropic
+      channel/conjugate-channel Bell certificate and used it to close all LLW boundary scalings.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/ISOTROPIC_BELL_ONE_BIT_CAP_20260830.md
+      kind: text

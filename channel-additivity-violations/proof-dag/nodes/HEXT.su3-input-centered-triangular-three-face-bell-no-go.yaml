@@ -1,0 +1,189 @@
+id: HEXT.su3-input-centered-triangular-three-face-bell-no-go
+role: obstruction
+aliases:
+- input-centered-triangle-no-go
+claim: >-
+  Every SU(3)-covariant qutrit channel supported on the input-centered triangular cluster
+  ((-2,1),(-1,-1),(0,0)) satisfies the Bell-input no-gap entropy inequality for all labels,
+  weights, and phases.
+routes:
+  label-sector-split-three-side-cover:
+    premises:
+    - HEXT.su3-three-face-cluster-classification
+    - HEXT.su3-fixed-original-side-endpoint-lemma
+    implication: >-
+      Split the integer label domain at P=63. On P<=63 retain the three original side blocks
+      (-1,1),(1,0),(2,-2); on P>=63 retain (-2,0),(1,-3),(1,0). Certifying the corresponding two
+      five-variable, 24-endpoint compact inequalities proves the full orientation claim.
+    proof:
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_REMAINING_ORIENTATION_PARALLEL_ANALYSIS_20260830.md
+        kind: text
+        locator: "## 3. Input-centered triangle：一个六维问题降为两个五维问题"
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/analyze_su3_remaining_orientation_shortcuts.py
+        kind: code
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/certify_su3_reduced_sector_covers.py
+        kind: script
+        locator: main
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_REDUCED_CERTIFIER_IMPLEMENTATION_20260830.md
+        kind: text
+        locator: "## 5. Smoke verification results"
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        Endpoint-aware stress tests retained positive natural-log margins in both label sectors;
+        neither exact five-dimensional certificate has been run, so this remains a proposer-side
+        route selector rather than a certificate. The dedicated exact checker now passes complete
+        reconstruction, sector coverage and bounded smoke splits for both five-dimensional
+        sectors, but no adaptive completion certificate has been run.
+      basis:
+        evidence:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_REMAINING_ORIENTATION_PARALLEL_ANALYSIS_20260830.md
+          kind: text
+          locator: "### 3.2 数值压力"
+  fixed-three-original-side-cover:
+    premises:
+    - HEXT.su3-three-face-cluster-classification
+    - HEXT.su3-fixed-original-side-endpoint-lemma
+    implication: >-
+      Retain three original binary side blocks and reduce all other blocks to endpoints.
+    assessment:
+      level: REFUTED
+      summary: >-
+        An exact large-P witness makes this selected-side inequality negative; endpoint-channel
+        side outputs cannot replace the original-channel side outputs.
+      basis:
+        counterexamples:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_INPUT_CENTERED_TRIANGLE_FIXED_THREE_COVER_FAILURE_20260830.md
+          kind: counterexample
+  fixed-four-original-side-cover:
+    premises:
+    - HEXT.su3-three-face-cluster-classification
+    - HEXT.su3-fixed-original-side-endpoint-lemma
+    implication: >-
+      Retain four original binary blocks at (-2,0),(-1,1),(1,0),(2,-2), convexify the remainder to
+      12 correlated Gram endpoints, and certify the six-variable compact entropy inequality.
+    proof:
+      sources:
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/certify_su3_input_centered_triangle_sixdim.py
+        kind: code
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_INPUT_CENTERED_TRIANGLE_FIXED_THREE_COVER_FAILURE_20260830.md
+        kind: text
+    assessment:
+      level: NUMERICAL
+      caveats:
+      - >-
+        Independent static review passed the current checker design, but the live process predates
+        three current source files and lacks a launch-time source closure; even exit zero cannot
+        support promotion without recovering that closure or completing a fresh source-bound run.
+      summary: >-
+        The legal four-side cover retained a positive large-label sampled margin. Independent
+        static review passed the current exact checker design; the source-unbound historical
+        compact subdivision was stopped and cannot support promotion.
+      basis:
+        runs:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_INPUT_CENTERED_TRIANGLE_FOUR_SIDE_ASYMPTOTIC_SCAN_RUN_20260830.txt
+          kind: run
+          result: The legal cover retained a sampled minimum margin about 0.235 bit.
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-extensive-violation/SU3_INPUT_CENTERED_TRIANGLE_RUNNING_CERTIFICATE_STATIC_INDEPENDENT_REVIEW_20260830.md
+          kind: review
+          locator: "FINDING-SU3-ICT-RUN-06"
+          scope: >-
+            Static review verified the configuration, 12 endpoints, four original-side outputs,
+            reconstruction degrees, compactification, Bernstein and entropy directions, while
+            recording that execution and source binding remain incomplete.
+          reviewed_hash: sha256:901549c889c941f1e9e623495d96be7006fc8a3d7f47ff655a5791ce159f1692
+assessment:
+  level: NUMERICAL
+  caveats:
+  - >-
+    The running process is not source-bound to the current checker because three imported files
+    were modified after launch; its result must not be promoted without launch-source recovery or
+    a fresh hash-bound replay.
+  summary: >-
+    The legal six-dimensional certificate design passed static independent review. Its historical
+    source-unbound process was stopped; a fresh prehashed execution and final review remain open.
+  basis:
+    routes:
+    - fixed-four-original-side-cover
+    runs:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_INPUT_CENTERED_TRIANGLE_FOUR_SIDE_ASYMPTOTIC_SCAN_RUN_20260830.txt
+      kind: run
+      result: The four-original-side cover retained a positive large-label sampled margin.
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SU3_INPUT_CENTERED_TRIANGLE_RUNNING_CERTIFICATE_STATIC_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "FINDING-SU3-ICT-RUN-06"
+      scope: >-
+        Independent static review passed the current mathematical design but prohibited promotion
+        until both a completed transcript and trustworthy launch-time source binding exist.
+      reviewed_hash: sha256:cb12bc058227ac0a1b806383f5f642a1538fc16218de2b1788d254edfcc2aa2e
+frontier:
+  source-bound-fixed-four-certificate:
+    task: >-
+      Complete a fresh pre-hashed seven-file replay from the current source closure, capture its
+      full exit-zero transcript and obtain final independent transcript review.
+    kind: task
+    since: 2026-08-30
+events:
+  stale-input-centered-run-stopped:
+    date: '2026-08-30'
+    type: repair-applied
+    route: fixed-four-original-side-cover
+    summary: >-
+      The non-promotable historical process was stopped after independent review proved its
+      launch-time source closure could not be recovered; a fresh source-bound replay remains.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SU3_INPUT_CENTERED_TRIANGLE_RUNNING_CERTIFICATE_STATIC_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "FINDING-SU3-ICT-RUN-06"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_STALE_SOURCE_RUN_STOP_RECORD_20260830.md
+      kind: text
+      locator: "## Action and observed termination"
+  fixed-four-running-certificate-static-review:
+    date: '2026-08-30'
+    type: review-completed
+    route: fixed-four-original-side-cover
+    summary: >-
+      Independent review passed the current checker design but found the unfinished live process
+      lacks launch-time source binding and therefore cannot yet license promotion.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SU3_INPUT_CENTERED_TRIANGLE_RUNNING_CERTIFICATE_STATIC_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "FINDING-SU3-ICT-RUN-06"
+  reduced-sector-checker-implemented:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Implemented and smoke-verified exact reconstruction, compactification and sector coverage for
+      both five-dimensional label-sector routes without starting a full adaptive run.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_REDUCED_CERTIFIER_IMPLEMENTATION_20260830.md
+      kind: text
+  label-sector-split-route-added:
+    date: '2026-08-30'
+    type: route-added
+    route: label-sector-split-three-side-cover
+    summary: >-
+      Registered a numerically selected two-sector replacement for the refuted global fixed-three
+      cover; it reduces the exact calculation from one six-dimensional problem to two
+      five-dimensional problems without altering the running checker.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_REMAINING_ORIENTATION_PARALLEL_ANALYSIS_20260830.md
+      kind: text
+  orientation-node-created:
+    date: '2026-08-30'
+    type: created
+    summary: Split the input-centered orientation from the aggregate triangular claim.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_TRIANGULAR_THREE_FACE_SCAN_20260830.md
+      kind: text
+  fixed-three-route-refuted:
+    date: '2026-08-30'
+    type: route-refuted
+    route: fixed-three-original-side-cover
+    summary: Recorded the exact asymptotic selected-side counterexample.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_INPUT_CENTERED_TRIANGLE_FIXED_THREE_COVER_FAILURE_20260830.md
+      kind: counterexample

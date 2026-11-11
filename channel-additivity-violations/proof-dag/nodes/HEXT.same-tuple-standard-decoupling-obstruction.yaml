@@ -1,0 +1,61 @@
+id: HEXT.same-tuple-standard-decoupling-obstruction
+role: obstruction
+aliases:
+- repeated-tuple-constant-factor-decoupling-gate
+claim: >-
+  Standard phase decoupling of the order-two same-tuple coefficient chaos does not create an
+  independent Haar tuple on the second tensor leg, and any comparison that loses a fixed
+  multiplicative constant C>1 cannot transfer the target-sharp A/m bound because it yields
+  C^2*A/m after squaring. This obstructs the unrefined phase or constant-factor decoupling route,
+  not an asymptotically constant-one specialized comparison or the same-tuple claim itself.
+assessment:
+  level: PROVED
+  caveats:
+  - It does not rule out specialized decoupling with multiplicative loss 1+O(1/m) and strong tails.
+  summary: >-
+    The dependence survives standard phase randomization, while the available O(1/m) slack cannot
+    absorb a fixed comparison constant; this closes only a tempting unrefined proof route.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SAME_TUPLE_RANK_ONE_GRAM_CONTRACTION_20260830.md
+      kind: text
+      locator: "## 6. Why standard decoupling and comparison do not close the gap"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_GRAM_WERNER_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STGW-IR-04"
+      scope: >-
+        Independently verified that phase decoupling preserves the shared tuple and that any
+        transferable fixed-factor comparison misses the target; it did not exclude asymptotically
+        constant-one specialized comparisons.
+      reviewed_hash: sha256:c927613b272448126f741a49ebe11a706a6eee9c518a47e5db24144803af5cd7
+frontier:
+  asymptotically-sharp-specialized-comparison:
+    task: >-
+      Seek a same-tuple comparison with loss 1+O(1/m) and target-scale strong-tail control, or a
+      different strong-norm route that avoids decoupling.
+    kind: gate
+    since: 2026-08-30
+events:
+  decoupling-artifact-repair-and-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      Independent review verified the scoped obstruction and clarified that an expectation-only
+      comparison cannot be squared; the artifact now separates that insufficiency from the
+      fixed-factor loss of a hypothetical transferable comparison.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_GRAM_WERNER_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STGW-IR-04"
+  standard-decoupling-obstruction-created:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Scoped the standard phase and constant-factor decoupling failure without treating it as a
+      counterexample to the target claim.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SAME_TUPLE_RANK_ONE_GRAM_CONTRACTION_20260830.md
+      kind: text

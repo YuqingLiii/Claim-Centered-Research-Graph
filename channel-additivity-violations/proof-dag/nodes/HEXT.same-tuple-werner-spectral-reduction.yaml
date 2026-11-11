@@ -1,0 +1,49 @@
+id: HEXT.same-tuple-werner-spectral-reduction
+role: constraint
+aliases:
+- repeated-tuple-real-werner-centered-spectrum
+claim: >-
+  For R_U=m^(-2)sum_(v,a) U_v^*U_a tensor U_a^*U_v, the target
+  ||M_U(Y)||_infinity<=(A/m)||Y||_2 holds simultaneously for every real Werner coefficient
+  Y=alpha I+beta F_m if and only if
+  ||R_U-I/m||_infinity<=sqrt((A^2-1)(1-m^(-2))).
+assessment:
+  level: PROVED
+  caveats:
+  - This reduction does not establish the required high-probability centered spectral bound.
+  summary: >-
+    The whole real Werner coefficient sector is reduced exactly to one centered extreme-spectrum
+    inequality with allowed radius asymptotic to sqrt(18)(1+eta)/sqrt(m).
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_FLIP_SECTOR_SAME_TUPLE_GATE_20260830.md
+      kind: text
+      locator: "## 3. Exact reduction of the whole Werner sector"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_GRAM_WERNER_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STGW-IR-06"
+      scope: >-
+        Independently reconstructed the real two-dimensional Hilbert--Schmidt optimization and
+        centered-spectrum equivalence; the random centered bound was explicitly excluded.
+      reviewed_hash: sha256:241ced6a8c0a7c97de7cc172d9793bb96c032287da21ad5eb4a074dfb3004e67
+events:
+  werner-reduction-independent-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Independent review verified the exact real-Werner spectral equivalence.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_GRAM_WERNER_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STGW-IR-06"
+  werner-spectral-reduction-created:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Registered the exact real-Werner spectral reduction while leaving its random centered bound
+      unresolved.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_FLIP_SECTOR_SAME_TUPLE_GATE_20260830.md
+      kind: text

@@ -1,0 +1,46 @@
+id: HEXT.bell-hidden-correlation-bound
+role: constraint
+aliases:
+- bell-data-hiding-bound
+claim: >-
+  For a finite channel mapping the maximally mixed input to the maximally mixed output, the p=1
+  MOE defect certified by its channel/conjugate-channel Bell input is at most the Bell output's
+  mutual information minus twice its maximum one-way measurement-accessible classical
+  correlation. Hence an extensive non-isotropic Bell route requires an extensive hidden-correlation
+  surplus of this form as well as global side entropy bounds.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The bound assumes maximally mixed Bell-output marginals and concerns the Bell certificate, not
+    an arbitrary optimized joint input.
+  - A large hidden-correlation surplus is necessary but not sufficient; the whole one-channel
+    output set must still have high minimum entropy.
+  - The proof is proposer-side and has not received independent review.
+  summary: >-
+    Measuring one Bell-output leg steers the other leg to legal conjugate-channel outputs. The
+    average conditional entropy upper-bounds the one-channel minimum, and rewriting it as
+    log-output-dimension minus accessible mutual information yields the stated correlation bound.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/BELL_GAP_CLASSICAL_CORRELATION_BOUND_20260830.md
+      kind: text
+      locator: "## 2. Mutual-information form"
+frontier:
+  data-hiding-channel-realization:
+    task: >-
+      Construct a finite channel whose conjugate-Bell output has extensive
+      I(A:B)-2J_{A->B} while its complete one-channel output set has a matching global entropy
+      lower bound, or prove that the channel-realization constraint forbids such scaling.
+    kind: gate
+    since: 2026-08-30
+events:
+  hidden-correlation-bound-recorded:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Converted every bistochastic conjugate-Bell certificate into a quantitative
+      total-versus-accessible-correlation necessary condition and recovered the isotropic one-bit
+      cap as a special case.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/BELL_GAP_CLASSICAL_CORRELATION_BOUND_20260830.md
+      kind: text

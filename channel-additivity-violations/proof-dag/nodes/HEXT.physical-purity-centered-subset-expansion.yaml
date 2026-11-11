@@ -1,0 +1,62 @@
+id: HEXT.physical-purity-centered-subset-expansion
+role: proof
+aliases:
+- all-copy-centered-correlation-expansion
+claim: >-
+  Let C=D_0+E be a complementary channel of a q-Kraus random-unitary channel, where
+  D_0(X)=Tr(X)I_q/q and every E(X) is traceless. For every copy number r and every input state rho,
+  Tr[C^(tensor r)(rho)^2] equals the sum over S subseteq [r] of
+  q^(-(r-|S|))*||E^(tensor |S|)(rho_S)||_2^2. Consequently the physical-purity bound
+  Tr[C^(tensor r)(rho)^2]<=(A/q)^r is exactly equivalent to the centered subset budget
+  sum_S q^(|S|)||E^(tensor |S|)(rho_S)||_2^2<=A^r. At r=3 the fully centered three-body term does
+  not occur in the direct sum of the r<=2 inequalities for the proper marginals, so that naive
+  marginal-summation induction does not bound it.
+assessment:
+  level: PROVED
+  caveats:
+  - This is an exact reformulation, not a proof that the centered subset budget holds.
+  summary: >-
+    Orthogonality between identity and traceless output factors gives the all-copy subset formula.
+    It isolates a new centered correlation at every copy number and shows exactly why direct
+    summation of lower-copy marginal inequalities does not close the induction.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/PRODUCT_HAAR_PHYSICAL_SELF_PURITY_ALL_COPY_ATTACK_20260831.md
+      kind: text
+      locator: "## 2. Exact all-copy centered subset expansion"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/PRODUCT_HAAR_PHYSICAL_SELF_PURITY_EXACT_ATOMS_INDEPENDENT_REVIEW_20260831.md
+      kind: review
+      locator: "Finding HEXT-PP-IR-01"
+      scope: >-
+        Independently verified trace-annihilation, Hilbert--Schmidt orthogonality, the exact subset
+        identity, and the limited direct-marginal-induction statement.
+      reviewed_hash: sha256:475cfa24817b886754b899ce5a8d1caea6d1ccfc5728e24ecaac33ba87a1a0e7
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/PRODUCT_HAAR_PHYSICAL_SELF_PURITY_EXACT_ATOMS_SECONDARY_ADVERSARIAL_REVIEW_20260831.md
+      kind: review
+      locator: "Findings HEXT-PP-SAR-01--HEXT-PP-SAR-02"
+      scope: >-
+        A second independent audit rechecked correlated-input marginals, every cross-term
+        cancellation, the empty-set convention, the iff scaling, and the limited r=3 wording.
+      reviewed_hash: sha256:475cfa24817b886754b899ce5a8d1caea6d1ccfc5728e24ecaac33ba87a1a0e7
+events:
+  centered-subset-expansion-created:
+    date: '2026-08-31'
+    type: created
+    summary: >-
+      Registered the exact all-copy physical centered-correlation expansion and the first
+      irreducible r=3 term without claiming the target inequalities themselves.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/PRODUCT_HAAR_PHYSICAL_SELF_PURITY_ALL_COPY_ATTACK_20260831.md
+      kind: text
+      locator: "## 3. The exact `r=2` and `r=3` budgets"
+  independent-review-promotion:
+    date: '2026-08-31'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Independent review verified the exact subset expansion and the limited direct-induction obstruction.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/PRODUCT_HAAR_PHYSICAL_SELF_PURITY_EXACT_ATOMS_INDEPENDENT_REVIEW_20260831.md
+      kind: review
+      locator: "Finding HEXT-PP-IR-01"

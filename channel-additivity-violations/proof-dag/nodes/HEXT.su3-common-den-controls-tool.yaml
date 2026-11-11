@@ -1,0 +1,53 @@
+id: HEXT.su3-common-den-controls-tool
+role: tool
+aliases:
+- exact-common-den-bernstein-backend
+claim: >-
+  The common-denominator Bernstein backend represents exactly the same rational control tensors,
+  midpoint splits, dense sums, and projective ratio intervals as the original per-control
+  Fraction backend.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - Tool equivalence does not certify any channel inequality; every application requires its own
+    complete exact run and transcript.
+  - Deterministic regression tests sample several tensor shapes but are not an exhaustive proof;
+    the all-grid argument is the integer scaling derivation linked below.
+  - The proof and implementation are proposer-side and have not received independent review.
+  summary: >-
+    De Casteljau midpoint levels have a known power-of-two common denominator, and projective
+    ratios can be compared by exact cross multiplication. Seeded regression tests agree with the
+    original Fraction implementation on every generated control.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_COMMON_DEN_CONTROLS_EQUIVALENCE_20260830.md
+      kind: text
+      locator: "## Exact split identity"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_COMMON_DEN_CONTROLS_EQUIVALENCE_20260830.md
+      kind: text
+      locator: "## Exact ratio identity"
+    - path: channel-additivity-violations/tools/holevo-extensive-violation/su3_common_den_controls.py
+      kind: script
+      locator: CommonDenControls, split_common_controls, and rational_range_common
+    - path: channel-additivity-violations/tools/holevo-extensive-violation/test_su3_common_den_controls.py
+      kind: script
+      locator: main
+frontier:
+  independent-review:
+    task: >-
+      Independently review the common-denominator scaling proof and run adversarial grids including
+      projective zeros, negative numerators, unequal tensor denominators, and maximum certificate
+      degrees.
+    kind: review
+    since: 2026-08-30
+events:
+  common-den-backend-registered:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Replaced repeated per-control Fraction gcd normalization in future SU(3) certificate splits
+      by an exactly equivalent common-denominator integer representation and added deterministic
+      equivalence tests.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_COMMON_DEN_CONTROLS_EQUIVALENCE_20260830.md
+      kind: text

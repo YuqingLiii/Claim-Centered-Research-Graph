@@ -1,0 +1,75 @@
+id: HEXT.su3-highest-edge-adjacent-faces-bell-no-go
+role: obstruction
+aliases:
+- h-edge-two-face-no-go
+claim: >-
+  For every integer p>=0 and q>=4, every SU(3)-covariant qutrit channel supported on the union of
+  the elementary Pieri faces based at (p,q) and (p+1,q-2) satisfies
+  2 barS_min(Phi)<=2S_min(Phi)<S((Phi tensor barPhi)(Omega)) for all edge weights and phases.
+routes:
+  shared-simplex-side-route:
+    premises:
+    - HEXT.su3-all-elementary-cycles-bell-no-go
+    implication: >-
+      Retain the three-edge shared input and the binary input with offset (1,0). Separate convexity
+      reduces the remaining three binary blocks to eight endpoint Gram branches. A five-variable
+      entropy certificate on the retained simplex and interval would establish the claim.
+    proof:
+      sketch: >-
+        Clear positive common denominators for the eight Gram branches and shared-side
+        probabilities, compactify p,q, and retain their common p,s,t,w dependence. Exact rational
+        Bernstein subdivision plus certified logarithm intervals leaves a strict entropy margin.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_HIGHEST_EDGE_ADJACENT_FACES_BELL_NO_GO_20260830.md
+        kind: text
+        locator: "## 1. Orientation and convex reduction through ## 3. Exact rational certificate"
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/certify_su3_highest_edge_adjacent_faces.py
+        kind: code
+        locator: exact 8-branch five-dimensional simplex-aware rational certificate
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The exact five-variable certificate passes with a strict rational-log margin, but it has
+        not received independent adversarial review.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The proof is proposer-side and has not received independent review.
+  - Larger graphs, noncovariant factors and non-Bell inputs are not covered.
+  summary: >-
+    The highest-edge adjacent-face family is closed over all labels and weights by an exact
+    4,216-leaf simplex-aware rational certificate.
+  basis:
+    routes:
+    - shared-simplex-side-route
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_HIGHEST_EDGE_ADJACENT_FACES_BELL_NO_GO_20260830.md
+      kind: text
+      locator: "## 3. Exact rational certificate"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_HIGHEST_EDGE_ADJACENT_FACES_CERTIFICATE_20260830.txt
+      kind: text
+      locator: 8 branches and 4216 adaptive compact boxes certified
+events:
+  h-edge-orientation-registered:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Registered the highest-edge adjacent orientation with its necessary shared-simplex plus
+      binary-side route after simpler binary-pair bounds failed under endpoint maximization.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_ADJACENT_ELEMENTARY_FACES_BELL_NO_GO_20260830.md
+      kind: text
+      locator: "## 5. Scope"
+  h-edge-orientation-certified:
+    date: '2026-08-30'
+    type: level-change
+    from: OPEN
+    to: CONJECTURED
+    summary: >-
+      Closed all labels and weights by an exact 8-branch, 4,216-leaf compact rational
+      Bernstein/logarithm certificate retaining the shared-input simplex.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_HIGHEST_EDGE_ADJACENT_FACES_BELL_NO_GO_20260830.md
+      kind: text
+    - path: channel-additivity-violations/tools/holevo-extensive-violation/certify_su3_highest_edge_adjacent_faces.py
+      kind: code

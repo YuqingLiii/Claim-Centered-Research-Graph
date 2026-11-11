@@ -1,0 +1,64 @@
+id: HEXT.same-tuple-two-leg-scalar-base-cases
+role: proof
+aliases:
+- repeated-tuple-two-leg-base-cases
+claim: >-
+  Let M_U=C^* tensor C^* be the same-tuple two-leg coefficient map and let
+  beta=sqrt(A/m). On the one-leg event ||C^*(X)||_infinity<=beta||X||_2, every unit-Hilbert--Schmidt
+  coefficient Y satisfies ||M_U(Y)||_infinity<=A/m whenever Y is diagonal, is supported on one
+  diagonal channel-copy leg, is a simple tensor, or has entrywise l_1 norm at most Am. The same
+  target holds for rank-one Y=|z><z| when z has support at most Am, and, on the ordinary one-leg
+  strong-convergence event B_U<=2+delta, when the coefficient-Schmidt rank of z is at most
+  Am/(2+delta)^4. Independently of randomness, the canonical Bell projector and normalized flip
+  coefficient also satisfy the target.
+assessment:
+  level: PROVED
+  caveats:
+  - >-
+    The conditional subclasses use only the explicitly stated one-leg events; the diagonal,
+    entrywise-sparse, sparse-rank-one, canonical-Bell and normalized-flip subclasses are
+    deterministic.
+  - >-
+    It does not cover dense full coefficient-Schmidt-rank rank-one coefficients, normalized
+    symmetric or antisymmetric projectors, general Werner/Bell/flip-invariant sectors, or arbitrary
+    Hermitian coefficients.
+  summary: >-
+    Exact factorization, sparsity, diagonal, and one-leg strong-convergence arguments prove the
+    target on substantial strict subclasses, while locating the first genuinely repeated-tuple
+    obstruction at dense high-rank coefficients and nontrivial symmetry-sector combinations.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SAME_TUPLE_TWO_LEG_SCALAR_BASE_CASES_20260830.md
+      kind: text
+      locator: "## 9. Base-case table"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/COMPLEX_HAAR_GLOBAL_N2_GATE_POST_REPAIR_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding CHG2-PRR-VERDICT-BASE-CASES"
+      scope: >-
+        Independently verified all listed deterministic identities and every conditional use of
+        the one-leg events, including the rank threshold and Bell/flip exclusions; it did not
+        prove dense general coefficients or the boundary same-tuple lemma.
+      reviewed_hash: sha256:29a7d833912a8c7e0ca140b1a8d2383dbc37fa6d8cb4b33a7f381546d74c11ef
+events:
+  base-cases-independent-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      Independent adversarial review verified every listed deterministic and conditional base
+      case at the exact claim hash without extending the conclusion to the general OPEN node.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/COMPLEX_HAAR_GLOBAL_N2_GATE_POST_REPAIR_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding CHG2-PRR-VERDICT-BASE-CASES"
+  same-tuple-base-cases-created:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Registered the strict coefficient subclasses settled by exact algebra and one-leg
+      strong-convergence bounds without promoting the general same-tuple lemma.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SAME_TUPLE_TWO_LEG_SCALAR_BASE_CASES_20260830.md
+      kind: text

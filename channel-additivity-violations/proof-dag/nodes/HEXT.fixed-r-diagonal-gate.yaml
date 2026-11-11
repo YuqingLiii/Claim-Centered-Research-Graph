@@ -1,0 +1,31 @@
+id: HEXT.fixed-r-diagonal-gate
+role: proof
+aliases:
+- fixed-r-gate
+claim: >-
+  For every fixed factor count r, prove that the global minimum output von-Neumann entropy of a
+  product of r independent random channels equals the sum of the one-channel minima up to an error
+  vanishing as the auxiliary dimension tends to infinity, with compatible matched-gap probability.
+assessment:
+  level: OPEN
+  summary: >-
+    The new tensor-strong-convergence construction now controls the global minimum over all inputs
+    for every fixed factor count in a product-Haar random-unitary model, which is enough for an
+    absolute-unbounded gap after using its explicit lower bound. It does not prove the stronger
+    equality to the sum of the actual one-channel minima required by this node's precise claim, and
+    its required matrix dimension has no full-size-extensive rate.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/legacy-nodes/ADDGAP.fixed-r-diagonal-gate.md
+      kind: text
+      locator: "## Current status"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FINITE_DIMENSIONAL_UNBOUNDED_GAP_PROOF_20260829.md
+      kind: text
+      locator: "## Step 2: global side lower bound"
+frontier:
+  theorem-gate:
+    task: >-
+      Strengthen the available fixed-r global lower bound to equality with the sum of actual layer
+      minima, or bypass that equality with a fixed-cost all-depth estimate.
+    kind: gate
+    since: 2026-08-29

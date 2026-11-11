@@ -1,0 +1,90 @@
+id: HEXT.su3-straight-reduced-coordinate-three-face-bell-no-go
+role: obstruction
+aliases:
+- straight-reduced-coordinate-three-face-no-go
+claim: >-
+  Every SU(3)-covariant qutrit channel supported on the translated straight three-face cluster
+  ((-2,4),(-1,2),(0,0)) satisfies the registered Bell-input no-gap entropy inequality for all
+  allowed labels, weights, and phases.
+routes:
+  reduced-coordinate-original-side-cover:
+    premises:
+    - HEXT.su3-three-face-cluster-classification
+    - HEXT.su3-fixed-original-side-endpoint-lemma
+    implication: >-
+      Retain the binary block at (-1,4), ternary block at (0,2), and binary block at (2,-2),
+      convexify the other blocks to 24 endpoints, and certify the six-variable inequality.
+    proof:
+      sources:
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/certify_su3_chain_three_face_sixdim_covers.py
+        kind: code
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/stress_su3_straight_chain_reduced_coordinate_cover.py
+        kind: code
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/analyze_su3_straight_reduced_depth10_box.py
+        kind: code
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_STRAIGHT_REDUCED_COORDINATE_THREE_FACE_CERTIFICATE_FAILURE_20260831.md
+        kind: text
+    assessment:
+      level: NUMERICAL
+      caveats:
+      - >-
+        Exact adaptive runs at maximum per-axis depths 6, 7 and 10 each reached an uncertified
+        full-depth box; this is a certificate-resolution failure, not a counterexample.
+      summary: >-
+        The six-dimensional replacement for the original seven-dimensional cover retained a
+        positive million-label sampled margin, but the current exact enclosure remains unresolved
+        after a depth-10 runtime replay.
+      basis:
+        evidence:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_STRAIGHT_REDUCED_COORDINATE_THREE_FACE_CERTIFICATE_FAILURE_20260831.md
+          kind: text
+          locator: "## Three depth ceilings reached"
+        runs:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_STRAIGHT_CHAIN_REDUCED_COVER_STRESS_RUN_20260830.txt
+          kind: run
+          result: The reduced cover retained a sampled margin at least 0.084088268623 bit.
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_STRAIGHT_REDUCED_COORDINATE_THREE_FACE_CERTIFICATE_FAILURE_20260831.txt
+          kind: run
+          result: >-
+            Runtime-only depth 10 ended at a width-1/1024 box with lower-margin diagnostic
+            -9.173335876151267e-06; exact certification did not complete.
+assessment:
+  level: NUMERICAL
+  caveats:
+  - >-
+    Depth-6, depth-7 and depth-10 exact attempts exhausted their adaptive ceilings; none of these
+    enclosure failures is a mathematical counterexample.
+  summary: >-
+    The reduced six-dimensional cover remains numerically positive, but its present exact
+    Bernstein/logarithm certificate is blocked at a precisely recorded depth-10 box.
+  basis:
+    routes:
+    - reduced-coordinate-original-side-cover
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_STRAIGHT_REDUCED_COORDINATE_THREE_FACE_CERTIFICATE_FAILURE_20260831.md
+      kind: text
+      locator: "## Exact blocker and next safe route"
+    runs:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_STRAIGHT_CHAIN_REDUCED_COVER_STRESS_RUN_20260830.txt
+      kind: run
+      result: The reduced cover retained a sampled margin at least 0.084088268623 bit.
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_STRAIGHT_REDUCED_COORDINATE_THREE_FACE_CERTIFICATE_FAILURE_20260831.txt
+      kind: run
+      result: >-
+        Exact runtime replay reached maximum depth 10 in all six axes with one uncertified box;
+        the node therefore remains NUMERICAL.
+frontier:
+  sharpen-depth10-boundary-enclosure:
+    task: >-
+      Sharpen the rational Bernstein or directed-log enclosure near the recorded depth-10 compact
+      boundary box, or supply a targeted analytic boundary estimate, before attempting a deeper run.
+    kind: gate
+    since: 2026-08-31
+events:
+  orientation-node-created:
+    date: '2026-08-30'
+    type: created
+    summary: Split this orientation from the aggregate straight-chain claim.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CHAIN_THREE_FACE_COVER_COMPLEXITY_20260830.md
+      kind: text

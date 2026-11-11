@@ -1,0 +1,75 @@
+id: HCPREV.finite-weyl-moe-to-holevo-pair-transfer
+role: proof
+aliases:
+- q2-local-dephasing-weyl-transfer
+claim: >-
+  For every pair of finite-dimensional channels N1,N2, after isometrically padding their outputs
+  to a common d-dimensional space, the completely dephasing classical Weyl-label extensions
+  tilde(N1),tilde(N2) are finite CPTP channels satisfying S_min(tilde(Ni))=S_min(Ni) for i=1,2,
+  S_min(tilde(N1) tensor tilde(N2))=S_min(N1 tensor N2), chi(tilde(Ni))=log_2(d)-S_min(Ni),
+  and chi(tilde(N1) tensor tilde(N2))=2log_2(d)-S_min(N1 tensor N2). Hence their Holevo pair
+  defect equals the original p=1 minimum-output-entropy pair defect exactly.
+assumptions:
+  shor-section-9-finite-weyl-label-interface:
+    kind: external-theorem
+    statement: >-
+      For two finite channels with outputs embedded in a common d-dimensional space, Shor Section
+      9 defines finite labelled channels on the original input tensored with a classical integer
+      z in {0,...,d^2-1} by N_i'(rho tensor |z><z|)=W_z N_i(rho) W_z^*, where
+      W_(da+b)=T^aR^b are the d-dimensional generalized Pauli operators. For a one-channel
+      minimum-output input he uses all d^2 labels uniformly, and for a joint lower-entropy input
+      he uses all d^4 label pairs uniformly; the Weyl averages are maximally mixed.
+    source:
+      path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/primary-sources/shor-quant-ph-0305035.pdf
+      kind: pdf
+      locator: Section 9, PDF pp. 18-19
+assessment:
+  level: PROVED
+  caveats:
+  - The completely dephasing CPTP completion is essential; no coherent controlled-label extension is claimed.
+  - The transformation changes input dimensions and channel identities, and transfers probabilities only to its pushforward random law.
+  - This atom produces a Holevo pair, not a same-channel witness or an all-copy/full-size statement.
+  summary: >-
+    A Q2-local proposer proof completes Shor's classical-labelled construction on arbitrary inputs,
+    proves global single and product minimum-output-entropy preservation by label-block convexity,
+    attains the Holevo output-dimension bounds with Weyl twirls, and preserves the numerical defect.
+    Fresh independent review passed every global-input and pushforward-law interface.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/FINITE_WEYL_MOE_TO_HOLEVO_PAIR_TRANSFER_20260830.md
+      kind: text
+      locator: "## 1. Exact statement"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/WEYL_FLAGGED_PRODUCT_HAAR_ASSEMBLY_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Findings HCP-WF-IR-01--HCP-WF-IR-04
+      scope: >-
+        Independently passed the exact Shor interface, finite dephasing completion, arbitrary-input
+        single/product S_min equalities, Holevo identities and deterministic pushforward boundary.
+      reviewed_hash: sha256:5141db41a2972b86e9fbf83419dbfb5e739e4cb98656ec64c721858f6d793a9c
+events:
+  finite-weyl-transfer-independently-proved:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      Independent review passed the exact finite Weyl transfer while confirming that it changes
+      channels and preserves probability only under the induced pushforward law.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/WEYL_FLAGGED_PRODUCT_HAAR_ASSEMBLY_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Findings HCP-WF-IR-01--HCP-WF-IR-04
+  q2-local-finite-weyl-transfer-created:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Registered the missing project-local exact MOE-to-Holevo pair-transfer premise, including
+      global dephasing-extension minimum-output-entropy preservation and a precise Shor interface.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/FINITE_WEYL_MOE_TO_HOLEVO_PAIR_TRANSFER_20260830.md
+      kind: text
+      locator: "## 1. Exact statement"
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/PRODUCT_HAAR_UNBOUNDED_PREVALENCE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding HCP-PH-IR-06"

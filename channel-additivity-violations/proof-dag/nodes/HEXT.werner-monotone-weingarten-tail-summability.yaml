@@ -1,0 +1,66 @@
+id: HEXT.werner-monotone-weingarten-tail-summability
+role: proof
+aliases:
+- centered-monotone-excess-tail
+claim: >-
+  For moment order N and any fixed multi-label contraction skeleton, the total absolute weight of
+  all positive monotone-Weingarten excess paths is at most theta/(1-theta) times its minimal-path
+  absolute weight, where theta=6(2N)^(7/2)/d^2, whenever theta<1. Hence this excess tail is o(1)
+  uniformly for N<=c log d.
+assumptions:
+  collins-matsumoto-monotone-path-bound:
+    kind: external-theorem
+    statement: >-
+      For pi in S_p, the unitary Weingarten monotone-path coefficients satisfy
+      P_g(pi)<=[6p^(7/2)]^g P_0(pi), with the exact expansion carrying an additional d^(-2g).
+    source:
+      path: channel-additivity-violations/artifacts/holevo-extensive-violation/primary-sources/collins-matsumoto-1701.04493.pdf
+      kind: pdf
+      locator: Exact expansion on PDF p. 8 and path bounds on PDF p. 9; file anchor `PDF-1.4`
+assessment:
+  level: PROVED
+  caveats:
+  - >-
+    This sums excess paths over a fixed skeleton but does not bound the absolute mass or count of
+    the minimal positive-genus contraction skeletons themselves.
+  summary: >-
+    Collins--Matsumoto path coefficients tensorize across labels so all arbitrarily long monotone
+    backtracking tails are a vanishing geometric correction at logarithmic moment order.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_FINITE_D_WEINGARTEN_REMAINDER_GATE_20260830.md
+      kind: text
+      locator: "## 6. Skeletonwise remainder reduction"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_DOUBLE_OFF_WERNER_WEINGARTEN_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STDW-IR-06"
+      scope: >-
+        Independently verified the primary theorem chain, per-label convolution, theta constant
+        and uniform N<=c log d quantifier, while excluding the minimal-skeleton entropy gate.
+      reviewed_hash: sha256:e47cd4541145cc59fcd04cf217f738d0ceb6c126508210d4c169af7fc0c8c0e4
+frontier:
+  independent-monotone-tail-review:
+    task: >-
+      Verify degree bookkeeping, multi-label convolution, theta constant and uniform logarithmic
+      quantifier against the local primary source.
+    kind: review
+    since: 2026-08-30
+events:
+  monotone-tail-independent-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Independent review verified skeletonwise Weingarten excess-tail summability.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_DOUBLE_OFF_WERNER_WEINGARTEN_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STDW-IR-06"
+  monotone-tail-summability-created:
+    date: '2026-08-30'
+    type: created
+    summary: Registered the proposer-side skeletonwise Weingarten excess-tail summability lemma.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_FINITE_D_WEINGARTEN_REMAINDER_GATE_20260830.md
+      kind: text

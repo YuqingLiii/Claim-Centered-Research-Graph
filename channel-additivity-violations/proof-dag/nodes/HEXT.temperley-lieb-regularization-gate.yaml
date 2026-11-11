@@ -1,0 +1,42 @@
+id: HEXT.temperley-lieb-regularization-gate
+role: obstruction
+aliases:
+- temperley-lieb-gate
+claim: >-
+  The finite-dimensional Temperley--Lieb channels audited from arXiv:1810.08001 do not supply the
+  fixed-channel all-copy entropy control needed by the regularized-MOE extensive-violation route:
+  their minimum output entropy estimate is one-shot and asymptotic in the ambient quantum-group
+  parameter, while the tensor-product calculation is restricted to a specified covariant input
+  family and does not identify the global minimum at every tensor degree.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - This is a source-scope ruling, not a theorem that all Temperley--Lieb channels are additive.
+  - The paper's negative evidence for strict subadditivity is numerical and limited to its tested covariant states.
+  summary: >-
+    Theorem 4.3 controls one-shot H_min as N tends to infinity. Theorem 6.3 and Remark 6.4 compute
+    exact spectra only for selected covariant entangled inputs. Section 6.3 reports numerical
+    evidence against a violation in that family. None of these results bounds all tensor powers of
+    one fixed finite channel or proves a positive regularized cross defect.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/TEMPERLEY_LIEB_REGULARIZATION_GATE_20260830.md
+      kind: text
+      locator: "## Gate verdict"
+frontier:
+  exact-regularized-family:
+    task: >-
+      Identify another finite-dimensional structured channel family with an exact regularized MOE
+      or a fixed-channel all-copy lower bound, then test a matched entangled pair against it.
+    kind: task
+    since: 2026-08-30
+events:
+  source-scope-gate-recorded:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Audited the one-shot and tensor-product entropy theorems of arXiv:1810.08001 and recorded why
+      they do not provide the fixed finite regularized-MOE input needed by the extensive route.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/TEMPERLEY_LIEB_REGULARIZATION_GATE_20260830.md
+      kind: text

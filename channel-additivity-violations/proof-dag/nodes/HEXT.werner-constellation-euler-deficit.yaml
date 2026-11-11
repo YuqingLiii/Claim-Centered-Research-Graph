@@ -1,0 +1,57 @@
+id: HEXT.werner-constellation-euler-deficit
+role: proof
+aliases:
+- werner-exact-minimal-genus-power
+claim: >-
+  For the Werner constellation (A,B,C,rho^(-1)) on E=2N darts with c transitive components and
+  total orientable genus h, the minimal unitary-Weingarten term has exact dimension power
+  d^(#A+#B+#C-2E)=d^(2c-2h-2); in particular every connected minimal skeleton carries exactly
+  d^(-2h).
+assumptions:
+  collins-matsumoto-minimal-leading-power:
+    kind: external-theorem
+    statement: >-
+      A degree-p unitary Weingarten term indexed by pi has leading power d^(-p-|pi|), with
+      |pi|=p-#pi.
+    source:
+      path: channel-additivity-violations/artifacts/holevo-extensive-violation/primary-sources/collins-matsumoto-1701.04493.pdf
+      kind: pdf
+      locator: Exact unitary expansion on PDF p. 8; file anchor `PDF-1.4`
+assessment:
+  level: PROVED
+  caveats:
+  - The connected conclusion does not identify every disconnected positive-genus term with the return sector.
+  summary: >-
+    Independent review verified that exact row/column loop counts, the constellation Euler
+    characteristic and the archived Weingarten leading power give d^(-2) per connected handle.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_20260830.md
+      kind: text
+      locator: "## 4. Euler loop-deficit identity"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WPCS-IR-03"
+      scope: >-
+        Independently verified all loop permutations, the two-face Euler identity, connectedness
+        scope and the Collins--Matsumoto minimal Weingarten normalization.
+      reviewed_hash: sha256:c1c37d08c4f0cf37cb698b26a03d48cef0dd668686b71ed3a8391fed63c1d62a
+events:
+  constellation-euler-deficit-independent-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Independent review verified the exact connected d^(-2h) genus power.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WPCS-IR-03"
+  constellation-euler-deficit-created:
+    date: '2026-08-30'
+    type: created
+    summary: Registered the proposer-side exact genus/dimension-power identity.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_20260830.md
+      kind: text

@@ -1,0 +1,112 @@
+id: HEXT.beyond-one-bit
+role: outcome
+aliases:
+- greater-than-one-bit
+claim: >-
+  There exist finite-dimensional channels with p=1 minimum-output-entropy pair defect greater than
+  one bit, finite-dimensional channels with Holevo pair defect greater than one bit, and a finite
+  channel T with chi(T tensor T)-2chi(T)>1.
+routes:
+  absolute-unbounded-specialization:
+    premises:
+    - HEXT.absolute-unbounded-finite-dimensional-defects
+    implication: >-
+      Apply the proved absolute-unbounded finite-dimensional theorem at target G=1 to each of its
+      MOE-pair, Holevo-pair, and same-channel clauses.
+    proof:
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/ABSOLUTE_UNBOUNDED_OUTCOME_ASSEMBLY_20260830.md
+        kind: text
+        locator: "## 1. Exact scoped outcome"
+    assessment:
+      level: PROVED
+      summary: >-
+        Independent review passed the direct strict G=1 specialization of the proved
+        absolute-unbounded premise.
+      basis:
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-extensive-violation/BEYOND_ONE_BIT_SPECIALIZATION_INDEPENDENT_REVIEW_20260830.md
+          kind: review
+          locator: Finding HEXT-B1-IR-01
+          scope: >-
+            Independently passed the strict G=1 substitution, three separate existential clauses
+            and use of the sole proved premise.
+          reviewed_hash: sha256:07ac64093012fa3ef2977b67a6e8dae42efa11d7675809c14dee4a6cbed12a4f
+  unbounded-gap-route:
+    premises:
+    - HEXT.finite-dimensional-unbounded-gap
+    - HEXT.moe-to-holevo-transfer
+    implication: >-
+      An unbounded finite-dimensional MOE pair defect exceeds one bit for some finite member; the
+      Weyl-flag transfer preserves that numerical defect exactly for Holevo chi.
+    proof:
+      sketch: >-
+        Choose a hierarchy depth whose MOE defect is greater than one bit and apply the exact
+        finite-dimensional Weyl-flag extension if a Holevo witness is desired.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FINITE_DIMENSIONAL_UNBOUNDED_GAP_PROOF_20260829.md
+        kind: text
+        locator: "## Step 5: transfer to Holevo and to one channel"
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The implication is elementary and written out, but its premises remain proposer-side and
+        have not received independent hash-bound review.
+assessment:
+  level: PROVED
+  caveats:
+  - The separate single-isotropic-output Bell certificate is capped at one bit; the unbounded
+    construction escapes that restricted mechanism by taking products of nonidentical layers and
+    applying finite transfer reductions.
+  summary: >-
+    Independent review proves all three greater-than-one-bit clauses as a strict specialization of
+    the proved absolute-unbounded atomic theorem, without any full-size conclusion.
+  basis:
+    routes:
+    - absolute-unbounded-specialization
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/ISOTROPIC_BELL_ONE_BIT_CAP_20260830.md
+      kind: text
+      locator: "## 4. Scope and consequence"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/BEYOND_ONE_BIT_SPECIALIZATION_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Findings HEXT-B1-IR-02--HEXT-B1-IR-04
+      scope: >-
+        Independently passed the exact affirmative claim, completion basis, compatibility with the
+        restricted isotropic cap, and strict non-propagation to full-size extensivity.
+      reviewed_hash: sha256:2542ce5b98fc9591048dcc2a597fb64825a106f1c215c416d9ce254c91199059
+events:
+  beyond-one-bit-independently-proved:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    route: absolute-unbounded-specialization
+    summary: >-
+      Independent review passed the strict greater-than-one-bit route and claim at their exact
+      hashes while leaving the full-size root OPEN.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/BEYOND_ONE_BIT_SPECIALIZATION_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Findings HEXT-B1-IR-01--HEXT-B1-IR-04
+  affirmative-specialization-registered:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Replaced the stale question-form claim by the exact three-clause greater-than-one-bit
+      consequence of the independently proved absolute-unbounded theorem.
+    sources:
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.absolute-unbounded-finite-dimensional-defects.yaml
+      kind: node-evidence
+  proposer-route-added:
+    date: '2026-08-29'
+    type: level-change
+    from: OPEN
+    to: CONJECTURED
+    summary: >-
+      Tensor strong convergence supplies the missing finite-dimensional all-input side bound and
+      yields an absolute-unbounded construction.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FINITE_DIMENSIONAL_UNBOUNDED_GAP_PROOF_20260829.md
+      kind: text

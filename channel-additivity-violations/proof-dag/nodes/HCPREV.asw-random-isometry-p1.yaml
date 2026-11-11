@@ -1,0 +1,54 @@
+id: HCPREV.asw-random-isometry-p1
+role: proof
+aliases:
+- asw-high-probability
+claim: >-
+  For appropriate absolute constants c,C>0 and sufficiently large k, put m=floor(c k^2) and
+  d=floor(C k^2), draw a Haar isometry V:C^m -> C^k tensor C^d, and define
+  Phi(rho)=Tr_(C^d)(V rho V^*). At p=1,
+  S_min(Phi)+S_min(bar(Phi))-S_min(Phi tensor bar(Phi))>0 with probability tending to one as
+  k tends to infinity; more precisely, for some absolute c'>0 the exceptional probability is at
+  most exp(-c' m) for sufficiently large k. The joint upper bound is witnessed by the maximally
+  entangled input on C^m tensor C^m.
+assumptions:
+  asw-random-isometry-theorem:
+    kind: external-theorem
+    statement: >-
+      Theorem 1 for the Haar-isometry channel with input dimension m=c k^2, output dimension k and
+      environment dimension d=C k^2 gives p=1 MOE nonadditivity for Phi tensor bar(Phi) with large
+      probability. The paper defines large probability as exceeding every fixed theta in (0,1)
+      for sufficiently large k and states the stronger exceptional-set bound exp(-c' m); the proof
+      uses the maximally entangled input for the product upper bound.
+    source:
+      path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/primary-sources/asw-1003.4925.pdf
+      kind: pdf
+      locator: Channel model Eq. (2) and Theorem 1 with probability convention, PDF pp. 2--3; maximally-entangled upper-bound derivation, PDF p. 4
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The probability is for the specified Haar-isometry/Grassmannian ensemble and dimension scaling.
+  - This is a p=1 MOE statement and does not give a same-law Holevo prevalence theorem.
+  summary: >-
+    The exact ASW ensemble, quadratic dimensions, conjugate partner, Bell-type witness and
+    high-probability/exponential-exception quantifier are frozen for independent review.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/NAMED_RANDOM_MODEL_ATOMIC_ASSEMBLY_20260831.md
+      kind: text
+      locator: "## 4. Aubrun--Szarek--Werner atom: high probability"
+frontier:
+  independent-source-review:
+    task: >-
+      Independently check the exact claim and ASW source interface against the hash-bound local PDF.
+    kind: review
+    since: 2026-08-31
+events:
+  asw-random-isometry-atom-created:
+    date: '2026-08-31'
+    type: created
+    summary: >-
+      Registered the ASW p=1 random-isometry theorem as an isolated high-probability MOE atom.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/NAMED_RANDOM_MODEL_ATOMIC_ASSEMBLY_20260831.md
+      kind: text
+      locator: "## 4. Aubrun--Szarek--Werner atom: high probability"

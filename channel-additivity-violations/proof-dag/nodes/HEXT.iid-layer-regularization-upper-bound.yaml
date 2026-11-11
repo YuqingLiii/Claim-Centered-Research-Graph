@@ -1,0 +1,69 @@
+id: HEXT.iid-layer-regularization-upper-bound
+role: constraint
+aliases:
+- iid-layer-regularization
+claim: >-
+  For any sequence from a compact diamond-continuous fixed-dimensional channel family, the limsup
+  per-layer minimum output entropy of the heterogeneous product is at most the largest individual
+  regularized minimum output entropy in the family. If the empirical measures converge, the sharper
+  bound is their limiting distributional average; iid sampling is an almost-sure corollary.
+assumptions:
+  audenaert-continuity:
+    kind: external-theorem
+    statement: >-
+      For d-dimensional states rho and sigma with T=(1/2)||rho-sigma||_1, their base-two entropy
+      difference is at most T log_2(d-1)+h_2(T) in the nontrivial range.
+    source:
+      path: channel-additivity-violations/artifacts/holevo-extensive-violation/primary-sources/audenaert-0610146.pdf
+      kind: text
+      locator: Theorem 1
+  finite-partition-strong-law:
+    kind: external-theorem
+    statement: >-
+      For iid samples and any fixed finite measurable partition, all empirical cell frequencies
+      converge almost surely to their probabilities.
+    source:
+      note: Standard strong law of large numbers applied to finitely many cell-indicator variables.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The result is an upper bound; it does not identify the heterogeneous product entropy exactly.
+  - The proof is proposer-side and has not received independent adversarial review.
+  summary: >-
+    Fine cells create many near-repeated channel blocks. Applying near-minimizers for a representative
+    r-fold self tensor power, then passing through empirical frequencies, fine partitions and
+    r-to-infinity, gives the averaged bound for an empirical limit. Compactness of empirical
+    measures upgrades this to an arbitrary-sequence supremum bound.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/IID_LAYER_REGULARIZATION_UPPER_BOUND_20260830.md
+      kind: text
+      locator: "## Passage to the regularized rate"
+frontier:
+  average-leakage-lower-bound:
+    task: >-
+      Determine whether an oriented ensemble can have average regularized MOE above the side rate
+      required for a conjugate-pair extensive gap; this now explicitly requires a fixed-channel
+      self-leakage estimate.
+    kind: gate
+    since: 2026-08-30
+events:
+  iid-regularization-bound-recorded:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Converted the oriented-layer proposal into an averaged fixed-channel regularization gate by
+      grouping iid near-repetitions at every fixed block length.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/IID_LAYER_REGULARIZATION_UPPER_BOUND_20260830.md
+      kind: text
+  deterministic-upgrade-recorded:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Removed the iid/genericity restriction by extracting empirical-measure cluster points from
+      an arbitrary deterministic sequence; fixed-dimensional heterogeneity is now reduced to the
+      best fixed-channel regularized entropy rate in the compact family.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/IID_LAYER_REGULARIZATION_UPPER_BOUND_20260830.md
+      kind: text

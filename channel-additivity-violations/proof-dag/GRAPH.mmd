@@ -1,0 +1,564 @@
+%% CHANNEL-ADDITIVITY-VIOLATIONS proof hypergraph (generated)
+flowchart BT
+  n0["HAEQ.direct-moe-to-holevo-transfer\nPROVED"]
+  n1["HAEQ.fixed-channel-regularization\nPROVED"]
+  n2["HAEQ.goal\nPROVED"]
+  n3["HAEQ.hastings-moe-counterexample\nPROVED"]
+  n4["HAEQ.pair-to-self-reduction\nPROVED"]
+  n5["HAEQ.special-additive-classes\nCONJECTURED"]
+  n6["HAEQ.universal-additivity-equivalence\nCONJECTURED"]
+  n7["HAEQ.weyl-extension-moe-preservation\nPROVED"]
+  n8["HCPREV.additive-open-region\nPROVED"]
+  n9["HCPREV.algebraic-entropy-interval-verifier\nCONJECTURED"]
+  n10["HCPREV.algebraic-witness-existence\nCONJECTURED"]
+  n11["HCPREV.asw-random-isometry-p1\nCONJECTURED"]
+  n12["HCPREV.bcn-random-stinespring-p1\nCONJECTURED"]
+  n13["HCPREV.cayley-algebraic-channel-density\nCONJECTURED"]
+  n14["HCPREV.dimension-threshold-scope\nPROVED"]
+  n15["HCPREV.effective-pure-state-net-moe-bounds\nCONJECTURED"]
+  n16["HCPREV.equal-holevo-flagged-pair-to-self\nPROVED"]
+  n17["HCPREV.explicit-witness-frontier\nOPEN"]
+  n18["HCPREV.finite-weyl-moe-to-holevo-pair-transfer\nPROVED"]
+  n19["HCPREV.full-support-probability-dichotomy\nPROVED"]
+  n20["HCPREV.goal\nOPEN"]
+  n21["HCPREV.hastings-random-unitary-p1\nCONJECTURED"]
+  n22["HCPREV.llw-local-projection-p1\nCONJECTURED"]
+  n23["HCPREV.open-set-stability\nPROVED"]
+  n24["HCPREV.product-haar-moe-unbounded\nPROVED"]
+  n25["HCPREV.product-haar-unbounded\nPROVED"]
+  n26["HCPREV.random-models\nCONJECTURED"]
+  n27["HEXT.absolute-unbounded-finite-dimensional-defects\nPROVED"]
+  n28["HEXT.additive-bound-amplification-no-go\nCONJECTURED"]
+  n29["HEXT.antisymmetric-projector-family-no-go\nCONJECTURED"]
+  n30["HEXT.antisymmetric-slater-convex-cost-no-go\nCONJECTURED"]
+  n31["HEXT.bell-hidden-correlation-bound\nCONJECTURED"]
+  n32["HEXT.beyond-one-bit\nPROVED"]
+  n33["HEXT.complex-haar-global-n2-output-dual-gate\nPROVED"]
+  n34["HEXT.complex-haar-n2-bell-frame-potential\nPROVED"]
+  n35["HEXT.conjugate-bell-realignment-constraint\nCONJECTURED"]
+  n36["HEXT.conjugation-closed-self-purity-n2-obstruction\nPROVED"]
+  n37["HEXT.depolarizing-gram-small-input-no-go\nCONJECTURED"]
+  n38["HEXT.ef-flag-amplification\nOPEN"]
+  n39["HEXT.explicit-witness\nOPEN"]
+  n40["HEXT.f3-affine-line-l2-maximal\nPROVED"]
+  n41["HEXT.f3-weyl-majorization-first-three\nPROVED"]
+  n42["HEXT.f3-weyl-selected-line-majorization\nPROVED"]
+  n43["HEXT.finite-dimensional-unbounded-gap\nPROVED"]
+  n44["HEXT.finite-regularized-literature-gate\nCONJECTURED"]
+  n45["HEXT.finite-subspace-spatialization-gate\nCONJECTURED"]
+  n46["HEXT.fixed-d-haar-conjugate-collision\nCONJECTURED"]
+  n47["HEXT.fixed-d-heterogeneous-selection\nCONJECTURED"]
+  n48["HEXT.fixed-output-hierarchy-obstruction\nCONJECTURED"]
+  n49["HEXT.fixed-partner-global-entropy\nOPEN"]
+  n50["HEXT.fixed-partner-special-cases\nCONJECTURED"]
+  n51["HEXT.fixed-r-diagonal-gate\nOPEN"]
+  n52["HEXT.fixed-unitary-cb-obstruction\nCONJECTURED"]
+  n53["HEXT.flagged-erasure-gate\nCONJECTURED"]
+  n54["HEXT.flower-state-gram-gate\nCONJECTURED"]
+  n55["HEXT.four-dimensional-antisymmetric-square-support-no-go\nCONJECTURED"]
+  n56["HEXT.g2-antisymmetric-square-support-no-go\nCONJECTURED"]
+  n57["HEXT.goal\nOPEN"]
+  n58["HEXT.gram-channel-correlation-identities\nCONJECTURED"]
+  n59["HEXT.gram-channel-entanglement-cost-gate\nCONJECTURED"]
+  n60["HEXT.group-twirl-collision-no-go\nCONJECTURED"]
+  n61["HEXT.growing-level-rate\nOPEN"]
+  n62["HEXT.hayden-penington-dichotomy\nCONJECTURED"]
+  n63["HEXT.hierarchical-absolute-gap\nCONJECTURED"]
+  n64["HEXT.holographic-toy\nOPEN"]
+  n65["HEXT.iid-layer-regularization-upper-bound\nCONJECTURED"]
+  n66["HEXT.isotropic-bell-one-bit-cap\nCONJECTURED"]
+  n67["HEXT.llw-critical-scaling-one-bit-gate\nCONJECTURED"]
+  n68["HEXT.matched-independent-tensors\nOPEN"]
+  n69["HEXT.moe-to-holevo-transfer\nPROVED"]
+  n70["HEXT.montanaro-gate\nOPEN"]
+  n71["HEXT.multiboundary-paired-stack-label-components\nPROVED"]
+  n72["HEXT.noise-flag-damping\nOPEN"]
+  n73["HEXT.octonionic-hurwitz-support-no-go\nCONJECTURED"]
+  n74["HEXT.pair-to-self\nPROVED"]
+  n75["HEXT.partial-support-polar-orientation-criterion\nCONJECTURED"]
+  n76["HEXT.pauli-gram-high-cost-side-obstruction\nCONJECTURED"]
+  n77["HEXT.physical-purity-centered-subset-expansion\nPROVED"]
+  n78["HEXT.product-haar-physical-self-purity-multiplicativity\nOPEN"]
+  n79["HEXT.quantum-expander-werner-partial-transpose-interface\nPROVED"]
+  n80["HEXT.qubit-output-gram-bell-no-go\nCONJECTURED"]
+  n81["HEXT.qutrit-antisymmetric-gram-obstruction\nCONJECTURED"]
+  n82["HEXT.qutrit-weyl-random-unitary-bell-gate\nPROVED"]
+  n83["HEXT.qutrit-weyl-random-unitary-bell-no-go\nPROVED"]
+  n84["HEXT.real-orthogonal-self-purity-n2-obstruction\nPROVED"]
+  n85["HEXT.rooted-orientable-map-handle-count\nCONJECTURED"]
+  n86["HEXT.same-tuple-double-off-projective-frobenius-obstruction\nPROVED"]
+  n87["HEXT.same-tuple-double-off-projective-interface\nPROVED"]
+  n88["HEXT.same-tuple-gram-safe-spectral-nuclear-base-case\nPROVED"]
+  n89["HEXT.same-tuple-high-schmidt-kadison-haagerup-obstruction\nPROVED"]
+  n90["HEXT.same-tuple-maximal-schmidt-complement-projector\nPROVED"]
+  n91["HEXT.same-tuple-near-diagonal-positive-base-case\nPROVED"]
+  n92["HEXT.same-tuple-near-orthogonal-gram-base-case\nPROVED"]
+  n93["HEXT.same-tuple-positive-diagonal-core-projective-neighborhood\nPROVED"]
+  n94["HEXT.same-tuple-positive-maximal-schmidt-double-off-neighborhood\nPROVED"]
+  n95["HEXT.same-tuple-positive-partial-trace-contraction\nPROVED"]
+  n96["HEXT.same-tuple-positive-rook-plus-double-off-direction\nPROVED"]
+  n97["HEXT.same-tuple-positive-rook-support-base-case\nPROVED"]
+  n98["HEXT.same-tuple-positive-spectral-flat-base-case\nPROVED"]
+  n99["HEXT.same-tuple-positive-summation-obstruction\nPROVED"]
+  n100["HEXT.same-tuple-ppm-edge-gate\nPROVED"]
+  n101["HEXT.same-tuple-rank-one-gram-contraction\nPROVED"]
+  n102["HEXT.same-tuple-real-werner-sector-4096-threshold\nPROVED"]
+  n103["HEXT.same-tuple-real-werner-sector-large-m\nPROVED"]
+  n104["HEXT.same-tuple-rook-truncation-positivity-obstruction\nPROVED"]
+  n105["HEXT.same-tuple-standard-decoupling-obstruction\nPROVED"]
+  n106["HEXT.same-tuple-two-leg-scalar-base-cases\nPROVED"]
+  n107["HEXT.same-tuple-two-leg-scalar-strong-norm\nOPEN"]
+  n108["HEXT.same-tuple-werner-centered-bound\nCONJECTURED"]
+  n109["HEXT.same-tuple-werner-centered-bound-4096-threshold\nPROVED"]
+  n110["HEXT.same-tuple-werner-centered-bound-large-m\nPROVED"]
+  n111["HEXT.same-tuple-werner-spectral-reduction\nPROVED"]
+  n112["HEXT.su3-adjacent-elementary-faces-bell-no-go\nCONJECTURED"]
+  n113["HEXT.su3-adjoint-environment-bell-no-go\nCONJECTURED"]
+  n114["HEXT.su3-all-adjacent-elementary-face-pairs-bell-no-go\nCONJECTURED"]
+  n115["HEXT.su3-all-elementary-cycles-bell-no-go\nCONJECTURED"]
+  n116["HEXT.su3-bent-central-ternary-three-face-bell-no-go\nNUMERICAL"]
+  n117["HEXT.su3-bent-cm-hm-hc-three-face-bell-no-go\nPROVED"]
+  n118["HEXT.su3-bent-hc-hm-hm-three-face-bell-no-go\nNUMERICAL"]
+  n119["HEXT.su3-bent-hm-hm-hc-three-face-bell-no-go\nCONJECTURED"]
+  n120["HEXT.su3-bent-left-ternary-three-face-bell-no-go\nPROVED"]
+  n121["HEXT.su3-bent-right-ternary-three-face-bell-no-go\nPROVED"]
+  n122["HEXT.su3-bent-three-face-clusters-bell-no-go\nNUMERICAL"]
+  n123["HEXT.su3-boundary-environment-mixture-bell-no-go\nCONJECTURED"]
+  n124["HEXT.su3-common-den-controls-tool\nCONJECTURED"]
+  n125["HEXT.su3-conjugate-edge-adjacent-faces-bell-no-go\nCONJECTURED"]
+  n126["HEXT.su3-conjugate-symmetric-complement-no-go\nCONJECTURED"]
+  n127["HEXT.su3-environment-centered-triangular-three-face-bell-no-go\nCONJECTURED"]
+  n128["HEXT.su3-equivalent-environment-multiplicity-no-go\nCONJECTURED"]
+  n129["HEXT.su3-fixed-original-side-endpoint-lemma\nPROVED"]
+  n130["HEXT.su3-highest-edge-adjacent-faces-bell-no-go\nCONJECTURED"]
+  n131["HEXT.su3-inequivalent-environment-mixture-reduction\nCONJECTURED"]
+  n132["HEXT.su3-input-centered-triangular-three-face-bell-no-go\nNUMERICAL"]
+  n133["HEXT.su3-interior-environment-mixture-bell-no-go\nCONJECTURED"]
+  n134["HEXT.su3-irreducible-covariant-bell-no-go\nCONJECTURED"]
+  n135["HEXT.su3-minimal-covariant-cycle-bell-no-go\nCONJECTURED"]
+  n136["HEXT.su3-reducible-pieri-subspace-bell-no-go\nCONJECTURED"]
+  n137["HEXT.su3-source-bound-certificate-runner\nNUMERICAL"]
+  n138["HEXT.su3-straight-all-hm-three-face-bell-no-go\nCONJECTURED"]
+  n139["HEXT.su3-straight-reduced-coordinate-three-face-bell-no-go\nNUMERICAL"]
+  n140["HEXT.su3-straight-ternary-three-face-bell-no-go\nNUMERICAL"]
+  n141["HEXT.su3-straight-three-face-clusters-bell-no-go\nNUMERICAL"]
+  n142["HEXT.su3-symmetric-complement-bell-no-go\nCONJECTURED"]
+  n143["HEXT.su3-three-face-cluster-classification\nPROVED"]
+  n144["HEXT.su3-triangular-three-face-clusters-bell-no-go\nNUMERICAL"]
+  n145["HEXT.support-channel-polar-orientation-criterion\nCONJECTURED"]
+  n146["HEXT.temperley-lieb-regularization-gate\nCONJECTURED"]
+  n147["HEXT.tensor-copy-leakage\nCONJECTURED"]
+  n148["HEXT.tensor-strong-convergence-rate-gate\nPROVED"]
+  n149["HEXT.unbounded-family-self-leakage\nOPEN"]
+  n150["HEXT.werner-ab-reducible-subclass-count\nPROVED"]
+  n151["HEXT.werner-admissible-equality-component-genus-bound\nPROVED"]
+  n152["HEXT.werner-boundary-preserving-genus-reduction\nOPEN"]
+  n153["HEXT.werner-boundary-surgery-normal-form\nPROVED"]
+  n154["HEXT.werner-centered-reversal-return-bound\nPROVED"]
+  n155["HEXT.werner-common-cycle-local-surgery\nPROVED"]
+  n156["HEXT.werner-constellation-euler-deficit\nPROVED"]
+  n157["HEXT.werner-contraction-skeleton-ribbon-injection\nPROVED"]
+  n158["HEXT.werner-even-identity-label-component-obstruction\nPROVED"]
+  n159["HEXT.werner-handle-sliced-paired-stack-certificate\nOPEN"]
+  n160["HEXT.werner-minimal-catalan-weight\nPROVED"]
+  n161["HEXT.werner-minimal-skeleton-map-bound\nOPEN"]
+  n162["HEXT.werner-modulus-square-majorant-obstruction\nPROVED"]
+  n163["HEXT.werner-monotone-weingarten-tail-summability\nPROVED"]
+  n164["HEXT.werner-pairwise-surgery-obstruction\nPROVED"]
+  n165["HEXT.werner-planar-two-boundary-rooted-map-count\nPROVED"]
+  n166["HEXT.werner-positive-genus-two-boundary-weighted-count\nPROVED"]
+  n167["HEXT.werner-reversal-cyclic-collision-count\nPROVED"]
+  n168["HEXT.werner-support-five-genus-one-base-case\nPROVED"]
+  n169["HEXT.werner-support-four-surgery-obstruction\nPROVED"]
+  n170["HEXT.werner-two-boundary-constellation-count\nPROVED"]
+  n171["HEXT.werner-two-component-low-genus-return-separation\nPROVED"]
+  n172["HEXT.werner-two-component-nonreturn-weighted-count\nPROVED"]
+  n173["HEXT.werner-uniform-cn-per-genus-obstruction\nPROVED"]
+  r1(("explicit-weyl-extension\nPROVED"))
+  n7 --> r1
+  r1 --> n0
+  r2(("hastings-direct-transfer-direct-sum\nPROVED"))
+  n3 --> r2
+  n0 --> r2
+  n4 --> r2
+  n1 --> r2
+  r2 --> n2
+  r3(("density-and-semidecision\nCONJECTURED"))
+  n24 --> r3
+  n13 --> r3
+  n15 --> r3
+  n9 --> r3
+  r3 --> n10
+  r4(("open-violation-and-open-additive-complement\nPROVED"))
+  n23 --> r4
+  n8 --> r4
+  r4 --> n19
+  r5(("current-landscape\nCONJECTURED"))
+  n10 --> r5
+  n25 --> r5
+  n26 --> r5
+  n23 --> r5
+  n8 --> r5
+  n19 --> r5
+  n17 --> r5
+  n14 --> r5
+  r5 --> n20
+  r6(("atomic-moe-weyl-symmetric-self\nPROVED"))
+  n24 --> r6
+  n18 --> r6
+  n16 --> r6
+  r6 --> n25
+  r7(("product-haar-unbounded-route\nRETIRED (CONJECTURED)"))
+  n25 -.-> r7
+  r7 -.-> n26
+  r8(("complete-named-model-and-route\nCONJECTURED"))
+  n21 --> r8
+  n11 --> r8
+  n12 --> r8
+  n22 --> r8
+  n24 --> r8
+  r8 --> n26
+  r9(("product-haar-with-finite-transfers\nPROVED"))
+  n43 --> r9
+  n69 --> r9
+  n74 --> r9
+  r9 --> n27
+  r10(("dimension-split-route\nCONJECTURED"))
+  n59 --> r10
+  n81 --> r10
+  r10 --> n29
+  r11(("one-ebit-ensemble-route\nCONJECTURED"))
+  n59 --> r11
+  r11 --> n30
+  r12(("absolute-unbounded-specialization\nPROVED"))
+  n27 --> r12
+  r12 --> n32
+  r13(("unbounded-gap-route\nCONJECTURED"))
+  n43 --> r13
+  n69 --> r13
+  r13 --> n32
+  r14(("haar-purity-entropy-route\nCONJECTURED"))
+  n35 --> r14
+  r14 --> n37
+  r15(("exact-k3-parametric-route\nPROVED"))
+  n40 --> r15
+  r15 --> n41
+  r16(("exact-odd-index-kkt-route\nPROVED"))
+  n41 --> r16
+  r16 --> n42
+  r17(("realignment-route\nCONJECTURED"))
+  n35 --> r17
+  r17 --> n54
+  r18(("rank-completion-route\nCONJECTURED"))
+  n59 --> r18
+  r18 --> n54
+  r19(("complement-classification-route\nCONJECTURED"))
+  n59 --> r19
+  r19 --> n55
+  r20(("one-shot-support-route\nCONJECTURED"))
+  n59 --> r20
+  r20 --> n56
+  r21(("polar-sign-route\nCONJECTURED"))
+  n145 --> r21
+  r21 --> n56
+  r22(("product-haar-physical-purity-bootstrap\nCONJECTURED"))
+  n78 --> r22
+  n69 --> r22
+  n74 --> r22
+  r22 --> n57
+  r23(("large-gap-regularized-bootstrap\nCONJECTURED"))
+  n43 --> r23
+  n149 --> r23
+  n69 --> r23
+  n74 --> r23
+  r23 --> n57
+  r24(("finite-unbounded-route\nRETIRED (CONJECTURED)"))
+  n43 -.-> r24
+  n69 -.-> r24
+  n74 -.-> r24
+  r24 -.-> n57
+  r25(("matched-tensor-route\nCONJECTURED"))
+  n68 --> r25
+  n69 --> r25
+  n74 --> r25
+  r25 --> n57
+  r26(("explicit-tensor-stable-route\nOPEN"))
+  n39 --> r26
+  r26 --> n57
+  r27(("holographic-toy-route\nOPEN"))
+  n64 --> r27
+  r27 --> n57
+  r28(("ef-flag-route\nOPEN"))
+  n38 --> r28
+  r28 --> n57
+  r29(("noise-flag-route\nOPEN"))
+  n72 --> r29
+  r29 --> n57
+  r30(("gram-channel-correlation-route\nCONJECTURED"))
+  n35 --> r30
+  n31 --> r30
+  r30 --> n58
+  r31(("tensor-regularized-correlation-route\nCONJECTURED"))
+  n58 --> r31
+  r31 --> n59
+  r32(("fixed-partner-induction\nCONJECTURED"))
+  n49 --> r32
+  r32 --> n63
+  r33(("weak-multiplicativity\nOPEN"))
+  n70 --> r33
+  r33 --> n68
+  r34(("fixed-r-diagonal\nOPEN"))
+  n51 --> r34
+  r34 --> n68
+  r35(("hierarchical\nCONJECTURED"))
+  n63 --> r35
+  n61 --> r35
+  r35 --> n68
+  r36(("hurwitz-entropy-route\nCONJECTURED"))
+  n59 --> r36
+  r36 --> n73
+  r37(("triality-polar-route\nCONJECTURED"))
+  n75 --> r37
+  r37 --> n73
+  r38(("partial-polar-route\nCONJECTURED"))
+  n145 --> r38
+  r38 --> n75
+  r39(("exact-qubit-cost-route\nCONJECTURED"))
+  n59 --> r39
+  r39 --> n76
+  r40(("rectangular-factor-route\nCONJECTURED"))
+  n35 --> r40
+  r40 --> n76
+  r41(("universal-side-route\nCONJECTURED"))
+  n58 --> r41
+  r41 --> n76
+  r42(("factor-norm-route\nCONJECTURED"))
+  n35 --> r42
+  r42 --> n80
+  r43(("cp-polytope-entropy-route\nCONJECTURED"))
+  n58 --> r43
+  r43 --> n80
+  r44(("exact-cost-route\nCONJECTURED"))
+  n59 --> r44
+  r44 --> n81
+  r45(("polar-sign-route\nCONJECTURED"))
+  n145 --> r45
+  r45 --> n81
+  r46(("selected-line-majorization-route\nPROVED"))
+  n82 --> r46
+  n42 --> r46
+  r46 --> n83
+  r47(("centered-4096-event-plus-spectral-equivalence\nPROVED"))
+  n109 --> r47
+  n111 --> r47
+  r47 --> n102
+  r48(("centered-event-plus-spectral-equivalence\nPROVED"))
+  n110 --> r48
+  n111 --> r48
+  r48 --> n103
+  r49(("unabsorbed-planar-log-moment\nPROVED"))
+  n154 --> r49
+  n157 --> r49
+  n165 --> r49
+  n160 --> r49
+  n166 --> r49
+  n151 --> r49
+  n171 --> r49
+  n172 --> r49
+  n163 --> r49
+  n156 --> r49
+  r49 --> n109
+  r50(("reviewed-all-genus-log-moment\nPROVED"))
+  n154 --> r50
+  n170 --> r50
+  n151 --> r50
+  n171 --> r50
+  n172 --> r50
+  n163 --> r50
+  n156 --> r50
+  r50 --> n110
+  r51(("two-retained-block-route\nCONJECTURED"))
+  n115 --> r51
+  r51 --> n112
+  r52(("casimir-schmidt-route\nCONJECTURED"))
+  n35 --> r52
+  n37 --> r52
+  r52 --> n113
+  r53(("three-orientation-cover\nCONJECTURED"))
+  n112 --> r53
+  n125 --> r53
+  n130 --> r53
+  r53 --> n114
+  r54(("compact-rational-bernstein-route\nCONJECTURED"))
+  n131 --> r54
+  r54 --> n115
+  r55(("fixed-three-original-side-cover\nNUMERICAL"))
+  n143 --> r55
+  n129 --> r55
+  r55 --> n116
+  r56(("fixed-three-original-side-cover\nPROVED"))
+  n143 --> r56
+  n129 --> r56
+  r56 --> n117
+  r57(("integer-sector-two-side-cover\nCONJECTURED"))
+  n143 --> r57
+  n129 --> r57
+  r57 --> n118
+  r58(("fixed-three-original-side-cover\nNUMERICAL"))
+  n143 --> r58
+  n129 --> r58
+  r58 --> n118
+  r59(("fixed-three-original-side-cover\nCONJECTURED"))
+  n143 --> r59
+  n129 --> r59
+  r59 --> n119
+  r60(("fixed-three-original-side-cover\nPROVED"))
+  n143 --> r60
+  n129 --> r60
+  r60 --> n120
+  r61(("fixed-three-original-side-cover\nPROVED"))
+  n143 --> r61
+  n129 --> r61
+  r61 --> n121
+  r62(("orientation-conjunction\nOPEN"))
+  n118 --> r62
+  n119 --> r62
+  n120 --> r62
+  n121 --> r62
+  n116 --> r62
+  n117 --> r62
+  r62 --> n122
+  r63(("full-incidence-fixed-three-cover-scan\nNUMERICAL"))
+  n143 --> r63
+  r63 --> n122
+  r64(("depolarizing-square-route\nCONJECTURED"))
+  n37 --> r64
+  n128 --> r64
+  r64 --> n123
+  r65(("two-binary-side-block-route\nCONJECTURED"))
+  n115 --> r65
+  r65 --> n125
+  r66(("bosonic-creation-route\nCONJECTURED"))
+  n35 --> r66
+  r66 --> n126
+  r67(("fixed-binary-ternary-original-side-cover\nCONJECTURED"))
+  n143 --> r67
+  n129 --> r67
+  r67 --> n127
+  r68(("multiplicity-convex-gram-route\nCONJECTURED"))
+  n136 --> r68
+  r68 --> n128
+  r69(("shared-simplex-side-route\nCONJECTURED"))
+  n115 --> r69
+  r69 --> n130
+  r70(("gram-simplex-route\nCONJECTURED"))
+  n123 --> r70
+  r70 --> n131
+  r71(("label-sector-split-three-side-cover\nCONJECTURED"))
+  n143 --> r71
+  n129 --> r71
+  r71 --> n132
+  r72(("fixed-three-original-side-cover\nREFUTED"))
+  n143 --> r72
+  n129 --> r72
+  r72 --> n132
+  r73(("fixed-four-original-side-cover\nNUMERICAL"))
+  n143 --> r73
+  n129 --> r73
+  r73 --> n132
+  r74(("collision-relative-entropy-route\nCONJECTURED"))
+  n131 --> r74
+  r74 --> n133
+  r75(("pieri-classification-route\nCONJECTURED"))
+  n35 --> r75
+  n142 --> r75
+  n126 --> r75
+  r75 --> n134
+  r76(("certified-cube-route\nCONJECTURED"))
+  n133 --> r76
+  r76 --> n135
+  r77(("invariant-subspace-classification\nCONJECTURED"))
+  n134 --> r77
+  r77 --> n136
+  r78(("fixed-three-original-side-cover\nCONJECTURED"))
+  n143 --> r78
+  n129 --> r78
+  r78 --> n138
+  r79(("reduced-coordinate-original-side-cover\nNUMERICAL"))
+  n143 --> r79
+  n129 --> r79
+  r79 --> n139
+  r80(("fixed-three-original-side-cover\nNUMERICAL"))
+  n143 --> r80
+  n129 --> r80
+  r80 --> n140
+  r81(("orientation-conjunction\nOPEN"))
+  n138 --> r81
+  n140 --> r81
+  n139 --> r81
+  r81 --> n141
+  r82(("full-incidence-fixed-three-cover-scan\nNUMERICAL"))
+  n143 --> r82
+  r82 --> n141
+  r83(("bosonic-splitting-route\nCONJECTURED"))
+  n35 --> r83
+  r83 --> n142
+  r84(("orientation-conjunction\nOPEN"))
+  n132 --> r84
+  n127 --> r84
+  r84 --> n144
+  r85(("full-incidence-two-orientation-scan\nNUMERICAL"))
+  n143 --> r85
+  r85 --> n144
+  r86(("polar-decomposition-route\nCONJECTURED"))
+  n35 --> r86
+  r86 --> n145
+  r87(("exact-common-cycle-recursion\nPROVED"))
+  n157 --> r87
+  n156 --> r87
+  n155 --> r87
+  r87 --> n150
+  r88(("admissibility-euler-length-budget\nPROVED"))
+  n157 --> r88
+  n156 --> r88
+  r88 --> n151
+  r89(("explicit-handle-stack-route\nRETIRED (OPEN)"))
+  n85 -.-> r89
+  n71 -.-> r89
+  n160 -.-> r89
+  n157 -.-> r89
+  n159 -.-> r89
+  r89 -.-> n161
+  r90(("rooted-tree-cotree-code\nPROVED"))
+  n157 --> r90
+  n160 --> r90
+  r90 --> n166
+  r91(("explicit-fixed-boundary-move\nPROVED"))
+  n153 --> r91
+  r91 --> n168
+  r92(("normal-form-cayley-obstruction\nPROVED"))
+  n153 --> r92
+  r92 --> n169
+  r93(("repaired-rooted-two-face-map-code\nPROVED"))
+  n157 --> r93
+  n165 --> r93
+  n166 --> r93
+  n160 --> r93
+  r93 --> n170
+  r94(("rooted-two-face-map-code\nCONJECTURED"))
+  n157 --> r94
+  n160 --> r94
+  r94 --> n170
+  r95(("two-unicellular-component-split\nPROVED"))
+  n157 --> r95
+  n156 --> r95
+  r95 --> n171
+  r96(("two-unicellular-tree-cotree-code\nPROVED"))
+  n157 --> r96
+  n156 --> r96
+  n160 --> r96
+  n163 --> r96
+  n151 --> r96
+  r96 --> n172
+  classDef retiredRoute fill:#f2f2f2,stroke:#777,stroke-dasharray:5 5,color:#666
+  class r7,r24,r89 retiredRoute

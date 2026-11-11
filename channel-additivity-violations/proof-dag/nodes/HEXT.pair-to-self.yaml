@@ -1,0 +1,51 @@
+id: HEXT.pair-to-self
+role: proof
+aliases:
+- pair-to-self
+claim: >-
+  A Holevo pair gap g for finite-dimensional channels N and M can, after balancing their one-shot
+  Holevo quantities within one bit by a bounded classical side channel and taking T = N' direct-sum
+  M', be converted into chi(T tensor T) - 2 chi(T) at least g - log_2(9/4), with only constant
+  gap loss and overhead at most linear in the original logarithmic input/output dimensions.
+assessment:
+  level: PROVED
+  summary: >-
+    Independent review passed the balancing and four-block gap algebra but found that the former
+    claim overstated general dimension overhead as constant. The repaired claim now matches the
+    artifact's linear-logarithmic dimension budget and passed fresh hash-bound amendment review.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/PAIR_TO_SELF_REDUCTION_2026-08-29.md
+      kind: text
+      locator: "## 3. The two-copy same-channel defect"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/ABSOLUTE_UNBOUNDED_CHAIN_REPAIR_AMENDMENT_REVIEW_20260830.md
+      kind: review
+      locator: Finding AUR-A03
+      scope: >-
+        Independently passed the balancing identity, four-block algebra, constant gap loss and
+        repaired linear-logarithmic dimension overhead.
+      reviewed_hash: sha256:191443c198801c324a9a44716cfca413543230365292511b0924db6ce14137a2
+events:
+  general-pair-to-self-independently-proved:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      Independent amendment review passed the repaired exact claim, including constant gap loss
+      and linear-logarithmic dimension overhead.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/ABSOLUTE_UNBOUNDED_CHAIN_REPAIR_AMENDMENT_REVIEW_20260830.md
+      kind: review
+      locator: Finding AUR-A03
+  general-overhead-claim-repaired:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Replaced the false general constant-dimension-overhead clause by the proved linear-logarithmic
+      overhead bound; the equal-Holevo special case still needs no balancing channel.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/ABSOLUTE_UNBOUNDED_CHAIN_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Finding AU-IR-05

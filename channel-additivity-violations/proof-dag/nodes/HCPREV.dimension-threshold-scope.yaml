@@ -1,0 +1,108 @@
+id: HCPREV.dimension-threshold-scope
+role: constraint
+aliases:
+- threshold-scope
+claim: >-
+  The reported dimensions 182 and 183 are thresholds for particular random ensembles, parameter
+  choices, Bell witnesses and numerical/analytic criteria; they are not established global minimum
+  output dimensions for p=1 additivity violation among all finite-dimensional channels.
+assumptions:
+  bcn-random-stinespring-bell-threshold:
+    kind: external-theorem
+    statement: >-
+      In the BCN Haar-Stinespring model with fixed output dimension k, environment dimension
+      n tending to infinity, input dimension d_n asymptotic to tkn, conjugate partner and Bell
+      input, Theorem 6.3 and its proof identify k=183 as the first threshold found by their exact
+      limiting entropy criterion plus finite-range numerical study. For k<183 they exclude only
+      that Bell test in that model, not all inputs or all channels.
+    source:
+      path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/primary-sources/bcn-1305.1567.pdf
+      kind: pdf
+      locator: Theorem 6.3 and final scope remark, PDF pp. 17-22
+  llw-local-projection-bell-threshold:
+    kind: external-theorem
+    statement: >-
+      In the LLW locally normalized Haar-projection model with fixed k>=2,
+      t in (k^(-2),1), 0<p<infinity and rank ratio d_n/(nk) tending to t, Proposition 5.1 gives
+      almost-sure eventual conjugate/Bell violation under its strict criterion; Proposition 5.3
+      proves only sufficiently-large-k analytic existence, while the separately defined
+      high-precision numerical optimization reports k_high(1)=182 and explicitly does not claim
+      a universal threshold.
+    source:
+      path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/primary-sources/llw-2607.15210.pdf
+      kind: pdf
+      locator: Section 5, Proposition 5.1 and fixed-k criterion, PDF p. 13; Section 5 high-p threshold lemma and Proposition 5.3 plus finite-output-dimension numerics including k_high(1)=182, PDF p. 14; ensemble comparison, PDF pp. 3-5
+assessment:
+  level: PROVED
+  summary: >-
+    Independent primary-source review passes the exact scoped claim. BCN's theorem-level 183
+    threshold uses an exact limiting entropy expression plus a finite-range numerical study; LLW's
+    analytic result is only a sufficiently-large-k theorem, while its exact 182 value is a
+    high-precision numerical optimization. Both integers remain ensemble- and Bell-witness-specific,
+    not global minima. Repair amendment review passes the now-machine-visible exact source
+    interfaces, so the exact scoped non-universality claim is proved.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/PRIMARY_SOURCE_AUDIT_20260829.md
+      kind: text
+      locator: "## Dimension-threshold quantifiers"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/DIMENSION_THRESHOLD_SCOPE_BCN_LLW_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "## Executive verdict"
+      scope: >-
+        Independently checked the exact claim against the local BCN and LLW PDFs, including both
+        random models, all fixed/asymptotic parameters, conjugate-channel Bell witnesses,
+        probability quantifiers, numerical-versus-analytic status, and the non-global-minimum
+        boundary.
+      reviewed_hash: sha256:2d14346b2131fe7a261882d51d53a25bbbb81018ed98ed0ff9fddbc321e9580c
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/DIMENSION_THRESHOLD_SCOPE_BCN_LLW_REPAIR_AMENDMENT_REVIEW_20260830.md
+      kind: review
+      locator: "## Final amendment verdict"
+      scope: >-
+        Rechecked the repaired BCN and LLW node-level assumptions against the exact primary-source
+        regimes and locators, including the numerical-versus-analytic and non-universality limits.
+      reviewed_hash: sha256:2d14346b2131fe7a261882d51d53a25bbbb81018ed98ed0ff9fddbc321e9580c
+events:
+  dimension-threshold-scope-independently-proved:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      Independent primary-source and repair-amendment reviews passed the exact BCN/LLW scope claim
+      and its machine-visible source interfaces at the reviewed claim hash.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/DIMENSION_THRESHOLD_SCOPE_BCN_LLW_REPAIR_AMENDMENT_REVIEW_20260830.md
+      kind: review
+      locator: "## Final amendment verdict"
+  threshold-source-amendment-review-completed:
+    date: '2026-08-30'
+    type: review-completed
+    summary: >-
+      Independent amendment review passed the repaired BCN/LLW assumptions and authorized
+      proposer-side completion promotion without changing the canonical level.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/DIMENSION_THRESHOLD_SCOPE_BCN_LLW_REPAIR_AMENDMENT_REVIEW_20260830.md
+      kind: review
+      locator: "## Final amendment verdict"
+  threshold-source-interfaces-registered:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Registered the exact BCN and LLW model, asymptotic, witness, probability, numerical and
+      non-universality interfaces requested by independent source review.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/DIMENSION_THRESHOLD_SCOPE_BCN_LLW_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Finding HCP-DT-IR-07
+  threshold-source-review-completed:
+    date: '2026-08-30'
+    type: review-completed
+    summary: >-
+      Independent source review passed the exact scoped claim and identified the remaining
+      machine-visible-assumption dossier gate without changing the canonical level.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/DIMENSION_THRESHOLD_SCOPE_BCN_LLW_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "## Executive verdict"

@@ -1,0 +1,50 @@
+id: HEXT.rooted-orientable-map-handle-count
+role: proof
+aliases:
+- fixed-genus-rooted-map-polynomial-handle-count
+claim: >-
+  For E>=1, genus h and B additional marked directed corners, the number M(E,h;B) of orientable
+  rooted maps is at most 2E(E+1)16^E(2E)^B(8E)^(3h), using the standard unicellular-map
+  trisection theorem that one canonical slicing lowers genus by one and is inverted by three
+  directed-corner choices plus finitely many local interleavings.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The internal encoding passed independent review, but the exact trisection theorem and inverse local multiplicity lack an archived primary source.
+  - This abstract map count does not establish the Werner contraction-skeleton injection.
+  summary: >-
+    A dual-tree unicellular reduction followed by h trisection slicings gives exponential edge
+    cost and only polynomial-per-handle entropy.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_MINIMAL_SKELETON_MAP_COUNT_20260830.md
+      kind: text
+      locator: "### Proposition 1"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_MINIMAL_SKELETON_MAP_COUNT_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WMSC-IR-01"
+      scope: >-
+        Independently verified all internal dual-tree, chord, root and constant bookkeeping while
+        withholding promotion for the missing primary trisection source.
+frontier:
+  independent-rooted-map-count-review:
+    task: Verify the dual-tree encoding, planar chord recovery, root bookkeeping and trisection constants.
+    kind: review
+    since: 2026-08-30
+events:
+  rooted-map-conditional-review:
+    date: '2026-08-30'
+    type: review-completed
+    summary: Internal counting passed review; source-level trisection verification remains open.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_MINIMAL_SKELETON_MAP_COUNT_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WMSC-IR-01"
+  rooted-map-count-created:
+    date: '2026-08-30'
+    type: created
+    summary: Registered the proposer-side fixed-genus rooted-map count.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_MINIMAL_SKELETON_MAP_COUNT_20260830.md
+      kind: text

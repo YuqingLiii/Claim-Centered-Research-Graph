@@ -1,0 +1,70 @@
+id: HEXT.f3-affine-line-l2-maximal
+role: constraint
+aliases:
+- f3-affine-plane-line-mass-collision-bound
+- qutrit-weyl-majorization-first-cumulative
+claim: >-
+  Every probability distribution p on F_3^2 satisfies sum_x p_x^2<=M^2, where M is its largest
+  affine-line mass. Consequently the selected-line qutrit Weyl majorization holds for its first
+  cumulative-sum condition.
+assessment:
+  level: PROVED
+  caveats:
+  - This atomic node proves only cumulative condition k=1; the separate
+    HEXT.f3-weyl-selected-line-majorization node assembles the full theorem.
+  - The proof is computer-assisted; the exact current theorem, checker and certificate hashes are
+    bound by the independent review, and later changes require a new review.
+  - It does not by itself prove the Shannon inequality or a qutrit Weyl no-go.
+  summary: >-
+    The direct exact parametric-vertex proof and all 203490 active sets passed independent
+    adversarial review, closing the first majorization inequality.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/F3_AFFINE_LINE_L2_MAXIMAL_THEOREM_20260830.md
+      kind: text
+      locator: "## 3. Exact quadratic verification"
+    - path: channel-additivity-violations/tools/holevo-extensive-violation/certify_f3_affine_line_l2_maximal.py
+      kind: script
+      locator: main
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/F3_AFFINE_LINE_L2_MAXIMAL_CERTIFICATE_20260830.txt
+      kind: text
+      locator: affine-line L2 maximal inequality certified
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/F3_WEYL_SELECTED_LINE_MAJORIZATION_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Finding F3W-IR-08
+      scope: >-
+        Independently reproduced the full affine-line checker and audited the convex-vertex
+        reduction, active-set completeness, exact rank/solve logic and interval minima.
+      reviewed_hash: sha256:8cf676f4f11cef89d78d0a2c38ed918be816fe8158e701982b3816eb5f7d72d2
+events:
+  direct-proof-dag-repair:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Removed a non-load-bearing Weyl-gate premise and represented the elementary affine-line
+      certificate as the route-free direct proof it is.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/F3_WEYL_SELECTED_LINE_MAJORIZATION_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+  independent-review-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      Independent adversarial review reproduced the exact checker and passed the full k=1 claim.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/F3_WEYL_SELECTED_LINE_MAJORIZATION_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+  exact-l2-line-bound-registered:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Proved the F_3^2 affine-line L2 maximal inequality by a complete exact parametric-vertex
+      certificate, establishing cumulative condition k=1 of the selected-line majorization.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/F3_AFFINE_LINE_L2_MAXIMAL_THEOREM_20260830.md
+      kind: text
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/F3_AFFINE_LINE_L2_MAXIMAL_CERTIFICATE_20260830.txt
+      kind: text

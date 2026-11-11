@@ -1,0 +1,90 @@
+id: HCPREV.open-set-stability
+role: proof
+aliases:
+- stability-lemma
+claim: >-
+  At fixed finite input/output dimensions, every strict minimum-output-entropy or Holevo additivity
+  violation persists on a sufficiently small diamond-norm neighborhood; hence the counterexample
+  set is nonempty relatively open and has positive intrinsic Lebesgue measure in the CPTP affine
+  hull whenever a strict witness exists in those dimensions.
+assumptions:
+  audenaert-sharp-entropy-continuity:
+    kind: external-theorem
+    statement: >-
+      For density operators rho,sigma on a d-dimensional space with d>=2 and sufficiently small
+      trace distance T=(1/2)||rho-sigma||_1, |S(rho)-S(sigma)| is at most
+      T log_2(d-1)+h_2(T).
+    source:
+      path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/primary-sources/audenaert-0610146.pdf
+      kind: pdf
+      locator: Theorem 1, PDF p. 2
+  diamond-norm-channel-facts:
+    kind: model-fact
+    statement: >-
+      The diamond norm controls the output trace norm uniformly over inputs and references, is
+      multiplicative on tensor products, and equals one for every CPTP map; hence the displayed
+      tensor-product perturbation estimate follows by expansion and the triangle inequality.
+    source:
+      path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/STABILITY_AND_MEASURE_PROOF_20260829.md
+      kind: text
+      locator: "`## Tensor-product perturbation`"
+assessment:
+  level: PROVED
+  summary: >-
+    Independent repair review passed the explicit continuity bounds for both optimized quantities,
+    the one-dimensional-output edge case, and the relative-open-to-positive-measure step with all
+    load-bearing theorem and model inputs registered in this node.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/STABILITY_AND_MEASURE_PROOF_20260829.md
+      kind: text
+      locator: "## Persistence of a strict minimum-output-entropy gap"
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/STABILITY_AND_MEASURE_PROOF_20260829.md
+      kind: text
+      locator: "## Persistence of a strict Holevo gap"
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/STABILITY_AND_MEASURE_PROOF_20260829.md
+      kind: text
+      locator: "## Positive intrinsic measure"
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/PRIMARY_SOURCE_AUDIT_20260829.md
+      kind: text
+      locator: "## Source ledger"
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/TOPOLOGY_MEASURE_ADVERSARIAL_AUDIT_20260830.md
+      kind: text
+      locator: "## 3. Relative-open violation sets have positive intrinsic measure"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/FULL_SUPPORT_FIXED_DIMENSION_PROBABILITY_DICHOTOMY_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Findings HCP-FS-IR-02, HCP-FS-IR-03, and HCP-FS-IR-06"
+      scope: >-
+        Independently passed the topology and continuity mathematics but withheld completion until
+        the d=1 branch and machine-visible assumptions were added; this link records that repair gate.
+      reviewed_hash: sha256:5e48fcbc53334cc32e190854c3339a1c042116b5da998f877b152d81c3dd4310
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/FULL_SUPPORT_FIXED_DIMENSION_PROBABILITY_DICHOTOMY_REPAIR_AMENDMENT_REVIEW_20260830.md
+      kind: review
+      locator: "Findings HCP-FS-AMD-01 and HCP-FS-AMD-02"
+      scope: >-
+        Independently rechecked the d=1 repair, the Audenaert and diamond-norm interfaces, and the
+        complete fixed-dimensional openness and intrinsic-positive-measure claim.
+      reviewed_hash: sha256:5e48fcbc53334cc32e190854c3339a1c042116b5da998f877b152d81c3dd4310
+events:
+  open-set-stability-independently-proved:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      Independent repair review passed the repaired continuity dossier and its exact claim hash.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/FULL_SUPPORT_FIXED_DIMENSION_PROBABILITY_DICHOTOMY_REPAIR_AMENDMENT_REVIEW_20260830.md
+      kind: review
+      locator: "Findings HCP-FS-AMD-01 and HCP-FS-AMD-02"
+  review-blockers-repaired:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Added the missing one-dimensional-output branch and registered the exact Audenaert and
+      diamond-norm inputs identified by independent review; level remains CONJECTURED pending rereview.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/FULL_SUPPORT_FIXED_DIMENSION_PROBABILITY_DICHOTOMY_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding HCP-FS-IR-06"

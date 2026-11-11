@@ -1,0 +1,41 @@
+id: HEXT.flagged-erasure-gate
+role: obstruction
+aliases:
+- erasure-thinning-gate
+claim: >-
+  For visibly flagged erasure wrappers, the one-shot MOE cross defect is at most pq times the
+  original defect, while the exact regularized side loss is governed by a binomial-surviving-subset
+  variational functional. Generic entropy bounds give only linear leakage allowances and therefore
+  cannot certify that erasure improves a failed large-gap bootstrap inequality.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The exact thinning functional may be smaller than its generic upper bound for special channels.
+  - The claim rules out only an automatic generic erasure argument, not every noise/flag wrapper.
+  summary: >-
+    Orthogonal flag entropy gives exact one-shot, pair and all-copy formulas. The cross gap has a
+    bilinear upper bound, and the self-regularization loss lies between zero and p times the
+    original loss. A successful route now requires a channel-specific strict bound on the exact
+    thinning functional rather than a few-copy calculation.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FLAGGED_ERASURE_DAMPING_GATE_20260830.md
+      kind: text
+      locator: "## Exact revival condition"
+frontier:
+  product-haar-thinning:
+    task: >-
+      Bound the binomial-surviving-subset functional for one fixed successful product-Haar block
+      strongly enough that the wrapped cross gap dominates both wrapped self losses.
+    kind: gate
+    since: 2026-08-30
+events:
+  flagged-erasure-functional-derived:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Replaced the vague erasure-damping heuristic by exact one-shot and all-copy formulas and a
+      channel-specific revival inequality.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FLAGGED_ERASURE_DAMPING_GATE_20260830.md
+      kind: text

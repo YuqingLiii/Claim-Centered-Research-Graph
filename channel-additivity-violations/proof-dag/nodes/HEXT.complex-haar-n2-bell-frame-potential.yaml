@@ -1,0 +1,74 @@
+id: HEXT.complex-haar-n2-bell-frame-potential
+role: constraint
+aliases:
+- generic-complex-haar-two-copy-bell-mean
+claim: >-
+  For independent Haar unitaries U_1,...,U_m in U(d), d>=2, the two-copy maximally entangled
+  frame potential F has exact mean
+  E[F]=m^2+(m^4-m^2)/d^2+2m(m-1)/(d(d+1)). Hence, with
+  A=1+9(1+eta)^2/m, the Bell-input failure probability is at most
+  min(1,delta_(m,d)/(A^2-1))=O(m^3/d^2) for fixed eta, while
+  d^2<(m^2-1)/(A^2-1) implies a positive-Haar-measure set of Bell-failing tuples.
+assumptions:
+  unitary-weingarten-formula:
+    kind: external-theorem
+    statement: >-
+      Mixed moments of entries of a Haar unitary are the exact permutation sum with unitary
+      Weingarten coefficients for every balanced moment order.
+    source:
+      path: channel-additivity-violations/artifacts/holevo-extensive-violation/COMPLEX_HAAR_N2_BELL_FRAME_POTENTIAL_ANALYSIS_20260830.md
+      kind: text
+      locator: Section 2, equation (12), with the Collins--Sniady source listed under Primary sources
+assessment:
+  level: PROVED
+  caveats:
+  - >-
+    This is a proposer-side Bell-input calculation only. It neither upper-bounds the supremum over
+    all entangled two-copy inputs nor establishes any n>=3 or all-copy statement.
+  - >-
+    High-dimensional Bell safety is in probability for fixed m,eta; the positive-measure failure
+    statement below the mean threshold is not a high-probability failure theorem.
+  - >-
+    The eta parameter is inherited from the parent target with eta>0; no assertion is made for
+    values where A<=1 or the displayed probability ratio is undefined.
+  summary: >-
+    Complete equality-pattern enumeration gives an exact Haar mean and shows that the
+    real-orthogonal equal-label collision decays in the complex ensemble. The fifteen partitions,
+    exceptional moments, normalization and probability consequences passed independent review.
+    The result narrows where a generic complex-Haar n=2 counterexample could hide but leaves the
+    global optimization open.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/COMPLEX_HAAR_N2_BELL_FRAME_POTENTIAL_ANALYSIS_20260830.md
+      kind: text
+      locator: "## 1. Result"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/COMPLEX_HAAR_N2_BELL_FRAME_POTENTIAL_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: CHN2-BFP-IR-VERDICT
+      scope: >-
+        Independently audited all fifteen label partitions, both exceptional Haar moments,
+        counting, normalization, Markov bound, positive-measure inference and fixed-m quantifiers,
+        with the Bell-only boundary explicit.
+      reviewed_hash: sha256:7305265855ecacd760896568ce87cb064d824ed5bca7598edf9e70954148579e
+events:
+  independent-review-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      Independent adversarial review passed the exact complex-Haar Bell frame-potential mean and
+      its probability consequences in the inherited eta>0 Bell-input scope.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/COMPLEX_HAAR_N2_BELL_FRAME_POTENTIAL_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+  complex-haar-bell-mean-created:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Registered the exact proposer-side one-layer complex-Haar n=2 Bell frame-potential mean and
+      its high-dimensional safety and low-dimensional positive-measure bounds.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/COMPLEX_HAAR_N2_BELL_FRAME_POTENTIAL_ANALYSIS_20260830.md
+      kind: text

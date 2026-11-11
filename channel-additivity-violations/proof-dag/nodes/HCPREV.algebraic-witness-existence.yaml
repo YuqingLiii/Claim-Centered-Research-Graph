@@ -1,0 +1,163 @@
+id: HCPREV.algebraic-witness-existence
+role: proof
+aliases:
+- computable-deterministic-existence
+claim: >-
+  For every rational G>0 measured in bits, there exist finite-dimensional CPTP maps N,M with
+  algebraic Kraus entries such that
+  Delta_S(N,M):=S_min(N)+S_min(M)-S_min(N tensor M)>G, where every entropy is base two. There is
+  a Turing procedure which, given G, eventually halts and prints such N,M together with a finite
+  rational sphere-net, algebraic-spectrum and directed-entropy-interval certificate proving this
+  strict global pair inequality. No dimension, denominator, certificate-size or runtime bound is
+  asserted.
+routes:
+  density-and-semidecision:
+    premises:
+    - HCPREV.product-haar-moe-unbounded
+    - HCPREV.cayley-algebraic-channel-density
+    - HCPREV.effective-pure-state-net-moe-bounds
+    - HCPREV.algebraic-entropy-interval-verifier
+    implication: >-
+      The MOE-only product-Haar premise gives, for the requested rational G, a finite equal-weight
+      random-unitary channel/conjugate-channel pair with base-two pair defect strictly above G.
+      The Cayley-density premise and the effective Audenaert modulus from the sphere-net premise
+      yield an algebraic pair retaining a positive residual margin. Enumerate all such Cayley
+      pairs and dovetail the certified single and full joint pure-state nets with the algebraic
+      entropy-interval verifier. At every stage form
+      C=L_N+L_M-U_(N tensor M)<=Delta_S(N,M). For the successful algebraic pair these certified
+      lower bounds converge to its strict defect, so eventually C>G and the finite verifier accepts
+      and prints the pair and certificate.
+    proof:
+      sketch: >-
+        Enumerate dimensions, tuple lengths and pairs of Cayley transforms of Gaussian-rational
+        skew-Hermitian matrices. Entrywise eta-approximation gives diamond error at most 2d eta;
+        the tensor-pair error is the sum, and the base-two Audenaert moduli preserve a strict gap.
+        For each enumerated pair construct explicit stereographic rational nets with checkable
+        covering radii for both single inputs and the full joint input. Exact algebraic spectral
+        isolation and directed logarithm intervals, including 0log0, give pointwise entropy
+        intervals. Dovetail mesh and arithmetic precision until the rational certificate
+        L_N+L_M-U_joint>G is verified. The strict algebraic witness guarantees termination without
+        supplying a resource bound.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/ALGEBRAIC_WITNESS_EFFECTIVE_CERTIFICATION_REPAIR_20260831.md
+        kind: text
+        locator: "## 7. Certified lower gap and dovetail termination"
+    assessment:
+      level: CONJECTURED
+      caveats:
+      - All three effective-certification atoms are proposer-side and await independent review.
+      - The route concerns a pair MOE defect only; older Holevo/Weyl/flagged discussion is non-load-bearing.
+      summary: >-
+        The BLOCK findings have been repaired at proposer level by narrowing the existence premise
+        to the proved MOE atom and isolating all effective density, sphere-net and entropy-verifier
+        interfaces. No promotion is requested before amendment review.
+      basis:
+        evidence:
+        - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/ALGEBRAIC_WITNESS_EFFECTIVE_CERTIFICATION_REPAIR_20260831.md
+          kind: text
+          locator: "## 9. Repair and review map"
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/CLAUDE_OPUS5_CANDIDATE_HASH_BINDING_REVIEW_20260907.md
+          kind: review
+          locator: "Finding CO5-HCP-01"
+          scope: >-
+            The completed independent V6 audit reconstructed the repaired density-and-semidecision
+            route and supported it at candidate strength without promoting the route.
+          reviewed_hash: sha256:0dcb693741d9f9cd389213ea1335a447b5c620b7665d8e38c72422d2a7c62ca3
+assessment:
+  level: CONJECTURED
+  caveats:
+  - This is computable existence, not a compact matrix tuple currently exhibited in the repository.
+  - No resource bound is provided; the search is expected to be infeasible.
+  - This claim is MOE pair-only and makes no Holevo or same-channel assertion.
+  summary: >-
+    The canonical claim now fixes the base-two MOE pair quantity, gap sign and output contract.
+    Algebraic density and effective global compact optimization are exposed as separate premises;
+    the repaired dossier remains CONJECTURED pending fresh independent hash-bound review and does
+    not close the practical explicit-witness frontier.
+  basis:
+    routes:
+    - density-and-semidecision
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/ALGEBRAIC_WITNESS_EFFECTIVE_CERTIFICATION_REPAIR_20260831.md
+      kind: text
+      locator: "## 8. Scope exclusions"
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/ALGEBRAIC_WITNESS_ADVERSARIAL_AUDIT_20260830.md
+      kind: text
+      locator: "## 5. Verdict"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/CLAUDE_OPUS5_CANDIDATE_HASH_BINDING_REVIEW_20260907.md
+      kind: review
+      locator: "Finding CO5-HCP-02"
+      scope: >-
+        The completed independent V6 audit checked the repaired exact candidate claim and its
+        effective certification interfaces at candidate strength; it did not authorize promotion.
+      reviewed_hash: sha256:3743cbce35e1083e2f4417fa3ecd1aeefd5b0f3e2cafae55ffe14660e4a56a62
+frontier:
+  independent-repair-amendment-review:
+    task: >-
+      Independently review the three effective atoms, repaired route implication and repaired
+      exact claim; recompute and bind all current hashes before any level change.
+    kind: review
+    since: 2026-08-31
+  complexity-bound:
+    task: Derive any finite usable bound on dimension, denominator size, net mesh and runtime.
+    kind: gate
+    since: 2026-08-29
+events:
+  post-audit-candidate-hashes-bound:
+    date: '2026-09-07'
+    type: repair-applied
+    summary: >-
+      Replaced two active-basis links to the superseded pre-repair review by project-local links to
+      the completed V6 audit, binding the unchanged current route implication and claim hashes.
+      The older blocking review remains preserved in the historical events below, and no promotion
+      is made.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/CLAUDE_OPUS5_CANDIDATE_HASH_BINDING_REVIEW_20260907.md
+      kind: review
+      locator: "## Findings"
+  effective-certification-block-repaired:
+    date: '2026-08-31'
+    type: repair-applied
+    summary: >-
+      Narrowed the theorem to a base-two MOE pair defect, replaced the broad product-Haar premise
+      by its proved MOE atom, and isolated Cayley-density, certified sphere-net and algebraic
+      entropy-interval interfaces while preserving CONJECTURED status.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/ALGEBRAIC_WITNESS_EXISTENCE_INDEPENDENT_REVIEW_20260831.md
+      kind: review
+      locator: "Finding HCP-AW-IR-06"
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/ALGEBRAIC_WITNESS_EFFECTIVE_CERTIFICATION_REPAIR_20260831.md
+      kind: text
+      locator: "## 9. Repair and review map"
+  algebraic-witness-independent-review-blocked:
+    date: '2026-08-31'
+    type: review-completed
+    summary: >-
+      Independent review passed the narrow mathematical outline conditionally but blocked
+      promotion because the old claim was ambiguous, the premise was overbroad and the effective
+      global certification interfaces were not public.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/ALGEBRAIC_WITNESS_EXISTENCE_INDEPENDENT_REVIEW_20260831.md
+      kind: review
+      locator: "## 1. Scope and executive verdict"
+  algebraic-search-bridge-created:
+    date: '2026-08-29'
+    type: created
+    summary: >-
+      Used openness and density of Gaussian-rational unitaries to separate computable deterministic
+      existence from the still-open practical explicit-witness problem.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/ALGEBRAIC_WITNESS_EXISTENCE_PROOF_20260829.md
+      kind: text
+  certificate-direction-audited:
+    date: '2026-08-30'
+    type: review-completed
+    summary: >-
+      Rechecked Cayley density, effective entropy intervals, the net lower/upper directions,
+      strict-margin termination and algebraic Holevo reductions; computable existence survives,
+      but no practical printed witness is produced.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/ALGEBRAIC_WITNESS_ADVERSARIAL_AUDIT_20260830.md
+      kind: text

@@ -1,0 +1,106 @@
+id: HEXT.octonionic-hurwitz-support-no-go
+role: obstruction
+aliases:
+- octonion-left-multiplication-support
+- rank-eight-triality-polar-no-go
+claim: >-
+  The rank-eight octonionic left-multiplication support has maximally mixed marginals and exact
+  one-shot entanglement of formation two bits, but the partial polar sign of its singular square
+  support channel has no support-preserving inner extension. No local-unitary orientation can be a
+  Hilbert-Schmidt-positive Gram channel.
+routes:
+  hurwitz-entropy-route:
+    premises:
+    - HEXT.gram-channel-entanglement-cost-gate
+    implication: >-
+      The Hurwitz relations give a two-eigenvalue reduced spectrum for every complex coefficient
+      vector. Complex-null vectors minimize it at four equal nonzero eigenvalues, and a complete
+      null-vector ensemble proves E_F=2>log_2(8)/2.
+    proof:
+      sketch: >-
+        Polarize octonionic norm composition after making the real and imaginary coefficient
+        vectors orthogonal, then average all pairwise complex-null coefficient vectors.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/OCTONIONIC_HURWITZ_SUPPORT_GRAM_NO_GO_20260830.md
+        kind: text
+        locator: "## 1. Exact one-shot entanglement of formation"
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The exact finite-dimensional E_F calculation is complete proposer-side; it is not an E_C
+        theorem and awaits independent review.
+  triality-polar-route:
+    premises:
+    - HEXT.partial-support-polar-orientation-criterion
+    implication: >-
+      The support-channel sign is positive on an irreducible 21-dimensional spin(7) algebra and
+      negative on its seven-dimensional complement. Any support-normalizing inner extension is,
+      up to phase, real orthogonal. Matching seven negative skew directions would force a
+      reflection whose fixed so(7) has a common axis, whereas the exact positive eigenspace has
+      common kernel zero.
+    proof:
+      sketch: >-
+        Compute the integer 64-by-64 channel spectrum, identify the scalar-plus-skew support,
+        classify orthogonal involutions with seven negative skew directions, and use exact
+        rational rank to distinguish the triality spin(7) embedding from reflection-fixed so(7).
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/OCTONIONIC_HURWITZ_SUPPORT_GRAM_NO_GO_20260830.md
+        kind: text
+        locator: "## 2. Support-channel spectrum"
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/OCTONIONIC_HURWITZ_SUPPORT_GRAM_NO_GO_20260830.md
+        kind: text
+        locator: "## 3. Why the partial polar sign is not inner"
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/check_octonionic_hurwitz_support.py
+        kind: script
+        locator: main
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        Exact integer eigenspaces and common-kernel rank support the proposer-side obstruction;
+        independent adversarial review is pending.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The entanglement statement is one-shot E_F, not regularized E_C.
+  - The result covers the octonionic Hurwitz support and its local-unitary orbit only.
+  - It does not address other coherent multi-sector supports or non-Bell witnesses.
+  - The proof is proposer-side and has not received independent review.
+  summary: >-
+    A coherent scalar-plus-antisymmetric square support crosses the one-shot state threshold but
+    fails the kernel-compatible Gram-orientation gate by a triality obstruction.
+  basis:
+    routes:
+    - hurwitz-entropy-route
+    - triality-polar-route
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/OCTONIONIC_HURWITZ_SUPPORT_GRAM_NO_GO_20260830.md
+      kind: text
+      locator: "## Verdict and limitations"
+    - path: channel-additivity-violations/tools/holevo-extensive-violation/check_octonionic_hurwitz_support.py
+      kind: script
+      locator: main
+frontier:
+  independent-review:
+    task: >-
+      Independently verify the Hurwitz output spectrum, support decomposition, normalizer lemma,
+      orthogonal-involution split, and common-kernel distinction.
+    kind: review
+    since: 2026-08-30
+  other-coherent-supports:
+    task: >-
+      Search for a high-cost square support whose possibly singular polar sign admits a
+      support-preserving inner extension before testing CP factorization and all-copy side entropy.
+    kind: task
+    since: 2026-08-30
+events:
+  octonionic-near-miss-registered:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Computed the exact rank-eight Hurwitz-support entropy and excluded every local Gram-positive
+      orientation through the partial-polar and triality obstruction.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/OCTONIONIC_HURWITZ_SUPPORT_GRAM_NO_GO_20260830.md
+      kind: text
+    - path: channel-additivity-violations/tools/holevo-extensive-violation/check_octonionic_hurwitz_support.py
+      kind: script

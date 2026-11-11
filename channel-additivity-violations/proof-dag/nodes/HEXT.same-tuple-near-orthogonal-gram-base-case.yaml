@@ -1,0 +1,51 @@
+id: HEXT.same-tuple-near-orthogonal-gram-base-case
+role: proof
+aliases:
+- repeated-tuple-near-diagonal-gram-class
+claim: >-
+  On the uniform one-leg trace-zero event
+  ||C^*(X_0)||_infinity<=sqrt((A-1)/m)||X_0||_2, every rank-one coefficient with either left or
+  conjugated-right Gram off-diagonal Frobenius norm at most sqrt((A-1)/m)=3(1+eta)/m satisfies
+  ||M_U(|z><z|)||_infinity<=A/m. Deterministically, the same target holds when either Gram's
+  off-diagonal entrywise l_1 norm is at most A-1.
+assessment:
+  level: PROVED
+  caveats:
+  - The condition is sufficient only for rank-one coefficients and is not claimed necessary.
+  summary: >-
+    The exact Gram contraction turns uniform one-leg trace-zero control into a simultaneous
+    target-tight neighborhood of the diagonal-Gram subclasses without a net over coefficient
+    vectors.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SAME_TUPLE_RANK_ONE_GRAM_CONTRACTION_20260830.md
+      kind: text
+      locator: "## 4. Near-orthogonal Gram subclasses"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_GRAM_WERNER_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STGW-IR-03"
+      scope: >-
+        Independently verified both sufficient radii and the simultaneous quantifier conditional
+        on the uniform one-leg event; no necessity or general coefficient claim was reviewed.
+      reviewed_hash: sha256:f696b7476eacc99632efd2056b820b3a6cd25e010bc4360ea85dc4128dff6be9
+events:
+  near-gram-independent-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Independent review verified the deterministic and conditional near-Gram subclasses.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_GRAM_WERNER_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STGW-IR-03"
+  near-orthogonal-gram-class-created:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Registered deterministic and conditional target-tight neighborhoods of the diagonal-Gram
+      rank-one subclasses.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SAME_TUPLE_RANK_ONE_GRAM_CONTRACTION_20260830.md
+      kind: text

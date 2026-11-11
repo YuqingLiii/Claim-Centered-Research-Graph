@@ -1,0 +1,109 @@
+id: HEXT.g2-antisymmetric-square-support-no-go
+role: obstruction
+aliases:
+- g2-cross-product-support-near-miss
+- d7-antisymmetric-square-support-polar-no-go
+claim: >-
+  The seven-dimensional G2 cross-product subspace of wedge^2 C^7 has rank seven, maximally mixed
+  marginals, and exact one-shot entanglement of formation log_2(3)+1/3>log_2(7)/2, but its square
+  support channel has a polar sign that is not an inner automorphism. No local-unitary orientation
+  can therefore be a Hilbert-Schmidt-positive Gram channel.
+routes:
+  one-shot-support-route:
+    premises:
+    - HEXT.gram-channel-entanglement-cost-gate
+    implication: >-
+      G2 two-frame transitivity reduces every complex input to a e_1+i b e_2. The exact reduced
+      spectrum is two copies each of (a-b)^2/6, 1/6, and (a+b)^2/6 plus one zero; its entropy is
+      minimized at a=b. A 42-vector complex-null ensemble averages to I_7/7, proving
+      E_F(P_S/7)=log_2(3)+1/3.
+    proof:
+      sketch: >-
+        Normalize the invariant three-form to an isometry, use the G2/SU(3) and SU(3)/SU(2)
+        transitivity chain, differentiate the one-parameter entropy, and exhibit the complete
+        null-vector ensemble.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/G2_ANTISYMMETRIC_SQUARE_SUPPORT_GRAM_NO_GO_20260830.md
+        kind: text
+        locator: "## 2. Exact pure-state entropy on the support"
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The finite-dimensional one-shot calculation is complete proposer-side and exactly checked
+        at the minimizing orbit, but awaits independent review.
+  polar-sign-route:
+    premises:
+    - HEXT.support-channel-polar-orientation-criterion
+    implication: >-
+      The support channel has Hilbert-Schmidt eigenvalues 1, -1/2, 1/2, -1/6 with multiplicities
+      1,7,14,27. Its polar sign has negative multiplicity 34, whereas an involutive inner
+      automorphism of M_7 has negative multiplicity 2r(7-r)<=24. The sign is not inner, so no
+      input/output unitary orientation is Gram-positive.
+    proof:
+      sketch: >-
+        Build six times the channel from integer G2 structure constants, verify its four rational
+        eigenspace nullities exactly, and apply the inner-automorphism polar criterion.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/G2_ANTISYMMETRIC_SQUARE_SUPPORT_GRAM_NO_GO_20260830.md
+        kind: text
+        locator: "## 3. Exact spectrum of the support channel"
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/G2_ANTISYMMETRIC_SQUARE_SUPPORT_GRAM_NO_GO_20260830.md
+        kind: text
+        locator: "## 4. Polar-sign obstruction"
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/check_g2_antisymmetric_support.py
+        kind: script
+        locator: main
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        Exact integer matrix identities support the proposer-side polar obstruction; independent
+        adversarial review is pending.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The exact state result is E_F, not the regularized entanglement cost E_C required by the
+    fixed-channel bootstrap.
+  - The obstruction covers the local-unitary orbit of the G2 cross-product support only, not all
+    rank-seven proper antisymmetric supports.
+  - The result does not address nonantisymmetric supports, non-Bell witnesses, or the full-size
+    extensive question.
+  - The proof is proposer-side and has not received independent review.
+  summary: >-
+    The first natural d>=5 fermionically entangled square support crosses the one-shot state
+    threshold but fails the exact Gram-orientation gate.
+  basis:
+    routes:
+    - one-shot-support-route
+    - polar-sign-route
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/G2_ANTISYMMETRIC_SQUARE_SUPPORT_GRAM_NO_GO_20260830.md
+      kind: text
+      locator: "## Verdict and limitations"
+    - path: channel-additivity-violations/tools/holevo-extensive-violation/check_g2_antisymmetric_support.py
+      kind: script
+      locator: main
+frontier:
+  independent-review:
+    task: >-
+      Independently verify the complex-orbit normal form, the reduced-spectrum contraction, the
+      exact channel eigenspaces, and the polar-sign multiplicity obstruction.
+    kind: review
+    since: 2026-08-30
+  other-higher-dimensional-supports:
+    task: >-
+      Search for another rank-d maximally-mixed-marginal support with a tensor-stable cost surplus
+      and an inner-compatible polar sign before attempting a rectangular CP square.
+    kind: task
+    since: 2026-08-30
+events:
+  g2-near-miss-registered:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Proved an exact one-shot high-entanglement formula for the G2 cross-product support and
+      excluded every local Gram-positive orientation by polar-sign multiplicity.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/G2_ANTISYMMETRIC_SQUARE_SUPPORT_GRAM_NO_GO_20260830.md
+      kind: text
+    - path: channel-additivity-violations/tools/holevo-extensive-violation/check_g2_antisymmetric_support.py
+      kind: script

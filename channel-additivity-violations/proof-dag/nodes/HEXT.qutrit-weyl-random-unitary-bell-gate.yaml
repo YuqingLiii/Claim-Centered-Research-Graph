@@ -1,0 +1,84 @@
+id: HEXT.qutrit-weyl-random-unitary-bell-gate
+role: constraint
+aliases:
+- qutrit-weyl-autocorrelation-entropy-gate
+- qutrit-pauli-random-unitary-bell-screen
+claim: >-
+  For a qutrit Weyl random-unitary channel Phi_p, the conjugate-Bell output entropy is exactly the
+  Shannon entropy of p's group autocorrelation, while four stabilizer inputs upper-bound the
+  regularized side entropy by the smallest quotient entropy. Hence the family is controlled by an
+  explicit classical Shannon-entropy inequality on F_3^2. The corresponding Renyi-2 inequality
+  also holds globally; the Shannon inequality is resolved by the downstream selected-line
+  majorization node.
+assessment:
+  level: PROVED
+  caveats:
+  - This node proves the reduction, not the classical inequality by itself; the downstream
+    HEXT.qutrit-weyl-random-unitary-bell-no-go node assembles the no-go.
+  - The seeded simplex scan is NUMERICAL route-selection evidence only.
+  - Positive classical gate value would not itself prove a channel gap because stabilizer inputs
+    need not be globally optimal.
+  - The result covers the product conjugate-Bell witness, not non-Bell joint inputs.
+  summary: >-
+    The direct Weyl Bell/stabilizer identities, regularized product-input side bound and full-simplex
+    Renyi-2 shadow passed independent adversarial review.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/QUTRIT_WEYL_RANDOM_UNITARY_BELL_GATE_20260830.md
+      kind: text
+      locator: "## 1. Exact Bell-output entropy"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/QUTRIT_WEYL_RANDOM_UNITARY_BELL_GATE_20260830.md
+      kind: text
+      locator: "## 2. Four exact stabilizer side bounds"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/QUTRIT_WEYL_RANDOM_UNITARY_BELL_GATE_20260830.md
+      kind: text
+      locator: "## 3. Exact Renyi-2 shadow of the open Shannon inequality"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/QUTRIT_WEYL_RANDOM_UNITARY_BELL_GATE_20260830.md
+      kind: text
+      locator: "## 5. Numerical screen and exact boundary"
+    - path: channel-additivity-violations/tools/holevo-extensive-violation/screen_qutrit_weyl_bell_gate.py
+      kind: script
+      locator: main
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/QUTRIT_WEYL_RANDOM_UNITARY_BELL_SCREEN_20260830.txt
+      kind: text
+      locator: largest strictly sampled classical gate value
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/F3_WEYL_SELECTED_LINE_MAJORIZATION_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Finding F3W-IR-11
+      scope: >-
+        Independently audited the Bell-basis autocorrelation spectrum, all four stabilizer quotient
+        spectra, tensor-product regularized side bound and Renyi-2 identity.
+      reviewed_hash: sha256:7ef8f24523339c6b19222ee9b209308769a6b7e712833f4994dfb429b9b1dd0d
+events:
+  direct-proof-dag-repair:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Removed the non-load-bearing general Gram-channel premise and represented the Weyl identities
+      and Renyi-2 calculation as direct proofs.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/F3_WEYL_SELECTED_LINE_MAJORIZATION_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+  independent-review-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      Independent adversarial review passed the direct Weyl Bell/stabilizer reduction and its
+      regularized side-entropy scope.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/F3_WEYL_SELECTED_LINE_MAJORIZATION_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+  qutrit-weyl-gate-registered:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Reduced the qutrit Weyl random-unitary fixed-channel Bell route to an explicit classical
+      autocorrelation-versus-projection entropy inequality and recorded a seeded numerical screen.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/QUTRIT_WEYL_RANDOM_UNITARY_BELL_GATE_20260830.md
+      kind: text
+    - path: channel-additivity-violations/tools/holevo-extensive-violation/screen_qutrit_weyl_bell_gate.py
+      kind: script

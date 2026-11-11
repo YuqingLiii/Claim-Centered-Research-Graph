@@ -1,0 +1,77 @@
+id: HEXT.werner-support-four-surgery-obstruction
+role: obstruction
+aliases:
+- werner-n4-support-at-most-four-no-go
+claim: >-
+  On X={0,...,7}, let A=(0 5)(1 6)(2 7)(3 4), B=(0 4)(1 5)(2 6)(3 7),
+  C=(4 6)(5 7), and rho=(0 3 2 1)(4 7 6 5). This is a connected admissible N=4
+  genus-one Werner skeleton, and every fixed-rho structural move A'=Ap, B'=p^(-1)Bq,
+  C'=q^(-1)C with |supp(p) union supp(q)|<=4 satisfies #A'+#B'+#C'<=14.
+  Hence no connected structural move of union support at most four lowers its genus.
+routes:
+  normal-form-cayley-obstruction:
+    premises:
+    - HEXT.werner-boundary-surgery-normal-form
+    implication: >-
+      On X={0,...,7}, let A=(0 5)(1 6)(2 7)(3 4), B=(0 4)(1 5)(2 6)(3 7),
+      C=(4 6)(5 7), and rho=(0 3 2 1)(4 7 6 5). This is a connected admissible N=4
+      genus-one Werner skeleton, and every fixed-rho structural move A'=Ap, B'=p^(-1)Bq,
+      C'=q^(-1)C with |supp(p) union supp(q)|<=4 satisfies #A'+#B'+#C'<=14.
+      Hence no connected structural move of union support at most four lowers its genus.
+    proof:
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_BOUNDARY_PRESERVING_SUPPORT_FIVE_GATE_20260830.md
+        kind: text
+        locator: "## 5. Exact obstruction for every support of size at most four"
+    assessment:
+      level: PROVED
+      caveats:
+      - The obstruction is for this one admissible N=4 input skeleton, not every skeleton.
+      summary: >-
+        Independent review verified the input skeleton and proved the full support-at-most-four
+        cycle-sum obstruction by a separate forest/Cayley-distance argument.
+      basis:
+        counterexamples:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_BOUNDARY_PRESERVING_SUPPORT_FIVE_GATE_20260830.md
+          kind: counterexample
+          locator: "## 5. Exact obstruction for every support of size at most four"
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_BOUNDARY_PRESERVING_SUPPORT_FIVE_GATE_INDEPENDENT_REVIEW_20260830.md
+          kind: review
+          locator: "Finding WBPS5-IR-05"
+          scope: >-
+            Independently verified the physical input, first-return reduction and every support
+            at most four using the girth-five forest and Cayley triangle inequality.
+          reviewed_hash: sha256:ef280ec2c336b60ab11753de38fce1a30dda4296afce6d64b25612e0a44f1912
+assessment:
+  level: PROVED
+  caveats:
+  - This refutes universal one-step fixed-rho structural surgery only at union support at most four.
+  - It does not obstruct support five or larger, multiple preparatory moves, or the centered target.
+  summary: >-
+    One actual admissible genus-one skeleton has no genus-lowering fixed-boundary structural move
+    on four or fewer darts.
+  basis:
+    routes:
+    - normal-form-cayley-obstruction
+    counterexamples:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_BOUNDARY_PRESERVING_SUPPORT_FIVE_GATE_20260830.md
+      kind: counterexample
+      locator: "## 5. Exact obstruction for every support of size at most four"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_BOUNDARY_PRESERVING_SUPPORT_FIVE_GATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WBPS5-IR-05"
+      scope: >-
+        Independently proved the exact singleton obstruction without relying on the supplementary
+        finite histogram bins.
+      reviewed_hash: sha256:ef280ec2c336b60ab11753de38fce1a30dda4296afce6d64b25612e0a44f1912
+events:
+  support-four-obstruction-created-and-reviewed:
+    date: '2026-08-30'
+    type: created
+    summary: Registered the independently proved support-at-most-four singleton obstruction.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_BOUNDARY_PRESERVING_SUPPORT_FIVE_GATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WBPS5-IR-05"

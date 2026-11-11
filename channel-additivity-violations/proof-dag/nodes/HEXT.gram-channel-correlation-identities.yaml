@@ -1,0 +1,92 @@
+id: HEXT.gram-channel-correlation-identities
+role: constraint
+aliases:
+- gram-choi-ef-bridge
+- constrained-holevo-hidden-correlation
+claim: >-
+  For a bistochastic channel Theta, measuring the reference or output leg of its normalized Choi
+  state gives the Holevo quantity of Theta or Theta^*, respectively, constrained to maximally
+  mixed average input. For the self-adjoint Gram channel Theta=(k/d)Phi Phi^*, both directions
+  coincide; if sigma_BE is its maximally mixed Stinespring output, the hidden-correlation surplus
+  equals 2E_F(B:E)_sigma-S(E)_sigma and upper-bounds Phi's conjugate-Bell defect.
+routes:
+  gram-channel-correlation-route:
+    premises:
+    - HEXT.conjugate-bell-realignment-constraint
+    - HEXT.bell-hidden-correlation-bound
+    implication: >-
+      POVMs on the reference leg of a normalized Choi state are in bijection with input ensembles
+      averaging to the maximally mixed state; measuring the output leg gives the analogous
+      constrained quantity for the adjoint. The Gram channel is self-adjoint, so the output-side
+      direction selected by the swapped conjugate-Bell state equals the reference-side quantity.
+      A Stinespring isometry then turns the entropy infimum into entanglement of formation, and the
+      Choi purification gives 2E_F(B:E)-S(E).
+    proof:
+      sketch: >-
+        Use E_x=k p_x rho_x^T for the reference-side correspondence and
+        p_x tau_x=(Theta^*(F_x))^T/k for the output-side correspondence. Invoke
+        Theta=Theta^* for the Gram channel, pull every pure decomposition of V(I/k)V^dagger back
+        through the Stinespring isometry, and use S(J(Theta))=S(E).
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/GRAM_CHANNEL_CORRELATION_IDENTITIES_20260830.md
+        kind: text
+        locator: "## 1. The two Choi measurement directions"
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/GRAM_CHANNEL_CORRELATION_IDENTITIES_20260830.md
+        kind: text
+        locator: "## 2. Stinespring entanglement-of-formation form"
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The identities and their combination with the two premise claims have a complete
+        proposer-side elementary derivation but no independent adversarial review.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The Holevo quantity is constrained to maximally mixed average input and need not equal the
+    unrestricted one-shot Holevo capacity.
+  - The final channel defect relation is an upper bound, not an equality.
+  - Matching the conjugate-Bell measurement direction uses Gram-channel self-adjointness; for a
+    general bistochastic channel the two Choi directions involve Theta and Theta^* separately.
+  - The result screens candidates but supplies neither the CP square root nor its global side
+    minimum-entropy bound.
+  - The argument is proposer-side and has not received independent review.
+  summary: >-
+    The Choi-POVM correspondence and Stinespring decomposition correspondence give exact
+    constrained-Holevo and entanglement-of-formation identities. Together with the Gram-channel
+    representation and hidden-correlation inequality, they turn the remaining Bell route into a
+    CP-factorized entanglement-of-formation surplus problem.
+  basis:
+    routes:
+    - gram-channel-correlation-route
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/GRAM_CHANNEL_CORRELATION_IDENTITIES_20260830.md
+      kind: text
+      locator: "`Mutual information, direction matching, and environment entropy`"
+frontier:
+  cp-square-ef-surplus:
+    task: >-
+      Find or exclude a family of Gram channels Theta=(k/d)Phi Phi^* whose maximally mixed
+      Stinespring states have extensive 2E_F(B:E)-S(E) while the rectangular factors Phi retain a
+      matching global minimum-output-entropy lower bound.
+    kind: gate
+    since: 2026-08-30
+events:
+  gram-channel-ef-bridge-recorded:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Re-expressed the hidden-correlation screening functional exactly as a constrained Holevo
+      quantity and as 2E_F(B:E)-S(E) for the Gram channel's maximally mixed Stinespring state.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/GRAM_CHANNEL_CORRELATION_IDENTITIES_20260830.md
+      kind: text
+  choi-direction-repair:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Made the Choi swap and measurement direction explicit. The output-side quantity is the
+      constrained Holevo quantity of Theta^*; Gram-channel self-adjointness is the required step
+      identifying it with the Theta quantity used in the E_F formula.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/GRAM_CHANNEL_CORRELATION_IDENTITIES_20260830.md
+      kind: text

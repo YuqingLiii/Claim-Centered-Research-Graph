@@ -1,0 +1,126 @@
+id: HEXT.product-haar-physical-self-purity-multiplicativity
+role: proof
+aliases:
+- fixed-product-haar-physical-purity-gate
+claim: >-
+  There exist integers m,J,D, a fixed finite product-random-unitary block L_J with complementary
+  channel C_J, and eta>0 such that ln(m)>18,
+  J*log_2(m)/m>2*log_2(A_{J,eta}), and every n>=1 satisfies
+  sup_rho Tr[C_J^(tensor n)(rho)^2]<=(A_{J,eta}/m^J)^n, where
+  A_{J,eta}=1+(1+eta)^2((1+9/m)^J-1).
+assessment:
+  level: OPEN
+  caveats:
+  - No proof or counterexample is known for the all-copy inequality for one fixed finite tuple.
+  - >-
+    The claim concerns only physical density-operator outputs of repeated copies of the selected
+    complementary channel; it is strictly weaker than uniform completely bounded control.
+  - >-
+    The one-copy tensor-strong-convergence construction does not justify exchanging the order
+    "fix n, then increase D" with "fix D, then control every n".
+  - >-
+    At n=2 all separable inputs satisfy the target, but the generic complex-Haar entangled-input
+    case remains open. Simultaneously real/orthogonal tuples and, more generally, conjugation-
+    closed complex tuples fail by an exact Bell collision and therefore cannot establish the
+    existential generic-complex claim.
+  - >-
+    The exact centered subset expansion has a new irreducible n-body correlation at every copy
+    number. In particular, even a global n=2 proof would not control the fully centered n=3 term.
+  - >-
+    Standard pure-input epsilon nets, unrestricted replica operator norms and generic finite-level
+    de Finetti/DPS guarantees do not close global n=2. Output duality reduces the remaining problem
+    to a fixed-coefficient same-tuple two-leg strong-norm lemma.
+  summary: >-
+    This is the narrowest currently identified fixed-block gate for the product-Haar route. If it
+    holds, Renyi-2 monotonicity supplies the all-copy side-entropy rate needed for a positive
+    regularized conjugate-pair defect. The all-copy attack now gives an exact physical centered-
+    subset hierarchy and isolates an independent three-body term at n=3. Scalar 1-to-2 control,
+    unrestricted 2-to-2 spectral estimates, Kadison/Haagerup, Bell frame potentials, Montanaro's
+    Haar-subspace theorem and its deterministic PPT relaxation do not establish that hierarchy.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FULL_SIZE_SELF_LEAKAGE_PARALLEL_ANALYSIS_20260830.md
+      kind: text
+      locator: "## 6. The next lemma: physical self-purity, not complete distortion"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/PRODUCT_HAAR_PHYSICAL_SELF_PURITY_N2_ANALYSIS_20260830.md
+      kind: text
+      locator: "## 4. Exact centered two-copy decomposition"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/PRODUCT_HAAR_PHYSICAL_SELF_PURITY_ALL_COPY_ATTACK_20260831.md
+      kind: text
+      locator: "## 2. Exact all-copy centered subset expansion"
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.physical-purity-centered-subset-expansion.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing proposer-side exact reduction: the all-copy target is equivalent to one
+        centered physical subset budget, with a new irreducible term at every copy number.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.conjugation-closed-self-purity-n2-obstruction.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing physical boundary: conjugation-closed genuinely complex tuples fail at
+        n=2 under the same strict Bell-collision threshold, without deciding generic tuples.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.real-orthogonal-self-purity-n2-obstruction.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing boundary result: real/orthogonal tuples fail already at n=2, while the
+        generic complex-Haar existential claim remains undecided.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.complex-haar-n2-bell-frame-potential.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing Bell-input diagnostic: generic complex-Haar tuples pass the n=2 Bell test
+        with high probability at fixed m as d grows, but the entangled-input supremum remains OPEN.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.complex-haar-global-n2-output-dual-gate.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing exact reduction: global n=2 can be dualized to a fixed m^4-dimensional
+        scalar coefficient sphere, leaving the same-tuple strong-norm node OPEN.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.same-tuple-two-leg-scalar-strong-norm.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing frontier cross-reference: this fixed-Y convergence statement is the
+        narrowest identified global n=2 lemma, and would not by itself settle all copy numbers.
+frontier:
+  generic-complex-n2-entangled-inputs:
+    task: >-
+      Prove the exact centered-correlation inequality (28) for every entangled pure input of one
+      selected complex tuple, or certify a physical Gram counterexample. Passing n=2 would still
+      leave n>=3 and all-copy control open.
+    kind: gate
+    since: 2026-08-30
+  prove-or-refute-physical-purity:
+    task: >-
+      Prove the centered subset budget for one fixed successful finite tuple at every n, including
+      a conditional bound for the new fully centered n-body term after all proper marginals are
+      fixed, or construct a physical density-operator output that violates the budget.
+    kind: gate
+    since: 2026-08-30
+events:
+  all-copy-centered-hierarchy-registered:
+    date: '2026-08-31'
+    type: repair-applied
+    summary: >-
+      Derived the exact all-copy centered subset expansion, isolated the first irreducible n=3
+      correlation, recorded why standard norm/Kadison/frame-potential routes do not control the
+      hierarchy, and extended the physical n=2 failure boundary to conjugation-closed complex
+      tuples. The generic complex existential claim remains OPEN.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/PRODUCT_HAAR_PHYSICAL_SELF_PURITY_ALL_COPY_ATTACK_20260831.md
+      kind: text
+      locator: "## 9. Status boundary and next action"
+  two-copy-gate-reduced:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Derived exact physical Gram and centered-correlation formulations, proved the n=2 target for
+      separable inputs, and isolated entangled complex inputs as the first unresolved case.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/PRODUCT_HAAR_PHYSICAL_SELF_PURITY_N2_ANALYSIS_20260830.md
+      kind: text
+  physical-purity-gate-created:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Replaced broad completely bounded or uniform O(1)-leakage targets by the exact physical-output
+      purity multiplicativity statement sufficient for a fixed positive regularized defect.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FULL_SIZE_SELF_LEAKAGE_PARALLEL_ANALYSIS_20260830.md
+      kind: text

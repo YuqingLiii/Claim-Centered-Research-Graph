@@ -1,0 +1,65 @@
+id: HEXT.llw-critical-scaling-one-bit-gate
+role: obstruction
+aliases:
+- llw-critical-one-bit-gate
+claim: >-
+  In the Leung--Lovitz--Wu projection-induced output-body and conjugate Bell-witness mechanism,
+  under the critical scaling t_k=c/k^2 with fixed c>1, the apparent logarithmic Bell entropy saving
+  is cancelled by a feasible one-channel output spike, and the limiting certified von Neumann MOE
+  gap has limsup at most h_2(1/c), hence at most one bit.
+assumptions:
+  llw-output-body:
+    kind: external-theorem
+    statement: >-
+      For fixed k and t>1/k^2, the random projection-induced channel output sets converge almost
+      surely to K_{k,t}, whose eigenvalues are normalized u in D_{k,t} with sum_i c_t(u_i)<=1/k;
+      minimum output von Neumann entropy converges to the minimum over this body.
+    source:
+      path: channel-additivity-violations/artifacts/holevo-extensive-violation/primary-sources/leung-lovitz-wu-2607.15210.pdf
+      kind: text
+      locator: Theorem 3.1 and Corollary 3.2
+  llw-bell-spectrum:
+    kind: external-theorem
+    statement: >-
+      For fixed k and t>1/k^2, the conjugate-pair Bell output converges almost surely to the
+      isotropic spectrum specified by r_{k,t}=k^2(1-t)/((k^2-1)^2t+1-t).
+    source:
+      path: channel-additivity-violations/artifacts/holevo-extensive-violation/primary-sources/leung-lovitz-wu-2607.15210.pdf
+      kind: text
+      locator: Theorem 4.1 and Corollary 4.2
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The bound concerns the LLW limiting output body and Bell witness, not arbitrary channels or inputs.
+  - This direct matching-spike derivation covers fixed c>1; arbitrary t=t_k is covered separately
+    by HEXT.isotropic-bell-one-bit-cap.
+  - The critical-scaling calculation is proposer-side and has not received independent review.
+  summary: >-
+    An exact angular parametrization constructs a feasible one-channel output with one eigenvalue
+    tending to 1/c and diffuse mass 1-1/c over k-1 entries. The Bell output has the same exceptional
+    mass but spreads its diffuse part over k^2-1 entries, so twice the side entropy minus the Bell
+    entropy loses its log-k term and is at most h_2(1/c)+o(1).
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/LLW_CRITICAL_SCALING_ONE_BIT_GATE_20260830.md
+      kind: text
+      locator: "## 4. Cancellation of the apparent extensive term"
+events:
+  critical-scaling-gate-recorded:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Closed the t=c/k^2 quantifier gap in the LLW audit and proved that its apparent logarithmic
+      Bell saving is cancelled by a one-channel output of matching spike geometry.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/LLW_CRITICAL_SCALING_ONE_BIT_GATE_20260830.md
+      kind: text
+  uniform-boundary-gate-closed:
+    date: '2026-08-30'
+    type: route-retired
+    summary: >-
+      A separate steering-and-entropy theorem now gives a uniform one-bit cap for every LLW
+      admissible k,t, so no unexamined t=t_k scaling remains in the isotropic Bell route.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/ISOTROPIC_BELL_ONE_BIT_CAP_20260830.md
+      kind: text

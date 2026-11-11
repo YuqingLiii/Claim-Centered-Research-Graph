@@ -1,0 +1,119 @@
+id: HEXT.pauli-gram-high-cost-side-obstruction
+role: obstruction
+aliases:
+- qubit-gram-cost-surplus
+- pauli-gram-rectangular-factor-gate
+claim: >-
+  The Pauli channel with transfer spectrum (1,0,1/2,1/2) is Hilbert-Schmidt positive, has a
+  maximally mixed Stinespring state with strict entanglement-cost surplus, and admits an explicit
+  M_4-to-M_2 rectangular CPTP Gram factor. Nevertheless every rectangular factor has
+  2 barS_min(Phi)<S(J(T))=3/2, so this candidate cannot yield a conjugate-Bell defect.
+routes:
+  exact-qubit-cost-route:
+    premises:
+    - HEXT.gram-channel-entanglement-cost-gate
+    implication: >-
+      Strong minimum-output-entropy additivity for unital qubit channels, together with antipodal
+      minimizing ensembles, gives E_C of the maximally mixed Stinespring state exactly equal to
+      S_min(T). The chosen Pauli probabilities then give a positive 2E_C-S(E) surplus.
+    proof:
+      sketch: >-
+        Use HJW to lower-bound every tensor-power convex roof by S_min(T^n), King to make that
+        nS_min(T), and a product antipodal ensemble for equality.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/PAULI_GRAM_HIGH_COST_SIDE_ENTROPY_OBSTRUCTION_20260830.md
+        kind: text
+        locator: "## 1. Exact entanglement cost of the maximally mixed Stinespring state"
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/primary-sources/king-unital-qubit-additivity-quant-ph-0103156.pdf
+        kind: pdf
+        locator: "page 4, Theorem 1"
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The all-copy additivity premise is primary-sourced; the HJW and antipodal-ensemble
+        specialization is complete proposer-side and awaits independent review.
+  rectangular-factor-route:
+    premises:
+    - HEXT.conjugate-bell-realignment-constraint
+    implication: >-
+      Measuring four orthogonal input labels and preparing the pure qubit states +y,-y,+z,-z
+      gives a channel Phi_0 with T=(2/4)Phi_0 Phi_0^*.
+    proof:
+      sketch: >-
+        Evaluate the adjoint on the Pauli basis and compose once more; the transfer eigenvalues are
+        exactly (1,0,1/2,1/2).
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/PAULI_GRAM_HIGH_COST_SIDE_ENTROPY_OBSTRUCTION_20260830.md
+        kind: text
+        locator: "## 2. Explicit rectangular CP factor"
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The explicit finite Kraus/measure-prepare construction is complete proposer-side but has
+        not received independent review.
+  universal-side-route:
+    premises:
+    - HEXT.gram-channel-correlation-identities
+    implication: >-
+      For every rectangular factor, the Gram identity fixes the Hilbert-Schmidt norm of
+      Phi^*(sigma_y) to sqrt(d/2). Its operator norm is therefore at least 1/sqrt(2), producing a
+      pure input whose qubit output entropy is strictly below 3/4 bit. The Bell output entropy is
+      3/2 bits, so even the one-shot side sum is too small.
+    proof:
+      sketch: >-
+        Pair the Gram equality with sigma_y, compare Hilbert-Schmidt and operator norms, and use
+        the resulting Bloch coordinate to upper-bound output entropy.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/PAULI_GRAM_HIGH_COST_SIDE_ENTROPY_OBSTRUCTION_20260830.md
+        kind: text
+        locator: "## 3. Universal side-entropy obstruction for every rectangular factor"
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The dimension-uniform factor obstruction is a complete elementary proposer-side proof but
+        has not received independent adversarial review.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - This excludes one exact qubit Gram channel, not every qubit-output Gram channel.
+  - The exact E_C formula uses strong additivity specific to unital qubit channels.
+  - The proof concerns the product Bell certificate; it does not bound arbitrary collective joint inputs.
+  - The proof is proposer-side and has not received independent review.
+  summary: >-
+    The example passes Gram positivity, exact regularized entanglement cost, and rectangular CP
+    factorability, isolating the factor's side entropy as an independent and decisive obstruction.
+  basis:
+    routes:
+    - exact-qubit-cost-route
+    - rectangular-factor-route
+    - universal-side-route
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/PAULI_GRAM_HIGH_COST_SIDE_ENTROPY_OBSTRUCTION_20260830.md
+      kind: text
+      locator: "## Gate verdict"
+frontier:
+  higher-output-survivor:
+    task: >-
+      Search for an output dimension at least three where a positive-cost Gram channel has a
+      rectangular factor whose global side entropy remains above half the Bell entropy.
+    kind: task
+    since: 2026-08-30
+events:
+  pauli-gram-near-miss-recorded:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Constructed an exact qubit Gram channel that passes the cost and CP-factor gates, then proved
+      that every rectangular factor fails the side-entropy requirement.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/PAULI_GRAM_HIGH_COST_SIDE_ENTROPY_OBSTRUCTION_20260830.md
+      kind: text
+  qubit-classification-generalized:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      The open qubit-family classification generated by this example was discharged by
+      HEXT.qubit-output-gram-bell-no-go; only output dimension at least three remains live.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/QUBIT_OUTPUT_GRAM_BELL_NO_GO_20260830.md
+      kind: text
