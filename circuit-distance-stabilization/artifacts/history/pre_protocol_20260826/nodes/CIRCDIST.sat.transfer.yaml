@@ -1,0 +1,273 @@
+id: CIRCDIST.sat.transfer
+role: proof
+aliases:
+- SAT-TRANSFER
+claim: >-
+  For each fixed legal single-round single-ancilla CSS schedule M under the stated ideal temporal
+  boundaries and unit-fault model, there is an explicitly constructible finite min-plus transfer
+  system (u,A,v) such that d_R(M) = u^T min-plus A^R min-plus v for every R, with the two CSS
+  sectors, boundary conditions, unreachable states, and logical terminal condition represented
+  exactly. The d_R so computed is moreover invariant under the counting and detector-split
+  conventions the surrounding route composes across: by Lemma 2.9 it is the same whether a witness
+  is counted by its number of elementary faults, collisions permitted, or by its number of faulty
+  locations; and in each CSS sector separately it is the same whether detectors are taken to be
+  the Definition-2.7 set or the canonical detector space of Definition 3.5, this being Proposition
+  3.7 in the Z-sector and its mirror under section 8.1 in the X-sector. Definition 3.5 is named
+  here as a specific space; that it is the detector/observable split the frozen 公共定义 intends is a
+  lead decision recorded in the caveats, not a result proved here.
+assumptions:
+  a1-bcoq-3112:
+    kind: external-theorem
+    statement: 'A1: BCOQ (Baccelli-Cohen-Olsder-Quadrat, Synchronization and Linearity) Theorem
+      3.112 — min-plus matrix powers are eventually periodic — is the eventual-periodicity
+      input to the d_R = u A^R v representation''s limit behaviour. Cited as published; NOT
+      independently re-derived in this project (transfer caveat C6). Registered 2026-08-23
+      after the wave-35 adjudication flagged it as load-bearing but machine-invisible (it
+      lived only in a caveat string). Note: the three bridge clauses folded 2026-08-23 are
+      A1-FREE (finite-R statements, per the wave-33b review §5).'
+    source:
+      note: 'Baccelli, Cohen, Olsder, Quadrat, "Synchronization and Linearity" (Wiley 1992),
+        Theorem 3.112; no local copy in this repository.'
+assessment:
+  level: CERTIFIED*
+  caveats:
+  - 'T-G3 is closed BY DECISION, not derivation: the lead ratified Definition 3.5 (verbatim
+    "批准 Definition 3.5, 缓解条款不批") as the intended reading of the frozen 公共定义; the
+    mitigation clause was REFUTED by explicit counterexample and withdrawn; the installed safe
+    condition is span{D_b,r} within D-prime within D (re-verified independently at its
+    tightest endpoint on 3 codes). The 2026-08-23 bridge fold makes this caveat bite on the
+    CLAIM and not only on the document: the claim now names Definition 3.5, and its certified
+    invariance holds for the ordered pair (Definition 2.7, Definition 3.5) ONLY — it is NOT
+    convention independence in general, and fails for other admissible splits, e.g. D-prime =
+    span{D_b,r} + span{D_a,r} + span{P_X + lambda} on Steane+redundant-X, where d^2.7 = 2
+    while d^D-prime = 3 at R = 2 and 4 at R = 3 (dimension quintuple 28/22/21/12/20,
+    recomputed independently by the wave-33b re-bind review, which also confirmed
+    d^D = d^2.7 = 2 at every R on that same instance).'
+  - T-G1/G2/G4/G5 remain open minors, per the proof's own residual list.
+  - 'The Y-projection step needs the uniform unit-cost Pauli fault model (公共定义); a
+    non-uniform cost model would reopen it. The 2026-08-23 bridge fold extends this dependency
+    to the newly certified Lemma-2.9 clause: the collision merge lowers the count only under
+    one-unit-per-location costing, and it is available at all only because Definition 2.8
+    gives every location a full Pauli GROUP (T-G1, imported not re-derived). Under a non-group
+    per-location fault set the two counts come apart — witnessed on Steane/NI/R=2 by 3
+    explicit effects of multiset cost 2 and configuration cost >= 3, each of which costs
+    exactly 1 location under Definition 2.8.'
+  - 'Evidence scope vs statement scope: the theorem is stated for arbitrary legal single-round
+    single-ancilla CSS schedules, but the computational evidence covers d = 3, k = 1, R <= 3
+    (one k = 2 instance for the fault dictionary only), no qLDPC instance; the general case
+    rests on the reviewed derivations. For the three bridges folded into the claim on
+    2026-08-23 the evidence is wider and independent: 110 mechanism-route instances (exact F2
+    identities) and 114 direct minimum-weight instances over 8 codes and 3 schedule families,
+    R <= 3, both sectors, including 4 codes with BOTH generating sets dependent (2 of them
+    constructed by the reviewer) and BB [[18,4,4]] at k = 4 — where the minimum-weight
+    conclusion, not merely the hypothesis, was verified in both sectors.'
+  - The §11.4 program digest declared in the proof §0 is superseded by the amendment's repaired
+    program (f3dfa1f9...); the original defective program hashes to the document's own declared
+    digest, so the defect was in the published hashed code, not transcription.
+  - External assumption A1 (BCOQ Thm 3.112, min-plus eventual periodicity) is cited as
+    published; not independently re-derived here.
+  summary: 'CLAIM EXTENDED 2026-08-23 (wave 33b): the three route bridges (Lemma 2.9 count
+    invariance; Prop 3.7 Z-sector detector-split invariance; §8.1 X-sector mirror) folded into
+    the certified text and hash-bound to the wave-33b re-bind review (8fb50ff0...), with
+    Definition 3.5 named as a specific space and its intended-reading status left to the
+    recorded lead decision. History: promoted CONJECTURED -> CERTIFIED* 2026-08-23: the general proof
+    (artifacts/circdist_sat_transfer_proof_20260823.md, wave 7) passed its claim-level
+    adversarial review (core theorem independently derived by the reviewer before reading,
+    sealed, exact match; FURTHER-REPAIR narrow), Amendment 1 (wave 14, SHA 6c7a8fb7...) applied
+    all four queued repairs with no deviations, and the focused independent re-review (wave 15,
+    artifacts/circdist_sat_transfer_rereview_20260823.md) CLEAN-PASSED it with a fully
+    independent method (own propagator and min-plus system built from the frozen definitions,
+    validated against Table 11.3 before use, 24/24 vs own brute force): T-G3 counterexample
+    confirmed (d^2.7 = 2 vs d^D-prime = 3 at R=2, 4 at R=3; quintuple 28/22/21/12/20), v_kappa
+    confirmed (printed formula 0/16, corrected 16/16), block-mirror 6/6 relabelled rows
+    verified, no silent extra change across 11 governing edits. The re-review adjudicated the
+    amendment''s "pinned to kappa = 0" sharpening as substantively right but literally too
+    strong (argmin has 3-8 elements; commentary-level precision note only). That wave-15
+    clearance bound the pre-fold claim (eb50730d...) and now sits in basis.evidence; the
+    current binding is the wave-33b review.'
+  basis:
+    reviews:
+    - path: artifacts/circdist_transfer_bridgefold_20260823.md
+      kind: review
+      scope: Focused re-bind review folding the three route bridges into the certified claim —
+        Lemma 2.9 re-derived with its two hypotheses isolated (F2-linearity; per-location
+        group closure) and Prop 3.7 recast as seven exact F2 identities on the Lemma-3.1
+        projection, the §8.1 mirror verified by direct construction of C_R^X(M); own harness
+        (no shared code) calibrated on the T-G3 quintuple then 110/110 identity instances +
+        114/114 + 114/114 direct minimum-weight checks over 8 codes incl. BB [[18,4,4]] where
+        the conclusion itself was verified (signature-grouped exact search, closing wave-27's
+        declared limit); licenses CERTIFIED* on the folded claim with all six caveats
+        surviving (C1/C3 sharpened); it did not re-adjudicate Theorem T's core, which rests on
+        the earlier chain.
+      locator: Section 6
+      reviewed_hash: sha256:8fb50ff01b6465e9c660fc61292958828f448dd740757a8945deae1e107c7ad3
+    runs:
+    - path: artifacts/circdist_sat_recon_20260820.md
+      kind: run
+      scope: Exact min-plus implementation for four rotated-surface-code d=3 schedules, compared
+        with an independent Stim detector-model calculation for R=1 through 10.
+      result: Every transfer sequence was constant (2 or 3 according to schedule) and agreed with
+        the independent calculation throughout the tested window.
+    evidence:
+    - path: artifacts/circdist_sat_recon_20260820.md
+      kind: text
+    - path: artifacts/circdist_sat_transfer_rereview_20260823.md
+      kind: text
+frontier:
+  task-002:
+    task: Package the implementation and the d=3 comparison as a reproducible command/output
+      record whose search space, code/schedule inputs, and agreement criterion are explicit.
+    kind: task
+    since: '2026-08-22'
+events:
+  amendment1-2026-08-23:
+    date: '2026-08-23'
+    type: repair-applied
+    summary: 'Wave-14 append-only Amendment 1 landed
+      (artifacts/circdist_sat_transfer_amendment1_20260823.md, SHA-256 6c7a8fb7...): all four
+      queued repairs applied + verified, no deviations. (1) T-G3(a): lead ratification quoted
+      verbatim, mitigation withdrawn, reviewer''s corrected condition span{D_{b,r}} within
+      D-prime within D installed with derivation; counterexample recomputed (d^2.7 = 2 vs
+      d^D-prime = 3 at R=2, 4 at R=3; R=3 dimensions 28/22/21/12/20 match the review exactly);
+      propagated to the T-G3 closing sentence, §12 preamble, §13 residual list. (2) Remark 6.5:
+      (A_kappa, v_kappa) installed; author''s run shows printed formula 0/16, corrected v_kappa
+      16/16 matching the review row for row — REFINEMENT: the original formula is not merely
+      imprecise, it is pinned to kappa = 0 and returns the unmodified model''s value. (3)
+      Block-mirror labels: build() replaced by circuit-mirroring; 6/6 block rows shown
+      mis-sourced (interleaved already correct); 48/48 values reproduce. (4) F4/F5 cosmetics.
+      HONEST LIMITS recorded in the amendment §6: the author''s harness imports the document''s
+      own simulator (not model-independent — the re-review should use an independent method);
+      the defective §11.4 program hashes to the document''s own declared hash (defect in the
+      published code, not a transcription slip); the node YAML hash drifted from the proof §0
+      declaration via two append-only events (expected trip-wire behaviour, recorded). Remaining
+      gate: focused independent re-review of this amendment, then promotion.'
+    sources:
+    - path: artifacts/circdist_sat_transfer_amendment1_20260823.md
+      kind: text
+  tg3-lead-ratification-2026-08-23:
+    date: '2026-08-23'
+    type: repair-applied
+    summary: 'LEAD DECISION (verbatim: "批准 Definition 3.5, 缓解条款不批"): Definition 3.5 —
+      detectors are the parity quantities whose value is deterministic regardless of the prepared
+      logical basis state — is RATIFIED as the intended reading of the frozen 公共定义, together
+      with 3.6/3.7 (the review confirmed Def 2.7''s Z-detectors span its Z-half exactly, so no
+      computed value changes). The MITIGATION ("any D between Def-2.7 and V leaves the theorem
+      intact") is REJECTED, per the review''s explicit counterexample (d = 2 vs 3/4 on
+      Steane+redundant-X); the corrected safe condition is D-prime within D (the 3.5 space), as
+      supplied by the reviewer. T-G3 is hereby closed definitionally; the pending transfer
+      amendment must cite this ratification and install the corrected condition.'
+    sources:
+    - path: artifacts/circdist_sat_transfer_review_20260823.md
+      kind: text
+  transfer-review-2026-08-23:
+    date: '2026-08-23'
+    type: repair-applied
+    summary: 'Adversarial review (artifacts/circdist_sat_transfer_review_20260823.md):
+      FURTHER-REPAIR, narrow — core theorem INDEPENDENTLY CONFIRMED (reviewer derived Sigma, A,
+      u, v and the round constraint before reading, sealed to scratchpad, exact match).
+      Sufficiency CONFIRM with w = 2 shown FORCED by the model (378720 detector predictions, 0
+      mismatches, incl. interleaved + dependent-generator); lifting CONFIRM with GAP-AT-Remark-6.5
+      (the no-D_{b,0} matrix family is misquantified — v must be kappa-dependent; doc formula
+      wrong 16/16, reviewer''s corrected v_kappa right 16/16); fault dictionary CONFIRM
+      strengthened by a k = 2 instance; section 9 CONFIRMED non-circular; numerics 48/48
+      reproduced with a 6/16 row-labelling defect (values unchanged). T-G3 adjudication for the
+      LEAD: Definitions 3.5/3.6/3.7 CONFIRMED well-posed and exact — RATIFY; the mitigation
+      ("any D between Def-2.7 and V") REFUTED by explicit counterexample (d^2.7 = 2 vs d^D-prime
+      = 3,4; correct hypothesis is D-prime within D, not within V) — DO NOT RATIFY. Repairs
+      queued: T-G3(a), Remark 6.5 v_kappa, block-mirror labels, two cosmetics.'
+    sources:
+    - path: artifacts/circdist_sat_transfer_review_20260823.md
+      kind: text
+  transfer-proof-2026-08-23:
+    date: '2026-08-23'
+    type: repair-applied
+    summary: 'Wave-7 general proof landed (artifacts/circdist_sat_transfer_proof_20260823.md,
+      1486 lines), all three parts at CONJECTURED with complete derivations: (1) state space
+      Sigma = F2^n/S_X per sector proved legitimate and SUFFICIENT (Lemma 6.4 — no extra
+      measurement/logical bookkeeping needed, a w=2 detector-window fact that fails for w>2),
+      fault dictionary well-defined/round-independent/finite; recon corrected twice (2^k
+      self-loops not 2^{2k}; "unreachable states" vacuous). (2) Both correspondence directions
+      proved, with u = 1_[0] and v DERIVED from the r=0 and r=R instances of criterion (W); the
+      boundary quantified (without D_{b,0} the object is a matrix FAMILY over F2^B). (3)
+      d_R = u (min-plus) A^R v as a theorem, both sectors block-diagonal; eventual constancy via
+      BCOQ Thm 3.112; section 9 re-derives the certified window theorem from the algebra alone
+      (recorded as corroboration, not mutual certification). S3-prime DERIVED in stronger form.
+      LOCATED GAP T-G3: d_circ depends on the detector-space complement choice — closed by
+      proposed Definition 3.5 (parities independent of the prepared logical basis state) with a
+      LEAD RATIFICATION sub-claim (is this the 公共定义 intent?) and a mitigation (any D between
+      Def-2.7 and V leaves the theorem intact). Open minors T-G1/G2/G4/G5 honestly listed.
+      NUMERICAL: 48/48 transfer-vs-direct values, 16/16 instances (incl. non-graph-like and
+      dependent-generator codes, interleaved schedules), 18/18 parity closed forms; scope
+      excludes d >= 5, k > 1, qLDPC. Promotion gate: independent claim-level review.'
+    sources:
+    - path: artifacts/circdist_sat_transfer_proof_20260823.md
+      kind: text
+  created-2026-08-22:
+    date: '2026-08-22'
+    type: created
+    summary: Split the finite-state/min-plus obligation out of the conservatively revised fourth
+      question so its general proof is not conflated with finite numerical corroboration.
+    sources:
+    - path: research/circdist/notes/SAT_RESCOPE_20260822.md
+      kind: text
+    - path: artifacts/circdist_sat_recon_20260820.md
+      kind: text
+  promoted-certified-2026-08-23:
+    date: '2026-08-23'
+    type: level-change
+    from: CONJECTURED
+    to: CERTIFIED*
+    summary: 'Wave-15 focused independent re-review CLEAN-PASS
+      (artifacts/circdist_sat_transfer_rereview_20260823.md): all four Amendment-1 repairs
+      conform (verbatim quotes, 11 governing edits all traceable, no silent change), and the
+      two computational repairs re-verified with a FULLY INDEPENDENT method (own propagator, no
+      code shared with the document, validated on Table 11.3 incl. the ilv1 transposition,
+      24/24 vs own brute force): T-G3 counterexample d^2.7 = 2 vs d^D-prime = 3/4 with
+      dimension quintuple 28/22/21/12/20; v_kappa printed 0/16 vs corrected 16/16; block-mirror
+      6/6; plus an extra endpoint probe the amendment did not run (span{D_{b,r}} alone, 3
+      codes). Promotion executed by the dispatcher exactly as licensed: CERTIFIED* (not
+      PROVED), hash-bound eb50730d..., caveat set installed as licensed (T-G3
+      closed-by-decision; T-G1/G2/G4/G5; Y-projection cost model; evidence-vs-statement scope;
+      superseded program digest; A1 external). Frontier task-001 (general proof) discharged by
+      the proof + review + amendment + re-review chain and removed; task-002 (reproducible
+      packaging) remains.'
+    sources:
+    - path: artifacts/circdist_sat_transfer_rereview_20260823.md
+      kind: review
+      locator: Verdict
+  bridge-fold-2026-08-23:
+    date: '2026-08-23'
+    type: claim-revised
+    summary: 'Campaign-5 wave 33b (lead-authorized; 33a plan-mode-interrupted, first 33b run
+      lost to an API error — both no-fault, booked): the three route bridges folded into the
+      certified claim per the blessed text (hash 8fb50ff0..., installed as a >- block scalar
+      per the reviewer''s install note — the text contains ": "). The folded clause names
+      Definition 3.5 explicitly (guidance (i): the by-decision closure stays visible) and
+      certifies (a) Lemma 2.9 count invariance, (b) Prop 3.7 Z-sector detector-split
+      invariance, (c) the §8.1 X-sector mirror. Review evidence: 110/110 F2-identity
+      instances, 114/114 + 114/114 direct minimum-weight checks, BB [[18,4,4]] conclusion
+      verified in both sectors via signature-grouped exact search (2340 faults -> 109
+      signatures — wave-27''s "infeasible" limit closed); at BB, 54422 of 240917
+      minimum-weight Def-2.7 witnesses are detected by the canonical space and the projection
+      repairs all of them, showing the bridge is load-bearing, not vacuous. LEVEL STAYS
+      CERTIFIED* as licensed (folded claim strictly stronger; split fixed by decision; scope;
+      T-G1; A1); C1 and C3 SHARPENED per the review §5 (the claim''s "invariant under
+      detector-split conventions" holds for the ordered pair (2.7, 3.5) ONLY). Consequence
+      for the sat root: R-C4''s (a)/(b)/(c) proposer-level flags are dischargeable at wave
+      35; R-C4''s by-decision clause must NOT be read as discharged — the reviewer recommends
+      narrowing R-C4 to that clause with the D-prime counterexample. Old claim (eb50730d...)
+      preserved here; prior re-review demoted to evidence.'
+    sources:
+    - path: artifacts/circdist_transfer_bridgefold_20260823.md
+      kind: review
+      locator: Section 6
+  a1-registered-2026-08-23:
+    date: '2026-08-23'
+    type: repair-applied
+    summary: 'External assumption A1 (BCOQ Thm 3.112) registered as a node-level assumption per
+      the §2 amendment, on the wave-35 adjudication''s machine-visibility flag; caveat C6
+      unchanged (it remains the honest not-re-derived note). Claim untouched (8fb50ff0).'
+    sources:
+    - path: artifacts/circdist_sat_root_proved_adjudication_20260823.md
+      kind: review
+      locator: Section 6

@@ -1,0 +1,380 @@
+id: CIRCDIST.sat
+role: outcome
+aliases:
+- R-SAT
+- R-STAB
+claim: >-
+  For a fixed legal single-round single-ancilla CSS syndrome-extraction schedule M under ideal
+  initialization and final data readout, let d_R(M) be the circuit distance after R verbatim
+  repetitions of M, taken as the minimum over the two CSS memory sectors, d_infinity(M) = lim_{R
+  to infinity} d_R(M), and R_stab(M) = min{R_0 : d_R(M) = d_infinity(M) for all R >= R_0}. Give a
+  finite-state min-plus representation of d_R, prove an explicit finite-window theorem and
+  algorithm deciding (d_infinity,R_stab), compute or rigorously bound that pair for a standard
+  surface-code schedule, a legal hook-misaligned surface-code schedule, and at least one qLDPC
+  schedule, and attribute the distance-limiting mechanism using auditable minimum witnesses.
+assessment:
+  level: CERTIFIED*
+  caveats:
+  - 'R-C1: the shared frozen 公共定义 model is a SINGLE POINT OF FAILURE — all three premises
+    restate the same model and none re-derives it; a single misreading would invalidate all
+    three simultaneously and cross-checking between them cannot detect it. PARTIALLY MITIGATED
+    2026-08-25 (artifacts/circdist_stim_crossval_20260823.md): stim 1.16.0 independently
+    reproduces the headline R_stab > 1 cell (rotated surface d = 5, class D: d_1 = 4,
+    d_2 = 3, both sectors, min-over-sectors R_stab = 2), the full transfer d = 3 table (24/24
+    values), and the Table 4.2 class structure at d = 3 and d = 5 (four classes of four, all
+    four d = 5 signatures). The layout was NOT taken on trust: the published 576 -> 96 -> 16
+    funnel uniquely pins the boundary convention among 64 candidates. Still single-point at
+    d >= 7, d = 9, the qLDPC instance, and every R beyond the computed stim window.'
+  - 'R-C2: aggregation is MIN-OVER-SECTORS, load-bearing-with-witness (d_infinity <= d is
+    false per-sector; decisive for a reported R_stab at d = 7); no instance in this route has
+    d_X != d_Z.'
+  - 'R-C3: the layout is VERBATIM REPETITION; cross-round idle compression is a different
+    model and out of scope — and the compression instruction''s frozen provenance is 课题一,
+    not 公共定义 (the line-58 misattribution corrected by the wave-27 review from the frozen
+    bytes: 课题四 lines 185-233 carry NO compression clause, so W-G2 inherits as a scope pin,
+    MILDER).'
+  - 'R-C4: the detector/observable split is fixed BY DECISION, not derivation, AND THE ROOT CLAIM
+    DOES NOT PIN IT. Definition 3.5 is lead-ratified (verbatim "批准 Definition 3.5, 缓解条款不批") as the
+    intended reading of the frozen 公共定义; the corrected safe condition is span{D_b,r} within
+    D-prime within D (containment in D, NOT in V); W-G3 must not be carried; S3-prime is
+    load-bearing. A circuit distance is exactly as well defined as the split it is measured
+    against, and the value MOVES when the split moves: on Steane + a redundant X row, D-prime =
+    span{D_b,r} + span{D_a,r} + span{P_X + lambda} gives d^D-prime = 3 at R = 2 and 4 at R = 3
+    against d^2.7 = 2 (dimension quintuple 28/22/21/12/20). Because the root claim says only "the
+    circuit distance" and names no detector space — while V2 did pin the layout and the sector
+    aggregation, the other two load-bearing convention axes — this is an unresolved scope caveat
+    INSIDE the root claim and is the deciding conditionality for PROVED on this node. DISCHARGED
+    SUB-ITEMS (2026-08-25): the former (a)/(b)/(c) proposer-level flags on transfer Prop 3.7, its
+    section-8.1 mirror, and transfer Lemma 2.9 are discharged — all three now sit inside
+    CIRCDIST.sat.transfer''''s certified claim text by name, hash-bound to sha256:8fb50ff0...
+    (artifacts/circdist_transfer_bridgefold_20260823.md; 110/110 F2-identity, 114/114 + 114/114
+    direct minimum-weight incl. BB [[18,4,4]] in both sectors), the folded clause was checked
+    clause-against-usage to cover both bridge usages of the root assembly, and both bridges were
+    independently re-verified by the wave-35 adjudicator on two fresh dependent-generator codes
+    (24/24 exact F2 identities with a non-empty Def-2.7 hole in every instance; 36/36 direct
+    minimum-weight d^2.7 = d^D; 22385 minimum-weight Def-2.7 witnesses of which 3760 are
+    D-detected and 3760/3760 repaired by Pi, zero exceptions; the T-G3 quintuple and wave-33b''''s
+    3-effect non-group control both reproduced exactly).'
+  - 'R-C5: transfer evidence scope != statement scope (document evidence d = 3, k = 1,
+    R <= 3; general case rests on reviewed derivations; partially relieved as corroboration
+    only by the instances arm''s independent agreement at d = 5 and on BB [[18,4,4]]).'
+  - 'R-C6: transfer open minors T-G2/T-G4/T-G5 and the Y-projection''s uniform unit-cost
+    dependence.'
+  - 'R-C7: external assumption A1 (BCOQ Thm 3.112) cited as published, not re-derived.'
+  - 'R-C8: W-G4 open — is R_stab <= d_infinity tight? Gains data from the instances arm, no
+    closure; tightness is asymptotic iff the conjectured law holds, and the law is the
+    conjectured part.'
+  - 'R-C9: instance scope — the hook-misaligned family is the uniform S4 x S4 space only
+    (576 -> 96 -> 16); no "no legal schedule does X" statement licensed; the qLDPC arm is one
+    code, one schedule, depths 7-11 unscanned, no d_X != d_Z instance.'
+  - 'R-C10: two reported cells proposer-level for replication (d = 9 R_stab = 4; d = 7
+    standard — its X-sector one undecided MILP cell); neither load-bearing for any root
+    clause; d = 9 truncation otherwise closed by assembly Lemma A.1.'
+  - 'R-C11: document hygiene, all safe-direction (superseded §11.4 digest; 78 -> 77 classes;
+    sector-reduced label; stale §0 node hash).'
+  - 'R-C12: the route is NOT a flat conjunction and the premises are NOT independent evidence
+    — instances imports window for every statement outside its computed windows (dependency
+    window -> instances, transfer alongside); a window defect hits two of three premises; the
+    instances arm''s positive W-OPEN answer is a CONSISTENCY CHECK ON THE COMPUTED PREFIXES
+    (monotonicity and R_stab <= d_infinity <= d, which are not imported), not an independent
+    confirmation of the window theorem''s tail clause.'
+  - 'R-C13: explicit exclusions the root neither asserts nor uses — the fitted law
+    d_R = max(d - R, (d+1)/2) / R_stab = (d-1)/2; the reading "R_stab is unbounded"; the
+    §6.2b interpretive account of WHY R_stab > 1 occurs; reading (C5) as proved emptiness of
+    the temporal-boundary mechanism. For the standard surface schedule d_infinity = d, so its
+    mechanism label describes the minimum witness, not an obstruction.'
+  summary: 'Promoted CONJECTURED -> CERTIFIED* 2026-08-23: the root composition proof
+    (artifacts/circdist_sat_root_assembly_20260823.md) passed independent adversarial review
+    (artifacts/circdist_sat_root_review_20260823.md) — all 8 clauses discharged from the
+    three CERTIFIED* premises (hashes recomputed 3/3 by both assembly and review), six-axis
+    convention audit clean with both bridges re-derived and independently recomputed, caveat
+    composition audited (R-C12/R-C13 restored). 课题四 (revised question 4) is closed at
+    CERTIFIED*: min-plus representation (transfer), finite-window theorem with B = d and no
+    r-dependence (window — stronger than the frozen B(r,d)), computed pairs for standard
+    surface (d, 1), hook-misaligned surface (3, 2) at d = 5 — the R_stab > 1 discovery,
+    reviewed — and BB [[18,4,4]] qLDPC (3, 1), with audited-witness mechanism attribution.
+    PROVED refused by the reviewer: three load-bearing bridge steps sit outside the premises''
+    certified claim texts (R-C4) and R-C1 is an unresolved scope caveat by construction.
+    Claim carries the lead-approved min-form R_stab definition (V1, drafting slip at rescope
+    fixed; the frozen commission line 194 uses the min form — decisive). Five corrections and
+    the V2 (R1+R2) recommendation recorded in the review; V2 adoption pending lead.'
+  basis:
+    routes:
+    - asymptotic-stability-assembly
+    reviews:
+    - path: artifacts/circdist_sat_root_review_20260823.md
+      kind: review
+      scope: Independent adversarial review of the root assembly — clause audit (8/8), bridge
+        re-derivations with independent recomputation (Prop 3.6/3.7 13/13 incl. leftker 2,
+        negative control non-vacuous), caveat-composition audit restoring R-C12/R-C13,
+        adjudication of both lead questions from the frozen bytes, conditional license
+        executed after the lead ruling on the R_stab wording.
+      locator: Section 5
+      reviewed_hash: sha256:c6205671936488f9ccbf69d68d9893b549098244bd5f95985b4a682df0d8bdd9
+routes:
+  asymptotic-stability-assembly:
+    premises:
+    - CIRCDIST.sat.transfer
+    - CIRCDIST.sat.window
+    - CIRCDIST.sat.instances
+    implication: The transfer representation supplies a finite exact computational model, the
+      window theorem proves that a bounded prefix decides d_infinity and R_stab, and the instance
+      dossier applies both to every named code family with witness-level mechanism attribution;
+      together these three premises establish every clause of the revised root claim.
+    proof:
+      sketch: Assemble the three independently reviewable dossiers and audit that their boundary,
+        schedule-legality, CSS-sector, and unit-fault conventions agree.
+      sources:
+      - path: research/circdist/notes/SAT_RESCOPE_20260822.md
+        kind: text
+    assessment:
+      level: CERTIFIED*
+      caveats:
+      - Same 13-caveat set as the node assessment (R-C1..R-C13); the route is not a flat
+        conjunction (R-C12) and three bridge steps are proposer-level (R-C4).
+      summary: 'The composition proof is the wave-26 assembly under the wave-27 adversarial
+        review: all 8 clauses discharged, six-axis convention audit clean, both bridges
+        re-derived independently; cleared at CERTIFIED* (PROVED refused per R-C4/R-C1).'
+      basis:
+        reviews:
+        - path: artifacts/circdist_sat_root_review_20260823.md
+          kind: review
+          scope: Review of the assembled route-implication argument (clause discharges +
+            convention alignment), per §5.1 of the review.
+          locator: Section 5
+          reviewed_hash: sha256:78737cc3040a78a1afe8d7bab7537e2200a84175578d2407d90d569a1bbe95a1
+events:
+  migrated-canonical-home-2026-08-23:
+    date: '2026-08-23'
+    type: migration
+    summary: 'Lead directive 2026-08-23: canonical home moved to the Claim-Centered-Research-Graph
+      repository; the discovery-new-algorithms copy is a frozen snapshot. Levels are re-based on
+      THIS repository''s DAG_PROTOCOL §3 verbatim: CERTIFIED* marks a CONDITIONAL result
+      (unresolved premises or scope caveats); PROVED requires a complete argument plus independent
+      adversarial review of every load-bearing input, with NO cross-model-stack requirement — the
+      former "same-stack ceiling" convention is RETIRED. Existing levels are carried unchanged;
+      re-adjudication of starred nodes under the canonical semantics is registered as review work,
+      not hand-executed by the dispatcher.'
+    sources:
+    - path: research/DAG_PROTOCOL.md
+      kind: text
+  rescope-to-stability-2026-08-22:
+    date: '2026-08-22'
+    type: claim-revised
+    summary: 'Lead selected the conservative re-scope: retain ideal temporal boundaries and
+      replace the degenerate R_sat-to-d target by d_infinity and R_stab. The old claim remains in
+      frozen history; three new child nodes separate transfer, window, and instance obligations.
+      The completed lead-decision and mixed gate tasks were removed from this root frontier and
+      redistributed as precise unfinished child tasks.'
+    sources:
+    - path: research/circdist/notes/SAT_RESCOPE_20260822.md
+      kind: text
+  asymptotic-stability-route-2026-08-22:
+    date: '2026-08-22'
+    type: route-added
+    route: asymptotic-stability-assembly
+    summary: Added the AND-route through transfer, finite-window stability, and named-instance
+      mechanism attribution; this is now the canonical completion route for revised question 4.
+    sources:
+    - path: research/circdist/notes/SAT_RESCOPE_20260822.md
+      kind: text
+  contiguity-correction-2026-08-20:
+    date: '2026-08-20'
+    type: repair-applied
+    summary: 'Correction to the contiguity input below, from the round-5 review: "R_sat <= d" is
+      REFUTED as stated (non-interleaved Steane: d_eff = 2 < d = 3 gives d_R = 2 for all R, so
+      R_sat = infinity under the frozen definition). What survives: the contiguity SPAN bound
+      (min-weight witnesses occupy <= d contiguous rounds — the finite-window content) and Cor
+      7.3''s R_sat in {1, infinity} for the non-interleaved class.'
+    sources:
+    - path: artifacts/circdist_lift_proofs_review_20260820.md
+      kind: text
+  contiguity-input-2026-08-20:
+    date: '2026-08-20'
+    type: repair-applied
+    summary: 'Second cross-root input from the lift subtree: the contiguity theorem
+      (artifacts/circdist_lift_iff_proof_20260820.md) shows a minimum-weight undetectable logical
+      occupies CONTIGUOUS rounds with span <= weight <= d, giving R_sat <= d and one-round
+      decidability of d_circ under the stated convention — the finite-window content of this
+      node''s target theorem, obtained without the transfer-matrix machinery. Any re-scope
+      decision should account for both this and the non-interleaved class settlement below.'
+    sources:
+    - path: artifacts/circdist_lift_iff_proof_20260820.md
+      kind: text
+  nonint-class-settled-2026-08-20:
+    date: '2026-08-20'
+    type: repair-applied
+    summary: 'Cross-root input from the lift subtree: Corollary 7.3 of the non-interleaved proof
+      (artifacts/circdist_lift_nonint_proof_20260820.md) shows d_R is CONSTANT in R for every
+      legal non-interleaved schedule — R_sat in {1, infinity} for that entire class with no
+      transfer-matrix machinery. Any re-scoped saturation theorem needs interleaved schedules (or
+      the timelike-logical setting) to have content.'
+    sources:
+    - path: artifacts/circdist_lift_nonint_proof_20260820.md
+      kind: text
+  created-2026-08-20:
+    date: '2026-08-20'
+    type: created
+    summary: Registered the repeated-rounds saturation problem as a root of the circdist project
+      (lead commission; live test of the valuation/scheduling layer).
+    sources:
+    - path: research/circdist/notes/CIRCDIST_PROBLEMS.md
+      kind: text
+  recon-2026-08-20:
+    date: '2026-08-20'
+    type: repair-applied
+    summary: Round-1 recon registered the seven-component attack package (direct work — per-item
+      P/D in artifacts/circdist_sat_recon_20260820.md), found the commissioned target
+      partly vacuous under the stated boundary convention (monotone d_R, R_sat in {1,infinity},
+      timelike mechanisms empty), proved-at-sketch B(r,d) = d with no r-dependence, and raised the
+      node OPEN -> CONJECTURED; further spend paused pending the lead's re-scope decision.
+    sources:
+    - path: artifacts/circdist_sat_recon_20260820.md
+      kind: text
+  cor73-sector-flag-2026-08-23:
+    date: '2026-08-23'
+    type: repair-applied
+    summary: 'Cross-node flag from the wave-22 lift constant repair
+      (artifacts/circdist_lift_iff_amendment3_20260823.md): Corollary 7.3''s d_eff (the
+      cross-root input recorded on this node) must be read MIN-OVER-SECTORS — the per-sector
+      reading is refuted by the same witness family that broke the lift window constant
+      (d_circ(sector) can exceed d; unboundedly, via the Q_m chain family). Consistent with
+      the W-G1 load-bearing-with-witness upgrade already on CIRCDIST.sat.window. The instances
+      arm and the root assembly must state the aggregation convention explicitly wherever
+      d_eff or d_R appears.'
+    sources:
+    - path: artifacts/circdist_lift_iff_amendment3_20260823.md
+      kind: text
+  root-assembly-2026-08-23:
+    date: '2026-08-23'
+    type: repair-applied
+    summary: 'Wave-26 root composition proof WRITTEN
+      (artifacts/circdist_sat_root_assembly_20260823.md, SHA-256 68babfe6..., 1097 lines): all
+      8 clauses discharged from the three CERTIFIED* premises (hashes 3/3 machine-verified);
+      six-axis convention audit finds NO mismatch — two axes align via bridges the transfer
+      premise proves (Lemma 2.9 elementary-faults-vs-locations; Prop 3.7 Def-2.7 vs canonical
+      detectors — Prop 3.7 is NOT in transfer''s claim, marked proposer-level and load-bearing,
+      dim leftker(H_X) = 2 verified for BB); 15 premise caveats compose to 11 root caveats,
+      ceiling CERTIFIED*; C3 (algorithm) discharged at claim level only via the fixed window
+      (the adaptive rule is document-level); C5 attribution covers one representative per
+      family. New Lemma A.1 (R* >= d_{R*} - 1) derived from the claim text closes the d = 9
+      truncation; the d = 7-standard X-sector has one undecided MILP cell. TWO LEAD QUESTIONS
+      surfaced: (1) the root claim''s R_stab definition reads "the first round AFTER which"
+      — off by one against every premise''s min{R_0 : ...} convention (headline cell: premises
+      say 2, the root''s literal wording says 1) — an R1-class claim revision; (2) "公共定义
+      line 58" is a MISATTRIBUTION shared by three nodes — line 58 sits in 课题一, and 课题四
+      has NO idle-compression clause, which bears on how severely this root inherits W-G2.
+      Revision sheet R1-R10 attached (R1-R3 change the root hash). Promotion gate: independent
+      review of this assembly.'
+    sources:
+    - path: artifacts/circdist_sat_root_assembly_20260823.md
+      kind: text
+  rstab-wording-fix-2026-08-23:
+    date: '2026-08-23'
+    type: claim-revised
+    summary: 'LEAD-APPROVED (verbatim: "1先改了吧") repair of the wave-26 assembly finding:
+      the root''s R_stab definition read "the first round AFTER which the sequence is
+      identically d_infinity" — off by one against the min{R_0 : forall R >= R_0} convention
+      used by all three premises and by SAT_RESCOPE_20260822.md §2 (headline d = 5 class-D
+      cell: premises give R_stab = 2, the old literal wording gives 1). Replaced by the
+      explicit formula R_stab(M) = min{R_0 : d_R(M) = d_infinity(M) for all R >= R_0} with
+      the gloss "the first round FROM which". No completion level or hash-bound review
+      existed on this claim (root is CONJECTURED, hash unbound), so no binding lapses; old
+      wording preserved here. The wave-27 assembly review runs concurrently and was
+      commissioned to propose this same fix — its proposed string will be reconciled against
+      this installed text on return (substance identical by construction).'
+    sources:
+    - path: artifacts/circdist_sat_root_assembly_20260823.md
+      kind: text
+  v1-reconciled-2026-08-23:
+    date: '2026-08-23'
+    type: claim-revised
+    summary: 'Reconciliation to the wave-27 review''s bound text: the dispatcher''s interim
+      wording (formula + gloss, hash ff930247...) is replaced by the reviewer-blessed V1
+      (formula only, hash 0f927e64...) — same substance, exact bytes now match the license.
+      The lead approval ("1先改了吧") covers the substitution. V2 (R1 verbatim-repetition +
+      R2 min-over-sectors in the preamble, hash c6205671...) is RECOMMENDED by the reviewer
+      and pending a separate lead ruling; the same review binds it, so adoption needs no new
+      session.'
+    sources:
+    - path: artifacts/circdist_sat_root_review_20260823.md
+      kind: review
+      locator: Section 5
+  promoted-certified-2026-08-23:
+    date: '2026-08-23'
+    type: level-change
+    from: CONJECTURED
+    to: CERTIFIED*
+    summary: 'Wave-27 review licensed route + node to CERTIFIED* conditional on the
+      lead-ruled R_stab repair; the lead ruled, V1 installed, license executed: route
+      asymptotic-stability-assembly CERTIFIED* (review bound to the implication hash), node
+      CERTIFIED* (review bound to claim hash 0f927e64...), 13-caveat set installed
+      (R-C1..R-C11 as assembled, R-C4 amended to name the three proposer-level bridges,
+      R-C12/R-C13 restored per the review''s absorption audit). Lead question (b) resolved
+      factually by the review from frozen bytes: 课题四 carries no idle-compression clause
+      (line 58 is 课题一''s S_Gross bullet; 公共定义 = lines 14-41), so W-G2 inherits as a
+      scope pin, MILDER; window node unchanged (readjudication grounds (2)-(4) intact).
+      课题四 is CLOSED at CERTIFIED*. PROVED refused (R-C4 bridges outside certified claim
+      texts; R-C1 shared-model caveat by construction).'
+    sources:
+    - path: artifacts/circdist_sat_root_review_20260823.md
+      kind: review
+      locator: Section 5
+  v2-adopted-2026-08-23:
+    date: '2026-08-23'
+    type: claim-revised
+    summary: 'LEAD-APPROVED (verbatim "可以"): the wave-27 review''s RECOMMENDED variant V2
+      adopted — the preamble now pins the layout ("R verbatim repetitions of M") and the
+      aggregation ("taken as the minimum over the two CSS memory sectors"), closing the same
+      defect class as the R_stab off-by-one (the aggregation was silent between two readings
+      that yield different certified R_stab values at d = 7, while W-G1 is
+      load-bearing-with-witness). The wave-27 review pre-verified and pre-bound this exact
+      text (its §5.3 licenses either V1 or V2); the review binding is updated from V1
+      (0f927e64...) to V2 (c6205671...) with no new session. V1 wording preserved in this
+      event history.'
+    sources:
+    - path: artifacts/circdist_sat_root_review_20260823.md
+      kind: review
+      locator: Section 5
+  stim-crossval-2026-08-23:
+    date: '2026-08-23'
+    type: repair-applied
+    summary: 'Wave-34 stim cross-validation: R-C1 appended per license (amendment D — the
+      single-point statement itself deliberately NOT weakened): stim independently reproduces
+      the discovery cell, the transfer table, and the class structure; the boundary convention
+      was uniquely pinned by the published funnel rather than taken on trust. Claim and level
+      untouched. Input to wave 35: R-C4 (a)/(b)/(c) dischargeable per the wave-33b fold; R-C1
+      now partially mitigated.'
+    sources:
+    - path: artifacts/circdist_stim_crossval_20260823.md
+      kind: review
+      locator: Section 9
+  proved-adjudication-2026-08-23:
+    date: '2026-08-23'
+    type: repair-applied
+    summary: 'Wave-35 PROVED re-adjudication
+      (artifacts/circdist_sat_root_proved_adjudication_20260823.md): PROVED REFUSED on a NEW
+      deciding ground neither wave-27 ground survives — the root claim says only "the circuit
+      distance" and names NO detector split, so its values rest on the Definition-3.5 lead
+      ratification, and the value demonstrably moves when the split moves (Steane+redundant-X
+      counterexample); V2 pinned the layout and sector-aggregation axes but left the
+      detector-split axis — the only one with a counterexample — unwritten. Adjudication
+      details: ground verified (134/134 hash pipeline; folded transfer clause checked
+      clause-against-usage; wave-27 route binding 78737cc3 confirmed NOT lapsed); both bridges
+      independently re-verified on fresh codes (24/24 identities, 36/36 + 36/36 minimum-weight,
+      3760/3760 Pi-repairs, zero exceptions); R-C1 PRECEDENT RESOLVED against wave-27 (survives
+      at PROVED as a scope note: uniform, unfalsifiable from within the graph, claim-
+      identification not claim-truth risk, stim-mitigated — six PROVED nodes carry it
+      verbatim); caveat tally 2 block (R-C4 by-decision+unpinned clause, R-C5) / 11 survive /
+      3 sub-items discharged. EXECUTED as licensed: R-C4 replaced with the narrowed §5 wording
+      (discharged (a)/(b)/(c) recorded inside it); node and route stay CERTIFIED* at their
+      existing bindings. PATH TO PROVED now one claim fold: pin the detector split (Definition
+      3.5 by name, as transfer''s folded claim does) in the root text — a V3 revision, LEAD
+      APPROVAL required per precedent. Also flagged: A1 (BCOQ Thm 3.112) is machine-invisible
+      — registered on the transfer node this same write; and the adjudicator''s fresh Shor
+      schedule shows Z-memory d_circ = 1 via a weight-6 X-check ancilla hook (real, recorded
+      as a by-product observation).'
+    sources:
+    - path: artifacts/circdist_sat_root_proved_adjudication_20260823.md
+      kind: review
+      locator: Section 6

@@ -1,0 +1,46 @@
+$ env PYTHONDONTWRITEBYTECODE=1 python3 -B tools/proof_dag_check.py --problem circdist
+circdist: 16 node files structurally valid
+[exit 0]
+$ env PYTHONDONTWRITEBYTECODE=1 python3 -B tools/proof_dag_check.py --problem all
+se: 85 node files structurally valid
+ksum: 144 node files structurally valid
+circdist: 16 node files structurally valid
+[exit 0]
+$ env PYTHONDONTWRITEBYTECODE=1 python3 -B tools/evidence_closure_check.py --problem circdist
+ERROR: circdist: unlinked evidence: circdist/artifacts/circdist_sat_instances_proof_certificates_20260826/LEDGER.md
+ERROR: circdist: unlinked evidence: circdist/artifacts/circdist_sat_instances_proof_certificates_20260826/WITNESS_INDEX.md
+ERROR: circdist: unlinked evidence: circdist/artifacts/circdist_sat_instances_proof_certificates_20260826/certificates.json
+ERROR: circdist: unlinked evidence: circdist/artifacts/circdist_sat_instances_proof_certificates_20260826/fault_effects.json
+ERROR: circdist: unlinked evidence: circdist/artifacts/circdist_sat_instances_proof_certificates_20260826/inputs.json
+ERROR: circdist: unlinked evidence: circdist/artifacts/circdist_sat_instances_proof_certificates_20260826/model.py
+ERROR: circdist: unlinked evidence: circdist/artifacts/circdist_sat_instances_proof_certificates_20260826/repository_validation.txt
+ERROR: circdist: unlinked evidence: circdist/artifacts/circdist_sat_instances_proof_certificates_20260826/scope_claims.json
+ERROR: circdist: unlinked evidence: circdist/artifacts/circdist_sat_instances_proof_certificates_20260826/source_audit.json
+ERROR: circdist: unlinked evidence: circdist/artifacts/circdist_sat_instances_proof_certificates_20260826/verifier_output.txt
+ERROR: circdist: unlinked evidence: circdist/artifacts/circdist_sat_instances_proof_certificates_20260826/verify.py
+[exit 1]
+$ env PYTHONDONTWRITEBYTECODE=1 python3 -B tools/evidence_closure_check.py --problem all
+ERROR: circdist: unlinked evidence: circdist/artifacts/circdist_sat_instances_proof_certificates_20260826/LEDGER.md
+ERROR: circdist: unlinked evidence: circdist/artifacts/circdist_sat_instances_proof_certificates_20260826/WITNESS_INDEX.md
+ERROR: circdist: unlinked evidence: circdist/artifacts/circdist_sat_instances_proof_certificates_20260826/certificates.json
+ERROR: circdist: unlinked evidence: circdist/artifacts/circdist_sat_instances_proof_certificates_20260826/fault_effects.json
+ERROR: circdist: unlinked evidence: circdist/artifacts/circdist_sat_instances_proof_certificates_20260826/inputs.json
+ERROR: circdist: unlinked evidence: circdist/artifacts/circdist_sat_instances_proof_certificates_20260826/model.py
+ERROR: circdist: unlinked evidence: circdist/artifacts/circdist_sat_instances_proof_certificates_20260826/repository_validation.txt
+ERROR: circdist: unlinked evidence: circdist/artifacts/circdist_sat_instances_proof_certificates_20260826/scope_claims.json
+ERROR: circdist: unlinked evidence: circdist/artifacts/circdist_sat_instances_proof_certificates_20260826/source_audit.json
+ERROR: circdist: unlinked evidence: circdist/artifacts/circdist_sat_instances_proof_certificates_20260826/verifier_output.txt
+ERROR: circdist: unlinked evidence: circdist/artifacts/circdist_sat_instances_proof_certificates_20260826/verify.py
+[exit 1]
+$ env PYTHONDONTWRITEBYTECODE=1 python3 -B tools/check_circdist_migration.py
+Migration preservation OK: 16 nodes, 143 original events, 728 byte-identical copies
+[exit 0]
+$ env PYTHONDONTWRITEBYTECODE=1 python3 -B /tmp/circdist_sat_instances_cert_r54/check_sources.py
+source audit current: 18/18 byte hashes unchanged
+archived manifests recorded: 293/293 entries verified
+[exit 0]
+$ git diff --check
+[exit 0]
+$ git status --short -- circdist/artifacts/circdist_sat_instances_proof_certificates_20260826
+?? circdist/artifacts/circdist_sat_instances_proof_certificates_20260826/
+[exit 0]

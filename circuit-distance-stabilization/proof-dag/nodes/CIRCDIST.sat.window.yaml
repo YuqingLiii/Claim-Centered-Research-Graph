@@ -1,0 +1,144 @@
+id: CIRCDIST.sat.window
+role: proof
+aliases:
+- SAT-WINDOW
+- SAT-STABILITY
+claim: 'For every CSS code Q = [[n,k,d]] with k >= 1 and every fixed legal (conflict-free and measurement-consistent)
+  single-round single-ancilla CSS syndrome-extraction schedule M for Q, let C_R^Z(M) and C_R^X(M) be the ideal-boundary
+  memory experiments formed by R verbatim repetitions of M with the uniform unit-cost full-Pauli per-location fault
+  model, and let d_R(M) be the minimum of their circuit distances measured against, respectively, the canonical
+  detector space of Definition 3.5 in the CIRCDIST.sat.transfer proof dossier and its section-8.1 mirror (equivalently
+  in value only, not in detector-set equality, the corresponding Definition-2.7 detector sets). Then d_(R+1)(M)
+  <= d_R(M) for every R >= 1; d_infinity(M) := lim_{R to infinity} d_R(M) exists; in each memory sector every minimum-weight
+  undetectable logical has a same-weight sector-pure representative supported on a contiguous interval of rounds
+  whose span is at most its faulty-location weight; and, writing d = min(d_X,d_Z) for the CSS code distance and
+  R_stab(M) := min{R_0 >= 1 : d_R(M) = d_infinity(M) for all R >= R_0}, one has R_stab(M) <= d_infinity(M) <= d
+  and d_R(M) = d_d(M) = d_infinity(M) for every R >= d. Consequently d_1(M),...,d_d(M) determine both d_infinity(M)
+  and R_stab(M).'
+assessment:
+  level: PROVED
+  caveats:
+  - 'W-P1: PROVED is confined to CSS codes with k >= 1 and the exact stated model: conflict-free and measurement-consistent
+    single-ancilla extraction, ideal initialization and terminal data readout, verbatim round blocks with no cross-round
+    compression, uniform unit-cost full Pauli groups at every named fault location, and the Definition-3.5 canonical
+    detector space with its section-8.1 mirror.'
+  - 'W-P2: The spatial ceiling used by the proof is aggregate: d_R = min(d_R^Z,d_R^X) <= min(d_X,d_Z). No per-sector
+    inequality d_R^sigma <= min(d_X,d_Z) is asserted or used; asymmetric CSS codes can violate it.'
+  - 'W-P3: Tightness of R_stab <= d_infinity, the fitted hook-misaligned family law, arbitrary detector-split invariance,
+    nonuniform or non-group fault costs, and layouts with cross-round compression are outside this claim.'
+  summary: Fresh independent end-to-end review verifies the direct boundary-equation proof of the exact repaired
+    standalone claim at PROVED. The proof covers both CSS sectors, dependent generators, the named canonical detector
+    split, collision-free occupied-location weight, all temporal boundaries, asymmetric code distances, contiguous
+    representatives, the aggregate d-window, and the minimal stabilization index. It imports no unresolved theorem
+    or premise. Stronger tightness and family-law questions remain outside the claim.
+  basis:
+    reviews:
+    - path: circuit-distance-stabilization/reviews/circdist_sat_window_selfcontained_exact_review_20260826.md
+      kind: review
+      scope: Fresh strict-serial independent audit of the complete 1,154-line authored proof and exact standalone
+        serialization, including all model definitions, both CSS sectors, canonical-versus-Definition-2.7 value
+        bridge, dependent generators, boundary maps, gap splitting, asymmetric distances, hashes, counterexample
+        attacks, and protocol install consequences; computations were used only as corroboration.
+      locator: Finding F-COMPLETION
+      reviewed_hash: sha256:6c50b4049ae908d6646e87f7446f8fb7ea9583182fb79da3cb6b935c7011ccc4
+    evidence:
+    - path: circuit-distance-stabilization/reviews/circdist_lift_proofs_review_20260820.md
+      kind: text
+    - path: circuit-distance-stabilization/reviews/circdist_amendments2_review_20260820.md
+      kind: text
+    - path: circuit-distance-stabilization/artifacts/circdist_sat_recon_20260820.md
+      kind: text
+    - path: circuit-distance-stabilization/artifacts/circdist_lift_iff_proof_20260820.md
+      kind: text
+    - path: circuit-distance-stabilization/artifacts/circdist_lift_iff_amendment2_20260820.md
+      kind: text
+    - path: circuit-distance-stabilization/artifacts/history/pre_protocol_20260826/nodes/CIRCDIST.sat.window.yaml
+      kind: text
+      note: Immutable pre-migration record, including every original event, former summary and frontier; historical
+        evidence, not an additional completion review.
+    - path: circuit-distance-stabilization/reviews/circdist_readjudication_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circuit-distance-stabilization/reviews/circdist_amendments4_review_20260822.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circuit-distance-stabilization/artifacts/circdist_sat_window_amendment1_20260822.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circuit-distance-stabilization/reviews/circdist_sat_window_review_20260822.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circuit-distance-stabilization/artifacts/circdist_sat_window_theorem_20260822.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circuit-distance-stabilization/artifacts/circdist_sat_window_selfcontained_exact_proof_20260826.md
+      kind: text
+      scope: Complete authored proof and standalone-claim audit for the intended current model; proposes an exact
+        precision repair and expressly withholds self-certification pending fresh independent review.
+      locator: Sections 0-16
+    - path: circuit-distance-stabilization/artifacts/definitions/SAT_RESCOPE_20260822.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circuit-distance-stabilization/reviews/circdist_lift_claimrepair2_review_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circuit-distance-stabilization/artifacts/circdist_sat_instances_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circuit-distance-stabilization/reviews/circdist_sat_instances_review_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circuit-distance-stabilization/artifacts/circdist_sat_transfer_proof_20260823.md
+      kind: text
+      scope: Definition 3.5 source, canonical-space decomposition, and section-8.1 mirror used only as model-definition
+        provenance; the transfer theorem core is not imported.
+    - path: circuit-distance-stabilization/artifacts/circdist_sat_transfer_amendment1_20260823.md
+      kind: text
+      scope: Lead-ratified Definition-3.5 scope and the corrected rejection of arbitrary detector-split invariance.
+    - path: circuit-distance-stabilization/reviews/circdist_transfer_bridgefold_20260823.md
+      kind: text
+      scope: Prior independent calibration of the named detector-value bridge, dependent-generator case, collision
+        bridge, and alternate-split counterexample; corroborating evidence re-derived in the present review.
+    - path: circuit-distance-stabilization/reviews/circdist_sat_v3_exact_text_review_20260826.md
+      kind: text
+      scope: Prior exact audit establishing the stable Definition-3.5/section-8.1 locator and value-only relationship
+        to Definition 2.7.
+frontier:
+  stabilization-tightness:
+    task: Determine whether R_stab(M) <= d_infinity(M) is attained within the exact proved model, or prove a sharper
+      universal bound; keep any fitted schedule-family law in a separate claim.
+    kind: task
+    since: '2026-08-26'
+events:
+  selfcontained-claim-scope-repaired-2026-08-26:
+    date: '2026-08-26'
+    type: repair-applied
+    summary: Replaced the 489-character shorthand claim by the exact 1,261-character standalone serialization. The
+      repair makes explicit k >= 1, conflict legality plus measurement consistency, verbatim repetition, min-over-sectors
+      aggregation, the uniform full-Pauli occupied-location model, the named canonical detector spaces, same-weight
+      sector-pure representatives, and d = min(d_X,d_Z). It preserves the proposition proved by the prior window
+      dossier; old claim-review hashes remain historical evidence and do not bind the new claim.
+    sources:
+    - path: circuit-distance-stabilization/reviews/circdist_sat_window_selfcontained_exact_review_20260826.md
+      kind: review
+      locator: Finding F-CLAIM
+  selfcontained-proof-reviewed-2026-08-26:
+    date: '2026-08-26'
+    type: review-completed
+    summary: Fresh independent strict-serial review checked the complete direct proof and the exact repaired claim,
+      including all load-bearing algebra, adversarial boundary cases, asymmetric CSS codes, and protocol bindings.
+    sources:
+    - path: circuit-distance-stabilization/reviews/circdist_sat_window_selfcontained_exact_review_20260826.md
+      kind: review
+      locator: Finding F-COMPLETION
+  window-proved-2026-08-26:
+    date: '2026-08-26'
+    type: level-change
+    from: CERTIFIED*
+    to: PROVED
+    summary: Promoted CIRCDIST.sat.window after the exact repaired claim and every load-bearing input passed fresh
+      independent adversarial review. No downstream node or route level changed by inheritance.
+    sources:
+    - path: circuit-distance-stabilization/reviews/circdist_sat_window_selfcontained_exact_review_20260826.md
+      kind: review
+      locator: Finding F-COMPLETION

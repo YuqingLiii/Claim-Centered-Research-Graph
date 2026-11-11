@@ -1,0 +1,39 @@
+d=3  n=9  |A|=4  |B|=4  rank H_X=4  rank H_Z=4  k=1  anticommuting pairs=0
+   X-check weights: {2: 2, 4: 2}  Z-check weights: {2: 2, 4: 2}
+   X_L commutes with all Z-checks: True ; Z_L commutes with all X-checks: True ; |X_L^Z_L|=1 (odd required)
+   d_X=3  d_Z=3  (exhaustive over the 5-dim kernels)
+d=5  n=25  |A|=12  |B|=12  rank H_X=12  rank H_Z=12  k=1  anticommuting pairs=0
+   X-check weights: {2: 4, 4: 8}  Z-check weights: {2: 4, 4: 8}
+   X_L commutes with all Z-checks: True ; Z_L commutes with all X-checks: True ; |X_L^Z_L|=1 (odd required)
+   d_X=5  d_Z=5  (exhaustive over the 13-dim kernels)
+d=7  n=49  |A|=24  |B|=24  rank H_X=24  rank H_Z=24  k=1  anticommuting pairs=0
+   X-check weights: {2: 6, 4: 18}  Z-check weights: {2: 6, 4: 18}
+   X_L commutes with all Z-checks: True ; Z_L commutes with all X-checks: True ; |X_L^Z_L|=1 (odd required)
+
+d=3 : 576 candidates -> 96 legal -> 16 legal AND (MC)
+d=5 : 576 candidates -> 96 legal -> 16 legal AND (MC)
+  the 16 legal+(MC) members at d=5, with hook geometry:
+   [ 0] piX=NW,NE,SW,SE      piZ=NW,NE,SW,SE       X-hooks(v,h)=(0, 8) Z-hooks(v,h)=(0, 8)  -> B X-al,Z-mis
+   [ 1] piX=NW,NE,SW,SE      piZ=NW,SW,NE,SE       X-hooks(v,h)=(0, 8) Z-hooks(v,h)=(8, 0)  -> A aligned/aligned
+   [ 2] piX=NW,SW,NE,SE      piZ=NW,NE,SW,SE       X-hooks(v,h)=(8, 0) Z-hooks(v,h)=(0, 8)  -> D both misaligned
+   [ 3] piX=NW,SW,NE,SE      piZ=NW,SW,NE,SE       X-hooks(v,h)=(8, 0) Z-hooks(v,h)=(8, 0)  -> C X-mis,Z-al
+   [ 4] piX=NE,NW,SE,SW      piZ=NE,NW,SE,SW       X-hooks(v,h)=(0, 8) Z-hooks(v,h)=(0, 8)  -> B X-al,Z-mis
+   [ 5] piX=NE,NW,SE,SW      piZ=NE,SE,NW,SW       X-hooks(v,h)=(0, 8) Z-hooks(v,h)=(8, 0)  -> A aligned/aligned
+   [ 6] piX=NE,SE,NW,SW      piZ=NE,NW,SE,SW       X-hooks(v,h)=(8, 0) Z-hooks(v,h)=(0, 8)  -> D both misaligned
+   [ 7] piX=NE,SE,NW,SW      piZ=NE,SE,NW,SW       X-hooks(v,h)=(8, 0) Z-hooks(v,h)=(8, 0)  -> C X-mis,Z-al
+   [ 8] piX=SW,NW,SE,NE      piZ=SW,NW,SE,NE       X-hooks(v,h)=(8, 0) Z-hooks(v,h)=(8, 0)  -> C X-mis,Z-al
+   [ 9] piX=SW,NW,SE,NE      piZ=SW,SE,NW,NE       X-hooks(v,h)=(8, 0) Z-hooks(v,h)=(0, 8)  -> D both misaligned
+   [10] piX=SW,SE,NW,NE      piZ=SW,NW,SE,NE       X-hooks(v,h)=(0, 8) Z-hooks(v,h)=(8, 0)  -> A aligned/aligned
+   [11] piX=SW,SE,NW,NE      piZ=SW,SE,NW,NE       X-hooks(v,h)=(0, 8) Z-hooks(v,h)=(0, 8)  -> B X-al,Z-mis
+   [12] piX=SE,NE,SW,NW      piZ=SE,NE,SW,NW       X-hooks(v,h)=(8, 0) Z-hooks(v,h)=(8, 0)  -> C X-mis,Z-al
+   [13] piX=SE,NE,SW,NW      piZ=SE,SW,NE,NW       X-hooks(v,h)=(8, 0) Z-hooks(v,h)=(0, 8)  -> D both misaligned
+   [14] piX=SE,SW,NE,NW      piZ=SE,NE,SW,NW       X-hooks(v,h)=(0, 8) Z-hooks(v,h)=(8, 0)  -> A aligned/aligned
+   [15] piX=SE,SW,NE,NW      piZ=SE,SW,NE,NW       X-hooks(v,h)=(0, 8) Z-hooks(v,h)=(0, 8)  -> B X-al,Z-mis
+d=7 : 576 candidates -> 96 legal -> 16 legal AND (MC)
+
+STANDARD d=3 : legal=True  (MC)=True  bulk weight-4 X-checks=2  X-hooks(v,h)=(0, 2) Z-hooks(v,h)=(2, 0)
+STANDARD d=5 : legal=True  (MC)=True  bulk weight-4 X-checks=8  X-hooks(v,h)=(0, 8) Z-hooks(v,h)=(8, 0)
+STANDARD d=7 : legal=True  (MC)=True  bulk weight-4 X-checks=18  X-hooks(v,h)=(0, 18) Z-hooks(v,h)=(18, 0)
+CLASS-D  d=3 : legal=True  (MC)=True  bulk weight-4 X-checks=2  X-hooks(v,h)=(2, 0) Z-hooks(v,h)=(0, 2)
+CLASS-D  d=5 : legal=True  (MC)=True  bulk weight-4 X-checks=8  X-hooks(v,h)=(8, 0) Z-hooks(v,h)=(0, 8)
+CLASS-D  d=7 : legal=True  (MC)=True  bulk weight-4 X-checks=18  X-hooks(v,h)=(18, 0) Z-hooks(v,h)=(0, 18)

@@ -1,0 +1,67 @@
+BB: n=18  #X-checks=9 #Z-checks=9  rank H_X=7 rank H_Z=7  k=4  anticommuting pairs=0
+    check weights X={6: 9} Z={6: 9}
+    qubit degrees in H_X: {3: 18} ; in H_Z: {3: 18}
+    #logical reps: X=4 Z=4
+    EXHAUSTIVE over 2^11 and 2^11: d_X=4 d_Z=4  ->  [[18,4,4]]
+    Standing fact 2.2 exhaustive over all 2^11 of ker H_Z: mismatches=0
+schedule NI: T=12 legal=True (MC)=True  total CNOTs=108  per-layer=[9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9]
+  R=1 Z classes=108 detectors=18  EXHAUSTIVE<=3: 3
+     AUDIT w=3 distinct_loc=3 silent=True obs=[1, 0, 1, 1]
+        ('cnot', 0, 2, (22, 7), (1, 1))
+        ('cnot', 0, 9, (9, 27), (1, 1))
+        ('cnot', 0, 9, (10, 28), (1, 1))
+  R=1 X classes=108 detectors=18  EXHAUSTIVE<=3: 3
+     AUDIT w=3 distinct_loc=3 silent=True obs=[0, 1, 1, 1]
+        ('cnot', 0, 8, (4, 29), (2, 2))
+        ('cnot', 0, 11, (15, 27), (2, 0))
+        ('cnot', 0, 11, (16, 28), (2, 0))
+  R=2 Z classes=990 detectors=36  EXHAUSTIVE<=3: 3
+     AUDIT w=3 distinct_loc=3 silent=True obs=[1, 0, 1, 1]
+        ('cnot', 1, 2, (22, 7), (1, 1))
+        ('cnot', 1, 9, (9, 27), (1, 1))
+        ('cnot', 1, 9, (10, 28), (1, 1))
+  R=2 X classes=990 detectors=36  EXHAUSTIVE<=3: 3
+     AUDIT w=3 distinct_loc=3 silent=True obs=[0, 1, 1, 1]
+        ('cnot', 1, 8, (4, 29), (2, 2))
+        ('cnot', 1, 11, (15, 27), (2, 0))
+        ('cnot', 1, 11, (16, 28), (2, 0))
+  R=3 Z classes=1737 detectors=54  EXHAUSTIVE<=3: 3
+     AUDIT w=3 distinct_loc=3 silent=True obs=[1, 0, 1, 1]
+        ('cnot', 2, 2, (22, 7), (1, 1))
+        ('cnot', 2, 9, (9, 27), (1, 1))
+        ('cnot', 2, 9, (10, 28), (1, 1))
+  R=3 X classes=1737 detectors=54  EXHAUSTIVE<=3: 3
+     AUDIT w=3 distinct_loc=3 silent=True obs=[0, 1, 1, 1]
+        ('cnot', 2, 8, (4, 29), (2, 2))
+        ('cnot', 2, 11, (15, 27), (2, 0))
+        ('cnot', 2, 11, (16, 28), (2, 0))
+  R=4 Z classes=2475 detectors=72  EXHAUSTIVE<=3: 3
+     AUDIT w=3 distinct_loc=3 silent=True obs=[1, 0, 1, 1]
+        ('cnot', 3, 2, (22, 7), (1, 1))
+        ('cnot', 3, 9, (9, 27), (1, 1))
+        ('cnot', 3, 9, (10, 28), (1, 1))
+  R=4 X classes=2475 detectors=72  EXHAUSTIVE<=3: 3
+     AUDIT w=3 distinct_loc=3 silent=True obs=[0, 1, 1, 1]
+        ('cnot', 3, 8, (4, 29), (2, 2))
+        ('cnot', 3, 11, (15, 27), (2, 0))
+        ('cnot', 3, 11, (16, 28), (2, 0))
+  R=5 Z classes=3213 detectors=90  EXHAUSTIVE<=3: 3
+     AUDIT w=3 distinct_loc=3 silent=True obs=[1, 0, 1, 1]
+        ('cnot', 4, 2, (22, 7), (1, 1))
+        ('cnot', 4, 9, (9, 27), (1, 1))
+        ('cnot', 4, 9, (10, 28), (1, 1))
+  R=5 X classes=3213 detectors=90  EXHAUSTIVE<=3: 3
+     AUDIT w=3 distinct_loc=3 silent=True obs=[0, 1, 1, 1]
+        ('cnot', 4, 8, (4, 29), (2, 2))
+        ('cnot', 4, 11, (15, 27), (2, 0))
+        ('cnot', 4, 11, (16, 28), (2, 0))
+  R=6 Z classes=3951 detectors=108  EXHAUSTIVE<=3: 3
+     AUDIT w=3 distinct_loc=3 silent=True obs=[1, 0, 1, 1]
+        ('cnot', 5, 2, (22, 7), (1, 1))
+        ('cnot', 5, 9, (9, 27), (1, 1))
+        ('cnot', 5, 9, (10, 28), (1, 1))
+  R=6 X classes=3951 detectors=108  EXHAUSTIVE<=3: 3
+     AUDIT w=3 distinct_loc=3 silent=True obs=[0, 1, 1, 1]
+        ('cnot', 5, 8, (4, 29), (2, 2))
+        ('cnot', 5, 11, (15, 27), (2, 0))
+        ('cnot', 5, 11, (16, 28), (2, 0))

@@ -1,0 +1,630 @@
+# rotated surface code d=3 : n=9 |A|=4 |B|=4 rank(H_X)=4 k=1
+# X_L = column 0 (vertical), Z_L = row 0 (horizontal)
+# aggregation convention: d_R = min(d_R^Z, d_R^X)
+# search space 576 uniform (piX,piZ); legal: 96; legal+MC: 16
+
+== [0] piX=NWNESWSE piZ=NWNESWSE   T=4  idle_layers=0
+   X-check hooks: vertical=0 horizontal=2  -> aligned (X_L is vertical)
+   Z-check hooks: vertical=0 horizontal=2  -> MISALIGNED (Z_L is horizontal)
+   sector Z : transfer d_R = [3, 3, 3, 3, 3]   (dimSigma=5 ngen=27 0.1s)
+     restricted minima (63 = no witness of weight <= 3 in that class):
+       one round only   : [3, 3, 3, 3, 3]
+       >= 2 rounds      : [63, 3, 3, 3, 3]
+       uses hook fault  : [3, 3, 3, 3, 3]
+       no hook fault    : [3, 3, 3, 3, 3]
+       uses meas fault  : [63, 63, 63, 63, 63]
+       no meas fault    : [3, 3, 3, 3, 3]
+     WITNESS R=1 weight=3 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 0, (3, 15), 'ct')
+        round 0  ('cnot', 0, (10, 0), 'c')
+        round 0  ('cnot', 0, (12, 6), 'c')
+     WITNESS R=5 weight=3 rounds=[4] undetectable=True logical=True
+        round 4  ('cnot', 0, (3, 15), 'ct')
+        round 4  ('cnot', 0, (10, 0), 'c')
+        round 4  ('cnot', 0, (12, 6), 'c')
+   sector X : transfer d_R = [2, 2, 2, 2, 2]   (dimSigma=5 ngen=27 0.0s)
+     restricted minima (63 = no witness of weight <= 3 in that class):
+       one round only   : [2, 2, 2, 2, 2]
+       >= 2 rounds      : [63, 2, 2, 2, 2]
+       uses hook fault  : [2, 2, 2, 2, 2]
+       no hook fault    : [3, 3, 3, 3, 3]
+       uses meas fault  : [3, 3, 3, 3, 3]
+       no meas fault    : [2, 2, 2, 2, 2]
+     WITNESS R=1 weight=2 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 1, (10, 2), 'c')
+        round 0  ('cnot', 0, (11, 3), 'c')
+     WITNESS R=5 weight=2 rounds=[4] undetectable=True logical=True
+        round 4  ('cnot', 1, (10, 2), 'c')
+        round 4  ('cnot', 0, (11, 3), 'c')
+   sector Z : stim     d_R = [3, 3, 3, 3, 3]
+   AGREE Z: True
+   sector X : stim     d_R = [2, 2, 2, 2, 2]
+   AGREE X: True
+   >>> d_R (min over sectors) = [2, 2, 2, 2, 2]   d_infinity = 2  R_stab = 1  [R_stab valid: window theorem gives d_R = d_d for R >= d]
+
+== [1] piX=NWNESWSE piZ=NWSWNESE   T=4  idle_layers=0
+   X-check hooks: vertical=0 horizontal=2  -> aligned (X_L is vertical)
+   Z-check hooks: vertical=2 horizontal=0  -> aligned (Z_L is horizontal)
+   sector Z : transfer d_R = [3, 3, 3, 3, 3]   (dimSigma=5 ngen=27 0.0s)
+     restricted minima (63 = no witness of weight <= 3 in that class):
+       one round only   : [3, 3, 3, 3, 3]
+       >= 2 rounds      : [63, 3, 3, 3, 3]
+       uses hook fault  : [3, 3, 3, 3, 3]
+       no hook fault    : [3, 3, 3, 3, 3]
+       uses meas fault  : [63, 63, 63, 63, 63]
+       no meas fault    : [3, 3, 3, 3, 3]
+     WITNESS R=1 weight=3 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 0, (3, 15), 'ct')
+        round 0  ('cnot', 0, (10, 0), 'c')
+        round 0  ('cnot', 0, (12, 6), 'c')
+     WITNESS R=5 weight=3 rounds=[4] undetectable=True logical=True
+        round 4  ('cnot', 0, (3, 15), 'ct')
+        round 4  ('cnot', 0, (10, 0), 'c')
+        round 4  ('cnot', 0, (12, 6), 'c')
+   sector X : transfer d_R = [3, 3, 3, 3, 3]   (dimSigma=5 ngen=27 0.0s)
+     restricted minima (63 = no witness of weight <= 3 in that class):
+       one round only   : [3, 3, 3, 3, 3]
+       >= 2 rounds      : [63, 3, 3, 3, 3]
+       uses hook fault  : [3, 3, 3, 3, 3]
+       no hook fault    : [3, 3, 3, 3, 3]
+       uses meas fault  : [63, 63, 63, 63, 63]
+       no meas fault    : [3, 3, 3, 3, 3]
+     WITNESS R=1 weight=3 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 2, (10, 2), 't')
+        round 0  ('cnot', 0, (10, 1), 'c')
+        round 0  ('cnot', 0, (11, 3), 'c')
+     WITNESS R=5 weight=3 rounds=[4] undetectable=True logical=True
+        round 4  ('cnot', 2, (10, 2), 't')
+        round 4  ('cnot', 0, (10, 1), 'c')
+        round 4  ('cnot', 0, (11, 3), 'c')
+   sector Z : stim     d_R = [3, 3, 3, 3, 3]
+   AGREE Z: True
+   sector X : stim     d_R = [3, 3, 3, 3, 3]
+   AGREE X: True
+   >>> d_R (min over sectors) = [3, 3, 3, 3, 3]   d_infinity = 3  R_stab = 1  [R_stab valid: window theorem gives d_R = d_d for R >= d]
+
+== [2] piX=NWSWNESE piZ=NWNESWSE   T=4  idle_layers=0
+   X-check hooks: vertical=2 horizontal=0  -> MISALIGNED (X_L is vertical)
+   Z-check hooks: vertical=0 horizontal=2  -> MISALIGNED (Z_L is horizontal)
+   sector Z : transfer d_R = [2, 2, 2, 2, 2]   (dimSigma=5 ngen=27 0.1s)
+     restricted minima (63 = no witness of weight <= 3 in that class):
+       one round only   : [2, 2, 2, 2, 2]
+       >= 2 rounds      : [63, 2, 2, 2, 2]
+       uses hook fault  : [2, 2, 2, 2, 2]
+       no hook fault    : [3, 3, 3, 3, 3]
+       uses meas fault  : [3, 3, 3, 3, 3]
+       no meas fault    : [2, 2, 2, 2, 2]
+     WITNESS R=1 weight=2 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 1, (11, 7), 'c')
+        round 0  ('cnot', 0, (1, 14), 'ct')
+     WITNESS R=5 weight=2 rounds=[4] undetectable=True logical=True
+        round 4  ('cnot', 1, (11, 7), 'c')
+        round 4  ('cnot', 0, (1, 14), 'ct')
+   sector X : transfer d_R = [2, 2, 2, 2, 2]   (dimSigma=5 ngen=27 0.2s)
+     restricted minima (63 = no witness of weight <= 3 in that class):
+       one round only   : [2, 2, 2, 2, 2]
+       >= 2 rounds      : [63, 2, 2, 2, 2]
+       uses hook fault  : [2, 2, 2, 2, 2]
+       no hook fault    : [3, 3, 3, 3, 3]
+       uses meas fault  : [3, 3, 3, 3, 3]
+       no meas fault    : [2, 2, 2, 2, 2]
+     WITNESS R=1 weight=2 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 1, (10, 2), 'c')
+        round 0  ('cnot', 0, (11, 3), 'c')
+     WITNESS R=5 weight=2 rounds=[4] undetectable=True logical=True
+        round 4  ('cnot', 1, (10, 2), 'c')
+        round 4  ('cnot', 0, (11, 3), 'c')
+   sector Z : stim     d_R = [2, 2, 2, 2, 2]
+   AGREE Z: True
+   sector X : stim     d_R = [2, 2, 2, 2, 2]
+   AGREE X: True
+   >>> d_R (min over sectors) = [2, 2, 2, 2, 2]   d_infinity = 2  R_stab = 1  [R_stab valid: window theorem gives d_R = d_d for R >= d]
+
+== [3] piX=NWSWNESE piZ=NWSWNESE   T=4  idle_layers=0
+   X-check hooks: vertical=2 horizontal=0  -> MISALIGNED (X_L is vertical)
+   Z-check hooks: vertical=2 horizontal=0  -> aligned (Z_L is horizontal)
+   sector Z : transfer d_R = [2, 2, 2, 2, 2]   (dimSigma=5 ngen=27 0.2s)
+     restricted minima (63 = no witness of weight <= 3 in that class):
+       one round only   : [2, 2, 2, 2, 2]
+       >= 2 rounds      : [63, 2, 2, 2, 2]
+       uses hook fault  : [2, 2, 2, 2, 2]
+       no hook fault    : [3, 3, 3, 3, 3]
+       uses meas fault  : [3, 3, 3, 3, 3]
+       no meas fault    : [2, 2, 2, 2, 2]
+     WITNESS R=1 weight=2 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 1, (11, 7), 'c')
+        round 0  ('cnot', 0, (1, 14), 'ct')
+     WITNESS R=5 weight=2 rounds=[4] undetectable=True logical=True
+        round 4  ('cnot', 1, (11, 7), 'c')
+        round 4  ('cnot', 0, (1, 14), 'ct')
+   sector X : transfer d_R = [3, 3, 3, 3, 3]   (dimSigma=5 ngen=27 0.2s)
+     restricted minima (63 = no witness of weight <= 3 in that class):
+       one round only   : [3, 3, 3, 3, 3]
+       >= 2 rounds      : [63, 3, 3, 3, 3]
+       uses hook fault  : [3, 3, 3, 3, 3]
+       no hook fault    : [3, 3, 3, 3, 3]
+       uses meas fault  : [63, 63, 63, 63, 63]
+       no meas fault    : [3, 3, 3, 3, 3]
+     WITNESS R=1 weight=3 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 2, (10, 2), 't')
+        round 0  ('cnot', 0, (10, 1), 'c')
+        round 0  ('cnot', 0, (11, 3), 'c')
+     WITNESS R=5 weight=3 rounds=[4] undetectable=True logical=True
+        round 4  ('cnot', 2, (10, 2), 't')
+        round 4  ('cnot', 0, (10, 1), 'c')
+        round 4  ('cnot', 0, (11, 3), 'c')
+   sector Z : stim     d_R = [2, 2, 2, 2, 2]
+   AGREE Z: True
+   sector X : stim     d_R = [3, 3, 3, 3, 3]
+   AGREE X: True
+   >>> d_R (min over sectors) = [2, 2, 2, 2, 2]   d_infinity = 2  R_stab = 1  [R_stab valid: window theorem gives d_R = d_d for R >= d]
+
+== [4] piX=NENWSESW piZ=NENWSESW   T=4  idle_layers=0
+   X-check hooks: vertical=0 horizontal=2  -> aligned (X_L is vertical)
+   Z-check hooks: vertical=0 horizontal=2  -> MISALIGNED (Z_L is horizontal)
+   sector Z : transfer d_R = [3, 3, 3, 3, 3]   (dimSigma=5 ngen=27 0.1s)
+     restricted minima (63 = no witness of weight <= 3 in that class):
+       one round only   : [3, 3, 3, 3, 3]
+       >= 2 rounds      : [63, 3, 3, 3, 3]
+       uses hook fault  : [3, 3, 3, 3, 3]
+       no hook fault    : [3, 3, 3, 3, 3]
+       uses meas fault  : [63, 63, 63, 63, 63]
+       no meas fault    : [3, 3, 3, 3, 3]
+     WITNESS R=1 weight=3 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 2, (11, 8), 't')
+        round 0  ('cnot', 0, (10, 1), 'c')
+        round 0  ('cnot', 0, (11, 5), 'c')
+     WITNESS R=5 weight=3 rounds=[4] undetectable=True logical=True
+        round 4  ('cnot', 2, (11, 8), 't')
+        round 4  ('cnot', 0, (10, 1), 'c')
+        round 4  ('cnot', 0, (11, 5), 'c')
+   sector X : transfer d_R = [2, 2, 2, 2, 2]   (dimSigma=5 ngen=27 0.2s)
+     restricted minima (63 = no witness of weight <= 3 in that class):
+       one round only   : [2, 2, 2, 2, 2]
+       >= 2 rounds      : [63, 2, 2, 2, 2]
+       uses hook fault  : [2, 2, 2, 2, 2]
+       no hook fault    : [3, 3, 3, 3, 3]
+       uses meas fault  : [3, 3, 3, 3, 3]
+       no meas fault    : [2, 2, 2, 2, 2]
+     WITNESS R=1 weight=2 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 1, (11, 3), 'c')
+        round 0  ('cnot', 0, (5, 15), 'ct')
+     WITNESS R=5 weight=2 rounds=[4] undetectable=True logical=True
+        round 4  ('cnot', 1, (11, 3), 'c')
+        round 4  ('cnot', 0, (5, 15), 'ct')
+   sector Z : stim     d_R = [3, 3, 3, 3, 3]
+   AGREE Z: True
+   sector X : stim     d_R = [2, 2, 2, 2, 2]
+   AGREE X: True
+   >>> d_R (min over sectors) = [2, 2, 2, 2, 2]   d_infinity = 2  R_stab = 1  [R_stab valid: window theorem gives d_R = d_d for R >= d]
+
+== [5] piX=NENWSESW piZ=NESENWSW   T=4  idle_layers=0
+   X-check hooks: vertical=0 horizontal=2  -> aligned (X_L is vertical)
+   Z-check hooks: vertical=2 horizontal=0  -> aligned (Z_L is horizontal)
+   sector Z : transfer d_R = [3, 3, 3, 3, 3]   (dimSigma=5 ngen=27 0.0s)
+     restricted minima (63 = no witness of weight <= 3 in that class):
+       one round only   : [3, 3, 3, 3, 3]
+       >= 2 rounds      : [63, 3, 3, 3, 3]
+       uses hook fault  : [3, 3, 3, 3, 3]
+       no hook fault    : [3, 3, 3, 3, 3]
+       uses meas fault  : [63, 63, 63, 63, 63]
+       no meas fault    : [3, 3, 3, 3, 3]
+     WITNESS R=1 weight=3 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 2, (11, 8), 't')
+        round 0  ('cnot', 0, (10, 1), 'c')
+        round 0  ('cnot', 0, (11, 5), 'c')
+     WITNESS R=5 weight=3 rounds=[4] undetectable=True logical=True
+        round 4  ('cnot', 2, (11, 8), 't')
+        round 4  ('cnot', 0, (10, 1), 'c')
+        round 4  ('cnot', 0, (11, 5), 'c')
+   sector X : transfer d_R = [3, 3, 3, 3, 3]   (dimSigma=5 ngen=27 0.0s)
+     restricted minima (63 = no witness of weight <= 3 in that class):
+       one round only   : [3, 3, 3, 3, 3]
+       >= 2 rounds      : [63, 3, 3, 3, 3]
+       uses hook fault  : [3, 3, 3, 3, 3]
+       no hook fault    : [3, 3, 3, 3, 3]
+       uses meas fault  : [63, 63, 63, 63, 63]
+       no meas fault    : [3, 3, 3, 3, 3]
+     WITNESS R=1 weight=3 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 0, (1, 14), 'ct')
+        round 0  ('cnot', 0, (9, 0), 'c')
+        round 0  ('cnot', 0, (10, 2), 'c')
+     WITNESS R=5 weight=3 rounds=[4] undetectable=True logical=True
+        round 4  ('cnot', 0, (1, 14), 'ct')
+        round 4  ('cnot', 0, (9, 0), 'c')
+        round 4  ('cnot', 0, (10, 2), 'c')
+   sector Z : stim     d_R = [3, 3, 3, 3, 3]
+   AGREE Z: True
+   sector X : stim     d_R = [3, 3, 3, 3, 3]
+   AGREE X: True
+   >>> d_R (min over sectors) = [3, 3, 3, 3, 3]   d_infinity = 3  R_stab = 1  [R_stab valid: window theorem gives d_R = d_d for R >= d]
+
+== [6] piX=NESENWSW piZ=NENWSESW   T=4  idle_layers=0
+   X-check hooks: vertical=2 horizontal=0  -> MISALIGNED (X_L is vertical)
+   Z-check hooks: vertical=0 horizontal=2  -> MISALIGNED (Z_L is horizontal)
+   sector Z : transfer d_R = [2, 2, 2, 2, 2]   (dimSigma=5 ngen=27 0.2s)
+     restricted minima (63 = no witness of weight <= 3 in that class):
+       one round only   : [2, 2, 2, 2, 2]
+       >= 2 rounds      : [63, 2, 2, 2, 2]
+       uses hook fault  : [2, 2, 2, 2, 2]
+       no hook fault    : [3, 3, 3, 3, 3]
+       uses meas fault  : [3, 3, 3, 3, 3]
+       no meas fault    : [2, 2, 2, 2, 2]
+     WITNESS R=1 weight=2 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 1, (11, 8), 'c')
+        round 0  ('cnot', 0, (10, 1), 'c')
+     WITNESS R=5 weight=2 rounds=[4] undetectable=True logical=True
+        round 4  ('cnot', 1, (11, 8), 'c')
+        round 4  ('cnot', 0, (10, 1), 'c')
+   sector X : transfer d_R = [2, 2, 2, 2, 2]   (dimSigma=5 ngen=27 0.1s)
+     restricted minima (63 = no witness of weight <= 3 in that class):
+       one round only   : [2, 2, 2, 2, 2]
+       >= 2 rounds      : [63, 2, 2, 2, 2]
+       uses hook fault  : [2, 2, 2, 2, 2]
+       no hook fault    : [3, 3, 3, 3, 3]
+       uses meas fault  : [3, 3, 3, 3, 3]
+       no meas fault    : [2, 2, 2, 2, 2]
+     WITNESS R=1 weight=2 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 1, (11, 3), 'c')
+        round 0  ('cnot', 0, (5, 15), 'ct')
+     WITNESS R=5 weight=2 rounds=[4] undetectable=True logical=True
+        round 4  ('cnot', 1, (11, 3), 'c')
+        round 4  ('cnot', 0, (5, 15), 'ct')
+   sector Z : stim     d_R = [2, 2, 2, 2, 2]
+   AGREE Z: True
+   sector X : stim     d_R = [2, 2, 2, 2, 2]
+   AGREE X: True
+   >>> d_R (min over sectors) = [2, 2, 2, 2, 2]   d_infinity = 2  R_stab = 1  [R_stab valid: window theorem gives d_R = d_d for R >= d]
+
+== [7] piX=NESENWSW piZ=NESENWSW   T=4  idle_layers=0
+   X-check hooks: vertical=2 horizontal=0  -> MISALIGNED (X_L is vertical)
+   Z-check hooks: vertical=2 horizontal=0  -> aligned (Z_L is horizontal)
+   sector Z : transfer d_R = [2, 2, 2, 2, 2]   (dimSigma=5 ngen=27 0.1s)
+     restricted minima (63 = no witness of weight <= 3 in that class):
+       one round only   : [2, 2, 2, 2, 2]
+       >= 2 rounds      : [63, 2, 2, 2, 2]
+       uses hook fault  : [2, 2, 2, 2, 2]
+       no hook fault    : [3, 3, 3, 3, 3]
+       uses meas fault  : [3, 3, 3, 3, 3]
+       no meas fault    : [2, 2, 2, 2, 2]
+     WITNESS R=1 weight=2 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 1, (11, 8), 'c')
+        round 0  ('cnot', 0, (10, 1), 'c')
+     WITNESS R=5 weight=2 rounds=[4] undetectable=True logical=True
+        round 4  ('cnot', 1, (11, 8), 'c')
+        round 4  ('cnot', 0, (10, 1), 'c')
+   sector X : transfer d_R = [3, 3, 3, 3, 3]   (dimSigma=5 ngen=27 0.1s)
+     restricted minima (63 = no witness of weight <= 3 in that class):
+       one round only   : [3, 3, 3, 3, 3]
+       >= 2 rounds      : [63, 3, 3, 3, 3]
+       uses hook fault  : [3, 3, 3, 3, 3]
+       no hook fault    : [3, 3, 3, 3, 3]
+       uses meas fault  : [63, 63, 63, 63, 63]
+       no meas fault    : [3, 3, 3, 3, 3]
+     WITNESS R=1 weight=3 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 0, (1, 14), 'ct')
+        round 0  ('cnot', 0, (9, 0), 'c')
+        round 0  ('cnot', 0, (10, 2), 'c')
+     WITNESS R=5 weight=3 rounds=[4] undetectable=True logical=True
+        round 4  ('cnot', 0, (1, 14), 'ct')
+        round 4  ('cnot', 0, (9, 0), 'c')
+        round 4  ('cnot', 0, (10, 2), 'c')
+   sector Z : stim     d_R = [2, 2, 2, 2, 2]
+   AGREE Z: True
+   sector X : stim     d_R = [3, 3, 3, 3, 3]
+   AGREE X: True
+   >>> d_R (min over sectors) = [2, 2, 2, 2, 2]   d_infinity = 2  R_stab = 1  [R_stab valid: window theorem gives d_R = d_d for R >= d]
+
+== [8] piX=SWNWSENE piZ=SWNWSENE   T=4  idle_layers=0
+   X-check hooks: vertical=2 horizontal=0  -> MISALIGNED (X_L is vertical)
+   Z-check hooks: vertical=2 horizontal=0  -> aligned (Z_L is horizontal)
+   sector Z : transfer d_R = [2, 2, 2, 2, 2]   (dimSigma=5 ngen=27 0.0s)
+     restricted minima (63 = no witness of weight <= 3 in that class):
+       one round only   : [2, 2, 2, 2, 2]
+       >= 2 rounds      : [63, 2, 2, 2, 2]
+       uses hook fault  : [2, 2, 2, 2, 2]
+       no hook fault    : [3, 3, 3, 3, 3]
+       uses meas fault  : [3, 3, 3, 3, 3]
+       no meas fault    : [2, 2, 2, 2, 2]
+     WITNESS R=1 weight=2 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 1, (10, 0), 'c')
+        round 0  ('cnot', 0, (11, 7), 'c')
+     WITNESS R=5 weight=2 rounds=[4] undetectable=True logical=True
+        round 4  ('cnot', 1, (10, 0), 'c')
+        round 4  ('cnot', 0, (11, 7), 'c')
+   sector X : transfer d_R = [3, 3, 3, 3, 3]   (dimSigma=5 ngen=27 0.0s)
+     restricted minima (63 = no witness of weight <= 3 in that class):
+       one round only   : [3, 3, 3, 3, 3]
+       >= 2 rounds      : [63, 3, 3, 3, 3]
+       uses hook fault  : [3, 3, 3, 3, 3]
+       no hook fault    : [3, 3, 3, 3, 3]
+       uses meas fault  : [63, 63, 63, 63, 63]
+       no meas fault    : [3, 3, 3, 3, 3]
+     WITNESS R=1 weight=3 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 0, (3, 14), 'ct')
+        round 0  ('cnot', 0, (10, 4), 'c')
+        round 0  ('cnot', 0, (12, 8), 'c')
+     WITNESS R=5 weight=3 rounds=[4] undetectable=True logical=True
+        round 4  ('cnot', 0, (3, 14), 'ct')
+        round 4  ('cnot', 0, (10, 4), 'c')
+        round 4  ('cnot', 0, (12, 8), 'c')
+   sector Z : stim     d_R = [2, 2, 2, 2, 2]
+   AGREE Z: True
+   sector X : stim     d_R = [3, 3, 3, 3, 3]
+   AGREE X: True
+   >>> d_R (min over sectors) = [2, 2, 2, 2, 2]   d_infinity = 2  R_stab = 1  [R_stab valid: window theorem gives d_R = d_d for R >= d]
+
+== [9] piX=SWNWSENE piZ=SWSENWNE   T=4  idle_layers=0
+   X-check hooks: vertical=2 horizontal=0  -> MISALIGNED (X_L is vertical)
+   Z-check hooks: vertical=0 horizontal=2  -> MISALIGNED (Z_L is horizontal)
+   sector Z : transfer d_R = [2, 2, 2, 2, 2]   (dimSigma=5 ngen=27 0.0s)
+     restricted minima (63 = no witness of weight <= 3 in that class):
+       one round only   : [2, 2, 2, 2, 2]
+       >= 2 rounds      : [63, 2, 2, 2, 2]
+       uses hook fault  : [2, 2, 2, 2, 2]
+       no hook fault    : [3, 3, 3, 3, 3]
+       uses meas fault  : [3, 3, 3, 3, 3]
+       no meas fault    : [2, 2, 2, 2, 2]
+     WITNESS R=1 weight=2 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 1, (10, 0), 'c')
+        round 0  ('cnot', 0, (11, 7), 'c')
+     WITNESS R=5 weight=2 rounds=[4] undetectable=True logical=True
+        round 4  ('cnot', 1, (10, 0), 'c')
+        round 4  ('cnot', 0, (11, 7), 'c')
+   sector X : transfer d_R = [2, 2, 2, 2, 2]   (dimSigma=5 ngen=27 0.0s)
+     restricted minima (63 = no witness of weight <= 3 in that class):
+       one round only   : [2, 2, 2, 2, 2]
+       >= 2 rounds      : [63, 2, 2, 2, 2]
+       uses hook fault  : [2, 2, 2, 2, 2]
+       no hook fault    : [3, 3, 3, 3, 3]
+       uses meas fault  : [3, 3, 3, 3, 3]
+       no meas fault    : [2, 2, 2, 2, 2]
+     WITNESS R=1 weight=2 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 1, (10, 5), 'c')
+        round 0  ('cnot', 0, (3, 14), 'ct')
+     WITNESS R=5 weight=2 rounds=[4] undetectable=True logical=True
+        round 4  ('cnot', 1, (10, 5), 'c')
+        round 4  ('cnot', 0, (3, 14), 'ct')
+   sector Z : stim     d_R = [2, 2, 2, 2, 2]
+   AGREE Z: True
+   sector X : stim     d_R = [2, 2, 2, 2, 2]
+   AGREE X: True
+   >>> d_R (min over sectors) = [2, 2, 2, 2, 2]   d_infinity = 2  R_stab = 1  [R_stab valid: window theorem gives d_R = d_d for R >= d]
+
+== [10] piX=SWSENWNE piZ=SWNWSENE   T=4  idle_layers=0
+   X-check hooks: vertical=0 horizontal=2  -> aligned (X_L is vertical)
+   Z-check hooks: vertical=2 horizontal=0  -> aligned (Z_L is horizontal)
+   sector Z : transfer d_R = [3, 3, 3, 3, 3]   (dimSigma=5 ngen=27 0.1s)
+     restricted minima (63 = no witness of weight <= 3 in that class):
+       one round only   : [3, 3, 3, 3, 3]
+       >= 2 rounds      : [63, 3, 3, 3, 3]
+       uses hook fault  : [3, 3, 3, 3, 3]
+       no hook fault    : [3, 3, 3, 3, 3]
+       uses meas fault  : [63, 63, 63, 63, 63]
+       no meas fault    : [3, 3, 3, 3, 3]
+     WITNESS R=1 weight=3 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 0, (4, 14), 'ct')
+        round 0  ('cnot', 0, (9, 1), 'c')
+        round 0  ('cnot', 0, (11, 7), 'c')
+     WITNESS R=5 weight=3 rounds=[4] undetectable=True logical=True
+        round 4  ('cnot', 0, (4, 14), 'ct')
+        round 4  ('cnot', 0, (9, 1), 'c')
+        round 4  ('cnot', 0, (11, 7), 'c')
+   sector X : transfer d_R = [3, 3, 3, 3, 3]   (dimSigma=5 ngen=27 0.1s)
+     restricted minima (63 = no witness of weight <= 3 in that class):
+       one round only   : [3, 3, 3, 3, 3]
+       >= 2 rounds      : [63, 3, 3, 3, 3]
+       uses hook fault  : [3, 3, 3, 3, 3]
+       no hook fault    : [3, 3, 3, 3, 3]
+       uses meas fault  : [63, 63, 63, 63, 63]
+       no meas fault    : [3, 3, 3, 3, 3]
+     WITNESS R=1 weight=3 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 0, (3, 14), 'ct')
+        round 0  ('cnot', 0, (10, 4), 'c')
+        round 0  ('cnot', 0, (12, 8), 'c')
+     WITNESS R=5 weight=3 rounds=[4] undetectable=True logical=True
+        round 4  ('cnot', 0, (3, 14), 'ct')
+        round 4  ('cnot', 0, (10, 4), 'c')
+        round 4  ('cnot', 0, (12, 8), 'c')
+   sector Z : stim     d_R = [3, 3, 3, 3, 3]
+   AGREE Z: True
+   sector X : stim     d_R = [3, 3, 3, 3, 3]
+   AGREE X: True
+   >>> d_R (min over sectors) = [3, 3, 3, 3, 3]   d_infinity = 3  R_stab = 1  [R_stab valid: window theorem gives d_R = d_d for R >= d]
+
+== [11] piX=SWSENWNE piZ=SWSENWNE   T=4  idle_layers=0
+   X-check hooks: vertical=0 horizontal=2  -> aligned (X_L is vertical)
+   Z-check hooks: vertical=0 horizontal=2  -> MISALIGNED (Z_L is horizontal)
+   sector Z : transfer d_R = [3, 3, 3, 3, 3]   (dimSigma=5 ngen=27 0.1s)
+     restricted minima (63 = no witness of weight <= 3 in that class):
+       one round only   : [3, 3, 3, 3, 3]
+       >= 2 rounds      : [63, 3, 3, 3, 3]
+       uses hook fault  : [3, 3, 3, 3, 3]
+       no hook fault    : [3, 3, 3, 3, 3]
+       uses meas fault  : [63, 63, 63, 63, 63]
+       no meas fault    : [3, 3, 3, 3, 3]
+     WITNESS R=1 weight=3 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 0, (4, 14), 'ct')
+        round 0  ('cnot', 0, (9, 1), 'c')
+        round 0  ('cnot', 0, (11, 7), 'c')
+     WITNESS R=5 weight=3 rounds=[4] undetectable=True logical=True
+        round 4  ('cnot', 0, (4, 14), 'ct')
+        round 4  ('cnot', 0, (9, 1), 'c')
+        round 4  ('cnot', 0, (11, 7), 'c')
+   sector X : transfer d_R = [2, 2, 2, 2, 2]   (dimSigma=5 ngen=27 0.0s)
+     restricted minima (63 = no witness of weight <= 3 in that class):
+       one round only   : [2, 2, 2, 2, 2]
+       >= 2 rounds      : [63, 2, 2, 2, 2]
+       uses hook fault  : [2, 2, 2, 2, 2]
+       no hook fault    : [3, 3, 3, 3, 3]
+       uses meas fault  : [3, 3, 3, 3, 3]
+       no meas fault    : [2, 2, 2, 2, 2]
+     WITNESS R=1 weight=2 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 1, (10, 5), 'c')
+        round 0  ('cnot', 0, (3, 14), 'ct')
+     WITNESS R=5 weight=2 rounds=[4] undetectable=True logical=True
+        round 4  ('cnot', 1, (10, 5), 'c')
+        round 4  ('cnot', 0, (3, 14), 'ct')
+   sector Z : stim     d_R = [3, 3, 3, 3, 3]
+   AGREE Z: True
+   sector X : stim     d_R = [2, 2, 2, 2, 2]
+   AGREE X: True
+   >>> d_R (min over sectors) = [2, 2, 2, 2, 2]   d_infinity = 2  R_stab = 1  [R_stab valid: window theorem gives d_R = d_d for R >= d]
+
+== [12] piX=SENESWNW piZ=SENESWNW   T=4  idle_layers=0
+   X-check hooks: vertical=2 horizontal=0  -> MISALIGNED (X_L is vertical)
+   Z-check hooks: vertical=2 horizontal=0  -> aligned (Z_L is horizontal)
+   sector Z : transfer d_R = [2, 2, 2, 2, 2]   (dimSigma=5 ngen=27 0.1s)
+     restricted minima (63 = no witness of weight <= 3 in that class):
+       one round only   : [2, 2, 2, 2, 2]
+       >= 2 rounds      : [63, 2, 2, 2, 2]
+       uses hook fault  : [2, 2, 2, 2, 2]
+       no hook fault    : [3, 3, 3, 3, 3]
+       uses meas fault  : [3, 3, 3, 3, 3]
+       no meas fault    : [2, 2, 2, 2, 2]
+     WITNESS R=1 weight=2 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 1, (10, 1), 'c')
+        round 0  ('cnot', 0, (7, 15), 'ct')
+     WITNESS R=5 weight=2 rounds=[4] undetectable=True logical=True
+        round 4  ('cnot', 1, (10, 1), 'c')
+        round 4  ('cnot', 0, (7, 15), 'ct')
+   sector X : transfer d_R = [3, 3, 3, 3, 3]   (dimSigma=5 ngen=27 0.1s)
+     restricted minima (63 = no witness of weight <= 3 in that class):
+       one round only   : [3, 3, 3, 3, 3]
+       >= 2 rounds      : [63, 3, 3, 3, 3]
+       uses hook fault  : [3, 3, 3, 3, 3]
+       no hook fault    : [3, 3, 3, 3, 3]
+       uses meas fault  : [63, 63, 63, 63, 63]
+       no meas fault    : [3, 3, 3, 3, 3]
+     WITNESS R=1 weight=3 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 0, (4, 14), 'ct')
+        round 0  ('cnot', 0, (9, 3), 'c')
+        round 0  ('cnot', 0, (10, 5), 'c')
+     WITNESS R=5 weight=3 rounds=[4] undetectable=True logical=True
+        round 4  ('cnot', 0, (4, 14), 'ct')
+        round 4  ('cnot', 0, (9, 3), 'c')
+        round 4  ('cnot', 0, (10, 5), 'c')
+   sector Z : stim     d_R = [2, 2, 2, 2, 2]
+   AGREE Z: True
+   sector X : stim     d_R = [3, 3, 3, 3, 3]
+   AGREE X: True
+   >>> d_R (min over sectors) = [2, 2, 2, 2, 2]   d_infinity = 2  R_stab = 1  [R_stab valid: window theorem gives d_R = d_d for R >= d]
+
+== [13] piX=SENESWNW piZ=SESWNENW   T=4  idle_layers=0
+   X-check hooks: vertical=2 horizontal=0  -> MISALIGNED (X_L is vertical)
+   Z-check hooks: vertical=0 horizontal=2  -> MISALIGNED (Z_L is horizontal)
+   sector Z : transfer d_R = [2, 2, 2, 2, 2]   (dimSigma=5 ngen=27 0.2s)
+     restricted minima (63 = no witness of weight <= 3 in that class):
+       one round only   : [2, 2, 2, 2, 2]
+       >= 2 rounds      : [63, 2, 2, 2, 2]
+       uses hook fault  : [2, 2, 2, 2, 2]
+       no hook fault    : [3, 3, 3, 3, 3]
+       uses meas fault  : [3, 3, 3, 3, 3]
+       no meas fault    : [2, 2, 2, 2, 2]
+     WITNESS R=1 weight=2 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 1, (10, 1), 'c')
+        round 0  ('cnot', 0, (7, 15), 'ct')
+     WITNESS R=5 weight=2 rounds=[4] undetectable=True logical=True
+        round 4  ('cnot', 1, (10, 1), 'c')
+        round 4  ('cnot', 0, (7, 15), 'ct')
+   sector X : transfer d_R = [2, 2, 2, 2, 2]   (dimSigma=5 ngen=27 0.1s)
+     restricted minima (63 = no witness of weight <= 3 in that class):
+       one round only   : [2, 2, 2, 2, 2]
+       >= 2 rounds      : [63, 2, 2, 2, 2]
+       uses hook fault  : [2, 2, 2, 2, 2]
+       no hook fault    : [3, 3, 3, 3, 3]
+       uses meas fault  : [3, 3, 3, 3, 3]
+       no meas fault    : [2, 2, 2, 2, 2]
+     WITNESS R=1 weight=2 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 1, (11, 6), 'c')
+        round 0  ('cnot', 0, (10, 5), 'c')
+     WITNESS R=5 weight=2 rounds=[4] undetectable=True logical=True
+        round 4  ('cnot', 1, (11, 6), 'c')
+        round 4  ('cnot', 0, (10, 5), 'c')
+   sector Z : stim     d_R = [2, 2, 2, 2, 2]
+   AGREE Z: True
+   sector X : stim     d_R = [2, 2, 2, 2, 2]
+   AGREE X: True
+   >>> d_R (min over sectors) = [2, 2, 2, 2, 2]   d_infinity = 2  R_stab = 1  [R_stab valid: window theorem gives d_R = d_d for R >= d]
+
+== [14] piX=SESWNENW piZ=SENESWNW   T=4  idle_layers=0
+   X-check hooks: vertical=0 horizontal=2  -> aligned (X_L is vertical)
+   Z-check hooks: vertical=2 horizontal=0  -> aligned (Z_L is horizontal)
+   sector Z : transfer d_R = [3, 3, 3, 3, 3]   (dimSigma=5 ngen=27 0.1s)
+     restricted minima (63 = no witness of weight <= 3 in that class):
+       one round only   : [3, 3, 3, 3, 3]
+       >= 2 rounds      : [63, 3, 3, 3, 3]
+       uses hook fault  : [3, 3, 3, 3, 3]
+       no hook fault    : [3, 3, 3, 3, 3]
+       uses meas fault  : [63, 63, 63, 63, 63]
+       no meas fault    : [3, 3, 3, 3, 3]
+     WITNESS R=1 weight=3 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 0, (7, 15), 'ct')
+        round 0  ('cnot', 0, (9, 2), 'c')
+        round 0  ('cnot', 0, (10, 4), 'c')
+     WITNESS R=5 weight=3 rounds=[4] undetectable=True logical=True
+        round 4  ('cnot', 0, (7, 15), 'ct')
+        round 4  ('cnot', 0, (9, 2), 'c')
+        round 4  ('cnot', 0, (10, 4), 'c')
+   sector X : transfer d_R = [3, 3, 3, 3, 3]   (dimSigma=5 ngen=27 0.1s)
+     restricted minima (63 = no witness of weight <= 3 in that class):
+       one round only   : [3, 3, 3, 3, 3]
+       >= 2 rounds      : [63, 3, 3, 3, 3]
+       uses hook fault  : [3, 3, 3, 3, 3]
+       no hook fault    : [3, 3, 3, 3, 3]
+       uses meas fault  : [63, 63, 63, 63, 63]
+       no meas fault    : [3, 3, 3, 3, 3]
+     WITNESS R=1 weight=3 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 0, (4, 14), 'ct')
+        round 0  ('cnot', 0, (9, 3), 'c')
+        round 0  ('cnot', 0, (10, 5), 'c')
+     WITNESS R=5 weight=3 rounds=[4] undetectable=True logical=True
+        round 4  ('cnot', 0, (4, 14), 'ct')
+        round 4  ('cnot', 0, (9, 3), 'c')
+        round 4  ('cnot', 0, (10, 5), 'c')
+   sector Z : stim     d_R = [3, 3, 3, 3, 3]
+   AGREE Z: True
+   sector X : stim     d_R = [3, 3, 3, 3, 3]
+   AGREE X: True
+   >>> d_R (min over sectors) = [3, 3, 3, 3, 3]   d_infinity = 3  R_stab = 1  [R_stab valid: window theorem gives d_R = d_d for R >= d]
+
+== [15] piX=SESWNENW piZ=SESWNENW   T=4  idle_layers=0
+   X-check hooks: vertical=0 horizontal=2  -> aligned (X_L is vertical)
+   Z-check hooks: vertical=0 horizontal=2  -> MISALIGNED (Z_L is horizontal)
+   sector Z : transfer d_R = [3, 3, 3, 3, 3]   (dimSigma=5 ngen=27 0.1s)
+     restricted minima (63 = no witness of weight <= 3 in that class):
+       one round only   : [3, 3, 3, 3, 3]
+       >= 2 rounds      : [63, 3, 3, 3, 3]
+       uses hook fault  : [3, 3, 3, 3, 3]
+       no hook fault    : [3, 3, 3, 3, 3]
+       uses meas fault  : [63, 63, 63, 63, 63]
+       no meas fault    : [3, 3, 3, 3, 3]
+     WITNESS R=1 weight=3 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 0, (7, 15), 'ct')
+        round 0  ('cnot', 0, (9, 2), 'c')
+        round 0  ('cnot', 0, (10, 4), 'c')
+     WITNESS R=5 weight=3 rounds=[4] undetectable=True logical=True
+        round 4  ('cnot', 0, (7, 15), 'ct')
+        round 4  ('cnot', 0, (9, 2), 'c')
+        round 4  ('cnot', 0, (10, 4), 'c')
+   sector X : transfer d_R = [2, 2, 2, 2, 2]   (dimSigma=5 ngen=27 0.1s)
+     restricted minima (63 = no witness of weight <= 3 in that class):
+       one round only   : [2, 2, 2, 2, 2]
+       >= 2 rounds      : [63, 2, 2, 2, 2]
+       uses hook fault  : [2, 2, 2, 2, 2]
+       no hook fault    : [3, 3, 3, 3, 3]
+       uses meas fault  : [3, 3, 3, 3, 3]
+       no meas fault    : [2, 2, 2, 2, 2]
+     WITNESS R=1 weight=2 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 1, (11, 6), 'c')
+        round 0  ('cnot', 0, (10, 5), 'c')
+     WITNESS R=5 weight=2 rounds=[4] undetectable=True logical=True
+        round 4  ('cnot', 1, (11, 6), 'c')
+        round 4  ('cnot', 0, (10, 5), 'c')
+   sector Z : stim     d_R = [3, 3, 3, 3, 3]
+   AGREE Z: True
+   sector X : stim     d_R = [2, 2, 2, 2, 2]
+   AGREE X: True
+   >>> d_R (min over sectors) = [2, 2, 2, 2, 2]   d_infinity = 2  R_stab = 1  [R_stab valid: window theorem gives d_R = d_d for R >= d]
+
+# done

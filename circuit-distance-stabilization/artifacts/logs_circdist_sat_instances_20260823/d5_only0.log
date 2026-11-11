@@ -1,0 +1,51 @@
+# rotated surface code d=5 : n=25 |A|=12 |B|=12 rank(H_X)=12 k=1
+# X_L = column 0 (vertical), Z_L = row 0 (horizontal)
+# aggregation convention: d_R = min(d_R^Z, d_R^X)
+# search space 576 uniform (piX,piZ); legal: 96; legal+MC: 16
+
+== [0] piX=NWNESWSE piZ=NWNESWSE   T=4  idle_layers=0
+   X-check hooks: vertical=0 horizontal=8  -> aligned (X_L is vertical)
+   Z-check hooks: vertical=0 horizontal=8  -> MISALIGNED (Z_L is horizontal)
+   sector Z : transfer d_R = [5, 5, 5, 5, 5, 5, 5]   (dimSigma=13 ngen=87 63.7s)
+     restricted minima (63 = no witness of weight <= 5 in that class):
+       one round only   : [5, 5, 5, 5, 5, 5, 5]
+       >= 2 rounds      : [63, 5, 5, 5, 5, 5, 5]
+       uses hook fault  : [5, 5, 5, 5, 5, 5, 5]
+       no hook fault    : [5, 5, 5, 5, 5, 5, 5]
+       uses meas fault  : [63, 63, 63, 63, 63, 63, 63]
+       no meas fault    : [5, 5, 5, 5, 5, 5, 5]
+     WITNESS R=1 weight=5 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 0, (5, 40), 'ct')
+        round 0  ('cnot', 0, (15, 46), 'ct')
+        round 0  ('cnot', 0, (27, 0), 'c')
+        round 0  ('cnot', 0, (31, 10), 'c')
+        round 0  ('cnot', 0, (35, 20), 'c')
+     WITNESS R=7 weight=5 rounds=[6] undetectable=True logical=True
+        round 6  ('cnot', 0, (5, 40), 'ct')
+        round 6  ('cnot', 0, (15, 46), 'ct')
+        round 6  ('cnot', 0, (27, 0), 'c')
+        round 6  ('cnot', 0, (31, 10), 'c')
+        round 6  ('cnot', 0, (35, 20), 'c')
+   sector X : transfer d_R = [3, 3, 3, 3, 3, 3, 3]   (dimSigma=13 ngen=87 55.1s)
+     restricted minima (63 = no witness of weight <= 5 in that class):
+       one round only   : [3, 3, 3, 3, 3, 3, 3]
+       >= 2 rounds      : [63, 3, 3, 3, 3, 3, 3]
+       uses hook fault  : [3, 3, 3, 3, 3, 3, 3]
+       no hook fault    : [5, 5, 5, 5, 5, 5, 5]
+       uses meas fault  : [4, 4, 4, 4, 4, 4, 4]
+       no meas fault    : [3, 3, 3, 3, 3, 3, 3]
+     WITNESS R=1 weight=3 rounds=[0] undetectable=True logical=True
+        round 0  ('cnot', 1, (7, 41), 'c')
+        round 0  ('cnot', 1, (27, 4), 'c')
+        round 0  ('cnot', 1, (28, 6), 'c')
+     WITNESS R=7 weight=3 rounds=[6] undetectable=True logical=True
+        round 6  ('cnot', 1, (7, 41), 'c')
+        round 6  ('cnot', 1, (27, 4), 'c')
+        round 6  ('cnot', 1, (28, 6), 'c')
+   sector Z : stim     d_R = [5, 5, 5, 5, 5, 5, 5]
+   AGREE Z: True
+   sector X : stim     d_R = [3, 3, 3, 3, 3, 3, 3]
+   AGREE X: True
+   >>> d_R (min over sectors) = [3, 3, 3, 3, 3, 3, 3]   d_infinity = 3  R_stab = 1  [R_stab valid: window theorem gives d_R = d_d for R >= d]
+
+# done

@@ -1,0 +1,293 @@
+id: CIRCDIST.sat.instances
+role: outcome
+aliases:
+- SAT-INSTANCES
+claim: Determine or rigorously bound (d_infinity,R_stab) for a standard surface-code schedule, a legal hook-misaligned surface-code
+  schedule, and at least one explicitly specified qLDPC schedule, using two independent methods where feasible, and for each
+  instance provide auditable minimum witnesses and a justified attribution among single-round hook/bulk, temporal-boundary,
+  measurement-fault, and mixed multi-round mechanisms.
+assessment:
+  level: PROVED
+  caveats:
+  - 'Scope is exactly the three selected schedules: zero-based rotated-surface [[25,1,5]] standard member 1; zero-based rotated-surface
+    [[25,1,5]] legal class-D hook-misaligned member 2 in the uniform S4 x S4 family; and BB [[18,4,4]] NI. This proves the
+    existential claim, not all schedules in either surface family, a universal qLDPC result, the bonus d = 7/d = 9 cells,
+    or the fitted family law.'
+  - 'The finite proof covers exactly 28 sector/R cells: both CSS sectors at R = 1,...,5 for each selected surface schedule
+    and R = 1,...,4 for BB NI. It uses ideal data boundaries, verbatim disjoint round locations, all named preparation/CNOT/idle/record
+    locations, full local Pauli menus with uniform occupied-location cost, the full temporal detector chain including initial
+    and terminal slices, dependent check rows, Definition 3.5 and its section-8.1 mirror, and only the value equality to Definition
+    2.7.'
+  - Mechanism attributions are scoped. Standard has a weight-5 one-round no-hook witness and every weight-5 optimum excludes
+    measurement-class generators. Class D at R = 1 has optimum 4, every optimum requires a hook, and a measurement-containing
+    optimum exists; at R = 2,...,5 its optimum 3 is necessarily multi-round, hook-requiring, and measurement-free. BB at R
+    = 1,...,4 has a weight-3 single-round hook witness and every optimum requires a hook and excludes measurement-class generators.
+    No uniqueness or global absence of temporal-boundary-labelled optima is proved.
+  - The finite-to-infinite step alone consumes the exact PROVED CIRCDIST.sat.window claim at sha256:6c50b4049ae908d6646e87f7446f8fb7ea9583182fb79da3cb6b935c7011ccc4,
+    in the model aligned with the exact PROVED transfer claim at sha256:11079eaf2fed2f580127075be12cb7e9fef6ef85e20f47eca9dcf5a68cb7ea33.
+    It yields standard (d_infinity,R_stab) = (5,1), class D (3,2), and BB NI (3,1). No CIRCDIST.sat root adjudication, edit,
+    or promotion is licensed.
+  summary: PROVED at sha256:c71ac7cdbd8ddea97cd9916303566d00bc10b2b930ae00767857c5a6e22ec5f3. Fresh independent strict-serial
+    review reconstructed the three exact code/schedule inputs; checked ranks, distances, legality, measurement consistency
+    and canonical selection; regenerated all 28 sector/R distance cells, 78 exhaustive lower exclusions, 102 distinct-location
+    full-Pauli upper witnesses and every scoped mechanism restriction; audited the complete package seal, verifier and negative
+    controls; and applied the exact PROVED window tail. The licensed results are standard (5,1), class D (3,2), and BB NI
+    (3,1), with only the stated selected-instance and mechanism scopes.
+  basis:
+    routes:
+    - finite-prefix-window-closure
+    reviews:
+    - path: circuit-distance-stabilization/reviews/circdist_sat_instances_review_20260823.md
+      kind: review
+      scope: Independent adversarial review (own engine written from the definitions, no proposer code read) — headline family
+        re-verified by three methods + witness replay, legality/(MC) space rebuilt, convention-slip probes, qLDPC arm rebuilt
+        with a closed-form re-derivation of the exhaustive by-product, standard d = 3,5 re-run, honesty checks; licenses CERTIFIED*
+        with the stated caveat set. Logs SHA-summed (29 files), FIX-2 clean.
+      locator: Per-arm verdicts
+      reviewed_hash: sha256:c71ac7cdbd8ddea97cd9916303566d00bc10b2b930ae00767857c5a6e22ec5f3
+    - path: circuit-distance-stabilization/reviews/circdist_sat_instances_proof_certificates_exact_review_20260826.md
+      kind: review
+      scope: 'Fresh independent strict-serial adversarial proof-certificate audit: verified the complete SHA256 seal and negative
+        controls; reconstructed all selected inputs and schedules; independently regenerated both-sector full-boundary effects,
+        every one of the 28 exact distance cells, all exhaustive lower certificates and all full-Pauli upper replays; audited
+        collision, projection, detector-value, dependent-row, mechanism and finite-tail arguments; and licensed the unchanged
+        exact claim as PROVED without adjudicating the root.'
+      locator: Finding F-NODE
+      reviewed_hash: sha256:c71ac7cdbd8ddea97cd9916303566d00bc10b2b930ae00767857c5a6e22ec5f3
+    runs:
+    - path: circuit-distance-stabilization/artifacts/circdist_sat_instances_proof_certificates_20260826
+      kind: run
+      scope: Sealed round-54 proof-certificate package with exact serialized inputs, complete SHA256 manifest, 28/28 finite
+        distance certificates, 102 explicit distinct-location full-symplectic upper replays, exhaustive lower exclusions,
+        direct forward/backward effects, scoped mechanism certificates, four packaged negative controls, and a standard-library
+        verifier; independently regenerated and adversarially audited in the round-55 completion review.
+      result: Independent manifest audit passed 12/12 covered files with SHA256SUMS self-excluded; packaged verifier passed
+        28/28 cells, 78 lower exclusions, 30,060 forward/backward pairs, 354 restricted subsets, 28 measurement supermodels
+        and 102 upper replays; four packaged and seven additional negative controls rejected; a clean-room checker importing
+        no package code independently reproduced every load-bearing result.
+    - path: circuit-distance-stabilization/artifacts/circdist_sat_instances_20260823.md
+      kind: run
+      scope: 'Wave-24 full three-arm computation (logs: artifacts/logs_circdist_sat_instances_20260823/, 247 files, SHA256SUMS):
+        surface d = 3,5,7 standard + constructed hook-misaligned family (uniform S4 x S4 space, 576 -> 96 legal -> 16 legal+(MC),
+        identical at d = 3,5,7); BB [[18,4,4]] qLDPC arm; per-cell witness audits and MILP mechanism exclusions; four independent
+        implementations (own min-plus C engine, stim 1.16.0, own exact MILP/HiGHS, exhaustive-vs-criterion (W)).'
+      result: 'Standard: (d, 1) at d = 3,5,7. Hook-misaligned: R_stab = 2/3/4 at d = 5/7/9 with d_R = max(d - R, (d+1)/2)
+        fitted over 37 cells (conjectured law). BB [[18,4,4]]: (3, 1). 61/61 spacetime-matrix vs stim DEM signature checks;
+        zero cross-method disagreements anywhere.'
+    - path: circuit-distance-stabilization/artifacts/circdist_sat_recon_20260820.md
+      kind: run
+      scope: Rotated surface d=3,5,7 with Stim for R=1 through 12; four rotated-surface d=3 schedules with exact min-plus
+        transfer for R=1 through 10; enumeration of 7,610 legal schedules across rotated-surface, Steane, and Shor test families.
+      result: All recorded sequences were constant within their stated windows; the d=3 transfer values agreed with Stim.
+        No qLDPC or completed hook-misaligned arm was included.
+    evidence:
+    - path: circuit-distance-stabilization/artifacts/circdist_sat_recon_20260820.md
+      kind: text
+    - path: circuit-distance-stabilization/artifacts/history/pre_protocol_20260826/nodes/CIRCDIST.sat.instances.yaml
+      kind: text
+      note: Immutable pre-migration record, including every original event, former summary and frontier; historical evidence,
+        not an additional completion review.
+    - path: circuit-distance-stabilization/artifacts/definitions/SAT_RESCOPE_20260822.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circuit-distance-stabilization/artifacts/circdist_sat_instances_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circuit-distance-stabilization/reviews/circdist_sat_instances_review_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circuit-distance-stabilization/artifacts/logs_circdist_sat_instances_20260823
+      kind: text
+      note: Byte-preserved historical computation package (sources, inputs, outputs and original checksums). No mathematical
+        computation was rerun during migration.
+    - path: circuit-distance-stabilization/artifacts/logs_circdist_sat_instances_review_20260823
+      kind: text
+      note: Byte-preserved historical computation package (sources, inputs, outputs and original checksums). No mathematical
+        computation was rerun during migration.
+routes:
+  finite-prefix-window-closure:
+    premises:
+    - CIRCDIST.sat.window
+    implication: The instances dossier's reviewed finite computations establish, within their stated computed windows, the
+      d_R values for the standard rotated-surface d = 5 schedule, the legal doubly hook-misaligned rotated-surface d = 5 schedule,
+      and the BB [[18,4,4]] schedule; its audited minimum witnesses and restricted exact optimizations establish the scoped
+      mechanism attributions required by this claim. These finite-window values, witnesses, and attributions do not use CIRCDIST.sat.window.
+      The two records use the same listed full temporal-boundary detector coordinates; on the selected BB prefix, the extra
+      redundancy detectors identified by S3-prime were independently added through R = d and did not change d_R. Under their
+      shared uniform unit-cost full-Pauli fault model, the dossier's faulty-location minima equal the window theorem's elementary-fault
+      minima because same-location faults may be replaced by their Pauli product while preserving the effect and never increasing
+      weight. The premise CIRCDIST.sat.window then gives d_R = d_d = d_infinity for every R >= d, so the computed first-d
+      prefixes determine d_infinity and R_stab for those three schedules. Conditional on that premise and subject to the node's
+      existing scope caveats, these results establish every clause of the CIRCDIST.sat.instances claim.
+    proof:
+      sketch: Use the reviewed d = 5 standard prefix 5,5,5,5,5, the d = 5 class-D prefix 4,3,3,3,3, and the BB [[18,4,4]]
+        prefix 3,3,3,3. Compare the listed full-boundary detector coordinates directly, use the selected-BB redundancy-detector
+        probe through R = d, and apply the Pauli-product collision argument of transfer Lemma 2.9 to identify the two weight
+        conventions. Then apply the exact window premise to extend each prefix, yielding (d_infinity,R_stab) = (5,1), (3,2),
+        and (3,1). The dossier's finite witness replays and restricted optimizations supply the required scoped mechanism
+        labels; do not use the window premise for those finite facts or for any conjectural family law or temporal-boundary-emptiness
+        claim.
+      sources:
+      - path: circuit-distance-stabilization/artifacts/circdist_sat_instances_proof_certificates_20260826
+        kind: run
+      - path: circuit-distance-stabilization/artifacts/circdist_sat_instances_20260823.md
+        kind: text
+      - path: circuit-distance-stabilization/reviews/circdist_sat_instances_review_20260823.md
+        kind: text
+      - path: circuit-distance-stabilization/artifacts/circdist_sat_window_theorem_20260822.md
+        kind: text
+      - path: circuit-distance-stabilization/artifacts/circdist_sat_window_amendment1_20260822.md
+        kind: text
+      - path: circuit-distance-stabilization/artifacts/circdist_sat_transfer_proof_20260823.md
+        kind: text
+      - path: circuit-distance-stabilization/reviews/circdist_transfer_bridgefold_20260823.md
+        kind: text
+      - path: circuit-distance-stabilization/artifacts/circdist_sat_root_assembly_20260823.md
+        kind: text
+      - path: circuit-distance-stabilization/reviews/circdist_sat_v3_exact_text_review_20260826.md
+        kind: text
+    assessment:
+      level: PROVED
+      caveats:
+      - 'RP-C1: This is PROVED only as the exact 1,310-character conditional implication at sha256:255e42681cb10bece97c5f55d5548cc865a94b9b422230435403804a9fb27e05
+        with sole premise CIRCDIST.sat.window. It proves the selected instances claim when the premise and reviewed finite
+        certificates are combined; it does not adjudicate or promote CIRCDIST.sat.'
+      - 'RP-C2: The tail step is licensed only under the exact PROVED CIRCDIST.sat.window claim at sha256:6c50b4049ae908d6646e87f7446f8fb7ea9583182fb79da3cb6b935c7011ccc4:
+        k >= 1 CSS codes, conflict-free and measurement-consistent one-ancilla extraction, ideal boundaries, verbatim uncompressed
+        rounds, both CSS sectors, uniform unit-cost full Pauli groups, canonical Definition-3.5/section-8.1 detectors, and
+        value-only Definition-2.7 equivalence.'
+      - 'RP-C3: The finite inputs are the independently reviewed proof certificates for only the selected standard member
+        1, class-D member 2, and BB NI schedule. The lower direction is exhaustive in an overlap/collision supermodel and
+        each upper direction is a legal distinct-location full-Pauli replay. Serialized verdicts and digests are checked against
+        regeneration and are not accepted as proof by themselves.'
+      - 'RP-C4: Mechanism conclusions retain their restricted-optimization scopes: existence is asserted only where an explicit
+        upper is supplied, universal exclusion only where a strict restricted lower bound is certified, and neither uniqueness,
+        a universal family law, bonus d = 7/d = 9 results, nor global absence of temporal-boundary-labelled optima is inferred.'
+      summary: PROVED at sha256:255e42681cb10bece97c5f55d5548cc865a94b9b422230435403804a9fb27e05. The unchanged exact implication
+        combines independently regenerated finite proof certificates and scoped mechanism restrictions with the exact PROVED
+        window premise. The first-d prefixes 5,5,5,5,5; 4,3,3,3,3; and 3,3,3,3 extend respectively to (d_infinity,R_stab)
+        = (5,1), (3,2), and (3,1). This route decision is separate from the node decision and licenses no CIRCDIST.sat root
+        change.
+      basis:
+        reviews:
+        - path: circuit-distance-stabilization/reviews/circdist_sat_instances_window_edge_exact_review_20260826.md
+          kind: review
+          scope: Fresh independent audit of the finite-prefix/tail boundary, the three selected claim-discharge schedules,
+            detector and weight-convention alignment, the Pauli-product collision argument, caveat propagation, exact serialization
+            and hashing, and strict route-versus-node completion rules; archived numerical searches and the window theorem
+            itself were not re-run or re-proved.
+          locator: Finding F-ROUTE
+          reviewed_hash: sha256:255e42681cb10bece97c5f55d5548cc865a94b9b422230435403804a9fb27e05
+        - path: circuit-distance-stabilization/reviews/circdist_sat_window_downstream_scope_rebind_review_20260826.md
+          kind: review
+          scope: Fresh strict-serial independent downstream audit of the repaired 1,261-character window premise against each
+            selected finite instance, the finite-prefix/tail implication, all boundary, schedule, sector, detector and fault-model
+            pins, quantifiers, hashes, old-review binding, IW-C0, and no-inheritance rules.
+          locator: Finding F-INSTANCES-ROUTE
+          reviewed_hash: sha256:255e42681cb10bece97c5f55d5548cc865a94b9b422230435403804a9fb27e05
+        - path: circuit-distance-stabilization/reviews/circdist_sat_instances_proof_certificates_exact_review_20260826.md
+          kind: review
+          scope: Fresh independent strict-serial route audit binding the unchanged 1,310-character implication to the exact
+            current window premise and to independently regenerated finite distances, full-Pauli witnesses, exhaustive lower
+            bounds, detector/collision bridges and scoped mechanism exclusions for exactly the three selected schedules; re-derived
+            all finite-to-infinite pairs and enforced route/node/root separation.
+          locator: Finding F-ROUTE
+          reviewed_hash: sha256:255e42681cb10bece97c5f55d5548cc865a94b9b422230435403804a9fb27e05
+        evidence:
+        - path: circuit-distance-stabilization/artifacts/circdist_sat_instances_proof_certificates_20260826
+          kind: run
+          locator: README.md and SHA256SUMS
+          note: Load-bearing finite proof certificates independently regenerated and adversarially reviewed in the round-55
+            exact review; complete manifest, clean-room recomputation, full witness replay and negative controls passed.
+        - path: circuit-distance-stabilization/reviews/circdist_sat_instances_review_20260823.md
+          kind: text
+          locator: Section 7
+          note: Historical CERTIFIED* review retained as prior independent computation and witness evidence. Its proof-quality
+            blocker is closed only by the new sealed-package review and is not silently rewritten.
+        - path: circuit-distance-stabilization/reviews/circdist_sat_instances_window_edge_exact_review_20260826.md
+          kind: text
+          locator: Limitations
+          note: Historical exact-edge review retained for the dependency and convention analysis. Its stated need for proof-quality
+            independently checkable certificates is satisfied by the new package review.
+events:
+  finite-prefix-window-route-added-2026-08-26:
+    date: '2026-08-26'
+    type: route-added
+    route: finite-prefix-window-closure
+    summary: Registered the previously documented window-to-instances dependency as route finite-prefix-window-closure with
+      sole premise CIRCDIST.sat.window. The route separates reviewed finite computations and mechanism attributions from the
+      premise-dependent infinite-tail inference; the claim text and node level did not change.
+    sources:
+    - path: circuit-distance-stabilization/reviews/circdist_sat_instances_window_edge_exact_review_20260826.md
+      kind: review
+      locator: Finding F-ROUTE
+  finite-prefix-window-route-reviewed-2026-08-26:
+    date: '2026-08-26'
+    type: review-completed
+    route: finite-prefix-window-closure
+    summary: Fresh independent exact-text review established the machine-visible dependency and reviewed the exact conditional
+      implication. The reviewer recommended PROVED, but dispatcher adjudication retained CERTIFIED* because the implication
+      consumes finite numerical and mechanism-exclusion evidence whose prior review expressly refused PROVED and whose proof-quality
+      certificate gate remains open. CIRCDIST.sat.instances and CIRCDIST.sat.window remained CERTIFIED*, and no claim or root
+      field changed.
+    sources:
+    - path: circuit-distance-stabilization/reviews/circdist_sat_instances_window_edge_exact_review_20260826.md
+      kind: review
+      locator: Finding F-ROUTE
+  window-premise-scope-rebound-2026-08-26:
+    date: '2026-08-26'
+    type: review-completed
+    route: finite-prefix-window-closure
+    summary: Fresh strict-serial independent review re-adjudicated the unchanged finite-prefix-window-closure implication
+      against the repaired PROVED CIRCDIST.sat.window claim. All three selected schedules satisfy the exact premise domain
+      and the implication hash remains unchanged. The completed window-premise frontier was removed, but IW-C0, the proof-certificate
+      gate, the route level, and the node level remain unchanged.
+    sources:
+    - path: circuit-distance-stabilization/reviews/circdist_sat_window_downstream_scope_rebind_review_20260826.md
+      kind: review
+      locator: Finding F-INSTANCES-ROUTE
+  proof-certificate-route-reviewed-2026-08-26:
+    date: '2026-08-26'
+    type: review-completed
+    route: finite-prefix-window-closure
+    summary: Fresh independent strict-serial review regenerated every load-bearing finite certificate and mechanism restriction,
+      audited the physical/model bridges and exact PROVED window premise, and approved the unchanged route implication at
+      sha256:255e42681cb10bece97c5f55d5548cc865a94b9b422230435403804a9fb27e05.
+    sources:
+    - path: circuit-distance-stabilization/reviews/circdist_sat_instances_proof_certificates_exact_review_20260826.md
+      kind: review
+      locator: Finding F-ROUTE
+  finite-prefix-window-route-proved-2026-08-26:
+    date: '2026-08-26'
+    type: level-change
+    route: finite-prefix-window-closure
+    from: CERTIFIED*
+    to: PROVED
+    summary: Promoted only finite-prefix-window-closure after its finite proof inputs and exact conditional composition passed
+      fresh independent adversarial review. This route event does not promote the node or CIRCDIST.sat root.
+    sources:
+    - path: circuit-distance-stabilization/reviews/circdist_sat_instances_proof_certificates_exact_review_20260826.md
+      kind: review
+      locator: Finding F-ROUTE
+  proof-certificate-node-reviewed-2026-08-26:
+    date: '2026-08-26'
+    type: review-completed
+    summary: Fresh independent strict-serial review checked the sealed package, all 28 sector/R cells, every lower and upper
+      certificate, mechanisms, conventions, hashes, trusted base and exact claim binding, and found the exact selected-instance
+      claim complete.
+    sources:
+    - path: circuit-distance-stabilization/reviews/circdist_sat_instances_proof_certificates_exact_review_20260826.md
+      kind: review
+      locator: Finding F-NODE
+  instances-proved-2026-08-26:
+    date: '2026-08-26'
+    type: level-change
+    from: CERTIFIED*
+    to: PROVED
+    summary: Promoted CIRCDIST.sat.instances only after both the exact finite-prefix-window-closure route and the unchanged
+      exact claim passed fresh independent completion review. CIRCDIST.sat root remains untouched and receives no inherited
+      promotion.
+    sources:
+    - path: circuit-distance-stabilization/reviews/circdist_sat_instances_proof_certificates_exact_review_20260826.md
+      kind: review
+      locator: Finding F-NODE

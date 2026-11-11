@@ -1,0 +1,226 @@
+id: CIRCDIST.sat.window
+role: proof
+aliases:
+- SAT-WINDOW
+- SAT-STABILITY
+claim: For every fixed legal single-round single-ancilla CSS schedule M under ideal initialization
+  and final data readout, the repeated-round distances satisfy d_(R+1)(M) <= d_R(M), the limit
+  d_infinity(M) exists, every minimum-weight undetectable logical has a representative supported
+  on contiguous rounds of span at most its weight, and therefore
+  R_stab(M) <= d_infinity(M) <= d and d_R(M) = d_d(M) = d_infinity(M) for all R >= d; hence the
+  first d distances decide both d_infinity and R_stab.
+assessment:
+  level: CERTIFIED*
+  caveats:
+  - 'W-G2 IS THE DECIDING CONDITIONALITY (adjudicated 2026-08-23): the claim quantifies over
+    EVERY fixed legal schedule, but round-translation covariance is FALSE for layouts that
+    compress idle layers across round boundaries, and the theorem document''s own §8 says
+    (i)-(iii) are UNPROVED for that layout — while 公共定义 line 58 itself imposes idle-layer
+    compression, and compression is material (depth-7 [[4,2,2]] space 176 -> 44, depth-8
+    769 -> 34, adjudicator-verified). The claim as written is broader than what is argued.'
+  - 'Scope clause S3-prime (as amended) is load-bearing. W-G1 (sector-min aggregation) is
+    LOAD-BEARING-WITH-WITNESS as of 2026-08-23: the wave-17 lift review''s n = 6 witness
+    (d_X = 3, d_Z = 2, d = 2, d_circ(Z-mem) = 3 > d) shows the d_infinity <= d clause is FALSE
+    under a per-sector reading — the claim survives only under sector-min aggregation, which
+    the self-contained proof (task-001) must carry as a hypothesis. W-G3 must NOT be carried
+    (refuted as written and replaced — the replacement removes a hypothesis).'
+  - W-G4 (is R_stab <= d_infinity tight?) stands open — required by the clearing review's §3.5
+    caveat list, previously omitted from this node (compliance gap found by the wave-11
+    adjudication).
+  - 'W-OPEN ANSWERED POSITIVELY at REVIEWED level (wave 24 construction, wave 25 adversarial
+    confirmation — three independent methods on the d = 5 cell): a constructed
+    family of legal MC-satisfying hook-misaligned surface schedules has R_stab = 2/3/4 at
+    d = 5/7/9 (witness-type evidence; consistent with this claim — R_stab = (d-1)/2 <=
+    d_infinity = (d+1)/2 <= d on every computed cell, so the window theorem survives its
+    first nontrivial stress test). The former absence-type discount and sampling-rarity
+    caveat are superseded by the construction; review pending (instances wave-25).'
+  summary: 'Promoted CONJECTURED -> CERTIFIED* 2026-08-22: the standalone stability-window
+    theorem (artifacts/circdist_sat_window_theorem_20260822.md with Amendment 1) passed its
+    claim-level adversarial review and the focused re-review of the amendment
+    (artifacts/circdist_amendments4_review_20260822.md item 2) — S3-prime reproduced 18/18 by an
+    independent CHP-simulator method, the rank-identity dispute adjudicated in the amendment''s
+    favour, clearance hash-bound to this claim. Parts (i) monotonicity, (ii) contiguity
+    (self-contained, no lift import), (iii) d_infinity = d_d with R_stab <= d_infinity <= d and
+    the adaptive halting procedure. The earlier lift-side reviews remain context evidence only
+    (their hashes bind lift claims).'
+  basis:
+    reviews:
+    - path: artifacts/circdist_amendments4_review_20260822.md
+      kind: review
+      scope: Focused re-review of Window Amendment 1 (S3-prime, W-G5) with independent
+        reproduction of all 18 verification rows by a different method; clears promotion.
+      locator: Item 2
+      reviewed_hash: sha256:8698b051b15fa14ff669299580d9b7bfec01808c0a34133ef09264e749466146
+    - path: artifacts/circdist_sat_window_review_20260822.md
+      kind: review
+      scope: Claim-level adversarial review of the window theorem — parts (i)-(iii) confirmed,
+        W-G3 closed via S3-prime, W-G5 identified.
+      locator: Verdicts
+      reviewed_hash: sha256:8698b051b15fa14ff669299580d9b7bfec01808c0a34133ef09264e749466146
+    evidence:
+    - path: artifacts/circdist_lift_proofs_review_20260820.md
+      kind: text
+    - path: artifacts/circdist_amendments2_review_20260820.md
+      kind: text
+    - path: artifacts/circdist_sat_recon_20260820.md
+      kind: text
+    - path: artifacts/circdist_lift_iff_proof_20260820.md
+      kind: text
+    - path: artifacts/circdist_lift_iff_amendment2_20260820.md
+      kind: text
+frontier:
+  task-001:
+    task: Write one self-contained proof of the exact current claim, explicitly reconciling the
+      recon and lift model conventions and proving the step from a contiguous minimum eventual
+      witness to R_stab <= d_infinity and d_R=d_d for every R>=d.
+    kind: task
+    since: '2026-08-22'
+  task-002:
+    task: Commission a fresh independent claim-level review that attacks boundary placement,
+      schedule legality, CSS-sector recombination, fault collisions, and the all-schedules
+      quantifier, and binds its verdict to the exact current claim hash.
+    kind: review
+    since: '2026-08-22'
+  task-003:
+    task: >-
+      Decide the sharper single-round-dominance question in a clearly scoped class: either
+      construct a legal schedule with R_stab >= 2 or prove R_stab=1 for that class; record the full
+      search range before using the 7,610-schedule absence evidence.
+    kind: gate
+    since: '2026-08-22'
+events:
+  readjudication-2026-08-23:
+    date: '2026-08-23'
+    type: repair-applied
+    summary: 'Wave-11 canonical re-adjudication (artifacts/circdist_readjudication_20260823.md
+      §6): STAYS-CERTIFIED*, departing from the dispatcher''s non-binding PROVED guess, on four
+      independently sufficient grounds — (1) W-G2 is an unproved scope condition on the claim''s
+      own universal quantifier, and it excludes exactly the idle-compressed layouts the frozen
+      公共定义 asks for (compression shown material by the adjudicator''s own enumeration);
+      (2) live frontier task-001 records that the self-contained proof of the exact claim is
+      still owed; (3) task-002 records that the claim-level review the upgrade needs is still
+      owed; (4) of the two linked reviews, the claim-level one attaches to document hashes and
+      returned FURTHER-REPAIR, while the genuinely claim-hash-bound one is a focused amendment
+      re-review listing parts (i)-(iii) as not re-derived — no single hash-bound review has
+      attacked the assembled claim. W-G4 added to caveats (compliance gap vs the clearing
+      review''s §3.5); same-stack caveat dropped as retired. Level unchanged; path to PROVED is
+      exactly frontier task-001 + task-002.'
+    sources:
+    - path: artifacts/circdist_readjudication_20260823.md
+      kind: review
+      locator: Section 6
+  window-promoted-2026-08-22:
+    date: '2026-08-22'
+    type: level-change
+    from: CONJECTURED
+    to: CERTIFIED*
+    summary: Focused re-review (item 2) cleared the amended window theorem — S3-prime reproduced
+      18/18 by an independent CHP-simulator method, and the rank-identity dispute adjudicated in
+      the amendment's favour (the review's summary identity was wrong, 12/18). Promotion
+      hash-bound.
+    sources:
+    - path: artifacts/circdist_amendments4_review_20260822.md
+      kind: review
+      locator: Item 2
+  window-amendment1-2026-08-22:
+    date: '2026-08-22'
+    type: repair-applied
+    summary: 'Window Amendment 1 (SHA-256 295e1635...): S3-prime installed verbatim and verified
+      with fresh code (dimension formula 18/18; Z-half exact 18/18; X-half deficiency =
+      dim leftker(H_X) 18/18); W-G5 mirror sentence and the d_R-superscript fix applied;
+      sampling-rarity caveat recorded. Precision note honestly recorded AGAINST THE REVIEW: its
+      summary identity rank(D) = dim V - k holds only 12/18; the correct identity is
+      rank(D) = dim V - k - dim leftker(H_X), matching the review''s own table — S3-prime is
+      unaffected. Remaining gate: focused re-review, then promotion.'
+    sources:
+    - path: artifacts/circdist_sat_window_amendment1_20260822.md
+      kind: text
+  window-review-2026-08-22:
+    date: '2026-08-22'
+    type: repair-applied
+    summary: 'Window-theorem review (artifacts/circdist_sat_window_review_20260822.md):
+      FURTHER-REPAIR, text-level only — parts (i)/(ii)/(iii) all CONFIRMED by independent
+      re-derivation (30 instances monotonicity, 5484 witnesses contiguity, 54000 columns), no
+      requalification. W-G3 REFUTED AS WRITTEN then CLOSED: the span assertion is false in every
+      instance (observables lie outside span(D), deficiency k; dependent checks add
+      dim leftker(H_X) — relevant for toric/BB targets) BUT d_R is unchanged (the missed
+      directions carry no z-component through Lemma 2.1); replacement clause S3-prime supplied,
+      stronger than asserted. NEW W-G5: Definition 1.5 mirror asymmetry, one-sentence fix.
+      Corollary 5.5 vs nonint Cor 7.3 consistent (5.5 the strict generalisation). Scope caveat
+      recorded: legality+MC is rare under random sampling (0/400 Steane, 1/400 surface) — any
+      future W-OPEN search must account for it.'
+    sources:
+    - path: artifacts/circdist_sat_window_review_20260822.md
+      kind: text
+  window-theorem-2026-08-22:
+    date: '2026-08-22'
+    type: repair-applied
+    summary: 'Campaign-4 wave 1: standalone stability-window theorem WRITTEN
+      (artifacts/circdist_sat_window_theorem_20260822.md, 932 lines) — (i) monotonicity with
+      explicit two-boundary detector bookkeeping via round transparency; (ii) contiguity proved
+      from scratch INSIDE C_R (no reindexing, quantifies over all R; explicitly NOT imported from
+      the lift artifact whose review hash-binds elsewhere); (iii) d_infinity = d_d, R_stab <=
+      d_infinity <= d with an adaptive halting procedure; corrected Corollary 5.5: R_stab in
+      {1, infinity}. Label CONJECTURED (rule 6). Corroboration: 35658/35658 time-locality,
+      16000/16000 criterion, 10487/10487 contiguous min-weight witnesses, 44/44 monotone, Stim
+      d=3,5,7. Residual gaps registered honestly: W-G3 (span-of-Definition-1.9 asserted, not
+      derived — cheapest formal hole), W-G2 (round-translation covariance fails under cross-round
+      idle compression), W-G1 (sector-min convention), W-OPEN (any in-scope R_stab >= 2? absence
+      evidence only, d=3 uninformative). Independent claim-level review is the promotion gate.'
+    sources:
+    - path: artifacts/circdist_sat_window_theorem_20260822.md
+      kind: text
+  created-2026-08-22:
+    date: '2026-08-22'
+    type: created
+    summary: Split monotonicity, the stability limit, and the B=d finite-window theorem into a
+      precise node; prior lift reviews are retained as supporting but non-hash-bound evidence.
+    sources:
+    - path: research/circdist/notes/SAT_RESCOPE_20260822.md
+      kind: text
+    - path: artifacts/circdist_sat_recon_20260820.md
+      kind: text
+  wg1-witnessed-2026-08-23:
+    date: '2026-08-23'
+    type: repair-applied
+    summary: 'Cross-node flag from the wave-17 lift review
+      (artifacts/circdist_lift_claimrepair2_review_20260823.md): its witness (n = 6 CSS,
+      d_X = 3, d_Z = 2, d = 2, graph-like, non-interleaved, d_circ(Z-mem) = 3 > d) shows the
+      PER-SECTOR distance can exceed d = min(d_X, d_Z). Consequence for this node: the claim''s
+      d_infinity(M) <= d clause is FALSE under a per-sector reading and survives only under the
+      sector-min aggregation — so W-G1 is upgraded from "definitional inheritance" (the wave-11
+      reading) to LOAD-BEARING-WITH-WITNESS. The witness is reviewer-grade, recorded with
+      attribution; frontier task-001''s self-contained proof must state the aggregation
+      convention as a hypothesis, and task-002''s review must probe d_X != d_Z instances (the
+      base evidence never did). Level unchanged (W-G1 was already a stated scope condition).'
+    sources:
+    - path: artifacts/circdist_lift_claimrepair2_review_20260823.md
+      kind: review
+      locator: 5.10(2) verdict
+  wopen-answered-2026-08-23:
+    date: '2026-08-23'
+    type: repair-applied
+    summary: 'Wave-24 instances session (artifacts/circdist_sat_instances_20260823.md)
+      answered W-OPEN positively BY CONSTRUCTION: legal (MC) hook-misaligned surface
+      schedules with R_stab = 2 (d = 5, four methods, exhaustive weight-<=3 exclusion at
+      R = 1), 3 (d = 7), 4 (d = 9); fitted d_R = max(d - R, (d+1)/2). Frontier task-003
+      (single-round-dominance gate) is DISCHARGED at proposer level in the "construct a
+      counterexample" branch, pending independent review; the search-scope recording
+      requirement is met (uniform S4 x S4 space, 576 -> 96 -> 16, construction not
+      sampling). Every computed cell satisfies this node''s claim (R_stab <= d_infinity <= d;
+      d_R = d_d for R >= d) — the window theorem''s first nontrivial confirmation.'
+    sources:
+    - path: artifacts/circdist_sat_instances_20260823.md
+      kind: text
+  wopen-reviewed-2026-08-23:
+    date: '2026-08-23'
+    type: repair-applied
+    summary: 'Wave-25 adversarial review of the instances dossier CONFIRMS the R_stab > 1
+      family (d = 5 cell by three independent methods; legality/(MC) space rebuilt;
+      convention probes negative) — W-OPEN is now answered positively at REVIEWED level, and
+      every computed cell satisfies this node''s claim. W-G4 gains data, not closure (the
+      reviewer''s words).'
+    sources:
+    - path: artifacts/circdist_sat_instances_review_20260823.md
+      kind: review
+      locator: Per-arm verdicts
