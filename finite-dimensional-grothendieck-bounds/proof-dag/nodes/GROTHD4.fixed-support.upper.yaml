@@ -1,0 +1,65 @@
+id: GROTHD4.fixed-support.upper
+role: outcome
+aliases:
+- D4-FIXED-217-83-UPPER
+claim: >-
+  For every sign choice inside the archived complementary 217+83 support
+  split, p'^T A p'-q'^T A q' is at most
+  C=2081044153087351400. Equality occurs only for
+  (p',q') in {(+/-p,+/-q)}.
+routes:
+  separated-p-and-q-certificates:
+    premises:
+    - GROTHD4.cut.fixed-cell-p
+    - GROTHD4.spectral.q-cell-minimum
+    implication: >-
+      The p certificate bounds p'^T A p' from above, while the q certificate
+      bounds q'^T A q' from below; subtracting gives the fixed-cell Bell upper
+      bound, and the two rigid equality classifications combine independently.
+    proof:
+      sketch: Subtract the q lower bound from the p upper bound.
+      sources:
+      - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-pcut-triangle-cover-20260830.md
+        kind: text
+        locator: Combination with the exact q SOS
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The assembly is exact and both premise checkers pass. The result is
+        capped at author level because neither premise has independent review.
+      basis:
+        evidence:
+        - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-fixed-support-replay-20260907.txt
+          kind: run
+          result: pass
+assessment:
+  level: CONJECTURED
+  summary: >-
+    The archived fixed-support cell is closed at author level. This is not the
+    unrestricted classical upper bound: a competing sign pair may change
+    which coordinates lie in the p and q supports.
+  basis:
+    routes:
+    - separated-p-and-q-certificates
+frontier:
+  independent-review:
+    task: Independently audit both premise certificates and the equality assembly.
+    kind: review
+    since: '2026-09-07'
+  support-changing-extension:
+    task: >-
+      Prove a bound covering every complementary support split, or give a
+      finite exact reduction from arbitrary splits to the archived split.
+    kind: task
+    since: '2026-09-07'
+events:
+  retrospective-registration-2026-09-07:
+    date: '2026-09-07'
+    type: created
+    summary: >-
+      Registered the exact fixed-support consequence and its strict boundary
+      from the still-open unrestricted classical upper bound.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-pcut-triangle-cover-20260830.md
+      kind: text
+      locator: Remaining global gate

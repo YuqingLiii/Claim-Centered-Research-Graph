@@ -1,0 +1,34 @@
+id: GROTHD4.spectral.local-radius3
+role: constraint
+aliases:
+- D4-ARCHIVED-RADIUS3-LOCAL-MAX
+claim: >-
+  Within the archived complementary-support cell, every nontrivial sign flip
+  of Hamming radius at most three has Bell objective strictly below C; all
+  4455100 radius-three points are strictly suboptimal.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    Exact integer quadratic updates exhaust radii one, two, and three. The
+    minimum radius-three deficit is 4073853755325552. This strengthens the
+    radius-two local result but remains local and awaits independent review.
+  basis:
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-superlevel-cell-reduction-20260830.md
+      kind: text
+      locator: Hamming shells
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_superlevel_cell_reduction_checker.py
+      kind: code
+frontier:
+  independent-review:
+    task: Independently audit the complete radius-three enumeration.
+    kind: review
+    since: '2026-08-31'
+events:
+  registered-2026-08-31:
+    date: '2026-08-31'
+    type: created
+    summary: Registered the exact author-side radius-three local maximum.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-superlevel-cell-reduction-20260830.md
+      kind: text

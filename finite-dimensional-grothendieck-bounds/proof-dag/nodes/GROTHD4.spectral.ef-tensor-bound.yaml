@@ -1,0 +1,38 @@
+id: GROTHD4.spectral.ef-tensor-bound
+role: constraint
+aliases:
+- D4-EF-TENSOR-BOUND
+claim: >-
+  The Hadamard map from the rank-four top space E tensor the rank-sixteen
+  bottom space F to R^300 has rank 64. Its squared singular values form three
+  H4 blocks of multiplicities 30,25,9, and the least value gamma_1 satisfies
+  1/11000 < gamma_1 < 1/10700.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    A complete author-side exact computation reconstructs the projectors,
+    derives the three-block spectrum of E o F over the exact number field,
+    verifies trace moments and proves rational isolating inequalities. The
+    checker replay passes. Independent adversarial review is still required.
+  basis:
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-ef-tensor-bound-20260830.md
+      kind: text
+      locator: Tensor spectrum theorem
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_ef_tensor_bound_checker.py
+      kind: code
+frontier:
+  independent-review:
+    task: >-
+      Independently audit the exact projector construction, H4 block
+      multiplicities, spectral formulas, and rational bounds for gamma_1.
+    kind: review
+    since: '2026-08-31'
+events:
+  registered-2026-08-31:
+    date: '2026-08-31'
+    type: created
+    summary: Registered the exact author-side E-F Hadamard tensor bound.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-ef-tensor-bound-20260830.md
+      kind: text

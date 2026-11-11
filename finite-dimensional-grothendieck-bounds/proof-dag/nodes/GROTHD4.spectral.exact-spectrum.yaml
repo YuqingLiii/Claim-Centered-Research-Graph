@@ -1,0 +1,58 @@
+id: GROTHD4.spectral.exact-spectrum
+role: proof
+aliases:
+- D4-EXACT-TWELVE-SPECTRUM
+claim: >-
+  The frozen 300 by 300 Bell matrix has the exact square-free degree-twelve
+  annihilating polynomial and characteristic-factor multiplicities recorded
+  in d4-spectral-gap-20260830.md; after removing the rank-four top block its
+  residual operator norm is the certified algebraic number rho.
+routes:
+  cyclic-column-and-h4-transitivity:
+    premises:
+    - GROTHD4.instance
+    implication: >-
+      A degree-twelve recurrence annihilating one cyclic column propagates to
+      every coordinate under the transitive signed H4 action; exact Newton
+      sums and rational Sturm intervals then determine multiplicities and root
+      ordering.
+    proof:
+      sketch: >-
+        Verify m(A)e_0=0 with arbitrary-precision integers, verify signed H4
+        commutation and transitivity, solve the exact multiplicity system, and
+        isolate all twelve roots rationally.
+      sources:
+      - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-spectral-gap-20260830.md
+        kind: text
+        locator: Exact twelve-value spectrum
+      - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_spectral_gap_checker.py
+        kind: code
+    assessment:
+      level: CONJECTURED
+      summary: Exact checker replay passes; independent mathematical review is absent.
+      basis:
+        evidence:
+        - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-fixed-support-replay-20260907.txt
+          kind: run
+          result: pass
+assessment:
+  level: CONJECTURED
+  summary: >-
+    Exact author-side spectrum and residual-norm theorem, separated from the
+    still-open Boolean sign-profile inequality.
+  basis:
+    routes:
+    - cyclic-column-and-h4-transitivity
+frontier:
+  independent-review:
+    task: Independently check the recurrence propagation, Newton sums, and Sturm ordering.
+    kind: review
+    since: '2026-09-07'
+events:
+  retrospective-registration-2026-09-07:
+    date: '2026-09-07'
+    type: created
+    summary: Registered the exact 2026-08-30 spectrum theorem during normalization.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-spectral-gap-20260830.md
+      kind: text

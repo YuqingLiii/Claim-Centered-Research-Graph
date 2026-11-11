@@ -1,0 +1,63 @@
+id: GROTHD4.spectral.cg-leakage
+role: constraint
+aliases:
+- D4-CG-COMPLEMENTARY-LEAKAGE
+claim: >-
+  For complementary-support ternary p,q, with alpha=p^T E p,
+  beta=q^T F q, u=||p||_2^2-alpha, v=||q||_2^2-beta, and w_9 the
+  nine-dimensional CG weight of Ep tensor Fq, one has
+  c_* alpha beta+kappa w_9 <= alpha v/75+4 beta u/75,
+  where c_*>1/720 and kappa>0.
+routes:
+  rankone-cg:
+    premises:
+    - GROTHD4.spectral.cg-rankone-identity
+    implication: >-
+      The pure-tensor CG identity evaluates ||Ep o Fq||_2^2 as
+      c_* alpha beta+kappa w_9; complementary support and the constant
+      diagonals of E and F provide the displayed upper bound.
+    proof:
+      sketch: >-
+        Combine the exact rank-one block weights with the support-localization
+        estimate already used for the tensor leakage inequality.
+      sources:
+      - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-cg-rankone-identity-20260830.md
+        kind: text
+        locator: Sections 2--3
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The author-side implication is exact and awaits independent review
+        together with its CG premise.
+      basis:
+        evidence:
+        - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-cg-rankone-identity-20260830.md
+          kind: text
+          locator: Section 3
+assessment:
+  level: CONJECTURED
+  summary: >-
+    Dropping only the nonnegative w_9 term forces a universal primary spectral
+    penalty exceeding 99 percent of the exact archived ten-block correction
+    at support split 217+83, but still falls strictly short. The result awaits
+    independent review and does not prove the classical spectral gap.
+  basis:
+    routes:
+    - rankone-cg
+frontier:
+  near-extremizer-stability:
+    task: >-
+      Couple w_9 to the Bell objective, a degree-twelve nonradial invariant,
+      or another near-extremizer statistic strong enough to supply the final
+      less-than-one-percent correction.
+    kind: task
+    since: '2026-08-31'
+events:
+  registered-2026-08-31:
+    date: '2026-08-31'
+    type: created
+    summary: Registered the CG-weighted complementary-support inequality.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-cg-rankone-identity-20260830.md
+      kind: text
+      locator: Sections 3--4

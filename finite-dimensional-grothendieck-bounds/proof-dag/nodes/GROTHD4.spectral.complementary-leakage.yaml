@@ -1,0 +1,66 @@
+id: GROTHD4.spectral.complementary-leakage
+role: constraint
+aliases:
+- D4-COMPLEMENTARY-SUPPORT-LEAKAGE
+claim: >-
+  For complementary-support ternary vectors p,q, with
+  s=||p||_2^2, t=||q||_2^2=300-s, alpha=p^T E p, beta=q^T F q,
+  one has sqrt(c_EF alpha beta) at most
+  sqrt(alpha(t-beta)/75)+2 sqrt(beta(s-alpha)/75)
+  +sqrt((s-alpha)(t-beta)).
+routes:
+  hadamard-coupling:
+    premises:
+    - GROTHD4.spectral.hadamard-no-zero-divisors
+    implication: >-
+      Positivity of c_EF lower-bounds ||Ep o Fq||_2. Expanding p o q=0
+      after the E and F decompositions, then using the constant projector
+      diagonals and Cauchy bounds, gives the displayed inequality.
+    proof:
+      sketch: >-
+        Write e=Ep, a=p-e, f=Fq, b=q-f. Then
+        e o f=-(e o b+a o f+a o b). The H4-transitive diagonals
+        E_ii=1/75 and F_ii=4/75 give the first two terms, while Cauchy gives
+        the last. The premise supplies ||e o f||_2^2>=c_EF alpha beta.
+      sources:
+      - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-complementary-leakage-20260830.md
+        kind: text
+        locator: Section 4
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The implication has a complete author-side derivation, but awaits
+        independent review together with its no-zero-divisor premise.
+      basis:
+        evidence:
+        - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-complementary-leakage-20260830.md
+          kind: text
+          locator: Section 4
+assessment:
+  level: CONJECTURED
+  summary: >-
+    This is the first exact joint constraint excluding simultaneous perfect
+    top/bottom spectral concentration on complementary supports. It is not
+    yet quantitatively strong enough to prove the classical spectral gap,
+    because c_EF lacks a useful rational bound and the final product term is
+    loose. Independent review is still required.
+  basis:
+    routes:
+    - hadamard-coupling
+frontier:
+  sharpen-constants:
+    task: >-
+      Bound c_EF explicitly and replace the loose product error term by a
+      complementary-support or degree-twelve nonradial H4 coupling estimate
+      strong enough to cover the archived ten-block correction.
+    kind: task
+    since: '2026-08-31'
+events:
+  registered-2026-08-31:
+    date: '2026-08-31'
+    type: created
+    summary: Registered the author-side complementary-support leakage inequality.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-complementary-leakage-20260830.md
+      kind: text
+      locator: Section 4

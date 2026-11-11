@@ -1,0 +1,99 @@
+id: GROTHD4.cut.fixed-cell-p
+role: constraint
+aliases:
+- D4-FIXED-CELL-P-CUT
+claim: >-
+  On the archived 217-coordinate support of p=(a+b)/2, the archived p signs
+  maximize p^T A p over every sign choice on that fixed support. Equality
+  occurs only for p and -p.
+routes:
+  triangle-orbit-cover:
+    premises:
+    - GROTHD4.instance
+    implication: >-
+      A nonnegative integer combination of homogeneous cut-triangle
+      inequalities, plus nonnegative edge residuals, equals the complete
+      switched p-cut objective edge by edge.
+    proof:
+      sketch: >-
+        Reconstruct the 80,819 stabilizer orbits of admissible triangles,
+        expand the 26,627 nonzero integer multipliers, and check all 23,436
+        edge coefficients exactly. Connected positive residual support gives
+        the equality classification.
+      sources:
+      - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-pcut-triangle-cover-20260830.md
+        kind: text
+        locator: Homogeneous triangle generators
+      - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_pcut_triangle_cover_checker.py
+        kind: code
+      - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/certificates/d4-pcut-triangle-cover-certificate-20260830.npz
+        kind: data
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The exact replay passes and uses only integer multipliers and an exact
+        coefficient identity, but no independent adversarial review is linked.
+      basis:
+        evidence:
+        - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-fixed-support-replay-20260907.txt
+          kind: run
+          result: pass
+  two-hop-routing:
+    premises:
+    - GROTHD4.instance
+    implication: >-
+      Exact nonnegative two-hop flows route every negative p-edge demand
+      through positive edges without exceeding any capacity, leaving strictly
+      positive residual capacity on a connected graph.
+    proof:
+      sketch: >-
+        Verify all 473,676 integer flow records, all 6,294 demand equalities,
+        all 15,066 capacity inequalities, and connectivity of the positive
+        residual graph.
+      sources:
+      - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-pcut-twohop-20260830.md
+        kind: text
+        locator: Scope audit
+      - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_pcut_twohop_checker.py
+        kind: code
+      - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/certificates/d4-pcut-twohop-flow-certificate-20260830.npz
+        kind: data
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        This structurally different exact replay also passes, but remains an
+        author-side certificate pending independent review.
+      basis:
+        evidence:
+        - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-fixed-support-replay-20260907.txt
+          kind: run
+          result: pass
+assessment:
+  level: CONJECTURED
+  summary: >-
+    Two exact author-side certificates establish the same fixed-support p-cut
+    inequality and rigid equality case. Neither certificate addresses a
+    change of the p/q support split, and neither has independent review.
+  basis:
+    routes:
+    - triangle-orbit-cover
+    - two-hop-routing
+frontier:
+  independent-review:
+    task: >-
+      Independently reconstruct the switched p objective, replay both frozen
+      certificates, and check the equality-connectivity argument.
+    kind: review
+    since: '2026-09-07'
+events:
+  retrospective-registration-2026-09-07:
+    date: '2026-09-07'
+    type: created
+    summary: >-
+      Registered the two exact 2026-08-30 fixed-support p-cut certificates
+      during protocol normalization without promoting them above author level.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-pcut-triangle-cover-20260830.md
+      kind: text
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-pcut-twohop-20260830.md
+      kind: text

@@ -1,0 +1,37 @@
+id: GROTHD4.spectral.coarse-stability-no-go
+role: obstruction
+aliases:
+- D4-COARSE-NEAR-EXTREMIZER-NO-GO
+claim: >-
+  It is false that every complementary 217+83 ternary pair with Bell
+  objective greater than (883/884)C must satisfy
+  w_9/(alpha beta)>=r_crit.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    An exact one-coordinate neighbor of the archived witness has Bell loss
+    2353967343413440, hence objective above (883/884)C, but its CG ratio lies
+    between 0.000561 and 0.000562, below r_crit. This refutes a wide
+    objective-only stability basin but not the sharp superlevel implication
+    B>=C. The checker replay passes and the counterexample awaits review.
+  basis:
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-near-extremizer-stability-20260830.md
+      kind: text
+      locator: Sections 3--4
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_near_extremizer_stability_checker.py
+      kind: code
+frontier:
+  independent-review:
+    task: Independently verify the neighbor, objective inequalities, and CG ratio.
+    kind: review
+    since: '2026-08-31'
+events:
+  registered-2026-08-31:
+    date: '2026-08-31'
+    type: created
+    summary: Registered the exact coarse-stability counterexample.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-near-extremizer-stability-20260830.md
+      kind: text
+      locator: Section 4

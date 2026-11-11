@@ -1,0 +1,50 @@
+{
+  "status": "PROVED_EXACT_TWO_MINIMAL_FIVE_BLOCK_LINEAR_NO_GO",
+  "field_for_certificate": "GF(24001)",
+  "characteristic_zero_field": "Q(sqrt(5),i)",
+  "base_blocks": [9, 12, 13, 14],
+  "extra_blocks_decided": [8, 17],
+  "party_parity_dimensions_extra": [84, 78],
+  "base_gram_parameters": 6665,
+  "extra_gram_parameters": 6651,
+  "five_block_gram_parameters": 13316,
+  "augmented_columns_including_target": 13317,
+  "first_stage": {
+    "deterministic_boolean_evaluation_rows": 13317,
+    "base_augmented_minor_order": 6666,
+    "base_augmented_minor_determinant_mod_24001": 5172,
+    "schur_residual_shape": [6651, 6651],
+    "schur_residual_rank_for_block_8_mod_24001": 6184,
+    "schur_residual_rank_for_block_17_mod_24001": 6184,
+    "evaluation_kernel_dimension_each": 467
+  },
+  "second_stage": {
+    "map": "true 746825-coordinate invariant Boolean coefficient residual restricted to each 467-dimensional evaluation kernel",
+    "deterministic_sampled_effective_coefficient_rows": 2048,
+    "sample_seed": 2026083017,
+    "residual_rank_block_8_mod_24001": 467,
+    "residual_minor_determinant_block_8_mod_24001": 13280,
+    "residual_minor_sha256_block_8": "6fd8914532bbcb3af850cf50ae2382e353181834c0e4c631d6aeb8b13e09f626",
+    "residual_rank_block_17_mod_24001": 467,
+    "residual_minor_determinant_block_17_mod_24001": 7143,
+    "residual_minor_sha256_block_17": "88d678dcd7b521851dad6684cc0b5954a387fbb322c889566959a7f95940f22d"
+  },
+  "exact_rank_conclusion": {
+    "augmented_rank_each": 13317,
+    "five_block_gram_map_rank_each": 13316,
+    "target_in_linear_image_each": false,
+    "psd_gram_exists_each": false
+  },
+  "proof_logic": "Use the certified invertible 6666-square base augmented evaluation minor M. For an added block B, eliminate its base-row values with X=M^{-1}B_base. The 6651 complementary Boolean rows give Schur residual R=B_extra-M_extra X of rank 6184 and kernel dimension 467. Every true coefficient relation must therefore use c=N z from this kernel. Applying the exact direct-covariant coefficient map (14400 times the canonical K-pencil adjoint; the 14400/d single-q Schur factor gains d under the J^{-1} representation-index contraction) to B N-[A_base,target] X N gives a 746825 by 467 residual family H. A nonzero 467-square minor of H makes H injective, so z=0. Thus all 13317 augmented columns are independent modulo 24001. Since all characteristic-zero denominators are invertible modulo 24001, the same columns are independent over Q(sqrt(5),i).",
+  "artifacts": {
+    "block_8_schur_json_sha256": "c605010a5c5ca10476780be5e6d231d057f8432bd0c462c0741b527e9cbbb40b",
+    "block_8_evaluation_kernel_family_sha256": "425bb71356a333a3ae07cc110cdd9a78a116b7284b9dd1b75794419b62863be1",
+    "block_8_coefficient_minor_json_sha256": "a58314a473ef8c9fcd029f1a9a55d7fa3ff84e52f7d48c3d0381bc92a5303d8f",
+    "block_17_schur_json_sha256": "553d733831a6d18324253464d22d3a7e99241c87716e3fcdd244b1e9d3585767",
+    "block_17_evaluation_kernel_family_sha256": "cdf5844986885fb1bc4a46c5b6c75617f013eae444d9e128e17c5152ec3e7e14",
+    "block_17_coefficient_minor_json_sha256": "119e29817a0bb6f49b54d25f21d9dc99a9cc36cde420b7df6bbb859ee843ef80",
+    "schur_replay_script_sha256": "ffdd3ae4df5a657e1c2fde63ccb9bdc27fb15f4069d22942267dc79cbf6a9f42",
+    "coefficient_minor_replay_script_sha256": "4eb0d1cf9a13a406b681f29b35fbf4c1beb7f1eb0209e53ca252427b8de44759"
+  },
+  "scope": "This decides both smallest one-block enlargements of the previously refuted four-block party-symmetric degree-4 Boolean SOS ansatz. It does not decide the six-block ansatz containing both blocks 8 and 17, nor the full 20-block SOS problem."
+}

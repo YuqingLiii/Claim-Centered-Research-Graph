@@ -1,0 +1,57 @@
+id: GROTHE8.measurements
+role: outcome
+aliases:
+- E8-PHYSICAL-REALIZATION
+claim: >-
+  The E8 value 9240 is realized on |Phi_16> by 120 Alice observables Gamma(r_i/sqrt(2))
+  and 120 Bob observables Gamma(r_j/sqrt(2))^T from eight explicit four-qubit Clifford
+  generators, all with outcomes in {+1,-1}.
+routes:
+  vector-to-observables:
+    premises:
+    - GROTHE8.quantum
+    implication: >-
+      An explicit dimension-8 real-vector strategy can be converted by a real Clifford
+      representation into binary observables on a maximally entangled state, preserving
+      every inner-product correlator.
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The E8 root vectors, four-qubit Clifford generators, maximally entangled state,
+        transpose convention, and exact correlator identity are all explicit locally.
+      basis:
+        evidence:
+        - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-e8/e8-exact-certificate-20260829.md
+          kind: text
+          locator: E8-T10
+assessment:
+  level: CONJECTURED
+  summary: >-
+    A complete author-level physical realization is written down in local dimension 16.
+    Independent review of conventions and correlators remains pending.
+  basis:
+    routes:
+    - vector-to-observables
+frontier:
+  task-001:
+    task: Independently audit the Clifford signs, transpose convention, and all E8 correlators.
+    kind: review
+    since: '2026-08-29'
+events:
+  migrated-2026-08-29:
+    date: '2026-08-29'
+    type: created
+    summary: Registered the physical state-and-measurement recovery as a root outcome in its own right.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-e8/e8-reconstruction-20260829.md
+      kind: text
+  explicit-realization-2026-08-29:
+    date: '2026-08-29'
+    type: level-change
+    from: OPEN
+    to: CONJECTURED
+    summary: Added an explicit 16-dimensional maximally entangled state and Clifford observables.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-e8/e8-exact-certificate-20260829.md
+      kind: text
+      locator: E8-T10

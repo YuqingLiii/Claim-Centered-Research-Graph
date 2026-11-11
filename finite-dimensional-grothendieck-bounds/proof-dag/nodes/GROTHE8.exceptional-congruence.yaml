@@ -1,0 +1,31 @@
+id: GROTHE8.exceptional-congruence
+role: proof
+aliases:
+- E8-CONGRUENCE
+claim: >-
+  In the classical reduction, E8 lattice parity improves the exceptional envelopes to
+  ||p||^2-||v||^2 <= 2364 at k=98 and <=2416 at k=104.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    The proof uses det(C)=1, the even integral E8 lattice, R signs in 2E8, and a
+    mod-8 exclusion when k=104 and v=0. It is complete at author level.
+  basis:
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-e8/e8-exact-certificate-20260829.md
+      kind: text
+      locator: E8-T7
+frontier:
+  task-001:
+    task: Independently audit each mod-4 and mod-8 implication, especially the v=0 case.
+    kind: review
+    since: '2026-08-29'
+events:
+  proved-by-author-2026-08-29:
+    date: '2026-08-29'
+    type: created
+    summary: Isolated the lattice congruence closure for the two exceptional cardinalities.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-e8/e8-exact-certificate-20260829.md
+      kind: text
+      locator: E8-T7

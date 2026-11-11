@@ -1,0 +1,41 @@
+id: GROTHE8.matrix
+role: constraint
+aliases:
+- E8-MATRIX
+claim: >-
+  For any positive E8 root system with Gram matrix G on its 120 root-line
+  representatives, B = 3G - 13I is an exact integral Bell matrix, well defined up
+  to diagonal sign conjugation, with diagonal -7 and off-diagonal entries in
+  {-3,0,3}.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    The matrix definition and normalization are now explicit and are checked entrywise by
+    a second exact local implementation. Independent adversarial review is still pending.
+  basis:
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-e8/e8-exact-certificate-20260829.md
+      kind: text
+      locator: E8-T1
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-e8/e8_dual_certificate_checker.py
+      kind: text
+events:
+  migrated-2026-08-29:
+    date: '2026-08-29'
+    type: created
+    summary: Made the missing Bell-matrix bridge a separate load-bearing node.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-e8/e8-reconstruction-20260829.md
+      kind: text
+  formula-recovered-2026-08-29:
+    date: '2026-08-29'
+    type: level-change
+    from: OPEN
+    to: CONJECTURED
+    summary: Recovered B = 3G - 13I and verified its exact entries in an independent local checker.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-e8/e8-exact-certificate-20260829.md
+      kind: text
+      locator: E8-T1
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-e8/e8-dual-checker-run-20260829.txt
+      kind: run

@@ -1,0 +1,34 @@
+id: GROTHD4.degree4.swap-even
+role: tool
+aliases:
+- D4-SWAP-REDUCTION
+claim: >-
+  Party swap decomposes the 746825 invariant coordinates into even and odd dimensions
+  374414 and 372411, and the recorded 28-dimensional equality image splits 14 plus 14.
+assessment:
+  level: NUMERICAL
+  summary: >-
+    The archived exact reduction record reports the stated dimensions and a lossless
+    symmetry split for the represented operator. It does not itself prove dual feasibility.
+  basis:
+    runs:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/replay/h4_fd4_next_stage_bundle/swap_reduction/party_swap_effective.json
+      kind: run
+      result: Even 374414; odd 372411; equality-image split 14 plus 14.
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_party_swap_reduction.py
+      kind: text
+frontier:
+  task-001:
+    task: Replay against the frozen source matrix and independently verify that all solver constraints commute with swap.
+    kind: review
+    since: '2026-08-29'
+events:
+  migrated-2026-08-29:
+    date: '2026-08-29'
+    type: created
+    summary: Imported the symmetry decomposition as structured computational evidence.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/replay/h4_fd4_next_stage_bundle/swap_reduction/party_swap_effective.json
+      kind: run
+

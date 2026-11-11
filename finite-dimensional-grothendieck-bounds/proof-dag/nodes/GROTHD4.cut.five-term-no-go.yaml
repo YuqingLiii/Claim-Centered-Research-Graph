@@ -1,0 +1,39 @@
+id: GROTHD4.cut.five-term-no-go
+role: obstruction
+aliases:
+- D4-FIVE-TERM-HYPERMETRIC-NO-GO
+claim: >-
+  No integer vector b with exactly five nonzero coefficients in {-1,+1}
+  satisfies b^T M b=307200 for the exact correlation matrix M of the 307200
+  currently known C-level cuts. In particular, no pentagonal hypermetric is
+  tight on all those cuts.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    A complete author-side exact meet-in-the-middle census reduces by H4 and
+    party swap and checks all 4800 equality faces; no compatible five-term
+    vector remains. The checker replay passes. The result awaits independent
+    review and is relative to the known equality cuts, whose completeness is
+    still open.
+  basis:
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-pentagonal-hypermetric-no-go-20260830.md
+      kind: text
+      locator: Five-term no-go theorem
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_pentagonal_hypermetric_no_go_checker.py
+      kind: code
+frontier:
+  independent-review:
+    task: >-
+      Independently audit the symmetry reduction, meet-in-the-middle
+      completeness, and all-face compatibility test.
+    kind: review
+    since: '2026-08-31'
+events:
+  registered-2026-08-31:
+    date: '2026-08-31'
+    type: created
+    summary: Registered the exact author-side five-term hypermetric no-go.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-pentagonal-hypermetric-no-go-20260830.md
+      kind: text

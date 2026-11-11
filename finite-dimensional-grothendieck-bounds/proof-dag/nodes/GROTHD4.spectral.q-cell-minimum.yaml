@@ -1,0 +1,36 @@
+id: GROTHD4.spectral.q-cell-minimum
+role: constraint
+aliases:
+- D4-Q-CELL-GLOBAL-MINIMUM
+claim: >-
+  On the archived 83-coordinate q support, the archived q signs globally
+  minimize q^T A q over all 2^83 sign assignments, with equality only for q
+  and -q.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    The switched q-gauge Laplacian has a grounded 82 by 82 minor whose
+    negative is certified positive definite by an exact rational LDL^T
+    factorization and exact remultiplication. Therefore the full Laplacian is
+    negative semidefinite with kernel spanned by the all-ones vector. The
+    checker replay passes; independent review is required.
+  basis:
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-superlevel-cell-reduction-20260830.md
+      kind: text
+      locator: q-cell theorem
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_superlevel_cell_reduction_checker.py
+      kind: code
+frontier:
+  independent-review:
+    task: Independently verify the gauge identity, LDL certificate, and equality case.
+    kind: review
+    since: '2026-08-31'
+events:
+  registered-2026-08-31:
+    date: '2026-08-31'
+    type: created
+    summary: Registered the exact author-side q-cell global minimum.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-superlevel-cell-reduction-20260830.md
+      kind: text

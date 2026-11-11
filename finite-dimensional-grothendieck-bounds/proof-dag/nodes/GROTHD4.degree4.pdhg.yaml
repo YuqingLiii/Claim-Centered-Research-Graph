@@ -1,0 +1,37 @@
+id: GROTHD4.degree4.pdhg
+role: tool
+aliases:
+- D4-PDHG-PROBE
+claim: >-
+  The recovered swap-even PDHG pipeline produces the archived initial and one-step diagnostic
+  tuple when run with tau = 1e-10 on its frozen derived inputs.
+assessment:
+  level: NUMERICAL
+  summary: >-
+    The record is useful solver-discovery evidence only: its global minimum eigenvalue is
+    approximately -7.12e6 and its residual approximately 0.926, so it is not a feasible
+    dual certificate.
+  basis:
+    runs:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/replay/h4_fd4_next_stage_bundle/fd4_pdhg_oneiter/one_step_summary_tau1e-10.json
+      kind: run
+      result: >-
+        Archived one-step summary at tau=1e-10; global minimum eigenvalue -7117729.3116 and
+        residual 0.92579 approximately.
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_fd4_pdhg_swap_even.py
+      kind: text
+frontier:
+  task-001:
+    task: Replace the diagnostic iterate with a converged candidate and subject it to the exact verifier.
+    kind: task
+    since: '2026-08-29'
+events:
+  migrated-2026-08-29:
+    date: '2026-08-29'
+    type: created
+    summary: Recorded the numerical probe while explicitly preventing it from being mistaken for feasibility.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/replay/h4_fd4_next_stage_bundle/fd4_pdhg_oneiter/one_step_summary_tau1e-10.json
+      kind: run
+

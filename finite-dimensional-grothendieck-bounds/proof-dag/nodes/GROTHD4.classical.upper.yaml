@@ -1,0 +1,156 @@
+id: GROTHD4.classical.upper
+role: outcome
+aliases:
+- D4-CLASSICAL-UB
+claim: >-
+  Every pair of signs x_i,y_j in {-1,+1} satisfies
+  sum_ij A_ij x_i y_j <= 2081044153087351400 for the archived instance A.
+routes:
+  boolean-degree4-sos:
+    premises:
+    - GROTHD4.degree4.sos
+    implication: >-
+      Evaluating an exact Boolean degree-four SOS identity
+      C-x^T A y=sum_k q_k^2 on any sign assignment gives x^T A y<=C.
+    proof:
+      sketch: Every real square is nonnegative, and the Boolean quotient identities hold on all sign assignments.
+      sources:
+      - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-duality-direction-audit-20260829.md
+        kind: text
+        locator: D4-DIR1--D4-DIR4
+    assessment:
+      level: OPEN
+      summary: >-
+        The implication is elementary, but no exact SOS Gram certificate is
+        currently present. The archived dual feasibility search has the
+        opposite logical direction.
+      basis:
+        evidence:
+        - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-duality-direction-audit-20260829.md
+          kind: text
+  spectral-sign-profile:
+    premises:
+    - GROTHD4.spectral.top
+    - GROTHD4.classical.spectral-gap
+    implication: >-
+      The exact identity A=lambda E+R converts the spectral sign-gap claim
+      verbatim into x^T A y<=C for every pair of sign vectors.
+    proof:
+      sketch: >-
+        Decompose x and y into range(E) and its orthogonal complement. The
+        cross terms vanish because ER=RE=0, leaving exactly the two terms in
+        GROTHD4.classical.spectral-gap.
+      sources:
+      - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-spectral-geometry-reduction-20260829.md
+        kind: text
+        locator: D4-S4
+    assessment:
+      level: OPEN
+      summary: >-
+        The implication and spectral decomposition are exact. The discrete
+        spectral sign-gap premise is open.
+      basis:
+        evidence:
+        - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-spectral-geometry-reduction-20260829.md
+          kind: text
+          locator: D4-S4
+  switched-cut-nonnegativity:
+    premises:
+    - GROTHD4.classical.cut-nonnegative
+    implication: >-
+      Switching the archived signs converts any sign strategy into a pair of
+      flip sets S,T, whose value is exactly C-2W(S,T). Nonnegativity of every
+      such cut therefore gives the claimed upper bound.
+    proof:
+      sketch: >-
+        Put B_ij=a_i A_ij b_j and represent an arbitrary sign pair relative
+        to a,b by its two flip sets. The termwise identity
+        sum_ij B_ij(-1)^(s_i+t_j)=C-2W(S,T) completes the implication.
+      sources:
+      - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-exact-cut-route-audit-20260830.md
+        kind: text
+        locator: D4-CUT1
+    assessment:
+      level: OPEN
+      summary: >-
+        The route implication is an exact integer identity, but its sole
+        premise, global cut nonnegativity, remains open.
+      basis:
+        evidence:
+        - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-exact-cut-route-audit-20260830.md
+          kind: text
+          locator: D4-CUT1
+assessment:
+  level: OPEN
+  summary: >-
+    No global upper-bound proof is present. The former degree-four route was
+    directionally incorrect: a feasible moment dual would obstruct a
+    degree-four SOS certificate rather than establish the bound.
+  basis:
+    routes:
+    - boolean-degree4-sos
+    - spectral-sign-profile
+    - switched-cut-nonnegativity
+frontier:
+  task-001:
+    task: Produce an exact Boolean SOS certificate, an exact exhaustive certificate, or a different analytic global bound.
+    kind: task
+    since: '2026-08-29'
+  spectral-sign-gap:
+    task: >-
+      Use GROTHD4.spectral.top to bound the top-space and residual-space
+      contributions for every pair of sign vectors by C; the present generic
+      operator-norm bound is not sharp enough.
+    kind: task
+    since: '2026-08-29'
+  exact-cut-certificate:
+    task: >-
+      Extend the author-level archived fixed-support certificate to every
+      support split, for example with a finite H4-canonical coverage DAG,
+      exact high-order local cut duals, and checkable equality terminals.
+    kind: task
+    since: '2026-09-07'
+events:
+  migrated-2026-08-29:
+    date: '2026-08-29'
+    type: created
+    summary: Preserved the classical upper bound as the central open gate.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/migration-state-20260829.md
+      kind: text
+  direction-repaired-2026-08-29:
+    date: '2026-08-29'
+    type: repair-applied
+    summary: Retired the invalid implication from feasible separating pseudoexpectation to classical upper bound and replaced it with the primal SOS route.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-duality-direction-audit-20260829.md
+      kind: text
+  spectral-route-added-2026-08-29:
+    date: '2026-08-29'
+    type: route-added
+    route: spectral-sign-profile
+    summary: Added the exact top-space decomposition as a second route while leaving its discrete sign-gap premise open.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-spectral-geometry-reduction-20260829.md
+      kind: text
+  cut-route-added-2026-08-30:
+    date: '2026-08-30'
+    type: route-added
+    route: switched-cut-nonnegativity
+    summary: >-
+      Added the exact switching/cut equivalence as a third route and isolated
+      global cut nonnegativity as its own open premise after auditing several
+      failed low-order certificate classes.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-exact-cut-route-audit-20260830.md
+      kind: text
+      locator: D4-CUT1--D4-CUT6
+  fixed-support-bound-registered-2026-09-07:
+    date: '2026-09-07'
+    type: repair-applied
+    summary: >-
+      Narrowed the exact-cut frontier after the archived 217+83 support cell
+      was closed; the unrestricted support-changing case remains OPEN.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.fixed-support.upper.yaml
+      kind: node-evidence

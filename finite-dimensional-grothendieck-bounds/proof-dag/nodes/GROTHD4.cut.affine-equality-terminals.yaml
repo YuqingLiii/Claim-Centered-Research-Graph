@@ -1,0 +1,58 @@
+id: GROTHD4.cut.affine-equality-terminals
+role: proof
+aliases:
+- D4-AFFINE-EQUALITY-TERMINALS
+claim: >-
+  The switched cut objective has the certified affine H4 action; its first two
+  canonical coverage layers have 1 and 34 orbits, and the two constructed
+  equality-terminal families contain 307200 distinct C-level sign pairs and
+  156000 explicitly certified left assignments with eliminated value zero.
+routes:
+  exact-affine-enumeration:
+    premises:
+    - GROTHD4.instance
+    implication: >-
+      Exact signed invariance, exhaustive generation of all 14,400 affine H4
+      actions, integer right-variable elimination on the base faces, and exact
+      incidence counting establish the stated finite censuses.
+    proof:
+      sketch: >-
+        Reconstruct the group action and hashes, enumerate the one- and
+        two-coordinate layers, then verify every base-face value and every
+        terminal-family disjointness count using integer arithmetic.
+      sources:
+      - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-affine-h4-equality-terminals-20260830.md
+        kind: text
+        locator: Exact terminal orbit census
+      - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_affine_equality_terminals_checker.py
+        kind: code
+    assessment:
+      level: CONJECTURED
+      summary: Exact replay passes; completeness of all equality cuts is not claimed.
+      basis:
+        evidence:
+        - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-fixed-support-replay-20260907.txt
+          kind: run
+          result: pass
+assessment:
+  level: CONJECTURED
+  summary: >-
+    This is an exact finite author-side lemma about symmetry, early canonical
+    layers, and constructed equality terminals. It neither proves global cut
+    nonnegativity nor classifies every equality cut, and it awaits review.
+  basis:
+    routes:
+    - exact-affine-enumeration
+frontier:
+  independent-review:
+    task: Independently replay the affine action, terminal counts, and disjointness checks.
+    kind: review
+    since: '2026-09-07'
+events:
+  retrospective-registration-2026-09-07:
+    date: '2026-09-07'
+    type: created
+    summary: Registered the exact 2026-08-30 affine-terminal lemma during normalization.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-affine-h4-equality-terminals-20260830.md
+      kind: text

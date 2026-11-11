@@ -1,0 +1,45 @@
+id: GROTHD4.spectral.hadamard-no-zero-divisors
+role: constraint
+aliases:
+- D4-EF-HADAMARD-NO-ZERO-DIVISORS
+claim: >-
+  If E is the rank-four top spectral projector of A, e is a nonzero vector
+  in range(E), and f is any nonzero eigenvector of A, then the coordinatewise
+  product e o f is nonzero. In particular the compact coupling constant
+  c_EF=min ||e o f||_2^2 over unit e in E and unit f in the rank-sixteen
+  bottom eigenspace F is strictly positive.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    A complete author-side exact proof enumerates 726 H4 Gram-flat types and
+    verifies modulo 1000003 that every integer matrix A[Z^c,Z] has full
+    column rank. This excludes an eigenvector supported on the zero set of a
+    nonzero top-space vector. The checker replay passes, but the claim awaits
+    independent review and supplies only qualitative positivity of c_EF.
+  basis:
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-complementary-leakage-20260830.md
+      kind: text
+      locator: Section 3
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_complementary_leakage_checker.py
+      kind: code
+frontier:
+  independent-review:
+    task: >-
+      Independently verify the H4 flat classification, modular full-rank
+      argument, support implication, and compactness step.
+    kind: review
+    since: '2026-08-31'
+  explicit-rational-constant:
+    task: Derive a useful explicit rational lower bound for c_EF.
+    kind: task
+    since: '2026-08-31'
+events:
+  registered-2026-08-31:
+    date: '2026-08-31'
+    type: created
+    summary: Registered the exact author-side H4 Hadamard no-zero-divisor lemma.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-complementary-leakage-20260830.md
+      kind: text
+      locator: Section 3

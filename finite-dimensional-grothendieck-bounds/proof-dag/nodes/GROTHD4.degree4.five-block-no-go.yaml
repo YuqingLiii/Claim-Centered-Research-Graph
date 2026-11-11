@@ -1,0 +1,43 @@
+id: GROTHD4.degree4.five-block-no-go
+role: obstruction
+aliases:
+- D4-SOS-TWO-MINIMAL-FIVE-BLOCK-NO-GO
+claim: >-
+  The Boolean target C-x^T A y lies outside the characteristic-zero Gram
+  coefficient image for each of the two H4 block sets {8,9,12,13,14} and
+  {9,12,13,14,17}. Hence neither minimal five-block enlargement supports a
+  degree-four SOS certificate.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    Each party-parity Gram domain has 13316 parameters. Exact modular Schur
+    ranks plus 467-dimensional true-coefficient residual minors give Gram
+    rank 13316 and target-augmented rank 13317 for both block 8 and block 17.
+    Thus the target is outside even the indefinite Gram images. The checker
+    replay passes, but the author-side theorem awaits independent review and
+    does not exclude the six-block or full twenty-block SOS problems.
+  basis:
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-sos-symmetry-20260830.md
+      kind: text
+      locator: D4-SOS-TWO-MINIMAL-5BLOCK-LINEAR-NOGO
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_two_minimal_five_block_nogo_certificate_checker.py
+      kind: code
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/certificates/d4-two-minimal-five-block-linear-nogo-certificate-20260830.json
+      kind: run
+frontier:
+  independent-review:
+    task: >-
+      Independently audit both Schur decompositions, coefficient residual
+      minors, normalization, and characteristic-zero lifts.
+    kind: review
+    since: '2026-08-31'
+events:
+  registered-2026-08-31:
+    date: '2026-08-31'
+    type: created
+    summary: Registered both exact author-side minimal five-block linear no-go results.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-sos-symmetry-20260830.md
+      kind: text
+      locator: D4-SOS-TWO-MINIMAL-5BLOCK-LINEAR-NOGO

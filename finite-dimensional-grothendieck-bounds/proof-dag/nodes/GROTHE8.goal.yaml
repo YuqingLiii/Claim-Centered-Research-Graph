@@ -1,0 +1,65 @@
+id: GROTHE8.goal
+role: outcome
+aliases:
+- E8-BOUND
+claim: >-
+  A canonical Bell matrix built from the E8 root system satisfies
+  K_G(8) >= 9240/6104 = 165/109 = 1.513761467889... .
+routes:
+  exact-e8-assembly:
+    premises:
+    - GROTHE8.root-poset
+    - GROTHE8.matrix
+    - GROTHE8.quantum
+    - GROTHE8.classical
+    implication: >-
+      If the canonical root/poset construction defines the frozen Bell matrix, its
+      dimension-8 value is 9240, and its classical optimum is 6104, then their quotient
+      gives the displayed lower bound for K_G(8).
+    proof:
+      sketch: Divide the explicit attainable dimension-8 value by the exact sign optimum.
+      sources:
+      - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-e8/e8-exact-certificate-20260829.md
+        kind: text
+        locator: E8-T1--E8-T9
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        All premises now have complete local author-level derivations and exact replay
+        evidence. Independent adversarial review remains the promotion gate.
+      basis:
+        evidence:
+        - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-e8/e8-exact-certificate-20260829.md
+          kind: text
+          locator: E8-T1--E8-T9
+assessment:
+  level: CONJECTURED
+  summary: >-
+    The project now contains a self-contained exact matrix, a spectral proof of the vector
+    optimum, a computer-assisted exact proof of the classical optimum, an equality witness,
+    and explicit measurements. The result remains CONJECTURED until independent review.
+  basis:
+    routes:
+    - exact-e8-assembly
+frontier:
+  task-001:
+    task: Audit the entire exact certificate independently, with special attention to the filter reduction and k=98,104 closure.
+    kind: review
+    since: '2026-08-29'
+events:
+  migrated-2026-08-29:
+    date: '2026-08-29'
+    type: created
+    summary: Migrated the E8 candidate from web-chat state into a conservative local claim DAG.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-e8/e8-reconstruction-20260829.md
+      kind: text
+  exact-certificate-assembled-2026-08-29:
+    date: '2026-08-29'
+    type: repair-applied
+    summary: Replaced the inherited headline with a self-contained exact theorem and local certificate chain.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-e8/e8-exact-certificate-20260829.md
+      kind: text
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-e8/e8-dual-checker-run-20260829.txt
+      kind: run

@@ -1,0 +1,38 @@
+id: GROTHD4.spectral.local-radius2
+role: constraint
+aliases:
+- D4-ARCHIVED-RADIUS2-LOCAL-MAX
+claim: >-
+  Within the archived complementary-support cell, every one- or
+  two-coordinate support-sign flip has Bell objective strictly below C. The
+  smallest one-flip loss is 2353967343413440 and the smallest two-flip loss
+  is 3299723804685584.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    Exact integer update formulas exhaust all 300 single flips and all 44850
+    double flips, proving the archived witness is a strict Hamming-radius-two
+    local maximum inside its fixed support cell. This is only a local
+    objective statement, not a global upper bound, and awaits independent
+    review. The checker replay passes.
+  basis:
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-near-extremizer-stability-20260830.md
+      kind: text
+      locator: Section 3
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_near_extremizer_stability_checker.py
+      kind: code
+frontier:
+  independent-review:
+    task: Independently audit the single- and double-flip exhaustive formulas.
+    kind: review
+    since: '2026-08-31'
+events:
+  registered-2026-08-31:
+    date: '2026-08-31'
+    type: created
+    summary: Registered the exact archived radius-two local maximum.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-near-extremizer-stability-20260830.md
+      kind: text
+      locator: Section 3

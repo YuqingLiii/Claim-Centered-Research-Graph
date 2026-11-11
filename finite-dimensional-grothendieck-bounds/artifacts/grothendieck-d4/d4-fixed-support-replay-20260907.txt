@@ -1,0 +1,42 @@
+Replay date: 2026-09-07
+Scope: exact author-side replay during protocol normalization
+Environment: Python 3.12.14; h5py 3.16.0; numpy 2.3.5; sympy 1.14.0
+
+Commands, from the repository root:
+  python grothendieck-d4/tools/h4_pcut_triangle_cover_checker.py
+  python grothendieck-d4/tools/h4_pcut_twohop_checker.py
+  python grothendieck-d4/tools/h4_spectral_gap_checker.py
+  python grothendieck-d4/tools/h4_affine_equality_terminals_checker.py
+
+Selected exact output:
+  certificate sha256 = fe1444390cc921aae3e1fb40b3389fc9ae94d1ae77fee83813f9198c06f7f504
+  217-variable objective sha256 = 5049871cbbb88448752b893e2157cef7377993c91215d4d99e7bc0467e9f4adf
+  nonzero integer orbit multipliers = 26627
+  expanded triangle inequalities = 158829
+  minimum edge residual = 0
+  positive residual edges / connected vertices = 18732 217
+  EXACT_FIXED_217_PLUS_83_CELL_UPPER_BOUND_PASSED
+
+  certificate SHA256 = 1dda1ad4a4d79b370a0a93eb8bd22dad2ce5e87917aad45344db9dad9347253b
+  exact routed path records = 473676
+  minimum exact residual positive-edge capacity = 95963447132
+  all negative demands are routed through positive two-hop paths
+  therefore s^T L_p s >= 0 for every Boolean sign vector s
+  strict residual plus connectivity: equality only for s=+1 or s=-1
+
+  m(A)e_0=0; signed-H4 transitivity and commutation imply m(A)=0
+  all twelve roots are simple and real
+  residual norm rho lies in (5845700854670610.5, 5845700854670611)
+  post-rank-16 residual norm sigma lies in (1671954910365626, 56846466952431285/34)
+  10th-moment Gauss--Jacobi bound: x^T E x < 228 for every sign x
+
+  signed_group_order = 14400
+  one_fixed_coordinate canonical_orbits = 1
+  two_fixed_coordinates canonical_orbits = 34
+  distinct_left_assignments_with_exact_F_zero = 156000
+  C_level_sign_pairs union = 307200
+  status = EXACT_CHECK_PASSED
+
+Interpretation: these runs support exact author-side claims. They are not an
+independent review and do not promote any node to PROVED. The fixed-support
+result does not cover support-changing sign pairs.

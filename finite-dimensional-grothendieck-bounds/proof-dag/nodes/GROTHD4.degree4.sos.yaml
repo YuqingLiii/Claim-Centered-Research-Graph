@@ -1,0 +1,40 @@
+id: GROTHD4.degree4.sos
+role: proof
+aliases:
+- D4-DEGREE4-SOS
+claim: >-
+  In the Boolean quotient x_i^2=y_j^2=1, the polynomial
+  2081044153087351400 - x^T A y is a sum of squares of real
+  polynomials of degree at most two, with an exact project-local certificate.
+assessment:
+  level: OPEN
+  summary: >-
+    This is the correctly oriented degree-four route to the classical upper
+    bound. The former DAG incorrectly used feasibility of the separating dual
+    as positive support for the upper bound.
+  basis:
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-duality-direction-audit-20260829.md
+      kind: text
+      locator: D4-DIR1--D4-DIR4
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.degree4.four-block-no-go.yaml
+      kind: node-evidence
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.degree4.five-block-no-go.yaml
+      kind: node-evidence
+frontier:
+  task-001:
+    task: >-
+      Decide the six-block set {8,9,12,13,14,17}, with 19967 party-parity
+      Gram parameters, then continue toward the full twenty-block problem.
+      The four-block core and both minimal five-block enlargements are
+      excluded even at the indefinite linear-image level.
+    kind: task
+    since: '2026-08-29'
+events:
+  direction-repaired-2026-08-29:
+    date: '2026-08-29'
+    type: created
+    summary: Registered the primal SOS certificate as the correctly oriented degree-four upper-bound route.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-duality-direction-audit-20260829.md
+      kind: text

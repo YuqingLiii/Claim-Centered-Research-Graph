@@ -1,0 +1,101 @@
+id: GROTHD4.classical.cut-nonnegative
+role: constraint
+aliases:
+- D4-CUT-NONNEGATIVE
+claim: >-
+  For the archived signs a,b and switched integer matrix
+  B_ij=a_i A_ij b_j, every bipartite flip cut has nonnegative weight:
+  W(S,T)=sum_{s_i xor t_j=1} B_ij >= 0 for all subsets S,T.
+assessment:
+  level: OPEN
+  summary: >-
+    The switching equivalence, exact right-variable elimination, branch
+    verifier logic, signed H4 orbit data, affine equality terminals, and the
+    archived fixed-support cell have exact replayable derivations. The global
+    nonnegativity statement is not proved because support-changing cuts remain.
+    Root min-cut, QPBO, and cardinality relaxations are too weak, and the simple
+    positive-path multicommodity certificate class is ruled out by an exact
+    total-capacity obstruction.
+  basis:
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-exact-cut-route-audit-20260830.md
+      kind: text
+      locator: D4-CUT1--D4-CUT6
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_orbit_support_probe.py
+      kind: code
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_cardinality_bound_probe.py
+      kind: code
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.cut.triangle-no-go.yaml
+      kind: node-evidence
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.cut.five-term-no-go.yaml
+      kind: node-evidence
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.cut.terminal-cut7-no-go.yaml
+      kind: node-evidence
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.cut.seven-term-no-go.yaml
+      kind: node-evidence
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.cut.uncovered-cut7-orbit-no-go.yaml
+      kind: node-evidence
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.cut.strength7-refuted.yaml
+      kind: node-evidence
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.cut.strength7-orbit-no-go.yaml
+      kind: node-evidence
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.cut.rank21-quadrilateral-no-go.yaml
+      kind: node-evidence
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.cut.rank20-double-quadrilateral-no-go.yaml
+      kind: node-evidence
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.cut.affine-equality-terminals.yaml
+      kind: node-evidence
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.fixed-support.upper.yaml
+      kind: node-evidence
+frontier:
+  high-order-local-cut-dual:
+    task: >-
+      Construct exact rational combinations of exhaustively verified local
+      cut-polytope inequalities, compatible with the known H4 equality
+      faces, that yield a nonnegative lower bound on every canonical branch.
+    kind: task
+    since: '2026-08-30'
+  equality-face-completeness:
+    task: >-
+      Classify or otherwise cover every zero cut, not merely the orbit of the
+      selected archived strategy, so equality terminals can be checked
+      without an unproved completeness assumption.
+    kind: task
+    since: '2026-08-30'
+  higher-facet-search:
+    task: >-
+      Apply the exact equality-face correlation filter to nine-term and
+      higher hypermetrics, then classify remaining local cut-polytope cluster
+      orbits; ordinary triangles, all five- and seven-term vectors, 712800
+      terminal-derived CUT_7 clusters, and one additional 14400-cluster orbit
+      have been excluded.
+    kind: task
+    since: '2026-08-31'
+  seven-cluster-rank-classification:
+    task: >-
+      Search for non-quadrilateral seven-cluster defects of rank below 20 or
+      a lowered-rank nullspace containing a supporting CUT_7 inequality. The
+      complete quadrilateral-core mechanism reaches rank 20 but supplies no
+      valid facet and cannot lower rank further.
+    kind: task
+    since: '2026-08-31'
+events:
+  registered-2026-08-30:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Registered the exact cut formulation as its own open constraint after
+      auditing the reduction, low-order relaxations, H4 action, and equality
+      faces.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-exact-cut-route-audit-20260830.md
+      kind: text
+  fixed-support-bound-registered-2026-09-07:
+    date: '2026-09-07'
+    type: repair-applied
+    summary: >-
+      Recorded the exact archived fixed-support theorem and affine terminal
+      census without changing the OPEN status of global cut nonnegativity.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.fixed-support.upper.yaml
+      kind: node-evidence

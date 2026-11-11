@@ -1,0 +1,124 @@
+%% FINITE-DIMENSIONAL-GROTHENDIECK-BOUNDS proof hypergraph (generated)
+flowchart BT
+  n0["GROTHD4.classical.cut-nonnegative\nOPEN"]
+  n1["GROTHD4.classical.lower\nCONJECTURED"]
+  n2["GROTHD4.classical.spectral-gap\nOPEN"]
+  n3["GROTHD4.classical.upper\nOPEN"]
+  n4["GROTHD4.cut.affine-equality-terminals\nCONJECTURED"]
+  n5["GROTHD4.cut.five-term-no-go\nCONJECTURED"]
+  n6["GROTHD4.cut.fixed-cell-p\nCONJECTURED"]
+  n7["GROTHD4.cut.rank20-double-quadrilateral-no-go\nCONJECTURED"]
+  n8["GROTHD4.cut.rank21-quadrilateral-no-go\nCONJECTURED"]
+  n9["GROTHD4.cut.seven-term-no-go\nCONJECTURED"]
+  n10["GROTHD4.cut.strength7-orbit-no-go\nCONJECTURED"]
+  n11["GROTHD4.cut.strength7-refuted\nCONJECTURED"]
+  n12["GROTHD4.cut.terminal-cut7-no-go\nCONJECTURED"]
+  n13["GROTHD4.cut.triangle-no-go\nCONJECTURED"]
+  n14["GROTHD4.cut.uncovered-cut7-orbit-no-go\nCONJECTURED"]
+  n15["GROTHD4.degree4.affine-family\nNUMERICAL"]
+  n16["GROTHD4.degree4.dual\nOPEN"]
+  n17["GROTHD4.degree4.equality-rank\nNUMERICAL"]
+  n18["GROTHD4.degree4.five-block-no-go\nCONJECTURED"]
+  n19["GROTHD4.degree4.four-block-no-go\nCONJECTURED"]
+  n20["GROTHD4.degree4.pdhg\nNUMERICAL"]
+  n21["GROTHD4.degree4.sos\nOPEN"]
+  n22["GROTHD4.degree4.swap-even\nNUMERICAL"]
+  n23["GROTHD4.fixed-support.upper\nCONJECTURED"]
+  n24["GROTHD4.goal\nCONJECTURED"]
+  n25["GROTHD4.instance\nCONJECTURED"]
+  n26["GROTHD4.measurements\nCONJECTURED"]
+  n27["GROTHD4.quantum\nCONJECTURED"]
+  n28["GROTHD4.spectral.archived-threshold\nCONJECTURED"]
+  n29["GROTHD4.spectral.cg-leakage\nCONJECTURED"]
+  n30["GROTHD4.spectral.cg-rankone-identity\nCONJECTURED"]
+  n31["GROTHD4.spectral.coarse-stability-no-go\nCONJECTURED"]
+  n32["GROTHD4.spectral.complementary-leakage\nCONJECTURED"]
+  n33["GROTHD4.spectral.ef-tensor-bound\nCONJECTURED"]
+  n34["GROTHD4.spectral.exact-spectrum\nCONJECTURED"]
+  n35["GROTHD4.spectral.hadamard-no-zero-divisors\nCONJECTURED"]
+  n36["GROTHD4.spectral.local-radius2\nCONJECTURED"]
+  n37["GROTHD4.spectral.local-radius3\nCONJECTURED"]
+  n38["GROTHD4.spectral.p-cell-gate\nCONJECTURED"]
+  n39["GROTHD4.spectral.p-psd-no-go\nCONJECTURED"]
+  n40["GROTHD4.spectral.q-cell-minimum\nCONJECTURED"]
+  n41["GROTHD4.spectral.same-channel-no-go\nCONJECTURED"]
+  n42["GROTHD4.spectral.support-only-no-go\nCONJECTURED"]
+  n43["GROTHD4.spectral.tensor-leakage\nCONJECTURED"]
+  n44["GROTHD4.spectral.top\nCONJECTURED"]
+  n45["GROTHD4.spectral.top-energy-bound\nCONJECTURED"]
+  n46["GROTHE8.classical\nCONJECTURED"]
+  n47["GROTHE8.classical-witness\nCONJECTURED"]
+  n48["GROTHE8.exceptional-congruence\nCONJECTURED"]
+  n49["GROTHE8.filter-reduction\nCONJECTURED"]
+  n50["GROTHE8.goal\nCONJECTURED"]
+  n51["GROTHE8.matrix\nCONJECTURED"]
+  n52["GROTHE8.measurements\nCONJECTURED"]
+  n53["GROTHE8.quantum\nCONJECTURED"]
+  n54["GROTHE8.root-poset\nCONJECTURED"]
+  r1(("boolean-degree4-sos\nOPEN"))
+  n21 --> r1
+  r1 --> n3
+  r2(("spectral-sign-profile\nOPEN"))
+  n44 --> r2
+  n2 --> r2
+  r2 --> n3
+  r3(("switched-cut-nonnegativity\nOPEN"))
+  n0 --> r3
+  r3 --> n3
+  r4(("exact-affine-enumeration\nCONJECTURED"))
+  n25 --> r4
+  r4 --> n4
+  r5(("triangle-orbit-cover\nCONJECTURED"))
+  n25 --> r5
+  r5 --> n6
+  r6(("two-hop-routing\nCONJECTURED"))
+  n25 --> r6
+  r6 --> n6
+  r7(("separated-p-and-q-certificates\nCONJECTURED"))
+  n6 --> r7
+  n40 --> r7
+  r7 --> n23
+  r8(("exact-value-assembly\nCONJECTURED"))
+  n25 --> r8
+  n27 --> r8
+  n1 --> r8
+  n3 --> r8
+  r8 --> n24
+  r9(("gram-to-clifford\nCONJECTURED"))
+  n27 --> r9
+  r9 --> n26
+  r10(("rankone-cg\nCONJECTURED"))
+  n30 --> r10
+  r10 --> n29
+  r11(("hadamard-coupling\nCONJECTURED"))
+  n35 --> r11
+  r11 --> n32
+  r12(("cyclic-column-and-h4-transitivity\nCONJECTURED"))
+  n25 --> r12
+  r12 --> n34
+  r13(("q-global-minimum\nCONJECTURED"))
+  n40 --> r13
+  r13 --> n38
+  r14(("tensor-restriction\nCONJECTURED"))
+  n33 --> r14
+  r14 --> n43
+  r15(("degree-ten-h4-moment-majorant\nCONJECTURED"))
+  n25 --> r15
+  n44 --> r15
+  r15 --> n45
+  r16(("poset-congruence-and-witness\nCONJECTURED"))
+  n51 --> r16
+  n54 --> r16
+  n49 --> r16
+  n48 --> r16
+  n47 --> r16
+  r16 --> n46
+  r17(("exact-e8-assembly\nCONJECTURED"))
+  n54 --> r17
+  n51 --> r17
+  n53 --> r17
+  n46 --> r17
+  r17 --> n50
+  r18(("vector-to-observables\nCONJECTURED"))
+  n53 --> r18
+  r18 --> n52

@@ -1,0 +1,63 @@
+id: GROTHD4.spectral.tensor-leakage
+role: constraint
+aliases:
+- D4-EF-TENSOR-LEAKAGE
+claim: >-
+  For complementary-support ternary p,q, with s=||p||_2^2,
+  t=300-s, alpha=p^T E p, beta=q^T F q, u=s-alpha, and v=t-beta,
+  one has gamma_1 alpha beta <= alpha v/75 + 4 beta u/75.
+routes:
+  tensor-restriction:
+    premises:
+    - GROTHD4.spectral.ef-tensor-bound
+    implication: >-
+      Restricting Ep and Fq to the complementary support sets bounds their
+      Hadamard product above by alpha v/75+4 beta u/75, while the least
+      squared singular value of the tensor map bounds it below by
+      gamma_1 alpha beta.
+    proof:
+      sketch: >-
+        Use p o q=0 and the constant diagonals E_ii=1/75, F_ii=4/75 to
+        control the restrictions of Fq to supp(p) and Ep to supp(q). The
+        tensor lower bound then gives the displayed inequality without the
+        former product-error term.
+      sources:
+      - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-ef-tensor-bound-20260830.md
+        kind: text
+        locator: Complementary-support inequality
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The implication has a complete author-side exact derivation and
+        awaits independent review with its tensor premise.
+      basis:
+        evidence:
+        - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-ef-tensor-bound-20260830.md
+          kind: text
+assessment:
+  level: CONJECTURED
+  summary: >-
+    The sharper inequality eliminates the loose product term and forces an
+    exact spectral penalty, but on the archived 217+83 split the certified
+    penalty covers only between 1/16 and 1/15 of the required ten-block
+    correction. It therefore does not close the classical spectral gap and
+    still awaits independent review.
+  basis:
+    routes:
+    - tensor-restriction
+frontier:
+  atom-structure-strengthening:
+    task: >-
+      Use equal-weight ternary atoms or the three H4/CG blocks together with
+      a degree-twelve nonradial invariant to strengthen the penalty by about
+      a factor of fifteen.
+    kind: task
+    since: '2026-08-31'
+events:
+  registered-2026-08-31:
+    date: '2026-08-31'
+    type: created
+    summary: Registered the sharper tensor-based complementary leakage bound.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-ef-tensor-bound-20260830.md
+      kind: text

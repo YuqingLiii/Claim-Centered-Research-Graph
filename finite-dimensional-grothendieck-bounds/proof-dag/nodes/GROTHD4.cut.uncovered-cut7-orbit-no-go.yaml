@@ -1,0 +1,37 @@
+id: GROTHD4.cut.uncovered-cut7-orbit-no-go
+role: obstruction
+aliases:
+- D4-UNCOVERED-CUT7-ORBIT-NO-GO
+claim: >-
+  On every cluster in the 14400-element H4-plus-party-swap orbit of
+  (0,35,137,284,320,471,594), no proper CUT_7 facet can be tight on all
+  currently known C-level cuts.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    No cluster in this orbit contains a terminal free six-set, but the known
+    equality cuts project onto all 64 CUT_7 vertices on the canonical
+    representative. Therefore a local inequality tight on every known cut is
+    an identity rather than a proper facet. The exact orbit and projection
+    checker passes; independent review and other cluster orbits remain open.
+  basis:
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-seven-hypermetric-no-go-20260830.md
+      kind: text
+      locator: Section 5
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_seven_hypermetric_no_go_checker.py
+      kind: code
+frontier:
+  independent-review:
+    task: Independently audit the complete orbit and full CUT_7 projection.
+    kind: review
+    since: '2026-08-31'
+events:
+  registered-2026-08-31:
+    date: '2026-08-31'
+    type: created
+    summary: Registered the first nonterminal-derived CUT_7 orbit obstruction.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-seven-hypermetric-no-go-20260830.md
+      kind: text
+      locator: Section 5

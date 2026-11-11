@@ -1,0 +1,42 @@
+id: GROTHD4.cut.triangle-no-go
+role: obstruction
+aliases:
+- D4-TRIANGLE-CONE-NO-GO
+claim: >-
+  The only nonnegative combination of ordinary triangle hypermetric slacks
+  that vanishes on all 307200 currently known C-level cuts is the zero
+  combination.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    A complete author-side exact argument constructs the 600 by 600 integer
+    correlation matrix of all known equality faces and exhausts all
+    107281800 ordinary triangles. Every nontrivial triangle has positive
+    slack on at least 896 known cuts, so nonnegativity excludes cancellation
+    inside the triangle cone. The result awaits independent adversarial
+    review and does not address pentagonal or general local-cut facets.
+  basis:
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-triangle-hypermetric-no-go-20260830.md
+      kind: text
+      locator: Sections 2--5
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_triangle_hypermetric_no_go_checker.py
+      kind: code
+frontier:
+  independent-review:
+    task: >-
+      Independently review the hypermetric slack identity, analytic face
+      summation, complete triangle census, and cone-level inference, then
+      hash-bind the reviewed claim if accepted.
+    kind: review
+    since: '2026-08-31'
+events:
+  registered-2026-08-31:
+    date: '2026-08-31'
+    type: created
+    summary: >-
+      Registered the exact author-side obstruction excluding every
+      equality-compatible nonnegative triangle-slack combination.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-triangle-hypermetric-no-go-20260830.md
+      kind: text

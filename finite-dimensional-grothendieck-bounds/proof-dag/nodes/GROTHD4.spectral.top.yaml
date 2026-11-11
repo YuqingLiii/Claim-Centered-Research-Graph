@@ -1,0 +1,42 @@
+id: GROTHD4.spectral.top
+role: proof
+aliases:
+- D4-SPECTRAL-TOP
+claim: >-
+  With E=P/75 and
+  lambda=5132744330206382+2356560241063596 sqrt(5), the frozen Bell matrix
+  satisfies A E=lambda E, ||A-lambda E||_op<lambda, and therefore
+  ||A||_op=lambda with range(P) as its strict four-dimensional top singular
+  space.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    A complete author-level exact argument is present: integer arithmetic
+    verifies AP=lambda P, and an exact Q(sqrt(5)) row-sum bound on the square
+    of the residual is strictly below lambda^2. Independent review is pending.
+  basis:
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-spectral-geometry-reduction-20260829.md
+      kind: text
+      locator: D4-S1--D4-S4
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_exact_instance_checker.py
+      kind: text
+    runs:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-exact-instance-check-20260829.txt
+      kind: run
+      result: Exact AP identity and strict residual row-square bound pass.
+frontier:
+  review-001:
+    task: Independently audit the AP identity, Q(sqrt(5)) signs, and residual norm implication.
+    kind: review
+    since: '2026-08-29'
+events:
+  spectral-reduction-added-2026-08-29:
+    date: '2026-08-29'
+    type: created
+    summary: Registered the exact top-eigenspace reduction and separated it from the still-open discrete sign bound.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-spectral-geometry-reduction-20260829.md
+      kind: text
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-exact-instance-check-20260829.txt
+      kind: run
