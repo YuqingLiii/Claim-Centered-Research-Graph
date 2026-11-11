@@ -1,0 +1,9 @@
+# Zero-capacity boundary of the noisy Werner–Holevo family
+
+Statement: for the qutrit family Lambda_x(X) = (1-x) X + (x/2)(Tr(X) 1 - X^T), determine {x : Q(Lambda_x) = 0}.
+Known: antidegradable for x >= 4/7 (Roofeh–Karimipour, PRA 109, 052620 (2024)); at x = 1/2, Q=P=0 by the signed-lift certificate (Zhu–Wang arXiv:2607.24693); for smaller x, lower bounds eventually make Q>0.
+**RESOLVED 2026-07-28 (the originally posed gap):** Q = P = 0 for ALL x in [1/2, 1) — the Zhu–Wang lift extends to the unique O(3)-covariant family s1=2(1-x)/(3x), s2=(5x-2)/(3x) with defect-PSD region EXACTLY [1/2,1) (PROVED, R2 review), and the generic-theorem assembly is PROVED (R3 review; HRSF22-via-ZW provenance note). Hence {x : Q=0} ⊇ [1/2, 1] (endpoint via cite-only RK24). See `proof-dag/nodes/WHGAP.zero-capacity-application.md` and `notes/WHGAP_P4_ZERO_CAPACITY_NOTE_20260728.md`.
+**2026-07-30 (R5 batch reviews):** Q > 0 for ALL x in (0, 2/5) — PROVED via the isotropic eps-log-eps witness (N1' expansion lemma, R5d review; subsumes the earlier (0, x_1) package) — and the cBKM/cRE order boundary is EXACTLY 1/2 (necessity theorem, R5b review): cBKM ⟺ cRE ⟺ signed-lift ⟺ x in [1/2, 1). Paper v4 (17 pp) carries all three theorems and the three-threshold phase diagram.
+Open: the strip **[2/5, 1/2)** — is x_D = 2/5 the exact onset (`WHGAP.onset-two-fifths`)? Any Q=0 proof there must evade the necessity theorem (restricted orders, `WHGAP.restricted-order`); also the exact antidegradability boundary (4/7 numerically tight, exact value GAP) and the full averaging/WLOG lemma; more broadly, map the reach of signed-lift CP-defect certificates across channel families.
+NOTE: this is a finite-dimensional (qutrit) family — filed under channel-capacity, not bosonic-cv (the initial survey map placed it in the bosonic block in error; corrected here).
+

@@ -1,0 +1,40 @@
+id: WHGAP.qpositive-onset
+role: outcome
+aliases:
+- q-positive-below-two-fifths
+claim: >-
+  For every x with 0 < x < 2/5, the noisy Werner--Holevo channel Lambda_x has strictly positive
+  quantum capacity Q(Lambda_x).
+routes:
+  no-ascent-expansion:
+    premises:
+    - WHGAP.no-ascent-hierarchy
+    implication: >-
+      The reviewed n=1 isotropic expansion supplies an explicit positive coherent-information input
+      for every x below 2/5, and one-shot positivity lower-bounds regularized quantum capacity.
+    proof:
+      sketch: Use only the n=1 expansion/explicit-witness layer, not the unresolved higher hierarchy.
+      sources:
+      - path: werner-holevo-capacity-threshold/artifacts/legacy-record/nodes/WHGAP.qpositive-onset.md
+        kind: text
+        locator: "## Current status"
+    assessment:
+      level: CONJECTURED
+      summary: Legacy reviews licensed the interval theorem; new-format claim-hash review is pending.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The old project recorded a stronger completion level; migration conservatively awaits claim-hash rebinding.
+  summary: >-
+    The complete textual derivation and old reviews are preserved locally and strongly support the
+    claim, but no new-format independent review is yet linked to this exact claim.
+  basis:
+    routes:
+    - no-ascent-expansion
+    evidence:
+    - path: werner-holevo-capacity-threshold/artifacts/PRIMARY_SOURCE_AUDIT_20260829.md
+      kind: text
+      locator: "## What the external papers prove for this family"
+    - path: werner-holevo-capacity-threshold/artifacts/legacy-record/nodes/WHGAP.qpositive-onset.md
+      kind: text
+      locator: "## Claim"

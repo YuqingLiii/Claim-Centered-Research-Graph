@@ -1,0 +1,33 @@
+id: WHGAP.no-ascent-hierarchy
+role: proof
+aliases:
+- no-ascent
+claim: >-
+  The no-ascent variational inequality is necessary for Q(N)=0 at every blocklength; for Lambda_x,
+  its repaired n=1 isotropic expansion yields a positive coherent-information direction exactly
+  below x=2/5, while the n>=2, non-isotropic and balanced layers remain unresolved.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - Only the n=1 isotropic layer supports the positive-onset route; the full hierarchy is not established.
+  summary: >-
+    The legacy record contains reviewed n=1 formulas and an expansion lemma, together with failed
+    generic-spectrum assumptions and open higher layers. A fresh local rank-stratified one-copy
+    scan found a positive control below 2/5 and only the pure zero floor at five points from 2/5
+    through 0.49; this remains numerical evidence, not a global upper bound. Analytically, all real
+    one-copy inputs and all blocklengths of real-product-basis diagonal correlated inputs are now
+    controlled; quantum coherences remain open.
+  basis:
+    evidence:
+    - path: werner-holevo-capacity-threshold/artifacts/legacy-record/nodes/WHGAP.no-ascent-hierarchy.md
+      kind: text
+      locator: "## Current status"
+    - path: werner-holevo-capacity-threshold/artifacts/LOCAL_ONE_COPY_SCAN_20260829.md
+      kind: text
+      locator: "## Results"
+    - path: werner-holevo-capacity-threshold/artifacts/scripts/whgap_one_copy_scan.py
+      kind: code
+      locator: "def scan_one_x"
+    - path: werner-holevo-capacity-threshold/artifacts/DIAGONAL_ALL_BLOCKLENGTH_PROOF_20260829.md
+      kind: text
+      locator: "## Tensorization by a hybrid identity"

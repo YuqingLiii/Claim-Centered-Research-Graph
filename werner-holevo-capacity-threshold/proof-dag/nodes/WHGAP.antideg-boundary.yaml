@@ -1,0 +1,24 @@
+id: WHGAP.antideg-boundary
+role: outcome
+aliases:
+- antidegradable-boundary
+claim: >-
+  Determine the exact antidegradability boundary of Lambda_x under the full swap-invariant symmetric
+  extension criterion and decide whether it is strictly below 4/7.
+assessment:
+  level: OPEN
+  summary: >-
+    The legacy independent computation makes 4/7 numerically tight to better than 1e-6, but no exact
+    primal/dual certificate establishes the boundary and the raw-sign formulation has a structural
+    zero mode.
+  basis:
+    evidence:
+    - path: werner-holevo-capacity-threshold/artifacts/legacy-record/nodes/WHGAP.antideg-boundary.md
+      kind: text
+      locator: "## Current status"
+frontier:
+  exact-certificate:
+    task: Produce exact feasible/infeasible certificates for the full 18+9 swap-invariant SDP near 4/7.
+    kind: gate
+    since: 2026-08-29
+

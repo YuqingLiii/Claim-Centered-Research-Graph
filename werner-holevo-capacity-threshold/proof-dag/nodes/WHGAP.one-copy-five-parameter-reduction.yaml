@@ -1,0 +1,27 @@
+id: WHGAP.one-copy-five-parameter-reduction
+role: proof
+aliases:
+- q1-five-parameter
+claim: >-
+  Modulo O(3) covariance, the all-input one-copy coherent-information optimization for Lambda_x is
+  exactly a five-real-parameter entropy optimization over an explicit compact semialgebraic domain.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The reduction concerns Q^(1), not regularized Q.
+  summary: >-
+    The proposer-side covariance and Levi-Civita derivation is explicit and has an independent
+    direct-Kraus numerical identity check. All real qutrit inputs are now analytically controlled
+    throughout the strip; the three imaginary-antisymmetric normal-form parameters remain open.
+    Independent symbolic review is pending.
+  basis:
+    evidence:
+    - path: werner-holevo-capacity-threshold/artifacts/ONE_COPY_FIVE_PARAMETER_REDUCTION_20260829.md
+      kind: text
+      locator: "## Exact reduced optimization problem"
+    - path: werner-holevo-capacity-threshold/artifacts/ONE_COPY_FIVE_PARAMETER_REDUCTION_20260829.md
+      kind: text
+      locator: "## Verification and next proof target"
+    - path: werner-holevo-capacity-threshold/artifacts/REAL_INPUT_REDUCTION_20260829.md
+      kind: text
+      locator: "## Completion of the two-equal curve"

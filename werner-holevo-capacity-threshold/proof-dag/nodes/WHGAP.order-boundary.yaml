@@ -1,0 +1,38 @@
+id: WHGAP.order-boundary
+role: outcome
+aliases:
+- cbkm-boundary
+claim: >-
+  For the noisy Werner--Holevo family, complete BKM and complete relative-entropy domination fail
+  for every x in (0,1/2) and hold for every x in [1/2,1); hence their exact boundary is x=1/2.
+routes:
+  necessity-and-signed-lift:
+    premises:
+    - WHGAP.signed-lift-extension
+    implication: >-
+      The explicit finite-epsilon BKM witness excludes every x below 1/2, while the signed-lift
+      certificate supplies the holding side from 1/2 onward.
+    proof:
+      sketch: >-
+        Use the witness rho_epsilon and spin-2 perturbation X with its exact epsilon threshold for
+        the negative side; use only the certificate core for the positive side.
+      sources:
+      - path: werner-holevo-capacity-threshold/artifacts/legacy-record/nodes/WHGAP.order-boundary.md
+        kind: text
+        locator: "## Composition proof"
+    assessment:
+      level: CONJECTURED
+      summary: The old assembled proof was reviewed; the migrated implication is not yet hash-bound.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    The exact boundary proof and old review are preserved and strongly support the claim, but the
+    new canonical statement awaits migration review.
+  basis:
+    routes:
+    - necessity-and-signed-lift
+    evidence:
+    - path: werner-holevo-capacity-threshold/artifacts/legacy-record/nodes/WHGAP.order-boundary.md
+      kind: text
+      locator: "## Claim"
+
