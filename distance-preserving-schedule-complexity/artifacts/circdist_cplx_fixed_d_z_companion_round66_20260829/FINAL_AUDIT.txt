@@ -1,0 +1,89 @@
+CIRCDIST ROUND 66 PRE-SEAL FINAL AUDIT
+=====================================
+
+Audit time: 2026-08-29 00:50:23 EDT / 2026-08-29 04:50:23 UTC
+Repository HEAD: e40a7ac40972ad5186018797efa390a8e3f784f0
+Authorized package:
+  <repo>/circdist/artifacts/circdist_cplx_fixed_d_z_companion_round66_20260829
+
+Verdict and theorem
+-------------------
+FULL-FIXED-D-THEOREM-READY-FOR-FRESH-REVIEW
+999-character no-terminal-LF theorem SHA-256:
+  49cf956fe5afa49caa8707f15fd157ab27fedadc79c56bdec0a57c0a89a0e184
+883-character licensed X theorem SHA-256:
+  01cf8fd10f48db13e23a09f884eb24b0b17c860c121c336c324123ff222594c0
+Unchanged fixed-d claim SHA-256:
+  7adfe7c8356f6151e0da203826f9868cb414f193a4dfd5d63721b20e900e91cf
+
+Package-local sealed-candidate replay
+-------------------------------------
+COUNTEREXAMPLE generator:
+  command: PYTHONDONTWRITEBYTECODE=1 python3 make_counterexample.py
+  result: byte-for-byte cmp PASS
+  raw JSON SHA-256: d2318eeab4e87eeb964acff8eecab5db58b814d913b7dcdc5ef8a8612c5dedc9
+
+Verifier:
+  command: PYTHONDONTWRITEBYTECODE=1 python3 verify.py
+  result: byte-for-byte cmp PASS
+  semantic result: PASS, 20/20 checks, Python 3.9.6
+  stdout SHA-256: d5d160987d45edaed4faef0d2986115c733b54ade899d131a9d0912c27cb8165
+  wall time: 14.0 seconds
+
+Compile/hash validation:
+  construction.py        COMPILE-PASS
+  z_companion.py         COMPILE-PASS
+  make_counterexample.py COMPILE-PASS
+  verify.py              COMPILE-PASS
+  JSON parse/schema      PASS
+  theorem length/hash    PASS
+  licensed length/hash   PASS
+
+Selected raw file hashes before sealing:
+  5c2d33dde6060649a1aa78c4be8d0761296c097e2230f1465605407b577cf028  README.md
+  0b184c505c31760d7f333fdba019ea583c7686d55ab5796d126eb0dc2857f6ee  THEOREM.txt
+  6e722b47728b958a08fe555a6831a0cbd4f5ba855822314fa3133fc1e1b4d792  LICENSED_X_THEOREM.txt
+  4a882e62d4ba78ca8da4b9989e2433c28f9daec0a106ced9e6cfea7970daa88d  construction.py
+  5f619ed61212ebd5382f1a842fc270054cff653764fded751429fe095e0ecb8c  z_companion.py
+  5b6a8f225289e9202364a2505230bbf05327e6356b7d96fee6bdd4e33cc1630b  make_counterexample.py
+  fdffcd30e30200c711308a13801909fbf30b3b20afe4697ee134007588ab2011  verify.py
+
+Source spot checks
+------------------
+  4a882e62d4ba78ca8da4b9989e2433c28f9daec0a106ced9e6cfea7970daa88d  copied round-64 construction.py
+  5a9cd8d600871515f85151691e24bd92b3573e9cb79ccdca697f5af01730de54  round-65 exact review
+  5ff45afe7156dc96b4ea807563940cde9ea82a805a92b7e85a8f9ced9c01920a  current fixed-d node file
+  47260df53e4491c86e10f6ccdebadf47b1161d2533339fd9c499f389a8eb2321  current upper node file
+
+Repository-write audit
+----------------------
+The repository was dirty/untracked before entry. The entry default `git status --short` byte hash
+was reported as c4152c4df421abc0728ce2b2892c1262a704c71d272e8685080a2e0eb8f6a918.
+Immediately before sealing, the same default status with the round-66 path excluded has the same
+hash exactly. With `--untracked-files=all`, every task-attributable repository record is under the
+single authorized package path. No canonical node, route, scheduler, protocol, generated view,
+review, earlier artifact, or other repository path was written by this task.
+
+Process audit
+-------------
+Corrected foreground process scan result:
+  ROUND66_PROCESS_MATCHES 0
+No subagent, detached/background process, daemon, worker pool, or compute handoff exists. The first
+scan form failed locally due to stdin/heredoc composition and is disclosed in PROCESS_LEDGER.txt;
+the corrected scanner excludes its own shell/children and found no round66, verify.py,
+make_counterexample.py, or z_companion.py worker.
+
+Scratch audit and remaining deterministic operations
+----------------------------------------------------
+All scratch is under /tmp/circdist-round66.SI5u9p plus two package-replay JSON files under /tmp.
+No verdict depends on volatile scratch: the identical counterexample and verifier logs are already
+inside this package. After this file, the author will:
+
+1. seal every payload except SHA256SUMS.txt;
+2. run sha256sum -c and compute the external SHA256SUMS.txt digest;
+3. run the final read-only inventory/status/process scan;
+4. delete all round-66 scratch/replay files with Python pathlib/shutil;
+5. confirm their absence and report results to the dispatcher.
+
+Recording those post-seal results inside a payload would change the seal. They are therefore
+reported with the external seal digest in the final dispatcher message.

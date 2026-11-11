@@ -1,0 +1,151 @@
+id: CIRCDIST.cplx.fixed-d
+role: proof
+aliases:
+- EFFP-FIXED-D
+claim: Eff-Preserve with a fixed small constant d is NP-complete under structural restrictions (bounded
+  stabilizer weight, bounded Tanner degree, few allowed local CNOT orders per check) — with the restriction
+  boundary corrected by the round-1 recon to (d = 3 with order-domain >= 3) or (d >= 4 with binary order-domain),
+  since d = 3 with two allowed orders per check reduces to 2-SAT and is in P.
+assessment:
+  level: PROVED
+  caveats:
+  - PROVED is bound to the unchanged 390-character claim on sha256:7adfe7c8356f6151e0da203826f9868cb414f193a4dfd5d63721b20e900e91cf
+    and the independently reviewed 999-character theorem on sha256:49cf956fe5afa49caa8707f15fd157ab27fedadc79c56bdec0a57c0a89a0e184
+    under the frozen single-ancilla terminal-residual V1 model.
+  - The disjunctive restriction boundary is met through the d=3, maximum-domain-three arm only. This proof
+    does not establish the separate d>=4 binary-order arm.
+  - The proved family has d_X=4, d_Z=3, X-generator weight at most 4, Z-generator weight at most 486, Tanner
+    degree at most 20, no artificial conflict edges and no optional depth bound T; global serial execution
+    realizes every allowed local-order tuple.
+  - The canonical increasing block-contiguous Z order is explicitly refuted and is not used. The proof instead
+    uses the independently reviewed private-sentinel transform and its singleton Z orders.
+  - This result proves fixed-d NP-completeness only. CIRCDIST.cplx.sigma2 remains OPEN and CIRCDIST.cplx remains
+    CONJECTURED; the conditional classification route grants no automatic inheritance.
+  summary: Fresh independent round-67 exact review clears the complete 999-character private-sentinel theorem
+    and proves that it entails the unchanged fixed-d claim through its d=3/domain-three arm. The review
+    independently re-derived the terminal-column model, marker-path lemmas, complete one/two-fault Z case split,
+    CSS/rank/k and quotient identities, exact distances, preservation of the reviewed X-safe iff, uniform
+    constants, total Karp branches and NP membership. Only fixed-d is promoted; the cplx root remains unfinished
+    because sigma2 is open.
+  basis:
+    reviews:
+    - path: distance-preserving-schedule-complexity/reviews/circdist_cplx_fixed_d_private_sentinel_exact_review_20260829.md
+      kind: review
+      scope: >-
+        Fresh independent exact review of the sealed round-66 999-character private-sentinel theorem,
+        including the raw block-order counterexample and caveat, terminal-column model, M1-M3 and every
+        one/two-fault Z case, CSS/rank/k and both quotient isomorphisms, exact distances, preservation of
+        the independently reviewed X-safe iff, uniform constants and explicit order semantics, total
+        malformed/empty/nonempty Karp branches, NP membership, theorem-to-claim entailment, independent
+        controls, and the no-inheritance boundary.
+      locator: Finding F-FULL-FIXED-D
+      reviewed_hash: sha256:7adfe7c8356f6151e0da203826f9868cb414f193a4dfd5d63721b20e900e91cf
+    evidence:
+    - path: distance-preserving-schedule-complexity/artifacts/history/pre_protocol_20260826/nodes/CIRCDIST.cplx.fixed-d.yaml
+      kind: text
+      note: Immutable pre-migration record, including every original event, former summary and frontier;
+        historical evidence, not an additional completion review.
+    - path: distance-preserving-schedule-complexity/reviews/circdist_islandv_review_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: distance-preserving-schedule-complexity/artifacts/circdist_cplx_islandv_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: distance-preserving-schedule-complexity/artifacts/circdist_cplx_islands_writeup_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: distance-preserving-schedule-complexity/artifacts/circdist_cplx_gadget_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: distance-preserving-schedule-complexity/artifacts/circdist_cplx_recon_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: distance-preserving-schedule-complexity/artifacts/circdist_cplx_fixed_d_x_reduction_round64_20260828
+      kind: run
+      note: Sealed proposer-level round-64 package; dispatcher replay passed all 164 checks. It offers a
+        restricted X-EFF3 hardness theorem for fresh review but expressly leaves the effective-Z companion
+        premise open, so it licenses no level change by itself.
+    - path: distance-preserving-schedule-complexity/reviews/circdist_cplx_fixed_d_x_reduction_exact_review_20260828.md
+      kind: review
+      note: Fresh exact review clears the 883-character restricted X-EFF3 theorem on hash
+        sha256:01cf8fd10f48db13e23a09f884eb24b0b17c860c121c336c324123ff222594c0 and independently
+        confirms the no-inheritance boundary. It licenses no fixed-d or root promotion without the
+        effective-Z premise.
+    - path: distance-preserving-schedule-complexity/artifacts/circdist_cplx_fixed_d_z_companion_round66_20260829
+      kind: run
+      note: Sealed proposer-level private-sentinel package. It offers a 999-character full fixed-d theorem
+        on sha256:49cf956fe5afa49caa8707f15fd157ab27fedadc79c56bdec0a57c0a89a0e184; dispatcher
+        replay passed 20/20 checks. Fresh independent exact review is mandatory before any level change.
+events:
+  fixed-d-private-sentinel-reviewed-round67-2026-08-29:
+    date: '2026-08-29'
+    type: review-completed
+    summary: >-
+      Fresh independent round-67 exact review cleared the complete 999-character private-sentinel
+      theorem on sha256:49cf956fe5afa49caa8707f15fd157ab27fedadc79c56bdec0a57c0a89a0e184
+      and proved that it entails the unchanged 390-character fixed-d claim on
+      sha256:7adfe7c8356f6151e0da203826f9868cb414f193a4dfd5d63721b20e900e91cf.
+    sources:
+    - path: distance-preserving-schedule-complexity/artifacts/circdist_cplx_fixed_d_z_companion_round66_20260829
+      kind: run
+    - path: distance-preserving-schedule-complexity/reviews/circdist_cplx_fixed_d_private_sentinel_exact_review_20260829.md
+      kind: review
+      locator: Finding F-FULL-FIXED-D
+  fixed-d-proved-round67-2026-08-29:
+    date: '2026-08-29'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      Promoted only CIRCDIST.cplx.fixed-d after the sealed author theorem and fresh independent exact
+      review completed the d=3/domain-three fixed-d NP-completeness claim. CIRCDIST.cplx.sigma2 remains
+      OPEN and CIRCDIST.cplx remains CONJECTURED; no parent level is inherited.
+    sources:
+    - path: distance-preserving-schedule-complexity/artifacts/circdist_cplx_fixed_d_z_companion_round66_20260829
+      kind: run
+    - path: distance-preserving-schedule-complexity/reviews/circdist_cplx_fixed_d_private_sentinel_exact_review_20260829.md
+      kind: review
+      locator: Finding F-FULL-FIXED-D
+  fixed-d-private-sentinel-round66-2026-08-29:
+    date: '2026-08-29'
+    type: repair-applied
+    summary: >-
+      Linked the sealed round-66 private-sentinel package after dispatcher manifest verification and 20/20
+      replay, without a level change. The proposer theorem preserves the reviewed X quotient while claiming
+      explicit singleton Z orders safe against all one- and two-fault mechanisms, with d_X=4, d_Z=3,
+      w_X<=4, w_Z<=486 and Tanner degree<=20. It also gives a raw counterexample to the canonical increasing
+      block-contiguous route and does not overclaim all block orders. The exact theorem on
+      sha256:49cf956fe5afa49caa8707f15fd157ab27fedadc79c56bdec0a57c0a89a0e184 remains proposer-level
+      pending fresh independent review; fixed-d and the cplx root retain their levels.
+    sources:
+    - path: distance-preserving-schedule-complexity/artifacts/circdist_cplx_fixed_d_z_companion_round66_20260829
+      kind: run
+  fixed-d-x-exact-review-round65-2026-08-28:
+    date: '2026-08-28'
+    type: repair-applied
+    summary: >-
+      Fresh independent round-65 review cleared the exact 883-character restricted X-EFF3 theorem on
+      sha256:01cf8fd10f48db13e23a09f884eb24b0b17c860c121c336c324123ff222594c0 after re-deriving the
+      total reduction, both Karp directions, deterministic placement, separation theorem, repetition quotient
+      and uniform bounds, plus replaying all 164 checks and new stress controls. The paired no-inheritance
+      finding is binding: no effective-Z schedule is proved for the main H_Z rows, so fixed-d and the cplx root
+      retain their levels.
+    sources:
+    - path: distance-preserving-schedule-complexity/reviews/circdist_cplx_fixed_d_x_reduction_exact_review_20260828.md
+      kind: review
+  fixed-d-x-reduction-round64-2026-08-28:
+    date: '2026-08-28'
+    type: repair-applied
+    summary: Linked the sealed round-64 X-reduction package after dispatcher manifest and 164-check replay,
+      without a level change. The proposer supplies deterministic private-base placement and a formal-label
+      separation lemma for a restricted X-EFF3 hardness theorem, while explicitly leaving the main H_Z
+      effective-schedule premise open. The theorem requires fresh independent review; fixed-d remains
+      CONJECTURED and no parent inherits a promotion.
+    sources:
+    - path: distance-preserving-schedule-complexity/artifacts/circdist_cplx_fixed_d_x_reduction_round64_20260828
+      kind: run

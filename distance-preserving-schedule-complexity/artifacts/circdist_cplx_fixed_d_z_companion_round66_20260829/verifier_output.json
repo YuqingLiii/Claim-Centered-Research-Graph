@@ -1,0 +1,537 @@
+{
+  "checks": 20,
+  "details": [
+    {
+      "check": "exact theorem length/hash",
+      "detail": {
+        "characters": 999,
+        "sha256": "49cf956fe5afa49caa8707f15fd157ab27fedadc79c56bdec0a57c0a89a0e184"
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "exact licensed X theorem length/hash",
+      "detail": {
+        "characters": 883,
+        "sha256": "01cf8fd10f48db13e23a09f884eb24b0b17c860c121c336c324123ff222594c0"
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "companion exact CSS parameters",
+      "detail": [
+        4,
+        3,
+        2
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "companion exact distance witnesses",
+      "detail": {
+        "X": [
+          0,
+          1,
+          4,
+          5
+        ],
+        "Z": [
+          0,
+          1,
+          8
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "one-clause C0 cap/CSS/shape",
+      "detail": {
+        "mx": 37,
+        "mz": 21,
+        "n": 64
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "one-clause C0 adversarial low-Z search",
+      "detail": [
+        16,
+        17,
+        20,
+        22
+      ],
+      "status": "PASS"
+    },
+    {
+      "check": "increasing block-contiguous order is unsafe",
+      "detail": {
+        "audit": {
+          "class_xor_weight": 12,
+          "kind": "two-column",
+          "labels": [
+            [
+              "Z",
+              "hook-prefix",
+              0,
+              24
+            ],
+            [
+              "Z",
+              "hook-prefix",
+              9,
+              6
+            ]
+          ],
+          "logical_support": [
+            15,
+            16,
+            17,
+            21,
+            22,
+            23,
+            27,
+            28,
+            29,
+            33,
+            34,
+            35,
+            39,
+            40,
+            41,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            57,
+            58,
+            59
+          ],
+          "logical_weight": 24,
+          "safe": false
+        },
+        "raw": {
+          "lifted_gate_cuts": [
+            24,
+            6
+          ],
+          "lifted_orders": [
+            [
+              [
+                5,
+                0
+              ],
+              [
+                5,
+                1
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                7,
+                0
+              ],
+              [
+                7,
+                1
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                9,
+                0
+              ],
+              [
+                9,
+                1
+              ],
+              [
+                9,
+                2
+              ],
+              [
+                11,
+                0
+              ],
+              [
+                11,
+                1
+              ],
+              [
+                11,
+                2
+              ],
+              [
+                13,
+                0
+              ],
+              [
+                13,
+                1
+              ],
+              [
+                13,
+                2
+              ],
+              [
+                15,
+                0
+              ],
+              [
+                15,
+                1
+              ],
+              [
+                15,
+                2
+              ],
+              [
+                17,
+                0
+              ],
+              [
+                17,
+                1
+              ],
+              [
+                17,
+                2
+              ],
+              [
+                19,
+                0
+              ],
+              [
+                19,
+                1
+              ],
+              [
+                19,
+                2
+              ],
+              [
+                21,
+                0
+              ],
+              [
+                21,
+                1
+              ],
+              [
+                21,
+                2
+              ],
+              [
+                23,
+                0
+              ],
+              [
+                23,
+                1
+              ],
+              [
+                23,
+                2
+              ]
+            ],
+            [
+              [
+                16,
+                0
+              ],
+              [
+                16,
+                1
+              ],
+              [
+                16,
+                2
+              ],
+              [
+                17,
+                0
+              ],
+              [
+                17,
+                1
+              ],
+              [
+                17,
+                2
+              ],
+              [
+                18,
+                0
+              ],
+              [
+                18,
+                1
+              ],
+              [
+                18,
+                2
+              ],
+              [
+                19,
+                0
+              ],
+              [
+                19,
+                1
+              ],
+              [
+                19,
+                2
+              ]
+            ]
+          ],
+          "old_prefix_xor": [
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            16,
+            19
+          ],
+          "old_suffix_is_Z_logical": true,
+          "old_suffix_weight": 4,
+          "old_suffix_xor": [
+            18,
+            19,
+            21,
+            23
+          ],
+          "prefix_suffix_same_Z_class": true,
+          "rows_and_old_cuts": [
+            [
+              0,
+              8
+            ],
+            [
+              9,
+              2
+            ]
+          ]
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "raw counterexample file exactly rebuilds and certifies the obstruction",
+      "detail": {
+        "extra_pairs": 14,
+        "row_pairs": 210,
+        "sha256": "d2318eeab4e87eeb964acff8eecab5db58b814d913b7dcdc5ef8a8612c5dedc9",
+        "single_rows": 21
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "block-contiguous failure is order-specific, not an all-orders claim",
+      "detail": {
+        "audit": {
+          "columns": 606,
+          "safe": true,
+          "stabilizer_rank": 21,
+          "syndrome_classes": 533
+        },
+        "first_safe_seed": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "one-clause transform rank/CSS identity",
+      "detail": {
+        "css": true,
+        "expected_after": [
+          1184,
+          533,
+          8
+        ],
+        "rank_after": [
+          1184,
+          533,
+          8
+        ],
+        "rank_before": [
+          170,
+          26,
+          8
+        ],
+        "rank_identity": true
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "one-clause sentinel path invariant",
+      "detail": {
+        "duplicates": 451,
+        "rows": 28,
+        "states": 1944
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "one-clause exhaustive one/two-column Z audit",
+      "detail": {
+        "columns": 5218,
+        "safe": true,
+        "stabilizer_rank": 533,
+        "syndrome_classes": 3586
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "one-clause transformed structural bounds",
+      "detail": {
+        "blocks": 507,
+        "degrees_total_X_Z": [
+          8,
+          7,
+          4
+        ],
+        "max_X_weight": 4,
+        "max_Z_weight": 270,
+        "n": 1725
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "all old weight-at-most-4 X values preserve syndrome/quotient partitions",
+      "detail": {
+        "classes": 160,
+        "syndromes": 138,
+        "values": 582
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "occurrence-four instance hits the universal weight constants",
+      "detail": {
+        "R3": 120,
+        "decorated": 486,
+        "old": 40
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "occurrence-four transform identities and sentinel invariant",
+      "detail": {
+        "blocks": 1869,
+        "identity": {
+          "css": true,
+          "expected_after": [
+            4409,
+            1955,
+            23
+          ],
+          "rank_after": [
+            4409,
+            1955,
+            23
+          ],
+          "rank_before": [
+            671,
+            86,
+            23
+          ],
+          "rank_identity": true
+        },
+        "n": 6387,
+        "state_duplicates": 1693
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "occurrence-four exhaustive one/two-column Z audit",
+      "detail": {
+        "columns": 19294,
+        "safe": true,
+        "stabilizer_rank": 1955,
+        "syndrome_classes": 13336
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "K4 malformed-input X negative control",
+      "detail": {
+        "safe": 0,
+        "total": 81
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "decorated malformed branch rank/CSS/Z safety",
+      "detail": {
+        "Z": {
+          "columns": 1624,
+          "safe": true,
+          "stabilizer_rank": 170,
+          "syndrome_classes": 1096
+        },
+        "identity": {
+          "css": true,
+          "expected_after": [
+            359,
+            170,
+            8
+          ],
+          "rank_after": [
+            359,
+            170,
+            8
+          ],
+          "rank_before": [
+            41,
+            11,
+            8
+          ],
+          "rank_identity": true
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "check": "grouped-opening sentinel order mutation is rejected",
+      "detail": {
+        "class_xor_weight": 4,
+        "kind": "two-column",
+        "labels": [
+          [
+            "Z",
+            "hook-prefix",
+            16,
+            8
+          ],
+          [
+            "Z",
+            "hook-prefix",
+            16,
+            11
+          ]
+        ],
+        "logical_support": [
+          0,
+          1,
+          8
+        ],
+        "logical_weight": 3,
+        "safe": false
+      },
+      "status": "PASS"
+    }
+  ],
+  "python": "3.9.6",
+  "theorem": {
+    "characters": 999,
+    "sha256": "49cf956fe5afa49caa8707f15fd157ab27fedadc79c56bdec0a57c0a89a0e184"
+  },
+  "verdict": "PASS"
+}

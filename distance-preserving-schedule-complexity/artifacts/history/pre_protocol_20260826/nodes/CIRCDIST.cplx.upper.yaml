@@ -1,0 +1,31 @@
+id: CIRCDIST.cplx.upper
+role: proof
+aliases:
+- EFFP-UPPER
+claim: Eff-Preserve is in NP for every fixed constant d (schedule certificate plus polynomial fault
+  enumeration), and in Sigma_2^P when d is part of the input (exists-schedule forall-fault with a
+  polynomial Gaussian-elimination acceptance predicate; the distance promise handled by a total
+  ">= d" surrogate).
+assessment:
+  level: CONJECTURED
+  summary: 'Direct-work item (no premise decomposition). Proof drafted in the round-1 recon report
+    §5.2 (artifacts/circdist_cplx_recon_20260820.md): a schedule is a polynomial certificate; for
+    fixed d, fault sets of size < d are polynomially enumerable and each undetectable-logical test
+    is F2 linear algebra; for input d the forall-fault quantifier over the same predicate gives
+    the Sigma_2^P pattern, promise replaced by a total >= d surrogate. Recon P 0.9, D 0.5
+    sessions. Same argument places Circ-Preserve in Sigma_2^P, so the two problems can differ only
+    in lower bounds.'
+frontier:
+  task-001:
+    task: Write up §5.2 rigorously (membership for fixed d and for input d, promise surrogate) —
+      estimated half a session; then commission independent review.
+    kind: task
+    since: '2026-08-20'
+events:
+  created-2026-08-20:
+    date: '2026-08-20'
+    type: created
+    summary: Registered from the round-1 cplx recon as the membership/upper-bound component.
+    sources:
+    - path: artifacts/circdist_cplx_recon_20260820.md
+      kind: text

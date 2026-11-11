@@ -1,0 +1,130 @@
+id: CIRCDIST.cplx.fixed-d
+role: proof
+aliases:
+- EFFP-FIXED-D
+claim: Eff-Preserve with a fixed small constant d is NP-complete under structural restrictions
+  (bounded stabilizer weight, bounded Tanner degree, few allowed local CNOT orders per check) —
+  with the restriction boundary corrected by the round-1 recon to (d = 3 with order-domain >= 3) or
+  (d >= 4 with binary order-domain), since d = 3 with two allowed orders per check reduces to 2-SAT
+  and is in P.
+assessment:
+  level: CONJECTURED
+  summary: 'REVIEWED WITH FURTHER REPAIR NEEDED. Route: hooks make the problem an ordering CSP (variables = per-check local CNOT orders,
+    constraint arity <= d-1); reduce 3-colouring/NAE-SAT via coupling gadgets. Recon P 0.35, D 4.
+    NUMERICAL groundwork in the recon report: the commissioned warm-up gadget is discharged
+    (rotated [[9,1,3]]: 16 of 24 orders per weight-4 check safe — a unary effect, hence NOT
+    decisive: unary-only CSPs factorise); structured families (rotated surface, 3x3 toric, HGP,
+    Steane, [[15,7,3]]) all factorise into poly instances, while random weight-6 self-orthogonal
+    CSS codes show genuine coupling in 56/71 d=3 instances — hardness material exists away from
+    standard families; quantum Hamming codes are uniformly NO-instances (verified r=3,4). Model
+    pinning is load-bearing: with an arbitrary conflict graph NP-hardness is free-but-vacuous
+    (graph colouring); with qubit-sharing conflicts only, depth feasibility is poly (Koenig) and
+    d_eff depends only on local orders — the reduction must live in the second model. Attack plan
+    (direct work): if a controllable coupling gadget exists (prescribed non-product order relation
+    on two checks, certified distance, padding lemma), Eff-Preserve expresses ordering CSPs whose
+    fixed-template dichotomy side is NP-complete. GATE OUTCOME (2026-08-20,
+    artifacts/circdist_cplx_gadget_20260820.md): prescribability HOLDS — gadget G_neq3 (n=12,
+    d=3 and k=2 by exact certificate) realizes exactly the not-equal-on-3-values relation, the
+    3-colouring template, killing the recon''s only-unary refutation branch; but PADDING FAILS AS
+    A THEOREM at weight 4: neq3 iff subspace equality W_c = W_c'', an equivalence relation, so the
+    neq3-graph is always a disjoint union of cliques (K4 on 3 values = pigeonhole UNSAT, verified;
+    no wiring variant repairs it; merged checks also exceed weight 6). Route P dropped 0.35 ->
+    0.2. Sole registered repair: weight-6 gadgets, where the relation is genuine set-disjointness
+    (rainbow-matching-shaped), not subspace equality. New reformulation recorded: at d=3 the
+    order value is the set of proper prefix sums of the check''s syndrome multiset, and conflict =
+    prefix-sum-set intersection (modulo stabiliser coincidences, ~20 percent, proviso cannot be
+    dropped; 35520 order pairs verified, 0 mismatches). Hardness reality: 0
+    arc-consistent-but-UNSAT instances in 2002 random sector-instances; the constructed K4 code IS
+    arc-consistent and UNSAT — hard instances exist but must be built, and the only current recipe
+    lands in polynomial all-different territory. The recovered island-V review independently
+    reproduces the X-sector reduction on 188 codes (41 NO, zero mismatches), the line-section
+    formula, Hall escape, cap-set d_X=4 certificate, and direct-sum d=3 promise repair. It also
+    finds two proof-breaking gaps: Proposition 5''s only/exactly characterization is false (an
+    explicit n=16 code imposes a four-term relation with no pairwise equality), so reduction
+    completeness currently rests on finite audits; and the builder is randomized with fixed
+    ambient dimension, not a proved polynomial-time total map. The proposed Z-sector companion
+    with row weight 6 and d_Z>=7 is impossible for the COPY/NEGATE layout: each gadget already
+    forces at least ten u-pairs, hence W>=10 and the same sufficient criterion asks d_Z>=11.
+    The X-sector mechanism survives at NUMERICAL strength, but the full fixed-d headline remains
+    CONJECTURED and requires a new completeness argument/derandomization plus a re-scoped Z route.'
+frontier:
+  task-002:
+    task: 'Retarget the Z-sector companion after review refuted W=6,d_Z>=7 for the COPY/NEGATE
+      layout. Either prove a bounded-occurrence construction with honest W>=10 and d_Z>=11, or
+      invent a different two-class/NAE design whose pair count stays within the commissioned
+      weight-4-or-6 regime; do not reuse the one-session sparsification price.'
+    kind: task
+    since: '2026-08-20'
+  task-004:
+    task: Repair the X-sector reduction proof by replacing the refuted Proposition 5 only/exactly
+      clause with a genuine no-unintended-relations lemma for the constructed family, and make the
+      cap-set placement a deterministic polynomial-time total map with growing ambient dimension.
+    kind: task
+    since: '2026-08-20'
+events:
+  islandv-review-recovered-2026-08-20:
+    date: '2026-08-20'
+    type: repair-applied
+    summary: 'Recovered adversarial review completed frontier task-003. It independently confirms
+      the line-section/Hall mechanism, cap-set d_X=4 certificate, d=3 direct-sum repair, and 188
+      reduction instances with zero mismatches. It refutes Proposition 5(2)/(3)''s only/exactly
+      clauses by an explicit n=16 counterexample, identifies the missing deterministic
+      polynomial-time placement proof, and refutes the advertised W=6,d_Z>=7 companion target
+      (COPY/NEGATE forces at least ten u-pairs). The review task is removed; repair task-004 and a
+      re-scoped Z task replace it; the completed gadget gate task-001 is also removed.'
+    sources:
+    - path: artifacts/circdist_islandv_review_20260820.md
+      kind: review
+      locator: Sections 0-7
+  islandv-theorem-2026-08-20:
+    date: '2026-08-20'
+    type: repair-applied
+    summary: 'Round-6 island-V session delivered THEOREM 1 (pending review): the X-sector question
+      Eff-Preserve>=X[w <= 4, d_X >= 4] is NP-COMPLETE, by reduction from 3-SAT — verified on 75
+      codes (8 NO), 0 mismatches, with d_X >= 4 certified by an O(n^2) cap-set argument. The
+      escape from the K4/Hall obstruction: a check''s intrinsic data is a LINE plus a linear
+      SECTION s_c; forbidden-pair counts follow (dim(U_c ∩ U_c''), dim ker(s_c + s_c'')) with the
+      2-case (non-transitive, Cayley graph on M_2(F_2), needs dim Log >= 2) missing from the
+      gadget analysis; the only imposable relations are phi_r(i) = phi_r(j), installed free by
+      weight-4 connector checks, and with 3 classes per point the language contains COPY and
+      NEGATE. MISSING PIECE for the full headline: the Z-sector companion (needs sparse H_Z, row
+      weight 6, d_Z >= 7 — priced 1 session). Weight-6 set-disjointness DEMOTED to opportunistic:
+      it merges into the Z-sector sparsification (the sharpest bounded-weight headline becomes
+      "X-weight 4, Z-weight 6") rather than competing as a hardness path. Two new poly
+      sub-islands recorded on CIRCDIST.cplx.islands: Z-check weight <= 3 forces YES; qubit degree
+      2 forces YES — explaining the review''s zero-NO random sweeps. Route P 0.25 -> 0.55
+      (0.7 conditional on the Z-companion, discounted for pending review).'
+    sources:
+    - path: artifacts/circdist_cplx_islandv_20260820.md
+      kind: text
+  weight4-reopened-2026-08-20:
+    date: '2026-08-20'
+    type: repair-applied
+    summary: 'The islands write-up partially REOPENS weight-4 hardness: the correct abstraction of
+      the weight-<=4 CSP is a partial section hitting per-check 3-element lists — abstractly
+      NP-complete via 3-SAT — and Hall''s theorem shows only LOCAL neq3-style gadgets are doomed
+      (the K4 composite is a Hall violation), not the regime itself. Whether code-realizable
+      instances express general list-section hardness is now the registered question (islands node
+      frontier task-004); route P nudged 0.2 -> 0.25.'
+    sources:
+    - path: artifacts/circdist_cplx_islands_writeup_20260820.md
+      kind: text
+  gate-gadget-2026-08-20:
+    date: '2026-08-20'
+    type: repair-applied
+    summary: Decisive gate executed — prescribability and distance certification hold (G_neq3
+      realizes the 3-colouring template with exact d=3, k=2 certificate) but padding fails as a
+      theorem at weight 4 (neq3 is an equivalence relation, cliques only); route P 0.35 -> 0.2;
+      weight-6 set-disjointness gadgets registered as the sole repair; prefix-sum reformulation
+      and the new bipartite-matching island recorded.
+    sources:
+    - path: artifacts/circdist_cplx_gadget_20260820.md
+      kind: text
+  created-2026-08-20:
+    date: '2026-08-20'
+    type: created
+    summary: Registered from the round-1 cplx recon as the fixed-d hardness component, with the
+      commissioned restriction corrected (2-SAT tractability at d=3 with two orders).
+    sources:
+    - path: artifacts/circdist_cplx_recon_20260820.md
+      kind: text
