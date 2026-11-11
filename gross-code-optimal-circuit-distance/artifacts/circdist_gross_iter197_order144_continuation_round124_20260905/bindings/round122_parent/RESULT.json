@@ -1,0 +1,556 @@
+{
+  "artifact_name": "circdist_gross_iter196_order144_continuation_round122_20260904",
+  "direct360": {
+    "geometry": {
+      "L": 12,
+      "M": 6,
+      "check_weight": 6,
+      "checks_per_sector": 72,
+      "cross_pairing_rank": 12,
+      "data_qubits": 144,
+      "logical_dimension": 12,
+      "stabilizer_rank_per_sector": 66
+    },
+    "independent_stdlib_replay_sha256": "eeb89e5b92b7c2499ea18782f9221e3b2b1a014ce5d6cd199eeea14c0d2f3b8b",
+    "kill_rule": "One complete SAT sector kills the candidate; both sectors are SAT here. Repair/gap analysis is forbidden and was not run.",
+    "schedule": {
+      "conflicts": 0,
+      "edge_count": 864,
+      "global_interleaved": true,
+      "max_time": 355,
+      "mc_violations": 0,
+      "min_time": 0,
+      "ok": true,
+      "overlap_interleaved_pairs": 100,
+      "overlaps": 648,
+      "used_layers": 356,
+      "whole_check_interleaved_pairs": 378
+    },
+    "scope": "two complete unrestricted direct-360 W<=10 queries outside the outer encoding; no pool, residual-pattern, check-count, within-check-family, sampling, or partial restriction",
+    "sectors": {
+      "Xerr": {
+        "all_clauses_checked": 23076,
+        "all_clauses_satisfied": true,
+        "all_columns_reconstructed": 360,
+        "assignment_sha256": "7cd4e2ce3fc160ec03ff87685ec70628cd0230f6c154142505827bbc69c9ab31",
+        "canonical_net_support": [
+          2,
+          16,
+          24,
+          38,
+          52,
+          60,
+          76,
+          84,
+          98,
+          112,
+          120,
+          134
+        ],
+        "canonical_nonstabilizer": true,
+        "canonical_physical_parities_equal": true,
+        "canonical_syndrome": [],
+        "clauses": 23076,
+        "cnf_sha256": "8368f46f95e2a2d5960348e66bb1a3dc46fc24dec54d38f6199022788f1c93b2",
+        "fault_count": 10,
+        "logical_parities": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "logical_rows_reconstructed": 12,
+        "negative_control": {
+          "failed_clause_count": 5,
+          "first_failed_clause": 1274,
+          "flip_selected_var": 17
+        },
+        "physical_net_support": [
+          2,
+          16,
+          24,
+          38,
+          52,
+          60,
+          76,
+          84,
+          98,
+          112,
+          120,
+          134
+        ],
+        "physical_nonstabilizer": true,
+        "physical_syndrome": [],
+        "selected_indices": [
+          16,
+          24,
+          52,
+          60,
+          76,
+          98,
+          112,
+          134,
+          146,
+          254
+        ],
+        "selected_names": [
+          "D:16",
+          "D:24",
+          "D:52",
+          "D:60",
+          "D:76",
+          "D:98",
+          "D:112",
+          "D:134",
+          "R:0:2",
+          "R:36:2"
+        ],
+        "status": "SATISFIABLE",
+        "syndrome_rows_reconstructed": 72,
+        "variables": 6124
+      },
+      "Zerr": {
+        "all_clauses_checked": 23084,
+        "all_clauses_satisfied": true,
+        "all_columns_reconstructed": 360,
+        "assignment_sha256": "1f485166e62694ff41fdbffabba14cb6ee2c90bb7d719384262d3f73f28e77b7",
+        "canonical_net_support": [
+          5,
+          21,
+          24,
+          28,
+          30,
+          46,
+          48,
+          53,
+          55,
+          88,
+          90,
+          97,
+          104,
+          105,
+          112,
+          113,
+          122,
+          129
+        ],
+        "canonical_nonstabilizer": true,
+        "canonical_physical_parities_equal": true,
+        "canonical_syndrome": [],
+        "clauses": 23084,
+        "cnf_sha256": "c91b4367d97cf9ba928e8b106f15be2ed1c945995515fffdc04ba5cfc39cc812",
+        "fault_count": 10,
+        "logical_parities": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "logical_rows_reconstructed": 12,
+        "negative_control": {
+          "failed_clause_count": 6,
+          "first_failed_clause": 2947,
+          "flip_selected_var": 49
+        },
+        "physical_net_support": [
+          11,
+          14,
+          24,
+          27,
+          28,
+          46,
+          48,
+          53,
+          55,
+          90,
+          97,
+          103,
+          105,
+          112,
+          113,
+          122,
+          129,
+          143
+        ],
+        "physical_nonstabilizer": true,
+        "physical_syndrome": [],
+        "selected_indices": [
+          48,
+          53,
+          55,
+          122,
+          195,
+          226,
+          243,
+          247,
+          253,
+          319
+        ],
+        "selected_names": [
+          "D:48",
+          "D:53",
+          "D:55",
+          "D:122",
+          "R:17:0",
+          "R:27:1",
+          "R:33:0",
+          "R:34:1",
+          "R:36:1",
+          "R:58:1"
+        ],
+        "status": "SATISFIABLE",
+        "syndrome_rows_reconstructed": 72,
+        "variables": 6126
+      }
+    },
+    "solver_runs": {
+      "Xerr": {
+        "argv": [
+          "<repo>/circdist/artifacts/circdist_gross_iter195_order144_continuation_round120_20260904/tooling/cadical-1.9.5-arm64-macos",
+          "--no-binary",
+          "/private/tmp/circdist-round122-proposer/output/iter196/direct/direct360/Xerr.cnf",
+          "/private/tmp/circdist-round122-proposer/output/iter196/direct/solver/Xerr.drat"
+        ],
+        "child_pid": 52889,
+        "detached": false,
+        "duration_ns": 610878248458,
+        "end_utc": "2026-09-05T04:25:36.756388Z",
+        "rc": 10,
+        "reaped": true,
+        "start_utc": "2026-09-05T04:15:25.824144Z",
+        "stderr_bytes": 0,
+        "stdout_bytes": 83169,
+        "tag": "solve-iter196-Xerr-complete-direct360-proof-first",
+        "timeout_configured": false,
+        "wrapper_pid": 52887
+      },
+      "Zerr": {
+        "argv": [
+          "<repo>/circdist/artifacts/circdist_gross_iter195_order144_continuation_round120_20260904/tooling/cadical-1.9.5-arm64-macos",
+          "--no-binary",
+          "/private/tmp/circdist-round122-proposer/output/iter196/direct/direct360/Zerr.cnf",
+          "/private/tmp/circdist-round122-proposer/output/iter196/direct/solver/Zerr.drat"
+        ],
+        "child_pid": 53150,
+        "detached": false,
+        "duration_ns": 356678491417,
+        "end_utc": "2026-09-05T04:32:42.007899Z",
+        "rc": 10,
+        "reaped": true,
+        "start_utc": "2026-09-05T04:26:45.326307Z",
+        "stderr_bytes": 0,
+        "stdout_bytes": 77417,
+        "tag": "solve-iter196-Zerr-complete-direct360-proof-first",
+        "timeout_configured": false,
+        "wrapper_pid": 53147
+      }
+    },
+    "vendor_replay_sha256": "b16994e6cbc9cde9741ea4a7b8c614fbf95f95447b2dbea9d0f489221a9d105b"
+  },
+  "dispatch": {
+    "dispatch_hashes": {
+      "bindings/CIRCDIST.gross.yaml": "5e94918dbbe3ecc730d1eaa80e70c3b5713e2d87c4b9c44ca33b979b5ef10095",
+      "bindings/SCHEDULER.yaml": "4b91623164ec9c5a9ece1b81a35561945146befbe2c3edd05b669fac1a177eb1",
+      "bindings/round120_parent/SHA256SUMS.txt": "e004f8b28e1bd88916f81b1de55e43efcedb4f4924f0f39a2b52830ba143150d",
+      "bindings/round121_exact_review.md": "fc4b1c7e33c1a5f8e6dbad1715baa24b2a6d1a88c8368bc3a3632d768ce05d6d",
+      "bindings/round122_proofpilot_rank.json": "58cff681f9a5eb7d1db149f9ab2d6d6a111bdb4624058373199cd551faff5e44",
+      "input/iter196/formula/outer.cnf": "cf1907663bca93d838d85ba7a4eb8f682f3939b601d4a0295905699f1118e639",
+      "input/iter196/order144_quotient/outer.cnf": "12d86dfec0d588760a42edc7a8d43ac6f0172415956384bce461da592e08a593",
+      "input/iter196/source.json.gz": "31256761866d464eba48c278e2247d6f396a1372ad0508886e06e3f24ea6f51a",
+      "input/iter196/state.json": "ab064886695d712b62fddadb8639a75e9d230faa9e8e2d870605ebaf72946da9"
+    },
+    "mandatory_iter196_base": {
+      "clauses": 11477997,
+      "sha256": "cf1907663bca93d838d85ba7a4eb8f682f3939b601d4a0295905699f1118e639",
+      "variables": 3130306
+    },
+    "mandatory_iter196_counts": {
+      "assertions": 870126,
+      "blocks": 814392,
+      "selectors": 51336
+    },
+    "mandatory_iter196_order144_quotient": {
+      "clauses": 21362300,
+      "roots": 143,
+      "sha256": "12d86dfec0d588760a42edc7a8d43ac6f0172415956384bce461da592e08a593",
+      "variables": 4365826
+    },
+    "mandatory_iter196_selector_state_sha256": "a960134b6315978cd800261ab5dd6ce287a3fd96c7dda5c33abd19c8671527c9",
+    "mandatory_iter196_semantic_source_sha256": "f93cd8e600e1b02db801d84a5b6b2eb0def408f3bca65528c8b0a6b5b0e0b73d",
+    "preflight_rehash_audit": {
+      "path": "verification/preflight_binding.json",
+      "sha256": "826a8bd1341f33c639101169ac6da00081a43c691d556d87731539fb9da61b94"
+    },
+    "proofpilot": {
+      "score": 0.00040460332515293107,
+      "sha256": "58cff681f9a5eb7d1db149f9ab2d6d6a111bdb4624058373199cd551faff5e44",
+      "sole_winner": "CIRCDIST.gross@dstar-residual"
+    },
+    "reviewed_parent_root_manifest_sha256": "e004f8b28e1bd88916f81b1de55e43efcedb4f4924f0f39a2b52830ba143150d",
+    "reviewed_unstarted_recheck": {
+      "path": "verification/rechecked_iter196_unstarted.json",
+      "sha256": "38d8a8b02d45b9688ee9bbfaa5f2f7caef09ee65b179dd8dfc98256be9ba9d65"
+    },
+    "schema": "circdist-gross-round122-input-bindings-v1",
+    "status": "PASS"
+  },
+  "fresh_frontier": {
+    "assertions": 870342,
+    "base": {
+      "clauses": 11511680,
+      "sha256": "f46bc3862e2c4db10570d73d5a364750fa1892d90ecd0fa3d08fe411c3755ef3",
+      "variables": 3140244
+    },
+    "blocks": 814392,
+    "boundary": "Do not solve iteration 197 in this proposer package or across this proposer/reviewer boundary.",
+    "checked_unstarted_sha256": "68e06e13c5242beb3d0170565968b911ba68e2b0715d8c3b91a33c4a8f8761b5",
+    "closure": {
+      "css_involution": true,
+      "extended_group_order": 144,
+      "inherited_registry_collision_free": true,
+      "pairwise_collision_free": true,
+      "translations": true
+    },
+    "forbidden_artifacts": [],
+    "iteration": 197,
+    "new_selector_orbits": {
+      "Xerr": 108,
+      "Zerr": 108,
+      "all_288_group_elements_physically_replayed": true,
+      "selectors": 216,
+      "sizes": [
+        36,
+        72,
+        36,
+        72
+      ]
+    },
+    "order144_quotient": {
+      "clauses": 21395983,
+      "roots": 143,
+      "sha256": "fe73a93b7a171fd2afcffe210729f165684297d3d85f4260d883e5ed69ffd334",
+      "variables": 4375764
+    },
+    "schema": "circdist-gross-round122-fresh-frontier-v1",
+    "selector_state_sha256": "2b5d1178c5532d62f8e6266d627aaa4c228fa18526e7f79156cc667b1e207608",
+    "selectors": 51552,
+    "solver_invocations": 0,
+    "source_semantic_payload_sha256": "bee49435279caa3fb6cc02e0f1b145e3568eb54e6d3ac02c49e5bae3c5fa42f4",
+    "source_sha256": "6ce8b8593fabc80ce0917f342126e351da30114802765a46773da348115aec44",
+    "started": false,
+    "state_sha256": "cd005e436ff92c66badefb5a30e83531d81d9339bfbc047ebbdbb32627eb1ed0",
+    "status": "CHECKED_UNSTARTED"
+  },
+  "limitations": [
+    "SAT search traces are retained losslessly but are not UNSAT certificates and receive zero certificate credit.",
+    "This result kills one schedule candidate and installs its sound generalized-dihedral selector images; it does not settle CIRCDIST.gross.",
+    "Iteration 197 is prepared and checked unstarted but deliberately not solved."
+  ],
+  "outer": {
+    "assignment": {
+      "all_dimacs_clauses_satisfied": true,
+      "all_variables_assigned_exactly_once": true,
+      "assigned_variables": 4365826,
+      "assignment_sha256": "ef26f533cf2e5511e4c2d93f6c7fdb18f56890af6177b3d024ef9d8d62835326",
+      "checked_clauses": 21362300,
+      "clauses": 21362300,
+      "formula_sha256": "12d86dfec0d588760a42edc7a8d43ac6f0172415956384bce461da592e08a593",
+      "schema": "circdist-round94-complete-sat-assignment-check-v1",
+      "solver_log_sha256": "a8775857fbba588ac0e90a2923d0c9a2b51d7ca2b2c32bdc3a4b0463c222bd1b",
+      "solver_status": "SATISFIABLE",
+      "status": "PASS",
+      "variables": 4365826
+    },
+    "equisatisfiable_full_base_consequence": "The exact reviewed full iteration-196 base is SAT and has the decoded legal frozen 864-edge schedule.",
+    "exact_mandatory_formula": true,
+    "order144_orbit_controls": {
+      "path": "output/iter196/solver/orbit_controls.json",
+      "sha256": "dbd39410d739cd8426702c6ad0bd3db286b03ee9eb8ebf952b45a32a619f65fc",
+      "status": "PASS"
+    },
+    "semantic_replay": {
+      "all_dimacs_clauses_satisfied": true,
+      "assignment_sha256": "586dda9fd7bbc0614f7a382be042739777c1540cbffbe570d0c216d4f8b2f7de",
+      "candidate_sha256": "b818196bd4c1c44cb0c4ac166b0df7d1d8524d94f4ef164e84e15c2c572b86fe",
+      "complete_assignment_variables": 4365826,
+      "compressed_max_time": 355,
+      "compressed_schedule_sha256": "32ed7de5031979c256cc085819f168e11e5a0b7adc22ef52229fbd6598e332a3",
+      "dimacs_clauses_checked": 21362300,
+      "efssc_named_frozen_valid_selectors": 0,
+      "efssc_symbolic_valid_selectors": 0,
+      "frozen_schedule_audit": {
+        "conflicts": [],
+        "edge_count": 864,
+        "errors": [],
+        "global_interleaved": true,
+        "max_time": 355,
+        "mc_violations": [],
+        "min_time": 0,
+        "ok": true,
+        "overlap_interleaved_pairs": 100,
+        "overlaps": 648,
+        "used_layers": 356,
+        "whole_check_interleaved_pairs": 378
+      },
+      "rank_compression_pairs_checked": 5616,
+      "raw_schedule_sha256": "aff437a3dea42fcb043590df0b99f1e39c7c91954f0eaec93a1db88feaabd70b",
+      "raw_used_layers": 356,
+      "reviewed_block_hits": 0,
+      "schema": "circdist-gross-finite-outer-sat-replay-v2",
+      "seconds": 46.432982,
+      "solver_status": "SATISFIABLE",
+      "status": "PASS"
+    },
+    "solver_run": {
+      "argv": [
+        "<repo>/circdist/artifacts/circdist_gross_iter195_order144_continuation_round120_20260904/tooling/cadical-1.9.5-arm64-macos",
+        "--no-binary",
+        "<repo>/circdist/artifacts/circdist_gross_iter195_order144_continuation_round120_20260904/frontier/iter196/order144_quotient/outer.cnf",
+        "/private/tmp/circdist-round122-proposer/output/iter196/solver/outer.drat"
+      ],
+      "child_pid": 52285,
+      "detached": false,
+      "duration_ns": 849475434209,
+      "end_utc": "2026-09-05T04:10:50.935243Z",
+      "rc": 10,
+      "reaped": true,
+      "start_utc": "2026-09-05T03:56:41.467764Z",
+      "stderr_bytes": 0,
+      "stdout_bytes": 37756037,
+      "tag": "solve-iter196-exact-order144-quotient-proof-first",
+      "timeout_configured": false,
+      "wrapper_pid": 52282
+    },
+    "status": "SATISFIABLE"
+  },
+  "sat_search_traces": {
+    "Xerr": {
+      "classification": "SAT_SEARCH_TRACE",
+      "gzip_bytes": 838060931,
+      "gzip_sha256": "fa009b27b38e34cc41dbfc74c18abafe1b1d00e54929be94f7499d40c8f6b708",
+      "package_gzip_path": "proof_streams/Xerr.drat.gz",
+      "proof_output_enabled_from_byte_zero": true,
+      "raw_bytes": 3436525213,
+      "raw_lf_count": 16195363,
+      "raw_sha256": "4a6dba1cfe76c37308d506756858ec785db03a2e4f26f0e97af06db50069778e",
+      "unsat_certificate_credit": 0
+    },
+    "Zerr": {
+      "classification": "SAT_SEARCH_TRACE",
+      "gzip_bytes": 605544695,
+      "gzip_sha256": "b91e51e536d14de30fb05ae8989222048cb4faa992ced3cf912da93e9fe71fc0",
+      "package_gzip_path": "proof_streams/Zerr.drat.gz",
+      "proof_output_enabled_from_byte_zero": true,
+      "raw_bytes": 2703213825,
+      "raw_lf_count": 12541966,
+      "raw_sha256": "af047464847ce72a7bfdff090ad341373def2fb7b1ff700f21a19938947c5b4a",
+      "unsat_certificate_credit": 0
+    },
+    "outer": {
+      "classification": "SAT_SEARCH_TRACE",
+      "gzip_bytes": 524656492,
+      "gzip_sha256": "9e0d5dbb73c4886cd14a2f85be4842e4a70ece9654f8aeb0e657f5dd698c42a4",
+      "package_gzip_path": "proof_streams/outer.drat.gz",
+      "proof_output_enabled_from_byte_zero": true,
+      "raw_bytes": 4048910273,
+      "raw_lf_count": 54485227,
+      "raw_sha256": "e30f542e68703397ad9d4f25f70e61e4261614bca5a159cb7d6bd930ba62de7b",
+      "unsat_certificate_credit": 0
+    }
+  },
+  "schema": "circdist-gross-round122-proposer-result-v1",
+  "scientific_status": {
+    "CIRCDIST.gross": "CONJECTURED",
+    "D*_Gross": [
+      11,
+      12
+    ],
+    "distance_12_witness": null,
+    "gap-via-lift": "CONJECTURED",
+    "interval_narrowed": false,
+    "root_closed": false,
+    "search_exhausted": false,
+    "universal_distance_at_most_11_theorem": null
+  },
+  "selector_lineage": {
+    "D_T_delta_D_equals_T_neg_delta": true,
+    "D_squared_identity": true,
+    "all_physical_group_element_replays": 288,
+    "css_dual_orbits": [
+      {
+        "replays": 72,
+        "size": 36,
+        "source": "Xerr",
+        "stabilizer": [
+          [
+            0,
+            0
+          ],
+          [
+            6,
+            0
+          ]
+        ],
+        "target": "Zerr"
+      },
+      {
+        "replays": 72,
+        "size": 72,
+        "source": "Zerr",
+        "stabilizer": [
+          [
+            0,
+            0
+          ]
+        ],
+        "target": "Xerr"
+      }
+    ],
+    "distinct_installed_selectors": 216,
+    "original_orbits": {
+      "Xerr": {
+        "audit_sha256": "83bbf3c6663b2be1ba83c578b94decefb64a0b227a2ac51a97b31b47a67fbcf2",
+        "size": 36,
+        "stabilizer": [
+          [
+            0,
+            0
+          ],
+          [
+            6,
+            0
+          ]
+        ]
+      },
+      "Zerr": {
+        "audit_sha256": "713f7ce128eda680c370ee168e986d0d84503945a951ca999d2b13f125edc120",
+        "size": 72,
+        "stabilizer": [
+          [
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    "pairwise_and_inherited_collision_checks": "PASS"
+  },
+  "status": "PASS",
+  "verdict": "ITER196_CANDIDATE_KILLED_BY_BOTH_COMPLETE_DIRECT360_SECTORS__ROOT_REMAINS_OPEN__ITER197_CHECKED_UNSTARTED"
+}

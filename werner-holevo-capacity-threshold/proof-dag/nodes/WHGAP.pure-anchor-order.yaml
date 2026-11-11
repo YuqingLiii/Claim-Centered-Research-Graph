@@ -1,0 +1,29 @@
+id: WHGAP.pure-anchor-order
+role: proof
+aliases:
+- pure-anchor
+claim: >-
+  Determine the exact interval on which relative-entropy domination restricted to pairs with pure
+  first argument holds for Lambda_x, and determine whether that restricted order tensorizes strongly
+  enough to imply Q(Lambda_x)=0.
+assessment:
+  level: OPEN
+  summary: >-
+    The legacy record gives an exact candidate one-copy death point near 0.4296628746, analytic
+    violation below it and bounded two-copy null searches above it. Global one-copy optimality above
+    the candidate point and tensorization remain open.
+  basis:
+    evidence:
+    - path: werner-holevo-capacity-threshold/artifacts/legacy-record/nodes/WHGAP.pure-anchor-order.md
+      kind: text
+      locator: "## Current status"
+frontier:
+  global-stratum:
+    task: Prove or refute global optimality of the orthocomplement stratum above the candidate death point.
+    kind: gate
+    since: 2026-08-29
+  tensorization:
+    task: Test and then prove the restricted order under correlated multi-copy anchors.
+    kind: gate
+    since: 2026-08-29
+

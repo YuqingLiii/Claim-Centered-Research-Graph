@@ -1,0 +1,71 @@
+id: HEXT.matched-independent-tensors
+role: proof
+aliases:
+- matched-tensors
+claim: >-
+  Construct a sequence of matched channel/conjugate-channel products for which the sum of matched
+  p=1 defects is linear in full logarithmic channel size while the two single-side leakage terms are
+  sublinear, thereby producing an extensive heterogeneous pair defect.
+routes:
+  weak-multiplicativity:
+    premises:
+    - HEXT.montanaro-gate
+    implication: >-
+      A weak-multiplicativity theorem quantitatively stronger than the matched cross advantage would
+      bound both side leakages and leave an extensive remainder.
+    assessment:
+      level: OPEN
+      summary: The checked Montanaro estimate is too weak; this route is parked pending a stronger theorem.
+  fixed-r-diagonal:
+    premises:
+    - HEXT.fixed-r-diagonal-gate
+    implication: >-
+      Global minimum-output-entropy near-additivity for every fixed factor count, followed by a
+      dimension-first diagonal choice, would make the pair gap grow linearly with factor count; an
+      additional size audit is needed if the selected dimensions grow too fast.
+    assessment:
+      level: OPEN
+      summary: No theorem controlling the global optimization has been identified.
+  hierarchical:
+    premises:
+    - HEXT.hierarchical-absolute-gap
+    - HEXT.growing-level-rate
+    implication: >-
+      The first premise gives an absolute gap linear in depth; the second makes depth comparable to
+      the complete logarithmic channel cost, yielding the extensive pair claim.
+    proof:
+      sketch: >-
+        Use the exact leakage identity Delta(L_J,bar L_J) >= sum_j(g_j-2 ell_j), then apply the
+        cost-weighted rate condition rather than counting output qubits alone.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/round-5-audit.md
+        kind: text
+        locator: "### 6. The claimed HP-style extensive implication fails — important correction accepted"
+    assessment:
+      level: CONJECTURED
+      summary: The composition is explicit; both load-bearing premises remain open.
+assessment:
+  level: OPEN
+  summary: >-
+    Fixed-depth global side control is now available and yields an absolute-unbounded pair gap in a
+    product-Haar random-unitary model. The node remains OPEN because the quantitative certificate
+    forces growing per-leg dimension and therefore does not make the gap linear in the full
+    logarithmic channel cost.
+  basis:
+    routes:
+    - weak-multiplicativity
+    - fixed-r-diagonal
+    - hierarchical
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/TENSOR_COPY_LEAKAGE_PROOF_20260829.md
+      kind: text
+      locator: "## Minimum-output-entropy leakage inequality"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/legacy-nodes/ADDGAP.matched-independent-tensors.md
+      kind: text
+      locator: "## Strategy blueprint"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FINITE_DIMENSIONAL_UNBOUNDED_GAP_PROOF_20260829.md
+      kind: text
+      locator: "## Step 4: linear-in-depth defect"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/TENSOR_STRONG_CONVERGENCE_RATE_GATE_20260829.md
+      kind: text
+      locator: "## Dimension consequence"

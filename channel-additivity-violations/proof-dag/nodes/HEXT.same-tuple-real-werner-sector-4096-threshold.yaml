@@ -1,0 +1,108 @@
+id: HEXT.same-tuple-real-werner-sector-4096-threshold
+role: proof
+aliases:
+- repeated-tuple-real-werner-4096-threshold
+claim: >-
+  For every integer m>=2 and every fixed eta>=0 satisfying
+  [18m(1+eta)^2+81(1+eta)^4](1-m^(-2))>4096^2, let
+  U_1^(d),...,U_m^(d) be independent Haar-distributed unitaries in U(d), set
+  A=1+9(1+eta)^2/m, and use the same-tuple coefficient map M_U and flip F_m from
+  HEXT.same-tuple-werner-spectral-reduction. Then the probability tends to one as d tends to
+  infinity that ||M_U(Y)||_infinity<=(A/m)||Y||_2 holds simultaneously for every real Werner
+  coefficient Y=alpha I_(m^2)+beta F_m with alpha,beta in R. In particular, this holds for every
+  integer m>=932064 and every fixed eta>=0.
+routes:
+  centered-4096-event-plus-spectral-equivalence:
+    premises:
+    - HEXT.same-tuple-werner-centered-bound-4096-threshold
+    - HEXT.same-tuple-werner-spectral-reduction
+    implication: >-
+      Under the displayed fixed-m and fixed-eta hypothesis, the first premise says that the
+      probability tends to one of the event ||R_U-I_(d^2)/m||_infinity<=H, where
+      H=sqrt((A^2-1)(1-m^(-2))). For every fixed tuple, the second premise identifies this event
+      exactly with the simultaneous inequality ||M_U(Y)||_infinity<=(A/m)||Y||_2 for every real
+      Y=alpha I_(m^2)+beta F_m. Therefore the two events have equal probability for every d, and
+      the claimed probability limit follows. The m>=932064 corollary is inherited from the first
+      premise.
+    proof:
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_REAL_SECTOR_4096_THRESHOLD_CONSEQUENCE_20260830.md
+        kind: text
+        locator: "## 2. Two-premise proof"
+    assessment:
+      level: PROVED
+      summary: >-
+        Fresh independent review passed the exact tuplewise event equivalence, dimensions,
+        normalization, probability quantifiers and inherited integer threshold.
+      basis:
+        evidence:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_REAL_SECTOR_4096_THRESHOLD_CONSEQUENCE_20260830.md
+          kind: text
+          locator: "## 2. Two-premise proof"
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_REAL_SECTOR_4096_THRESHOLD_CONSEQUENCE_INDEPENDENT_REVIEW_20260830.md
+          kind: review
+          locator: "Findings WRS4096-IR-01--WRS4096-IR-04"
+          scope: >-
+            Independently checked both proved premises, identity dimensions, A/m and
+            Hilbert--Schmidt normalization, exact event equality, fixed-parameter limit order and
+            the inherited m>=932064 corollary.
+          reviewed_hash: sha256:e68b489d9db13b26ced14ea980a11894835480bb7e0defe13812480f899fbd78
+assessment:
+  level: PROVED
+  caveats:
+  - The result is restricted to the real two-dimensional Werner coefficient span.
+  - It has no arbitrary-Hermitian, physical n=2, all-copy, absolute-unbounded, or full-size consequence.
+  summary: >-
+    Independent review proves the two-premise transfer of the centered 4096-threshold event through
+    the exact Werner spectral equivalence, strictly within the real two-dimensional Werner span.
+  basis:
+    routes:
+    - centered-4096-event-plus-spectral-equivalence
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_REAL_SECTOR_4096_THRESHOLD_CONSEQUENCE_20260830.md
+      kind: text
+      locator: "## 1. Exact scoped statement"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_REAL_SECTOR_4096_THRESHOLD_CONSEQUENCE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Findings WRS4096-IR-01--WRS4096-IR-05"
+      scope: >-
+        Independently passed the exact scoped claim and prohibited propagation to
+        arbitrary-Hermitian, physical, all-copy, absolute-unbounded and full-size conclusions.
+      reviewed_hash: sha256:73ea83e47b97862ffccdd54b1bcee83c261b4b655dae73001b535d536a94bd28
+events:
+  real-werner-4096-route-independently-proved:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    route: centered-4096-event-plus-spectral-equivalence
+    summary: >-
+      Fresh independent review passed the exact two-premise event-equivalence route.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_REAL_SECTOR_4096_THRESHOLD_CONSEQUENCE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Findings WRS4096-IR-01--WRS4096-IR-04"
+  real-werner-4096-claim-independently-proved:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      The reviewed claim proves the real-Werner sector estimate under mH>4096, including the
+      eta-uniform m>=932064 corollary, without changing broader Q3 status.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_REAL_SECTOR_4096_THRESHOLD_CONSEQUENCE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Findings WRS4096-IR-01--WRS4096-IR-05"
+  real-werner-4096-threshold-consequence-created:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Registered a distinct proposer-side real-Werner consequence under mH>4096 without editing
+      the already proved historical m>e^18 node or any broader Question 3 target.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_REAL_SECTOR_4096_THRESHOLD_CONSEQUENCE_20260830.md
+      kind: text
+      locator: "## 3. Why this is a new node rather than an edit"

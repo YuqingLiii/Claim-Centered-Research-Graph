@@ -1,0 +1,51 @@
+id: GROTHE8.root-poset
+role: tool
+aliases:
+- E8-CHECKER
+claim: >-
+  For F_k defined as the maximum squared norm of a sum of k positive E8 roots,
+  exhaustive upper-filter enumeration gives the complete exact F_k table, including
+  F_98 = 2366 and F_104 = 2420, and 3F_k - 26k <= 4544 outside k in {98,104}.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    Two structurally different exact implementations—direct filter recursion from the
+    ambient root model and antichain recursion from Weyl-reflection closure—produce the
+    same literal 121-entry table and count 25080 objects. The proof note explains why both
+    enumerate exactly the intended filters. External adversarial review remains pending.
+  basis:
+    runs:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-e8/e8-checker-run-20260829.txt
+      kind: run
+      result: 240 roots; 120 positive roots; 25080 filters; F_98=2366; F_104=2420.
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-e8/e8-dual-checker-run-20260829.txt
+      kind: run
+      result: Independent reflection/antichain checker reproduces all exact values.
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-e8/e8_certificate_checker.py
+      kind: text
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-e8/e8_dual_certificate_checker.py
+      kind: text
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-e8/e8-exact-certificate-20260829.md
+      kind: text
+      locator: E8-T5--E8-T6
+events:
+  replayed-2026-08-29:
+    date: '2026-08-29'
+    type: created
+    summary: Replayed the only recovered E8 checker locally and preserved its stdout as a typed run record.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-e8/e8-checker-run-20260829.txt
+      kind: run
+  independently-replayed-2026-08-29:
+    date: '2026-08-29'
+    type: level-change
+    from: NUMERICAL
+    to: CONJECTURED
+    summary: Defined F_k mathematically and reproduced the full table by a second exact antichain implementation.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-e8/e8-exact-certificate-20260829.md
+      kind: text
+      locator: E8-T5--E8-T6
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-e8/e8-dual-checker-run-20260829.txt
+      kind: run

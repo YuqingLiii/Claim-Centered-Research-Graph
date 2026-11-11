@@ -1,0 +1,65 @@
+id: GROTHD4.spectral.p-cell-gate
+role: constraint
+aliases:
+- D4-P-CELL-GATE
+claim: >-
+  Within the archived 217+83 complementary-support cell, any sign pair with
+  Bell objective at least C must have p'^T A p' at least the archived
+  p^T A p. Thus exclusion of such competitors reduces to nonnegativity of a
+  single 217-variable p-cut quadratic form.
+routes:
+  q-global-minimum:
+    premises:
+    - GROTHD4.spectral.q-cell-minimum
+    implication: >-
+      Since every q' on the fixed support obeys q'^T A q'>=q^T A q, the
+      inequality p'^T A p'-q'^T A q'>=p^T A p-q^T A q forces
+      p'^T A p'>=p^T A p.
+    proof:
+      sketch: Rearrange the two displayed inequalities.
+      sources:
+      - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-superlevel-cell-reduction-20260830.md
+        kind: text
+        locator: Cell reduction
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The implication is elementary once the q-cell premise is established;
+        both await independent review.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    The reduction isolates a concrete 217-variable Boolean cut gate. That
+    downstream gate is now closed at author level by two exact certificates,
+    but this reduction and the certificates still await independent review
+    and do not address different support splits.
+  basis:
+    routes:
+    - q-global-minimum
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.cut.fixed-cell-p.yaml
+      kind: node-evidence
+frontier:
+  independent-review:
+    task: >-
+      Independently audit the q-cell reduction and both exact p-cut
+      certificates before any status promotion.
+    kind: review
+    since: '2026-09-07'
+events:
+  registered-2026-08-31:
+    date: '2026-08-31'
+    type: created
+    summary: Registered the fixed-support p-cell reduction.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-superlevel-cell-reduction-20260830.md
+      kind: text
+  fixed-p-gate-closed-2026-09-07:
+    date: '2026-09-07'
+    type: repair-applied
+    summary: >-
+      Replaced the obsolete open p-cut frontier with the author-level exact
+      fixed-support certificates while preserving the independent-review gate.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.cut.fixed-cell-p.yaml
+      kind: node-evidence

@@ -2,11 +2,7 @@
 
 [![Proof DAG audit](https://github.com/YuqingLiii/Claim-Centered-Research-Graph/actions/workflows/proof-dag-audit.yml/badge.svg)](https://github.com/YuqingLiii/Claim-Centered-Research-Graph/actions/workflows/proof-dag-audit.yml)
 
-This repository contains the current claim-centered research state for two
-case studies in quantum query complexity: minimal-alphabet Set Equality and
-small-alphabet \(k\)-Sum. Each project is represented as an AND/OR proof DAG.
-A node records one mathematical claim, its proof routes and dependencies, its
-current evidence level, and direct links to the evidence used to assess it.
+This repository contains the claim-centered research state for ten research projects covering ten of the twelve problems listed in the [problem index](PROBLEM_INDEX.md): quantum query complexity (minimal-alphabet Set Equality, small-alphabet \(k\)-Sum), quantum channel capacity and additivity, circuit distance of quantum error-correcting codes, and Grothendieck-type Bell inequalities. Each project is represented as an AND/OR proof DAG. A node records one mathematical claim, its proof routes and dependencies, its current evidence level, and direct links to the evidence used to assess it.
 
 ## Paper
 
@@ -19,30 +15,30 @@ This license statement applies to the paper only.
 
 ## Start here
 
+- [Problem index](PROBLEM_INDEX.md)
 - [File protocol](FILE_PROTOCOL.md)
 - [DAG protocol](DAG_PROTOCOL.md)
-- [Set Equality node index](se/proof-dag/NODE_INDEX.md)
-- [Small-alphabet k-Sum node index](ksum/proof-dag/NODE_INDEX.md)
+- [Evidence gaps](EVIDENCE_GAPS.yaml)
 
 ## Repository structure
 
 ```text
-se/
-  proof-dag/                   Set Equality nodes and generated graph views
-  lean/                        linked Lean development
-  reviews/                     project-level external reviews
-  artifacts/                   proofs, runs, and counterexamples
-  tools/                       project-specific mathematical checkers
-ksum/
-  proof-dag/                   k-Sum nodes and generated graph views
-  lean/                        linked Lean development
-  reviews/                     project-level external reviews
-  artifacts/                   proofs, runs, and counterexamples
-  tools/                       project-specific mathematical checkers
+channel-additivity-violations/              P01 Channel additivity violations
+werner-holevo-capacity-threshold/           P02 Werner–Holevo zero-capacity boundary
+circuit-distance-stabilization/             P05 Circuit-distance stabilization
+circuit-versus-effective-distance/          P06 Circuit versus effective distance
+gross-code-optimal-circuit-distance/        P07 Optimal circuit distance of the Gross code
+distance-preserving-schedule-complexity/    P08 Complexity of distance-preserving schedules
+ksum/                                       P09 Quantum k-sum with small alphabets
+se/                                         P10 Set equality and collision
+finite-dimensional-grothendieck-bounds/     P11 Finite-dimensional Grothendieck bounds
+group-orbit-bell-matrices/                  P12 Group-orbit Bell matrices
 paper/
   claim-centered-research-record.pdf
-tools/                         shared DAG validators only
+tools/                                      shared DAG validators only
 ```
+
+Every project directory has the same layout: `README.md`, `proof-dag/` (`PROJECT.yaml`, `nodes/`, generated `NODE_INDEX.md` and `GRAPH.mmd`), and, where present, `artifacts/`, `reviews/`, `lean/` and `tools/`.
 
 Begin with a generated `NODE_INDEX.md`, open a claim node under
 `<project>/proof-dag/nodes/`, and follow its structured links to the
@@ -52,7 +48,7 @@ single case study can be exported without collecting evidence from elsewhere
 in the repository. The repository is a snapshot of the current DAG and its
 evidence. The public paper is included as a PDF; its LaTeX source, raw model
 conversations, private accounting data, and unrelated projects are not included.
-The snapshot preserves selected research events and failed claims, not a complete
+Linked evidence that is deliberately not included (third-party papers, raw logs, oversized solver output) is listed in `EVIDENCE_GAPS.yaml`; the validators report it as a declared gap, never as present. The snapshot preserves selected research events and failed claims, not a complete
 event-by-event history. The protocols specify how subsequent updates should be recorded;
 passing the static checks does not establish completeness of the historical record.
 

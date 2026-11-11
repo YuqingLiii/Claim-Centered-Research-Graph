@@ -1,0 +1,37 @@
+id: GROTHD4.cut.strength7-orbit-no-go
+role: obstruction
+aliases:
+- D4-STRENGTH7-ORBIT-FACET-NO-GO
+claim: >-
+  On every cluster in the 7200-element H4-plus-party-swap orbit of
+  (0,1,2,3,4,5,6), no nonzero affine-linear cut expression vanishes on all
+  currently known C-level projections; hence no proper CUT_7 facet is tight
+  on all known equality cuts.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    Although the canonical cluster realizes only 36 of 64 CUT_7 vertices,
+    those vertices have exact rank 22 in the constant-plus-21-edge feature
+    space. A displayed 22 by 22 integer minor has determinant -32768. The
+    complete orbit and determinant checker pass. Independent review and the
+    classification of other seven-coordinate orbits remain open.
+  basis:
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-strength7-counterexample-20260830.md
+      kind: text
+      locator: Local-facet no-go
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_strength7_counterexample_checker.py
+      kind: code
+frontier:
+  independent-review:
+    task: Independently audit the 7200-cluster orbit and determinant argument.
+    kind: review
+    since: '2026-08-31'
+events:
+  registered-2026-08-31:
+    date: '2026-08-31'
+    type: created
+    summary: Registered the exact author-side local-facet no-go on the counterexample orbit.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-strength7-counterexample-20260830.md
+      kind: text

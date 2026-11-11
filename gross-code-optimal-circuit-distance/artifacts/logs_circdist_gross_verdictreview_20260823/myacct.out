@@ -1,0 +1,38 @@
+MY analytic cells(10): 55 per sector
+  cells per K: {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10}
+  |E| values: [12, 14, 16, 18, 20, 22, 24, 26, 28, 30]
+  K=0 cells: []
+  |E|=12 cells: 10 per sector -> 90 slots/sector, 180 over both sectors
+  TOTAL SLOTS = 2 x 55 x 9 = 990
+
+dirs scanned: ['logs_circdist_gross_drivers_20260823', 'logs_circdist_gross_final_20260823', 'logs_circdist_gross_harvest_20260823', 'logs_circdist_gross_verdict_20260823']
+records: 3021   unparseable: 0
+verdicts: {'UNSAT': 2943, 'SAT': 24, 'TIMEOUT': 48, 'CRASH': 6}
+
+distinct decided sub-queries (candidate, W=10, orbit>=0): 864
+contributing records: 2926
+decided more than once: 856
+VERDICT CONFLICTS across duplicates: 0 []
+SAME-HASH verdict disagreements: 0
+distinct CNF hashes per sub-query: {1: 855, 2: 8, 3: 1}
+multiplicity histogram: {1: 8, 2: 9, 3: 735, 4: 2, 5: 10, 6: 87, 8: 2, 9: 11}
+union verdicts: {'UNSAT': 864}
+
+--- classification of all 990 slots ---
+    SATDEC : 864
+    ENUM12 : 126
+    OPEN   : 0
+    accounted: 990 / 990
+    of the decided slots, SAT: 0  []
+    OPEN LIST: *** EMPTY *** ... total 0
+
+|E|=12 slots total: 180 ; of these SATDEC: 54 ; ENUM12-only: 126
+
+DISTINCT SAT CELLS IN CORPUS: 6
+   X (0, 9, 9) K=3 |E|=14 orbit=-1  ON CANDIDATE: False  4 records
+   Z (1, 2, 2) K=4 |E|=14 orbit=-1  ON CANDIDATE: False  4 records
+   Z (1, 2, 2) K=4 |E|=14 orbit=0  ON CANDIDATE: False  4 records
+   Z (1, 2, 9) K=8 |E|=16 orbit=-1  ON CANDIDATE: False  4 records
+   Z (1, 9, 9) K=4 |E|=16 orbit=-1  ON CANDIDATE: False  4 records
+   Z (9, 9, 62) K=4 |E|=14 orbit=-1  ON CANDIDATE: False  4 records
+SAT cells ON THE CANDIDATE: 0

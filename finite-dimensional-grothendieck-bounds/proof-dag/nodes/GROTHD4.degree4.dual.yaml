@@ -1,0 +1,50 @@
+id: GROTHD4.degree4.dual
+role: obstruction
+aliases:
+- D4-FULL-DUAL
+claim: >-
+  The full 746825-coordinate invariant degree-4 separating system has an
+  H4-invariant functional L with L(q^2)>=0 for every equality-vanishing
+  polynomial q of degree at most two and L(C-x^T A y)<0.
+assessment:
+  level: OPEN
+  summary: >-
+    Feasibility would refute the degree-four SOS route; it would not prove the
+    classical upper bound. Exact operators are recovered, but the recorded
+    numerical iterate is infeasible and the smaller affine separator families
+    are exactly refuted.
+  basis:
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/replay
+      kind: text
+      note: Extracted byte-for-byte contents of the three recovered computational bundles.
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4
+      kind: text
+      note: Recovered exact and numerical operators, verifiers, and worker programs.
+frontier:
+  task-001:
+    task: Replay the 20 block interfaces against the now-frozen matrix and system JSON.
+    kind: task
+    since: '2026-08-29'
+  task-002:
+    task: Search the full swap-even space or derive a new exact structural reduction that preserves feasibility.
+    kind: task
+    since: '2026-08-29'
+events:
+  migrated-2026-08-29:
+    date: '2026-08-29'
+    type: created
+    summary: Consolidated the unrestricted degree-4 feasibility problem and all recovered implementation evidence.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/source-manifest-20260829.yaml
+      kind: text
+  implication-repaired-2026-08-29:
+    date: '2026-08-29'
+    type: repair-applied
+    summary: >-
+      Corrected the logical direction: feasible dual moments separate the target
+      from degree-four SOS and obstruct, rather than prove, the upper bound.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-duality-direction-audit-20260829.md
+      kind: text
+      locator: D4-DIR3--D4-DIR4

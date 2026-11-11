@@ -1,0 +1,18 @@
+# Reproducible entry points (replace PACKAGE and VENV with absolute paths)
+VENV/python PACKAGE/src/synthesize_cross_registry.py --root PACKAGE --generalized-state PACKAGE/restart/installed_generalized_terms_iteration78.json --registry-state PACKAGE/restart/online_mechanism_registry_iteration78.json --raw-mechanisms-state PACKAGE/restart/full_raw_mechanisms_iteration78.json --dynamic-blocks-state PACKAGE/restart/dynamic_blocks_iteration78.json --output-root OUT --batch-id pre78
+VENV/python PACKAGE/src/run_round78_iteration.py --iteration N --engine-root PACKAGE --work-root WORK --python VENV/python
+VENV/python PACKAGE/src/build_round78_proof_controls.py --root PACKAGE
+VENV/python PACKAGE/verify.py --quick --allow-unsealed
+VENV/python PACKAGE/verify.py --full --allow-unsealed
+VENV/python PACKAGE/src/compress_round78.py --root PACKAGE
+VENV/python PACKAGE/verify.py --quick --allow-unsealed
+VENV/python PACKAGE/verify.py --full --allow-unsealed
+VENV/python INSTALLED/verify.py --full --repo-root REPOSITORY
+VENV/python INSTALLED/verify.py --quick --repo-root REPOSITORY
+
+# Manifest invariants used by the corrected verifier
+# Root seal: exclude only relative path SHA256SUMS.txt.
+# Root payload: exclude only relative paths SHA256SUMS.txt and PAYLOAD_SHA256SUMS.txt.
+# Nested source: exclude only the nested package's root-relative SHA256SUMS.txt.
+# Never exclude every nested file by basename.
+# Seals 1f4c0e3d... and 9f703d88... are REJECTED_NOT_LICENSED; see verification/REJECTED_SEAL.json.

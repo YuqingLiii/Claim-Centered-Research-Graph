@@ -1,0 +1,30 @@
+# Frozen principal commands (absolute authoring paths are recorded in run JSON)
+
+# predecessor validation
+python -m venv /tmp/circdist-r72-round71-full-venv-20260829
+pip install --no-index --find-links <local-wheel-cache> -r <round71>/requirements.txt
+PYTHONDONTWRITEBYTECODE=1 <venv>/bin/python <round71>/verify.py --repo-root <repo>
+
+# deterministic generalization (executed v3 and full-review command)
+PYTHONDONTWRITEBYTECODE=1 <python> src/generalize_round71.py \
+  --repo-root source_repository --output-root <fresh-output>
+
+# each exact outer iteration i=30,...,41 was a fresh foreground process
+PYTHONDONTWRITEBYTECODE=1 <python> src/build_cegar_candidate.py \
+  --iteration <i> --output <iter-root> --dynamic-blocks <state> --z3-timeout-ms 120000
+PYTHONDONTWRITEBYTECODE=1 <python> src/verify_outer_candidate.py \
+  --engine-root <package> --iteration-root <iter-root> \
+  --dynamic-before <iter-root>/dynamic_before.json --output <iter-root>/outer_independent_replay.json
+tooling/cadical-1.9.5-arm64-macos -t 600 --no-binary <iter-root>/direct360/Xerr.cnf
+tooling/cadical-1.9.5-arm64-macos -t 600 --no-binary <iter-root>/direct360/Zerr.cnf
+PYTHONDONTWRITEBYTECODE=1 <python> src/replay_direct_candidate.py --root <iter-root> --output <iter-root>/direct_verification.json
+PYTHONDONTWRITEBYTECODE=1 <python> src/append_dynamic_blocks.py \
+  --verification <iter-root>/direct_verification.json --dynamic-blocks <state> --iteration <i>
+
+# package verification
+PYTHONDONTWRITEBYTECODE=1 python verify.py --quick
+PYTHONDONTWRITEBYTECODE=1 python verify.py --full
+PYTHONDONTWRITEBYTECODE=1 python verify.py --full --repo-root <repo>
+
+# seal
+sha256sum SHA256SUMS.txt

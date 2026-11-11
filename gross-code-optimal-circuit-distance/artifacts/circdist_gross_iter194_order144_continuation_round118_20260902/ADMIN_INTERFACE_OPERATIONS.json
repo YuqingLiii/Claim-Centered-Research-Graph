@@ -1,0 +1,13 @@
+{
+  "detached_or_background_process": false,
+  "inner_process_ledger_scope": "all scientific solver/checker/builder commands and most administrative inspections after scratch initialization",
+  "outside_inner_ledger": [
+    "API/tool-host launches of serial_exec.py itself (the ledger records the foreground child it controls)",
+    "initial read-only repository/scratch discovery and creation of the unique scratch directory before the wrapper was installed",
+    "apply_patch writes of newly authored scratch-only Python sources"
+  ],
+  "schema": "circdist-gross-round118-admin-interface-operations-v1",
+  "scientific_effect": null,
+  "status": "DISCLOSED",
+  "unlogged_solver_or_checker": false
+}

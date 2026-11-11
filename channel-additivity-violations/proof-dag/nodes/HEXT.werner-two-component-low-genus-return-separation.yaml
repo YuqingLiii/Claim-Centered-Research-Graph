@@ -1,0 +1,77 @@
+id: HEXT.werner-two-component-low-genus-return-separation
+role: proof
+aliases:
+- werner-c2-low-genus-return-union
+claim: >-
+  If an admissible Werner constellation has two topological components and total genus at most
+  one, then at least one of its forward and block-reversed free words is the identity, so its trace
+  sequence belongs to the union of the forward-return and reverse-return sectors. This follows
+  because each topological component is a rooted unicellular map and every planar component is a
+  plane tree whose Haar-labelled boundary word freely reduces to the identity. The assertion does
+  not extend to total genus two when m>=4.
+routes:
+  two-unicellular-component-split:
+    premises:
+    - HEXT.werner-contraction-skeleton-ribbon-injection
+    - HEXT.werner-constellation-euler-deficit
+    implication: >-
+      If an admissible Werner constellation has two topological components and total genus at most
+      one, then at least one of its forward and block-reversed free words is the identity, so its trace
+      sequence belongs to the union of the forward-return and reverse-return sectors. This follows
+      because each topological component is a rooted unicellular map and every planar component is a
+      plane tree whose Haar-labelled boundary word freely reduces to the identity. The assertion does
+      not extend to total genus two when m>=4.
+    proof:
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_EQUALITY_COMPONENT_GENUS_GATE_20260830.md
+        kind: text
+        locator: "## 7. Exact two-component structure"
+    assessment:
+      level: PROVED
+      caveats:
+      - The genus-two nonreturn scope example uses four distinct labels and therefore assumes m>=4.
+      summary: >-
+        Independent review verified the two-unicellular decomposition, planar tree free reduction
+        and the explicit genus-two nonreturn scope counterexample.
+      basis:
+        evidence:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_EQUALITY_COMPONENT_GENUS_GATE_20260830.md
+          kind: text
+          locator: "## 7. Exact two-component structure"
+        counterexamples:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_EQUALITY_COMPONENT_GENUS_GATE_20260830.md
+          kind: counterexample
+          locator: "## 8. Positive-genus two-component diagrams are not all returns"
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_EQUALITY_COMPONENT_GENUS_GATE_INDEPENDENT_REVIEW_20260830.md
+          kind: review
+          locator: "Finding WECG-IR-06"
+          scope: >-
+            Independently verified both physical trace components, the labelled plane-tree return
+            induction and the m>=4 genus-two counterexample.
+          reviewed_hash: sha256:c523f97093f9490b81572424cc273a25e9224cdbff285506d7a376dc304e9724
+assessment:
+  level: PROVED
+  caveats:
+  - It separates only c=2 with total genus at most one; higher-genus two-component terms can be nonreturn.
+  summary: >-
+    Every low-genus two-component term lies in the already safe forward/reverse return union, and
+    the independently checked m>=4 example shows the exact h=2 scope boundary.
+  basis:
+    routes:
+    - two-unicellular-component-split
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_EQUALITY_COMPONENT_GENUS_GATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WECG-IR-07"
+      scope: Independently verified the full low-genus separation and its precise nonextension.
+      reviewed_hash: sha256:c523f97093f9490b81572424cc273a25e9224cdbff285506d7a376dc304e9724
+events:
+  two-component-low-genus-separation-created-and-reviewed:
+    date: '2026-08-30'
+    type: created
+    summary: Registered the independently proved c=2 low-genus return separation.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_EQUALITY_COMPONENT_GENUS_GATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WECG-IR-07"

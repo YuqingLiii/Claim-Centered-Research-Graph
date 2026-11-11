@@ -1,0 +1,70 @@
+CIRCDIST ROUND 66 REPRODUCTION COMMANDS
+=======================================
+
+All commands are foreground commands. Run them from the repository root unless a command changes
+directory explicitly. No network access is needed.
+
+1. Select the sealed package.
+
+  ROUND66_PKG="<repo>/circdist/artifacts/circdist_cplx_fixed_d_z_companion_round66_20260829"
+
+2. Check the internal seal.
+
+  cd "$ROUND66_PKG"
+  sha256sum -c SHA256SUMS.txt
+
+3. Rebuild and compare the raw block-order counterexample.
+
+  PYTHONDONTWRITEBYTECODE=1 python3 make_counterexample.py > /tmp/circdist_round66_counterexample_rebuilt.json
+  cmp COUNTEREXAMPLE.json /tmp/circdist_round66_counterexample_rebuilt.json
+  python3 -m json.tool /tmp/circdist_round66_counterexample_rebuilt.json >/dev/null
+
+4. Replay all finite checks and inspect the verdict. The sealed byte-for-byte output was produced
+with Python 3.9.6. A different Python version changes the recorded `python` field and may prevent a
+byte comparison even when all mathematical details agree.
+
+  PYTHONDONTWRITEBYTECODE=1 python3 verify.py > /tmp/circdist_round66_verifier_replayed.json
+  python3 -m json.tool /tmp/circdist_round66_verifier_replayed.json >/dev/null
+  python3 - <<'PY'
+import json
+p = "/tmp/circdist_round66_verifier_replayed.json"
+r = json.load(open(p, encoding="utf-8"))
+assert r["verdict"] == "PASS"
+assert r["checks"] == 20
+assert all(x["status"] == "PASS" for x in r["details"])
+print(r["verdict"], r["checks"], r["python"])
+PY
+
+5. Recompute exact no-terminal-LF theorem hashes.
+
+  python3 - <<'PY'
+from pathlib import Path
+import hashlib
+for name, chars, expected in (
+    ("THEOREM.txt", 999, "49cf956fe5afa49caa8707f15fd157ab27fedadc79c56bdec0a57c0a89a0e184"),
+    ("LICENSED_X_THEOREM.txt", 883, "01cf8fd10f48db13e23a09f884eb24b0b17c860c121c336c324123ff222594c0"),
+):
+    text = Path(name).read_text(encoding="utf-8").rstrip("\n")
+    digest = hashlib.sha256(text.encode("utf-8")).hexdigest()
+    assert len(text) == chars and digest == expected
+    print(name, len(text), digest)
+PY
+
+6. Confirm clean-room imports: these files resolve only one another and the Python standard
+library. This compile check writes no bytecode.
+
+  PYTHONDONTWRITEBYTECODE=1 python3 - <<'PY'
+from pathlib import Path
+for name in ("construction.py", "z_companion.py", "make_counterexample.py", "verify.py"):
+    compile(Path(name).read_text(encoding="utf-8"), name, "exec")
+    print("COMPILE-PASS", name)
+PY
+
+7. Optional source seal check for the independently reviewed predecessor.
+
+  cd <repo>/circdist/artifacts/circdist_cplx_fixed_d_x_reduction_round64_20260828
+  sha256sum -c SHA256SUMS.txt
+
+8. Remove only replay scratch created by these commands.
+
+  rm -f /tmp/circdist_round66_counterexample_rebuilt.json /tmp/circdist_round66_verifier_replayed.json

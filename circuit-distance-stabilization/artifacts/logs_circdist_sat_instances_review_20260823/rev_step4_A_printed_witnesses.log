@@ -1,0 +1,18 @@
+==============================================================================
+(A) AUDIT OF THE WITNESSES PRINTED IN artifacts/circdist_sat_instances_20260823.md
+==============================================================================
+
+[A1] sec 4.4 headline witness (d=5 class D, Z, R=2):
+     gate (27,5) present in layer 1 of MY schedule: True
+     gate (33,21) present in layer 1 of MY schedule: True
+     gate (11,44) present in layer 0 of MY schedule: True
+     REPLAY: distinct locations=3  all detectors silent=True  observable=[1]  -> undetectable=True logical=True
+     VERDICT: CONFIRMED weight-3 undetectable logical
+
+[A2] sec 5.3 BB [[18,4,4]] witness (Z, R=1, claimed pattern (0,1,1,0)):
+     gate (21,12) present in layer 3 of MY schedule: True
+     gate (18,0) present in layer 0 of MY schedule: True
+     gate (20,11) present in layer 3 of MY schedule: True
+     REPLAY: distinct locations=3  silent=True  observable pattern=[0, 1, 1, 0]
+     NOTE: the observable PATTERN depends on the choice of logical representatives, which the artifact fixes in bb_full.log; only 'some lambda flipped' is convention-free.
+     VERDICT: CONFIRMED weight-3 undetectable logical

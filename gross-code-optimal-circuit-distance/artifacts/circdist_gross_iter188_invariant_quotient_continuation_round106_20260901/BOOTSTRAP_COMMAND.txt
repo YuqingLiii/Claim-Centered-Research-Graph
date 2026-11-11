@@ -1,0 +1,20 @@
+Round106 bootstrap was performed from <repo> with one fresh proposer, no subagents, no prior-worker contact, and no network.
+
+Read-only bindings were first checked with Python SHA-256 streaming against the four dispatcher digests. The reviewed manifest was then verified row-by-row. All retained science processes were launched through:
+
+  /usr/bin/python3 source/run_process_round106.py --name NAME --timeout SECONDS --stdout STDOUT --stderr STDERR --record RECORD -- COMMAND ...
+
+The sole quotient solver command was:
+
+  tooling/cadical-1.9.5-arm64-macos -t 21600 --no-binary inputs/round104/frontier/iter188_full_invariant_quotient/outer.cnf solver/iter188/outer.drat
+
+The complete direct solvers ran later and strictly serially:
+
+  tooling/cadical-1.9.5-arm64-macos --unsat -t 7200 --no-binary solver/iter188/direct/direct360/Xerr.cnf solver/iter188/direct/solver/Xerr.drat
+  tooling/cadical-1.9.5-arm64-macos --unsat -t 7200 --no-binary solver/iter188/direct/direct360/Zerr.cnf solver/iter188/direct/solver/Zerr.drat
+
+The conventional package replay entry is:
+
+  ./replay.sh [OUTPUT_JSON]
+
+It executes `source/replay_round106.py` in strict serial order and writes a machine-readable replay record.

@@ -1,0 +1,32 @@
+{
+  "status": "PROVED_FOUR_BLOCK_PARTY_PARITY_LINEAR_SPAN_NO_GO",
+  "prime": 24001,
+  "characteristic_zero_coefficient_field": "Q(sqrt(5),i)",
+  "gap_irrep_ids": [9, 12, 13, 14],
+  "party_parity_dimensions": [[43, 64], [28, 15], [11, 6], [43, 64]],
+  "party_parity_symmetric_parameters": [[946, 2080], [406, 120], [66, 21], [946, 2080]],
+  "total_symmetric_gram_parameters": 6665,
+  "point_recipe": {
+    "single_flip_prefix": 600,
+    "additional_flip_set_size": 4,
+    "additional_flip_set_count": 7400,
+    "shake_seed": 2026083004
+  },
+  "product_rank_mod_24001": 6665,
+  "target_augmented_rank_mod_24001": 6666,
+  "augmented_minor_determinant_mod_24001": 5172,
+  "augmented_minor_sha256": "ea67e7d6be507d8a54384dcdbaf7e92485221abe2917a2a1a0a8a680a0dca9a7",
+  "minor_certificate": "d4-four-block-party-parity-augmented-minor-20260830.json",
+  "minor_certificate_sha256": "83a7a2b76e3743fde450a3dfcd58f2bf27f5486712583d7ecfa2866aacb9add0",
+  "canonical_K_pencil_manifest_sha256": "41eaa1a24984bdc456ec325c9e45f6e0d989d86dadfcbb7e88db2e10fc04a86b",
+  "party_swap_exact_manifest_sha256": "6bb82b3541835071477be91d725068dada1b550c14acfd855bc6783485254624",
+  "certified_action_sha256": "1a5582d7fd1ce1c01135421413aa8fb7c6761fc953622e37387231f58c5f0097",
+  "equality_face_reduction": {
+    "effective_moment_coordinates": 746825,
+    "exact_dual_equality_kernel_dimension": 12,
+    "equality_reduced_moment_upper_dimension": 746813,
+    "restricted_gram_map_rank": 6665,
+    "restricted_gram_map_domain_nullity": 0
+  },
+  "proof_logic": "The 6666 by 6666 evaluation minor has nonzero determinant after exact reduction modulo 24001. Therefore the 6665 party-parity Gram product columns and the target column are linearly independent over the characteristic-zero coefficient field. Thus the target is not even in the indefinite Gram image of blocks 9,12,13,14. Since party-swap averaging is lossless for the invariant target and selected block set, no PSD SOS supported on these four blocks exists."
+}

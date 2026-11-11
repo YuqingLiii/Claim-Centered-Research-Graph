@@ -1,0 +1,54 @@
+{
+  "bindings": {
+    "base_cnf_sha256": "cf1907663bca93d838d85ba7a4eb8f682f3939b601d4a0295905699f1118e639",
+    "base_encoding_check_sha256": "cf45c90ff9b5934274dd2bcb5e225a371030efea0c00d7f63bdc49377ae57f0a",
+    "css_closure_check_sha256": "1c9a0a8cec57ae5f6e08ebff0be01fbb2af1869974c583f89a84fbe8177f86ba",
+    "quotient_cnf_sha256": "12d86dfec0d588760a42edc7a8d43ac6f0172415956384bce461da592e08a593",
+    "source_sha256": "31256761866d464eba48c278e2247d6f396a1372ad0508886e06e3f24ea6f51a",
+    "translation_registry_check_sha256": "9dd172491a98c8e2d88412172fd7005daf167202aa31f82cc6b248652d6c0826"
+  },
+  "encoding": {
+    "all_appended_clauses_reconstructed": true,
+    "appended_clauses": 9884303,
+    "base_prefix_clauses": 11477997,
+    "corrupt_primitive_rejected": true,
+    "final_clauses": 21362300,
+    "final_variables": 4365826,
+    "truncated_primitive_rejected": true,
+    "truth_table_cases": 16,
+    "unique_extension": true
+  },
+  "equisatisfiability_theorem": {
+    "conclusion": "The order-144 quotient is satisfiable iff the full iteration-196 base family is satisfiable. A future proof-producing UNSAT result therefore covers the full frozen iteration-196 family encoded by the base, subject to the soundness scope of its exclusion registries.",
+    "forward": "A quotient model projects to a base model because the base CNF is a byte-exact prefix.",
+    "hypotheses": "The checked base semantics are invariant under every group generator: concrete Gross geometry under translations and D; order-block and selector registries are closed under both generators; the compiled base CNF exactly represents those semantics.",
+    "reverse": "For any base schedule S, choose a lexicographically least time vector in its finite 144-image orbit. Invariance makes it a base schedule. It is <= every group image and the exact recurrence has one satisfying extension for each of the 143 comparisons.",
+    "stabilizers": "Non-strict <= permits equal images. No freeness or orbit-size-144 assumption is used."
+  },
+  "group": {
+    "distinct_edge_permutations": 144,
+    "edge_composition_cases": 17915904,
+    "edge_identity_cases": 864,
+    "geometry_and_incidence_cases": 41472,
+    "name": "(Z_12 x Z_6) semidirect C_2",
+    "nonidentity": 143,
+    "order": 144,
+    "overlap_sets_checked": 144,
+    "registry_action_sample_cases": 1440
+  },
+  "integer_safety": {
+    "clauses_below_signed_64": true,
+    "streaming_clause_comparison": true,
+    "variables_below_signed_32": true
+  },
+  "registry_closure": {
+    "blocks": 814392,
+    "full_css_involution_audit_bound": true,
+    "full_translation_generator_audit_bound": true,
+    "selectors": 51336,
+    "therefore_full_order144_action_closed": true
+  },
+  "schema": "circdist-gross-round120-iter196-order144-quotient-check-v1",
+  "status": "PASS",
+  "wall_seconds": 69.928954
+}

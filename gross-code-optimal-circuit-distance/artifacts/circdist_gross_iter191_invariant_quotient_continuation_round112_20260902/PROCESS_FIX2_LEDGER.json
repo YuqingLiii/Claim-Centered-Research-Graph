@@ -1,0 +1,902 @@
+{
+  "all_pid_bearing_records_reaped": true,
+  "detached_processes": 0,
+  "external_postseal_note": "Atomic install, expected pre-review evidence closure, installed replay, sealed verification, and final zero-survivor census are recorded outside immutable package.",
+  "failure_ids": [
+    "F112-001",
+    "F112-002",
+    "F112-003",
+    "F112-004",
+    "F112-005",
+    "F112-006",
+    "F112-007",
+    "F112-008",
+    "F112-009",
+    "F112-010"
+  ],
+  "fix2_preseal": {
+    "status": "PASS",
+    "survivors": 0
+  },
+  "pid_bearing_records": 66,
+  "preseal_replay_all_reaped": true,
+  "preseal_replay_children": 18,
+  "preseal_replay_strict_serial": true,
+  "proof_control_children": 6,
+  "proof_control_children_all_reaped": true,
+  "records": [
+    {
+      "child_pid": 20061,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "extract_and_check_iter191_Xerr_complete_assignment",
+      "path": "logs/process/Xerr_assignment.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "de9e125abdb8729521a620ddcb97a2e3d3a1f676f87bdfe814bc3c659ca4d356",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20104,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "extract_and_check_iter191_Zerr_complete_assignment",
+      "path": "logs/process/Zerr_assignment.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "a20ee811974643657e387963d616506a7b192cdb339c5ed7cb306b091f802bf4",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20988,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "advance_atomic_iter192_eight_parent_orbits",
+      "path": "logs/process/advance_iter192.json",
+      "reaped": true,
+      "returncode": 2,
+      "sha256": "c3afca9cfd8fcf984f9299521d65df6442a37d9537e4a39a15155b2fd77d1978",
+      "timed_out": false
+    },
+    {
+      "child_pid": 21046,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "advance_atomic_iter192_eight_parent_orbits_retry",
+      "path": "logs/process/advance_iter192_retry.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "f23e92f737a3a664684fc010be4dc234ef4de64a6321196fe411a53679c3b7ec",
+      "timed_out": false
+    },
+    {
+      "child_pid": 21471,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "assemble_replay_dependencies_apfs_clone",
+      "path": "logs/process/assemble_replay_dependencies.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "ec046732bff9bb9a463b2bdf8a3add8ea30d5c1131e291ab75f8f53ac7983a0a",
+      "timed_out": false
+    },
+    {
+      "child_pid": 21437,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "assemble_stage_science_payload_apfs_clone",
+      "path": "logs/process/assemble_stage_payload.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "3f26d120ccd13592fd2a4fdfbfdb10aa434e8d9d4a63cfeed6efdc3925cae32f",
+      "timed_out": false
+    },
+    {
+      "child_pid": 19944,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "extract_and_check_complete_iter191_quotient_assignment",
+      "path": "logs/process/assignment_check.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "01b3526eefa58b389868cd9e94807855b2618db5e38d129483d890b6cf1f4933",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20235,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "audit_batch_Xerr_attempt01_mandatory",
+      "path": "logs/process/batch_Xerr_attempt01_audit.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "7e6811186c4ca77647892286458ccc5c366251360fb87c1548e2a2c3163320bc",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20402,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "audit_batch_Xerr_attempt02",
+      "path": "logs/process/batch_Xerr_attempt02_audit.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "a5b9d5e231b92661c209dbe0ae21df8199ee46226514b7aaedae7fe3b1dbd597",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20255,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "build_batch_Xerr_attempt02_cnf",
+      "path": "logs/process/batch_Xerr_attempt02_build.json",
+      "reaped": true,
+      "returncode": 1,
+      "sha256": "85e4d69f982efd31e5a1e8ef94f66de0d9e7cf3b889f4355499d759d3ce0c24f",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20269,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "build_batch_Xerr_attempt02_cnf_retry",
+      "path": "logs/process/batch_Xerr_attempt02_build_retry.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "aa2fc6b5ef708a9693e57b93e1457a9389c9a27ff35860925a5c014949f7b925",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20396,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "check_batch_Xerr_attempt02_assignment",
+      "path": "logs/process/batch_Xerr_attempt02_check.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "5b86054c32e09439b9ca53caa8c7f1f30a009f43c2ad6f7bf5a403db81da4705",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20275,
+      "detached": false,
+      "expected_returncodes": [
+        10,
+        20
+      ],
+      "name": "solve_batch_Xerr_attempt02_cadical_proof",
+      "path": "logs/process/batch_Xerr_attempt02_solver.json",
+      "reaped": true,
+      "returncode": 10,
+      "sha256": "e1ee4105f2044f430047961476cb145b6e58a17d0287a9202b96710f6df81df6",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20435,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "audit_batch_Xerr_attempt03",
+      "path": "logs/process/batch_Xerr_attempt03_audit.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "b5ae3a9e447112fce5af47e369e067c5d6bcb048a4dc28a7b353db44af458541",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20416,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "build_batch_Xerr_attempt03_cnf",
+      "path": "logs/process/batch_Xerr_attempt03_build.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "1421df9d8b2f653bffaac0047e86336ababea97aa87ea7480cd29ed24cbda70c",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20427,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "check_batch_Xerr_attempt03_assignment",
+      "path": "logs/process/batch_Xerr_attempt03_check.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "2ee2cbcae1a1444d685b268ef83bcd6841f21d3bd261d2b7f8dc95a4fc4107c9",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20421,
+      "detached": false,
+      "expected_returncodes": [
+        10,
+        20
+      ],
+      "name": "solve_batch_Xerr_attempt03_cadical_proof",
+      "path": "logs/process/batch_Xerr_attempt03_solver.json",
+      "reaped": true,
+      "returncode": 10,
+      "sha256": "bebb4506e822fcf1e5c367c4f1363a7c1f376233b72af5cccb984f7cf7a4eff4",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20608,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "audit_batch_Xerr_attempt04",
+      "path": "logs/process/batch_Xerr_attempt04_audit.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "b435f445eca19682a195cf4fa1171d5e5f81e06efc63242ae0da9b1a1fd06b57",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20446,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "build_batch_Xerr_attempt04_cnf",
+      "path": "logs/process/batch_Xerr_attempt04_build.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "1351a9cc59cb6d16de15ae2d9a86c63c4bfdc30693bddb9ea49a1a4fc67c0669",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20602,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "check_batch_Xerr_attempt04_assignment",
+      "path": "logs/process/batch_Xerr_attempt04_check.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "44f8ec8892315b25d2d7d19af9600a0c27270e4bd34af2c76d6dfe1f4c4b5c70",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20451,
+      "detached": false,
+      "expected_returncodes": [
+        10,
+        20
+      ],
+      "name": "solve_batch_Xerr_attempt04_cadical_proof",
+      "path": "logs/process/batch_Xerr_attempt04_solver.json",
+      "reaped": true,
+      "returncode": 10,
+      "sha256": "7a9f5475cd820c8452e27c7fc0bee89ee984366b24cb6a13283a2ef6afcd96d7",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20243,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "audit_batch_Zerr_attempt01_mandatory",
+      "path": "logs/process/batch_Zerr_attempt01_audit.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "ee1a41ed79dd9cf5565c860fa24628cec828e00000df11a74cd7bfec375013e5",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20713,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "audit_batch_Zerr_attempt02",
+      "path": "logs/process/batch_Zerr_attempt02_audit.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "17e459e259a0ba15806e1bb14a2c08e74803ffd412d69b43aba6b7e27df9947f",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20624,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "build_batch_Zerr_attempt02_cnf",
+      "path": "logs/process/batch_Zerr_attempt02_build.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "39dcc5d477905303ac67ca117bfee3c7a52d91e4a67bef678d9bcd3463296f9d",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20705,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "check_batch_Zerr_attempt02_assignment",
+      "path": "logs/process/batch_Zerr_attempt02_check.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "3eaecc9c867e8e9e7309a609f8f80ccddc5aea702dec9fba7005442a15b77118",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20629,
+      "detached": false,
+      "expected_returncodes": [
+        10,
+        20
+      ],
+      "name": "solve_batch_Zerr_attempt02_cadical_proof",
+      "path": "logs/process/batch_Zerr_attempt02_solver.json",
+      "reaped": true,
+      "returncode": 10,
+      "sha256": "72621d54846d3e1b833997fc2fe60f25508497616e2cddeb15af6e42204c973a",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20852,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "audit_batch_Zerr_attempt03",
+      "path": "logs/process/batch_Zerr_attempt03_audit.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "c66a2fb464d743640581707a14501ace7f0ecc0df3581aa45c3086d6660544ae",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20724,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "build_batch_Zerr_attempt03_cnf",
+      "path": "logs/process/batch_Zerr_attempt03_build.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "855402597f875b1e8dccf36f70d9c72ab570e641c9d0d1bbc1ff3a144b2e0612",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20843,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "check_batch_Zerr_attempt03_assignment",
+      "path": "logs/process/batch_Zerr_attempt03_check.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "e30eb6bb90b9822dc7edf0eb9e25a34beb757eae51db87646ae36ab016231ac0",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20730,
+      "detached": false,
+      "expected_returncodes": [
+        10,
+        20
+      ],
+      "name": "solve_batch_Zerr_attempt03_cadical_proof",
+      "path": "logs/process/batch_Zerr_attempt03_solver.json",
+      "reaped": true,
+      "returncode": 10,
+      "sha256": "f84fd2dc66e5eff3462f89ae0034e0ae8c90bb2b1b41b47d419e617c743516c4",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20938,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "audit_batch_Zerr_attempt04",
+      "path": "logs/process/batch_Zerr_attempt04_audit.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "0a8e775a2387a6d0401cc14ed308cb8f4527b2e7fe4b96c80c3ddc826c5b47cd",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20861,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "build_batch_Zerr_attempt04_cnf",
+      "path": "logs/process/batch_Zerr_attempt04_build.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "c63b413b632dcc1d9268c9ab5665b8818a11aa1e0f1864b1814ee208ba457510",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20923,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "check_batch_Zerr_attempt04_assignment",
+      "path": "logs/process/batch_Zerr_attempt04_check.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "83218c84c253d2ce9fa3d11475481b4c339cd0e08d5cd906ececb7534206cf17",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20869,
+      "detached": false,
+      "expected_returncodes": [
+        10,
+        20
+      ],
+      "name": "solve_batch_Zerr_attempt04_cadical_proof",
+      "path": "logs/process/batch_Zerr_attempt04_solver.json",
+      "reaped": true,
+      "returncode": 10,
+      "sha256": "baa4b2597b2f19c0e28a6a992f2bdcdca509d2dd290b1e5ced74c27df4bd7aa8",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20969,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "summarize_and_freeze_selector_batch",
+      "path": "logs/process/batch_summary.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "8eccc219ebf362564ebb3aad803eab8035874c5d3bc26177e3ff296c3a35891c",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20014,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "build_iter191_complete_unrestricted_direct360",
+      "path": "logs/process/build_direct.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "b5c3b4c8299584b9673b317f0b0ea7d41c9ce36b848e67dfffa13d9a2f794d5c",
+      "timed_out": false
+    },
+    {
+      "child_pid": 21132,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "build_iter192_translation_quotient",
+      "path": "logs/process/build_iter192_quotient.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "b6af748eca9daa5a54413472cf62d4a940808fe1392e89f70e638f37ce600c74",
+      "timed_out": false
+    },
+    {
+      "child_pid": 21112,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "check_iter192_base_cnf",
+      "path": "logs/process/check_iter192_base.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "110fdb172296eeb4778c006c43b6ef21dc9f92120e163e68acad90498b2db585",
+      "timed_out": false
+    },
+    {
+      "child_pid": 21155,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "check_iter192_translation_quotient",
+      "path": "logs/process/check_iter192_quotient.json",
+      "reaped": true,
+      "returncode": 1,
+      "sha256": "056280fb80be38de05fe79bb1e9df90554931b3280ed985eabf7a704ccc05e86",
+      "timed_out": false
+    },
+    {
+      "child_pid": 21174,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "check_iter192_translation_quotient_retry",
+      "path": "logs/process/check_iter192_quotient_retry.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "aa1ba12ad99b229ff1a203f76fcbaed05814f0587525db2c83194e4543c09d5d",
+      "timed_out": false
+    },
+    {
+      "child_pid": 21084,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "check_iter192_registry_invariance",
+      "path": "logs/process/check_iter192_registry.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "76d6bdc1abc743e777b9b15b551c75079c6a9b55cd97569f6c5b158c219da17f",
+      "timed_out": false
+    },
+    {
+      "child_pid": 21096,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "compile_iter192_base_cnf",
+      "path": "logs/process/compile_iter192_base.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "683f5fc0b16f484309fd4000fcfa997e4c7b8449a3a3e71bf1860a1e26077a90",
+      "timed_out": false
+    },
+    {
+      "child_pid": 21198,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "compress_trace_iter191_outer",
+      "path": "logs/process/compress_trace_outer.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "5680c877b3d2f55cc2a49225e9063a31f05ffbf9fc3fac260a4d35a09924fd1d",
+      "timed_out": false
+    },
+    {
+      "child_pid": 21246,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "compress_remaining_eight_sat_traces_serial",
+      "path": "logs/process/compress_traces_remaining8.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "7ccb994ecdf4587bf21350d4c03ed46b0c0a68762f163998693ab0e18a9d533b",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20114,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "physical_replay_iter191_both_direct_sectors",
+      "path": "logs/process/direct_replay.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "3b719bdbbc619112237bd9267482a5c44f90e13cf02f2d2e91743e63600d7b49",
+      "timed_out": false
+    },
+    {
+      "child_pid": 21937,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "finalize_round112_preseal_metadata",
+      "path": "logs/process/finalize_package.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "d3d992cf567a2fff96cc740db1c2fc1af49bb3cb8d14820e24ffd2044fb746c5",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20131,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "independent_stdlib_iter191_direct_audit",
+      "path": "logs/process/independent_direct.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "889f92839a3114032fd69600b15f0ecf27a666d8c3fd1fe3f287187109800a3c",
+      "timed_out": false
+    },
+    {
+      "child_pid": 19958,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "decode_and_physical_replay_iter191_quotient_model",
+      "path": "logs/process/model_replay.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "a2ef32e87a0886a469593cbfd981e048bc827172fad42f65fdb4a00ffe5bfe89",
+      "timed_out": false
+    },
+    {
+      "child_pid": 19994,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "verify_iter191_quotient_orbit_and_lex_controls",
+      "path": "logs/process/orbit_controls.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "f2109f67c267857ebd5648d202de813e2fa1bd4c0b225ed28fc068cafbdfba47",
+      "timed_out": false
+    },
+    {
+      "child_pid": 21621,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "prepare_round112_minimal_metadata_and_replay",
+      "path": "logs/process/prepare_package.json",
+      "reaped": true,
+      "returncode": 1,
+      "sha256": "9debf6ef7ae26a78540fccca63feaecdba4ced90286c4aded1df7392bce3b12b",
+      "timed_out": false
+    },
+    {
+      "child_pid": 21643,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "prepare_round112_minimal_metadata_and_replay_retry",
+      "path": "logs/process/prepare_package_retry.json",
+      "reaped": true,
+      "returncode": 1,
+      "sha256": "ccd66b380078f9fe9adedd77db4a136aafb2d288704fc6f50bce98c13122e149",
+      "timed_out": false
+    },
+    {
+      "child_pid": 21657,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "prepare_round112_minimal_metadata_and_replay_retry2",
+      "path": "logs/process/prepare_package_retry2.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "b391b8a44f41bc6793cf47c968bba1c679ab5c8b8e529885b4d815154beae401",
+      "timed_out": false
+    },
+    {
+      "child_pid": 21928,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "preseal_fix2_process_census",
+      "path": "logs/process/preseal_census.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "768edcecccc4855eba550374f6e78425bf990179d248011b713e77666a6517ff",
+      "timed_out": false
+    },
+    {
+      "child_pid": 21675,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "clean_environment_preseal_replay_all_load_bearing_checks",
+      "path": "logs/process/preseal_replay.json",
+      "reaped": true,
+      "returncode": 1,
+      "sha256": "7f7a7866487cb87d1badeca7adeccea777a86d5125be80f2540359eeb1eae8f9",
+      "timed_out": false
+    },
+    {
+      "child_pid": 21739,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "clean_environment_preseal_replay_retry",
+      "path": "logs/process/preseal_replay_retry.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "f8156a13293ab96b99532cfc081509b89695876621081fff99ce42d37d638b77",
+      "timed_out": false
+    },
+    {
+      "child_pid": 21373,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "proof_controls_drat_lrat_valid_corrupt_truncated",
+      "path": "logs/process/proof_controls.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "1b5be268c99b5d442051c0daa31350d5f437e732058dd4924b779b47332a4b6e",
+      "timed_out": false
+    },
+    {
+      "child_pid": 19647,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "reconstruct_iter191_base",
+      "path": "logs/process/reconstruct_base.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "ec5e7214908f09ffd953bf82b5f4adceec1989b27dad3dc741b4ce1a7cf6bdb9",
+      "timed_out": false
+    },
+    {
+      "child_pid": 19658,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "reconstruct_iter191_71root_quotient",
+      "path": "logs/process/reconstruct_quotient.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "09791de002bd0fc880538c220f3454eb850bd46ac4b2ed09a8ddc67183821db9",
+      "timed_out": false
+    },
+    {
+      "child_pid": 21867,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "preinstall_repository_gates_strict_serial",
+      "path": "logs/process/repository_gates.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "cf38e70968907c897702fbfabe2fde4ff9f1bdb7eb63adceef1a421669f4b155",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20030,
+      "detached": false,
+      "expected_returncodes": [
+        10,
+        20
+      ],
+      "name": "solve_iter191_Xerr_complete_direct360_cadical_proof",
+      "path": "logs/process/solve_iter191_Xerr.json",
+      "reaped": true,
+      "returncode": 10,
+      "sha256": "0c37f294b2810f48b592ccb44af67c383247928caf0bf4d44c259881a7a15350",
+      "timed_out": false
+    },
+    {
+      "child_pid": 20086,
+      "detached": false,
+      "expected_returncodes": [
+        10,
+        20
+      ],
+      "name": "solve_iter191_Zerr_complete_direct360_cadical_proof",
+      "path": "logs/process/solve_iter191_Zerr.json",
+      "reaped": true,
+      "returncode": 10,
+      "sha256": "fe36935ced955eca31d9ee65a13ee81a88532f63626a7b75b3ee14086e51dea6",
+      "timed_out": false
+    },
+    {
+      "child_pid": 19736,
+      "detached": false,
+      "expected_returncodes": [
+        10,
+        20
+      ],
+      "name": "solve_iter191_full_invariant_quotient_cadical_proof",
+      "path": "logs/process/solve_iter191_quotient.json",
+      "reaped": true,
+      "returncode": 10,
+      "sha256": "9c1ac233bf7df380f6914bdabcef17f4575aa8f9d959c430c0fecc4c4b9e4656",
+      "timed_out": false
+    },
+    {
+      "child_pid": 21367,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "stage_proof_control_fixtures_and_tools",
+      "path": "logs/process/stage_proof_controls.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "7e705000276fdda798e2290406907e235f956dc8d77cfd969937e43175f7cc9a",
+      "timed_out": false
+    },
+    {
+      "child_pid": 21734,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "update_preseal_replay_harness_relative_provenance",
+      "path": "logs/process/update_replay_harness.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "8e255ee7922cbb17bf18733ba38bfec9d0783db1a29ed0ca56e8da73b6e56723",
+      "timed_out": false
+    },
+    {
+      "child_pid": 19673,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "verify_iter191_exact_reconstruction_binding",
+      "path": "logs/process/verify_reconstruction.json",
+      "reaped": true,
+      "returncode": 1,
+      "sha256": "9b0283aada613d1c19973d1128f9f60e12a248c8f25951ca4166bc3a9fb7f9ab",
+      "timed_out": false
+    },
+    {
+      "child_pid": 19719,
+      "detached": false,
+      "expected_returncodes": [
+        0
+      ],
+      "name": "verify_iter191_exact_reconstruction_binding_retry",
+      "path": "logs/process/verify_reconstruction_retry.json",
+      "reaped": true,
+      "returncode": 0,
+      "sha256": "7f1fd1e5644fd0033aa3992ea4bfc14b82217d3a134c8b13cd00acdd2def5057",
+      "timed_out": false
+    }
+  ],
+  "repository_gate_children": 8,
+  "repository_gate_children_all_reaped": true,
+  "repository_gates_strict_serial": true,
+  "schema": "circdist-gross-round112-process-fix2-ledger-v1",
+  "status": "PASS",
+  "timed_out_processes": 0
+}

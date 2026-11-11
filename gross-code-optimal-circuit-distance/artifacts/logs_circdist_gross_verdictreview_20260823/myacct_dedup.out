@@ -1,0 +1,15 @@
+ACCOUNTING AFTER REMOVING BYTE-IDENTICAL DUPLICATE FILES
+distinct jsonl files kept: 23 ; records: 1535
+verdicts: {'UNSAT': 1482, 'SAT': 7, 'TIMEOUT': 44, 'CRASH': 2}
+
+distinct decided sub-queries : 864      (unchanged: the decisive number)
+contributing records         : 1477      (artifact: 2932 / its histogram: 2926)
+multiplicity histogram       : {1: 648, 2: 15, 3: 106, 4: 5, 5: 81, 6: 7, 7: 2}
+decided more than once       : 216      (artifact headline: 860)
+VERDICT CONFLICTS            : 0
+union verdicts               : {'UNSAT': 864}
+
+slot classification: SATDEC 864 ; ENUM12 126 ; OPEN 0 ; total 990
+  -> the 990 / 864 / 126 / 0 result is COMPLETELY UNAFFECTED by the duplication.
+
+sub-queries with two records that differ in (solver, seconds), i.e. a genuine second solve: 96

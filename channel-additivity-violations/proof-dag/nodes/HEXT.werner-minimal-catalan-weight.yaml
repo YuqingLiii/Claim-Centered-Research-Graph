@@ -1,0 +1,59 @@
+id: HEXT.werner-minimal-catalan-weight
+role: proof
+aliases:
+- werner-minimal-mobius-weight-bound
+claim: >-
+  For minimal unitary-Weingarten paths with per-label degrees p_v summing to 2N, the total
+  minimal Möbius/Catalan factor satisfies product_v P_0(pi_v)<=16^N.
+assumptions:
+  collins-matsumoto-minimal-path-identity:
+    kind: external-theorem
+    statement: >-
+      The minimal monotone-path coefficient P_0(pi) equals the absolute unitary-Weingarten
+      Möbius coefficient, the product of Catalan numbers Cat_(|c|-1) over cycles c of pi.
+    source:
+      path: channel-additivity-violations/artifacts/holevo-extensive-violation/primary-sources/collins-matsumoto-1701.04493.pdf
+      kind: pdf
+      locator: Exact expansion on PDF p. 8 and monotone-factorization identification on pp. 8-9; file anchor `PDF-1.4`
+assessment:
+  level: PROVED
+  caveats:
+  - The balanced degree normalization sum_v p_v=2N is load-bearing.
+  summary: >-
+    Bounding every Catalan cycle factor by 4 to its degree gives 4^(sum_v p_v)=16^N.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_MINIMAL_SKELETON_MAP_COUNT_20260830.md
+      kind: text
+      locator: "## 2. Ribbon-map model and terminology"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_MINIMAL_SKELETON_MAP_COUNT_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WMSC-IR-03"
+      scope: >-
+        Independently verified the archived primary-source identity, balanced degree
+        normalization and the 16^N Catalan product bound.
+      reviewed_hash: sha256:82a54db26f9887fab15962f597b42c9d9b7c5a50b2dc86c713e0b066cc51cf54
+frontier:
+  independent-catalan-weight-review:
+    task: Verify the minimal-path coefficient convention and the sum_v p_v=2N normalization.
+    kind: review
+    since: 2026-08-30
+events:
+  minimal-catalan-independent-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Independent review verified the minimal Catalan-weight bound and primary theorem binding.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_MINIMAL_SKELETON_MAP_COUNT_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WMSC-IR-03"
+  minimal-catalan-weight-created:
+    date: '2026-08-30'
+    type: created
+    summary: Registered the proposer-side minimal Catalan-weight bound.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_MINIMAL_SKELETON_MAP_COUNT_20260830.md
+      kind: text

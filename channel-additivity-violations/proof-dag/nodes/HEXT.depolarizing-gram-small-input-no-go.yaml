@@ -1,0 +1,83 @@
+id: HEXT.depolarizing-gram-small-input-no-go
+role: obstruction
+aliases:
+- depolarizing-gram-d-le-k-no-go
+- qutrit-depolarizing-d-le-three-no-go
+claim: >-
+  Let Phi:M_d->M_k preserve the maximally mixed state and satisfy
+  (k/d)Phi Phi^*=Delta_t for a depolarizing channel with 0<=t<=1. If d<=k, then
+  2 barS_min(Phi)<=2S_min(Phi)<=S((Phi tensor barPhi)(Omega_d)); hence no such
+  factor has a positive fixed-channel conjugate-Bell regularized defect.
+routes:
+  haar-purity-entropy-route:
+    premises:
+    - HEXT.conjugate-bell-realignment-constraint
+    implication: >-
+      The depolarizing Gram identity fixes the Haar-average factor-output purity. When d<=k,
+      some pure output is at least as pure as a pure-state output of Delta_sqrt(t). The sharp
+      fixed-purity entropy extremizer bounds its entropy by S_min(Delta_sqrt(t)), while King's
+      arbitrary-partner depolarizing additivity lower-bounds the Bell-output entropy by twice
+      the same quantity.
+    assumptions:
+      king-depolarizing-strong-additivity:
+        kind: external-theorem
+        statement: >-
+          For every finite-dimensional depolarizing channel Delta_lambda and every quantum
+          channel Psi, S_min(Delta_lambda tensor Psi)=S_min(Delta_lambda)+S_min(Psi).
+        source:
+          path: channel-additivity-violations/artifacts/holevo-extensive-violation/primary-sources/king-depolarizing-additivity-quant-ph-0204172.pdf
+          kind: pdf
+          locator: Theorem 3, page 8, equation (26)
+    proof:
+      sketch: >-
+        Compute the exact Haar-average purity as
+        1/k+(k^2-1)t/[k(d+1)]. For d<=k it is at least
+        1/k+(k-1)t/k. A self-contained entropy-versus-purity maximization shows that some pure
+        factor output has entropy at most H_k(sqrt(t)). The Bell output is the Choi state of
+        Delta_t and also an output of Delta_sqrt(t) tensor barDelta_sqrt(t); King's theorem gives
+        Bell entropy at least 2H_k(sqrt(t)).
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/DEPOLARIZING_GRAM_SMALL_INPUT_NO_GO_20260830.md
+        kind: text
+        locator: "## 1. Exact Haar-average output purity through ## 3. The Bell output is bounded from below by strong depolarizing additivity"
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The implication is a complete proposer-side proof with an audited primary theorem, but it
+        has not received independent adversarial review.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The Gram channel is required to be depolarizing.
+  - The factor input dimension must satisfy d<=k.
+  - The theorem concerns the conjugate-Bell witness and does not bound arbitrary collective inputs.
+  - The proof is proposer-side and has not received independent review.
+  summary: >-
+    The depolarizing Gram branch is closed for every factor whose input dimension is no larger
+    than its output dimension. In particular, a surviving qutrit-output depolarizing factor must
+    have input dimension at least four.
+  basis:
+    routes:
+    - haar-purity-entropy-route
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/DEPOLARIZING_GRAM_SMALL_INPUT_NO_GO_20260830.md
+      kind: text
+      locator: "## Theorem"
+frontier:
+  oversized-factor:
+    task: >-
+      For k=3 and d>=4, determine whether the exact depolarizing Gram frame equations plus complete
+      positivity force a side-entropy bound strong enough to close the Bell route, or construct a
+      factor that evades the small-input theorem.
+    kind: gate
+    since: 2026-08-30
+events:
+  small-input-depolarizing-route-closed:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Combined an exact Haar-average purity identity, the sharp entropy extremizer at fixed purity,
+      and arbitrary-dimensional depolarizing strong additivity to exclude every d<=k Gram factor.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/DEPOLARIZING_GRAM_SMALL_INPUT_NO_GO_20260830.md
+      kind: text

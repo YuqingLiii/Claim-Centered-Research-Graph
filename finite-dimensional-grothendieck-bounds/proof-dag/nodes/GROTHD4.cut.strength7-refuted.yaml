@@ -1,0 +1,35 @@
+id: GROTHD4.cut.strength7-refuted
+role: obstruction
+aliases:
+- D4-EQUALITY-STRENGTH7-REFUTED
+claim: >-
+  The 307200 currently known C-level cuts do not form a strength-seven
+  covering array on the 600 cut coordinates modulo global sign reversal.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    The lexicographically first seven-coordinate cluster (0,1,2,3,4,5,6)
+    realizes only 36 of the 64 CUT_7 vertices, with 28 missing patterns. The
+    exact checker lists the patterns and replays the projection. This is an
+    author-side exact counterexample awaiting independent review; it refutes
+    only the proposed covering-array property.
+  basis:
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-strength7-counterexample-20260830.md
+      kind: text
+      locator: Strength-seven counterexample
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_strength7_counterexample_checker.py
+      kind: code
+frontier:
+  independent-review:
+    task: Independently verify the equality-cut projection and missing patterns.
+    kind: review
+    since: '2026-08-31'
+events:
+  registered-2026-08-31:
+    date: '2026-08-31'
+    type: created
+    summary: Registered the exact author-side counterexample to strength seven.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-strength7-counterexample-20260830.md
+      kind: text

@@ -1,0 +1,109 @@
+id: HEXT.qutrit-antisymmetric-gram-obstruction
+role: obstruction
+aliases:
+- qutrit-antisymmetric-cost-surplus
+- antisymmetric-polar-sign-obstruction
+claim: >-
+  The normalized qutrit antisymmetric projector has the correct rank, maximally mixed marginals,
+  and strict entanglement-cost surplus 2E_C-S(E)=2-log(3)>0, but no local-unitary orientation of
+  its support defines a Hilbert-Schmidt-positive square channel. It therefore passes the state
+  gate and fails the Gram/CP-square realization gate.
+routes:
+  exact-cost-route:
+    premises:
+    - HEXT.gram-channel-entanglement-cost-gate
+    implication: >-
+      The antisymmetric projector has rank three and maximally mixed qutrit marginals. Yura's exact
+      all-copy entanglement-of-formation theorem gives E_C=1, so the required strict cost surplus
+      is 2-log(3)>0.
+    proof:
+      sketch: >-
+        Combine the elementary spectrum and marginal calculation for P_-/3 with Corollary 3 of
+        arXiv:quant-ph/0302163.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/QUTRIT_ANTISYMMETRIC_GRAM_OBSTRUCTION_20260830.md
+        kind: text
+        locator: "## Statement"
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/primary-sources/yura-three-level-antisymmetric-entanglement-cost-quant-ph-0302163.pdf
+        kind: pdf
+        locator: "page 3, Corollary 3 (Main Result)"
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The exact entanglement-cost input is primary-sourced; its use in the current gate is an
+        elementary proposer-side calculation awaiting independent review.
+  polar-sign-route:
+    premises:
+    - HEXT.support-channel-polar-orientation-criterion
+    implication: >-
+      The canonical support channel A(X)=(Tr(X)I-X^T)/2 has polar sign
+      Sigma(X)=2Tr(X)I/3-X^T, which is not an inner automorphism. Positivity of any two-sided
+      unitary orientation Ad_W A Ad_U would force that sign to be an inner automorphism by
+      uniqueness of the polar decomposition, a contradiction.
+    proof:
+      sketch: >-
+        Diagonalize A on scalar, symmetric-traceless, and skew-transpose matrix sectors. Compute
+        its sign, show the sign is not positive on a rank-one projector, and conjugate the polar
+        unitary through arbitrary input/output adjoint representations.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/QUTRIT_ANTISYMMETRIC_GRAM_OBSTRUCTION_20260830.md
+        kind: text
+        locator: "## 2. Polar sign of the canonical channel"
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/QUTRIT_ANTISYMMETRIC_GRAM_OBSTRUCTION_20260830.md
+        kind: text
+        locator: "## 3. No input/output orientation can make the channel Gram-positive"
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The finite-dimensional polar-decomposition obstruction is complete proposer-side but has
+        not received an independent adversarial review.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - This excludes the local-unitary orbit of one support projector, not all high-cost projectors.
+  - >-
+    The square polar-sign argument is special to d=3 because rank(P_-)=d(d-1)/2 equals d only
+    there. For d>3 the antisymmetric support channel is rectangular, so this node does not exclude
+    higher-dimensional antisymmetric projectors.
+  - Hilbert-Schmidt positivity is necessary for a Gram channel; the proof does not characterize
+    every further rectangular CP-square constraint.
+  - The proof is proposer-side and has not received independent review.
+  summary: >-
+    The example proves that the entanglement-cost gate is nonvacuous at exactly the required rank,
+    while isolating the Gram orientation as an independent algebraic bottleneck.
+  basis:
+    routes:
+    - exact-cost-route
+    - polar-sign-route
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/QUTRIT_ANTISYMMETRIC_GRAM_OBSTRUCTION_20260830.md
+      kind: text
+      locator: "## Gate verdict"
+frontier:
+  gram-positive-high-cost-support:
+    task: >-
+      Find a normalized rank-D projector with maximally mixed B marginal and positive
+      entanglement-cost surplus whose support isometry has an inner-compatible polar sign and then
+      test the stronger rectangular CP-square condition.
+    kind: task
+    since: 2026-08-30
+events:
+  antisymmetric-near-miss-recorded:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Proved that the qutrit antisymmetric state passes the exact regularized entanglement-cost
+      gate but fails every Gram-positive input/output orientation.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/QUTRIT_ANTISYMMETRIC_GRAM_OBSTRUCTION_20260830.md
+      kind: text
+  higher-dimensional-scope-repair:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Recorded that the polar-orientation proof relies on the qutrit-only equality
+      rank(P_-)=d; it cannot be generalized to d>3 by square-superoperator eigenspace counting
+      because the corresponding support channel is rectangular.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/QUTRIT_ANTISYMMETRIC_GRAM_OBSTRUCTION_20260830.md
+      kind: text

@@ -1,0 +1,67 @@
+id: HCPREV.bcn-random-stinespring-p1
+role: proof
+aliases:
+- bcn-bell-criterion-prevalence
+claim: >-
+  Fix an output dimension k>=183. There exists t in (0,1) such that, for environment dimension
+  n tending to infinity, input dimensions d_n asymptotic to tkn, Haar isometries
+  W_n:C^(d_n) -> C^k tensor C^n and their induced channels Phi_n, the probability that
+  S_min(Phi_n)+S_min(bar(Phi_n))-S_min(Phi_n tensor bar(Phi_n))>0 tends to one. The
+  product upper bound uses the maximally entangled input on C^(d_n) tensor C^(d_n). The value
+  183 is the first output dimension detected by this random-Stinespring/conjugate/Bell criterion,
+  using an exact limiting entropy expression plus finite-range numerical study; it is not a global
+  minimum dimension over all channels.
+assumptions:
+  bcn-random-stinespring-bell-theorem:
+    kind: external-theorem
+    statement: >-
+      In the Haar-Stinespring model with fixed output k, environment n, input d_n asymptotic to
+      tkn and conjugate partner, Theorem 5.2 gives the almost-sure p=1 one-channel entropy limit;
+      Eqs. (55)--(56) specify the maximally entangled witness, and Theorem 6.3 plus its proof gives
+      almost-all violation for the fixed-k regimes detected from k=183 onward. The 183 boundary
+      uses the exact limiting Bell entropy difference and a finite-range numerical study and does
+      not exclude other witnesses or channels below it.
+    source:
+      path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/primary-sources/bcn-1305.1567.pdf
+      kind: pdf
+      locator: Random-isometry model Eqs. (44)--(51), PDF pp. 17--18; Theorem 5.2, PDF p. 18; Bell witness Eqs. (55)--(56), PDF p. 19; Theorem 6.3 and proof, PDF pp. 20--22
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The 183 value belongs only to this random ensemble, conjugate partner and Bell-state criterion.
+  - The finite threshold includes a numerical component and is not a purely analytic global theorem.
+  - This is a p=1 MOE statement and does not give same-law Holevo prevalence.
+  summary: >-
+    The BCN fixed-output Haar-Stinespring scaling, conjugate/Bell witness, probability limit and
+    model-specific 183 boundary are frozen for independent review.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/NAMED_RANDOM_MODEL_ATOMIC_ASSEMBLY_20260831.md
+      kind: text
+      locator: "## 5. Belinschi--Collins--Nechita atom: fixed-output Bell criterion"
+frontier:
+  independent-source-review:
+    task: >-
+      Independently check the exact claim and BCN source interface, including the 183 numerical/analytic boundary.
+    kind: review
+    since: 2026-08-31
+events:
+  post-audit-locator-tightened:
+    date: '2026-09-07'
+    type: repair-applied
+    summary: >-
+      Tightened the BCN model-equation locator from PDF pp. 16--18 to the exact pp. 17--18.
+      The candidate claim and its status are unchanged.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/POST_AUDIT_CLEANUP_20260907.md
+      kind: text
+      locator: "## Repairs"
+  bcn-random-stinespring-atom-created:
+    date: '2026-08-31'
+    type: created
+    summary: >-
+      Registered the BCN p=1 random-Stinespring/conjugate/Bell prevalence statement as an isolated atom.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/NAMED_RANDOM_MODEL_ATOMIC_ASSEMBLY_20260831.md
+      kind: text
+      locator: "## 5. Belinschi--Collins--Nechita atom: fixed-output Bell criterion"

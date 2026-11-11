@@ -1,0 +1,126 @@
+id: GROTHORB.transitive-optimum
+role: outcome
+aliases:
+- ORBIT-OPTIMUM
+claim: Let a finite group act transitively on the rows and columns of a real m by n matrix A, with P_g
+  A Q_g^T = A for every group element. Then beta_vec(A) = sqrt(mn) times the operator norm of A. If A
+  is nonzero, this value is attained by normalized rows of paired top left and right singular bases; if
+  A is zero, every feasible vector strategy is optimal.
+routes:
+  balanced-top-space:
+    premises:
+    - GROTHORB.spectral-upper
+    - GROTHORB.balanced-criterion
+    - GROTHORB.invariant-projector
+    implication: If A is nonzero, equivariance makes the top left and right singular projectors invariant.
+      Transitivity makes their diagonals constant, so the balanced criterion supplies an extremizer saturating
+      the universal spectral upper bound. If A is zero, both sides vanish and every feasible strategy
+      is optimal.
+    proof:
+      sketch: Apply the invariant-projector lemma to both top singular projectors and then normalize their
+        rows.
+      sources:
+      - path: group-orbit-bell-matrices/artifacts/complete-extremizer-classification-20260829.md
+        kind: text
+        locator: GOC-T4
+      - path: group-orbit-bell-matrices/artifacts/balanced-rank-theorem-draft-20260829.md
+        kind: text
+        locator: GO-T4
+    assessment:
+      level: PROVED
+      summary: The implication and its current target assembly passed independent adversarial review.
+      basis:
+        evidence:
+        - path: group-orbit-bell-matrices/artifacts/complete-extremizer-classification-20260829.md
+          kind: text
+          locator: GOC-T4
+        - path: group-orbit-bell-matrices/artifacts/balanced-rank-theorem-draft-20260829.md
+          kind: text
+          locator: GO-T4
+        reviews:
+        - path: group-orbit-bell-matrices/reviews/spectral-classification-repair-review-20260907.md
+          kind: review
+          locator: F2R
+          scope: Checked the implication against its current target, supporting premises and all relevant
+            boundary cases.
+          reviewed_hash: sha256:84d6b925e3477ddd0553add534f2c36b1cceb556ef6b55da52f156802c4ac6c8
+assessment:
+  level: PROVED
+  summary: Complete scoped argument passed an independent fresh-context same-model-family adversarial
+    review. Repaired zero case and assembled nonzero spectral-projector proof. Correctness does not assert
+    novelty or formal verification.
+  basis:
+    routes:
+    - balanced-top-space
+    evidence:
+    - path: group-orbit-bell-matrices/artifacts/spectral-classification-scope-repair-20260907.md
+      kind: text
+      locator: SC1 and SC2
+    - path: group-orbit-bell-matrices/artifacts/group-orbit-literature-positioning-20260907.md
+      kind: text
+      locator: L1 through L6
+    - path: group-orbit-bell-matrices/artifacts/group-orbit-exploration-20260907.md
+      kind: text
+      locator: E1 through E4
+    reviews:
+    - path: group-orbit-bell-matrices/reviews/spectral-classification-repair-review-20260907.md
+      kind: review
+      locator: F2
+      scope: Repaired zero case and assembled nonzero spectral-projector proof.
+      reviewed_hash: sha256:3595380193737509977c85f3b2806810291bba8218e68de229adb35cb6230ab5
+events:
+  authored-2026-08-29:
+    date: '2026-08-29'
+    type: created
+    summary: Reconstructed a general transitive-equivariant theorem in place of a matrix-by-matrix numerical
+      search.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/balanced-rank-theorem-draft-20260829.md
+      kind: text
+      locator: GO-T4
+  zero-case-closed-2026-08-29:
+    date: '2026-08-29'
+    type: repair-applied
+    summary: Closed the zero-matrix edge case explicitly while retaining the singular-projector proof
+      for nonzero A.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/complete-extremizer-classification-20260829.md
+      kind: text
+      locator: GOC-T4
+  attainment-scope-repaired-20260907:
+    date: '2026-09-07'
+    type: repair-applied
+    summary: Qualified the paired-basis construction by A nonzero; for a zero rectangular matrix the full
+      left and right zero singular spaces need not have equal dimensions. The value formula is unchanged,
+      and every feasible zero-matrix strategy is optimal.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/spectral-classification-review-20260907.md
+      kind: review
+      locator: F5 and F5R
+  independent-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Promoted only after exact-statement independent review of the assembled scoped proof.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/spectral-classification-repair-review-20260907.md
+      kind: review
+      locator: F2
+  route-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    route: balanced-top-space
+    from: CONJECTURED
+    to: PROVED
+    summary: Independently reviewed route implication and supporting assembly.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/spectral-classification-repair-review-20260907.md
+      kind: review
+      locator: F2R
+frontier:
+  next-research-question:
+    task: Identify a concrete orbit-family claim that adds a certified classical bound or algorithmic
+      guarantee beyond the Epping--Kampermann--Bruss spectral corollary.
+    kind: task
+    since: '2026-09-07'

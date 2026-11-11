@@ -1,0 +1,58 @@
+id: GROTHORB.minimal-setting-conditioning
+role: proof
+claim: Let r>=2, m,n>=1 be integers. Suppose two positive weighted unit frames satisfy sum_i u_i a_i a_i^T=sum_j
+  v_j b_j b_j^T=I_r, m+n=r(r+1)/2+1, and their combined quadratic evaluation map is injective on Sym_r. On
+  traceless Sym_r define f_i=a_i a_i^T-I_r/r, g_j=b_j b_j^T-I_r/r and F(H)=sum_i u_i <f_i,H>_F f_i+ sum_j v_j
+  <g_j,H>_F g_j. Then F is positive definite and lambda_min(F)<=(r-1)/max(m-1,n-1).
+assessment:
+  level: PROVED
+  summary: Complete scoped argument and dependencies passed a separate author-independent same-model review.
+    Non-fresh-context limitation is disclosed; no novelty or formal-verification claim. This elementary rank/trace
+    consequence does not establish attainable sharpness or a novel stability theorem.
+  basis:
+    evidence:
+    - path: group-orbit-bell-matrices/artifacts/minimum-setting-conditioning-20260907.md
+      kind: text
+      locator: MC-1 through MC-5
+    - path: group-orbit-bell-matrices/artifacts/classical-root-literature-20260907.md
+      kind: text
+      locator: L1 through L4
+    - path: group-orbit-bell-matrices/artifacts/classical-exploration-summary-20260907.md
+      kind: text
+      locator: STATE and NEXT
+    - path: group-orbit-bell-matrices/artifacts/weighted-orbit-literature-20260907.md
+      kind: text
+    - path: group-orbit-bell-matrices/artifacts/weighted-orbit-literature-correction-20260907.md
+      kind: text
+    reviews:
+    - path: group-orbit-bell-matrices/reviews/minimal-setting-conditioning-review-20260907.md
+      kind: review
+      locator: F1
+      scope: Checked the positive-definite frame operator, exact ranks from the setting budget, normalized
+        traces, kernel compression and both boundary denominators.
+      reviewed_hash: sha256:b2c7293343b8537e0ff7e26fe74d6ec1c6fe43fc7c6cb30e28fb4fb70309aa98
+events:
+  registered-20260907:
+    date: '2026-09-07'
+    type: created
+    summary: Registered a quantitative direction after locating prior art for bare minimum-setting constructions.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/classical-family-registration-20260907.md
+      kind: text
+      locator: C13
+  independent-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: OPEN
+    to: PROVED
+    summary: Registered claim received an author proof and a separately assigned exact-statement adversarial
+      review; only then promoted.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/minimal-setting-conditioning-review-20260907.md
+      kind: review
+      locator: F1
+frontier:
+  attainment-and-scope:
+    task: The separately registered equality characterization is now reviewed. Any next attainment problem must specify an admissible family and its literature comparison before testing; no operational noise or novelty claim follows from the current upper bound.
+    kind: task
+    since: '2026-09-07'

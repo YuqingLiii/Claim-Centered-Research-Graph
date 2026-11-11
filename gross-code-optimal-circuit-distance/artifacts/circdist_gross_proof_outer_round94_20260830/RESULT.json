@@ -1,0 +1,653 @@
+{
+  "D_star_Gross": [
+    11,
+    12
+  ],
+  "all_direct_dispositions": "SATISFIABLE",
+  "all_outer_dispositions": "SATISFIABLE",
+  "branch_accounting": {
+    "D_star_11_branch": "Not closed: no checked outer UNSAT universal cover proving every frozen legal schedule has an effective mechanism of weight at most 10.",
+    "D_star_12_branch": "Not closed: no candidate passed both direct sectors by checked UNSAT, so repair analysis and an explicit d_circ=12 certificate were never entered.",
+    "observed_branch": "Twelve positive counterexamples to the current selector cover, each killed by exact SAT mechanisms; this narrows neither branch."
+  },
+  "canonical_edits": false,
+  "commit": false,
+  "completed_candidate_count": 12,
+  "direct_sat_count": 24,
+  "evidence_level": "PROPOSER-CHECKED-COMPUTATION",
+  "fresh_state": {
+    "assertions": 19138,
+    "clauses": 1385059,
+    "cnf_sha256": "397c12b15859a62bbe4bacbcb43dd8680a93e3bcf0cdee62fea4687d2431c8e4",
+    "next_iteration": 148,
+    "selector_count": 256,
+    "selector_state_sha256": "9337b0fe78a3f8af54cec263422fe1641b64094d861c87959a82e1dffe6f326f",
+    "source_file_sha256": "0db20ed8ca0b120cda91eb7a94be25094adb9b77a2cacdd322e330a720d58b5f",
+    "source_semantic_sha256": "2fd4a1982e1f6389804f7eee1120706f9d26c9e6a23acc05e2a15e036a67c032",
+    "started": false,
+    "state_file_sha256": "1902599acc47eb5d354692759b2d09d6ff1cfcd5e013f2b907cc310376ee6e81",
+    "variables": 409157
+  },
+  "initial_frontier": {
+    "assertions": 19114,
+    "clauses": 1372232,
+    "cnf_sha256": "289acad6be1068d63369511e9c95b0b1df146471bf05a1e4128758508612b64e",
+    "inherited_disposition_absent": true,
+    "iteration": 136,
+    "selector_count": 232,
+    "selector_state_sha256": "1692d905120d2dcf51b949ce4a70ed4b8f1b270c2d07a1ddbf5813d20d80fa81",
+    "source_file_sha256": "a71fb5e708eeebf365dda0661b79652b264bc0eb87308626383a5ca389cfc5d8",
+    "source_semantic_sha256": "a561515801904b458d34ebccea5aa364420f9a0a012e36e721f48fcbe9be4ebe",
+    "started": false,
+    "state_file_sha256": "58781b46cc177df046ec334420046e1ccc8a23517f21fe4491e6412741ced57c",
+    "variables": 406656
+  },
+  "iterations": [
+    {
+      "direct": {
+        "Xerr": {
+          "complete_assignment": true,
+          "formula_sha256": "0c34e3e48d27404aa8db19d37695edc77c5f62b93d9cfd756e4f542b212956e6",
+          "mechanism_semantic_sha256": "53dea55f6660eecdd66a4ed7b07d999d3a101c032c86d48a8a6d3d346ff03dc7",
+          "physical_replay": true,
+          "status": "SATISFIABLE",
+          "weight": 10
+        },
+        "Zerr": {
+          "complete_assignment": true,
+          "formula_sha256": "c48539ba44709376e028689adccfce0b2d2a144d81955cba1b5ed3e907c0f5e5",
+          "mechanism_semantic_sha256": "dd6c60cf78e33e18c64482b81b95345b6f98244c1c05418d2ac0641460753c0d",
+          "physical_replay": true,
+          "status": "SATISFIABLE",
+          "weight": 10
+        }
+      },
+      "iteration": 136,
+      "outer": {
+        "assertions": 19114,
+        "clauses": 1372232,
+        "cnf_sha256": "289acad6be1068d63369511e9c95b0b1df146471bf05a1e4128758508612b64e",
+        "complete_assignment": true,
+        "schedule_sha256": "45051af0b08e6647d50c6fb0535894173016fd013279e7a0eaee8b2e69ee2e44",
+        "source_semantic_sha256": "a561515801904b458d34ebccea5aa364420f9a0a012e36e721f48fcbe9be4ebe",
+        "status": "SATISFIABLE",
+        "variables": 406656
+      },
+      "source_selector_count": 232,
+      "transition": {
+        "atomic": true,
+        "new_selectors": [
+          "r94-i136-Xerr",
+          "r94-i136-Zerr"
+        ],
+        "next_selector_count": 234,
+        "next_selector_state_sha256": "47792a8f8e757482604723abb0e08916f49b252f4ba07deae03cf4295159d0b6"
+      }
+    },
+    {
+      "direct": {
+        "Xerr": {
+          "complete_assignment": true,
+          "formula_sha256": "a500fd17741f7302e906a33ca0204b7d17a8c9905952118975915e00e275a9ee",
+          "mechanism_semantic_sha256": "3cf11f4bab7ae90d222e031bfe2a6ff9f58db1d928941a0cbb59c966357a184e",
+          "physical_replay": true,
+          "status": "SATISFIABLE",
+          "weight": 10
+        },
+        "Zerr": {
+          "complete_assignment": true,
+          "formula_sha256": "d6647d7f6982e4e3bc53b716e96f53597287f304fa348a10ae850cfaa4d97961",
+          "mechanism_semantic_sha256": "04440fdc3b2d0dba3aa50176af28ce50361ed34bf98708ce555847995d219dca",
+          "physical_replay": true,
+          "status": "SATISFIABLE",
+          "weight": 10
+        }
+      },
+      "iteration": 137,
+      "outer": {
+        "assertions": 19116,
+        "clauses": 1373457,
+        "cnf_sha256": "2f7f7be5cc67822aa30ca9ac8021c79afcb8e15ea4f9724dcc1d3c974ede88e4",
+        "complete_assignment": true,
+        "schedule_sha256": "2994ed9fb7a1b839406337785fa6308e2d63c131ed9ffc4ab1e096dfd79081b0",
+        "source_semantic_sha256": "dd16f5db19b6e2cdc6d75446d1029f02f07aa18628f12f6d426e2edfcd658514",
+        "status": "SATISFIABLE",
+        "variables": 406852
+      },
+      "source_selector_count": 234,
+      "transition": {
+        "atomic": true,
+        "new_selectors": [
+          "r94-i137-Xerr",
+          "r94-i137-Zerr"
+        ],
+        "next_selector_count": 236,
+        "next_selector_state_sha256": "b97343946f563b80504e93b287424b29005eb2a71e56b0bf9370790ff79a0f97"
+      }
+    },
+    {
+      "direct": {
+        "Xerr": {
+          "complete_assignment": true,
+          "formula_sha256": "0cb4c871ea8cad13fcddb7104095c06a8d6abd9535d0f6a4bb206764ffcd3f34",
+          "mechanism_semantic_sha256": "4e048e86830033b9ff355318b24525e70790330bc560c122cacfd15f928e057e",
+          "physical_replay": true,
+          "status": "SATISFIABLE",
+          "weight": 9
+        },
+        "Zerr": {
+          "complete_assignment": true,
+          "formula_sha256": "4e28baf8850d291bf421bae04b86ff962a559357a9fc91777ed95a5b19fb2a31",
+          "mechanism_semantic_sha256": "67b77e8702cffd5299c1c5ef1594640d30e9a90f450105a9949922d890be0251",
+          "physical_replay": true,
+          "status": "SATISFIABLE",
+          "weight": 10
+        }
+      },
+      "iteration": 138,
+      "outer": {
+        "assertions": 19118,
+        "clauses": 1373752,
+        "cnf_sha256": "cf400af11b86f067718ba75a5bdb29e1d5fcde3730a0ef8cd99d6b2b95903fa1",
+        "complete_assignment": true,
+        "schedule_sha256": "fad8da6b3374bf8ba09c8ceda898d9170007af652f2f9645b0428e1c7532d1d6",
+        "source_semantic_sha256": "ceb3beed624e626dbec068db0179c5625a58650911baf53c139b7e9964e0688b",
+        "status": "SATISFIABLE",
+        "variables": 406936
+      },
+      "source_selector_count": 236,
+      "transition": {
+        "atomic": true,
+        "new_selectors": [
+          "r94-i138-Xerr",
+          "r94-i138-Zerr"
+        ],
+        "next_selector_count": 238,
+        "next_selector_state_sha256": "c30cf810e923d41b39c4cb48334e68d1a3ae86983162a63bc70bd2a9d429a615"
+      }
+    },
+    {
+      "direct": {
+        "Xerr": {
+          "complete_assignment": true,
+          "formula_sha256": "56c34495f4db806bbbaf9f6466c59107548a306e597b2c3d049af46148af76db",
+          "mechanism_semantic_sha256": "a4db633039b5a37a85b8a051cbec3f3303276b8a3b1336993cd51cf0010f0732",
+          "physical_replay": true,
+          "status": "SATISFIABLE",
+          "weight": 10
+        },
+        "Zerr": {
+          "complete_assignment": true,
+          "formula_sha256": "7028bc90c5a13ff8c2a1271e0b48d6abb961130508e9e0cadbf3445e0bc1dbbd",
+          "mechanism_semantic_sha256": "b35a44d5dc7a0c51ea96a151a0629cc8851438f8378a74c8fbbc64c346b18c00",
+          "physical_replay": true,
+          "status": "SATISFIABLE",
+          "weight": 10
+        }
+      },
+      "iteration": 139,
+      "outer": {
+        "assertions": 19120,
+        "clauses": 1374932,
+        "cnf_sha256": "3a82af909f27caa97d68463ada22814a537f6ece3fe3117bf1eb2298ec3eba24",
+        "complete_assignment": true,
+        "schedule_sha256": "fa6d566acadf7b30754fcc3a46bdc9634cad798958e190d5237266117acf33ff",
+        "source_semantic_sha256": "c7f498068e16934517768285ab3a1e1def79482b769fec899c67134b32d50026",
+        "status": "SATISFIABLE",
+        "variables": 407121
+      },
+      "source_selector_count": 238,
+      "transition": {
+        "atomic": true,
+        "new_selectors": [
+          "r94-i139-Xerr",
+          "r94-i139-Zerr"
+        ],
+        "next_selector_count": 240,
+        "next_selector_state_sha256": "4156821c4ce9d3a72b66d89bc5795d41db4af8d76b5ccb183a3a2216d59de59f"
+      }
+    },
+    {
+      "direct": {
+        "Xerr": {
+          "complete_assignment": true,
+          "formula_sha256": "c851c9302d79978288700615a3d0e851e335af06f98e6fe7bcb71fca1e735f04",
+          "mechanism_semantic_sha256": "819c78a30e710d5034960ac14f2ad51050a723be5d4e06ec1ee95d78ab88d776",
+          "physical_replay": true,
+          "status": "SATISFIABLE",
+          "weight": 10
+        },
+        "Zerr": {
+          "complete_assignment": true,
+          "formula_sha256": "a5aecbb26919b9a146c441f6e84e109ea338eee7234ce71bfa1c0e006779c484",
+          "mechanism_semantic_sha256": "4e7b749bc57d4d1b827a11f1bf757b078e7f9a893462e64f514fca12903ab7a1",
+          "physical_replay": true,
+          "status": "SATISFIABLE",
+          "weight": 10
+        }
+      },
+      "iteration": 140,
+      "outer": {
+        "assertions": 19122,
+        "clauses": 1376557,
+        "cnf_sha256": "d908f326aa36be550e7d501e1b5af8f736d3eec3aa4dbe0c22f54d398c20909a",
+        "complete_assignment": true,
+        "schedule_sha256": "f24644303abf6cbd90de152129cbcff7caf711c0e72f6392ad0914d4b004d98c",
+        "source_semantic_sha256": "a8cb55aa10f19100abca67b82b229c14daa21a5f91e6a634f3747c1fcfe44c9f",
+        "status": "SATISFIABLE",
+        "variables": 407424
+      },
+      "source_selector_count": 240,
+      "transition": {
+        "atomic": true,
+        "new_selectors": [
+          "r94-i140-Xerr",
+          "r94-i140-Zerr"
+        ],
+        "next_selector_count": 242,
+        "next_selector_state_sha256": "93ab0860bc05a05de7fbdb3dd21a854109f8f2a29ed937c84d578ebe079b2943"
+      }
+    },
+    {
+      "direct": {
+        "Xerr": {
+          "complete_assignment": true,
+          "formula_sha256": "4fef1a7bdf679a50c27df1e59d10c8a349eb2fa480a6eb904b9df6d692886c2d",
+          "mechanism_semantic_sha256": "c50143a88dfce1ddd06e498cb7a20b0a2fb13fb2dd5a6cc13cfb2bd40c519e92",
+          "physical_replay": true,
+          "status": "SATISFIABLE",
+          "weight": 10
+        },
+        "Zerr": {
+          "complete_assignment": true,
+          "formula_sha256": "c0d5e58e28835ca0405a8c6c9fecaf435f26e6d64fb9ca6f55734df799e131f7",
+          "mechanism_semantic_sha256": "c6ed664d5c48d8bdf98aa24a96f0d37887dc0c647b7a27f0d170342642fb2b8b",
+          "physical_replay": true,
+          "status": "SATISFIABLE",
+          "weight": 10
+        }
+      },
+      "iteration": 141,
+      "outer": {
+        "assertions": 19124,
+        "clauses": 1378010,
+        "cnf_sha256": "1347bcadd5c17d26fe021ce4a3293eb14ed9e57344474e10a9885618ba72cc7d",
+        "complete_assignment": true,
+        "schedule_sha256": "2ecbd9e3cbf4dca49ad5e59796cc61facf18544957834391d8a8335fbdb94706",
+        "source_semantic_sha256": "6f03f6d9a3b14027a910e6e7633546eb55b051d070f45e1a6f8579fafaefb9ea",
+        "status": "SATISFIABLE",
+        "variables": 407727
+      },
+      "source_selector_count": 242,
+      "transition": {
+        "atomic": true,
+        "new_selectors": [
+          "r94-i141-Xerr",
+          "r94-i141-Zerr"
+        ],
+        "next_selector_count": 244,
+        "next_selector_state_sha256": "8db1cb9823a3d3132ad87465aba84f7e3047d57fef9df4c6c31dc743e07caa84"
+      }
+    },
+    {
+      "direct": {
+        "Xerr": {
+          "complete_assignment": true,
+          "formula_sha256": "b3fc4ba2e3b8fa9f1dfc21a4dd04f9711b98a47059553087b2df3a2bffebeb4f",
+          "mechanism_semantic_sha256": "bd0823427aa2e090f0fe75eecb55c3305cdbe2921f7ec228649d8c43e1f3b3d5",
+          "physical_replay": true,
+          "status": "SATISFIABLE",
+          "weight": 10
+        },
+        "Zerr": {
+          "complete_assignment": true,
+          "formula_sha256": "ac7c00760410ad967f1ae852df045866347593818fd71915dfcc207e45959fd0",
+          "mechanism_semantic_sha256": "2153317a84ef67907210f4083e5f9ce88d6dfef4f8571a5e2ec79df5879fd459",
+          "physical_replay": true,
+          "status": "SATISFIABLE",
+          "weight": 10
+        }
+      },
+      "iteration": 142,
+      "outer": {
+        "assertions": 19126,
+        "clauses": 1378649,
+        "cnf_sha256": "9865bfe874f93d3be38fc8a82aae5ad00cfaf66c671246c3c75d150810ac73d4",
+        "complete_assignment": true,
+        "schedule_sha256": "9a837b9d8a87ac31ec0f95c838f63418e8622dca59078181f751ce7efb617696",
+        "source_semantic_sha256": "635cf5fde3f940260852bf6bd5d1ea9135892589b96c511c65b7d4f17d3a87e3",
+        "status": "SATISFIABLE",
+        "variables": 407904
+      },
+      "source_selector_count": 244,
+      "transition": {
+        "atomic": true,
+        "new_selectors": [
+          "r94-i142-Xerr",
+          "r94-i142-Zerr"
+        ],
+        "next_selector_count": 246,
+        "next_selector_state_sha256": "3af337f77f89486bc25366be313607201dc10f048bcac9c5e87355a6ec8afae7"
+      }
+    },
+    {
+      "direct": {
+        "Xerr": {
+          "complete_assignment": true,
+          "formula_sha256": "89a7beacb392e4bfd8fe7aaeb2c2ab01e7b2387787af9bcad6a93dc1a4c2b985",
+          "mechanism_semantic_sha256": "4c2ff7816652827dd76a3297a5d90fbf67dcaba116b164ee3269306b22afa2dc",
+          "physical_replay": true,
+          "status": "SATISFIABLE",
+          "weight": 10
+        },
+        "Zerr": {
+          "complete_assignment": true,
+          "formula_sha256": "609000c3f7c9d700b85e8fd1b6e03d329dfd531685215831091e4ceb28c9db21",
+          "mechanism_semantic_sha256": "ee357049215990f7ec57dbcc670781385cd028a85a4d7ff8922733ce5b98544b",
+          "physical_replay": true,
+          "status": "SATISFIABLE",
+          "weight": 10
+        }
+      },
+      "iteration": 143,
+      "outer": {
+        "assertions": 19128,
+        "clauses": 1380050,
+        "cnf_sha256": "5781637f051643e254e7edd248dca276be33654e8da62127470fec1565bab9ed",
+        "complete_assignment": true,
+        "schedule_sha256": "2297593ce829e9beb252eecf72487030c699b0977e7225eebf5602caa58ea35f",
+        "source_semantic_sha256": "ed041895a0992fa1bdc8b0d76d908cc595098f8142d7efabe0c6d17938d4ba15",
+        "status": "SATISFIABLE",
+        "variables": 408150
+      },
+      "source_selector_count": 246,
+      "transition": {
+        "atomic": true,
+        "new_selectors": [
+          "r94-i143-Xerr",
+          "r94-i143-Zerr"
+        ],
+        "next_selector_count": 248,
+        "next_selector_state_sha256": "15181d24541ff60571cf91577ffa8c85b48d749726e2511438187fac8135a64b"
+      }
+    },
+    {
+      "direct": {
+        "Xerr": {
+          "complete_assignment": true,
+          "formula_sha256": "63850c462e31cdb6ea8cce06b76b39db78a04bde78aab5b29da6c12c944c3f4c",
+          "mechanism_semantic_sha256": "fb2a1217a252444c8bd31cc4d6ee4baa629565594731e2b8606a531c1a03ef26",
+          "physical_replay": true,
+          "status": "SATISFIABLE",
+          "weight": 10
+        },
+        "Zerr": {
+          "complete_assignment": true,
+          "formula_sha256": "cb01c0aa4222ae8ea1cad16432fe0526036db19fb466213440f042c80a276822",
+          "mechanism_semantic_sha256": "0641a1e78ccfb958bf89c5ba4f771d8543cd6953423dba83367208a1e01d2499",
+          "physical_replay": true,
+          "status": "SATISFIABLE",
+          "weight": 10
+        }
+      },
+      "iteration": 144,
+      "outer": {
+        "assertions": 19130,
+        "clauses": 1380858,
+        "cnf_sha256": "8351cc28eb27874b4b174411a1bf66d4e9b81bcb1069f6b33ed4c27a2e8a72f5",
+        "complete_assignment": true,
+        "schedule_sha256": "8599312f8af25596faf18bee0314224743edd79e3e5f39a25e73160d1b70ae45",
+        "source_semantic_sha256": "3a1e08e3a578a36ae36446b0924af04c462dc33b1fa0134e271798d3e86ee405",
+        "status": "SATISFIABLE",
+        "variables": 408330
+      },
+      "source_selector_count": 248,
+      "transition": {
+        "atomic": true,
+        "new_selectors": [
+          "r94-i144-Xerr",
+          "r94-i144-Zerr"
+        ],
+        "next_selector_count": 250,
+        "next_selector_state_sha256": "ab0d6c7a41f876f39e6f94a59c15197a62015e355b7c7e6b173c3850dcbf45bf"
+      }
+    },
+    {
+      "direct": {
+        "Xerr": {
+          "complete_assignment": true,
+          "formula_sha256": "cef53221649d2a6b9cf2eb5bf383d63a994cb34e4e13f56a42437b97824ce5e4",
+          "mechanism_semantic_sha256": "9c79459b91641df1fcba460fc2acbac18dfba42bff3e1fb19efc59201d76c687",
+          "physical_replay": true,
+          "status": "SATISFIABLE",
+          "weight": 10
+        },
+        "Zerr": {
+          "complete_assignment": true,
+          "formula_sha256": "c658ddb038cc22330e96ae7f1730e9e682a925906ce37cb02424575c06497709",
+          "mechanism_semantic_sha256": "3b68481c0ddb0eeabf1a45cfa1a85a8c014cb85d5482e91881884a37740957f7",
+          "physical_replay": true,
+          "status": "SATISFIABLE",
+          "weight": 10
+        }
+      },
+      "iteration": 145,
+      "outer": {
+        "assertions": 19132,
+        "clauses": 1381815,
+        "cnf_sha256": "022bfb72723c6f6fc483189e76512a131931931332cdc2202a1a1bbe674b1415",
+        "complete_assignment": true,
+        "schedule_sha256": "8f9a77d1cb186f81643dd58475ea429631c143a9d0a8a1f821b207fc0d5b5766",
+        "source_semantic_sha256": "de40e7a4b19fc6a3c0339f27f982cbdbce17e9ea8e973d7f98b289b031afe012",
+        "status": "SATISFIABLE",
+        "variables": 408499
+      },
+      "source_selector_count": 250,
+      "transition": {
+        "atomic": true,
+        "new_selectors": [
+          "r94-i145-Xerr",
+          "r94-i145-Zerr"
+        ],
+        "next_selector_count": 252,
+        "next_selector_state_sha256": "631514478c9ef90c3881ea85fe4e1764043c71c8a16ec2e499e4686b9ea5bc21"
+      }
+    },
+    {
+      "direct": {
+        "Xerr": {
+          "complete_assignment": true,
+          "formula_sha256": "4ef7d4549be52f7fdea353b7f029a8147fc6341ebab1eb909fa18acdafcb70d1",
+          "mechanism_semantic_sha256": "21910e93eb56d48ef4b1981012496e76e12f93a25276b6503b722eabf826b380",
+          "physical_replay": true,
+          "status": "SATISFIABLE",
+          "weight": 10
+        },
+        "Zerr": {
+          "complete_assignment": true,
+          "formula_sha256": "d17c8d84d74f445605e6cf9d6e366d931674b3e4ac61309a16f02e9c4bef8436",
+          "mechanism_semantic_sha256": "6ffed21630e535823f48d1b39f92ba12e7742d58033eacedacf889e950d5db2d",
+          "physical_replay": true,
+          "status": "SATISFIABLE",
+          "weight": 10
+        }
+      },
+      "iteration": 146,
+      "outer": {
+        "assertions": 19134,
+        "clauses": 1383041,
+        "cnf_sha256": "0363aace88f4e1589b652df293d28d451e6546ae4711d751385eb4233aa8a3c3",
+        "complete_assignment": true,
+        "schedule_sha256": "8a799f25585ff2c8f5e39ed4c47cee29af60a4cbed8ddeb47bba04fbd7127d1f",
+        "source_semantic_sha256": "5d553a53c63a060a2f3f2271da95b91bf9caf3aa0f1322b1cd3613b925917654",
+        "status": "SATISFIABLE",
+        "variables": 408743
+      },
+      "source_selector_count": 252,
+      "transition": {
+        "atomic": true,
+        "new_selectors": [
+          "r94-i146-Xerr",
+          "r94-i146-Zerr"
+        ],
+        "next_selector_count": 254,
+        "next_selector_state_sha256": "0e58e098f6d251179ed857cf644c36f349a70e45d6b42c3a6d37ab72932dd607"
+      }
+    },
+    {
+      "direct": {
+        "Xerr": {
+          "complete_assignment": true,
+          "formula_sha256": "3e260cdbb39a9e1148ae833992def8e5239fa60a9eb4a20d45b8c7da3a7e538a",
+          "mechanism_semantic_sha256": "ce833de790d86be7f86dc4799565696c8e206fc33b186db1e4acd29019ce648c",
+          "physical_replay": true,
+          "status": "SATISFIABLE",
+          "weight": 10
+        },
+        "Zerr": {
+          "complete_assignment": true,
+          "formula_sha256": "15be04fd9bd0b6dea1a533b8e1a8664f9f370a62c9d758c7786b34032c313c93",
+          "mechanism_semantic_sha256": "52ece81adcf7a17d8aa8bb231d3dc489a34a832731cd728466e177bf16baea95",
+          "physical_replay": true,
+          "status": "SATISFIABLE",
+          "weight": 10
+        }
+      },
+      "iteration": 147,
+      "outer": {
+        "assertions": 19136,
+        "clauses": 1384166,
+        "cnf_sha256": "30d73f37d48d5f99760b113912e0f851a3f35997df561cf631a0a18a15e28e7a",
+        "complete_assignment": true,
+        "schedule_sha256": "b74dbc4d796acb3c12cb99465770781971875834127faed9fcbb947f3de77d1b",
+        "source_semantic_sha256": "fe5a95ff149ce08fd1cd483556e917c73d7015725879b2226033c430dede78b5",
+        "status": "SATISFIABLE",
+        "variables": 408956
+      },
+      "source_selector_count": 254,
+      "transition": {
+        "atomic": true,
+        "new_selectors": [
+          "r94-i147-Xerr",
+          "r94-i147-Zerr"
+        ],
+        "next_selector_count": 256,
+        "next_selector_state_sha256": "9337b0fe78a3f8af54cec263422fe1641b64094d861c87959a82e1dffe6f326f"
+      }
+    }
+  ],
+  "limitations": [
+    "No outer or direct query returned UNSAT; there is no Gross absence certificate.",
+    "The order-3 same-sector GF(2) investigation covers only its declared finite domain.",
+    "A positive mechanism kills only the concrete source outer candidate.",
+    "The frozen root and gap-via-lift route remain conjectured; D*_Gross remains {11,12}."
+  ],
+  "outer_sat_count": 12,
+  "proof_objects": {
+    "actual_unsat_count": 0,
+    "direct_unsat_proofs": [],
+    "fixture_controls": {
+      "corrupt_drat_rejected": true,
+      "corrupt_lrat_rejected": true,
+      "file": "controls/proof_fixture_controls.json",
+      "generated_lrat_accepted": true,
+      "scope": "tool-chain controls only; no Gross UNSAT occurred",
+      "status": "PASS",
+      "truncated_drat_rejected": true,
+      "truncated_lrat_rejected": true,
+      "valid_drat_accepted": true
+    },
+    "gross_unsat_drat": null,
+    "gross_unsat_lrat": null
+  },
+  "proposed_canonical_delta": "No canonical delta proposed before independent review.",
+  "push": false,
+  "reconstruction": {
+    "record": "reconstruction/correspondence.json",
+    "source_cnf_byte_correspondence": true,
+    "status": "PASS"
+  },
+  "repair_entered": false,
+  "root_status": "CONJECTURED",
+  "route_status": "CONJECTURED",
+  "sat_proof_streams": {
+    "count": 36,
+    "disposition": "SAT-side streams are explicitly non-proofs and are not Gross certificates.",
+    "empty_clause_lines": 0,
+    "full_streams_deleted_after_hash_size_lf_summary": true,
+    "proof_output_enabled": true
+  },
+  "schema": "circdist-gross-round94-result-v1",
+  "source_model": {
+    "block_family_counts": {
+      "dynamic": 204,
+      "generalized": 12820,
+      "round62": 20,
+      "unary": 1440
+    },
+    "frozen_conventions_preserved": [
+      "S_Gross",
+      "strict serialization",
+      "MC0",
+      "terminal residual semantics",
+      "both CSS sectors",
+      "all canonical exclusions"
+    ],
+    "inherited_order_predicates": 14484,
+    "initial_exact_efssc_selectors": 232
+  },
+  "status": "PASS",
+  "strict_serial": true,
+  "synthesis": {
+    "coverage_checked": true,
+    "eligible_weight_1_to_10_results": 4232,
+    "file": "synthesis/triple_gf2_closure.json",
+    "file_sha256": "106e8d478e89e89029b06a3e00ad96a0f5e363ef9927417f3e491f5f71aec31f",
+    "finite_domain_size": 527684,
+    "no_selector_entered_state": true,
+    "retained_terms": 0,
+    "semantic_sha256_excluding_seconds": "558a9fcdd88e527fb5a4c49b3e6c268793f6644188f512b5d0af25a971ea1b45",
+    "strategy": "exact higher-order same-sector GF(2) closure of three distinct reviewed selectors"
+  },
+  "timeout_count": 0,
+  "unknown_count": 0,
+  "unsat_count": 0,
+  "verdict": "MATERIAL-CHECKED-PROGRESS-NOT-CLOSED",
+  "weight_summary": {
+    "Xerr": {
+      "weight_10_iterations": [
+        136,
+        137,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147
+      ],
+      "weight_9_iterations": [
+        138
+      ]
+    },
+    "Zerr": {
+      "weight_10_iterations": [
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147
+      ],
+      "weight_9_iterations": []
+    }
+  }
+}

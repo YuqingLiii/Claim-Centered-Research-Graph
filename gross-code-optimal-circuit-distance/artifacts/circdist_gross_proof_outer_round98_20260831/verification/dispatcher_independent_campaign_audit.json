@@ -1,0 +1,1034 @@
+{
+  "D_star_Gross": [
+    11,
+    12
+  ],
+  "completed_candidate_count": 12,
+  "direct_sat_count": 24,
+  "fresh_frontier": {
+    "assertions": 19186,
+    "clauses": 1406245,
+    "cnf_sha256": "f86b8db36af1df3877ca1d9dbafb171b6173ddc8b6c2f045a808dd6c71f98342",
+    "next_iteration": 172,
+    "selector_count": 304,
+    "selector_state_sha256": "a5c64ae41f474844ecd3ac41829331f54d419a81573e4f0e11528db0b49e25d1",
+    "source_file_sha256": "99faca59521b675844d0c10eb12afcfe925f474d3eac9d5cac56e11537397b08",
+    "source_semantic_sha256": "cfa261df8b148622c80248d398df20f1ff5a4cf3f04eb76a31b2795185cc6412",
+    "started": false,
+    "state_file_sha256": "9fd675be9712a28dd625fba7cce95f75a8a3b9bdf7edc3f398bfa8b13844d2be",
+    "variables": 413646
+  },
+  "iterations": [
+    {
+      "direct": {
+        "Xerr": {
+          "canonical_physical_parities_equal": true,
+          "canonical_support_weight": 12,
+          "complete_assignment": true,
+          "formula_sha256": "128dcef9713fbb4cc6f2d7a0db8ef3d16680d5980bed0ba2b873130b97f57bbf",
+          "mechanism_semantic_sha256": "ec0e56cf84c6d0ced4e8730ef5145da2ed8fc56b7af6347da0206a2bbd7bd677",
+          "physical_detector_syndrome": [],
+          "physical_logical_action": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "physical_replay": true,
+          "physical_support_weight": 12,
+          "solver_wall_seconds": 18.119765,
+          "status": "SATISFIABLE",
+          "weight": 10
+        },
+        "Zerr": {
+          "canonical_physical_parities_equal": true,
+          "canonical_support_weight": 14,
+          "complete_assignment": true,
+          "formula_sha256": "1169d21fc33bc38446df1560f85d207ac276deac6d16304d2f6ad9c1dbe885ad",
+          "mechanism_semantic_sha256": "e38bfb0cf5c0f7904c4889aeb144d343690c5dbba7c2baa0b448f93eeef589cd",
+          "physical_detector_syndrome": [],
+          "physical_logical_action": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          "physical_replay": true,
+          "physical_support_weight": 14,
+          "solver_wall_seconds": 3.907706,
+          "status": "SATISFIABLE",
+          "weight": 10
+        }
+      },
+      "iteration": 160,
+      "outer": {
+        "assertions": 19162,
+        "clauses": 1396722,
+        "cnf_sha256": "aa18d2857ed5a7aefacd33bf4fbd42fded914393e123a87f00e84e4920e39d59",
+        "complete_assignment": true,
+        "schedule_sha256": "c3a28d81393ff186a9910918d53f20df724aaac84284e9d6b75b8e33737c76df",
+        "solver_wall_seconds": 3.130183,
+        "source_semantic_sha256": "bb19e724c66eb6f3df8830a205ba29a297f5795d42d3fe066fa3b873800789ed",
+        "status": "SATISFIABLE",
+        "variables": 411526
+      },
+      "source_selector_count": 280,
+      "transition": {
+        "atomic": true,
+        "new_selectors": [
+          "r98-i160-Xerr",
+          "r98-i160-Zerr"
+        ],
+        "next_selector_count": 282,
+        "next_selector_state_sha256": "e401da99ead8c156f9fa0ef43556fe805d3a8c7a2dbe137ef5c44e8b8fa4ab0d"
+      }
+    },
+    {
+      "direct": {
+        "Xerr": {
+          "canonical_physical_parities_equal": true,
+          "canonical_support_weight": 14,
+          "complete_assignment": true,
+          "formula_sha256": "ac7d658b1576162694acf865232fc2d9aa36fb4cb790a3b8839f381d180dc2cf",
+          "mechanism_semantic_sha256": "9010a9187d6027843fb3a35cba257e194dc7d546878bdf72f304311d4b084126",
+          "physical_detector_syndrome": [],
+          "physical_logical_action": [
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "physical_replay": true,
+          "physical_support_weight": 22,
+          "solver_wall_seconds": 31.97004,
+          "status": "SATISFIABLE",
+          "weight": 9
+        },
+        "Zerr": {
+          "canonical_physical_parities_equal": true,
+          "canonical_support_weight": 18,
+          "complete_assignment": true,
+          "formula_sha256": "37b1b45848a90abf2472f231ac3df3a12bafae5f1f28642b8cfe29e8a6a70955",
+          "mechanism_semantic_sha256": "3826b4a963414b29e16b800452593ec4bfb6d4358f2c8a694dafbf54e8a758bd",
+          "physical_detector_syndrome": [],
+          "physical_logical_action": [
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "physical_replay": true,
+          "physical_support_weight": 32,
+          "solver_wall_seconds": 4.279172,
+          "status": "SATISFIABLE",
+          "weight": 10
+        }
+      },
+      "iteration": 161,
+      "outer": {
+        "assertions": 19164,
+        "clauses": 1396986,
+        "cnf_sha256": "73f683de7f6887fe000633b52893779a9e7aa0f0a0f6fb03263d0895f15cade0",
+        "complete_assignment": true,
+        "schedule_sha256": "6810cb0989ef13b3eb5edb8b1a48948742518fdac9b2a0397447eceec895fb0f",
+        "solver_wall_seconds": 2.987332,
+        "source_semantic_sha256": "ce9cf10d9e02f0f1d0217660f3b118717fb8d1acbb980228f5e4df9b92578064",
+        "status": "SATISFIABLE",
+        "variables": 411602
+      },
+      "source_selector_count": 282,
+      "transition": {
+        "atomic": true,
+        "new_selectors": [
+          "r98-i161-Xerr",
+          "r98-i161-Zerr"
+        ],
+        "next_selector_count": 284,
+        "next_selector_state_sha256": "0ddd9be1f3f1eee7e033489d5baf8ec3dac078e33fc516d9b6fe878f7b4c65f9"
+      }
+    },
+    {
+      "direct": {
+        "Xerr": {
+          "canonical_physical_parities_equal": true,
+          "canonical_support_weight": 12,
+          "complete_assignment": true,
+          "formula_sha256": "f8fef0bb6701d0e44073d4e42d52871b24be04e0697c013e80038001f31a6f95",
+          "mechanism_semantic_sha256": "3782121b164dc30afbaec3d53f0baa5071e5d933fb6f0f8df562ce50c13ba79d",
+          "physical_detector_syndrome": [],
+          "physical_logical_action": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "physical_replay": true,
+          "physical_support_weight": 12,
+          "solver_wall_seconds": 24.365641,
+          "status": "SATISFIABLE",
+          "weight": 10
+        },
+        "Zerr": {
+          "canonical_physical_parities_equal": true,
+          "canonical_support_weight": 12,
+          "complete_assignment": true,
+          "formula_sha256": "a66b186d24c384ef36b7f75522c384ccbb071841ad0f76d89f3a59add8639971",
+          "mechanism_semantic_sha256": "9d49d27b759b9b353f879275244250ec697d71f795a8e1c68d7f3cfeb0154b11",
+          "physical_detector_syndrome": [],
+          "physical_logical_action": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "physical_replay": true,
+          "physical_support_weight": 14,
+          "solver_wall_seconds": 0.012058,
+          "status": "SATISFIABLE",
+          "weight": 10
+        }
+      },
+      "iteration": 162,
+      "outer": {
+        "assertions": 19166,
+        "clauses": 1398264,
+        "cnf_sha256": "8f6345795c68280708f7385441a0f7a81a4b79b2fbbfc11b935698873109fcac",
+        "complete_assignment": true,
+        "schedule_sha256": "08526d87ff180d99b403d9f24534c89204f9a59f18e7d25c349e6c57db969b0a",
+        "solver_wall_seconds": 2.834649,
+        "source_semantic_sha256": "30af21775d6a02e07e3857fbe8d7a1be070feb1eb623a474d1fb6d22ce98cb9d",
+        "status": "SATISFIABLE",
+        "variables": 411904
+      },
+      "source_selector_count": 284,
+      "transition": {
+        "atomic": true,
+        "new_selectors": [
+          "r98-i162-Xerr",
+          "r98-i162-Zerr"
+        ],
+        "next_selector_count": 286,
+        "next_selector_state_sha256": "9836d362fd04239200a37008ed0441175bdccc05827433c45b7d55c02f4d5458"
+      }
+    },
+    {
+      "direct": {
+        "Xerr": {
+          "canonical_physical_parities_equal": true,
+          "canonical_support_weight": 12,
+          "complete_assignment": true,
+          "formula_sha256": "18526b2e2da3ddb79273b3442b37e337f7a03aa0352abe902b37ebb21f8814b6",
+          "mechanism_semantic_sha256": "72bcabc4b761bab9f5d81af558dbd74814d91961732b407264c4d36d7c44b4c9",
+          "physical_detector_syndrome": [],
+          "physical_logical_action": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "physical_replay": true,
+          "physical_support_weight": 14,
+          "solver_wall_seconds": 15.68359,
+          "status": "SATISFIABLE",
+          "weight": 10
+        },
+        "Zerr": {
+          "canonical_physical_parities_equal": true,
+          "canonical_support_weight": 16,
+          "complete_assignment": true,
+          "formula_sha256": "01ceb2704d8e399db1632f5512ee9f2eb367046f77b16c0d31d808bf83bd573b",
+          "mechanism_semantic_sha256": "648a8640f9cb2471f343f2e475e07f370195e638fecc8a0751105f7c77754377",
+          "physical_detector_syndrome": [],
+          "physical_logical_action": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "physical_replay": true,
+          "physical_support_weight": 24,
+          "solver_wall_seconds": 27.652616,
+          "status": "SATISFIABLE",
+          "weight": 10
+        }
+      },
+      "iteration": 163,
+      "outer": {
+        "assertions": 19168,
+        "clauses": 1398628,
+        "cnf_sha256": "1ae766256aa6138b31437f3be1b90a04405b3261f3a91a5cdb209fffcd00a446",
+        "complete_assignment": true,
+        "schedule_sha256": "7bcfc89a37d73777f3e7e1d9d53c3332d46483938ef3c784b29903395e7118d9",
+        "solver_wall_seconds": 2.781259,
+        "source_semantic_sha256": "b3141242a6da67d2706f69011f19805402c35580ba8fe7a4c9c84a1d6e1fdebc",
+        "status": "SATISFIABLE",
+        "variables": 412007
+      },
+      "source_selector_count": 286,
+      "transition": {
+        "atomic": true,
+        "new_selectors": [
+          "r98-i163-Xerr",
+          "r98-i163-Zerr"
+        ],
+        "next_selector_count": 288,
+        "next_selector_state_sha256": "1cec9932dafd94c3ec869bcfbf00c0e7077b04721317990d563b3b200e22e508"
+      }
+    },
+    {
+      "direct": {
+        "Xerr": {
+          "canonical_physical_parities_equal": true,
+          "canonical_support_weight": 12,
+          "complete_assignment": true,
+          "formula_sha256": "d9cfac05e6be6a2768e1afadd34af9d4b571e1398912d952735b04bc4634a8de",
+          "mechanism_semantic_sha256": "5f0e4c90e0c5a3eb3678c16e9dea0822483e1a8d42d8af48ab5c683e602cc613",
+          "physical_detector_syndrome": [],
+          "physical_logical_action": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "physical_replay": true,
+          "physical_support_weight": 14,
+          "solver_wall_seconds": 111.996486,
+          "status": "SATISFIABLE",
+          "weight": 10
+        },
+        "Zerr": {
+          "canonical_physical_parities_equal": true,
+          "canonical_support_weight": 12,
+          "complete_assignment": true,
+          "formula_sha256": "5571ba0914f43b562b8b45987e92ba57ff5e5ddb925f21399e3c622076647269",
+          "mechanism_semantic_sha256": "ef960158ef57acf1920e1b82cacc65bc19a9f15c728c9599e69126f5b44dbfb5",
+          "physical_detector_syndrome": [],
+          "physical_logical_action": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "physical_replay": true,
+          "physical_support_weight": 16,
+          "solver_wall_seconds": 20.545819,
+          "status": "SATISFIABLE",
+          "weight": 10
+        }
+      },
+      "iteration": 164,
+      "outer": {
+        "assertions": 19170,
+        "clauses": 1399132,
+        "cnf_sha256": "c46d1123a89ac179d9e1e7f639df66b3e9184c79b9cb2f1c3a897a82e3ad9cbe",
+        "complete_assignment": true,
+        "schedule_sha256": "8ae66c4a0acb2e93627de9b917b783079c5e135e9f98f5e636245122c3b1263c",
+        "solver_wall_seconds": 3.085083,
+        "source_semantic_sha256": "046d1015a27d487abe0286596fe3636267bae9dbb9460867a20dab2545359bc4",
+        "status": "SATISFIABLE",
+        "variables": 412148
+      },
+      "source_selector_count": 288,
+      "transition": {
+        "atomic": true,
+        "new_selectors": [
+          "r98-i164-Xerr",
+          "r98-i164-Zerr"
+        ],
+        "next_selector_count": 290,
+        "next_selector_state_sha256": "7cb82a90a07da2ffa563308a13e9e75490f24878e4997b28b984655948de91d9"
+      }
+    },
+    {
+      "direct": {
+        "Xerr": {
+          "canonical_physical_parities_equal": true,
+          "canonical_support_weight": 12,
+          "complete_assignment": true,
+          "formula_sha256": "5aa19202341e557cc4a347b61d8a014287ab608193f19c8d7f417ed78d4ff9b9",
+          "mechanism_semantic_sha256": "b523e360fe1f43db6009b4c59a95ff0cc1b8278082cc5afaf6892c88c89cbbcb",
+          "physical_detector_syndrome": [],
+          "physical_logical_action": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "physical_replay": true,
+          "physical_support_weight": 12,
+          "solver_wall_seconds": 12.694226,
+          "status": "SATISFIABLE",
+          "weight": 10
+        },
+        "Zerr": {
+          "canonical_physical_parities_equal": true,
+          "canonical_support_weight": 12,
+          "complete_assignment": true,
+          "formula_sha256": "1a713e93cdca96dfa756d6bd928da5eb679f1c6891f5b032906deca8f87f62df",
+          "mechanism_semantic_sha256": "6c052120e11075a25c43f9b6c31981f0c19bac0449b46fb16c94e25eeef16593",
+          "physical_detector_syndrome": [],
+          "physical_logical_action": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "physical_replay": true,
+          "physical_support_weight": 16,
+          "solver_wall_seconds": 11.832202,
+          "status": "SATISFIABLE",
+          "weight": 10
+        }
+      },
+      "iteration": 165,
+      "outer": {
+        "assertions": 19172,
+        "clauses": 1399992,
+        "cnf_sha256": "ef4a5b01e4ffa9250fba135eaba509b54766a6e7c99be8e0ef1f2e499bf621a2",
+        "complete_assignment": true,
+        "schedule_sha256": "625f96184fc4fdfc925cb888a97fb32c88854f6ad74d6548955e5711feb5e7de",
+        "solver_wall_seconds": 3.028668,
+        "source_semantic_sha256": "4cca472bb90833139694ccd8a60f22ee09e6cca8b35a5723d690d093c76a1a7b",
+        "status": "SATISFIABLE",
+        "variables": 412293
+      },
+      "source_selector_count": 290,
+      "transition": {
+        "atomic": true,
+        "new_selectors": [
+          "r98-i165-Xerr",
+          "r98-i165-Zerr"
+        ],
+        "next_selector_count": 292,
+        "next_selector_state_sha256": "8214d99f6001973ef43af999f39ed0e5e334016328cb40d1356ba396e68252da"
+      }
+    },
+    {
+      "direct": {
+        "Xerr": {
+          "canonical_physical_parities_equal": true,
+          "canonical_support_weight": 16,
+          "complete_assignment": true,
+          "formula_sha256": "7f816129ed6b9ad2169c458c3f6aaa67749585fbd0e13c2ae570395f41bb8fae",
+          "mechanism_semantic_sha256": "cee6767dd5970c9851364b0d00fd1fc056da2b77a79eb77de5b30627078ed91f",
+          "physical_detector_syndrome": [],
+          "physical_logical_action": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0
+          ],
+          "physical_replay": true,
+          "physical_support_weight": 22,
+          "solver_wall_seconds": 6.850736,
+          "status": "SATISFIABLE",
+          "weight": 10
+        },
+        "Zerr": {
+          "canonical_physical_parities_equal": true,
+          "canonical_support_weight": 12,
+          "complete_assignment": true,
+          "formula_sha256": "0c55ae694685fbb9ea7ba4d9a3935198eae294e522b57c47e62055f79b8101ba",
+          "mechanism_semantic_sha256": "9c159ae1a986691abf8a2e76a53522f72a94afa6a70b464e58d8e76730bed005",
+          "physical_detector_syndrome": [],
+          "physical_logical_action": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "physical_replay": true,
+          "physical_support_weight": 14,
+          "solver_wall_seconds": 23.885935,
+          "status": "SATISFIABLE",
+          "weight": 10
+        }
+      },
+      "iteration": 166,
+      "outer": {
+        "assertions": 19174,
+        "clauses": 1400178,
+        "cnf_sha256": "dd6e14e3b4e3ea6d7557177ca7bf787563c6f36863e7cbbff23354c1935d455a",
+        "complete_assignment": true,
+        "schedule_sha256": "2338f4d857dc4bba59e2aa758b8bd06e84460ba1385f45456235b3afb1481908",
+        "solver_wall_seconds": 2.996862,
+        "source_semantic_sha256": "f93440255936c63d7af5cb964bab5ebebe71b879ab48f825e47be32642a8dc1b",
+        "status": "SATISFIABLE",
+        "variables": 412350
+      },
+      "source_selector_count": 292,
+      "transition": {
+        "atomic": true,
+        "new_selectors": [
+          "r98-i166-Xerr",
+          "r98-i166-Zerr"
+        ],
+        "next_selector_count": 294,
+        "next_selector_state_sha256": "6a65b409259d5e4917efbb8c4e57e1aebd0c958184c9c697d2d9ac4017bfb92f"
+      }
+    },
+    {
+      "direct": {
+        "Xerr": {
+          "canonical_physical_parities_equal": true,
+          "canonical_support_weight": 12,
+          "complete_assignment": true,
+          "formula_sha256": "adaceb058afc3a85338e8bdae8933afbfab116152059aef0a0aa36a700f54ffc",
+          "mechanism_semantic_sha256": "285591ad420bcc08db019f5520cc04fef5da5a797df129c47a94aa9193c146bb",
+          "physical_detector_syndrome": [],
+          "physical_logical_action": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "physical_replay": true,
+          "physical_support_weight": 14,
+          "solver_wall_seconds": 54.5735,
+          "status": "SATISFIABLE",
+          "weight": 10
+        },
+        "Zerr": {
+          "canonical_physical_parities_equal": true,
+          "canonical_support_weight": 12,
+          "complete_assignment": true,
+          "formula_sha256": "fa91ab11a2455e7d0f84580bb2207e618795b022ee4e33a85babb70762ee24bf",
+          "mechanism_semantic_sha256": "40fc97c76ec1f1ec1ec8740c71c5fe91b96f5f6b2829a48963fc763c4e65e644",
+          "physical_detector_syndrome": [],
+          "physical_logical_action": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "physical_replay": true,
+          "physical_support_weight": 16,
+          "solver_wall_seconds": 31.762795,
+          "status": "SATISFIABLE",
+          "weight": 10
+        }
+      },
+      "iteration": 167,
+      "outer": {
+        "assertions": 19176,
+        "clauses": 1401337,
+        "cnf_sha256": "1fbf319817920564a914a7b4b68a071878044b3deb2350242fd00699a555afe2",
+        "complete_assignment": true,
+        "schedule_sha256": "24a287ccb5ba36cf8d7ecc43f2de4f1a79671e9811a632b7a9d15ad4af360f64",
+        "solver_wall_seconds": 2.824724,
+        "source_semantic_sha256": "db9fab978258fa1f1c01c1ac4404df1be741576f37554e7913b6bb9b74cb72eb",
+        "status": "SATISFIABLE",
+        "variables": 412617
+      },
+      "source_selector_count": 294,
+      "transition": {
+        "atomic": true,
+        "new_selectors": [
+          "r98-i167-Xerr",
+          "r98-i167-Zerr"
+        ],
+        "next_selector_count": 296,
+        "next_selector_state_sha256": "fc68722c7c4477291d045f3900fa5794623d828ba4a430aba83fe54db58b285a"
+      }
+    },
+    {
+      "direct": {
+        "Xerr": {
+          "canonical_physical_parities_equal": true,
+          "canonical_support_weight": 14,
+          "complete_assignment": true,
+          "formula_sha256": "19c1e4dd182b4100383ca3eb50770e08d3ec9eb4304a88d92ca385e9a52a3951",
+          "mechanism_semantic_sha256": "df4f8fe318c0576c6bf93167658581e9a064e8d7505906b2aa8d5e1a3b1a3666",
+          "physical_detector_syndrome": [],
+          "physical_logical_action": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "physical_replay": true,
+          "physical_support_weight": 18,
+          "solver_wall_seconds": 24.942933,
+          "status": "SATISFIABLE",
+          "weight": 10
+        },
+        "Zerr": {
+          "canonical_physical_parities_equal": true,
+          "canonical_support_weight": 14,
+          "complete_assignment": true,
+          "formula_sha256": "8263ada9be713a6c269b5d4c1203d306fd391220ad9bdfbceb9ffd4fd32411ee",
+          "mechanism_semantic_sha256": "f9f04a96db01a203fb07d5a6dbdc042de8ff5d7ac3c727120b67dea6f4b6b08e",
+          "physical_detector_syndrome": [],
+          "physical_logical_action": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "physical_replay": true,
+          "physical_support_weight": 18,
+          "solver_wall_seconds": 6.046095,
+          "status": "SATISFIABLE",
+          "weight": 10
+        }
+      },
+      "iteration": 168,
+      "outer": {
+        "assertions": 19178,
+        "clauses": 1402131,
+        "cnf_sha256": "dcac0489b810eafa30676c7ba684e354b95dd2d29cd35726f0d4fa7edc5a8428",
+        "complete_assignment": true,
+        "schedule_sha256": "f60c92ce13d39219f7eb8327fba912b44eeefa8216c05c84c5778139e170780c",
+        "solver_wall_seconds": 3.076436,
+        "source_semantic_sha256": "b7034ef6a0a0ff9f8bd4c16bf6b03ca8dbcaffc9835a1bc1f6b304c4bb51491b",
+        "status": "SATISFIABLE",
+        "variables": 412789
+      },
+      "source_selector_count": 296,
+      "transition": {
+        "atomic": true,
+        "new_selectors": [
+          "r98-i168-Xerr",
+          "r98-i168-Zerr"
+        ],
+        "next_selector_count": 298,
+        "next_selector_state_sha256": "d70b46bec24813e485275b3c1fd6d7538b5da801087f59d20f6f4229315e3d0e"
+      }
+    },
+    {
+      "direct": {
+        "Xerr": {
+          "canonical_physical_parities_equal": true,
+          "canonical_support_weight": 14,
+          "complete_assignment": true,
+          "formula_sha256": "989601b4a840363835529d4481ab7d721adde780f2426fa673ecb496c212ced8",
+          "mechanism_semantic_sha256": "02577b3eb20d2b872e0fbb54b957d0bd0ca94704500f6e846a57d189b9f6b047",
+          "physical_detector_syndrome": [],
+          "physical_logical_action": [
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "physical_replay": true,
+          "physical_support_weight": 16,
+          "solver_wall_seconds": 6.172203,
+          "status": "SATISFIABLE",
+          "weight": 10
+        },
+        "Zerr": {
+          "canonical_physical_parities_equal": true,
+          "canonical_support_weight": 16,
+          "complete_assignment": true,
+          "formula_sha256": "8bb01b09ace4472fedc7c6fe063f9a5e2f00e04a42917ddd6c1965c9aca840f6",
+          "mechanism_semantic_sha256": "0eaa71042ca228eee7560b720dabe95ba8cde93f10ef2cce2c7feeae1cb0d96d",
+          "physical_detector_syndrome": [],
+          "physical_logical_action": [
+            1,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          "physical_replay": true,
+          "physical_support_weight": 18,
+          "solver_wall_seconds": 6.22079,
+          "status": "SATISFIABLE",
+          "weight": 10
+        }
+      },
+      "iteration": 169,
+      "outer": {
+        "assertions": 19180,
+        "clauses": 1402760,
+        "cnf_sha256": "82ca031eef0614559dfa3272b2ad8ede0665d2c4ba7531f36dce4491787cc25f",
+        "complete_assignment": true,
+        "schedule_sha256": "de35e1dbbd195bb5b5b512ed74a58d9eb6fcc0acc3665f85dc7923275d21f226",
+        "solver_wall_seconds": 2.958163,
+        "source_semantic_sha256": "06dc9c19793639ef528280336561dd254c07e3c9d6cfb38b726af1bfee9899f5",
+        "status": "SATISFIABLE",
+        "variables": 412964
+      },
+      "source_selector_count": 298,
+      "transition": {
+        "atomic": true,
+        "new_selectors": [
+          "r98-i169-Xerr",
+          "r98-i169-Zerr"
+        ],
+        "next_selector_count": 300,
+        "next_selector_state_sha256": "eb096caf50728a85750178ba919c3f338bf2308e7b899d4e039c6cb184b790fb"
+      }
+    },
+    {
+      "direct": {
+        "Xerr": {
+          "canonical_physical_parities_equal": true,
+          "canonical_support_weight": 16,
+          "complete_assignment": true,
+          "formula_sha256": "f6b593c10e762ab5f3c6e07d2bc0b46e5c98d18e2c0ae68deb1c7e70febea62c",
+          "mechanism_semantic_sha256": "a5ee68ca48d193f108c6f71629681efcb06b770fec902575871486c759bf03f5",
+          "physical_detector_syndrome": [],
+          "physical_logical_action": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          "physical_replay": true,
+          "physical_support_weight": 22,
+          "solver_wall_seconds": 32.98552,
+          "status": "SATISFIABLE",
+          "weight": 10
+        },
+        "Zerr": {
+          "canonical_physical_parities_equal": true,
+          "canonical_support_weight": 12,
+          "complete_assignment": true,
+          "formula_sha256": "3b2cf9f082a251ebc65323d3af15d805f264915dcbc3ec88490b044e1c133f41",
+          "mechanism_semantic_sha256": "147e2a9fe46bac0d671d001f12eb5f34c853304c4ec19df29c6ae0debb3d5f39",
+          "physical_detector_syndrome": [],
+          "physical_logical_action": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1
+          ],
+          "physical_replay": true,
+          "physical_support_weight": 16,
+          "solver_wall_seconds": 18.312413,
+          "status": "SATISFIABLE",
+          "weight": 10
+        }
+      },
+      "iteration": 170,
+      "outer": {
+        "assertions": 19182,
+        "clauses": 1404050,
+        "cnf_sha256": "90039237a2bfaf65322375cf6dd962eb8331c890b3bb95f71f2d03a5db6748ac",
+        "complete_assignment": true,
+        "schedule_sha256": "361cce54b564535c44c10663ee5d08c080d5d21aeb3112267483b8432265e2c7",
+        "solver_wall_seconds": 2.88441,
+        "source_semantic_sha256": "8bbd74a4ed714cdaeac653f78ac329f0dd28d42f01ebaff46f0744569fa69198",
+        "status": "SATISFIABLE",
+        "variables": 413226
+      },
+      "source_selector_count": 300,
+      "transition": {
+        "atomic": true,
+        "new_selectors": [
+          "r98-i170-Xerr",
+          "r98-i170-Zerr"
+        ],
+        "next_selector_count": 302,
+        "next_selector_state_sha256": "fbbea94475e2ef30fd1a2f71f869b420b42682e6dacaed1710e0d2030eb41399"
+      }
+    },
+    {
+      "direct": {
+        "Xerr": {
+          "canonical_physical_parities_equal": true,
+          "canonical_support_weight": 16,
+          "complete_assignment": true,
+          "formula_sha256": "b909f4eb1f86e4e4e8d70777ca1b9b18e0b132a7aaf43f65ef229e72768a59c5",
+          "mechanism_semantic_sha256": "650dbcde2b77a19aab70be901f23aca92857143f64f338de29a0036c2ea4933e",
+          "physical_detector_syndrome": [],
+          "physical_logical_action": [
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "physical_replay": true,
+          "physical_support_weight": 20,
+          "solver_wall_seconds": 6.655985,
+          "status": "SATISFIABLE",
+          "weight": 10
+        },
+        "Zerr": {
+          "canonical_physical_parities_equal": true,
+          "canonical_support_weight": 12,
+          "complete_assignment": true,
+          "formula_sha256": "4eccd1b9c52bd8527d61813763c04fd6ca3261ffd020b0ffe65398f5f705d46d",
+          "mechanism_semantic_sha256": "082c79c16eeb1bf33f024b1ec716c264926e7b9dcf339ecffe26ed9223de40a8",
+          "physical_detector_syndrome": [],
+          "physical_logical_action": [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "physical_replay": true,
+          "physical_support_weight": 12,
+          "solver_wall_seconds": 0.26626,
+          "status": "SATISFIABLE",
+          "weight": 10
+        }
+      },
+      "iteration": 171,
+      "outer": {
+        "assertions": 19184,
+        "clauses": 1405059,
+        "cnf_sha256": "3dc2cf8427b5f119e5ef8729a3ad0abeb29f06df29c69fe47c23e931124b0a0c",
+        "complete_assignment": true,
+        "schedule_sha256": "f5682091cb397f7d5fd6ea9a52ec2f1af883f9eb13c6371c8a7d760ae38c8570",
+        "solver_wall_seconds": 2.951461,
+        "source_semantic_sha256": "ac14f9b003000d9eaab552fa39e25595ef08e60d064f759590b7c557cb8076c1",
+        "status": "SATISFIABLE",
+        "variables": 413413
+      },
+      "source_selector_count": 302,
+      "transition": {
+        "atomic": true,
+        "new_selectors": [
+          "r98-i171-Xerr",
+          "r98-i171-Zerr"
+        ],
+        "next_selector_count": 304,
+        "next_selector_state_sha256": "a5c64ae41f474844ecd3ac41829331f54d419a81573e4f0e11528db0b49e25d1"
+      }
+    }
+  ],
+  "limitations": [
+    "No outer or direct query returned UNSAT; there is no Gross absence certificate.",
+    "The order-5 same-sector GF(2) investigation covers only its declared finite domain.",
+    "A positive mechanism kills only the concrete source outer candidate.",
+    "The frozen root and gap-via-lift route remain conjectured; D*_Gross remains {11,12}."
+  ],
+  "outer_sat_count": 12,
+  "processes": {
+    "all_reaped": true,
+    "disclosed_corrected_failures": [
+      [
+        "independent_campaign_audit_attempt1.json",
+        1
+      ],
+      [
+        "order5_Xerr_exact_enum.json",
+        -6
+      ],
+      [
+        "order5_compile.json",
+        1
+      ]
+    ],
+    "record_count": 214,
+    "science_solver_children": 36,
+    "survivors": 0,
+    "timeouts": 0
+  },
+  "repair_entered": false,
+  "root_status": "CONJECTURED",
+  "route_status": "CONJECTURED",
+  "sat_trace_summaries": {
+    "all_empty_clause_lines_zero": true,
+    "all_full_traces_deleted_as_noncertificates": true,
+    "count": 36
+  },
+  "schema": "circdist-gross-round98-independent-campaign-audit-v1",
+  "scientific_verdict": "MATERIAL-CHECKED-PROGRESS-NOT-CLOSED",
+  "seconds": 27.19517,
+  "status": "PASS",
+  "strict_serial": true,
+  "synthesis": {
+    "coverage_checked": true,
+    "eligible_results_with_multiplicity": 40153,
+    "finite_domain_size": 351359546,
+    "retained_terms": 0,
+    "unique_eligible_results": 40153
+  },
+  "timeout_count": 0,
+  "unknown_count": 0,
+  "unsat_count": 0
+}

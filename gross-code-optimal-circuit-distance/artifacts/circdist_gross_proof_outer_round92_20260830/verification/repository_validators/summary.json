@@ -1,0 +1,201 @@
+{
+  "checks": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "tools/proof_dag_check.py",
+        "--problem",
+        "circdist"
+      ],
+      "ended_unix": 1788129921.81619,
+      "expected_returncode": 0,
+      "name": "proof_dag_circdist",
+      "returncode": 0,
+      "returncode_matches": true,
+      "schema": "circdist-round92-validator-run-v1",
+      "started_unix": 1788129921.5257962,
+      "stderr": "verification/repository_validators/proof_dag_circdist.stderr.log",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "verification/repository_validators/proof_dag_circdist.stdout.log",
+      "stdout_bytes": 43,
+      "stdout_sha256": "c43e0a23f474af4c5b8e013612205d543c71c16b623dd0e3dde3d38615667068",
+      "wall_seconds": 0.290394
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "tools/proof_dag_check.py",
+        "--problem",
+        "circdist",
+        "--previous-state",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round92_20260830/bindings/initial_proof_dag"
+      ],
+      "ended_unix": 1788129922.452607,
+      "expected_returncode": 0,
+      "name": "proof_dag_previous_state",
+      "returncode": 0,
+      "returncode_matches": true,
+      "schema": "circdist-round92-validator-run-v1",
+      "started_unix": 1788129921.817025,
+      "stderr": "verification/repository_validators/proof_dag_previous_state.stderr.log",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "verification/repository_validators/proof_dag_previous_state.stdout.log",
+      "stdout_bytes": 94,
+      "stdout_sha256": "f624c885f0163b23345d74f646e2524abf16d9f8e45d06cdf75f06205d3905ed",
+      "wall_seconds": 0.635582
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "tools/check_circdist_migration.py"
+      ],
+      "ended_unix": 1788129923.569141,
+      "expected_returncode": 0,
+      "name": "circdist_migration",
+      "returncode": 0,
+      "returncode_matches": true,
+      "schema": "circdist-round92-validator-run-v1",
+      "started_unix": 1788129922.453314,
+      "stderr": "verification/repository_validators/circdist_migration.stderr.log",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "verification/repository_validators/circdist_migration.stdout.log",
+      "stdout_bytes": 84,
+      "stdout_sha256": "abee5d9ee3574c0ae64911a0e4035bac035b2deef8b347d85552760609c0bf24",
+      "wall_seconds": 1.115827
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "tools/test_release_contracts.py"
+      ],
+      "ended_unix": 1788129923.8160472,
+      "expected_returncode": 0,
+      "name": "release_contracts",
+      "returncode": 0,
+      "returncode_matches": true,
+      "schema": "circdist-round92-validator-run-v1",
+      "started_unix": 1788129923.569906,
+      "stderr": "verification/repository_validators/release_contracts.stderr.log",
+      "stderr_bytes": 113,
+      "stderr_sha256": "a73af55777ac75431b26999d7b3aa44ee16d28e0010e2ad135ba8c4d687637ee",
+      "stdout": "verification/repository_validators/release_contracts.stdout.log",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "wall_seconds": 0.246141
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "tools/test_dag_contracts.py"
+      ],
+      "ended_unix": 1788129924.308874,
+      "expected_returncode": 0,
+      "name": "dag_contracts",
+      "returncode": 0,
+      "returncode_matches": true,
+      "schema": "circdist-round92-validator-run-v1",
+      "started_unix": 1788129923.8167481,
+      "stderr": "verification/repository_validators/dag_contracts.stderr.log",
+      "stderr_bytes": 123,
+      "stderr_sha256": "4486deab730a5620b464882ebac869a04d8c4453baf58dcac9a93505179dd653",
+      "stdout": "verification/repository_validators/dag_contracts.stdout.log",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "wall_seconds": 0.492126
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "tools/lean_dag_check.py",
+        "--selftest"
+      ],
+      "ended_unix": 1788129924.507265,
+      "expected_returncode": 0,
+      "name": "lean_dag_selftest",
+      "returncode": 0,
+      "returncode_matches": true,
+      "schema": "circdist-round92-validator-run-v1",
+      "started_unix": 1788129924.30946,
+      "stderr": "verification/repository_validators/lean_dag_selftest.stderr.log",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "verification/repository_validators/lean_dag_selftest.stdout.log",
+      "stdout_bytes": 36931,
+      "stdout_sha256": "6b6af7115d22da03011ac29ca3ffaca7975d9ee627ead4957f8a113ba978109d",
+      "wall_seconds": 0.197805
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round92_20260830/source/duplicate_yaml_scan.py",
+        "--root",
+        "<repo>",
+        "--output",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round92_20260830/verification/repository_validators/duplicate_yaml.result.json"
+      ],
+      "ended_unix": 1788129933.214753,
+      "expected_returncode": 0,
+      "name": "duplicate_yaml",
+      "returncode": 0,
+      "returncode_matches": true,
+      "schema": "circdist-round92-validator-run-v1",
+      "started_unix": 1788129924.50798,
+      "stderr": "verification/repository_validators/duplicate_yaml.stderr.log",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "verification/repository_validators/duplicate_yaml.stdout.log",
+      "stdout_bytes": 114,
+      "stdout_sha256": "55f1652e13afd5dc71b9f217d369ee3186db72358b5f9c581d3b3d112d3b60e3",
+      "wall_seconds": 8.706773
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "ended_unix": 1788129933.2530901,
+      "expected_returncode": 0,
+      "name": "git_diff_check",
+      "returncode": 0,
+      "returncode_matches": true,
+      "schema": "circdist-round92-validator-run-v1",
+      "started_unix": 1788129933.2155259,
+      "stderr": "verification/repository_validators/git_diff_check.stderr.log",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "verification/repository_validators/git_diff_check.stdout.log",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "wall_seconds": 0.037564
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "tools/evidence_closure_check.py",
+        "--problem",
+        "circdist"
+      ],
+      "ended_unix": 1788129933.924984,
+      "expected_returncode": 1,
+      "name": "evidence_closure",
+      "returncode": 1,
+      "returncode_matches": true,
+      "schema": "circdist-round92-validator-run-v1",
+      "started_unix": 1788129933.253713,
+      "stderr": "verification/repository_validators/evidence_closure.stderr.log",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "verification/repository_validators/evidence_closure.stdout.log",
+      "stdout_bytes": 76323,
+      "stdout_sha256": "818cd83dc1d039804290e8554344a060bf38c263ef0e3299a8801b84093cb96f",
+      "wall_seconds": 0.671271
+    }
+  ],
+  "evidence_closure_expected_semantics": "exit 1 is accepted only after a separate parser proves every reported unlinked path lies under the single new Round92 package",
+  "schema": "circdist-round92-repository-validator-summary-v1",
+  "status": "PASS"
+}

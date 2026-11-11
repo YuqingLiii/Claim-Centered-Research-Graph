@@ -1,0 +1,175 @@
+id: HEXT.tensor-strong-convergence-rate-gate
+role: obstruction
+aliases:
+- bordenave-collins-rate-gate
+claim: >-
+  The published quantitative estimate underlying Bordenave--Collins tensor strong convergence
+  cannot by itself certify a Hayden--Penington full-size extensive gap for the new construction,
+  even when the generator count m is allowed to vary jointly with depth J. Bounded m forces the
+  per-leg matrix dimension to grow with depth; unbounded m makes the free defect per logarithmic
+  dimension cost vanish already from c_m<=log(m)/m and D>=m^70.
+assumptions:
+  bordenave-collins-fixed-depth-tensor-strong-convergence:
+    kind: external-theorem
+    statement: >-
+      For fixed integers m>=2 and J>=1, the independent Haar tuple embedded on J tensor legs
+      converges strongly in probability, as the per-leg matrix dimension D tends to infinity, to
+      the regular representation of the direct product F_m^J. The theorem fixes m and J before the
+      limit and states no growing-J threshold D_0(m,J).
+    source:
+      path: channel-additivity-violations/artifacts/holevo-extensive-violation/primary-sources/bordenave-collins-2304.05714.pdf
+      kind: pdf
+      locator: Theorem 9.2, PDF pp. 62-63
+  bordenave-collins-linear-pencil-expectation-factor:
+    kind: external-theorem
+    statement: >-
+      Under m^70<=D and an even integer 2<=p<=D^(1/(16m+80)), Lemma 9.3 bounds the expectation
+      norm of one matrix-valued linear pencil with coefficient size n by its F_m^J norm times
+      (2n)^((J+1)/p) D^(J(J+1)/(2p)) p^(3J(J+1)/(2p))
+      (1+c/sqrt(D))^J, for a source constant c. This is a one-pencil expectation estimate, not a
+      coefficient-sphere uniform event.
+    source:
+      path: channel-additivity-violations/artifacts/holevo-extensive-violation/primary-sources/bordenave-collins-2304.05714.pdf
+      kind: pdf
+      locator: Lemma 9.3, PDF pp. 63-65
+  bordenave-collins-effective-polynomial-linearization:
+    kind: external-theorem
+    statement: >-
+      For a degree-l polynomial in s positive generators, Corollary 8.2 and Theorem 8.3 give an
+      effective linearization with coefficient dimension at most 2^l(2s)^(2l), relative-error
+      amplification at most 4l^2(2s)^(2l), under epsilon<=(2s)^(-l)l^(-2). This interface is used
+      only as a candidate quantitative blueprint and does not itself assemble a coefficient-uniform
+      tensor-leg theorem.
+    source:
+      path: channel-additivity-violations/artifacts/holevo-extensive-violation/primary-sources/bordenave-collins-2304.05714.pdf
+      kind: pdf
+      locator: Corollary 8.2 and Theorem 8.3, PDF pp. 58-59
+  bordenave-collins-single-pencil-concentration:
+    kind: external-theorem
+    statement: >-
+      For one Haar linear pencil in d independent unitaries and the source normalized Schatten
+      p-norm, 2<=p<=infinity, Lemma 7.4 gives
+      Pr{| ||A_D||_p-E||A_D||_p |>=t||A_F||}<=
+      2 exp(-c D^(1+2/p)t^2/d). The lemma does not state the tensor-leg,
+      coefficient-dependent-linearization, algebraic-kernel and simultaneous-net event needed by
+      the entropy proof.
+    source:
+      path: channel-additivity-violations/artifacts/holevo-extensive-violation/primary-sources/bordenave-collins-2304.05714.pdf
+      kind: pdf
+      locator: Lemma 7.4, PDF pp. 52-53
+assessment:
+  level: PROVED
+  caveats:
+  - This obstructs the present proof certificate, not the true channel family or stronger estimates.
+  - The joint-scaling conclusion concerns the audited Haagerup/Bell coefficient c_m; a different
+    lower bound for the same random channels would require a separate cost audit.
+  summary: >-
+    Lemma 9.3 contains a D^[J(J+1)/(2p)] factor with p at most
+    D^[1/(16m+80)]. Even in the optimistic linear scalar-coefficient case, a bounded entropy loss
+    per leg requires p=Omega(J log D), hence log D(J)=Omega(log J); polynomial linearization and
+    coefficient uniformization only add losses. Theorem 8.3 and Lemma 7.4 suggest an effective
+    but not yet assembled coefficient-uniform threshold with a candidate scale
+    log D_suff=O_m(J log J); even if that bookkeeping lemma is granted, it is subextensive. A
+    direct coefficient net with generic Haar concentration is exponentially costly in J. Allowing
+    m to grow does not help because the free-gap coefficient is at most log(m)/m while the theorem
+    requires D>=m^70, giving certified gap/cost ratio at most 1/(70m). A separate Bell-vector
+    argument also rules out replacing this growing-level estimate by a small-distortion complete
+    bound for one fixed finite unitary tuple. Independent review passed the exact proof-method
+    obstruction and all repaired source interfaces.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/TENSOR_STRONG_CONVERGENCE_RATE_GATE_20260829.md
+      kind: text
+      locator: "## Necessary growth inside this certificate"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/TENSOR_STRONG_CONVERGENCE_RATE_GATE_20260829.md
+      kind: text
+      locator: "## Joint scaling of generator count and depth does not rescue the certificate"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/PRODUCT_HAAR_DEPTH_DIMENSION_QUANTITATIVE_AUDIT_20260830.md
+      kind: text
+      locator: "## 9. Strongest strict conclusion and next atom"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/primary-sources/bordenave-collins-2304.05714.pdf
+      kind: pdf
+      locator: Lemma 7.4, Theorem 8.3, Theorem 9.2, and Lemma 9.3, PDF pp. 52-53 and 57-65
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FINITE_UNITARY_CB_DISTORTION_OBSTRUCTION_20260829.md
+      kind: text
+      locator: "## Consequence"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/TENSOR_STRONG_CONVERGENCE_RATE_GATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Findings HEXT-RG-IR-01--HEXT-RG-IR-07
+      scope: >-
+        Independently passed the exact proof-certificate obstruction mathematics and identified
+        the now-repaired machine-visible external-theorem interface as the sole completion blocker.
+      reviewed_hash: sha256:4dadeb060c65e6b31e4db969da267e732d758d5f609ae0914d2bcb3c4ec7f37d
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/TENSOR_STRONG_CONVERGENCE_RATE_GATE_REPAIR_AMENDMENT_REVIEW_20260831.md
+      kind: review
+      locator: "## Final amendment verdict"
+      scope: >-
+        Independently passed the four newly registered Bordenave--Collins theorem interfaces at
+        the unchanged exact claim hash and preserved the proof-method-only scope.
+      reviewed_hash: sha256:4dadeb060c65e6b31e4db969da267e732d758d5f609ae0914d2bcb3c4ec7f37d
+frontier:
+  improved-uniform-estimate:
+    task: >-
+      Prove or refute an explicit high-probability coefficient-uniform event with every J,D,
+      effective-linearization, algebraic-kernel, tail and net dependence recorded. This can quantify
+      the absolute-unbounded construction but cannot prove full size unless a new gap term pays for
+      J log D. For full size, seek a fixed-D all-depth physical entropy estimate, a positive finite-
+      dimensional regularized cross defect, or a new family whose gap pays all dimension cost.
+    kind: gate
+    since: 2026-08-29
+events:
+  quantitative-rate-gate-independently-proved:
+    date: '2026-08-31'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      Independent review passed the exact bounded- and unbounded-generator certificate-rate
+      obstruction after all machine-visible source interfaces were repaired. This is not a
+      channel impossibility theorem and does not promote the full-size root.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/TENSOR_STRONG_CONVERGENCE_RATE_GATE_REPAIR_AMENDMENT_REVIEW_20260831.md
+      kind: review
+      locator: "## Final amendment verdict"
+  quantitative-source-interfaces-registered:
+    date: '2026-08-31'
+    type: repair-applied
+    summary: >-
+      Registered the exact fixed-depth convergence, one-pencil expectation, effective
+      linearization and single-pencil concentration interfaces requested by independent review;
+      the level remains CONJECTURED pending amendment review.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/TENSOR_STRONG_CONVERGENCE_RATE_GATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Finding HEXT-RG-IR-07
+  quantitative-gate-created:
+    date: '2026-08-29'
+    type: created
+    summary: >-
+      Audited Lemma 9.3 and isolated its depth-versus-dimension loss as a proof-method obstruction
+      to promoting the absolute-unbounded construction to full-size extensivity.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/TENSOR_STRONG_CONVERGENCE_RATE_GATE_20260829.md
+      kind: text
+  joint-scaling-gate-added:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Closed the remaining m=m(J) loophole: unbounded m loses against the mandatory D>=m^70 cost,
+      while bounded m reduces to the existing depth-versus-dimension obstruction.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/TENSOR_STRONG_CONVERGENCE_RATE_GATE_20260829.md
+      kind: text
+  depth-dimension-interface-audited:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Separated fixed-depth convergence, the linear-pencil expectation estimate, effective
+      polynomial linearization, coefficient-net concentration, and full-size cost. The new audit
+      records a possible subextensive effective upper-scale blueprint but confirms that the
+      published factor already forces dimension growth incompatible with this certificate proving
+      Hayden--Penington full-size extensivity.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/PRODUCT_HAAR_DEPTH_DIMENSION_QUANTITATIVE_AUDIT_20260830.md
+      kind: text

@@ -1,0 +1,67 @@
+{
+  "all_assignments_clause_checked": true,
+  "all_outer_legality_replays_passed": true,
+  "all_raw_physical_replays_passed": true,
+  "batch": {
+    "Xerr_sat": 24,
+    "Zerr_sat": 24,
+    "accepted_absence_proofs": 0,
+    "completed_dual_sector_candidates": 24,
+    "generalized_blocks_added": 0,
+    "iterations": [
+      6,
+      29
+    ],
+    "new_exact_sound_blocks": 48,
+    "outer_sat": 24,
+    "repair_entered": false,
+    "root_closed": false,
+    "timeouts": 0,
+    "unknown": 0,
+    "unsat": 0
+  },
+  "claim_boundary": {
+    "Dstar_interval_unchanged": [
+      11,
+      12
+    ],
+    "does_not_establish": [
+      "sector absence",
+      "arbitrary-round repair",
+      "outer exhaustion",
+      "D*=11",
+      "D*=12",
+      "canonical promotion"
+    ]
+  },
+  "date": "2026-08-29",
+  "frozen_problem": "Gross [[144,12,12]] single-ancilla CNOT scheduling with legal global X/Z interleaving",
+  "inherited": {
+    "block_breakdown": {
+      "round62": 20,
+      "round63_exploratory_pair": 0,
+      "round63_unary": 1440,
+      "round69_generalized": 4740,
+      "sealed_dynamic": 12
+    },
+    "round69_full_verifier": "PASS",
+    "round69_root_seal_sha256": "aad4434050b1b64d3907b990e8279a2b25b2b4e29abcebf585fb885f3dbab647",
+    "round70_review_sha256": "b2fe38fd6adb1ef974624a49b84b7a61620a5c97a531155aac01fc39dbfbaabe",
+    "start_blocks": 6212,
+    "start_iteration": 6
+  },
+  "restart": {
+    "dynamic_blocks_inherited_round69": 12,
+    "dynamic_blocks_new_round71": 48,
+    "dynamic_blocks_total": 60,
+    "exploratory_round63_pair_clauses_installed": 0,
+    "next_iteration": 30,
+    "next_outer_total_blocks": 6260,
+    "round62_blocks": 20,
+    "round63_unary_blocks": 1440,
+    "round69_generalized_blocks": 4740,
+    "state": "cegar/dynamic_blocks.json"
+  },
+  "schema": "round71-gross-exact-cegar-result-v1",
+  "verdict": "MATERIAL-CHECKED-PROGRESS-NOT-CLOSED"
+}

@@ -1,0 +1,36 @@
+id: GROTHD4.spectral.support-only-no-go
+role: obstruction
+aliases:
+- D4-SUPPORT-ONLY-CG-NO-GO
+claim: >-
+  The support split 217+83 alone does not imply
+  w_9/(alpha beta)>=1/6000 for complementary ternary pairs.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    The exact checker contains an explicit complementary ternary pair with
+    support split 217+83 and w_9/(alpha beta)<1/6000. This refutes closure by
+    support size alone but not stability statements that also use the Bell
+    objective or nonradial invariants. The exact counterexample awaits
+    independent review.
+  basis:
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-cg-rankone-identity-20260830.md
+      kind: text
+      locator: Section 6
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_cg_rankone_identity_checker.py
+      kind: code
+frontier:
+  independent-review:
+    task: Independently verify the explicit ternary pair and exact ratio bound.
+    kind: review
+    since: '2026-08-31'
+events:
+  registered-2026-08-31:
+    date: '2026-08-31'
+    type: created
+    summary: Registered the exact author-side support-only counterexample.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-cg-rankone-identity-20260830.md
+      kind: text
+      locator: Section 6

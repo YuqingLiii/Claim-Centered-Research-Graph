@@ -1,0 +1,31 @@
+id: HAEQ.universal-additivity-equivalence
+role: proof
+aliases:
+- shor-equivalence
+claim: >-
+  At the level of universal finite-dimensional statements, Holevo additivity, minimum-output
+  von-Neumann entropy additivity, entanglement-of-formation additivity and strong superadditivity
+  are equivalent; this is an existence-level equivalence and does not preserve a specified witness.
+assumptions:
+  shor-2004:
+    kind: external-theorem
+    statement: >-
+      Shor proves equivalence of the four universal additivity conjectures using constrained
+      Holevo quantities and auxiliary constructions.
+    source:
+      path: channel-additivity-violations/artifacts/holevo-additivity-equality/PRIMARY_SOURCE_AUDIT_20260829.md
+      locator: "`Shor quantifiers`"
+      kind: text
+assessment:
+  level: CONJECTURED
+  summary: >-
+    Shor Theorem 1, PDF pp. 5-6, has been checked against the frozen universal claim. The
+    witness-nonpreservation caveat is explicit; independent review is still required.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-additivity-equality/PRIMARY_SOURCE_AUDIT_20260829.md
+      kind: text
+      locator: "## Shor quantifiers"
+    - path: channel-additivity-violations/artifacts/holevo-additivity-equality/round-1-audit.md
+      kind: text
+      locator: "## 结论"

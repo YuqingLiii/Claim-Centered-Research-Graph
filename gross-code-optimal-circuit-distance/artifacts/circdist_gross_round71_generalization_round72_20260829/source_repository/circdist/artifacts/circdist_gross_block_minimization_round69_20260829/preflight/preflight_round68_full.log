@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "<repo>/circdist/artifacts/circdist_gross_direct360_proof_round68_20260829/verify.py", line 138, in <module>
+    if __name__=='__main__':main()
+  File "<repo>/circdist/artifacts/circdist_gross_direct360_proof_round68_20260829/verify.py", line 130, in main
+    result={'status':'PASS','manifest_entries':manifest,'live_bindings':live_bindings(a.repo_root.resolve()) if a.repo_root else None,
+  File "<repo>/circdist/artifacts/circdist_gross_direct360_proof_round68_20260829/verify.py", line 40, in live_bindings
+    if bad:fail('live source binding mismatch: '+repr(bad))
+  File "<repo>/circdist/artifacts/circdist_gross_direct360_proof_round68_20260829/verify.py", line 14, in fail
+    def fail(msg):raise AssertionError(msg)
+AssertionError: live source binding mismatch: ['circdist/proof-dag/nodes/CIRCDIST.gross.yaml', 'operations/circdist/SCHEDULER.yaml']

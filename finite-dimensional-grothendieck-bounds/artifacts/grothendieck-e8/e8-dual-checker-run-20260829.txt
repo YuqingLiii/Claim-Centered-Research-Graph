@@ -1,0 +1,16 @@
+Command: shasum -a 256 grothendieck-e8/tools/e8_certificate_checker.py grothendieck-e8/tools/e8_dual_certificate_checker.py
+9b7345153bcc10623f2b573d4b2f654706b8f4309b410eb0de3bff0541356f0e  grothendieck-e8/tools/e8_certificate_checker.py
+b236bf804506a712b4584ac75102a294e9f7d09e9012fb098e6535c11670c0fc  grothendieck-e8/tools/e8_dual_certificate_checker.py
+
+Command: python3 grothendieck-e8/tools/e8_certificate_checker.py
+ambient roots, positive roots, filters = 240 120 25080
+F_98 = 2366
+F_104 = 2420
+
+Command: python3 grothendieck-e8/tools/e8_dual_certificate_checker.py
+roots, positive roots, antichains = 240 120 25080
+tight frame: RR^T = 30 I_8
+Bell matrix: B = 3 G - 13 I; B^2 relation checked through G^2 = 30 G
+vector value = 9240
+F_98, F_104 = 2366 2420
+A1+A6 witness: p^2=2366 v^2=2 value=6104

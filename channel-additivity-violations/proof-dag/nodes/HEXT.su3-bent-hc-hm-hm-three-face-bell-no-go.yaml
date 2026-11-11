@@ -1,0 +1,152 @@
+id: HEXT.su3-bent-hc-hm-hm-three-face-bell-no-go
+role: obstruction
+aliases:
+- bent-hc-hm-hm-three-face-no-go
+claim: >-
+  Every SU(3)-covariant qutrit channel supported on the bent cluster
+  ((-3,0),(-2,1),(0,0)) satisfies the Bell-input no-gap inequality for all labels and weights.
+routes:
+  integer-sector-two-side-cover:
+    premises:
+    - HEXT.su3-three-face-cluster-classification
+    - HEXT.su3-fixed-original-side-endpoint-lemma
+    implication: >-
+      Use the two h/m side blocks (-1,1),(1,0) on the integer sectors P>=1 and P=0,Q>=1,
+      producing four- and three-variable 72-endpoint certificates, and retain the existing
+      three-side cover only at P=Q=0. The three certified sectors partition every allowed label.
+    proof:
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_REMAINING_ORIENTATION_PARALLEL_ANALYSIS_20260830.md
+        kind: text
+        locator: "## 4. Weakest bent：整数角切除把五维降为四维/三维"
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/analyze_su3_remaining_orientation_shortcuts.py
+        kind: code
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/certify_su3_reduced_sector_covers.py
+        kind: script
+        locator: main
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_REDUCED_CERTIFIER_IMPLEMENTATION_20260830.md
+        kind: text
+        locator: "## 5. Smoke verification results"
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        Endpoint-aware stress tests are positive off the integer origin, and the global fixed-two
+        route has an exact selected-side counterexample at the origin. The three lower-dimensional
+        exact certificates have not been run, so the route remains proposer-side only. The
+        dedicated checker now passes exact reconstruction, specialization, sector coverage and
+        bounded smoke splits for all three pieces.
+      basis:
+        evidence:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_REMAINING_ORIENTATION_PARALLEL_ANALYSIS_20260830.md
+          kind: text
+          locator: "### 4.3 数值压力"
+  fixed-three-original-side-cover:
+    premises:
+    - HEXT.su3-three-face-cluster-classification
+    - HEXT.su3-fixed-original-side-endpoint-lemma
+    implication: >-
+      Retain the h/c, h/m, and h/m binary blocks, reduce the rest to 36 Gram endpoints, and
+      certify the resulting five-variable compact inequality.
+    proof:
+      sources:
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/certify_su3_weakest_bent_three_face_cluster.py
+        kind: code
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CHAIN_THREE_FACE_SCAN_20260830.md
+        kind: text
+    assessment:
+      level: NUMERICAL
+      caveats:
+      - >-
+        Independent static review passed the current checker design, but the historical live run
+        predates two imported source files and was stopped after that provenance defect was
+        confirmed; only a fresh prehashed source-bound run can support promotion.
+      summary: >-
+        The weakest sampled bent cover stayed positive and the current exact checker passed static
+        independent review. The unbound historical run was stopped; a fresh immutable-source replay
+        remains required.
+      basis:
+        runs:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CHAIN_THREE_FACE_FIXED_THREE_STRESS_RUN_20260830.txt
+          kind: run
+          result: The selected cover retained a sampled margin at least 0.093037809961 bit.
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-extensive-violation/SU3_WEAKEST_BENT_FIXED_THREE_RUNNING_CERTIFICATE_STATIC_PRE_REVIEW_20260830.md
+          kind: review
+          locator: "FINDING-SU3-WB-STATIC-07"
+          scope: >-
+            Static review passed the current configuration, endpoint, original-side, reconstruction,
+            compactification and entropy logic, but found the old process impossible to bind to the
+            post-launch shared-core sources.
+          reviewed_hash: sha256:3c459980bcd30c05ab77b6701b2bdfa73e5babe32b386fb2bea02faf2baee1ac
+assessment:
+  level: NUMERICAL
+  caveats:
+  - >-
+    The stopped historical process is not source-bound to the current checker because two imports
+    changed after launch. A fresh prehashed replay and final transcript review are mandatory.
+  summary: >-
+    The current five-dimensional certificate design passed static independent review, while the
+    sampled result remains only numerical and the promotion-grade fresh execution is pending.
+  basis:
+    routes:
+    - fixed-three-original-side-cover
+    runs:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CHAIN_THREE_FACE_FIXED_THREE_STRESS_RUN_20260830.txt
+      kind: run
+      result: The selected cover retained a sampled margin at least 0.093037809961 bit.
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SU3_WEAKEST_BENT_FIXED_THREE_RUNNING_CERTIFICATE_STATIC_PRE_REVIEW_20260830.md
+      kind: review
+      locator: "FINDING-SU3-WB-STATIC-07"
+      scope: >-
+        Independently passed the current mathematical design but prohibited promotion from the
+        historical process because its launch-time source closure was not preserved.
+      reviewed_hash: sha256:00681fc2009f8475b2db7abf3490667716967fa2f1566b344aa2b04f44bb0212
+frontier:
+  fresh-source-bound-fixed-three-certificate:
+    task: >-
+      Preserve and hash the complete seven-file source closure before launch, run the exact checker
+      to exit zero with a complete transcript, and obtain final independent review.
+    kind: task
+    since: 2026-08-30
+events:
+  weakest-bent-static-review-and-stale-run-stop:
+    date: '2026-08-30'
+    type: review-completed
+    route: fixed-three-original-side-cover
+    summary: >-
+      Independent static review passed the current exact design but found the old run source-unbound;
+      that non-promotable run was stopped and a fresh prehashed replay is now the live gate.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SU3_WEAKEST_BENT_FIXED_THREE_RUNNING_CERTIFICATE_STATIC_PRE_REVIEW_20260830.md
+      kind: review
+      locator: "FINDING-SU3-WB-STATIC-07"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_STALE_SOURCE_RUN_STOP_RECORD_20260830.md
+      kind: text
+      locator: "## Action and observed termination"
+  reduced-sector-checker-implemented:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Implemented and smoke-verified exact reconstruction, specialization and sector coverage for
+      the 4D/3D/3D integer-sector route without starting a full adaptive run.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_REDUCED_CERTIFIER_IMPLEMENTATION_20260830.md
+      kind: text
+  integer-sector-two-side-route-added:
+    date: '2026-08-30'
+    type: route-added
+    route: integer-sector-two-side-cover
+    summary: >-
+      Registered a numerically selected integer-sector cover that isolates the exact failure at
+      P=Q=0 and lowers the remaining exact problems to four and three variables.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_REMAINING_ORIENTATION_PARALLEL_ANALYSIS_20260830.md
+      kind: text
+  orientation-node-created:
+    date: '2026-08-30'
+    type: created
+    summary: Split this orientation from the aggregate bent-chain claim.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CHAIN_THREE_FACE_COVER_COMPLEXITY_20260830.md
+      kind: text

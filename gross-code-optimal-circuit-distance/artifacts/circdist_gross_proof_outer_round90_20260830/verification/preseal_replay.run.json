@@ -1,0 +1,20 @@
+{
+  "command": [
+    "env",
+    "ROUND90_SKIP_MANIFEST=1",
+    "CIRCDIST_PYTHON=/private/tmp/circdist-r72-dispatcher-venv/bin/python",
+    "PACKAGE/replay.sh"
+  ],
+  "expected_returncode": 0,
+  "gross_sat_search_started": false,
+  "log": "verification/preseal_replay.log",
+  "log_bytes": 68176,
+  "log_lf_count": 120,
+  "log_sha256": "90ddec927b76f07f383320c29dcded09f87751a083f4a4f28039bd11e8e49200",
+  "marker_present": true,
+  "name": "preseal_full_package_replay",
+  "required_marker": "ROUND90_PACKAGE_REPLAY_PASS",
+  "returncode": 0,
+  "schema": "circdist-round90-command-record-v1",
+  "status": "PASS"
+}

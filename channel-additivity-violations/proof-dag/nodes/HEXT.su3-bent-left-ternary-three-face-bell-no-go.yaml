@@ -1,0 +1,116 @@
+id: HEXT.su3-bent-left-ternary-three-face-bell-no-go
+role: obstruction
+aliases:
+- bent-left-ternary-three-face-no-go
+claim: >-
+  Every SU(3)-covariant qutrit channel supported on the bent cluster
+  ((-3,3),(-2,1),(0,0)) satisfies the Bell-input no-gap inequality for all labels and weights.
+routes:
+  fixed-three-original-side-cover:
+    premises:
+    - HEXT.su3-three-face-cluster-classification
+    - HEXT.su3-fixed-original-side-endpoint-lemma
+    implication: >-
+      Retain h/m, ternary h/c/m, and h/m blocks, reduce the rest to 24 Gram endpoints, and certify
+      the resulting six-variable inequality.
+    proof:
+      sources:
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/certify_su3_chain_three_face_sixdim_covers.py
+        kind: code
+    assessment:
+      level: PROVED
+      caveats:
+      - The terminal core's final label is hard-coded incorrectly, but command, configuration, progress prefix and complete source closure bind the run to bent-left.
+      summary: >-
+        Exact rational/Bernstein subdivision certified the complete compact six-variable cube
+        with a strictly positive lower margin.
+      basis:
+        evidence:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_BENT_LEFT_TERNARY_EXACT_CERTIFICATE_20260830.md
+          kind: text
+          locator: "## Certificate mechanism"
+        runs:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_BENT_LEFT_TERNARY_EXACT_RUN_20260830.txt
+          kind: run
+          result: >-
+            Exit-zero exact run certified 21058 compact boxes with displayed natural-log margin
+            greater than 6.340626717749e-08.
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-extensive-violation/SU3_BENT_LEFT_TERNARY_EXACT_CERTIFICATE_INDEPENDENT_REVIEW_20260830.md
+          kind: review
+          locator: "FINDING-SU3-BENT-01"
+          scope: >-
+            Independently verified the exact bent-left configuration mapping, endpoint coverage,
+            rational reconstruction, compact Bernstein subdivision, entropy enclosures, terminal
+            provenance and complete local import closure.
+          reviewed_hash: sha256:4381806219e3e9a9b89a8dd8df03cb734633368f2401e7e90247124a9ef0e4ec
+assessment:
+  level: PROVED
+  caveats:
+  - This node covers only the bent-left ternary orientation.
+  - The shared core's hard-coded final text label is a documented presentation defect; immutable configuration and progress evidence identify the executed orientation.
+  summary: >-
+    An exit-zero exact rational/Bernstein certificate covers the full compact parameter cube for
+    this orientation; independent review is pending.
+  basis:
+    routes:
+    - fixed-three-original-side-cover
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_BENT_LEFT_TERNARY_EXACT_CERTIFICATE_20260830.md
+      kind: text
+      locator: "## Statement certified by the run"
+    runs:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_BENT_LEFT_TERNARY_EXACT_RUN_20260830.txt
+      kind: run
+      result: >-
+        Exact run certified all 21058 adaptive boxes; the displayed smallest rigorous
+        natural-log margin exceeded 6.340626717749e-08.
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SU3_BENT_LEFT_TERNARY_EXACT_CERTIFICATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "FINDING-SU3-BENT-01"
+      scope: >-
+        Independently verified both route premises, the route implication, exact configuration,
+        complete compact certificate and source provenance for this atomic orientation only.
+      reviewed_hash: sha256:5ea45de9d9071b8e221d6cf1199d62747c263e3ed046b548741bf3cf85ec3d7f
+frontier:
+  independent-bent-left-certificate-review:
+    task: >-
+      Independently verify the orientation mapping, exact interpolation, Bernstein range logic,
+      entropy enclosures, compact completeness and terminal source hashes.
+    kind: review
+    since: 2026-08-30
+events:
+  exact-bent-left-independent-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    route: fixed-three-original-side-cover
+    summary: Independent review verified both premises and the exact bent-left certificate.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SU3_BENT_LEFT_TERNARY_EXACT_CERTIFICATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "FINDING-SU3-BENT-01"
+  exact-bent-left-certificate-completed:
+    date: '2026-08-30'
+    type: level-change
+    from: NUMERICAL
+    to: CONJECTURED
+    route: fixed-three-original-side-cover
+    summary: >-
+      Registered the completed exit-zero exact rational/Bernstein certificate while withholding
+      PROVED pending independent review.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_BENT_LEFT_TERNARY_EXACT_CERTIFICATE_20260830.md
+      kind: text
+      locator: "## Terminal verdict"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_BENT_LEFT_TERNARY_EXACT_RUN_20260830.txt
+      kind: run
+  orientation-node-created:
+    date: '2026-08-30'
+    type: created
+    summary: Split this orientation from the aggregate bent-chain claim.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CHAIN_THREE_FACE_COVER_COMPLEXITY_20260830.md
+      kind: text

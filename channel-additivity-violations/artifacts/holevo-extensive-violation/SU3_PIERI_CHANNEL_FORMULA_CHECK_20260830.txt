@@ -1,0 +1,15 @@
+Command:
+<home>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 holevo-extensive-violation/tools/check_su3_pieri_channel_formulas.py
+
+Output:
+mixed middle branches checked: 15
+mixed third branches checked: 15
+closest checked margin 2*S_min-S_Bell: -0.046008194281 at (1, 1, 'third')
+SU(3) Pieri-channel formulas passed through total weight 6
+
+Scope:
+The deterministic NumPy calculation recursively constructs every mixed SU(3) irrep with
+p+q<=6, decomposes 3 tensor V_(p,q) by the quadratic Casimir, and checks the exact closed formulas
+for the two lower Pieri branches. It covers 30 mixed branches and is an audit of the symbolic
+all-parameter proof, not a finite-search substitute for that proof.
+

@@ -1,0 +1,25 @@
+id: HEXT.hayden-penington-dichotomy
+role: constraint
+aliases:
+- hp-dichotomy
+claim: >-
+  Hayden--Penington define an extensive violation by finite-dimensional channel families whose
+  input/output qubit sizes and p=1 minimum-output-entropy pair defect are both linear in a common
+  parameter, and argue that either such violations exist or AdS/CFT black holes possess an
+  almost-basis of disentangled microstates; they do not construct the violation branch.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The black-hole branch uses the paper's holographic and semiclassical framework.
+  - The disjunction is not exclusive; the paper leaves open which branch or whether both branches hold.
+  - The paper measures input/output dimensions in qubits. Including the minimal Stinespring
+    environment is constant-factor equivalent because its dimension is at most the product of the
+    input and output dimensions; a padded nonminimal environment must not be charged.
+  summary: >-
+    The definition, Eq. (11), and the two possibilities are page- and hash-bound. Independent review
+    is still required before promotion.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/PRIMARY_SOURCE_AUDIT_20260829.md
+      kind: text
+      locator: "## Hayden--Penington target and dichotomy"

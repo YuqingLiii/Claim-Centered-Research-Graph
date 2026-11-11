@@ -1,0 +1,24 @@
+{
+  "component_named_weight_bound": "For S in {X,Z}, |N_S| <= |N_X union N_Z|.",
+  "conclusion": "Every undetected nontrivial mixed mechanism of total named weight at most 10 has an undetected nontrivial same-sector component of named weight at most 10.",
+  "direct_query_consequence": "Checked absence in both complete unrestricted direct-360 sector queries implies absence of a mixed mechanism at the same named-weight bound.",
+  "frozen_css_linearity": true,
+  "logical_nontriviality_truth_table": {
+    "00": "mixed trivial",
+    "01": "Z component nontrivial",
+    "10": "X component nontrivial",
+    "11": "both components nontrivial"
+  },
+  "name_universe_count": 360,
+  "name_universe_sha256": "3bd9abf9e7b172b7efd66ee5d7011cd5ff3c19811e17ff727385a18f0687b234",
+  "new_closure_beyond_components": false,
+  "proof": "synthesis/MIXED_SECTOR_THEOREM.md",
+  "schema": "circdist-round100-mixed-sector-reduction-v1",
+  "scope_exclusions": [
+    "arbitrary mechanisms outside the complete direct queries or reviewed selector spans",
+    "other schedules or frontiers",
+    "non-CSS propagation",
+    "named-weight bounds above 10"
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,17 @@
+
+==============================================================================
+PROBE 3: mechanism exclusions for d=5 class D, reproduced EXHAUSTIVELY (no solver)
+==============================================================================
+    R=1  d_R=4 | single-round=4 | no-hook=5 | no-measurement-fault=4
+       every min witness spans >=2 rounds : False
+       every min witness uses a hook fault: True
+       NO min witness needs a measurement fault: True
+    R=2  d_R=3 | single-round=4 | no-hook=5 | no-measurement-fault=3
+       every min witness spans >=2 rounds : True
+       every min witness uses a hook fault: True
+       NO min witness needs a measurement fault: True
+    R=3  d_R=3 | single-round=4 | no-hook=5 | no-measurement-fault=3
+       every min witness spans >=2 rounds : True
+       every min witness uses a hook fault: True
+       NO min witness needs a measurement fault: True
+python3 -u rev_step5_conventions_attrib.py 3  5.05s user 1.05s system 76% cpu 7.930 total

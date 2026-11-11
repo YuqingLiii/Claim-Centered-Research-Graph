@@ -1,0 +1,90 @@
+{
+  "accepted_preseal_full": {
+    "command": [
+      "VENV/python",
+      "PACKAGE/verify.py",
+      "--full",
+      "--allow-unsealed",
+      "--repo-root",
+      "REPOSITORY"
+    ],
+    "live_bindings_required": 6,
+    "must_exit": 0,
+    "must_status": "PASS",
+    "scope": "final deterministic-gzip staging tree before seal manifests"
+  },
+  "accepted_preseal_quick": {
+    "command": [
+      "VENV/python",
+      "PACKAGE/verify.py",
+      "--quick",
+      "--allow-unsealed",
+      "--repo-root",
+      "REPOSITORY"
+    ],
+    "live_bindings_required": 6,
+    "must_exit": 0,
+    "must_status": "PASS"
+  },
+  "accepted_seal_rule": "Only a later seal created after all three manifest/self-exclusion sites use exact package-root-relative paths and fresh compressed preseal quick+FULL/live PASS is accepted; its SHA256SUMS.txt hash is reported externally because a seal cannot contain its own hash.",
+  "external_run_log_reason": "accepted gate logs remain outside immutable package",
+  "manifest_self_exclusion_audit": {
+    "all_root_relative": true,
+    "load_bearing_sites": 3,
+    "nested_seal_excludes": [
+      "SHA256SUMS.txt"
+    ],
+    "root_payload_excludes": [
+      "SHA256SUMS.txt",
+      "PAYLOAD_SHA256SUMS.txt"
+    ],
+    "root_seal_excludes": [
+      "SHA256SUMS.txt"
+    ]
+  },
+  "package_mutation_after_accepted_preseal_full": "only PAYLOAD_SHA256SUMS.txt and SHA256SUMS.txt may be created",
+  "post_copy_sealed_full_live": {
+    "command": [
+      "VENV/python",
+      "INSTALLED/verify.py",
+      "--full",
+      "--repo-root",
+      "REPOSITORY"
+    ],
+    "must_exit": 0,
+    "must_status": "PASS"
+  },
+  "post_copy_sealed_quick_live": {
+    "command": [
+      "VENV/python",
+      "INSTALLED/verify.py",
+      "--quick",
+      "--repo-root",
+      "REPOSITORY"
+    ],
+    "must_exit": 0,
+    "must_status": "PASS"
+  },
+  "rejected_prior_seal": {
+    "exit_code": 1,
+    "failed_gate": "post_copy_sealed_full_live",
+    "failure_record": "verification/REJECTED_SEAL.json",
+    "licensed_for_review_or_restart": false,
+    "payload_manifest_sha256": "7a51f8a2f7fc9ed7d04267fed0398e1f2749756de2f50e0c233d3c7e5f0de4a7",
+    "seal_sha256": "1f4c0e3dd75b3aaed8551be79be92191478fd0ecaaad6f860dcf859634d85f5b",
+    "status": "REJECTED_NOT_LICENSED"
+  },
+  "rejected_seals": [
+    {
+      "failed_gate": "post_copy_sealed_full_live_nested_source_expected_set",
+      "seal_sha256": "1f4c0e3dd75b3aaed8551be79be92191478fd0ecaaad6f860dcf859634d85f5b",
+      "status": "REJECTED_NOT_LICENSED"
+    },
+    {
+      "failed_gate": "post_copy_sealed_full_live_root_manifest_expected_set",
+      "seal_sha256": "9f703d88470629decbf8304fd5e723b2790bae4c6707842879e0ae3be487d7df",
+      "status": "REJECTED_NOT_LICENSED"
+    }
+  ],
+  "schema": "round78-release-verification-gates-v1"
+}

@@ -1,0 +1,155 @@
+id: CIRCDIST.lift.nonint
+role: proof
+aliases:
+- LIFT-NONINT
+claim: Within the closed-lift framework, every non-interleaved schedule satisfies d_circ = d_eff,
+  derived (not assumed) from the framework — every minimum-weight effective fault admits a
+  horizontal representative, so the spacetime graph contains R pairwise-disjoint copies of G_eff
+  via weight-preserving sections.
+assessment:
+  level: PROVED
+  caveats:
+  - 'Wording note (wave-12 review, non-blocking): the claim keeps the graph idiom ("spacetime
+    graph", G_eff) while Theorem 7.1 also covers non-graph-like codes, where the proof states
+    the containment for the complex; the graph reading is a faithful specialisation.'
+  - Review depth, not conditionality — the reviewer's exhaustive arm covers Def 2.8 + Lemma 7.2
+    (the collision/weight accounting) and 112 non-interleaved configurations across 4 codes at
+    R = 1..4, including a [[15,7,3]] Hamming-CSS instance with Z-degree 4 and overlaps up to 8;
+    the general case rests on the reviewed line-by-line prose derivation.
+  - 'Shared model design: the reviewer''s re-implementation inherits the 公共定义 fault
+    inventory (Def 1.8/2.5), so a systematic modelling error at that level would survive both
+    implementations; the reviewer did not run stim for this node. The claim is explicitly scoped
+    "within the closed-lift framework".'
+  - k > 1 is handled per chosen observable and was not exhaustively swept (review §5.3).
+  summary: 'Promoted NUMERICAL -> CERTIFIED* 2026-08-20: adversarial independent review
+    (artifacts/circdist_lift_proofs_review_20260820.md) CONFIRMS Theorem 7.1 line-by-line and by
+    independent reconstruction (own simulator, no proposer code); the reviewer also verified this
+    document''s collision handling is the CORRECT one (the sibling iff document''s Lemma 5.3
+    handles the same point wrongly), and its Cor. 7.3 (R_sat in {1, infinity}) REFUTES the iff
+    document''s "R_sat <= d" claim (counterexample: non-interleaved Steane, d_eff = 2 < d = 3,
+    R_sat = infinity). COMPLETE proposer-level proof on disk
+    (artifacts/circdist_lift_nonint_proof_20260820.md, Theorem 7.1, 2026-08-20), no independent
+    review yet. Both directions proved: >= by the augmentation chain map, <= by a
+    weight-preserving section from horizontal representatives; non-interleaving collapses all
+    per-qubit timestamp comparisons to one global X-before-Z bit, so residuals are measured
+    atomically with uniform flavour. STRONGER THAN COMMISSIONED: the graph-like assumption is
+    defined and never used — material, since Steane and the Gross code are NOT graph-like, so
+    CIRCDIST.gross''s reliance on the non-interleaved equality is licensed only by this wider
+    scope. CORRECTION to the recon sketch: "G_circ splits into R disjoint copies of G_eff" is
+    FALSE (28.4 percent of elementary faults are non-horizontal); the proved statement is
+    CONTAINMENT of R pairwise-disjoint copies via sections, which is all the upper bound needs.
+    Definitions sharpened: d_eff indexes residual CLASSES; both temporal boundary detectors are
+    load-bearing; two inequivalent non-interleaved flavours (u = s vs u = 0); horizontality is
+    per class. Bonus Cor. 7.3 (input to CIRCDIST.sat): d_R is CONSTANT in R for non-interleaved
+    schedules, so R_sat is in {1, infinity} with no transfer matrix needed. Corroboration runs:
+    12/12 configurations, 10233/10233 faults match the detector-chain formula; on the interleaved
+    Steane witness the proof fails exactly at Lemma 5.4 (three hooks with no horizontal
+    representative) — a clean localization of where interleaving breaks it.'
+  basis:
+    reviews:
+    - path: artifacts/circdist_claimrepair_review_20260823.md
+      kind: review
+      scope: Focused re-review of the wave-11-prescribed one-line claim repair — word-by-word
+        drift check (exactly the three prescribed edits, nothing else), source verification
+        that nonint proof §6 (Def 6.1, Prop 6.2 weight-preserving chain section, Cor 6.3)
+        proves containment of R pairwise-disjoint copies and that the base review endorses
+        Settlement S2 verbatim (§4.5) plus verdicts K/L; hash convention validated by
+        reproducing the prior reviewed_hash. Verdict CLEAR-FOR-PROVED, bound to the repaired
+        claim; rests on the base review's Theorem 7.1 verdicts and the wave-11 adjudication §3
+        for the mathematics.
+      locator: Section 3
+      reviewed_hash: sha256:e2d1b292ae9265cf35ac51e9c2cf582fc167845310d5ed7a5995a235ee10649a
+    runs:
+    - path: artifacts/circdist_lift_nonint_proof_20260820.md
+      kind: run
+      scope: Model corroboration of the proof (not the proof itself) — 12 schedule/code
+        configurations, both temporal boundaries, exhaustive d_circ = d_eff checks.
+      result: 10233/10233 faults match the detector-chain formula; witness fires 0 detectors in
+        12/12; exhaustive d_circ = d_eff in 12/12; interleaved-Steane failure isolated to Lemma
+        5.4 exactly.
+    evidence:
+    - path: artifacts/circdist_lift_nonint_proof_20260820.md
+      kind: text
+    - path: artifacts/circdist_lift_proofs_review_20260820.md
+      kind: text
+    - path: artifacts/circdist_readjudication_20260823.md
+      kind: text
+events:
+  promoted-proved-2026-08-23:
+    date: '2026-08-23'
+    type: level-change
+    from: CERTIFIED*
+    to: PROVED
+    summary: Promotion executed with the claim repair below (see claim-repaired-promoted event
+      for the full record); wave-11 adjudication §3 supplies the PROVED-QUALIFIES verdict,
+      wave-12 focused re-review binds it to the repaired claim hash.
+    sources:
+    - path: artifacts/circdist_claimrepair_review_20260823.md
+      kind: review
+      locator: Section 3
+  claim-repaired-promoted-2026-08-23:
+    date: '2026-08-23'
+    type: claim-revised
+    summary: 'Wave-12 execution of the wave-11 prescription: the false final gloss ("decomposes
+      as R disjoint copies") repaired to the proved statement (contains R pairwise-disjoint
+      copies of G_eff via weight-preserving sections); focused re-review
+      (artifacts/circdist_claimrepair_review_20260823.md §3) verified the repair word-by-word
+      (exactly the three prescribed edits), confirmed the repaired sentence at source (proof §6:
+      Def 6.1, Prop 6.2, Cor 6.3; base review §4.5 endorses Settlement S2), and returned
+      CLEAR-FOR-PROVED bound to the new claim hash e2d1b292... Old wording preserved in this
+      event history; prior reviews (base review, wave-11 adjudication) bound the pre-repair hash
+      864bcc60... and are demoted to basis.evidence, with the re-review resting on their
+      mathematical verdicts. LEVEL CHANGE executed in the same write: CERTIFIED* -> PROVED per
+      the wave-11 verdict (adjudication §3: complete argument, every load-bearing input
+      confirmed inside the base hash-bound review) now that no false sentence remains. The
+      re-reviewer''s non-blocking graph-idiom note recorded as a wording caveat; its optional
+      fully-general variant NOT installed (one claim, one hash).'
+    sources:
+    - path: artifacts/circdist_claimrepair_review_20260823.md
+      kind: review
+      locator: Section 3
+  readjudication-2026-08-23:
+    date: '2026-08-23'
+    type: repair-applied
+    summary: 'Wave-11 canonical re-adjudication (artifacts/circdist_readjudication_20260823.md
+      §3): verdict PROVED-QUALIFIES, binding to claim hash 864bcc60... — every load-bearing
+      component of the Theorem 7.1 argument carries its own confirmation inside the one
+      hash-bound review (verdicts K/L/M/B/J/N + §4.7, mapped input-by-input), and the only
+      recorded caveat that survives the retired same-stack convention is review depth, not
+      conditionality. HOWEVER the adjudicator flags a live claim-text defect (the false
+      disjoint-copies gloss, cross-cutting finding 1); dispatcher holds the node at CERTIFIED*
+      pending the one-line repair + hash re-bind (honest-label rule: no completion label over a
+      false sentence). Caveat set rewritten per prescription; task-003 updated to the
+      repair-and-rebind path.'
+    sources:
+    - path: artifacts/circdist_readjudication_20260823.md
+      kind: review
+      locator: Section 3
+  review-certified-2026-08-20:
+    date: '2026-08-20'
+    type: repair-applied
+    summary: Adversarial review CONFIRMED Theorem 7.1 (independent reconstruction + 112
+      configurations incl. non-graph-like codes); promoted NUMERICAL -> CERTIFIED* with caveats.
+    sources:
+    - path: artifacts/circdist_lift_proofs_review_20260820.md
+      kind: review
+      scope: Theorem 7.1 and its collision/weight accounting.
+      locator: Theorem 7.1 verdict
+  proof-landed-2026-08-20:
+    date: '2026-08-20'
+    type: repair-applied
+    summary: Complete Theorem 7.1 proof landed (round 4); level CONJECTURED -> NUMERICAL with the
+      corroboration run record, pending independent review. Scope widened (graph-like unused),
+      recon disjoint-copies sketch corrected to containment, Cor. 7.3 settles the non-interleaved
+      class of CIRCDIST.sat.
+    sources:
+    - path: artifacts/circdist_lift_nonint_proof_20260820.md
+      kind: text
+  created-2026-08-20:
+    date: '2026-08-20'
+    type: created
+    summary: Registered from the round-1 recon session as the non-interleaved corollary component
+      of CIRCDIST.lift.
+    sources:
+    - path: artifacts/circdist_lift_recon_20260820.md
+      kind: text

@@ -1,0 +1,150 @@
+id: CIRCDIST.sat.instances
+role: outcome
+aliases:
+- SAT-INSTANCES
+claim: Determine or rigorously bound (d_infinity,R_stab) for a standard surface-code schedule, a
+  legal hook-misaligned surface-code schedule, and at least one explicitly specified qLDPC
+  schedule, using two independent methods where feasible, and for each instance provide auditable
+  minimum witnesses and a justified attribution among single-round hook/bulk, temporal-boundary,
+  measurement-fault, and mixed multi-round mechanisms.
+assessment:
+  level: CERTIFIED*
+  caveats:
+  - '(W) The R_stab and d_infinity readings import the window theorem (d_R = d_d for R >= d)
+    from CIRCDIST.sat.window, itself CERTIFIED* — this node inherits that conditionality.'
+  - '(N2) The hook-misaligned family scope is the uniform S4 x S4 schedule space only (576 ->
+    96 legal -> 16 legal+(MC)); statements outside that space are not certified.'
+  - The d = 9 cell (R_stab = 4) and the d = 7 STANDARD arm remain proposer-level (the review
+    re-ran d = 5 fully by three methods, d = 7 misaligned, and the qLDPC arm; d = 9 and d = 7
+    standard were not independently re-run).
+  - The fitted law d_R = max(d - R, (d+1)/2), R_stab = (d-1)/2 stays CONJECTURED (37 cells at
+    four d values support it; nothing beyond).
+  - 'Review errata (safe direction): "78 distinct one-round effect classes" should read 77
+    (the artifact''s own §2 says 77); the §2 classes column is the sector-reduced count
+    (numbers right, label under-specified); §0''s node hash is stale.'
+  summary: 'Promoted NUMERICAL -> CERTIFIED* 2026-08-23: the wave-25 independent adversarial
+    review (artifacts/circdist_sat_instances_review_20260823.md) CONFIRMS all arms — the
+    headline R_stab > 1 family survived a hostile pass (legality+(MC) space rebuilt 576 -> 96
+    -> 16 with member indices matching; the d = 5 class-D cell d_R = 4,3,3,3,3,3,3 with
+    R_stab = 2 and d_infinity = 3 confirmed by THREE independent methods plus a fourth
+    forward-replay witness audit; d_1 = 4 exhaustive; convention probes show no slip can
+    manufacture a between-schedule difference); d = 7 misaligned 6,5,4,4,4,4 -> R_stab = 3;
+    BB [[18,4,4]] rebuilt and confirmed (3,1) with the 25920-depth-6-fail-(MC) by-product
+    reproduced exhaustively AND re-derived closed-form as C(6,3)*(3!)^4; standard d = 3,5 =
+    (d,1) re-run. W-OPEN of CIRCDIST.sat.window is thereby answered positively at REVIEWED
+    level; the window theorem is unthreatened (R_stab <= d_infinity <= d on every cell).
+    PROVED refused by the reviewer (caveats above). ALL THREE ARMS DELIVERED at proposer
+    level 2026-08-23 (wave 24,
+    artifacts/circdist_sat_instances_20260823.md; independent review pending — rule 6 caps
+    this at NUMERICAL). HEADLINE DISCOVERY: R_stab > 1 EXISTS — a constructed (not sampled)
+    family of legal MC-satisfying hook-misaligned rotated-surface schedules with R_stab = 2
+    (d = 5, all four methods, exhaustive no-weight-<=3-witness check at R = 1), R_stab = 3
+    (d = 7; 12/16 legal+(MC) members exceed 1), R_stab = 4 (d = 9); fitted law d_R =
+    max(d - R, (d+1)/2), R_stab = (d-1)/2 CONJECTURED over 37 cells at four d values —
+    R_stab plausibly unbounded, refuting single-round dominance by witness. Surface grid:
+    standard schedules (d_infinity, R_stab) = (d, 1) for d = 3,5 (two+ methods), d = 7 (MILP
+    R <= 6 + stim R <= 2). qLDPC: bivariate-bicycle [[18,4,4]] non-interleaved T = 12
+    schedule, (d_infinity, R_stab) = (3, 1), R = 1..6, three methods; by-product: all 25920
+    legal depth-6 monomial-slot BB schedules fail (MC), exhaustively. Attribution: audited
+    minimum witness (detector silence + observable flip + location count, recomputed from raw
+    locations) for every reported cell; mechanism exclusions via restricted exact MILP,
+    exhaustive over the model. Method cross-validation: the spacetime matrix matches stim''s
+    DEM signature set 61/61; four implementations, no disagreement ever. Aggregation stated
+    min-over-sectors throughout (decisive: one d = 5 member has d^Z = 5 vs d^X = 3).
+    Truncated cells listed by name in §7 N6. EARLIER STATE: only the standard-surface arm had
+    substantial numerical evidence.'
+  basis:
+    reviews:
+    - path: artifacts/circdist_sat_instances_review_20260823.md
+      kind: review
+      scope: Independent adversarial review (own engine written from the definitions, no
+        proposer code read) — headline family re-verified by three methods + witness replay,
+        legality/(MC) space rebuilt, convention-slip probes, qLDPC arm rebuilt with a
+        closed-form re-derivation of the exhaustive by-product, standard d = 3,5 re-run,
+        honesty checks; licenses CERTIFIED* with the stated caveat set. Logs SHA-summed (29
+        files), FIX-2 clean.
+      locator: Per-arm verdicts
+      reviewed_hash: sha256:c71ac7cdbd8ddea97cd9916303566d00bc10b2b930ae00767857c5a6e22ec5f3
+    runs:
+    - path: artifacts/circdist_sat_instances_20260823.md
+      kind: run
+      scope: 'Wave-24 full three-arm computation (logs: artifacts/logs_circdist_sat_instances_20260823/,
+        247 files, SHA256SUMS): surface d = 3,5,7 standard + constructed hook-misaligned
+        family (uniform S4 x S4 space, 576 -> 96 legal -> 16 legal+(MC), identical at
+        d = 3,5,7); BB [[18,4,4]] qLDPC arm; per-cell witness audits and MILP mechanism
+        exclusions; four independent implementations (own min-plus C engine, stim 1.16.0, own
+        exact MILP/HiGHS, exhaustive-vs-criterion (W)).'
+      result: 'Standard: (d, 1) at d = 3,5,7. Hook-misaligned: R_stab = 2/3/4 at d = 5/7/9
+        with d_R = max(d - R, (d+1)/2) fitted over 37 cells (conjectured law). BB [[18,4,4]]:
+        (3, 1). 61/61 spacetime-matrix vs stim DEM signature checks; zero cross-method
+        disagreements anywhere.'
+    - path: artifacts/circdist_sat_recon_20260820.md
+      kind: run
+      scope: Rotated surface d=3,5,7 with Stim for R=1 through 12; four rotated-surface d=3
+        schedules with exact min-plus transfer for R=1 through 10; enumeration of 7,610 legal
+        schedules across rotated-surface, Steane, and Shor test families.
+      result: All recorded sequences were constant within their stated windows; the d=3 transfer
+        values agreed with Stim. No qLDPC or completed hook-misaligned arm was included.
+    evidence:
+    - path: artifacts/circdist_sat_recon_20260820.md
+      kind: text
+frontier:
+  task-001:
+    task: >-
+      Finish the decisive surface grid: compute d_1 through d_(d+2) for d=5 and 7 by an
+      independent transfer implementation, then run the same two-method protocol on legal
+      hook-misaligned schedules with every schedule and search bound recorded.
+    kind: gate
+    since: '2026-08-22'
+  task-002:
+    task: Select one explicit qLDPC code and legal single-ancilla schedule of manageable size, then
+      compute or rigorously bound d_infinity and R_stab under exactly the root's boundary and fault
+      conventions.
+    kind: task
+    since: '2026-08-22'
+  task-003:
+    task: For every reported instance, export a minimum witness and prove the mechanism label;
+      treat exclusion of competing mechanisms as an absence claim with a recorded exhaustive
+      scope.
+    kind: task
+    since: '2026-08-22'
+events:
+  created-2026-08-22:
+    date: '2026-08-22'
+    type: created
+    summary: Collected the named-code computations and mechanism attribution into a separate
+      outcome node so partial surface numerics cannot be mistaken for completion of question 4.
+    sources:
+    - path: research/circdist/notes/SAT_RESCOPE_20260822.md
+      kind: text
+    - path: artifacts/circdist_sat_recon_20260820.md
+      kind: text
+  three-arms-delivered-2026-08-23:
+    date: '2026-08-23'
+    type: level-change
+    from: CONJECTURED
+    to: NUMERICAL
+    summary: 'Wave-24 session delivered all three arms (see assessment). The R_stab > 1
+      discovery is WITNESS-TYPE evidence (the class that has never failed this campaign) and
+      answers CIRCDIST.sat.window''s W-OPEN positively at proposer level; single-round
+      dominance is refuted by construction. Promotion to any completion level awaits the
+      independent adversarial review (wave 25); the fitted law and the "R_stab unbounded"
+      reading remain CONJECTURED. FIX-2 clean: all own processes killed before report, 0
+      remaining, truncated cells named.'
+    sources:
+    - path: artifacts/circdist_sat_instances_20260823.md
+      kind: text
+  review-certified-2026-08-23:
+    date: '2026-08-23'
+    type: level-change
+    from: NUMERICAL
+    to: CERTIFIED*
+    summary: 'Wave-25 adversarial review CONFIRMS all arms (see assessment); promotion
+      executed exactly as licensed, hash-bound c71ac7cd... Three review errata recorded (77
+      vs 78; sector-reduced label; stale §0 node hash — all safe-direction). The discovery
+      stands at reviewed level: single-round dominance is refuted by a constructed family,
+      R_stab = 2/3 confirmed independently at d = 5/7.'
+    sources:
+    - path: artifacts/circdist_sat_instances_review_20260823.md
+      kind: review
+      locator: Per-arm verdicts

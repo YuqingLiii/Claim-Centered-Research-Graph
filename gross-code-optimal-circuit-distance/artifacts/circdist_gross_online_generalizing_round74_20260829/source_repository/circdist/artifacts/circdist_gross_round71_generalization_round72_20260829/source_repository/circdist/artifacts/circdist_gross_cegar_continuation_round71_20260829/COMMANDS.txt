@@ -1,0 +1,10 @@
+# Representative exact commands; every instantiated argv is in PROCESS_LEDGER.json
+ROUND69_SEAL: (cd round69 && shasum -a 256 -c SHA256SUMS.txt)
+ROUND69_FULL: PYTHONDONTWRITEBYTECODE=1 clean-venv/bin/python verify.py
+OUTER: clean-venv/bin/python src/build_cegar_candidate.py --iteration I --output OUT --dynamic-blocks STATE --z3-timeout-ms 120000
+OUTER_REPLAY: clean-venv/bin/python src/verify_outer_candidate.py --engine-root ROUND69 --iteration-root OUT --dynamic-before OUT/dynamic_before.json --output OUT/outer_independent_replay.json
+XERR: tooling/cadical-1.9.5-arm64-macos -t 600 --no-binary OUT/direct360/Xerr.cnf
+ZERR: tooling/cadical-1.9.5-arm64-macos -t 600 --no-binary OUT/direct360/Zerr.cnf
+DIRECT_REPLAY: clean-venv/bin/python src/replay_direct_candidate.py --root OUT --output OUT/direct_verification.json
+APPEND: clean-venv/bin/python src/append_dynamic_blocks.py --verification OUT/direct_verification.json --dynamic-blocks STATE --iteration I
+FULL_PACKAGE_REPLAY: PYTHONDONTWRITEBYTECODE=1 clean-venv/bin/python verify.py

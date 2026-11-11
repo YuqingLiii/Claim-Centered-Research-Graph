@@ -1,0 +1,59 @@
+id: HEXT.conjugate-bell-realignment-constraint
+role: constraint
+aliases:
+- bell-realignment-gram
+- werner-bell-output-exclusion
+claim: >-
+  The realignment of every conjugate-channel Bell output
+  Z=(Phi tensor bar(Phi))(Omega_d) is the positive semidefinite Gram matrix L_Phi L_Phi^dagger/d
+  of the channel's Liouville matrix. Under maximally mixed marginals the output is equivalently the
+  normalized Choi state of the bistochastic self-adjoint superoperator-positive CP map
+  (k/d)Phi Phi^*. Consequently no nontrivial U-tensor-U-invariant Werner state aI+bF with b
+  nonzero can be such an output in output dimension at least two.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - Positive realignment is only a necessary condition; a positive factor need not be the
+    Liouville matrix of a CPTP map.
+  - A bistochastic self-adjoint superoperator-positive CP map need not admit a completely positive
+    rectangular square root with the required trace and marginal constraints.
+  - The exclusion covers the affine Werner family, not arbitrary data-hiding or locking states.
+  - The result concerns the maximally entangled input for a channel and its entrywise conjugate,
+    not arbitrary channel pairs or arbitrary joint inputs.
+  - The elementary proof is proposer-side and has not received independent review.
+  summary: >-
+    Expanding the Bell projector in matrix units makes the realigned output exactly the Gram matrix
+    of the Liouville superoperator, equivalently the Bell output is the normalized Choi state of the
+    Gram channel (k/d)Phi Phi^*. Realigning a Werner operator gives a rank-one identity-vector term
+    plus b times the commutation operator; its symmetric-traceless and antisymmetric sectors force
+    b to be simultaneously nonnegative and nonpositive.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/CONJUGATE_BELL_REALIGNMENT_CONSTRAINT_20260830.md
+      kind: text
+      locator: "## 1. Liouville-Gram proof"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/CONJUGATE_BELL_REALIGNMENT_CONSTRAINT_20260830.md
+      kind: text
+      locator: "## 3. Normalized Choi form of a Gram channel"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/CONJUGATE_BELL_REALIGNMENT_CONSTRAINT_20260830.md
+      kind: text
+      locator: "## 4. Exact exclusion of nontrivial Werner states"
+frontier:
+  realignment-positive-data-hiding-realization:
+    task: >-
+      Characterize realignment-positive non-isotropic hiding or locking states whose realigned
+      Gram factor is the Liouville matrix of a CPTP map, equivalently whose Choi map admits the
+      required rectangular CP square root, and test whether the same map can retain a full-output-
+      set minimum-entropy lower bound.
+    kind: gate
+    since: 2026-08-30
+events:
+  realignment-constraint-recorded:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Derived a necessary positive-realignment Gram condition for conjugate-Bell outputs and used
+      it to exclude every nonmaximally-mixed Werner state from the Bell data-hiding route.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/CONJUGATE_BELL_REALIGNMENT_CONSTRAINT_20260830.md
+      kind: text

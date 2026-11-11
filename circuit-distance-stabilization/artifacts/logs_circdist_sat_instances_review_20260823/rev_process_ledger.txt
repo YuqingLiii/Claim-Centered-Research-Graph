@@ -1,0 +1,17 @@
+FIX-2 PROCESS LEDGER — review session 2026-08-23
+declared background processes started by this session:
+  77667  rev_cap.py 5 standard 1,2,3,4,5,6,7 4 Z,X 300   -> rev_cap_d5_standard.log
+  77681  rev_stim.py 7 classD 1,2,3                     -> rev_stim_d7_classD.log       (exited)
+  77972  rev_stim.py 7 classD 4,5,6                     -> rev_stim_d7_classD_R456.log  (exited)
+  78161  rev_bb.py scan                                 -> rev_bb_depth6_scan.log       (exited)
+  78868  rev_stim.py 9 classD 1,2,3                     -> rev_stim_d9_classD.log
+all foreground jobs ran to completion or were bounded by an explicit timeout.
+
+state BEFORE kill:
+  PID ELAPSED STAT COMMAND
+77667   09:43 RN   /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python -u rev_cap.py 5 standard 1,2,3,4,5,6,7 4 Z,X 300
+78868   02:58 RN   /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python -u rev_stim.py 9 classD 1,2,3
+
+state AFTER kill (empty listing = none remaining):
+remaining rev_* processes:
+(none)

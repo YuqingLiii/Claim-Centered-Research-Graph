@@ -1,0 +1,52 @@
+%% WERNER-HOLEVO-CAPACITY-THRESHOLD proof hypergraph (generated)
+flowchart BT
+  n0["WHGAP.antideg-boundary\nOPEN"]
+  n1["WHGAP.choi-distillation-necessary\nCONJECTURED"]
+  n2["WHGAP.diagonal-all-blocklength\nCONJECTURED"]
+  n3["WHGAP.direction-restricted-order\nREFUTED"]
+  n4["WHGAP.goal\nOPEN"]
+  n5["WHGAP.more-capable-route\nOPEN"]
+  n6["WHGAP.no-ascent-hierarchy\nCONJECTURED"]
+  n7["WHGAP.not-holevo-subproblem\nCONJECTURED"]
+  n8["WHGAP.one-copy-five-parameter-reduction\nCONJECTURED"]
+  n9["WHGAP.onset-two-fifths\nCONJECTURED"]
+  n10["WHGAP.order-boundary\nCONJECTURED"]
+  n11["WHGAP.order-converse\nOPEN"]
+  n12["WHGAP.private-boundary\nCONJECTURED"]
+  n13["WHGAP.pure-anchor-order\nOPEN"]
+  n14["WHGAP.qpositive-onset\nCONJECTURED"]
+  n15["WHGAP.real-input-reduction\nCONJECTURED"]
+  n16["WHGAP.relaxed-lift\nCONJECTURED"]
+  n17["WHGAP.restricted-order\nOPEN"]
+  n18["WHGAP.signed-lift-extension\nCONJECTURED"]
+  n19["WHGAP.zero-capacity-application\nCONJECTURED"]
+  r1(("classical-more-capable-tensorization\nCONJECTURED"))
+  n15 --> r1
+  r1 --> n2
+  r2(("two-threshold-assembly\nOPEN"))
+  n14 --> r2
+  n9 --> r2
+  n19 --> r2
+  n12 --> r2
+  r2 --> n4
+  r3(("regularized-order-collapse\nOPEN"))
+  n11 --> r3
+  r3 --> n9
+  r4(("restricted-order\nOPEN"))
+  n17 --> r4
+  r4 --> n9
+  r5(("more-capable\nOPEN"))
+  n5 --> r5
+  r5 --> n9
+  r6(("necessity-and-signed-lift\nCONJECTURED"))
+  n18 --> r6
+  r6 --> n10
+  r7(("no-ascent-expansion\nCONJECTURED"))
+  n6 --> r7
+  r7 --> n14
+  r8(("pure-anchor-candidate\nOPEN"))
+  n13 --> r8
+  r8 --> n17
+  r9(("signed-lift-capacity-pipeline\nCONJECTURED"))
+  n18 --> r9
+  r9 --> n19

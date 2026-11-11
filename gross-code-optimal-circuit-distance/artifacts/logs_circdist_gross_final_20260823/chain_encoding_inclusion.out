@@ -1,0 +1,8 @@
+cells checked: 110 (55 per sector x 2)
+cells with >=1 failing check: 60
+failing check breakdown: {'c4<=c5': 60}
+
+CORE CHAIN (cert4 <= cert6 <= cert7, same vars, same col_lit):
+   failures: 0  -> holds on all 110 cells: True
+SIDE BRANCH (cert5, the bench-only encoding):
+   c4<=c5 failures: 60

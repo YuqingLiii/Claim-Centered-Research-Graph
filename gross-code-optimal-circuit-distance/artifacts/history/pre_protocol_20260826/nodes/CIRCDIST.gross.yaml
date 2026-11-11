@@ -1,0 +1,563 @@
+id: CIRCDIST.gross
+role: outcome
+aliases:
+- GROSS-DSTAR
+claim: For the Gross code [[144,12,12]] with single-ancilla CNOT syndrome extraction (interleaving
+  of X- and Z-check CNOTs allowed; each required CNOT exactly once; one two-qubit gate per qubit
+  per time step; no flag ancillas, cat states, or generating-set changes; idle layers compressed),
+  the optimum D*_Gross = max over legal schedules M of d_circ(C(M)) is determined with proof, as
+  either an explicit interleaved schedule with certified d_circ = 12, or a proof that every legal
+  schedule satisfies d_circ <= 11; and the published conjectured distance-11 circuit has a
+  certified d_circ = 11.
+assessment:
+  level: CONJECTURED
+  summary: 'Round-1 recon (2026-08-20, artifacts/circdist_gross_recon_20260820.md) reshaped the
+    problem: CIRCDIST.gross.dext-cap establishes at NUMERICAL that d_ext <= 11 for EVERY schedule
+    (residual sets depend only on within-check orders), so D* = 12 requires a strictly positive
+    completion gap d_circ - d_ext >= 1 — exactly the mechanism CIRCDIST.lift characterizes; the
+    published <= 11 bound was never about non-interleaving. Parity rigidity: d_ext in {10,11,12}.
+    Primary source for the known result identified: Strikis-Browne-Beverland arXiv:2603.05481
+    (workers disagree on its exact statement — conjectured-11 vs achieved-10-proved-11-noninterleaved
+    — pin during certification). Depth 7 is impossible (minimum 8). The authors reportedly stopped
+    because morphing circuits reach distance 12 by a different paradigm (outside S_Gross scope —
+    ruling registered as a frontier task). Registered direct-work alternatives, not scheduled:
+    symmetric-subclass-exhaustion (enumerate 25920 translation-invariant min-depth schedules with
+    witness-certified bounds, P 0.55, D 2-3 — overlaps gate G1) and gap-forcing-no-go (every
+    schedule admits a weight-11 witness with cancelling interleaving monodromy => D* = 11; the
+    naive timing no-go is provably vacuous at minimum depth, only parity cancellation remains;
+    P 0.12, D 6; CEGAR constructive twin P 0.12, D 4).'
+  basis:
+    routes:
+    - candidate-certification
+routes:
+  candidate-certification:
+    premises:
+    - CIRCDIST.gross.dext-cap
+    assumptions:
+      sbb-thm1:
+        kind: external-theorem
+        statement: 'SBB Thm 1 (arXiv:2603.05481, Theorem 1): d_circ of the candidate circuit
+          equals the minimum distance of the associated extended code (two 360-column codes,
+          one per sector) — the reduction this route''s entire certification rides on. PROOF
+          VERIFIED 2026-08-23 (wave 36, artifacts/circdist_gross_links_review_20260823.md):
+          re-derived against the frozen model, scoped to claim (11), R = E, NON-INTERLEAVED
+          schedules, no 公共定义 mismatch; two published-proof defects found and closed (double
+          Prop-2-for-Prop-3 mis-citation — typo, the needed statement is proved in the paper;
+          the partition-by-idling step false as drawn for an LRC, closed by an order-preserving
+          re-timing argument, 0/144 qubits without a consistent order). UNUSABLE for
+          interleaved schedules (only the paper''s claim (12) applies there). PDF on disk at
+          <home>/Documents/ChatGPT/circcert/papers/.'
+        source:
+          note: 'arXiv:2603.05481 Theorem 1; local PDF under
+            <home>/Documents/ChatGPT/circcert/papers/ (outside this repository).'
+    implication: Via SBB26 Thm 1 the statement d_circ = 11 for the candidate circuit reduces to an
+      exact minimum-distance certification on a 360-column extended code (not a circuit-level DEM
+      search); combined with the universal d_ext cap this certifies the first half of the claim
+      and pins the achievable floor at 11.
+    proof:
+      sketch: Finite exact computation with a distance certificate; risk is solver scaling and
+        recovering the actual published schedule. Recon P 0.60, D 2 sessions.
+      sources:
+      - path: artifacts/circdist_gross_recon_20260820.md
+        kind: text
+      - path: artifacts/circdist_gross_sbbcert_20260820.md
+        kind: text
+    assessment:
+      level: CERTIFIED*
+      caveats:
+      - UNSAT verdicts are solver-grade certificates, not LRAT-checked (no DRAT toolchain on
+        this machine).
+      - 'Reconstruction, not authorship: the candidate schedule is the phicert reading of SBB
+        Figure 12 (pixel-verified wave 13; legality-filter uniqueness re-derived wave 36 over
+        a LARGER space — 72 readings, one object), not a circuit published as machine-readable
+        data by the authors.'
+      - 'The shared colour-map constraint is LOAD-BEARING for uniqueness: with independent
+        per-panel colour maps the reading space grows to 528 with 12 extra pairings (wave-36
+        finding); the frozen reading keeps the shared map, as the paper''s construction
+        implies.'
+      - 'SBB Thm 1 is VERIFIED (wave 36) scoped to claim (11), R = E, NON-INTERLEAVED
+        schedules — it is unusable for interleaved schedules (only claim (12) applies there);
+        the candidate is non-interleaved, so the route is unaffected, but no interleaved
+        conclusion may cite it.'
+      - 'The implication text says "a 360-column extended code"; it is TWO 360-column codes,
+        one per CSS sector (wave-36 precision note; rewording would rebind the implication
+        hash and is left to a future fold).'
+      - 'Carried from wave 13: the verdict artifact''s cross-checking overstatement stands
+        corrected (114 truly multiply-decided, not 860; 1026 records, not 3000; max 3 real
+        decisions per sub-query); Figure-12 fill-convention conflict recorded and harmless.'
+      summary: 'Promoted NUMERICAL -> CERTIFIED* 2026-08-23 (wave 36,
+        artifacts/circdist_gross_links_review_20260823.md): the two inherited proposer-grade
+        links are CLOSED — link 3 (phicert legality filter) CONFIRMED STRENGTHENED with the
+        reviewer''s own EXHAUSTIVE weight-12 pool (meet-in-the-middle C, 1884/sector — the
+        artifacts'' heuristic ISD pool shown exactly complete) and uniqueness re-derived over
+        all 720 edge-maps per panel at t = 6,7,8 (72 readings, ONE object, pairing invariant,
+        phi forced to a + b, no second reading; phicert §2.5''s "moderate" sublattice flag
+        retires); link 4 (encoding fidelity) CONFIRMED as an exact reformulation of Def 2/3
+        (360 columns identical, 216/216 residual columns, 60/60 + 60/60 witness round-trips
+        both sectors, 5/5 recorded CNF hashes rebuilt, W = 11 UNSAT / W = 12 SAT control);
+        and SBB Thm 1''s PROOF IS VERIFIED against the frozen model (scoped: claim (11),
+        R = E, non-interleaved; no 公共定义 mismatch) with two published-proof defects found
+        and closed — a double Prop-2-for-Prop-3 mis-citation (needed statement proved in the
+        paper), and the partition-by-idling step false as drawn for an LRC, closed by the
+        reviewer''s own re-timing argument (0/144 qubits lack a consistent order). Verdict
+        clauses (d) d_circ = 11 and (f) D* >= 11 are thereby lifted from PARTIAL. HISTORY:
+        promoted CONJECTURED -> NUMERICAL 2026-08-23 by the wave-13 adversarial review (990/990
+        UNSAT reproduced; Figure-12 pixel-verified; d_ext = 11 both sectors).'
+      basis:
+        reviews:
+        - path: artifacts/circdist_gross_links_review_20260823.md
+          kind: review
+          scope: Wave-36 closure of the two inherited links (exhaustive-pool legality-filter
+            uniqueness; encoding-fidelity round-trips and CNF hash rebuilds) plus verification
+            of the SBB Thm 1 proof against the frozen model with two published-proof defects
+            closed; licenses the route at CERTIFIED*.
+          locator: Section 5
+          reviewed_hash: sha256:4f40673227208c58d21650b3d685670019f5460b44ee52c0440b22293eec1598
+        - path: artifacts/circdist_gross_verdict_review_20260823.md
+          kind: review
+          scope: Independent adversarial review of the final compute verdict — analytic 990-slot
+            completeness re-derived, orbit partition + equivariance closed, slot bookkeeping
+            recomputed from SHA256-verified logs, 3+ adversarial spot re-decisions with a
+            different solver, 50/50 witness re-verification, Figure-12 pixel verification at
+            900 dpi, inherited-links audit, per-clause verdicts with an honest downgrade of the
+            verdict artifact's cross-checking claim.
+          locator: Per-clause verdicts
+          reviewed_hash: sha256:4f40673227208c58d21650b3d685670019f5460b44ee52c0440b22293eec1598
+        runs:
+        - path: artifacts/circdist_gross_sbbcert_20260820.md
+          kind: run
+          scope: Full certification sweep of the group-tiled representative class of the SBB
+            candidate on the 360-column extended code, both sectors, symmetry-quotiented SAT
+            decision queries; 10/10 eliminated-assignment witnesses audited end-to-end.
+          result: d_ext <= 10 for all 8 survivors (hence all group-tiled assignments); d_ext(R) =
+            11 exactly for every <= 2-check subset; gross code d = 12 reproduced as method
+            validation; no 6-layer gross SEC is measurement-consistent (exact SAT, 55 s).
+        evidence:
+        - path: artifacts/circdist_sbbcert_review_20260820.md
+          kind: text
+  gap-via-lift:
+    premises:
+    - CIRCDIST.gross.dext-cap
+    - CIRCDIST.lift.iff
+    implication: Given the universal d_ext <= 11 cap, D* = 12 holds iff some interleaved schedule
+      has completion gap >= 1 at weight 12; the closed-lift criterion turns this into a
+      voltage/monodromy condition checkable per witness family, deciding the second half of the
+      claim in either direction.
+    proof:
+      sketch: Cross-root import; inherits CIRCDIST.lift risk. Recon P 0.20, D 5 (about 2 sessions
+        shared with the lift subtree).
+      sources:
+      - path: artifacts/circdist_gross_recon_20260820.md
+        kind: text
+    assessment:
+      level: CONJECTURED
+      summary: 'STAGE-2 VERDICT (wave 38): THE CANDIDATE IS DEAD IN BOTH SECTORS — d_eff <=
+        10, not 11 (Z: 72 configs at j <= 3, 180 at j <= 4; X: 72/84; zero at weights 8-9;
+        all 144 witnesses re-verified from raw CNOT times and re-derived inside the
+        campaign''s 360-column model), killed by the FOURTH gain-positive residual shape (the
+        2-prefix {i1,i2}, = 4-suffix mod stabiliser) which wave 37''s d_eff filter missed
+        (it tested 2 of 4 shapes); decisively, every X-memory weight-10 witness has exact
+        repair = 1, so d_circ <= 11 for the candidate regardless. REPRICING: P(D* = 12) 0.30
+        -> 0.10; P(D* = 11) 0.10 -> 0.15 — three no-go walls now stand at proposer level
+        (check-serial class repair-0 PROVED; fully-TI cannot hold d_eff = 11 both sectors;
+        all 297 interleaved re-timings of M_cand die on horizontal hooks, 100 percent
+        repair-0). NEW LEMMA D (proposer): d_eff depends only on within-check orders, so
+        M_cand''s certification TRANSFERS to its interleaved re-timings (up to 504/648
+        interleaved) for free. D* remains OPEN in {11, 12}, evidence direction tilted toward
+        11. STAGE-1 HISTORY (candidate since killed): a 3-colour-tiled annealed schedule —
+        legal, 0/648 MC violations, 384/648 pairs interleaved, 72/72 hooks diagonal 0
+        vertical both sectors, no weight-<=10 configs — has repair-0 on 0/144 (Z) and 0/360
+        (X) canonical minimum-weight gamma (same-round and 2-group multi-round), the exact
+        gap signature the PROVED criterion demands. Schedule recorded in the hunt artifact.
+        BINDING REMAINING CHECK (stage 2): SAT-certify d_eff = 11 for this schedule in both
+        sectors and close the two uncovered |gamma| = 11 shapes (weight-13 provably empty —
+        all gross logicals have even weight). Stage-1 no-go by-products: the whole
+        CHECK-SERIAL (global-potential) class is PROVED repair-0 (226/226 + 170/170, with the
+        two-line u(S) argument) so cannot gap; no fully-TI schedule keeps d_eff = 11 in both
+        sectors (353/400 and 357/400 die on d_eff <= 10) — the binding constraint for a gap
+        witness is keeping d_eff UP, not making repair positive. Stage-2 pricing: P(D* = 12
+        witness) 0.30, P(D* = 11 no-go) 0.10.'
+      basis:
+        runs:
+        - path: artifacts/circdist_dstar_hunt2_20260823.md
+          kind: run
+          scope: 'Stage-2 certification attempt (logs: artifacts/logs_circdist_dstar_hunt2_20260823/,
+            45 SHA-summed entries; predecessor logs re-verified 23/23): no SAT solver on the
+            machine, so an exact combinatorial exhaustion of the |V| = 12 stratum (complete
+            1884-logical pool per sector, j <= 4 contributing checks) on three proved
+            reductions plus Bound 1; second-source validation — the same code returns 0
+            configurations for the published candidate M_cand (agreeing with its 990
+            all-UNSAT solver sub-queries) on both labelling readings, d = 12 on
+            singleton-only columns, 144/360 canonical family reproduction.'
+          result: 'Candidate d_eff <= 10 both sectors (144 witnesses, 144/144 assertion
+            checks); every X-memory weight-10 witness has exact repair = 1 hence candidate
+            d_circ <= 11; 297/297 interleaved re-timings of M_cand repair-0 via horizontal
+            hooks; Lemma D (d_eff order-only dependence) established at proposer level.'
+        - path: artifacts/circdist_dstar_hunt1_20260823.md
+          kind: run
+          scope: 'Stage-1 hunt (logs: artifacts/logs_circdist_dstar_hunt1_20260823/, 23
+            SHA-summed entries): LIFT-prime/repair decider built from scratch and validated on
+            ground truth (Steane 21/21 criterion + 21/21 sandwich agreements vs brute-force
+            multi-round DEM; independently reproduces the known Steane gap, 1/68 random
+            schedules); gross rebuilt (overlaps {0:4536, 2:648}, k = 12, 1884
+            logicals/sector, 1080/1080 pair coverage); four families swept.'
+          result: 'Non-interleaved 4/4 repair-0; check-serial 60 schedules repair-0 PROVED
+            class-wide; TI legal+MC 400 sampled (1.15 percent acceptance), 0 gap survivors
+            in both sectors; coset-TI 0/60000 pass MC; 3-colour-tiled annealed: ONE candidate
+            with zero repair-0 canonical gamma in both sectors.'
+frontier:
+  task-003:
+    task: 'Remaining after wave 36 closed links 3/4 and verified SBB Thm 1: (c) optionally
+      LRAT-check a certificate sample (the sole remaining verification-depth item on the
+      route); and fold the two-codes-one-per-sector precision into the implication text when
+      next re-binding it.'
+    kind: task
+    since: '2026-08-20'
+  task-002:
+    task: Scope ruling — is Shaw-Terhal's distance-12 morphing circuit inside S_Gross? (Recon
+      P 0.08 it matters mathematically, D 0.5; most likely a documentation ruling.)
+    kind: task
+    since: '2026-08-20'
+events:
+  migrated-canonical-home-2026-08-23:
+    date: '2026-08-23'
+    type: migration
+    summary: 'Lead directive 2026-08-23: canonical home moved to the Claim-Centered-Research-Graph
+      repository; the discovery-new-algorithms copy is a frozen snapshot. Levels are re-based on
+      THIS repository''s DAG_PROTOCOL §3 verbatim: CERTIFIED* marks a CONDITIONAL result
+      (unresolved premises or scope caveats); PROVED requires a complete argument plus independent
+      adversarial review of every load-bearing input, with NO cross-model-stack requirement — the
+      former "same-stack ceiling" convention is RETIRED. Existing levels are carried unchanged;
+      re-adjudication of starred nodes under the canonical semantics is registered as review work,
+      not hand-executed by the dispatcher.'
+    sources:
+    - path: research/DAG_PROTOCOL.md
+      kind: text
+  candidate-verdict-2026-08-23:
+    date: '2026-08-23'
+    type: repair-applied
+    summary: 'FINAL COMPUTE VERDICT (artifacts/circdist_gross_verdict_20260823.md, 1901 lines +
+      logs dir with 57 entries, all SHA256-verified): the complete sub-query space — 990 slots,
+      ANALYTICALLY enumerated (2 sectors x 55 cells x 9 orbits; cells(10) proved to be exactly
+      the reachable set via w_max = 3 => |E| <= W + 2K, closing review item 8) — is 990/990
+      UNSAT: 864 solver certificates + 126 |E| = 12 enum-closed slots, 0 open, 0 verdict
+      conflicts across 860 multiply-decided sub-queries, 0 SAT on either candidate triple ever.
+      THEREFORE, at NUMERICAL (proposer level, pending independent review): d_ext = 11 in both
+      sectors (>= 11 by W = 10 exhaustion, <= 11 re-derived with 720 witnesses per sector),
+      hence d_circ(C(M_cand)) = 11 — the SBB distance-11 conjecture is CONFIRMED on the correct
+      phi = a + b family, and D* >= 11 firmly; conditional on inherited links, and THE ENTIRE
+      REMAINING RISK is the never-pixel-verified Figure 12 reconstruction. Audit battery: 5/5
+      post-handoff records rebuilt bit-for-bit, 2 bidirectional cross-solver re-decisions, 7/7
+      Cadical195 re-decisions across orbits 0-6, 880/884 full-union rebuild. DISPATCHER
+      CORRECTIONS #3: "855 all-UNSAT" counted records held, not slots needed (8 were open); one
+      drive7 record existed only in volatile scratch (rescued); and the wave-9 premise "all
+      drivers exited" was false — drive10 was wall-clock-killed mid-job at 05:25:37, and the
+      session''s own untimed duplicates of the three most expensive sub-queries (9586/10136/12262
+      s) are what closed the decision. 8 final sub-queries: 17.5 CPU-hours, after 33 CPU-hours
+      had previously been burnt timing them out. FIX-2 clean: all own processes completed, 0
+      alive, other sessions'' processes untouched.'
+    sources:
+    - path: artifacts/circdist_gross_verdict_20260823.md
+      kind: text
+    - path: artifacts/logs_circdist_gross_verdict_20260823/SHA256SUMS.txt
+      kind: text
+  final-decision-wave6-2026-08-23:
+    date: '2026-08-23'
+    type: repair-applied
+    summary: 'Wave-6 audit + decision session (artifacts/circdist_gross_final_decision_20260823.md):
+      rescued-log audit CLEAN — 842 distinct candidate sub-queries all UNSAT, 0 verdict conflicts
+      across 98 duplicates, 859/859 CNFs rebuilt from source hash-matched, all SAT records
+      confirmed on non-candidate validation triples. DISPATCHER ACCOUNTING CORRECTED (second
+      dispatcher error this campaign, after the C-R2 phrasing): the "drivers closed 3, 19 remain"
+      reconciliation double-counted — X(6,20)/Z(6,16)/Z(7,16) orbit-0 were already decided in the
+      predecessor''s table; the true wave-6 start frontier was 22 (15 orbit-0, 7 orbit-1), and
+      the rescued-file count was 12, not 13. This session decided 5 sub-queries (3 commissioned
+      re-decisions confirming the raw records exactly on independently rebuilt CNFs + 2 first
+      decisions), all UNSAT: frontier 22 -> 13, cells 92 -> 97/110, 851 decided, ZERO SAT EVER.
+      KEY FINDING: timeout records measure CONTENTION, not difficulty — X(10,22) orbit-0 logged
+      TIMEOUT at 10800 s solves in 225 s (48x); all 14 historic timeouts should be re-run, so the
+      remaining 13 are probably cheap on an idle machine. New verified structure: cert4 within
+      cert6 within cert7 on all 110 cells; K = 0 vacuous. FIX-2-COMPLIANT HANDOFF: drive10.py
+      (pid 43443) + 7 kissat workers declared and left running on the remaining sub-queries
+      (logs work2/logs/d10.jsonl, <= 3 h/job, kill instructions recorded); inherited drive7 (pid
+      5675) left running; 19 orphaned processes reniced; all verdict-bearing logs secured to
+      artifacts/logs_circdist_gross_final_20260823/ (22 files + SHA256SUMS) before session end.'
+    sources:
+    - path: artifacts/circdist_gross_final_decision_20260823.md
+      kind: text
+    - path: artifacts/logs_circdist_gross_final_20260823/SHA256SUMS.txt
+      kind: text
+  candidate-decision-wave5-2026-08-23:
+    date: '2026-08-23'
+    type: repair-applied
+    summary: 'Wave-5 compute session (artifacts/circdist_gross_candidate_decision_20260822.md):
+      92/110 cells UNSAT across 842 orbit sub-queries, ZERO SAT on the candidate ever; all five
+      levers revalidated to the digit; 6 cross-solver re-decisions (3 families, 5 versions). It
+      DISCLOSED an operational breach: the previous session left an undeclared 30-worker solver
+      driver running detached (64 of its UNSATs landed mid-session; 50 decisions duplicated for
+      lack of dedup) — triggering discipline rule FIX-2. POST-SESSION LOG RESCUE (dispatcher,
+      2026-08-23, zero spend): the volatile /private/tmp driver logs were copied to
+      artifacts/logs_circdist_gross_drivers_20260823/ with SHA256SUMS before loss; union tally =
+      850 sub-query verdicts, 845 UNSAT + 5 SAT — ALL FIVE SAT ON NON-CANDIDATE VALIDATION
+      TRIPLES (known-witness reproduction, orbit -1 unquotiented runs); the drivers additionally
+      closed 3 of the 22 open candidate sub-queries (X(6,20), Z(6,16), Z(7,16), each at orbit 0)
+      before dying. RECONCILED FRONTIER: 95/110 cells (3 pending next-session validation of raw
+      driver records), 19 sub-queries remain — 15 at orbit 0, 4 at orbit 1, exactly the
+      quotient-weakest region; every one of 9 three-hour timeouts sits there. Raw driver records
+      are UNAUDITED evidence until a session validates them (dedup, hash-check, spot re-decide).
+      UNSAT verdicts remain solver-grade, not LRAT-checked.'
+    sources:
+    - path: artifacts/circdist_gross_candidate_decision_20260822.md
+      kind: text
+    - path: artifacts/logs_circdist_gross_drivers_20260823/SHA256SUMS.txt
+      kind: text
+  candidate-unsat-progress-2026-08-22:
+    date: '2026-08-22'
+    type: repair-applied
+    summary: 'Candidate UNSAT completion, reading 3 with major progress
+      (artifacts/circdist_gross_candidate_unsat_20260822.md): (K,|E|) cell decomposition (55
+      cells/sector, exhaustive since |E| even and >= 12) — 74/110 cells UNSAT, 0 SAT ANYWHERE;
+      the open frontier is exactly 36 mid-K high-|E| cells (listed). Foundational by-product:
+      the gross code has EXACTLY 1884 weight-12 logicals per sector (complete blocking-clause
+      enumeration to UNSAT — the whole cascade previously rested on an unproven pool), and 0 of
+      the 1884 admit a weight-<=10 extended-code solution in either sector (the |E| = 12 stratum
+      decided independently of all machinery). New verified levers: least-orbit quotient (order
+      24, element-verified, ~30x) and lex-minimality clause family (~30x). Predecessor''s
+      (1,2,9) witness shown non-lex-minimal. Certificates: cut soundness 400k draws, cross-solver
+      re-decisions (Cadical/Glucose, SHA-matched CNFs); no DRAT on this machine (§7.3). d_ext <=
+      11 by explicit weight-11 witnesses both sectors. REPRICING: full completion is 2-4 hours on
+      24 idle cores — the SBB-candidate-at-11 decision is one compute session away.'
+    sources:
+    - path: artifacts/circdist_gross_candidate_unsat_20260822.md
+      kind: text
+  phicert-2026-08-22:
+    date: '2026-08-22'
+    type: repair-applied
+    summary: 'Campaign-4 wave 1, repaired certification path
+      (artifacts/circdist_gross_phicert_20260822.md): SBB Figure 12 MACHINE-DECODED from the PDF
+      vector stream — the unique legal + MC + cascade-surviving reading is one cyclic orbit of
+      three per sector at phi = a + b, X-triple (14,0,2), Z-triple (1,2,62); round-6''s
+      phi = a + 2b family yields nothing under any reading (second-direction confirmation of the
+      round-8 refutation); residual reconstruction risk: edge-to-monomial map fixed by the
+      legality filter, figure not yet rendered to pixels. Staggered left-right gross circuits
+      are measurement-consistent STRUCTURALLY (0/4536 odd pairs); explicit legal MC depth-8 LRC
+      built, stim-deterministic. Colour rotation verified as a code automorphism (0/13824).
+      CERTIFIED: 29 triply-verified weight-10 witnesses cover 1442/1936 (74.5 percent) surviving
+      tiled circuits at d_circ <= 10; the CANDIDATE ORBITS RESIST — |R| = 0 and |R| = 1 UNSAT at
+      W = 10 in both sectors (no weight-10 undetectable logical uses fewer than two hook
+      columns), and the resisting orbits are exactly the LRC-realisable ones (labelled a prior
+      only). Wall: the UNSAT half at |R| >= 2; repriced 1-2 further sessions, P ~ 0.6. The
+      SBB-candidate-at-11 question is ALIVE again on the correct family.'
+    sources:
+    - path: artifacts/circdist_gross_phicert_20260822.md
+      kind: text
+  sbbcert-review-recovered-2026-08-20:
+    date: '2026-08-20'
+    type: level-change
+    route: candidate-certification
+    from: NUMERICAL
+    to: CONJECTURED
+    summary: 'The recovered adversarial review confirms the phi=a+2b group-tiled d_ext<=10
+      theorem but finds that family cannot contain the published left-right candidate; the
+      paper''s actual cascade instead selects phi=a+b. It also scopes the <=2-check claim to seven
+      checked instances, refutes the unqualified six-CNOT-layer no-go by a staggered legal LRC,
+      and refutes CIRCDIST.gross.mc-equiv. The candidate route is demoted pending certification of
+      the correct 12 LRC-compatible phi=a+b triples.'
+    sources:
+    - path: artifacts/circdist_sbbcert_review_20260820.md
+      kind: review
+      locator: Sections 0-11
+  created-2026-08-20:
+    date: '2026-08-20'
+    type: created
+    summary: Registered the Gross-code optimal-circuit-distance problem as a root of the circdist
+      project (lead commission; live test of the valuation/scheduling layer).
+    sources:
+    - path: research/circdist/notes/CIRCDIST_PROBLEMS.md
+      kind: text
+  sbbcert-2026-08-20:
+    date: '2026-08-20'
+    type: repair-applied
+    summary: 'Round-6 SBB Thm-1 certification landed with an INVERTED outcome (pending review):
+      d_ext <= 10 certified for the entire group-tiled representative class of the SBB candidate
+      — the distance-11 conjecture refuted by certificate conditional on group-tiling; d_ext = 11
+      exactly on every <= 2-check residual subset (the cascade''s blind spot is multi-hook
+      composition in weight-14/16 logicals); NO 6-layer gross SEC is measurement-consistent
+      (proven, no assumptions — upgrading the round-3 review''s TI finding to the whole depth
+      class; MC needs 9 layers for these assignments); and the MC iff non-interleaving
+      equivalence registered as CIRCDIST.gross.mc-equiv — if proved, D*_Gross collapses to a
+      residual-set optimization this session''s machinery already solves. The claim clause "the
+      candidate has certified d_circ = 11" is now counter-evidenced; claim revision deferred to
+      the post-review commit.'
+    sources:
+    - path: artifacts/circdist_gross_sbbcert_20260820.md
+      kind: text
+  d3-crosslead-withdrawn-2026-08-20:
+    date: '2026-08-20'
+    type: repair-applied
+    summary: 'The round-4 iff proof WITHDRAWS the d3 cross-lead recorded below: u ⊆ s does not
+      imply horizontal — diagonal hooks (0 ⊊ u ⊊ s) carry voltage (148370 of 790488 hook classes
+      over 98811 MC surface schedules; 0 vertical, as Theorem 1 requires), and every gross-code
+      hook has |s| >= 3, so the |s| = 1 step of the lead''s argument has no analogue on the gross
+      code. The evidence direction for D* reverts to NEUTRAL pending diagonal-voltage analysis.'
+    sources:
+    - path: artifacts/circdist_lift_iff_proof_20260820.md
+      kind: text
+  g1-histogram-invalidated-2026-08-20:
+    date: '2026-08-20'
+    type: repair-applied
+    summary: 'The combined independent review proved ALL 25920 translation-invariant minimum-depth
+      schedules violate measurement consistency (the nine pair-parities sum to |P x Pbar| = 9,
+      odd, so they cannot all be even; stim refuses their DEMs; 72/72 X-detectors
+      non-deterministic on direct sampling). The G1 d_circ histogram and its derived percentages
+      (70.7 / 26.1 / 15.6, the 1528 bound-12 candidates) are therefore VOID as circuit-distance
+      statements — the class contains no legal circuits at minimum depth. What survives: all
+      residual-set / d_ext-level statements (they depend only on within-check orders), the
+      weight-6 multi-hook mechanism (reviewed on a repaired MC-valid schedule), and the narrowed
+      dext-cap claim, now CERTIFIED*. Legal TI schedules require depth > minimum; the subclass
+      question reopens at the corrected depth.'
+    sources:
+    - path: artifacts/circdist_numerical_review_20260820.md
+      kind: review
+      scope: Item 3 of the combined NUMERICAL review — MC-invalidity proof and schedule repair.
+      locator: Item 3
+  d3-crosslead-2026-08-20:
+    date: '2026-08-20'
+    type: repair-applied
+    summary: 'Cross-root lead from the lift d3 gate: gross X/Z check pairs overlap in at most 2
+      qubits ({0: 4536, 2: 648}), and the CONJECTURED overlap>=4 criterion says such hooks cannot
+      carry timelike voltage — evidence TOWARD D* = 11, inverting the recon §8.5 reading. Recorded
+      as a LEAD, not a claim: the criterion is single-hook-scoped and the G1 multi-hook lesson
+      applies verbatim.'
+    sources:
+    - path: artifacts/circdist_lift_d3gate_20260820.md
+      kind: text
+  gate-g1-2026-08-20:
+    date: '2026-08-20'
+    type: repair-applied
+    summary: 'Gate G1 completed (full 25920-schedule sweep, 979 s): the translation-invariant
+      minimum-depth class is a BAD class — 70.7 percent admit weight-<=10 witnesses, 26.1 percent
+      <= 8, minimum 6 (an end-to-end verified six-hook witness with no data or measurement
+      faults). The recon''s parity-rigidity clause was single-hook-scoped and is contradicted;
+      CIRCDIST.gross.dext-cap''s claim narrowed accordingly. The worker declined to cash the
+      favorable pre-committed readings (bound-11/12 buckets) because absence-side certification
+      was demonstrated scope-loose; only the class-is-bad conclusion is robust
+      (witnesses cannot err unsafely). Positive raw material for the gap mechanism: only 15.6
+      percent of TI schedules let the cheapest timing-free skeleton close. The D* = 12 hunt and
+      the subclass-optimum determination both move OUT of this class.'
+    sources:
+    - path: artifacts/circdist_gross_g1_20260820.md
+      kind: text
+  toolfeas-2026-08-20:
+    date: '2026-08-20'
+    type: repair-applied
+    summary: 'Tooling feasibility study repriced the certification landscape: the direct DEM-level
+      certification of the gross SEC is walled (exact frontier stops at d_circ = 8; gross SEC
+      needs weeks of cluster CPU with 20-40 percent success odds), so candidate-certification
+      MUST go through the SBB Thm-1 extended-code reduction (360 columns, code-side problem —
+      gross CODE distance certifies in seconds). Untouched symmetry gap recorded: feeding BB
+      automorphisms to a solver buys ~70x (122 orbit representatives). Also pinned: the depth-7
+      Bravyi SEC has a KNOWN weight-10 witness (2308.07915, source of the "936 variants" figure);
+      the SBB depth-8 conjectured-11 circuit is a different object.'
+    sources:
+    - path: artifacts/circdist_gross_toolfeas_20260820.md
+      kind: text
+  recon-2026-08-20:
+    date: '2026-08-20'
+    type: route-added
+    route: candidate-certification
+    summary: Round-1 recon registered four routes, created CIRCDIST.gross.dext-cap at NUMERICAL
+      (universal d_ext <= 11 cap; headline collapses onto the completion gap), reproduced the
+      90/45 residual-set numbers from scratch with a structural explanation, and raised the node
+      OPEN -> CONJECTURED on the registered blueprints.
+    sources:
+    - path: artifacts/circdist_gross_recon_20260820.md
+      kind: text
+  verdict-review-2026-08-23:
+    date: '2026-08-23'
+    type: level-change
+    route: candidate-certification
+    from: CONJECTURED
+    to: NUMERICAL
+    summary: 'Wave-13 independent adversarial review of the final compute verdict
+      (artifacts/circdist_gross_verdict_review_20260823.md; logs secured with SHA256SUMS,
+      122/122 hashes check, nothing left running — FIX-2 clean). CONFIRM: (a) 990-slot analytic
+      completeness (re-derived; orbit partition of all 216 columns + 0/24 equivariance failures
+      closed — a previously unexamined load-bearing fact); (b) 990/990 UNSAT (reproduced from
+      scratch; 12/12 adversarial CNF rebuilds hash-matched); (c) d_ext = 11 both sectors
+      (50/50 witnesses re-verified with own F2 algebra). PARTIAL: (d) d_circ = 11 via SBB Thm 1
+      and (f) D* >= 11 — links 3/4 proposer-grade, SBB Thm 1 load-bearing but previously
+      unregistered (now registered as a route assumption); (e) Figure 12 — pixel-verified at
+      900 dpi, all 36 labels match phicert read twice, STRONGLY STRENGTHENED, with one new
+      harmless defect found (panel titles contradict Fig 10''s fill convention; 144-reading
+      sweep shows one invariant object). HONEST DOWNGRADE of the verdict artifact''s
+      cross-checking claim (114 truly multiply-decided, not 860; 1026 records, not 3000; max 3
+      real decisions/sub-query, not 9) — the fourth proposer-side accounting overstatement this
+      campaign, caught as ever by the next independent layer. Review licenses route
+      candidate-certification CONJECTURED -> NUMERICAL only (node stays CONJECTURED; no
+      CERTIFIED*); dispatcher executed exactly that. Also noted: reviewer''s own re-solves
+      reproduce the artifact §5.4 wall-clock defect; solver-parity advice refuted (Kissat 1184s
+      vs three others >3050s unfinished on Z(9,22,0)); anchor3.json referenced by archived
+      w11.py is absent.'
+    sources:
+    - path: artifacts/circdist_gross_verdict_review_20260823.md
+      kind: review
+      locator: Per-clause verdicts
+  links-closed-2026-08-23:
+    date: '2026-08-23'
+    type: level-change
+    route: candidate-certification
+    from: NUMERICAL
+    to: CERTIFIED*
+    summary: 'Wave-36 review closes the route''s remaining PARTIAL grounds (see the route
+      assessment for full detail): legality-filter uniqueness re-derived over a larger space
+      with an exhaustive pool; encoding fidelity confirmed with witness round-trips and CNF
+      hash rebuilds; SBB Thm 1''s proof verified with two published defects closed (one by
+      the reviewer''s own argument). Route promoted exactly as licensed, bound to the
+      implication hash 4f406732 (unchanged text). Node stays CONJECTURED — the D* = 11-or-12
+      half is untouched and is the campaign-5 hunt (waves 37-40). By-products recorded: for
+      the gross code (MC) is equivalent to per-pair non-interleaving (every check overlap is
+      exactly 2); the artifacts'' heuristic ISD pool is exactly complete.'
+    sources:
+    - path: artifacts/circdist_gross_links_review_20260823.md
+      kind: review
+      locator: Section 5
+  dstar-hunt1-2026-08-23:
+    date: '2026-08-23'
+    type: repair-applied
+    summary: 'Wave-37 hunt stage 1 (artifacts/circdist_dstar_hunt1_20260823.md): GAP
+      CANDIDATE found on the gap-via-lift route (see route assessment). CORRECTIONS this
+      event records honestly: (1) the wave-36 by-product sentence "(MC) is equivalent to
+      per-pair non-interleaving" is FALSE in the SBB sense — the hunt built MC-clean
+      schedules with 216-384/648 interleaved pairs (re-confirming mc-equiv REFUTED); the
+      statement is true only as a restatement of (MC) at overlap 2 and collapses nothing —
+      the round-43 scheduler note and the links-closed event summary carry the wrong reading
+      and are corrected HERE (append-only: the old texts stand, this event supersedes).
+      (2) New structural facts at proposer level: all gross logicals have EVEN weight (hence
+      weight-13 empty); the check-serial/global-potential class is repair-0 by a two-line
+      argument (a new no-go); fully-TI schedules cannot hold d_eff = 11 in both sectors.
+      FIX-2 clean (0 processes, 23 log entries SHA-summed). Stage 2 = wave 38: SAT-certify
+      d_eff = 11 on the candidate + close the two uncovered shapes; on survival the campaign
+      holds a proposer-level D* = 12 witness (adversarial review then required before any
+      claim-level use).'
+    sources:
+    - path: artifacts/circdist_dstar_hunt1_20260823.md
+      kind: text
+  dstar-hunt2-2026-08-23:
+    date: '2026-08-23'
+    type: repair-applied
+    summary: 'Wave-38 stage 2 (artifacts/circdist_dstar_hunt2_20260823.md): the wave-37 gap
+      candidate is KILLED — see the gap-via-lift route assessment for the full verdict.
+      CORRECTION recorded against wave 37 (append-only): its "no weight-<=10 configs" claim
+      on the candidate was WRONG — the d_eff filter tested only 2 of the 4 gain-positive
+      residual shapes, missing the 2-prefix (the killer, 888 hits / 132 disjoint pairs on the
+      candidate); the wave-38 worker additionally reproduced wave 37''s exact error class in
+      its own anneal cost and caught it. This is the campaign''s 16th defect caught by the
+      next independent layer (streak intact: self-audit 0). The stage-1 no-go by-products
+      SURVIVE (they did not use the broken filter arm: check-serial proof is analytic; the TI
+      d_eff wall used the solver-checked arm). FIX-2 clean. D* final campaign-5 state: OPEN
+      in {11, 12}, P(12) = 0.10 / P(11) = 0.15, three proposer-level no-go walls + Lemma D
+      transfer + the exact hunt machinery on disk for any future campaign.'
+    sources:
+    - path: artifacts/circdist_dstar_hunt2_20260823.md
+      kind: text

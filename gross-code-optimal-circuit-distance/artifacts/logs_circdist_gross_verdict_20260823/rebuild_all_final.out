@@ -1,0 +1,18 @@
+distinct (sub-query, recorded-hash) pairs to verify: 884
+   ... 100/884  (21 s)
+   ... 200/884  (41 s)
+   ... 300/884  (63 s)
+   ... 400/884  (85 s)
+   ... 500/884  (107 s)
+   ... 600/884  (128 s)
+   ... 700/884  (150 s)
+   ... 800/884  (171 s)
+
+VERIFIED : 880
+FAILED   : 4
+by encoding that reproduced it: {'cert4': 166, 'cert7': 710, 'cert6': 4}
+   FAIL ('Z', (1, 2, 62), 2, 12, 7, 'c60cd780d5fc9d1b28858734b6952502', 21382)  [logs_circdist_gross_drivers_20260823/bench.jsonl]
+   FAIL ('Z', (1, 2, 62), 2, 12, 8, 'f05268168864808f174cc49728d7a062', 21406)  [logs_circdist_gross_drivers_20260823/bench.jsonl]
+   FAIL ('Z', (1, 2, 62), 3, 12, 8, '0cfcdec18ea50a4420ad8ad9d14009ab', 23898)  [logs_circdist_gross_drivers_20260823/bench.jsonl]
+   FAIL ('Z', (1, 2, 62), 4, 12, 8, '458a4f7dba4dfc4f1606cee56239d29c', 26338)  [logs_circdist_gross_drivers_20260823/bench.jsonl]
+elapsed 190 s

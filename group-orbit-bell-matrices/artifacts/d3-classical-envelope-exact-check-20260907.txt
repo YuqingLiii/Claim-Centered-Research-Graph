@@ -1,0 +1,28 @@
+Fresh exact replay, 2026-09-07
+Working root: /private/tmp/grothorb-classical-20260907-R0Shtu
+Runtime: Python 3.9.6; standard library only
+
+Command:
+python3 grothendieck-group-orbit/tools/check_d3_classical_envelope.py --check grothendieck-group-orbit/artifacts/d3-classical-envelope-certificate-20260907.json
+
+Exit code: 0
+Standard output:
+PASS: frozen certificate equals exhaustive exact rational envelope replay
+
+Scope:
+Full D3 roots, A=WW^T/8, B=A-lambda I, lambda in [0,1/2].
+4096 Bob signs, with no symmetry quotient.
+All row breakpoints: 0, 1/4, 1/2.
+Distinct affine lines: 18 on (0,1/4), 17 on (1/4,1/2).
+Affine-line multiplicities sum to 4096 separately on each base interval.
+All 21 interior pairwise crossings included, producing 23 elementary cells.
+Envelope: 10-12 lambda on [0,1/4]; 8-4 lambda on [1/4,1/2].
+Direct exhaustive endpoint values: beta(0)=10, beta(1/4)=7, beta(1/2)=6.
+Matching Alice/Bob signs are in the certificate.
+Linear proposal counterexample: at lambda=1/2, s^T B t=6>4.
+This replay is author-run evidence and does not itself grant protocol promotion.
+
+SHA-256 of frozen inputs:
+a31c7a9e8fb903d2ca608a2ce03ece4105e57120966c88253f4641e7a174898b  grothendieck-group-orbit/tools/check_d3_classical_envelope.py
+f3461a1682c90bc52bc13a1b3a54f2e000d1b30b3ae7cd910d28bc4d912c4c12  grothendieck-group-orbit/artifacts/d3-classical-envelope-certificate-20260907.json
+6ad6e414f575b27881c193181375d4134ec84cf234a5a8aa4dfacf3958072c57  grothendieck-group-orbit/artifacts/d3-classical-envelope-20260907.md

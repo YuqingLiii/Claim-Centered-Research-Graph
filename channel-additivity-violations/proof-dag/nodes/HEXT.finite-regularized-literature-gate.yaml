@@ -1,0 +1,43 @@
+id: HEXT.finite-regularized-literature-gate
+role: obstruction
+aliases:
+- finite-regularized-literature-gate
+claim: >-
+  The audited 2025 extensions of Collins--Youn and strong asymptotic freeness do not establish a
+  finite-dimensional tensor-product violation of regularized minimum output entropy: the former
+  remains infinite-dimensional and commuting-operator, while the latter takes matrix dimension to
+  infinity with only a growing but finite representation-degree window and controls a diagonal
+  representation rather than the full repeated-channel coefficient system.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - This is a source-scope ruling, not a theorem that finite-dimensional regularized MOE is additive.
+  summary: >-
+    Kalantar--Shobeiri explicitly retain the infinite-dimensional commuting-operator setting.
+    Magee--de la Salle prove a strong uniform growing-degree theorem, but it has the quantifier
+    order dimension-to-infinity before unbounded tensor degree; no fixed finite realization is
+    controlled at every degree, and the repeated-channel coefficient algebra is broader than the
+    diagonal representation in their theorem.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FINITE_REGULARIZED_MOE_LITERATURE_GATE_20260830.md
+      kind: text
+      locator: "## Consequence for the current proof"
+frontier:
+  fixed-finite-all-copy-input:
+    task: >-
+      Find a theorem with the fixed-dimension-before-all-copies quantifier order, restricted if
+      necessary to physical complementary-channel outputs, or construct a finite counterexample
+      directly.
+    kind: gate
+    since: 2026-08-30
+events:
+  post-2024-literature-gate-recorded:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Recorded why the 2025 commuting-operator extension and quasi-exponential representation
+      theorem do not close the finite-dimensional regularized-MOE gate.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FINITE_REGULARIZED_MOE_LITERATURE_GATE_20260830.md
+      kind: text

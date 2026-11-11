@@ -1,0 +1,73 @@
+id: HEXT.gram-channel-entanglement-cost-gate
+role: constraint
+aliases:
+- gram-choi-entanglement-cost-gate
+- fixed-channel-bell-ec-gate
+claim: >-
+  For a maximally-mixed-preserving finite channel Phi with Gram-channel maximally mixed Stinespring
+  state sigma_BE, the fixed-channel Bell-certified regularized defect is at most
+  2E_C(sigma_BE)-S(E)_sigma. Hence a positive asymptotic conjugate-Bell rate requires
+  E_C(sigma_BE)>S(E)_sigma/2.
+routes:
+  tensor-regularized-correlation-route:
+    premises:
+    - HEXT.gram-channel-correlation-identities
+    implication: >-
+      Apply the one-shot entanglement-of-formation upper bound from the premise to every tensor
+      power. The Bell output and environment entropy are additive, while normalized minimum output
+      entropy and normalized entanglement of formation converge by subadditivity. Taking the limit
+      gives the entanglement-cost inequality and its positivity condition.
+    proof:
+      sketch: >-
+        At copy number n use the Gram channel Theta^tensor n and Stinespring state sigma^tensor n,
+        divide the one-shot inequality by n, and invoke Fekete's lemma for S_min and E_F.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/GRAM_CHANNEL_ENTANGLEMENT_COST_GATE_20260830.md
+        kind: text
+        locator: "## 1. Apply the one-shot identity at every tensor power"
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/GRAM_CHANNEL_ENTANGLEMENT_COST_GATE_20260830.md
+        kind: text
+        locator: "## 2. Regularize"
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The tensor-power passage and regularization have a complete proposer-side derivation but no
+        independent adversarial review.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The condition is necessary but not sufficient for a positive regularized channel defect.
+  - It applies to the conjugate-Bell certificate, not arbitrary optimized joint inputs.
+  - Entanglement cost may itself be difficult to compute for candidate Gram-channel states.
+  - The proof is proposer-side and has not received independent review.
+  summary: >-
+    Tensorizing the exact Gram-channel entanglement-of-formation screening inequality and taking
+    subadditive limits replaces the one-shot E_F surplus by the operational entanglement cost. This
+    exposes the precise regularized state-level gate that every fixed-channel Bell bootstrap must
+    pass.
+  basis:
+    routes:
+    - tensor-regularized-correlation-route
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/GRAM_CHANNEL_ENTANGLEMENT_COST_GATE_20260830.md
+      kind: text
+      locator: "## 3. Relation to the full-size question"
+frontier:
+  gram-state-entanglement-cost-surplus:
+    task: >-
+      Find a CP-square-compatible Gram-channel Stinespring state with
+      E_C(sigma_BE)>S(E)_sigma/2, or prove that the special Gram factorization forbids this strict
+      inequality.
+    kind: gate
+    since: 2026-08-30
+events:
+  entanglement-cost-gate-recorded:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Regularized the one-shot Gram-channel E_F identity and obtained an entanglement-cost
+      necessary condition for every fixed-channel full-size conjugate-Bell bootstrap.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/GRAM_CHANNEL_ENTANGLEMENT_COST_GATE_20260830.md
+      kind: text
+

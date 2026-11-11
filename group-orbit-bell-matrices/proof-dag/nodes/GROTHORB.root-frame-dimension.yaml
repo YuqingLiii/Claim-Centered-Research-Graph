@@ -1,0 +1,106 @@
+id: GROTHORB.root-frame-dimension
+role: proof
+claim: For r>=3, let W have the n=2r(r-1) rows given by all vectors +/-e_i +/-e_j for 1<=i<j<=r, and put
+  A=WW^T/[4(r-1)]. Then A is a rank-r orthogonal projection equivariant under a transitive permutation
+  action on its rows and columns; its vector Bell optimum is n, its balance weight is unique, and its
+  minimum optimal real vector dimension is r.
+routes:
+  root-frame-rigidity:
+    premises:
+    - GROTHORB.balance-rigidity
+    - GROTHORB.transitive-optimum
+    implication: The root frame is tight and its outer products span Sym_r, so the balance map is injective
+      and the rigidity criterion supplies the result.
+    assessment:
+      level: PROVED
+      summary: The implication and its current target assembly passed independent adversarial review.
+      basis:
+        reviews:
+        - path: group-orbit-bell-matrices/reviews/balance-rigidity-review-20260907.md
+          kind: review
+          locator: F2R
+          scope: Checked the implication against its current target, supporting premises and all relevant
+            boundary cases.
+          reviewed_hash: sha256:418e4456ef9aabcf3e17e6c09dd12e7e05f5a52f638ec19aaba4ba380506215d
+    proof:
+      sketch: Complete argument in the linked proof, independently reviewed.
+      sources:
+      - &id001
+        path: group-orbit-bell-matrices/artifacts/root-frame-dimension-20260907.md
+        kind: text
+        locator: RF-1 through RF-4
+assessment:
+  level: PROVED
+  summary: Complete scoped argument passed an independent fresh-context same-model-family adversarial
+    review. All-r tightness, ordinary permutation transitivity, quadratic-form span and minimum vector
+    dimension. Correctness does not assert novelty or formal verification.
+  basis:
+    evidence:
+    - *id001
+    - path: group-orbit-bell-matrices/tools/check_balance_rigidity.py
+      kind: text
+      locator: main
+    - path: group-orbit-bell-matrices/artifacts/group-orbit-literature-positioning-20260907.md
+      kind: text
+      locator: L1 through L6
+    - path: group-orbit-bell-matrices/artifacts/group-orbit-exploration-20260907.md
+      kind: text
+      locator: E1 through E4
+    routes:
+    - root-frame-rigidity
+    runs:
+    - path: group-orbit-bell-matrices/artifacts/balance-rigidity-exact-check-20260907.txt
+      kind: run
+      result: Fresh exact rational finite examples passed; the universal claim relies on the reviewed
+        argument.
+    reviews:
+    - path: group-orbit-bell-matrices/reviews/balance-rigidity-review-20260907.md
+      kind: review
+      locator: F2
+      scope: All-r tightness, ordinary permutation transitivity, quadratic-form span and minimum vector
+        dimension.
+      reviewed_hash: sha256:3316ba45bb7756dce199b39bebcaf076988cca760076c096021ce1d078024450
+events:
+  registered-20260907:
+    date: '2026-09-07'
+    type: created
+    summary: Registered the root-frame family suggested during exploration before proof and testing.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/exploration-registration-20260907.md
+      kind: text
+      locator: R4
+  author-proof-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: OPEN
+    to: CONJECTURED
+    summary: Registered proposal received a complete author argument before independent review.
+    sources:
+    - *id001
+  independent-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Promoted only after exact-statement independent review of the assembled scoped proof.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/balance-rigidity-review-20260907.md
+      kind: review
+      locator: F2
+  route-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    route: root-frame-rigidity
+    from: OPEN
+    to: PROVED
+    summary: Independently reviewed route implication and supporting assembly.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/balance-rigidity-review-20260907.md
+      kind: review
+      locator: F2R
+frontier:
+  next-research-question:
+    task: Register and investigate exact classical certification for A_r-lambda I in a specified rational
+      lambda regime, with matching sign witnesses and prior-art comparison.
+    kind: task
+    since: '2026-09-07'

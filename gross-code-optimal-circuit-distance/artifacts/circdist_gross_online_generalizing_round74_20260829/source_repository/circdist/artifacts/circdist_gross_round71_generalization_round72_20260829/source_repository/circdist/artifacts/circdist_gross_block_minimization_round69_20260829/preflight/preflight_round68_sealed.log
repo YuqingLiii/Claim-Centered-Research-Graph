@@ -1,0 +1,70 @@
+{
+  "candidate": {
+    "audit": {
+      "conflicts": [],
+      "edge_count": 864,
+      "errors": [],
+      "global_interleaved": true,
+      "max_time": 121,
+      "mc_violations": [],
+      "min_time": 0,
+      "ok": true,
+      "overlap_interleaved_pairs": 13,
+      "overlaps": 648,
+      "used_layers": 122,
+      "whole_check_interleaved_pairs": 67
+    },
+    "sha256": "4a6d61d23b1e3655cdd10f31189827e6f8a22168bb0a815525517e703c32ba29"
+  },
+  "continuation": {
+    "iterations": 5,
+    "new_sound_blocks": 10,
+    "raw_mechanisms": 10
+  },
+  "direct": {
+    "Xerr": {
+      "all_clauses_satisfied": true,
+      "fault_weight": 10,
+      "status": "SATISFIABLE"
+    },
+    "Zerr": {
+      "all_clauses_satisfied": true,
+      "fault_weight": 8,
+      "status": "SATISFIABLE"
+    }
+  },
+  "encoding_controls": {
+    "cardinality_assignments_checked": 128,
+    "xor_rows_checked": 8
+  },
+  "exact_residual": [
+    11,
+    12
+  ],
+  "live_bindings": null,
+  "manifest_entries": 101,
+  "model": {
+    "MC_overlaps": 648,
+    "edges": 864,
+    "pools": [
+      1884,
+      1884
+    ],
+    "round62_blocks": 20,
+    "static_clauses": 1440
+  },
+  "proof_controls": {
+    "drat_positive": "VERIFIED",
+    "lrat_positive": "VERIFIED",
+    "truncated_drat": "REJECTED",
+    "truncated_lrat": "REJECTED"
+  },
+  "repair_entered": false,
+  "sat_control": {
+    "selected_model_differs_from_cadical": true,
+    "status": "SAT",
+    "weight": 10
+  },
+  "status": "PASS",
+  "verdict": "MATERIAL-CHECKED-PROGRESS-NOT-CLOSED"
+}

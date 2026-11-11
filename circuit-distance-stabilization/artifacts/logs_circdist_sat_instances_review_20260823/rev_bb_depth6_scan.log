@@ -1,0 +1,8 @@
+BB: n=18  #X-checks=9 #Z-checks=9  rank H_X=7 rank H_Z=7  k=4  anticommuting pairs=0
+    check weights X={6: 9} Z={6: 9}
+    qubit degrees in H_X: {3: 18} ; in H_Z: {3: 18}
+    #logical reps: X=4 Z=4
+    EXHAUSTIVE over 2^11 and 2^11: d_X=4 d_Z=4  ->  [[18,4,4]]
+    Standing fact 2.2 exhaustive over all 2^11 of ker H_Z: mismatches=0
+schedule NI: T=12 legal=True (MC)=True  total CNOTs=108  per-layer=[9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9]
+DEPTH-6 EXHAUSTIVE SCAN: 518400 candidates -> 25920 legal -> 0 legal AND (MC)   [17s]

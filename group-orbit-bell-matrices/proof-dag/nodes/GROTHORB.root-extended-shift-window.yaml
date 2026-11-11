@@ -1,0 +1,94 @@
+id: GROTHORB.root-extended-shift-window
+role: proof
+claim: For every integer r>=3, let W have as its rows all vectors epsilon e_i+eta e_j with 1<=i<j<=r and epsilon,eta
+  in {+1,-1}, let n=2r(r-1), and put A_r=WW^T/[4(r-1)]. Then for every 0<=lambda<=1/[2(r-1)], beta_cl(A_r-lambda
+  I_n)=2r(2r-1)/3-n lambda.
+routes:
+  psd-duplication-window:
+    premises:
+    - GROTHORB.psd-antipodal-linear-window
+    - GROTHORB.root-classical
+    implication: Select positive D_r roots U so that W is a simultaneous row permutation of [U;-U]. The matrix
+      C=UU^T/[2(r-1)] is PSD with diagonal 1/(r-1), and D(C) is the full root projection up to simultaneous
+      permutation. The PSD duplication-window theorem, its zero-shift identity, and the established full-root
+      classical value give the claimed interval and formula.
+    assessment:
+      level: PROVED
+      summary: Both actual premise arguments and this exact implication passed separate author-independent
+        review; no label-only propagation.
+      basis:
+        reviews:
+        - path: group-orbit-bell-matrices/reviews/psd-antipodal-window-review-20260907.md
+          kind: review
+          locator: F3
+          reviewed_hash: sha256:81735fbe09238f4c5e32f9448ef5d0e01af445de76cb04e4d7df5421e20545ca
+          scope: Independently verified the generic PSD-window proof, established unshifted classical proof
+            and full-root block permutation/scaling, then checked the assembled implication.
+    proof:
+      sketch: The complete normalized assembly and explicit matching signs are in RW-1 through RW-4.
+      sources:
+      - path: group-orbit-bell-matrices/artifacts/root-extended-shift-window-20260907.md
+        kind: text
+        locator: RW-1 through RW-4
+assessment:
+  level: PROVED
+  summary: Complete scoped proof passed author-independent same-model shared-context adversarial review. This
+    is a sufficient interval, not a maximality or novelty certificate.
+  basis:
+    evidence:
+    - path: group-orbit-bell-matrices/artifacts/root-extended-shift-window-20260907.md
+      kind: text
+      locator: RW-1 through RW-4
+    - path: group-orbit-bell-matrices/artifacts/psd-antipodal-window-literature-20260907.md
+      kind: text
+    - path: group-orbit-bell-matrices/artifacts/classical-exploration-summary-20260907.md
+      kind: text
+      locator: NEXT
+    reviews:
+    - path: group-orbit-bell-matrices/reviews/psd-antipodal-window-review-20260907.md
+      kind: review
+      locator: F2
+      reviewed_hash: sha256:df62de9a7c9c2c2dd4e5512ea89a3374d63f3c3bbb6e6d41f4eff509732f05db
+      scope: Checked the unchanged full claim and every supporting input, including all signs, exact factors,
+        PSD degeneracies and both interval endpoints; no maximality or novelty conclusion.
+    routes:
+    - psd-duplication-window
+frontier:
+  outside-envelope:
+    task: GROTHORB.root-shift-window-maximality proves this endpoint exact. Register a separate post-window
+      optimum or endpoint-classification claim before testing.
+    kind: task
+    since: '2026-09-07'
+events:
+  registered-20260907:
+    date: '2026-09-07'
+    type: created
+    summary: Registered a dependent all-r parameter claim before author assignment or computational tests;
+      retains the earlier conservative theorem and refuted whole-interval proposal.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/classical-family-registration-20260907.md
+      kind: text
+      locator: C16
+  route-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    route: psd-duplication-window
+    from: OPEN
+    to: PROVED
+    summary: Reviewed the complete route assembly only after checking the generic premise proof and established
+      root classical value.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/psd-antipodal-window-review-20260907.md
+      kind: review
+      locator: F3
+  independent-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: OPEN
+    to: PROVED
+    summary: Promoted the unchanged registered statement only after independent verification of its assembled
+      argument.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/psd-antipodal-window-review-20260907.md
+      kind: review
+      locator: F2

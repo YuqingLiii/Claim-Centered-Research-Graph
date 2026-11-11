@@ -24,13 +24,13 @@ reach every artifact needed to inspect or continue that part of the research.
   tools/                      # optional project-specific checkers
 ```
 
-This release contains exactly two projects, `se` and `ksum`. Each project is
+The repository contains one project per research problem (see `PROBLEM_INDEX.md`). Each project is
 self-contained: its node-linked proofs, runs, certificates, reviews, Lean
 files, and project-specific checkers remain under the same
 `<project>/` directory. A review is a project-level object rather
 than a child of one node, so a single report may cover a whole graph, a
 connected subgraph, several nodes, or several route implications. Only the
-validators shared by both projects live in the repository-level `tools/`
+validators shared by all projects live in the repository-level `tools/`
 directory.
 Manuscripts, raw conversations, private accounting data, unrelated projects,
 and unlinked exploratory output are outside the public release.
@@ -136,10 +136,20 @@ remains in its parent node with its assessment and linked evidence.
 From the repository root, run:
 
 ```text
-python3 tools/proof_dag_check.py --problem ksum --write-generated
-python3 tools/proof_dag_check.py --problem se --write-generated
+python3 tools/proof_dag_check.py --problem <project> --write-generated
+python3 tools/evidence_closure_check.py
 ```
 
 Then confirm that every changed claim has a reason, every assessment has sufficient basis, every
 new artifact is reachable, failed routes were not erased or over-propagated, and no generated file
 has become a competing source of truth.
+
+## 9. Evidence not included in the repository
+
+Some node-linked evidence cannot be published here: third-party papers whose licence does not allow
+redistribution, raw conversations, and oversized raw solver or log output. Such a path stays in the node
+record unchanged and is listed in the repository-level `EVIDENCE_GAPS.yaml` with its reason and, for papers,
+its bibliographic identifier. The validators report each listed path as a declared gap; they never treat it as
+present, and any missing path that is not listed remains an error. When a project must be usable on its own
+and needs a node owned by another project, it carries a byte-identical copy of that node, recorded in
+`proof-dag/COPIED_NODES.json` with the canonical location; a copy is a dependency, not a new claim.

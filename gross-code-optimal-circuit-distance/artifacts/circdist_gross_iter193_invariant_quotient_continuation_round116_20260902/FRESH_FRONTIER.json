@@ -1,0 +1,261 @@
+{
+  "assignment": null,
+  "base": {
+    "clauses": 11438824,
+    "encoding_check": {
+      "all_clause_ids_partitioned_once": true,
+      "all_source_roots_reconstructed": true,
+      "all_variables_primary_or_uniquely_defined": true,
+      "assertions": 869622,
+      "clauses": 11438824,
+      "cnf_sha256": "2e72b7bdd8702340fcac7cc706ebb777d5d2a10cc6e670bbd196565e0ece725f",
+      "comparison_truth_cases": 1048576,
+      "comparisons": 11234,
+      "definition_records": 3109003,
+      "efssc_selectors": 50832,
+      "membership_expressions": 6048,
+      "negative_controls": {
+        "cnf_first_clause_mutation_rejected": true,
+        "cnf_truncation_rejected_by_clause_count": true,
+        "comparator_direction_control": true,
+        "out_of_bound_time_864_rejected": true,
+        "semantic_source_mutation_rejected": true
+      },
+      "rank_expressions": 864,
+      "rank_membership_domains": 1008,
+      "rank_membership_local_order_qubit_cases": 4354560,
+      "reviewed_blocks": 814392,
+      "root_clauses": 873438,
+      "schema": "circdist-gross-iteration109-independent-encoding-check-v1",
+      "seconds": 73.718353,
+      "source_semantic_payload_sha256": "b1e7b4677de2549e3802b0e91af35d91f9d735218cd7630b5d9f9b284b15d9cc",
+      "status": "PASS",
+      "variables": 3117683,
+      "word_equalities": 1728
+    },
+    "sha256": "2e72b7bdd8702340fcac7cc706ebb777d5d2a10cc6e670bbd196565e0ece725f",
+    "variables": 3117683
+  },
+  "closure": {
+    "css": {
+      "action": {
+        "check": "g -> -g",
+        "conjugation_edge_cases": 62208,
+        "distinct_concrete_edge_permutations": 144,
+        "edge": "X:c:q <-> Z:-c:D(q)",
+        "extended_group_order": 144,
+        "involution_edge_cases": 864,
+        "name": "CSS duality D extending Z_12 x Z_6",
+        "qubit": "q<72 -> 72+(-q); q=72+r -> -r",
+        "relations": [
+          "D^2=1",
+          "D T_delta D=T_-delta"
+        ],
+        "residual_kind_action": "identity on k in {0,1,2}; order positions and layer labels unchanged",
+        "selector": "Xerr <-> Zerr; D:q -> D:D(q); R:c:k -> R:-c:k",
+        "translation_composition_edge_cases": 4478976,
+        "translation_subgroup_order": 72
+      },
+      "bindings": {
+        "candidate_schedule_sha256": "433c2edc9ceacf3237be8c768089f746e7f63165c4c587a522663dfb7d4a858b",
+        "candidate_sha256": "8b4a811074b4442ab875ab17e405120943393f9c8400163e6e7d7d386aac1089",
+        "source_semantic_payload_sha256": "b1e7b4677de2549e3802b0e91af35d91f9d735218cd7630b5d9f9b284b15d9cc",
+        "source_sha256": "f4aafe384ae0a626671b95400f66727007942241cb6988ec9b68bb1a77893091",
+        "state_sha256": "522848f50de5f9d7015ca326be4a8f0a69e1342bf7c5e27886c6b4dcdaf25c4f"
+      },
+      "blocks": {
+        "already_dual_paired_count": 814392,
+        "closed_union_count": 814392,
+        "dual_image_count": 814392,
+        "identity_rule": "full sorted ordered-atom tuple",
+        "input_count": 814392,
+        "missing_by_parent_family": {},
+        "missing_dual_image_count": 0,
+        "missing_set_generator_cases": 0,
+        "missing_translation_orbit_histogram": {}
+      },
+      "geometry": {
+        "check_image_cases": 288,
+        "detector_plus_logical_rank_each": 78,
+        "detector_rank_each": 66,
+        "kernel_dimension": 66,
+        "logical_criterion": "within zero syndrome, all 12 logical parities vanish iff the support is in the sector stabilizer span",
+        "mc_overlap_image_cases": 648,
+        "named_edges": 864,
+        "sector_swap": "X hook/Z detector/stabilizer quotient maps exactly to Z hook/X detector/stabilizer quotient and conversely",
+        "stabilizer_rank_each": 66,
+        "status": "PASS"
+      },
+      "information_gain": "The iteration-194 registry is claimed closed under translations and the CSS involution.  The missing counts here are the exact opposite CSS coset exclusions added by D; the union supports all 144 generalized-dihedral images.",
+      "schedule_transport": {
+        "dual": {
+          "edge_count": 864,
+          "global_interleaved": true,
+          "mc_overlaps": 648,
+          "resource_occupancies": 1728,
+          "schedule_sha256": "aa02576da4a7c51bcf3046e29f7012159943738c064abe45da40af44c97ae2c7",
+          "used_layers": 460
+        },
+        "layer_multiset_preserved": true,
+        "original": {
+          "edge_count": 864,
+          "global_interleaved": true,
+          "mc_overlaps": 648,
+          "resource_occupancies": 1728,
+          "schedule_sha256": "433c2edc9ceacf3237be8c768089f746e7f63165c4c587a522663dfb7d4a858b",
+          "used_layers": 460
+        }
+      },
+      "schema": "circdist-gross-round116-iter194-css-duality-registry-audit-v1",
+      "selectors": {
+        "already_dual_paired_count": 50832,
+        "closed_union_count": 50832,
+        "dual_image_count": 50832,
+        "existing_translation_orbit_histogram": {
+          "36": 4,
+          "72": 704
+        },
+        "identity_rule": "full (sector,sorted data,sorted (check,sorted kinds)) tuple",
+        "input_count": 50832,
+        "missing_by_target_sector": {},
+        "missing_dual_image_count": 0,
+        "missing_set_generator_cases": 0,
+        "missing_translation_orbit_histogram": {}
+      },
+      "soundness_lemma": "D is a bijection of the frozen physical schedule space preserving resource conflicts, the equality of the two MC orientations, global interleaving, and layer labels.  It swaps the two CSS error sectors, maps residual order position k identically, maps zero syndrome to zero syndrome, and maps stabilizer span to stabilizer span.  Therefore the D-image of every reviewed order exclusion and exact selector exclusion is sound; translation closure of the missing image sets follows from D T_delta D=T_-delta.",
+      "status": "PASS"
+    },
+    "nonfree_orbits_explicitly_handled": true,
+    "order144": true,
+    "translation": {
+      "blocks": {
+        "count": 814392,
+        "families": {
+          "dynamic": 27864,
+          "generalized": 783288,
+          "round62": 1800,
+          "unary": 1440
+        },
+        "generator_cases": 1628784,
+        "unique_exact_tuples": 814392
+      },
+      "group": {
+        "composition_cases": 4478976,
+        "edge_bijections": 72,
+        "edges": 864,
+        "elements": 72,
+        "generators": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "name": "Z_12 x Z_6",
+        "nonidentity_fixed_edges": 0,
+        "order": 72
+      },
+      "invariance_theorem": "Closure under generators (1,0) and (0,1) implies closure under all 72 group elements.",
+      "iteration": 194,
+      "schema": "circdist-gross-round110-registry-invariance-v1",
+      "selector_state_sha256": "a0bf27750c0cf74196c2bb161ed70ad879b3bb7e117172adc34c13d8f02236d1",
+      "selectors": {
+        "Xerr": 25416,
+        "Zerr": 25416,
+        "count": 50832,
+        "generator_cases": 101664,
+        "unique_exact_tuples": 50832,
+        "unique_semantic_hashes": 50832
+      },
+      "semantic_source_sha256": "b1e7b4677de2549e3802b0e91af35d91f9d735218cd7630b5d9f9b284b15d9cc",
+      "source_sha256": "f4aafe384ae0a626671b95400f66727007942241cb6988ec9b68bb1a77893091",
+      "state_sha256": "522848f50de5f9d7015ca326be4a8f0a69e1342bf7c5e27886c6b4dcdaf25c4f",
+      "status": "PASS"
+    }
+  },
+  "lineage": {
+    "blocks_added": 324,
+    "candidate_and_D_selectors": 216,
+    "inherited_D_selectors": 36,
+    "parent_iteration": 193,
+    "selectors_added": 252
+  },
+  "quotient": {
+    "checker": {
+      "bindings": {
+        "base_cnf_sha256": "2e72b7bdd8702340fcac7cc706ebb777d5d2a10cc6e670bbd196565e0ece725f",
+        "base_encoding_check_sha256": "d839a69ca6abfb97c53fed6c7931d1d872e43f37184d4ab1b84ccd9940dd6677",
+        "css_closure_check_sha256": "213ae271527f3d35791dc0f5600749b4782ee8ecc2a82b11abcd26f4bb91cc8b",
+        "quotient_cnf_sha256": "7fade55daeabb8e2a6702552ce8fc9f0c899091cba64bc1d6806f6f93e7af8db",
+        "source_sha256": "f4aafe384ae0a626671b95400f66727007942241cb6988ec9b68bb1a77893091",
+        "translation_registry_check_sha256": "e376dfa12cd11bd6b93e907aaff85113694e12141df2d34413df0e05462a7eb3"
+      },
+      "encoding": {
+        "all_appended_clauses_reconstructed": true,
+        "appended_clauses": 9884303,
+        "base_prefix_clauses": 11438824,
+        "corrupt_primitive_rejected": true,
+        "final_clauses": 21323127,
+        "final_variables": 4353203,
+        "truncated_primitive_rejected": true,
+        "truth_table_cases": 16,
+        "unique_extension": true
+      },
+      "equisatisfiability_theorem": {
+        "conclusion": "The order-144 quotient is satisfiable iff the full iteration-194 base family is satisfiable. A future proof-producing UNSAT result therefore covers the full frozen iteration-194 family encoded by the base, subject to the soundness scope of its exclusion registries.",
+        "forward": "A quotient model projects to a base model because the base CNF is a byte-exact prefix.",
+        "hypotheses": "The checked base semantics are invariant under every group generator: concrete Gross geometry under translations and D; order-block and selector registries are closed under both generators; the compiled base CNF exactly represents those semantics.",
+        "reverse": "For any base schedule S, choose a lexicographically least time vector in its finite 144-image orbit. Invariance makes it a base schedule. It is <= every group image and the exact recurrence has one satisfying extension for each of the 143 comparisons.",
+        "stabilizers": "Non-strict <= permits equal images. No freeness or orbit-size-144 assumption is used."
+      },
+      "group": {
+        "distinct_edge_permutations": 144,
+        "edge_composition_cases": 17915904,
+        "edge_identity_cases": 864,
+        "geometry_and_incidence_cases": 41472,
+        "name": "(Z_12 x Z_6) semidirect C_2",
+        "nonidentity": 143,
+        "order": 144,
+        "overlap_sets_checked": 144,
+        "registry_action_sample_cases": 1440
+      },
+      "integer_safety": {
+        "clauses_below_signed_64": true,
+        "streaming_clause_comparison": true,
+        "variables_below_signed_32": true
+      },
+      "registry_closure": {
+        "blocks": 814392,
+        "full_css_involution_audit_bound": true,
+        "full_translation_generator_audit_bound": true,
+        "selectors": 50832,
+        "therefore_full_order144_action_closed": true
+      },
+      "schema": "circdist-gross-round116-order144-quotient-check-v1",
+      "status": "PASS",
+      "wall_seconds": 69.517434
+    },
+    "clauses": 21323127,
+    "equisatisfiable_with_full_iter194_base": true,
+    "group_order": 144,
+    "roots": 143,
+    "sha256": "7fade55daeabb8e2a6702552ce8fc9f0c899091cba64bc1d6806f6f93e7af8db",
+    "stabilizers_permitted": true,
+    "variables": 4353203
+  },
+  "sat_result": null,
+  "solver_invocations": 0,
+  "source": {
+    "assertions": 869622,
+    "blocks": 814392,
+    "selectors": 50832,
+    "semantic_sha256": "b1e7b4677de2549e3802b0e91af35d91f9d735218cd7630b5d9f9b284b15d9cc",
+    "sha256": "f4aafe384ae0a626671b95400f66727007942241cb6988ec9b68bb1a77893091",
+    "state_sha256": "522848f50de5f9d7015ca326be4a8f0a69e1342bf7c5e27886c6b4dcdaf25c4f"
+  },
+  "status": "CHECKED_UNSTARTED",
+  "unsat_result": null
+}

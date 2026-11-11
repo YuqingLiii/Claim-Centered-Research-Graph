@@ -1,0 +1,23 @@
+{
+  "attempts": [
+    {
+      "exit_code": 1,
+      "log": "verification/pair_count_probe.failed_python39_v1.log",
+      "reason": "host Python 3.9 does not provide int.bit_count",
+      "version": 1
+    },
+    {
+      "exit_code": 1,
+      "log": "verification/pair_count_probe.failed_schema_assumption_v2.log",
+      "reason": "probe incorrectly equated all represented relation-domain cells with conservative-positive truth cells",
+      "version": 2
+    }
+  ],
+  "load_bearing": false,
+  "package_payload_mutated_before_correction": false,
+  "research_state_mutated": false,
+  "schema": "round74-read-only-pair-count-probe-corrections-v1",
+  "status": "CORRECTED",
+  "successful_disposition": "verify.py now checks represented domain cardinality and truth/explicit/configuration counts under their distinct definitions; preseal quick passed",
+  "timestamps_or_wall_seconds_claimed": false
+}

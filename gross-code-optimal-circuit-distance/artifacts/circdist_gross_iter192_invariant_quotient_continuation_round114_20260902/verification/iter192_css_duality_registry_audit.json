@@ -1,0 +1,101 @@
+{
+  "action": {
+    "check": "g -> -g",
+    "conjugation_edge_cases": 62208,
+    "distinct_concrete_edge_permutations": 144,
+    "edge": "X:c:q <-> Z:-c:D(q)",
+    "extended_group_order": 144,
+    "involution_edge_cases": 864,
+    "name": "CSS duality D extending Z_12 x Z_6",
+    "qubit": "q<72 -> 72+(-q); q=72+r -> -r",
+    "relations": [
+      "D^2=1",
+      "D T_delta D=T_-delta"
+    ],
+    "residual_kind_action": "identity on k in {0,1,2}; order positions and layer labels unchanged",
+    "selector": "Xerr <-> Zerr; D:q -> D:D(q); R:c:k -> R:-c:k",
+    "translation_composition_edge_cases": 4478976,
+    "translation_subgroup_order": 72
+  },
+  "bindings": {
+    "candidate_schedule_sha256": "823e67fa6250eaccb5e81f8e7f71457ba6b11d30447afd3a37f3358a9dfca9a1",
+    "candidate_sha256": "8ed991cb3b291900c947d703cb740b7718f462a96fa0bff9d477b0f9db4adca2",
+    "source_semantic_payload_sha256": "957459e254abc70f0c66a631712ee70e856f9ca11153b78f20b06d7fb1ffe67b",
+    "source_sha256": "89ed11977cacaed4f46a8c0756fef77a9706a2f3ce65d6ec1b496424fb9533f3",
+    "state_sha256": "e4085c5a776561bfc136d67f64988c31c0e26b063afd715d61a836a2f6ff06f1"
+  },
+  "blocks": {
+    "already_dual_paired_count": 219888,
+    "closed_union_count": 814392,
+    "dual_image_count": 517140,
+    "identity_rule": "full sorted ordered-atom tuple",
+    "input_count": 517140,
+    "missing_by_parent_family": {
+      "dynamic": 13932,
+      "generalized": 282420,
+      "round62": 900
+    },
+    "missing_dual_image_count": 297252,
+    "missing_set_generator_cases": 594504,
+    "missing_translation_orbit_histogram": {
+      "36": 9,
+      "72": 4124
+    }
+  },
+  "geometry": {
+    "check_image_cases": 288,
+    "detector_plus_logical_rank_each": 78,
+    "detector_rank_each": 66,
+    "kernel_dimension": 66,
+    "logical_criterion": "within zero syndrome, all 12 logical parities vanish iff the support is in the sector stabilizer span",
+    "mc_overlap_image_cases": 648,
+    "named_edges": 864,
+    "sector_swap": "X hook/Z detector/stabilizer quotient maps exactly to Z hook/X detector/stabilizer quotient and conversely",
+    "stabilizer_rank_each": 66,
+    "status": "PASS"
+  },
+  "information_gain": "Round112 closed only translation orbits.  The missing counts here are the exact opposite CSS coset exclusions added by D; the union supports all 144 generalized-dihedral images.",
+  "schedule_transport": {
+    "dual": {
+      "edge_count": 864,
+      "global_interleaved": true,
+      "mc_overlaps": 648,
+      "resource_occupancies": 1728,
+      "schedule_sha256": "5ec876356af02a2efbeada7020c05f42f41398efaae17db52ed76906a1580c1c",
+      "used_layers": 500
+    },
+    "layer_multiset_preserved": true,
+    "original": {
+      "edge_count": 864,
+      "global_interleaved": true,
+      "mc_overlaps": 648,
+      "resource_occupancies": 1728,
+      "schedule_sha256": "823e67fa6250eaccb5e81f8e7f71457ba6b11d30447afd3a37f3358a9dfca9a1",
+      "used_layers": 500
+    }
+  },
+  "schema": "circdist-gross-round114-css-duality-registry-audit-v1",
+  "selectors": {
+    "already_dual_paired_count": 0,
+    "closed_union_count": 50328,
+    "dual_image_count": 25164,
+    "existing_translation_orbit_histogram": {
+      "36": 1,
+      "72": 349
+    },
+    "identity_rule": "full (sector,sorted data,sorted (check,sorted kinds)) tuple",
+    "input_count": 25164,
+    "missing_by_target_sector": {
+      "Xerr": 12024,
+      "Zerr": 13140
+    },
+    "missing_dual_image_count": 25164,
+    "missing_set_generator_cases": 50328,
+    "missing_translation_orbit_histogram": {
+      "36": 1,
+      "72": 349
+    }
+  },
+  "soundness_lemma": "D is a bijection of the frozen physical schedule space preserving resource conflicts, the equality of the two MC orientations, global interleaving, and layer labels.  It swaps the two CSS error sectors, maps residual order position k identically, maps zero syndrome to zero syndrome, and maps stabilizer span to stabilizer span.  Therefore the D-image of every reviewed order exclusion and exact selector exclusion is sound; translation closure of the missing image sets follows from D T_delta D=T_-delta.",
+  "status": "PASS"
+}

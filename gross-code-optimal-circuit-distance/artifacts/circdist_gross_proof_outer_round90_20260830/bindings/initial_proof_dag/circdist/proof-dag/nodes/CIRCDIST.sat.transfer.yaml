@@ -1,0 +1,151 @@
+id: CIRCDIST.sat.transfer
+role: proof
+aliases:
+- SAT-TRANSFER
+claim: 'For every CSS code Q = [[n,k,d]] with k >= 1, with H_X and H_Z the matrices of the given (possibly dependent)
+  X- and Z-check generating rows, and every depth-T, T >= 1, conflict-free (no physical qubit participates in two
+  CNOTs in one time step) and measurement-consistent single-round single-ancilla CNOT schedule M in which each X-check
+  has one freshly |+>-prepared, X-measured control ancilla coupled exactly once to each support qubit and each Z-check
+  has one freshly |0>-prepared, Z-measured target ancilla coupled exactly once from each support qubit, where measurement
+  consistency means #{q in supp(a) intersect supp(b): t(q->b) < t(a->q)} = 0 mod 2 for every X-check a and Z-check
+  b, define C_R^Z(M) and C_R^X(M), R >= 1, by R verbatim copies of M with disjoint copied location sets and no cross-round
+  idle compression, ideal |0> and |+> data initialization respectively, and ideal transversal Z and X terminal readout
+  respectively. At every copied CNOT location allow the full 15-element nonidentity two-qubit Pauli menu after the
+  gate, at every copied idle and post-ancilla-preparation location allow the full three-element nonidentity one-qubit
+  Pauli menu, and at every copied record location allow a flip; a configuration costs its number of occupied locations,
+  while data initialization and terminal readout are fault-free. Against the canonical detector space D of Definition
+  3.5 of circdist/artifacts/circdist_sat_transfer_proof_20260823.md, namely the deterministic record parities whose
+  value is constant across the prepared logical-basis input family, put Sigma^Z = F_2^n/row(H_X), and let w_M^Z([delta],mu)
+  be the minimum occupied-location cost of a one-round X-sector configuration with residual data-X class [delta]
+  and own Z-check-record flip vector mu. Over the min-plus semiring S = (Z_{>=0} union {+infinity}, min, +), define
+  A^Z[sigma,sigma''] = w_M^Z(sigma''-sigma,H_Z sigma), u^Z[sigma] = 0 exactly when sigma = [0] and +infinity otherwise,
+  and v^Z[sigma] = 0 exactly when H_Z sigma = 0 and sigma != [0] and +infinity otherwise. The dictionary is finite
+  everywhere and explicitly constructible by finite enumeration, and for every R >= 1, d_R^Z(M) = u^Z min-plus (A^Z)^R
+  min-plus v^Z. Every physical undetectable logical configuration projects to an R-edge path of cost at most its
+  occupied-location weight, and every finite such path lifts to a physical undetectable logical configuration of
+  exactly its cost. Swapping X and Z, H_X and H_Z, controls and targets gives the mirror system (u^X,A^X,v^X) on
+  Sigma^X = F_2^n/row(H_Z) and the identical equality for d_R^X(M). On Sigma^Z disjoint-union Sigma^X, the block-diagonal
+  A = A^Z direct-sum A^X with concatenated u and v satisfies d_R(M) = min(d_R^Z(M),d_R^X(M)) = u min-plus A^R min-plus
+  v for every R >= 1. Every within-sector entry of A is finite; the cross-sector entries are +infinity, and the
+  +infinity entries of u and v encode exactly the excluded initial and terminal states. In each sector the same
+  minimum value is obtained (i) with collision-permitting multisets of unit elementary faults or with occupied faulty
+  locations, by Lemma 2.9 and the full per-location Pauli-group and uniform-cost hypotheses, and (ii) against the
+  Definition-2.7 detector set or D, by Proposition 3.7 in the Z-memory sector and its section-8.1 mirror in the
+  X-memory sector. Clause (ii) is equality of minimum values for that ordered pair of detector conventions, not
+  equality of their detector spaces and not invariance under arbitrary detector/observable splits. No claim about
+  eventual periodicity or constancy of matrix powers, state-space minimality, or polynomial construction time is
+  made.'
+assessment:
+  level: PROVED
+  caveats:
+  - 'The proved domain is exactly the one written into the claim: k >= 1, depth T >= 1, conflict freedom plus measurement
+    consistency, one fresh ancilla per given check row, verbatim uncompressed rounds, ideal data boundaries, and
+    the uniform unit-cost full-Pauli per-location group. The review does not license extensions outside that domain.'
+  - Definition 3.5 is pinned definitionally. Proposition 3.7 and the section-8.1 mirror establish equality of minimum
+    values only between that canonical space and the corresponding Definition-2.7 set in each sector. They do not
+    establish equality of detector spaces or invariance under arbitrary complements/splits; the amended Steane+redundant-X
+    counterexample remains the sharp warning.
+  - The displayed state spaces are sufficient, not proved minimal. Construction by exhaustive finite enumeration
+    can be exponential. Under the stated full fault menu every within-sector transition is finite; +infinity is
+    retained for cross-sector transitions and excluded initial/terminal states, not as evidence of undiscovered
+    within-sector unreachable states.
+  - No eventual-periodicity or eventual-constancy statement about matrix powers is part of the repaired claim. BCOQ
+    Definition 3.111 and Theorem 3.112 were checked against the authors' public primary PDF; any future use must
+    state asymptotic cyclicity versus exact cyclicity and verify normalization, critical cyclicity, and connectivity.
+    The former A1 assumption is therefore removed rather than treated as reviewed support for this claim.
+  - Archived implementations, tables, and independent finite enumerations are corroboration only. The universal
+    result is carried by the reviewed algebraic proof, including the ratifying amendment; no numerical run is used
+    to bridge an unproved quantifier.
+  summary: PROVED at sha256:11079eaf2fed2f580127075be12cb7e9fef6ef85e20f47eca9dcf5a68cb7ea33. A fresh strict-serial
+    end-to-end review established the exact repaired finite-R transfer proposition in both CSS sectors, including
+    all boundaries, the universal physical-configuration/path correspondence, dependent check rows, collision and
+    detector-value bridges, and explicit fault-model and layout scope. The non-load-bearing BCOQ assumption is removed;
+    matrix-power asymptotics, minimality, and polynomial complexity are excluded.
+  basis:
+    reviews:
+    - path: circdist/reviews/circdist_sat_transfer_endtoend_exact_review_20260826.md
+      kind: review
+      scope: 'Fresh strict-serial end-to-end adversarial audit: independently re-derived the complete finite-R transfer
+        proof and both convention bridges; attacked k=0, MC failure, cross-round compression, asymmetric sectors,
+        dependent rows, collisions, incomplete/nonuniform alphabets, alternate detector splits, R=1 boundaries,
+        finite/unreachable states, complexity, circularity, exact source statements, hashes, and downstream compatibility;
+        licensed exactly one standalone repair and PROVED.'
+      locator: Finding F-COMPLETION
+      reviewed_hash: sha256:11079eaf2fed2f580127075be12cb7e9fef6ef85e20f47eca9dcf5a68cb7ea33
+    runs:
+    - path: circdist/artifacts/circdist_sat_recon_20260820.md
+      kind: run
+      scope: Exact min-plus implementation for four rotated-surface-code d=3 schedules, compared with an independent
+        Stim detector-model calculation for R=1 through 10.
+      result: Every transfer sequence was constant (2 or 3 according to schedule) and agreed with the independent
+        calculation throughout the tested window.
+    evidence:
+    - path: circdist/artifacts/circdist_sat_recon_20260820.md
+      kind: text
+    - path: circdist/reviews/circdist_sat_transfer_rereview_20260823.md
+      kind: text
+    - path: circdist/artifacts/history/pre_protocol_20260826/nodes/CIRCDIST.sat.transfer.yaml
+      kind: text
+      note: Immutable pre-migration record, including every original event, former summary and frontier; historical
+        evidence, not an additional completion review.
+    - path: circdist/artifacts/circdist_sat_transfer_amendment1_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/reviews/circdist_sat_transfer_review_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/artifacts/circdist_sat_transfer_proof_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/artifacts/definitions/SAT_RESCOPE_20260822.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/reviews/circdist_transfer_bridgefold_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/reviews/circdist_sat_root_proved_adjudication_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+frontier:
+  task-002:
+    task: Package the repaired implementation and the d=3 comparisons as a reproducible command/output record with
+      explicit code and schedule inputs, search bounds, checksums, and agreement criteria. This is optional corroboration
+      and engineering, not a premise of the PROVED theorem.
+    kind: task
+    since: '2026-08-22'
+events:
+  standalone-transfer-claim-repaired-2026-08-26:
+    date: '2026-08-26'
+    type: repair-applied
+    summary: Replaced the 1,103-character shorthand claim at sha256:8fb50ff01b6465e9c660fc61292958828f448dd740757a8945deae1e107c7ad3
+      with the exact 3663-character standalone claim at sha256:11079eaf2fed2f580127075be12cb7e9fef6ef85e20f47eca9dcf5a68cb7ea33.
+      The repair binds Q = [[n,k,d]] with k >= 1, T >= 1, conflict freedom and measurement consistency, the one-ancilla
+      circuit, ideal boundaries, verbatim uncompressed rounds, the uniform unit-cost full-Pauli location group,
+      canonical detectors, exact sector systems, boundaries, collision bridge, and detector-value bridge. It removes
+      the non-load-bearing and overbroad A1 assumption and explicitly excludes matrix-power asymptotics, minimality,
+      and polynomial complexity.
+    sources:
+    - path: circdist/reviews/circdist_sat_transfer_endtoend_exact_review_20260826.md
+      kind: review
+      locator: Finding F-CLAIM
+  transfer-endtoend-reviewed-2026-08-26:
+    date: '2026-08-26'
+    type: review-completed
+    summary: Fresh independent strict-serial review checked the entire repaired exact proposition from the frozen
+      definitions through both sector transfer systems and the collision/detector bridges, inspected the primary
+      BCOQ source, reran feasible exact checks, and found no residual mathematical premise inside the claim.
+    sources:
+    - path: circdist/reviews/circdist_sat_transfer_endtoend_exact_review_20260826.md
+      kind: review
+      locator: Finding F-MATH
+  transfer-proved-2026-08-26:
+    date: '2026-08-26'
+    type: level-change
+    from: CERTIFIED*
+    to: PROVED
+    summary: Promoted CIRCDIST.sat.transfer after the exact repaired claim and every load-bearing input passed fresh
+      independent adversarial review. No downstream node, route, or generated view changes by inheritance.
+    sources:
+    - path: circdist/reviews/circdist_sat_transfer_endtoend_exact_review_20260826.md
+      kind: review
+      locator: Finding F-COMPLETION

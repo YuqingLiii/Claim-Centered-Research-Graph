@@ -1,0 +1,62 @@
+id: GROTHD4.degree4.equality-rank
+role: tool
+aliases:
+- D4-EQUALITY-RANK
+claim: >-
+  The archived degree-4 equality-restriction construction has exact rank 28
+  before pruning, while its projection to the 746825 effective invariant
+  coordinates has exact rank 12. Consequently the effective canonical
+  operator has kernel dimension at least 12 and rank at most 746813.
+assessment:
+  level: NUMERICAL
+  summary: >-
+    An exhaustive integer checker reconstructs all 746825 retained
+    representatives. A nonzero 12 by 12 minor proves the effective lower
+    bound, and sixteen directions from the former 28-row basis vanish
+    identically after projection, proving the upper bound. This repairs the
+    earlier unsupported inference that all 28 directions survive pruning.
+    The exact author-side computation awaits independent review and is not a
+    feasibility certificate for the target dual.
+  basis:
+    runs:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/replay/h4_fd4_next_stage_bundle/d4_n1_300x300.mat.degree4_equality_restriction_rank.json
+      kind: run
+      result: Exact restriction rank 28; kernel lower bound 28; canonical-operator rank upper bound 746797.
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_degree4_equality_restriction_rank.py
+      kind: text
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_effective_equality_rank_checker.py
+      kind: code
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/certificates/d4-effective-equality-rank-certificate-20260830.json
+      kind: run
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-effective-equality-rank-checker-output-20260830.json
+      kind: run
+frontier:
+  independent-review:
+    task: >-
+      Independently review the effective-coordinate reconstruction, the
+      nonzero 12 by 12 minor, and the sixteen identically zero projected
+      directions, then hash-bind the corrected claim if accepted.
+    kind: review
+    since: '2026-08-31'
+events:
+  migrated-2026-08-29:
+    date: '2026-08-29'
+    type: created
+    summary: Imported the exact rank computation as a typed run rather than a theorem-level proof.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/replay/h4_fd4_next_stage_bundle/d4_n1_300x300.mat.degree4_equality_restriction_rank.json
+      kind: run
+  projection-rank-repaired-2026-08-31:
+    date: '2026-08-31'
+    type: repair-applied
+    summary: >-
+      Replaced the false preservation of all 28 pre-pruning directions by
+      the exact effective restriction rank 12; the valid rank upper bound is
+      746813 rather than 746797.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-sos-symmetry-20260830.md
+      kind: text
+      locator: Section 6
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-effective-equality-rank-checker-output-20260830.json
+      kind: run

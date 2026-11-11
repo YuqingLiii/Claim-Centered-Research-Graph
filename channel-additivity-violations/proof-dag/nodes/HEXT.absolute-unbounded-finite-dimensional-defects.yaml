@@ -1,0 +1,99 @@
+id: HEXT.absolute-unbounded-finite-dimensional-defects
+role: outcome
+aliases:
+- absolute-unbounded-subquestion
+claim: >-
+  For every G>0 there are finite-dimensional channels L,R with p=1 minimum-output-entropy pair
+  defect greater than G, finite-dimensional channels A,B with one-shot Holevo pair defect greater
+  than G, and a finite-dimensional channel T with chi(T tensor T)-2chi(T)>G. Hence all three
+  finite-dimensional defect notions are unbounded in absolute size.
+routes:
+  product-haar-with-finite-transfers:
+    premises:
+    - HEXT.finite-dimensional-unbounded-gap
+    - HEXT.moe-to-holevo-transfer
+    - HEXT.pair-to-self
+    implication: >-
+      Given G>0, choose an MOE pair defect H>G+log_2(9/4). Exact Weyl-flag transfer produces a
+      finite Holevo pair with the same defect H, and the general balanced direct-sum reduction
+      produces a finite same-channel two-copy Holevo defect at least H-log_2(9/4)>G. Applying the
+      first premise directly at target G supplies the MOE clause.
+    proof:
+      sketch: >-
+        Use target H=G+log_2(9/4)+1 in the first premise, preserve H in the second, and subtract
+        only the constant gap loss in the third; no dimension-growth rate is invoked.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/ABSOLUTE_UNBOUNDED_OUTCOME_ASSEMBLY_20260830.md
+        kind: text
+        locator: "## 2. Three-premise proof"
+    assessment:
+      level: PROVED
+      caveats:
+      - The route proves absolute unboundedness only, not growth proportional to full logarithmic size.
+      summary: >-
+        Independent amendment review passed the exact implication hash after the repaired three
+        premises were registered and independently proved.
+      basis:
+        evidence:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/ABSOLUTE_UNBOUNDED_OUTCOME_ASSEMBLY_20260830.md
+          kind: text
+          locator: "## 2. Three-premise proof"
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-extensive-violation/ABSOLUTE_UNBOUNDED_CHAIN_REPAIR_AMENDMENT_REVIEW_20260830.md
+          kind: review
+          locator: Finding AUR-A04
+          scope: >-
+            Independently passed the exact three-premise implication, quantifier order, constant
+            loss bookkeeping and strict separation from full-size scaling.
+          reviewed_hash: sha256:692f1214cfdfc66668e98a60bb4d14aa86d3601c14979d10c3a8c420e524fd59
+assessment:
+  level: PROVED
+  caveats:
+  - The result gives no explicit matrices or computable finite dimension.
+  - It gives no gap rate relative to full input/output/environment logarithmic size.
+  - It does not imply the Hayden--Penington full-size extensive statement in HEXT.goal.
+  summary: >-
+    Independent review proves the exact absolute-unbounded finite-dimensional outcome through its
+    three proved premises and proved route, while keeping the full-size root strictly OPEN.
+  basis:
+    routes:
+    - product-haar-with-finite-transfers
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/ABSOLUTE_UNBOUNDED_OUTCOME_ASSEMBLY_20260830.md
+      kind: text
+      locator: "## 1. Exact scoped outcome"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/ABSOLUTE_UNBOUNDED_CHAIN_REPAIR_AMENDMENT_REVIEW_20260830.md
+      kind: review
+      locator: Findings AUR-A04--AUR-A05
+      scope: >-
+        Independently passed the exact outcome claim and route after all three premise repairs,
+        and confirmed that no explicitness or full-size conclusion propagates.
+      reviewed_hash: sha256:acb04888dd0949c4d2a4163705880b5e9b2f131b386879fc93ddeccc21599940
+events:
+  absolute-unbounded-outcome-independently-proved:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    route: product-haar-with-finite-transfers
+    summary: >-
+      Independent amendment review passed the exact route and outcome hashes after all three
+      load-bearing premise nodes were independently proved. The full-size root remains OPEN.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/ABSOLUTE_UNBOUNDED_CHAIN_REPAIR_AMENDMENT_REVIEW_20260830.md
+      kind: review
+      locator: Findings AUR-A04--AUR-A05
+  absolute-unbounded-atomic-outcome-created:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Rehomed the independently passed absolute-unbounded partial theorem from an invalid route on
+      the full-size root to its own exact outcome node.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/ABSOLUTE_UNBOUNDED_OUTCOME_ASSEMBLY_20260830.md
+      kind: text
+      locator: "## 3. Why the full-size root route is retired"
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/ABSOLUTE_UNBOUNDED_CHAIN_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Findings AU-IR-06--AU-IR-07

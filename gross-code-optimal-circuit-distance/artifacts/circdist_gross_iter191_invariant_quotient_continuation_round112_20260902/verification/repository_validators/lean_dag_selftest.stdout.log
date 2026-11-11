@@ -1,0 +1,517 @@
+=== selftest fixture: clean ===
+
+coverage (evaluations actually performed):
+  1            : 2
+  2            : 4
+  3            : 2
+  4            : 1
+  6            : 2
+  7a           : 2
+  7b           : 1
+  lean-none    : 0
+  mechanized   : 2
+  nodes        : 2
+  schema:legacy-md : 1
+
+summary: 0 FAIL, 0 WARN, 0 INFO
+assertion: clean fixture must produce no FAIL and exit 0 -> PASS
+
+=== selftest fixture: major2_unbacked_state ===
+FAIL [7a] FIX.parent: state asserts `composition-checked` but `composition` is null -- UNBACKED (the R11 MAJOR-2 class)
+
+coverage (evaluations actually performed):
+  1            : 2
+  2            : 4
+  3            : 2
+  6            : 2
+  7a           : 2
+  7b           : 1
+  lean-none    : 0
+  mechanized   : 2
+  nodes        : 2
+  schema:legacy-md : 1
+
+summary: 1 FAIL, 0 WARN, 0 INFO
+assertion: `state: composition-checked` with no composition theorem must FAIL (MAJOR-2 class) -> PASS
+
+=== selftest fixture: stale_hash ===
+FAIL [3] FIX.parent: node `claim_hash` d338fb05375bfa553ad6340bc04c20388b2b9d048f42fd3a69d53d985d31b702 != recomputed 1ae15fc3b2a1cce99f3dc0907a3f87031ad3fc1220b186d17fcf5fb15dca56c3
+FAIL [3] FIX.parent: docstring digest d338fb05375bfa553ad6340bc04c20388b2b9d048f42fd3a69d53d985d31b702 != recomputed 1ae15fc3b2a1cce99f3dc0907a3f87031ad3fc1220b186d17fcf5fb15dca56c3
+WARN [3b] FIX.parent: docstring frozen Claim body differs from the node's canonical claim (hash line may be stale-but-intact)
+
+coverage (evaluations actually performed):
+  1            : 2
+  2            : 4
+  3            : 2
+  4            : 1
+  6            : 2
+  7a           : 2
+  7b           : 1
+  lean-none    : 0
+  mechanized   : 2
+  nodes        : 2
+  schema:legacy-md : 1
+
+summary: 2 FAIL, 1 WARN, 0 INFO
+assertion: edited Claim body with a stale hash must FAIL -> PASS
+
+=== selftest fixture: import_mismatch ===
+WARN [4] FIX.parent: composition theorem text does not mention child `FIX.child` (TEXTUAL APPROXIMATION: a sound check needs elaboration)
+FAIL [6] FIX.parent: node-module imports [] != children ['FIX.child'] (UNDECLARED children not imported: ['FIX.child (mechanized)']) -- DAG_PROTOCOL §1 lets a premise arrive as a child, a cited interface or an explicit relative hypothesis, but every such arrival must be NAMED in formalization.lean.rel as `premise-not-imported: <child> - <mechanism>` / `import-not-child: <module> - <mechanism>`
+
+coverage (evaluations actually performed):
+  1            : 2
+  2            : 4
+  3            : 2
+  4            : 1
+  6            : 2
+  7a           : 2
+  7b           : 1
+  lean-none    : 0
+  mechanized   : 2
+  nodes        : 2
+  schema:legacy-md : 1
+
+summary: 1 FAIL, 1 WARN, 0 INFO
+assertion: import not matching `children` must FAIL -> PASS
+
+=== selftest fixture: v6_clean ===
+INFO [3] nodes: `sync_state: current` asserts ONLY that the module quotes the current claim text and that the digests agree (checks 3/3b). It does NOT assert that the Lean `Claim : Prop` expresses the node claim: a module may quote its claim perfectly and still render a deliberately weaker SHADOW of it. That correspondence is a review act this tool cannot perform; read each module header and the node's own caveats. current=2, stale=0.
+INFO [0] nodes: schema v6 has no `lean: none` + reason field: absence of a formal mirror is recorded by OMITTING `formalization` (DAG_PROTOCOL §1/§7), so the §7.4 per-node silence check is NOT PORTABLE and is not run. 0 of 2 nodes carry no `formalization.lean` block.
+
+coverage (evaluations actually performed):
+  1            : 2
+  2            : 4
+  3            : 2
+  4            : 1
+  6            : 2
+  7a           : 2
+  7b           : 1
+  7c           : 1
+  lean-none    : 0
+  mechanized   : 2
+  nodes        : 2
+  schema:v6    : 1
+
+summary: 0 FAIL, 0 WARN, 2 INFO
+assertion: clean SCHEMA-V6 fixture must produce no FAIL and exit 0 -> PASS
+
+=== selftest fixture: v6_major2_unbacked_state ===
+INFO [3] nodes: `sync_state: current` asserts ONLY that the module quotes the current claim text and that the digests agree (checks 3/3b). It does NOT assert that the Lean `Claim : Prop` expresses the node claim: a module may quote its claim perfectly and still render a deliberately weaker SHADOW of it. That correspondence is a review act this tool cannot perform; read each module header and the node's own caveats. current=2, stale=0.
+INFO [0] nodes: schema v6 has no `lean: none` + reason field: absence of a formal mirror is recorded by OMITTING `formalization` (DAG_PROTOCOL §1/§7), so the §7.4 per-node silence check is NOT PORTABLE and is not run. 0 of 2 nodes carry no `formalization.lean` block.
+FAIL [7a] FIX.parent: state asserts `composition-checked` but `composition` is null -- UNBACKED (the R11 MAJOR-2 class)
+
+coverage (evaluations actually performed):
+  1            : 2
+  2            : 4
+  3            : 2
+  6            : 2
+  7a           : 2
+  7b           : 1
+  7c           : 1
+  lean-none    : 0
+  mechanized   : 2
+  nodes        : 2
+  schema:v6    : 1
+
+summary: 1 FAIL, 0 WARN, 2 INFO
+assertion: v6: `state: composition-checked` with `theorems:` absent must FAIL -> PASS
+
+=== selftest fixture: v6_stale_hash ===
+INFO [3] nodes: `sync_state: current` asserts ONLY that the module quotes the current claim text and that the digests agree (checks 3/3b). It does NOT assert that the Lean `Claim : Prop` expresses the node claim: a module may quote its claim perfectly and still render a deliberately weaker SHADOW of it. That correspondence is a review act this tool cannot perform; read each module header and the node's own caveats. current=2, stale=0.
+INFO [0] nodes: schema v6 has no `lean: none` + reason field: absence of a formal mirror is recorded by OMITTING `formalization` (DAG_PROTOCOL §1/§7), so the §7.4 per-node silence check is NOT PORTABLE and is not run. 0 of 2 nodes carry no `formalization.lean` block.
+FAIL [3] FIX.parent: node `claim_hash` 3aef117d2f1c62068c74577701e7ff9514e7852dcf25b011ff70ca46c36543a8 != recomputed 1a7187e1e4bceabb225d8efd3ccc87d8edaf23fc101acd375da9c2289436fa28
+FAIL [3] FIX.parent: docstring digest 3aef117d2f1c62068c74577701e7ff9514e7852dcf25b011ff70ca46c36543a8 != recomputed 1a7187e1e4bceabb225d8efd3ccc87d8edaf23fc101acd375da9c2289436fa28 [node declares `sync_state: current` (a claim about the QUOTED TEXT and the DIGESTS only -- never about whether the Lean `Claim : Prop` expresses the node claim) -- §7 requires the formal statement, imports, proof and hash to be synchronized, so this FAIL is that open gate]
+WARN [3b] FIX.parent: docstring frozen Claim body differs from the node's canonical claim (hash line may be stale-but-intact)
+
+coverage (evaluations actually performed):
+  1            : 2
+  2            : 4
+  3            : 2
+  4            : 1
+  6            : 2
+  7a           : 2
+  7b           : 1
+  7c           : 1
+  lean-none    : 0
+  mechanized   : 2
+  nodes        : 2
+  schema:v6    : 1
+
+summary: 2 FAIL, 1 WARN, 2 INFO
+assertion: v6: edited claim with an intact claim_hash must FAIL -> PASS
+
+=== selftest fixture: v6_import_mismatch ===
+INFO [3] nodes: `sync_state: current` asserts ONLY that the module quotes the current claim text and that the digests agree (checks 3/3b). It does NOT assert that the Lean `Claim : Prop` expresses the node claim: a module may quote its claim perfectly and still render a deliberately weaker SHADOW of it. That correspondence is a review act this tool cannot perform; read each module header and the node's own caveats. current=1, stale=0.
+INFO [0] nodes: schema v6 has no `lean: none` + reason field: absence of a formal mirror is recorded by OMITTING `formalization` (DAG_PROTOCOL §1/§7), so the §7.4 per-node silence check is NOT PORTABLE and is not run. 1 of 2 nodes carry no `formalization.lean` block.
+WARN [4] FIX.parent: composition theorem text does not mention child `FIX.child` (TEXTUAL APPROXIMATION: a sound check needs elaboration)
+FAIL [6] FIX.parent: node-module imports [] != children ['FIX.child'] (UNDECLARED children not imported: ['FIX.child (no formal mirror)']) -- DAG_PROTOCOL §1 lets a premise arrive as a child, a cited interface or an explicit relative hypothesis, but every such arrival must be NAMED in formalization.lean.rel as `premise-not-imported: <child> - <mechanism>` / `import-not-child: <module> - <mechanism>`
+
+coverage (evaluations actually performed):
+  1            : 1
+  2            : 2
+  3            : 1
+  4            : 1
+  6            : 1
+  7a           : 1
+  7b           : 1
+  7c           : 1
+  lean-none    : 1
+  mechanized   : 1
+  nodes        : 2
+  schema:v6    : 1
+
+summary: 1 FAIL, 1 WARN, 2 INFO
+assertion: v6: import not matching the route premises must FAIL -> PASS
+
+=== selftest fixture: v6_import_mismatch_declared ===
+INFO [rel] nodes: this tool checks that a declared `Cited.<field>` EXISTS, never that it is RELEVANT: a plausible but FALSE mechanism naming a real field passes. Judging the truth of a declared mechanism is a STANDING REVIEW OBLIGATION (DAG_PROTOCOL §6.2/§6.4), discharged for the 26 SE declarations by artifacts/se_task006_review_20260817.md §V3 and UNDISCHARGED for any declaration added since. 1 declaration(s) parsed in this run.
+INFO [3] nodes: `sync_state: current` asserts ONLY that the module quotes the current claim text and that the digests agree (checks 3/3b). It does NOT assert that the Lean `Claim : Prop` expresses the node claim: a module may quote its claim perfectly and still render a deliberately weaker SHADOW of it. That correspondence is a review act this tool cannot perform; read each module header and the node's own caveats. current=1, stale=0.
+INFO [0] nodes: schema v6 has no `lean: none` + reason field: absence of a formal mirror is recorded by OMITTING `formalization` (DAG_PROTOCOL §1/§7), so the §7.4 per-node silence check is NOT PORTABLE and is not run. 1 of 2 nodes carry no `formalization.lean` block.
+WARN [4] FIX.parent: composition theorem text does not mention child `FIX.child` (TEXTUAL APPROXIMATION: a sound check needs elaboration)
+INFO [6] FIX.parent: imports [] != children ['FIX.child'], and EVERY difference is declared in lean.rel: FIX.child <- enters as the cited interface field `Cited.fixture_field`, which the fixture Interface declares
+
+coverage (evaluations actually performed):
+  1            : 1
+  2            : 2
+  3            : 1
+  4            : 1
+  6            : 1
+  7a           : 1
+  7b           : 1
+  7c           : 1
+  lean-none    : 1
+  mechanized   : 1
+  nodes        : 2
+  rel          : 1
+  schema:v6    : 1
+
+summary: 0 FAIL, 1 WARN, 4 INFO
+assertion: v6: the SAME import mismatch, DECLARED per-premise in lean.rel, must NOT FAIL -> PASS
+
+=== selftest fixture: v6_import_mismatch_blanket ===
+FAIL [rel] FIX.parent: declaration `premise-not-imported: FIX.child` carries no substantive mechanism (needs >= 24 non-space characters, has 8; needs >= 4 words, has 1; names no `backticked identifier`, dotted node id, or ruling/deviation reference) -- it must name HOW the premise arrives / WHY the route is unrendered, in terms a reviewer can check
+INFO [3] nodes: `sync_state: current` asserts ONLY that the module quotes the current claim text and that the digests agree (checks 3/3b). It does NOT assert that the Lean `Claim : Prop` expresses the node claim: a module may quote its claim perfectly and still render a deliberately weaker SHADOW of it. That correspondence is a review act this tool cannot perform; read each module header and the node's own caveats. current=1, stale=0.
+INFO [0] nodes: schema v6 has no `lean: none` + reason field: absence of a formal mirror is recorded by OMITTING `formalization` (DAG_PROTOCOL §1/§7), so the §7.4 per-node silence check is NOT PORTABLE and is not run. 1 of 2 nodes carry no `formalization.lean` block.
+WARN [4] FIX.parent: composition theorem text does not mention child `FIX.child` (TEXTUAL APPROXIMATION: a sound check needs elaboration)
+FAIL [6] FIX.parent: node-module imports [] != children ['FIX.child'] (UNDECLARED children not imported: ['FIX.child (no formal mirror)']) -- DAG_PROTOCOL §1 lets a premise arrive as a child, a cited interface or an explicit relative hypothesis, but every such arrival must be NAMED in formalization.lean.rel as `premise-not-imported: <child> - <mechanism>` / `import-not-child: <module> - <mechanism>`
+
+coverage (evaluations actually performed):
+  1            : 1
+  2            : 2
+  3            : 1
+  4            : 1
+  6            : 1
+  7a           : 1
+  7b           : 1
+  7c           : 1
+  lean-none    : 1
+  mechanized   : 1
+  nodes        : 2
+  rel          : 1
+  schema:v6    : 1
+
+summary: 2 FAIL, 1 WARN, 2 INFO
+assertion: v6: a declaration with no substantive mechanism must FAIL (no rubber stamps) -> PASS
+
+=== selftest fixture: v6_import_mismatch_bogus_field ===
+INFO [rel] nodes: this tool checks that a declared `Cited.<field>` EXISTS, never that it is RELEVANT: a plausible but FALSE mechanism naming a real field passes. Judging the truth of a declared mechanism is a STANDING REVIEW OBLIGATION (DAG_PROTOCOL §6.2/§6.4), discharged for the 26 SE declarations by artifacts/se_task006_review_20260817.md §V3 and UNDISCHARGED for any declaration added since. 1 declaration(s) parsed in this run.
+INFO [3] nodes: `sync_state: current` asserts ONLY that the module quotes the current claim text and that the digests agree (checks 3/3b). It does NOT assert that the Lean `Claim : Prop` expresses the node claim: a module may quote its claim perfectly and still render a deliberately weaker SHADOW of it. That correspondence is a review act this tool cannot perform; read each module header and the node's own caveats. current=1, stale=0.
+INFO [0] nodes: schema v6 has no `lean: none` + reason field: absence of a formal mirror is recorded by OMITTING `formalization` (DAG_PROTOCOL §1/§7), so the §7.4 per-node silence check is NOT PORTABLE and is not run. 1 of 2 nodes carry no `formalization.lean` block.
+WARN [4] FIX.parent: composition theorem text does not mention child `FIX.child` (TEXTUAL APPROXIMATION: a sound check needs elaboration)
+INFO [6] FIX.parent: imports [] != children ['FIX.child'], and EVERY difference is declared in lean.rel: FIX.child <- enters as the cited field `Cited.no_such_field`, which does not exist anywhere
+FAIL [6] FIX.parent: declaration names the cited field `Cited.no_such_field`, which does NOT exist in FIX.Interface -- the declared mechanism cannot be the real one
+
+coverage (evaluations actually performed):
+  1            : 1
+  2            : 2
+  3            : 1
+  4            : 1
+  6            : 1
+  7a           : 1
+  7b           : 1
+  7c           : 1
+  lean-none    : 1
+  mechanized   : 1
+  nodes        : 2
+  rel          : 1
+  schema:v6    : 1
+
+summary: 1 FAIL, 1 WARN, 4 INFO
+assertion: v6: a declaration naming a `Cited.<field>` absent from Interface.lean must FAIL -> PASS
+
+=== selftest fixture: v6_false_import_declaration ===
+INFO [rel] nodes: this tool checks that a declared `Cited.<field>` EXISTS, never that it is RELEVANT: a plausible but FALSE mechanism naming a real field passes. Judging the truth of a declared mechanism is a STANDING REVIEW OBLIGATION (DAG_PROTOCOL §6.2/§6.4), discharged for the 26 SE declarations by artifacts/se_task006_review_20260817.md §V3 and UNDISCHARGED for any declaration added since. 1 declaration(s) parsed in this run.
+INFO [3] nodes: `sync_state: current` asserts ONLY that the module quotes the current claim text and that the digests agree (checks 3/3b). It does NOT assert that the Lean `Claim : Prop` expresses the node claim: a module may quote its claim perfectly and still render a deliberately weaker SHADOW of it. That correspondence is a review act this tool cannot perform; read each module header and the node's own caveats. current=2, stale=0.
+INFO [0] nodes: schema v6 has no `lean: none` + reason field: absence of a formal mirror is recorded by OMITTING `formalization` (DAG_PROTOCOL §1/§7), so the §7.4 per-node silence check is NOT PORTABLE and is not run. 0 of 2 nodes carry no `formalization.lean` block.
+FAIL [6] FIX.parent: lean.rel declares premise `FIX.child` not imported, but the module DOES import it -- the declaration is false
+
+coverage (evaluations actually performed):
+  1            : 2
+  2            : 4
+  3            : 2
+  4            : 1
+  6            : 2
+  7a           : 2
+  7b           : 1
+  7c           : 1
+  lean-none    : 0
+  mechanized   : 2
+  nodes        : 2
+  rel          : 1
+  schema:v6    : 1
+
+summary: 1 FAIL, 0 WARN, 3 INFO
+assertion: v6: declaring a premise not-imported while the module DOES import it must FAIL -> PASS
+
+=== selftest fixture: v6_route_undeclared ===
+INFO [3] nodes: `sync_state: current` asserts ONLY that the module quotes the current claim text and that the digests agree (checks 3/3b). It does NOT assert that the Lean `Claim : Prop` expresses the node claim: a module may quote its claim perfectly and still render a deliberately weaker SHADOW of it. That correspondence is a review act this tool cannot perform; read each module header and the node's own caveats. current=2, stale=0.
+INFO [0] nodes: schema v6 has no `lean: none` + reason field: absence of a formal mirror is recorded by OMITTING `formalization` (DAG_PROTOCOL §1/§7), so the §7.4 per-node silence check is NOT PORTABLE and is not run. 0 of 2 nodes carry no `formalization.lean` block.
+FAIL [5] FIX.parent: composition_via_* suffixes ['only'] != live routes ['alt', 'only']; UNDECLARED unrendered route(s) ['alt'] -- each needs either a rendered theorem or an explicit `route-not-formalized: <route> - <reason>` entry in formalization.lean.rel
+
+coverage (evaluations actually performed):
+  1            : 2
+  2            : 4
+  3            : 2
+  5            : 1
+  6            : 2
+  7a           : 2
+  7b           : 1
+  7c           : 1
+  lean-none    : 0
+  mechanized   : 2
+  nodes        : 2
+  schema:v6    : 1
+
+summary: 1 FAIL, 0 WARN, 2 INFO
+assertion: v6: an unrendered ENABLED route with no declaration must FAIL -> PASS
+
+=== selftest fixture: v6_route_declared ===
+INFO [rel] nodes: this tool checks that a declared `Cited.<field>` EXISTS, never that it is RELEVANT: a plausible but FALSE mechanism naming a real field passes. Judging the truth of a declared mechanism is a STANDING REVIEW OBLIGATION (DAG_PROTOCOL §6.2/§6.4), discharged for the 26 SE declarations by artifacts/se_task006_review_20260817.md §V3 and UNDISCHARGED for any declaration added since. 1 declaration(s) parsed in this run.
+INFO [3] nodes: `sync_state: current` asserts ONLY that the module quotes the current claim text and that the digests agree (checks 3/3b). It does NOT assert that the Lean `Claim : Prop` expresses the node claim: a module may quote its claim perfectly and still render a deliberately weaker SHADOW of it. That correspondence is a review act this tool cannot perform; read each module header and the node's own caveats. current=2, stale=0.
+INFO [0] nodes: schema v6 has no `lean: none` + reason field: absence of a formal mirror is recorded by OMITTING `formalization` (DAG_PROTOCOL §1/§7), so the §7.4 per-node silence check is NOT PORTABLE and is not run. 0 of 2 nodes carry no `formalization.lean` block.
+INFO [5] FIX.parent: unrendered route(s) ['alt'], each DECLARED not-formalized in lean.rel: alt: the route carries no `proof:` key on the node, so rendering a `composition_via_*` theorem would invent content. Ruling R5 / deviation D6.
+
+coverage (evaluations actually performed):
+  1            : 2
+  2            : 4
+  3            : 2
+  5            : 1
+  6            : 2
+  7a           : 2
+  7b           : 1
+  7c           : 1
+  lean-none    : 0
+  mechanized   : 2
+  nodes        : 2
+  rel          : 1
+  schema:v6    : 1
+
+summary: 0 FAIL, 0 WARN, 4 INFO
+assertion: v6: the SAME unrendered route, DECLARED in lean.rel, must NOT FAIL -> PASS
+
+=== selftest fixture: v6_route_false_declaration ===
+INFO [rel] nodes: this tool checks that a declared `Cited.<field>` EXISTS, never that it is RELEVANT: a plausible but FALSE mechanism naming a real field passes. Judging the truth of a declared mechanism is a STANDING REVIEW OBLIGATION (DAG_PROTOCOL §6.2/§6.4), discharged for the 26 SE declarations by artifacts/se_task006_review_20260817.md §V3 and UNDISCHARGED for any declaration added since. 1 declaration(s) parsed in this run.
+INFO [3] nodes: `sync_state: current` asserts ONLY that the module quotes the current claim text and that the digests agree (checks 3/3b). It does NOT assert that the Lean `Claim : Prop` expresses the node claim: a module may quote its claim perfectly and still render a deliberately weaker SHADOW of it. That correspondence is a review act this tool cannot perform; read each module header and the node's own caveats. current=2, stale=0.
+INFO [0] nodes: schema v6 has no `lean: none` + reason field: absence of a formal mirror is recorded by OMITTING `formalization` (DAG_PROTOCOL §1/§7), so the §7.4 per-node silence check is NOT PORTABLE and is not run. 0 of 2 nodes carry no `formalization.lean` block.
+FAIL [5] FIX.parent: composition_via_* suffixes ['only'] != live routes ['alt', 'only']; UNDECLARED unrendered route(s) ['alt'] -- each needs either a rendered theorem or an explicit `route-not-formalized: <route> - <reason>` entry in formalization.lean.rel
+FAIL [5] FIX.parent: lean.rel declares route `only` not-formalized, but `composition_via_only` EXISTS in the module -- the declaration is false
+
+coverage (evaluations actually performed):
+  1            : 2
+  2            : 4
+  3            : 2
+  5            : 1
+  6            : 2
+  7a           : 2
+  7b           : 1
+  7c           : 1
+  lean-none    : 0
+  mechanized   : 2
+  nodes        : 2
+  rel          : 1
+  schema:v6    : 1
+
+summary: 2 FAIL, 0 WARN, 3 INFO
+assertion: v6: declaring a route not-formalized while its theorem EXISTS must FAIL -> PASS
+
+=== selftest fixture: v6_route_disabled ===
+INFO [rel] nodes: this tool checks that a declared `Cited.<field>` EXISTS, never that it is RELEVANT: a plausible but FALSE mechanism naming a real field passes. Judging the truth of a declared mechanism is a STANDING REVIEW OBLIGATION (DAG_PROTOCOL §6.2/§6.4), discharged for the 26 SE declarations by artifacts/se_task006_review_20260817.md §V3 and UNDISCHARGED for any declaration added since. 1 declaration(s) parsed in this run.
+INFO [3] nodes: `sync_state: current` asserts ONLY that the module quotes the current claim text and that the digests agree (checks 3/3b). It does NOT assert that the Lean `Claim : Prop` expresses the node claim: a module may quote its claim perfectly and still render a deliberately weaker SHADOW of it. That correspondence is a review act this tool cannot perform; read each module header and the node's own caveats. current=2, stale=0.
+INFO [0] nodes: schema v6 has no `lean: none` + reason field: absence of a formal mirror is recorded by OMITTING `formalization` (DAG_PROTOCOL §1/§7), so the §7.4 per-node silence check is NOT PORTABLE and is not run. 1 of 3 nodes carry no `formalization.lean` block.
+INFO [5] FIX.parent: route(s) DISABLED per §4 and therefore not required to carry a `composition_via_*` theorem: alt (premise FIX.dead is REFUTED)
+INFO [6] FIX.parent: lean.rel retains the non-import declaration for disabled-route premise `FIX.dead`; it is historical metadata and is not required by the live composition
+
+coverage (evaluations actually performed):
+  1            : 2
+  2            : 4
+  3            : 2
+  5            : 1
+  6            : 2
+  7a           : 2
+  7b           : 1
+  7c           : 1
+  lean-none    : 1
+  mechanized   : 2
+  nodes        : 3
+  rel          : 1
+  schema:v6    : 1
+
+summary: 0 FAIL, 0 WARN, 5 INFO
+assertion: v6: a route disabled by a REFUTED premise (§4) needs no theorem and no declaration -> PASS
+
+=== selftest fixture: v6_import_mismatch_junk ===
+FAIL [rel] FIX.parent: declaration `premise-not-imported: FIX.child` carries no substantive mechanism (needs >= 4 words, has 1; names no `backticked identifier`, dotted node id, or ruling/deviation reference) -- it must name HOW the premise arrives / WHY the route is unrendered, in terms a reviewer can check
+INFO [3] nodes: `sync_state: current` asserts ONLY that the module quotes the current claim text and that the digests agree (checks 3/3b). It does NOT assert that the Lean `Claim : Prop` expresses the node claim: a module may quote its claim perfectly and still render a deliberately weaker SHADOW of it. That correspondence is a review act this tool cannot perform; read each module header and the node's own caveats. current=1, stale=0.
+INFO [0] nodes: schema v6 has no `lean: none` + reason field: absence of a formal mirror is recorded by OMITTING `formalization` (DAG_PROTOCOL §1/§7), so the §7.4 per-node silence check is NOT PORTABLE and is not run. 1 of 2 nodes carry no `formalization.lean` block.
+WARN [4] FIX.parent: composition theorem text does not mention child `FIX.child` (TEXTUAL APPROXIMATION: a sound check needs elaboration)
+FAIL [6] FIX.parent: node-module imports [] != children ['FIX.child'] (UNDECLARED children not imported: ['FIX.child (no formal mirror)']) -- DAG_PROTOCOL §1 lets a premise arrive as a child, a cited interface or an explicit relative hypothesis, but every such arrival must be NAMED in formalization.lean.rel as `premise-not-imported: <child> - <mechanism>` / `import-not-child: <module> - <mechanism>`
+
+coverage (evaluations actually performed):
+  1            : 1
+  2            : 2
+  3            : 1
+  4            : 1
+  6            : 1
+  7a           : 1
+  7b           : 1
+  7c           : 1
+  lean-none    : 1
+  mechanized   : 1
+  nodes        : 2
+  rel          : 1
+  schema:v6    : 1
+
+summary: 2 FAIL, 1 WARN, 2 INFO
+assertion: F1: a 26-character mechanism with no words and no anchor must FAIL (the pure length gate is gone) -> PASS
+
+=== selftest fixture: v6_relevance_notice ===
+INFO [rel] nodes: this tool checks that a declared `Cited.<field>` EXISTS, never that it is RELEVANT: a plausible but FALSE mechanism naming a real field passes. Judging the truth of a declared mechanism is a STANDING REVIEW OBLIGATION (DAG_PROTOCOL §6.2/§6.4), discharged for the 26 SE declarations by artifacts/se_task006_review_20260817.md §V3 and UNDISCHARGED for any declaration added since. 1 declaration(s) parsed in this run.
+INFO [3] nodes: `sync_state: current` asserts ONLY that the module quotes the current claim text and that the digests agree (checks 3/3b). It does NOT assert that the Lean `Claim : Prop` expresses the node claim: a module may quote its claim perfectly and still render a deliberately weaker SHADOW of it. That correspondence is a review act this tool cannot perform; read each module header and the node's own caveats. current=1, stale=0.
+INFO [0] nodes: schema v6 has no `lean: none` + reason field: absence of a formal mirror is recorded by OMITTING `formalization` (DAG_PROTOCOL §1/§7), so the §7.4 per-node silence check is NOT PORTABLE and is not run. 1 of 2 nodes carry no `formalization.lean` block.
+WARN [4] FIX.parent: composition theorem text does not mention child `FIX.child` (TEXTUAL APPROXIMATION: a sound check needs elaboration)
+INFO [6] FIX.parent: imports [] != children ['FIX.child'], and EVERY difference is declared in lean.rel: FIX.child <- enters as the cited interface field `Cited.fixture_field`, which the fixture Interface declares
+
+coverage (evaluations actually performed):
+  1            : 1
+  2            : 2
+  3            : 1
+  4            : 1
+  6            : 1
+  7a           : 1
+  7b           : 1
+  7c           : 1
+  lean-none    : 1
+  mechanized   : 1
+  nodes        : 2
+  rel          : 1
+  schema:v6    : 1
+
+summary: 0 FAIL, 1 WARN, 4 INFO
+assertion: F2: relevance is undecidable here, so a run carrying declarations must PRINT the residual risk and the docstring must keep the disclosure -> PASS
+
+=== selftest fixture: v6_import_not_child_mechanized ===
+INFO [rel] nodes: this tool checks that a declared `Cited.<field>` EXISTS, never that it is RELEVANT: a plausible but FALSE mechanism naming a real field passes. Judging the truth of a declared mechanism is a STANDING REVIEW OBLIGATION (DAG_PROTOCOL §6.2/§6.4), discharged for the 26 SE declarations by artifacts/se_task006_review_20260817.md §V3 and UNDISCHARGED for any declaration added since. 1 declaration(s) parsed in this run.
+INFO [3] nodes: `sync_state: current` asserts ONLY that the module quotes the current claim text and that the digests agree (checks 3/3b). It does NOT assert that the Lean `Claim : Prop` expresses the node claim: a module may quote its claim perfectly and still render a deliberately weaker SHADOW of it. That correspondence is a review act this tool cannot perform; read each module header and the node's own caveats. current=3, stale=0.
+INFO [0] nodes: schema v6 has no `lean: none` + reason field: absence of a formal mirror is recorded by OMITTING `formalization` (DAG_PROTOCOL §1/§7), so the §7.4 per-node silence check is NOT PORTABLE and is not run. 0 of 3 nodes carry no `formalization.lean` block.
+FAIL [6] FIX.child: node-module imports [] != children ['FIX.grand'] (UNDECLARED children not imported: ['FIX.grand (mechanized)']) -- DAG_PROTOCOL §1 lets a premise arrive as a child, a cited interface or an explicit relative hypothesis, but every such arrival must be NAMED in formalization.lean.rel as `premise-not-imported: <child> - <mechanism>` / `import-not-child: <module> - <mechanism>`
+INFO [6] FIX.parent: imports ['FIX.child', 'FIX.grand'] != children ['FIX.child'], and EVERY difference is declared in lean.rel: FIX.grand (non-child import) <- GRANDCHILD reached by skipping the intermediate node `FIX.child`; `FIX.grand.Claim` is consumed directly as a parameter of `composition`. Ruling R3 / deviation D2.
+FAIL [6] FIX.parent: declared non-child import `FIX.grand` is a DAG descendant of `FIX.parent`, but it is reached ACROSS the MECHANIZED intermediate node(s) ['FIX.child'], which do carry a `formalization` block -- the licence for a non-child import is that the skipped nodes have NO module to import (skipped: ['FIX.child'])
+WARN [7c] FIX.child: node level PROVED exceeds min(route down=OPEN, FIX.grand=PROVED) on its best live route and NO assessment caveat names the shortfall
+
+coverage (evaluations actually performed):
+  1            : 3
+  2            : 6
+  3            : 3
+  4            : 1
+  6            : 3
+  7a           : 3
+  7b           : 1
+  7c           : 2
+  lean-none    : 0
+  mechanized   : 3
+  nodes        : 3
+  rel          : 1
+  schema:v6    : 1
+
+summary: 2 FAIL, 1 WARN, 4 INFO
+assertion: F3: a non-child import reached ACROSS a MECHANIZED intermediate must FAIL -> PASS
+
+=== selftest fixture: v6_import_not_child_unmechanized ===
+INFO [rel] nodes: this tool checks that a declared `Cited.<field>` EXISTS, never that it is RELEVANT: a plausible but FALSE mechanism naming a real field passes. Judging the truth of a declared mechanism is a STANDING REVIEW OBLIGATION (DAG_PROTOCOL §6.2/§6.4), discharged for the 26 SE declarations by artifacts/se_task006_review_20260817.md §V3 and UNDISCHARGED for any declaration added since. 2 declaration(s) parsed in this run.
+INFO [3] nodes: `sync_state: current` asserts ONLY that the module quotes the current claim text and that the digests agree (checks 3/3b). It does NOT assert that the Lean `Claim : Prop` expresses the node claim: a module may quote its claim perfectly and still render a deliberately weaker SHADOW of it. That correspondence is a review act this tool cannot perform; read each module header and the node's own caveats. current=2, stale=0.
+INFO [0] nodes: schema v6 has no `lean: none` + reason field: absence of a formal mirror is recorded by OMITTING `formalization` (DAG_PROTOCOL §1/§7), so the §7.4 per-node silence check is NOT PORTABLE and is not run. 1 of 3 nodes carry no `formalization.lean` block.
+WARN [4] FIX.parent: composition theorem text does not mention child `FIX.child` (TEXTUAL APPROXIMATION: a sound check needs elaboration)
+INFO [6] FIX.parent: imports ['FIX.grand'] != children ['FIX.child'], and EVERY difference is declared in lean.rel: FIX.child <- the node carries no `formalization` block, so no module for it exists to import; the obligation lives on the grandchild `FIX.grand`. Ruling R3. | FIX.grand (non-child import) <- GRANDCHILD reached by skipping the intermediate node `FIX.child`; `FIX.grand.Claim` is consumed directly as a parameter of `composition`. Ruling R3 / deviation D2.
+WARN [7c] FIX.child: node level PROVED exceeds min(route down=OPEN, FIX.grand=PROVED) on its best live route and NO assessment caveat names the shortfall
+
+coverage (evaluations actually performed):
+  1            : 2
+  2            : 4
+  3            : 2
+  4            : 1
+  6            : 2
+  7a           : 2
+  7b           : 1
+  7c           : 2
+  lean-none    : 1
+  mechanized   : 2
+  nodes        : 3
+  rel          : 2
+  schema:v6    : 1
+
+summary: 0 FAIL, 2 WARN, 4 INFO
+assertion: F3 control: the SAME non-child import across an UNMECHANIZED intermediate is still licensed and must NOT FAIL -> PASS
+
+=== selftest fixture: v6_premise_not_imported_mechanized ===
+INFO [rel] nodes: this tool checks that a declared `Cited.<field>` EXISTS, never that it is RELEVANT: a plausible but FALSE mechanism naming a real field passes. Judging the truth of a declared mechanism is a STANDING REVIEW OBLIGATION (DAG_PROTOCOL §6.2/§6.4), discharged for the 26 SE declarations by artifacts/se_task006_review_20260817.md §V3 and UNDISCHARGED for any declaration added since. 1 declaration(s) parsed in this run.
+INFO [3] nodes: `sync_state: current` asserts ONLY that the module quotes the current claim text and that the digests agree (checks 3/3b). It does NOT assert that the Lean `Claim : Prop` expresses the node claim: a module may quote its claim perfectly and still render a deliberately weaker SHADOW of it. That correspondence is a review act this tool cannot perform; read each module header and the node's own caveats. current=2, stale=0.
+INFO [0] nodes: schema v6 has no `lean: none` + reason field: absence of a formal mirror is recorded by OMITTING `formalization` (DAG_PROTOCOL §1/§7), so the §7.4 per-node silence check is NOT PORTABLE and is not run. 0 of 2 nodes carry no `formalization.lean` block.
+WARN [4] FIX.parent: composition theorem text does not mention child `FIX.child` (TEXTUAL APPROXIMATION: a sound check needs elaboration)
+INFO [6] FIX.parent: imports [] != children ['FIX.child'], and EVERY difference is declared in lean.rel: FIX.child <- enters as the cited interface field `Cited.fixture_field`, which the fixture Interface declares
+FAIL [6] FIX.parent: lean.rel declares premise `FIX.child` not imported, but `FIX.child` CARRIES A `formalization` BLOCK (module `FIX.child`) -- a module for it demonstrably exists, so the composition must import it rather than route it around the DAG
+
+coverage (evaluations actually performed):
+  1            : 2
+  2            : 4
+  3            : 2
+  4            : 1
+  6            : 2
+  7a           : 2
+  7b           : 1
+  7c           : 1
+  lean-none    : 0
+  mechanized   : 2
+  nodes        : 2
+  rel          : 1
+  schema:v6    : 1
+
+summary: 1 FAIL, 1 WARN, 4 INFO
+assertion: F4: declaring a premise not-imported while it CARRIES a formalization block must FAIL -> PASS
+
+=== selftest fixture: doc_refuted_silences_check5 ===
+documentation regression; sentinel '* F5 A `REFUTED` WRITE LEGITIMATELY SILENCES CHECK 5.' FOUND in the module docstring
+assertion: F5: the docstring must keep naming the §4 REFUTED-route exemption as a legitimate silencer of check 5 -> PASS
+
+=== selftest fixture: v6_sync_state_notice ===
+INFO [3] nodes: `sync_state: current` asserts ONLY that the module quotes the current claim text and that the digests agree (checks 3/3b). It does NOT assert that the Lean `Claim : Prop` expresses the node claim: a module may quote its claim perfectly and still render a deliberately weaker SHADOW of it. That correspondence is a review act this tool cannot perform; read each module header and the node's own caveats. current=2, stale=0.
+INFO [0] nodes: schema v6 has no `lean: none` + reason field: absence of a formal mirror is recorded by OMITTING `formalization` (DAG_PROTOCOL §1/§7), so the §7.4 per-node silence check is NOT PORTABLE and is not run. 0 of 2 nodes carry no `formalization.lean` block.
+
+coverage (evaluations actually performed):
+  1            : 2
+  2            : 4
+  3            : 2
+  4            : 1
+  6            : 2
+  7a           : 2
+  7b           : 1
+  7c           : 1
+  lean-none    : 0
+  mechanized   : 2
+  nodes        : 2
+  schema:v6    : 1
+
+summary: 0 FAIL, 0 WARN, 2 INFO
+assertion: F6: every run reporting `sync_state` must say it is about quoted TEXT and DIGESTS only, in the output and in the docstring -> PASS
+
+SELFTEST: 23/23 assertions passed

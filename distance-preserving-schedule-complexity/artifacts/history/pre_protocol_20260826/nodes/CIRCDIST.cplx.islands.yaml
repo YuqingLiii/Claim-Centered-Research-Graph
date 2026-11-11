@@ -1,0 +1,541 @@
+id: CIRCDIST.cplx.islands
+role: proof
+aliases:
+- EFFP-ISLANDS
+claim: Nontrivial restricted classes of Eff-Preserve are in P (or FPT) with proven correctness —
+  including factorising instances (no inter-check coupling; self-certifying), HGP codes (every
+  schedule preserves d_eff >= min(mu_X, mu_Z), so constant YES under the non-degeneracy proviso),
+  bounded-treewidth Tanner graphs (CMSO2/Courcelle FPT), and d = 3 with two allowed orders per
+  check (2-SAT, no check-weight bound).
+assumptions:
+  courcelle-c1:
+    kind: external-theorem
+    statement: 'C1: Courcelle''s theorem — CMSO2-definable properties are FPT-decidable on
+      bounded-treewidth structures. Carries the Island III clause (a plain Boolean CMSO2
+      sentence; the former "optimization extension" wording was over-registration, struck —
+      unused by the argument). PRIMARY-VERIFIED 2026-08-23 via two disjoint chains
+      (artifacts/circdist_courcelle_primary_20260823.md): [Cou90] Courcelle, Inform. and
+      Comput. 85 (1990) 12-75, full text read — Theorem (4.4) (every definable subset
+      effectively recognizable) + Proposition (4.14)(1) (deciding phi in CMS in O(size(e))
+      given a width-m expression); note its parameter is HR-expression width, not "tree-width"
+      by name. [CE12] Courcelle-Engelfriet, EMA 138 — CITED EDITION: the April 2011 authors''
+      pre-publication draft (labri.fr; print pagination unobtainable, wave-30 ruling: cite by
+      number-and-name, pages surplus) — CORRECTED LOCATOR: Theorem 6.4(1) (draft p. 429, CMS2
+      model-checking FPT-linear in (twd(G), phi), no supplied decomposition needed) with
+      Theorem 5.68(2) (draft p. 397) and Definition 5.17 (draft p. 345); the previously
+      pinned Prop 5.13 is an MS1 INEXPRESSIBILITY result of opposite polarity (the book''s
+      motivation for edge-set quantification) — mis-citation caught only by reading the
+      statement. [ALS91] J. Algorithms 12(2) 308-340: bibliographic data exact (DBLP +
+      publisher DOI), full text unobtainable, theorem numbers unverified — DEMOTED to
+      corroborating, immaterial: not load-bearing, its role discharged twice by the
+      fully-read texts. Island III assumes LESS than these grant. R4 EDITS APPLIED
+      (2026-08-23, per Amendment 5 + its re-review): the CE12 verification read the
+      April-2011 authors'' draft, not the print EMA 138 — page numbers may shift in print;
+      the HR-expression-width-to-treewidth bridge is registered via CE12 Thm 2.83 with the
+      amendment''s hedge (2.83 converts a tree decomposition to an HR term; the wave-18
+      artifact describes rather than quotes it, and the Island III route actually taken —
+      CE12 Thm 6.4(1) — does not use it); "two disjoint chains" corrected to one chain plus
+      corroboration.'
+    source:
+      path: artifacts/circdist_courcelle_primary_20260823.md
+      kind: text
+      locator: Per-citation verdicts
+  def-13prime-em:
+    kind: model-fact
+    statement: 'Definition 1.3-prime (Amendment 5 §1): E(M) is the standard hook-error
+      extended code — the write-up itself never defined E(M). ADJUDICATED NON-ISSUE by the
+      Amendment-5 re-review (no lead ratification needed): 公共定义 lines 31/35/37 (d_circ
+      counts |F|; d_eff <= d_circ; equality non-interleaved) plus 课题二 lines 97-98 pin both
+      scope-note conditions, and the weight-reading is excluded by line 35; the two variant
+      encodings (adding chi_supp columns; one joint matrix) are identical on all 32 biting
+      triples. Registered for machine visibility per the re-review''s instruction.
+      LEAD-RATIFIED 2026-08-23 (verbatim: "批准 Definition 1.3′") — the definitional pin now
+      carries both the reviewer''s from-the-frozen-text adjudication and an explicit lead
+      ratification; no residual of any kind remains on this interface.'
+    source:
+      path: artifacts/circdist_islands_amendment5_review_20260823.md
+      kind: review
+      locator: Section 2
+assessment:
+  level: PROVED
+  caveats:
+  - 'Shared model design is not independence (systemic, permanent): every implementation in
+    this node''s verification chain — dossier, five reviews, three independent bridge
+    implementations — re-implements the same frozen 公共定义 fault menu and (M4) terminal
+    boundary; a systematic model-vs-real-compiler mismatch would survive all of them. NO stim
+    cross-check exists anywhere in this node''s history. The 2026-08-25 stim cross-validation
+    (artifacts/circdist_stim_crossval_20260823.md) validated the SHARED 公共定义 fault menu
+    and (M4) terminal boundary against stim 1.16.0 on the lift and sat arms — including a
+    direct demonstration that the (M4) ideal-readout boundary is not load-bearing for d_circ —
+    but built NO island gadget and NO reduction instance, so this node''s own constructions
+    remain stim-untouched.'
+  - 'Island V stays OUT of the claim (task-004): the wave-19 Steane refutation stands and the
+    Amendment-5 corrected V clause was itself found defective (dropped "choice-free").'
+  - All four islands are V1 statements (no depth bound) and are about d_eff, not d_circ;
+    Island IV additionally excludes the (Lambda-timing) reading.
+  - Island I is polynomial only for fixed d and bounded w; Corollary I.1-prime component 1 is
+    the NP-hard distance problem at general d; the clause parenthesis carries no qualifier of
+    its own.
+  - 'Island II: Theorem II.4''s own hypothesis is a distance condition, not poly-time
+    checkable; only Lemma II.5''s proviso is; the necessity witness (46/1971) was not
+    reproduced by the wave-30 reviewer.'
+  - 'Island III: f(t,w,d) is non-elementary (Frick-Grohe), possible near-vacuity at growing d;
+    the hypothesis is on the Tanner graph, not a layout; Phi_{t,w,d} is the dossier''s own
+    construction, read not re-derived by the wave-30 reviewer.'
+  - 'C1 citation layer: [ALS91] full text unobtainable (immaterial, corroborating only);
+    [CE12] print-edition numbering unverified — the April-2011 draft is the cited edition
+    (wave-30 ruling: protocol wants a theorem, not a page).'
+  - Islands I and III were not re-computed by the wave-30 reviewer (I by wave-19 own-code;
+    III adjudicated on the amended text + the primary-source verification).
+  summary: 'Promoted CERTIFIED* -> PROVED 2026-08-23: the wave-30 end-to-end four-island pass
+    (artifacts/circdist_endtoend2_review_20260823.md Part A) attacked the ASSEMBLED amended
+    dossier against the exact claim — composition total and byte-verified (two clause words
+    false against the base text are true against the composition: "self-certifying" via Cor
+    I.1-prime, Island III''s shape set via A1 B2); Lemma 1.4-prime/Theorem B now confirmed by
+    THREE mutually independent implementations on three disjoint families (the wave-30 pass
+    adding a min = 4 regime on HGP(rep4,rep4) n = 25 and an execution-based test of the (<=)
+    construction); Islands II and IV re-verified with fresh own-code sweeps (28-instance
+    universal HGP, 0 failures; 114-pair 2-SAT, 0 disagreements); the three wave-21 precisions
+    all folded; C1 draft-citation ruling issued and the §7.3 registration edit executed at
+    promotion. History: RESTORED NUMERICAL -> CERTIFIED* 2026-08-23 on the narrowed
+    four-island claim: the
+    Amendment-5 re-review (artifacts/circdist_islands_amendment5_review_20260823.md)
+    CONFIRMED the Lemma 1.4 derivation with an independent method (104 triples, 0
+    disagreements), adjudicated the Def 1.3-prime residual a NON-ISSUE (no lead ratification
+    — 公共定义 pins it), found items 3-6 conformant (Steane 13824+13824 reproduced exactly),
+    and licensed CERTIFIED* hash-bound to this claim; the corrected V clause was NOT installed
+    (defective — drops "choice-free"; see caveats). Path to PROVED: one end-to-end review of
+    the assembled four-island argument (task-003). History: 2026-08-23 wave-19 end-to-end
+    review REFUTED the five-clause claim''s Island V wording (Steane witness) and found Lemma
+    1.4 underived — claim narrowed, node demoted to NUMERICAL, self-correction #7; Amendment 5
+    then derived Lemma 1.4 in full (Theorem B universal). Earlier: promoted CONJECTURED ->
+    CERTIFIED* 2026-08-22 (sixth attempt) via the Amendment-4 focused re-review; wave-11
+    re-adjudication kept the star for the then-unverified C1, discharged by the wave-18
+    primary-source check. History: WRITE-UP
+    LANDED (round 4, artifacts/circdist_cplx_islands_writeup_20260820.md,
+    complete proposer-level proofs for islands I-IV, one gap found in V). I factorising: complete,
+    coupling defined via the chain-realisability lemma, and the class is SELF-CERTIFYING
+    (decoupling itself poly-time recognisable — promise-free). II HGP: complete and STRONGER than
+    commissioned — Theorem II.1 (line-support cleaning) gives d_eff(M) >= min(mu_X, mu_Z) for
+    EVERY schedule, with the exact non-degeneracy proviso (Lemma II.5); external assumption A1 no
+    longer needed. III bounded treewidth: complete, explicit CMSO2 sentence; Courcelle citation
+    pinned as Courcelle Inf.&Comp. 85 (1990) + Arnborg-Lagergren-Seese J.Alg. 12 (1991) +
+    Courcelle-Engelfriet EMA 138 Prop 5.13 — SECONDARY-SOURCE VERIFIED ONLY, primary-text check
+    still owed. IV d=3/two-orders: complete 2-SAT reduction both directions, no check-weight
+    bound needed. V weight-<=4 / d_X >= 4: GAP FOUND — the gadget gate''s "bipartite matching"
+    headline is WRONG; the correct abstraction is a partial section g : N -> Log hitting every
+    check''s 3-element list, which is abstractly NP-complete (3-SAT); it IS matching under a
+    checkable disjointness hypothesis (D), and k <= 1 stays unconditionally YES (linear-splitting
+    parity argument holds; hypothesis relaxed from weight exactly 4 to weight <= 4). Hall''s
+    theorem is the clean reason local neq3 gadgets cannot give hardness (the K4 composite is a
+    Hall violation) — a more general obstruction than the equivalence-relation argument.
+    Prefix-suffix duality upgraded to an identity in Q = F2^n/S_X, turning the
+    stabiliser-coincidence proviso into the definition. Island V''s general case is OPEN and
+    repriced (1-2 sessions, both outcomes useful) — see the reopening note on CIRCDIST.cplx.fixed-d.
+    Amendment 2 (SHA-256 33f7f5d8...) applies I1: the false (S2)-only Observation is withdrawn,
+    realizability condition (S3) is the actual known tamer, and the exact §5.4/§8 replacements are
+    supplied. Independent rereview CLEAN-PASSED I1 but returned FURTHER-REPAIR on one separately
+    registered wording defect (Proposition V.7'' multisets), corrected by Amendment 3 and
+    cleared through Amendment 4''s re-review.'
+  basis:
+    reviews:
+    - path: artifacts/circdist_endtoend2_review_20260823.md
+      kind: review
+      scope: End-to-end four-island pass over the assembled dossier (amendments 1-5 applied in
+        order, byte-verified) against the exact claim — clause-by-clause tracing on the
+        AMENDED text, own-code re-verification of the Theorem B bridge (84 triples incl. a
+        min = 4 regime, execution-based (<=) test) and Islands II/IV on fresh families,
+        wave-21 precisions folded, C1 draft-citation ruling; verdict PROVED-QUALIFIES
+        conditional on the §7.3 registration edit, executed at promotion.
+      locator: Section 8
+      reviewed_hash: sha256:2e786e9625b0223f52c70cb2b6521cfe9125ccf8d57834df37446211e1256346
+    - path: artifacts/circdist_islands_amendment5_review_20260823.md
+      kind: review
+      scope: Focused independent re-review of Amendment 5 — Lemma 1.4 derivation re-derived
+        step by step and verified with an independent-method simulator (no shared code, 104
+        fresh triples incl. dependent-generator codes and interleaved schedules, 0
+        disagreements); Def 1.3-prime residual adjudicated a non-issue from the frozen
+        公共定义 text; items 3-6 conformance-swept; the corrected V clause REJECTED
+        (choice-free hypothesis dropped, 32-schedule witness); licenses CERTIFIED* on the
+        narrowed four-island claim.
+      locator: Verdict
+      reviewed_hash: sha256:2e786e9625b0223f52c70cb2b6521cfe9125ccf8d57834df37446211e1256346
+    runs:
+    - path: artifacts/circdist_endtoend2_review_20260823.md
+      kind: run
+      scope: Wave-30 own-code sweeps against the CURRENT claim — 84-triple bridge verification
+        (21 codes, 24 triples at min >= 3, 8 at min = 4), 28-instance universal-form HGP
+        census, 114-pair 2-SAT cross-check, 732-qubit P2 measurement.
+      result: 0 disagreements in every sweep; chi_supp outside Cols 1524/1524; the P2
+        precision folds (V1 needed only for check-support-free qubits, widening Theorem B
+        under a depth bound).
+    - path: artifacts/circdist_islands_endtoend_review_20260823.md
+      kind: run
+      scope: End-to-end review's own-code re-verification of all five islands from the §1
+        definitions (no dossier code reused) — chain-realisability exhaustive w<=5; universal
+        HGP census 1075 instances; Sched-clause/bijection equivalence; 840-instance 2-SAT
+        cross-check vs exhaustive truth; 108-code V.4 sweep; the Steane refutation witness for
+        the deleted clause (24^3 x 24^3 exhaustive).
+      result: Islands I-IV sound (0 disagreements in every census); Theorem V.4 sound; former
+        Island V clause REFUTED as worded (Steane NO-instance); Lemma 1.4 identified as
+        underived and load-bearing.
+    evidence:
+    - path: artifacts/circdist_amendments2_review_20260820.md
+      kind: text
+    - path: artifacts/circdist_amendments4_review_20260822.md
+      kind: text
+    - path: artifacts/circdist_islands_endtoend_review_20260823.md
+      kind: text
+    - path: artifacts/circdist_cplx_islands_amendment5_20260823.md
+      kind: text
+frontier:
+  task-004:
+    task: 'Island V general case (weight <= 4, k >= 2, without hypothesis (D)): decide whether
+      code-realizable instances express general list-section hardness or collapse to matching —
+      1-2 sessions, both outcomes useful (poly algorithm or the reopened weight-4 hardness).'
+    kind: task
+    since: '2026-08-20'
+events:
+  readjudication-2026-08-23:
+    date: '2026-08-23'
+    type: repair-applied
+    summary: 'Wave-11 canonical re-adjudication (artifacts/circdist_readjudication_20260823.md
+      §8): STAYS-CERTIFIED* — the deciding ground is the unverified load-bearing external
+      theorem C1 (Courcelle/ALS numbering secondary-source only), which fails §3''s "all
+      load-bearing inputs passed review" on its own; the clearing review reaches the same
+      conclusion ("PROVED remains out of reach on task-003 alone"). Two §6 violations found and
+      fixed by the dispatcher this event: the assessment summary still read "pending-review …
+      remains CONJECTURED" while the level was CERTIFIED* (stale text replaced with the current
+      judgment; nothing mechanical catches this class of drift), and the caveat set omitted the
+      clearing review''s §4.6 items (now added, plus Island V scope and the HGP proviso
+      necessity note). Same-stack caveat dropped as retired. Path forward unchanged: task-003
+      (primary-source check, cheap) is the gate; after it clears, a claim-level end-to-end
+      review question remains open per the adjudication §11.3.'
+    sources:
+    - path: artifacts/circdist_readjudication_20260823.md
+      kind: review
+      locator: Section 8
+  islands-promoted-2026-08-22:
+    date: '2026-08-22'
+    type: level-change
+    from: CONJECTURED
+    to: CERTIFIED*
+    summary: Sixth promotion attempt succeeds — focused re-review (item 3) confirmed D1's stdout
+      byte-identical to a fresh run, D2 verbatim, and swept the full dossier chain (writeup,
+      amendments 1-4, five reviews, node record) finding nothing blocking. Promotion hash-bound.
+    sources:
+    - path: artifacts/circdist_amendments4_review_20260822.md
+      kind: review
+      locator: Item 3
+  amendment4-2026-08-22:
+    date: '2026-08-22'
+    type: repair-applied
+    summary: 'Amendment 4 (SHA-256 9eb27e07...): D1 — §3.2 replaced by point-labelled code with
+      genuine stdout, the G2/G3 selection now structural; D2 — islands-review edits 9 and 11
+      restored to the roll-up (8 rows complete), edit 11''s ~1e6-draw evidence fenced as
+      absence-only; D3(a)(b) and D4 applied one line each. All embedded code re-run and
+      byte-matched. Remaining gate: focused re-review, then promotion (sixth attempt).'
+    sources:
+    - path: artifacts/circdist_cplx_islands_amendment4_20260822.md
+      kind: text
+  amendment3-review-2026-08-22:
+    date: '2026-08-22'
+    type: repair-applied
+    summary: 'Amendment-3 focused review (artifacts/circdist_islands_amendment3_review_20260822.md):
+      FURTHER-REPAIR — the mathematics CLEARS (hash chain 5/5, occurrences faithful and complete
+      by independent grep, repetition-necessity re-derived with fresh code) but two defects
+      withhold promotion: D1 the §3.2 Output block is not the snippet''s stdout (value CONFIRMED,
+      printed derivation REFUTED — the reachability lines are computed by no print and the G2/G3
+      filter is hard-coded); D2 the remaining-items roll-up drops islands-review edits 9 and 11,
+      where edit 11 is a non-vacuity bar on the §6.1 promise touching Island V inside the claim.
+      Fifth consecutive promotion near-miss for this node.'
+    sources:
+    - path: artifacts/circdist_islands_amendment3_review_20260822.md
+      kind: text
+  amendment3-2026-08-22:
+    date: '2026-08-22'
+    type: repair-applied
+    summary: 'Append-only Amendment 3 (SHA-256 f2bcf171...): the governing one-line multiset
+      correction to Proposition V.7'' applied and propagated (5 occurrences with before/after; 5
+      unchanged-with-reason); the repetition step verified necessary (set-reading collapses G2/G3
+      to 2-element lists failing (S1); over F2^2 the only (S1)-compliant single-point 3-subset is
+      {a,b,c}); search scope stated. Frontier task-007 discharged; the remaining promotion gate
+      is a hash-bound focused review of this amendment.'
+    sources:
+    - path: artifacts/circdist_cplx_islands_amendment3_20260822.md
+      kind: text
+  amendment2-review-further-repair-2026-08-20:
+    date: '2026-08-20'
+    type: repair-applied
+    summary: 'Fresh independent review CLEAN-PASSED I1 but returned FURTHER-REPAIR for the node:
+      Proposition V.7'' still says 3-element lists as a subset although its proof uses repeated
+      options. Review task-006 is complete and removed; task-007 records the exact one-line
+      multiset correction and binding review still needed before any completion promotion.'
+    sources:
+    - path: artifacts/circdist_amendments2_review_20260820.md
+      kind: review
+      locator: Sections 7.2 and 8.2
+  amendment2-2026-08-20:
+    date: '2026-08-20'
+    type: repair-applied
+    summary: 'Append-only Amendment 2 landed (SHA-256 33f7f5d8...): I1 withdraws the false
+      (S2)-only Observation, derives realizability consequence (S3) from Lemma V.0, and supplies
+      exact replacements for Amendment 1 §5.4 and §8 item 2 while preserving the Corollary I.1
+      refutation and strong-decoupling adjudication. Frontier task-005 is complete and removed;
+      focused rereview task-006 is the remaining promotion gate.'
+    sources:
+    - path: artifacts/circdist_cplx_islands_amendment2_20260820.md
+      kind: text
+  amendment1-rereview-2026-08-20:
+    date: '2026-08-20'
+    type: repair-applied
+    summary: 'Focused re-review of Amendment 1 (artifacts/circdist_amendments_review_20260820.md):
+      FURTHER-REPAIR-NEEDED, one substantive item — I1: §5.3''s (S2) Observation is REFUTED (its
+      "Hence" treats a zero N-part as no-third-option, but 0 in N is a legitimate point; the
+      re-reviewer built an (S1)+(S2)-compliant 3-SAT reduction, 405 instances 0 disagreements, so
+      the abstract problem is NP-complete under both side conditions and the Observation becomes
+      true only after adding (S3) m(x)=0 => beta(x)=0, which follows from Lemma V.0 — the real
+      tamer is realisability; §5.4 and §8 item 2 need edits). B1-B5 otherwise clear, V.7'' clears
+      (rebuilt, 5/5 vs brute-force 3-SAT). DISAGREEMENT ADJUDICATED: the amendment author is
+      RIGHT, the islands review''s §2.3 strong-decoupling row was a recording slip contradicting
+      its own §2.6 (16 strong witnesses per sector, 0 safe; padding a zero column preserves
+      L_X-membership, no computation needed); the Cor I.1 refutation STANDS on the safe form,
+      which is what the promise and Theorem I(2) actually use.'
+    sources:
+    - path: artifacts/circdist_amendments_review_20260820.md
+      kind: text
+  amendment1-2026-08-20:
+    date: '2026-08-20'
+    type: repair-applied
+    summary: 'Amendment 1 landed (artifacts/circdist_cplx_islands_amendment1_20260820.md, SHA-256
+      66ce9ac5...): Cor I.1 gains the d <= d(Q) scan (witness recomputed; NP∩coNP gloss struck);
+      Lemma III.1 allows h = 0 (shape count 3 -> 6, still f(w,d)); Remark V.6 derives (D)|_S;
+      Prop V.7 witness replaced by a dim Log = 2 instance that can bite (residual: it does not
+      satisfy (S2), and (S2) provably forbids the unary gadgets — sharpening the open question,
+      later resolved by the island-V session''s section/line theory); the decoupled vs
+      safely-decoupled imported numeric corrected (Steane is a NO instance). One DISAGREEMENT
+      with the review recorded honestly: the amendment author finds the Cor I.1 witness is NOT
+      strongly decoupled (16 strong witnesses) where the review said it was — refutation
+      unaffected (it runs on the safe form). Two new poly sub-islands from the island-V session:
+      Z-check weight <= 3 forces YES; qubit degree 2 forces YES. Focused re-review of the amended
+      spots is the remaining gate before promotion.'
+    sources:
+    - path: artifacts/circdist_cplx_islands_amendment1_20260820.md
+      kind: text
+  review-mixed-2026-08-20:
+    date: '2026-08-20'
+    type: repair-applied
+    summary: 'Adversarial review returned: Island II CONFIRM/CONFIRM (derived from scratch;
+      391 + 250 + 6060 instance checks, 0 failures; the non-degeneracy proviso shown NECESSARY —
+      46/1971 promise-satisfying instances violate the bound without it); Island IV
+      CONFIRM/CONFIRM (744 restrictions, 0 disagreements); Island V CONFIRM with precision
+      defects (V.6 applies V.5 without deriving (D); V.7''s witness cannot bite); Island I:
+      Corollary I.1''s promise-free claim REFUTED by explicit witness (rotated [[9,1,3]] plus a
+      free qubit — self-certification covers only decoupling; Theorem I and the chain iff
+      CONFIRMED; one-line repair); Island III: Lemma III.1 REFUTED as stated (h = 0 excluded;
+      CMSO2 sentence itself correct; one-line repair). An imported numeric corrected (Steane is a
+      NO instance with zero locally safe orders). Node stays CONJECTURED until the amendment
+      lands (repair before promotion).'
+    sources:
+    - path: artifacts/circdist_islands_review_20260820.md
+      kind: review
+      scope: All five islands of the write-up, value and printed derivation separately; imported
+        numerics spot-checked.
+      locator: Verdicts section
+  writeup-landed-2026-08-20:
+    date: '2026-08-20'
+    type: repair-applied
+    summary: Round-4 write-up landed — islands I-IV proved completely (I self-certifying, II
+      stronger than commissioned and drops assumption A1, III with explicit CMSO2 sentence, IV
+      without weight bounds); island V's matching headline corrected to list-section (gap found,
+      general case reopened); Hall-violation explanation of the K4 obstruction; claim text updated
+      to the proved scope.
+    sources:
+    - path: artifacts/circdist_cplx_islands_writeup_20260820.md
+      kind: text
+  gate-gadget-2026-08-20:
+    date: '2026-08-20'
+    type: repair-applied
+    summary: Fifth island registered from the gadget gate — weight-4/d_X>=4 regime is bipartite
+      matching (polynomial), k=1 forces YES; islands promoted to realistic root headline.
+    sources:
+    - path: artifacts/circdist_cplx_gadget_20260820.md
+      kind: text
+  created-2026-08-20:
+    date: '2026-08-20'
+    type: created
+    summary: Registered from the round-1 cplx recon as the tractable-islands component.
+    sources:
+    - path: artifacts/circdist_cplx_recon_20260820.md
+      kind: text
+  assumptions-registered-2026-08-23:
+    date: '2026-08-23'
+    type: repair-applied
+    summary: 'Lead-approved §2 amendment applied (node-level assumptions for direct-proof
+      nodes): external theorem C1 (Courcelle/ALS/Courcelle-Engelfriet) moved from caveat prose
+      into this node''s assumptions block, with its secondary-source-only verification status
+      stated inside the registration — the level-deciding conditionality is now
+      machine-visible. Claim untouched; hash unchanged.'
+    sources:
+    - path: research/DAG_PROTOCOL.md
+      kind: text
+  courcelle-primary-2026-08-23:
+    date: '2026-08-23'
+    type: repair-applied
+    summary: 'Wave-18 primary-source verification
+      (artifacts/circdist_courcelle_primary_20260823.md, with pre-registered target statements
+      before retrieval): [Cou90] VERIFIED-PRIMARY (full text from the author''s page; header
+      verbatim; Thm 4.4 + Prop 4.14(1); parameter is HR-expression width, not tree-width by
+      name); [ALS91] VERIFIED-PARTIAL (bibliographic data exact via DBLP + DOI; full text
+      unobtainable; IMMATERIAL — not load-bearing, discharged twice by fully-read texts);
+      [CE12] MISMATCH — the pinned Prop 5.13 is an MS1 inexpressibility result of OPPOSITE
+      POLARITY (the book''s motivation for edge-set quantification; the pin was
+      page-self-consistent so only reading the statement caught it); correct citations
+      supplied: Thm 6.4(1) p. 429 (CMS2 model-checking FPT-linear in (twd, phi), no supplied
+      decomposition needed), Thm 5.68(2), Def 5.17. OVERALL: the mathematics is sound and now
+      primary-verified via two disjoint chains, and Island III assumes LESS than granted; but
+      the registration needed four hygiene edits (CE12 locator fixed; Cou90 numbers added;
+      ALS91 demoted; "optimization extension" struck as over-registration) — all applied to
+      the assumptions block this event; claim untouched, hash unchanged (b4325b44 still
+      bound). The secondary-source caveat is DISCHARGED; the binding gate to PROVED is now the
+      end-to-end claim-level review (task-003 rewritten). Also recorded: the write-up''s §4.4
+      division-of-labour text is wrong in two of three places (Cou90 already has both the
+      linear-time form and edge-set quantification) — hygiene amendment queued inside
+      task-003.'
+    sources:
+    - path: artifacts/circdist_courcelle_primary_20260823.md
+      kind: text
+  vclause-refuted-narrowed-2026-08-23:
+    date: '2026-08-23'
+    type: claim-revised
+    summary: 'Wave-19 end-to-end review (artifacts/circdist_islands_endtoend_review_20260823.md,
+      verdict FURTHER-REPAIR, bound to the pre-revision hash b4325b44... which it verified):
+      the Island V clause "k <= 1 weight-<=4 regime (unconditional YES)" is REFUTED AS WORDED —
+      it drops the dossier''s own d_X >= 4 hypothesis and asserts an Eff-Preserve verdict where
+      Theorem V.4 gives only d_eff^X >= 3; witness Steane [[7,1,3]] (k = 1, all X-checks weight
+      4, d(Q) = 3, d_X = 3), exhaustive over all 24^3 x 24^3 schedule pairs: NO. Amendment 1
+      §6.2 had computed this instance; six review layers never connected it to the claim
+      wording; the end-to-end pass did. CLAIM NARROWED by deleting the clause (four islands
+      remain; original wording preserved here). Seventh mathematical self-correction of the
+      campaign — again caught by the next independent layer, not self-audit.'
+    sources:
+    - path: artifacts/circdist_islands_endtoend_review_20260823.md
+      kind: review
+      locator: Blocker 1
+  demoted-numerical-2026-08-23:
+    date: '2026-08-23'
+    type: level-change
+    from: CERTIFIED*
+    to: NUMERICAL
+    summary: 'Honest-label demotion executed with the narrowing: a completion label may not
+      stand over a refuted clause, and blocker 2 (Lemma 1.4 underived, NOT-REVIEWED,
+      load-bearing under all remaining clauses) independently fails §3. The narrowed
+      four-island claim is strongly corroborated (end-to-end review verified I-IV sound with
+      its own code, 0 disagreements in every census — recorded as basis.runs), so NUMERICAL,
+      not CONJECTURED. Prior hash-bound reviews (amendments4 item 3, old hash b4325b44...)
+      demoted to evidence with the revision. Path back: Amendment 5 (task-003) + focused
+      re-review re-binds the narrowed claim -> CERTIFIED*; PROVED additionally needs Lemma 1.4
+      derived and reviewed.'
+    sources:
+    - path: artifacts/circdist_islands_endtoend_review_20260823.md
+      kind: review
+      locator: Verdict
+  amendment5-2026-08-23:
+    date: '2026-08-23'
+    type: repair-applied
+    summary: 'Wave-20 append-only Amendment 5
+      (artifacts/circdist_cplx_islands_amendment5_20260823.md, SHA-256 426f2813..., 2014
+      lines): ITEM 1 — Lemma 1.4 DERIVED IN FULL (blocker 2 discharged at proposer level):
+      the bridge splits into three steps of which only the third was ever argued; Definition
+      1.3-prime supplies the never-defined E(M); Proposition A (joint residual classification,
+      both sectors) + injective pure-sector location assignment give Theorem B: d_ext(E(M)) =
+      min(d_eff^X, d_eff^Z) for EVERY CSS code and schedule, no promise — no island needs a
+      weaker form. A DEFECT in the printed argument found and repaired ("v_X is a sum of at
+      most t elements of Cols_X" is false — chi_supp(c) is excluded from Cols_X, 396/396;
+      repaired via L_X + S_X = L_X); NEW structural fact recorded (no single location
+      contributes a hook in both sectors — what makes the split work). Verification: own
+      circuit-level Pauli simulator never calling Def 1.3 — 20 codes, 200 triples, 0
+      disagreements. BOUNDED RESIDUAL (definitional only): that Def 1.3-prime is 公共定义''s
+      intended E(M) — a lead-ratification item in the T-G3 mould. ITEM 2 — corrected Island V
+      clause drafted (X-sector guarantee only, d_X >= 4, not an Eff-Preserve verdict); Steane
+      refutation independently re-verified (13824+13824 exhaustive, max d_eff = 2 both
+      sectors) and excluded by d_X = 3 < 4. ITEMS 3-6 applied (§4.4 replaced; HR-width
+      bridge registered via [CE12] Thm 2.83 with the indirection flagged; "two chains" ->
+      one; N3 instance cited — the "un-witnessed" §6.1 promise was witnessed by the dossier''s
+      own G_neq3, second absence result this campaign killed by an object already in the
+      repo; HGP wording fixed with own census 13/400 hyp-fail 0 concl-fail; CE12 draft-vs-
+      print residue recorded). Remaining gate: focused independent re-review (Lemma 1.4
+      derivation-level, independent method), then level re-adjudication.'
+    sources:
+    - path: artifacts/circdist_cplx_islands_amendment5_20260823.md
+      kind: text
+  restored-certified-2026-08-23:
+    date: '2026-08-23'
+    type: level-change
+    from: NUMERICAL
+    to: CERTIFIED*
+    summary: 'Wave-21 Amendment-5 re-review
+      (artifacts/circdist_islands_amendment5_review_20260823.md): Lemma 1.4 derivation
+      CONFIRMED at derivation level with a fully independent method (own simulator, 104 fresh
+      triples incl. dependent-generator codes and interleaved schedules, 0 disagreements; the
+      printed-argument defect verified false 456/456; the repair verified sound AND
+      sufficient); Def 1.3-prime residual adjudicated NON-ISSUE from the frozen 公共定义 text
+      (no lead ratification; registered as a model-fact assumption for machine visibility);
+      items 3-6 conformant (Steane exhaustive numbers reproduced exactly). The corrected V
+      clause was REJECTED — it drops V.4''s undefined "choice-free" hypothesis (32-schedule
+      witness on the dossier''s own cited instance; same failure mode as wave-19) — so the
+      claim STAYS the narrowed four-island text, and the re-review licensed CERTIFIED*
+      hash-bound to it (2e786e96..., dispatcher-verified). Basis restructured per the
+      licensing: wave-21 review = sole hash-bound review; wave-19 end-to-end computations
+      remain as runs; Amendment 5 in evidence; R4 registration edits applied to the C1
+      assumptions block. Gate to PROVED: task-003 (end-to-end four-island pass + print
+      locator).'
+    sources:
+    - path: artifacts/circdist_islands_amendment5_review_20260823.md
+      kind: review
+      locator: Verdict
+  def13prime-lead-ratified-2026-08-23:
+    date: '2026-08-23'
+    type: repair-applied
+    summary: 'LEAD DECISION (verbatim: "批准 Definition 1.3′"): Definition 1.3-prime — E(M) is
+      the standard hook-error extended code — is RATIFIED as the intended reading of the
+      frozen 公共定义. The wave-21 re-review had already adjudicated the pin a non-issue from
+      the frozen text (公共定义 lines 31/35/37 + 课题二 lines 97-98; variants identical on all
+      32 biting triples); the lead ratification is recorded on top per the T-G3 precedent, so
+      the interface now carries both derivation and decision. No level or claim change (hash
+      2e786e96 unchanged); Lemma 1.4/Theorem B''s definitional foundation is closed.'
+    sources:
+    - path: artifacts/circdist_islands_amendment5_review_20260823.md
+      kind: review
+      locator: Section 2
+  promoted-proved-2026-08-23:
+    date: '2026-08-23'
+    type: level-change
+    from: CERTIFIED*
+    to: PROVED
+    summary: 'Wave-30 Part A rules PROVED-QUALIFIES bound to hash 2e786e96 (assembled
+      composition total; every clause traced on the amended text; the universal bridge
+      confirmed by three mutually independent implementations on three disjoint families;
+      Islands II/IV re-verified on fresh instances; wave-21 precisions folded). The single
+      condition — the §7.3 registration edit (the node''s C1 statement attributed DRAFT page
+      numbers to the print edition, the same page-self-consistent defect class as the
+      withdrawn Prop 5.13 pin) — executed at promotion: cited edition named as the April-2011
+      draft, pages prefixed. Caveat set replaced by the eight §8.1 survivors; task-003
+      discharged and removed; basis restructured per the license (wave-30 review + wave-21
+      re-review both hash-bound; wave-30 sweeps added as runs). 课题三''s islands node is
+      complete at the four-island scope.'
+    sources:
+    - path: artifacts/circdist_endtoend2_review_20260823.md
+      kind: review
+      locator: Section 8
+  stim-crossval-2026-08-23:
+    date: '2026-08-23'
+    type: repair-applied
+    summary: 'Wave-34 stim cross-validation: shared-model caveat weakly amended per license
+      (amendment C) — the shared fault menu and (M4) boundary are now stim-validated on other
+      arms, but no island gadget was built, so this node''s constructions remain expressly
+      stim-untouched. Claim and level untouched.'
+    sources:
+    - path: artifacts/circdist_stim_crossval_20260823.md
+      kind: review
+      locator: Section 9

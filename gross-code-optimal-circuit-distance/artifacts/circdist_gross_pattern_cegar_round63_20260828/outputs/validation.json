@@ -1,0 +1,46 @@
+{
+  "schema": "circdist-gross-round63-seal-validation-v1",
+  "commands": [
+    {
+      "command": "shasum -a 256 -c SHA256SUMS.txt",
+      "return_code": 0,
+      "result": "23/23 entries OK before this validation record was inserted; final manifest check is reported at delivery"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /private/tmp/circdist_gross_cegar_round62_20260828/venv/bin/python verify.py --repo-root <repo>",
+      "return_code": 0,
+      "wall_seconds": 3.2,
+      "result": {
+        "status": "PASS",
+        "live_bindings_verified": 15,
+        "manifest_entries_verified": 23,
+        "round62_iterations": 20,
+        "round62_exclusions": 190,
+        "pattern_cegar_iterations": 10,
+        "pattern_support_clauses": 15874,
+        "static_single_clauses": 1440,
+        "checked_proofs": 0,
+        "exact_residual": [11, 12]
+      }
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /private/tmp/circdist_gross_cegar_round62_20260828/venv/bin/python verify.py --full-static --repo-root <repo>",
+      "return_code": 0,
+      "wall_seconds": 11.4,
+      "result": {
+        "status": "PASS",
+        "live_bindings_verified": 15,
+        "manifest_entries_verified": 23,
+        "round62_iterations": 20,
+        "round62_exclusions": 190,
+        "pattern_cegar_iterations": 10,
+        "pattern_support_clauses": 15874,
+        "static_single_clauses_regenerated": 1440,
+        "local_order_cases_regenerated": 103680,
+        "atom_deletion_controls_regenerated": 7200,
+        "checked_proofs": 0,
+        "exact_residual": [11, 12]
+      }
+    }
+  ]
+}

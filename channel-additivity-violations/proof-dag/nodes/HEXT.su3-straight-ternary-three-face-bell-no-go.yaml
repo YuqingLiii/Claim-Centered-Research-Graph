@@ -1,0 +1,94 @@
+id: HEXT.su3-straight-ternary-three-face-bell-no-go
+role: obstruction
+aliases:
+- straight-ternary-three-face-no-go
+claim: >-
+  Every SU(3)-covariant qutrit channel supported on the translated straight three-face cluster
+  ((-2,-2),(-1,-1),(0,0)) satisfies the registered Bell-input no-gap entropy inequality for all
+  allowed labels, weights, and phases.
+routes:
+  fixed-three-original-side-cover:
+    premises:
+    - HEXT.su3-three-face-cluster-classification
+    - HEXT.su3-fixed-original-side-endpoint-lemma
+    implication: >-
+      Retain the ternary block at (0,-1) and binary blocks at (1,0),(2,-2), convexify the others to
+      24 Gram endpoints, and certify the six-variable compact inequality.
+    proof:
+      sources:
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/certify_su3_chain_three_face_sixdim_covers.py
+        kind: code
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CHAIN_THREE_FACE_SCAN_20260830.md
+        kind: text
+    assessment:
+      level: NUMERICAL
+      caveats:
+      - >-
+        Independent static review passed the exact checker design and found its eight-file closure
+        eligible for source binding, but the running process has not yet produced terminal evidence.
+      summary: >-
+        Finite and million-label scans retain a positive margin; the exact certificate is running
+        and its mathematical design has passed independent static review.
+      basis:
+        runs:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CHAIN_THREE_FACE_FIXED_THREE_STRESS_RUN_20260830.txt
+          kind: run
+          result: The selected cover retained a sampled margin at least 0.182178187362 bit.
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-extensive-violation/SU3_STRAIGHT_TERNARY_EXACT_CERTIFICATE_STATIC_PRE_REVIEW_20260830.md
+          kind: review
+          locator: "Finding STT-STATIC-07"
+          scope: >-
+            Independently verified configuration, 24 endpoints, original-side quantifier,
+            reconstruction degrees, compactification, Bernstein/entropy directions and fail-closed
+            completion logic, while withholding promotion until a normal terminal exit.
+          reviewed_hash: sha256:050564c2ea65e603066c264e3bc9a5482e2c26c5ebb87805d85cec8b9f378918
+assessment:
+  level: NUMERICAL
+  caveats:
+  - >-
+    Static review passed and all eight source mtimes predate launch, but completion, exact positive
+    leaf margins and exit zero still require a preserved terminal transcript.
+  summary: The exact six-dimensional certificate is running and is not yet a completion proof.
+  basis:
+    routes:
+    - fixed-three-original-side-cover
+    runs:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CHAIN_THREE_FACE_FIXED_THREE_STRESS_RUN_20260830.txt
+      kind: run
+      result: The selected cover retained a sampled margin at least 0.182178187362 bit.
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SU3_STRAIGHT_TERNARY_EXACT_CERTIFICATE_STATIC_PRE_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STT-STATIC-07"
+      scope: >-
+        Independent static review passed the source-bound design but prohibited node promotion
+        before the complete normal-exit dossier exists.
+      reviewed_hash: sha256:48a6c01755ba118d48801694628959e879ab18e5d65dbf901bfdac8ca5c05146
+frontier:
+  finish-source-bound-exact-certificate:
+    task: >-
+      Preserve the complete exit-zero transcript, exact configuration-specific statistics,
+      strict Fraction margin semantics and the prelaunch eight-file source closure, then obtain
+      final independent transcript review.
+    kind: task
+    since: 2026-08-30
+events:
+  running-certificate-static-review:
+    date: '2026-08-30'
+    type: review-completed
+    route: fixed-three-original-side-cover
+    summary: >-
+      Independent static review passed the source-bound checker design but withheld promotion
+      pending completion of the running exact certificate.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SU3_STRAIGHT_TERNARY_EXACT_CERTIFICATE_STATIC_PRE_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STT-STATIC-07"
+  orientation-node-created:
+    date: '2026-08-30'
+    type: created
+    summary: Split this orientation from the aggregate straight-chain claim.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CHAIN_THREE_FACE_COVER_COMPLEXITY_20260830.md
+      kind: text

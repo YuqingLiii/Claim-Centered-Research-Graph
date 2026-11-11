@@ -1,0 +1,11 @@
+REVIEWER-INDEPENDENT CHECK of the over-pruning control witness (Z (1,2,2) K=4 |E|=14 orbit 0)
+  solver Cadical195 (recorded: Kissat404) ; cnf_sha256 a36433a698853212a921c933492eb068 (recorded a36433a698853212a921c933492eb068)
+  |E| = 14 (expected 14)                        : True
+  H_det . E = 0  (zero syndrome, my own product): True
+  E not in rowspace(H_stab), my own RREF        : True
+  |R| = 4 ; rho_R weight = 8
+  E == D xor rho_R                              : True
+  |D| + |R| = 6 + 4 = 10  (<= W = 10)          : True
+  => the encoding WITH the orbit-0 restriction is NOT vacuously UNSAT: it returns a genuine
+     weight-10 extended-code solution on a validation triple, under a solver that did not
+     produce the recorded certificate, and the witness is bit-identical to the recorded one.

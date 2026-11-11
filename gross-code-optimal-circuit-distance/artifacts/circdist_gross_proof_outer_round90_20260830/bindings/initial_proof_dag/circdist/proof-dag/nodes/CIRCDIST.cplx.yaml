@@ -1,0 +1,196 @@
+id: CIRCDIST.cplx
+role: outcome
+aliases:
+- EFF-PRESERVE
+claim: The promise decision problem Eff-Preserve (input CSS check matrices H_X, H_Z with promised static
+  distance d, a CNOT interaction/conflict graph, and an optional depth bound T; question whether a legal
+  schedule M with d_eff(M) = d exists) is classified with proof, comprising NP-completeness for a fixed
+  small constant d under stated structural restrictions (bounded stabilizer weight and Tanner degree,
+  few allowed local CNOT orders per check), and a tight polynomial-hierarchy classification (candidate
+  Sigma_2^P-completeness) when d is part of the input.
+assessment:
+  level: PROVED
+  caveats:
+  - 'RC-P1: PROVED is bound to the unchanged 556-character root claim at sha256:0d9572ec3c4b58be6c824c1445c8bb6c3db76736a73aea9111d5c39586984c60 and the unchanged PROVED 220-character classification-assembly implication at sha256:b8b58136bb6b546762020b30cae3595c8fdc9260abd6397c8a2ddc05f23a1a30. The route review is circdist/reviews/circdist_cplx_classification_assembly_exact_review_20260828.md, raw sha256:11340aca2b82c66097af024e6b3b528ea2bc6f75b3306ef965d3b544ce96895f, Finding F-ROUTE.'
+  - 'RC-P2: The exact PROVED premises consumed are CIRCDIST.cplx.upper claim sha256:1c2b9d0fed28591066e3fccba2578b00d179535a0aba048d1423b0397cee32b1 in node file sha256:47260df53e4491c86e10f6ccdebadf47b1161d2533339fd9c499f389a8eb2321, reviewed at Finding F-UPPER in circdist/reviews/circdist_cplx_upper_membership_exact_review_20260828.md raw sha256:5e593a927d7ad55966b2362d721f98c7d5dab75c30b334edede81bda4ccbac70; CIRCDIST.cplx.fixed-d claim sha256:7adfe7c8356f6151e0da203826f9868cb414f193a4dfd5d63721b20e900e91cf in node file sha256:024a6d6d7d9a656c5ede53043b64601f13023fe0adbec6fe066ae67fb8303bbf, reviewed at Finding F-FULL-FIXED-D in circdist/reviews/circdist_cplx_fixed_d_private_sentinel_exact_review_20260829.md raw sha256:e91f7290d5ffab53347fe0bfc477954c087895e133b9234539f120422092cddd; and CIRCDIST.cplx.sigma2 claim sha256:9e76a1224bea068a1910bdabe189fab022282cca9a2d85df538612db79305a29 in node file sha256:610ab959703dbf7cbd727a839f6f18e9a1df295e72330161227788a591379c47, reviewed at Finding F84-SIGMA2 in circdist/reviews/circdist_cplx_sigma2_rin_final_exact_review_round84_20260830.md raw sha256:d0c1f246f43c1295e16343808b29b698ee527388cb9fd8aebf3e07d60f65aa50. Any statement or decisive-review drift requires a new composition review.'
+  - 'RC-P3: All conclusions use the frozen single-ancilla terminal-residual Eff-Preserve promise problem: explicit CSS inputs with promised positive static distance exactly d; ordinary qubit-sharing conflicts; equality d_eff(M) = d on promise via the total d_eff(M) >= d separator; and total promise-preserving polynomial-time many-one reductions. Membership handles absent or present binary/unary T. The hardness reductions legally use the valid no-T subdomain and serialization. No Circ-Preserve, arbitrary-conflict-graph, off-promise equality, or every-fixed-tight-T hardness theorem is included.'
+  - 'RC-P4: The fixed-d root clause is discharged only through the PROVED d = 3 construction with bounded check weights, Tanner degree at most 20, and order domains of size one or exactly three. This suffices for the root phrase a fixed small constant d with few local orders. It proves neither d = 3 with two orders, which remains in P by 2-SAT, nor the separate fixed d >= 4 binary-domain arm.'
+  - 'RC-P5: For input d, the exact upper premise supplies Sigma_2^P membership and the exact sigma2 premise supplies hardness for the same promise problem and Karp convention, hence actual Sigma_2^P-completeness. That theorem entails the root wording candidate Sigma_2^P-completeness in its classified-with-proof and tight context; tight does not assert that the polynomial hierarchy is strict.'
+  - 'RC-P6: The CONJECTURED islands-floor route and PROVED CIRCDIST.cplx.islands premise establish only the frozen problem statement''s historical minimal-acceptance floor, not this exact 556-character two-branch classification claim. They are not used for completion and receive no inherited level change.'
+  summary: >-
+    Fresh strict-serial Round-85 final composition review recomputed the exact root, route and
+    premise strings, hashes, premise order, levels and decisive review bindings, then rederived
+    every root clause under one common Eff-Preserve promise and reduction convention. The unchanged
+    PROVED classification-assembly implication and exact current PROVED upper, fixed-d and sigma2
+    premises supply, respectively, fixed-d NP membership, a d=3/domain-three restricted
+    NP-completeness theorem, and input-d Sigma_2^P membership plus hardness/completeness. The
+    unchanged 556-character root claim at
+    sha256:0d9572ec3c4b58be6c824c1445c8bb6c3db76736a73aea9111d5c39586984c60
+    is therefore PROVED. No premise claim, level, review or child route changes, and the partial
+    islands-floor route remains CONJECTURED and unused.
+  basis:
+    routes:
+    - classification-assembly
+    reviews:
+    - path: circdist/reviews/circdist_cplx_root_final_completion_review_round85_20260830.md
+      kind: review
+      scope: Fresh strict-serial independent final exact-claim and composition audit of the unchanged
+        556-character root against the unchanged PROVED 220-character classification-assembly implication
+        and the exact current PROVED upper, fixed-d and sigma2 premise claims and decisive reviews; checks
+        one frozen promise problem, qubit-sharing legality, absent/present optional-depth scope, equality
+        through the promise separator, total promise-preserving Karp reductions, all fixed-d structural
+        restrictions and the domain-three-only witness, input-d completeness, candidate wording, stale-live-prose
+        repair, no islands shortcut and no automatic inheritance.
+      locator: Finding F-ROOT
+      reviewed_hash: sha256:0d9572ec3c4b58be6c824c1445c8bb6c3db76736a73aea9111d5c39586984c60
+    evidence:
+    - path: circdist/artifacts/history/pre_protocol_20260826/nodes/CIRCDIST.cplx.yaml
+      kind: text
+      note: Immutable pre-migration record, including every original event, former summary and frontier;
+        historical evidence, not an additional completion review.
+    - path: circdist/artifacts/history/legacy_DAG_PROTOCOL.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: circdist/artifacts/definitions/CIRCDIST_PROBLEMS.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: circdist/artifacts/circdist_cplx_recon_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: circdist/artifacts/history/notes/SCHEDULER.yaml
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+routes:
+  islands-floor:
+    premises:
+    - CIRCDIST.cplx.islands
+    implication: The root's minimal acceptance bar is disjunctive — "a nontrivial restricted-class polynomial
+      algorithm with proven correctness" alone meets it — so a completed islands node establishes the
+      root at its floor scope even if both hardness halves stall.
+    proof:
+      sketch: Definitional (the acceptance clause of the frozen problem statement); the only content is
+        scoping the root claim honestly to what this route delivers.
+      sources:
+      - path: circdist/artifacts/definitions/CIRCDIST_PROBLEMS.md
+        kind: text
+    assessment:
+      level: CONJECTURED
+      summary: Registered 2026-08-20 after the auction engine exposed that the islands node was not wired
+        to the root by any route (its computed v was zero despite carrying the realistic headline). Blueprint
+        is definitional; rule 8e satisfied.
+  classification-assembly:
+    premises:
+    - CIRCDIST.cplx.upper
+    - CIRCDIST.cplx.fixed-d
+    - CIRCDIST.cplx.sigma2
+    implication: Membership plus fixed-d hardness gives NP-completeness for fixed d; membership plus hierarchy
+      hardness gives the tight PH classification for input d; together they are the claimed classification.
+      Assembly is bookkeeping.
+    proof:
+      sketch: Standard completeness assembly; content lives entirely in the premises.
+      sources:
+      - path: circdist/artifacts/circdist_cplx_recon_20260820.md
+        kind: text
+    assessment:
+      level: PROVED
+      caveats:
+      - PROVED applies only to the unchanged 220-character conditional implication at sha256:b8b58136bb6b546762020b30cae3595c8fdc9260abd6397c8a2ddc05f23a1a30;
+        it assumes the three exact premise claims jointly and proves none of them.
+      - The assembly uses strict promise-preserving polynomial-time many-one reductions, the qubit-sharing-only
+        Eff-Preserve legality model, and equality d_eff(M) = d only on promised static-distance-d instances
+        via the total ">= d" separator; no Circ-Preserve or arbitrary-conflict-graph result is included.
+      - The fixed-d conclusion retains bounded stabilizer weight, bounded Tanner degree and few local orders
+        conjunctively. Its current PROVED witness is only d = 3 with order domains of size one or exactly three.
+        It proves neither d = 3 with two orders nor the separate fixed d >= 4 binary-domain arm.
+      summary: The unchanged 220-character implication remains PROVED after fresh Round-85 re-adjudication
+        against CIRCDIST.cplx.upper, CIRCDIST.cplx.fixed-d and CIRCDIST.cplx.sigma2 on their exact current
+        claim hashes, all now independently PROVED. Under the common frozen Eff-Preserve promise, legality,
+        separator and Karp conventions, those premises give the fixed-d NP-completeness and input-d
+        Sigma_2^P-completeness stated by the root. Root completion is separately licensed by Finding F-ROOT;
+        no premise claim, level, route or review is changed.
+      basis:
+        reviews:
+        - path: circdist/reviews/circdist_cplx_classification_assembly_exact_review_20260828.md
+          kind: review
+          scope: Fresh strict-serial independent exact-text review of the 220-character classification-assembly
+            implication against the 556-character root and all three exact premise claims; re-derives both
+            promise-completeness conditionals, audits conflict/depth/effective-distance/restriction/order-domain/uniformity
+            scope, rejects inheritance and the islands route, and does not adjudicate premise truth.
+          locator: Finding F-ROUTE
+          reviewed_hash: sha256:b8b58136bb6b546762020b30cae3595c8fdc9260abd6397c8a2ddc05f23a1a30
+        - path: circdist/reviews/circdist_cplx_root_final_completion_review_round85_20260830.md
+          kind: review
+          scope: Fresh strict-serial independent re-adjudication of the unchanged 220-character conditional
+            implication against the unchanged 556-character root and the exact current PROVED upper, fixed-d
+            and sigma2 claims and decisive reviews; verifies shared promise, legality, optional-depth, equality,
+            reduction, structural/order-domain and input-d scopes and rejects islands or level inheritance.
+          locator: Finding F-ROUTE
+          reviewed_hash: sha256:b8b58136bb6b546762020b30cae3595c8fdc9260abd6397c8a2ddc05f23a1a30
+events:
+  classification-assembly-reviewed-2026-08-28:
+    date: '2026-08-28'
+    type: review-completed
+    route: classification-assembly
+    summary: Fresh strict-serial independent exact-text review bound the unchanged 220-character implication
+      to all three exact current premise claims, re-derived both promise-completeness conditionals, and found
+      the conditional bookkeeping implication complete. No premise claim or level and no root claim or level changed.
+    sources:
+    - path: circdist/reviews/circdist_cplx_classification_assembly_exact_review_20260828.md
+      kind: review
+      locator: Finding F-ROUTE
+  classification-assembly-proved-2026-08-28:
+    date: '2026-08-28'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    route: classification-assembly
+    summary: Promoted only the exact classification-assembly conditional implication after fresh independent
+      review. CIRCDIST.cplx.upper and CIRCDIST.cplx.fixed-d remain CONJECTURED, CIRCDIST.cplx.sigma2 remains
+      OPEN, and CIRCDIST.cplx remains CONJECTURED; no level is inherited through the route.
+    sources:
+    - path: circdist/reviews/circdist_cplx_classification_assembly_exact_review_20260828.md
+      kind: review
+      locator: Finding F-ROUTE
+  root-live-prose-synchronized-round85-2026-08-30:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: Replaced only obsolete live assessment and route prose that still described upper and fixed-d as
+      CONJECTURED, sigma2 as OPEN, the hierarchy branch as stop-lossed and the root as unfinished. Current exact
+      upper, fixed-d and sigma2 premises are all PROVED; the fixed-d witness is scoped to d=3/domain-three only.
+      Historical evidence and events remain unchanged; no claim, implication, premise or child level changed.
+    sources:
+    - path: circdist/reviews/circdist_cplx_root_final_completion_review_round85_20260830.md
+      kind: review
+      locator: Finding F-LIVE-PROSE
+  root-final-composition-reviewed-round85-2026-08-30:
+    date: '2026-08-30'
+    type: review-completed
+    route: classification-assembly
+    summary: Fresh strict-serial Round-85 independent review bound the unchanged 556-character root and
+      220-character classification implication to the exact current PROVED upper, fixed-d and sigma2 claims
+      and decisive reviews, checked every shared convention and clause, and proved the assembled root without
+      inheritance. The route remains PROVED on its unchanged implication hash.
+    sources:
+    - path: circdist/reviews/circdist_cplx_root_final_completion_review_round85_20260830.md
+      kind: review
+      locator: Finding F-ROUTE
+    - path: circdist/reviews/circdist_cplx_root_final_completion_review_round85_20260830.md
+      kind: review
+      locator: Finding F-ROOT
+  root-proved-round85-2026-08-30:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Promoted only CIRCDIST.cplx from CONJECTURED to PROVED at the unchanged 556-character claim
+      sha256:0d9572ec3c4b58be6c824c1445c8bb6c3db76736a73aea9111d5c39586984c60 after fresh exact
+      composition review. The classification route and all three premises were already PROVED and remain
+      unchanged; islands-floor remains CONJECTURED and no child receives an inherited change.
+    sources:
+    - path: circdist/reviews/circdist_cplx_root_final_completion_review_round85_20260830.md
+      kind: review
+      locator: Finding F-ROOT

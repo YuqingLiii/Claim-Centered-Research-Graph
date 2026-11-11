@@ -1,0 +1,39 @@
+id: GROTHD4.degree4.affine-family
+role: obstruction
+aliases:
+- D4-AFFINE-NOGO
+claim: >-
+  No member of the recovered full affine dual family, nor of the recorded alpha23/irrep13
+  subfamilies, satisfies the required positive-semidefinite block conditions.
+assessment:
+  level: NUMERICAL
+  summary: >-
+    Three exact-computation JSON records report refutations of these frozen ansatz families.
+    They obstruct only those families, not the unrestricted degree-4 dual, and have not yet
+    undergone independent adversarial review.
+  basis:
+    runs:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/refutations
+      kind: run
+      result: >-
+        Exact archived outputs refute the alpha23/irrep13 ambient and exact families and the
+        full affine family; the unrestricted dual remains undecided.
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_full_affine_family_exact_refuter.py
+      kind: text
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_alpha23_irrep13_ambient_verifier.py
+      kind: text
+frontier:
+  task-001:
+    task: Independently replay each refutation from the frozen original matrix and inspect the exact certificates.
+    kind: review
+    since: '2026-08-29'
+events:
+  migrated-2026-08-29:
+    date: '2026-08-29'
+    type: created
+    summary: Registered the negative affine-family results without overgeneralizing them to the full dual.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/refutations
+      kind: run
+

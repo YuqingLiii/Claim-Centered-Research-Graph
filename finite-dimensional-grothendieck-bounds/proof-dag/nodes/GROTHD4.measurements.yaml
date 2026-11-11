@@ -1,0 +1,49 @@
+id: GROTHD4.measurements
+role: outcome
+aliases:
+- D4-PHYSICAL-REALIZATION
+claim: >-
+  The recovered rank-four Gram witness is realized on the maximally entangled
+  two-qubit state |Phi_4> by 300 explicit Alice observables Gamma(u_i) and 300
+  Bob observables Gamma(u_j)^T, all with outcomes in {+1,-1}.
+routes:
+  gram-to-clifford:
+    premises:
+    - GROTHD4.quantum
+    implication: >-
+      The nonsingular four-by-four Gram pivot gives deterministic real
+      coordinates u_i, and the four explicit two-qubit Clifford generators
+      preserve their inner-product correlators on |Phi_4>.
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The state, pivot-coordinate prescription, Pauli generators, transpose
+        convention, and trace identity are all explicit at author level.
+      basis:
+        evidence:
+        - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-exact-instance-certificate-20260829.md
+          kind: text
+          locator: D4-T4--D4-T5
+assessment:
+  level: CONJECTURED
+  summary: >-
+    A complete local physical realization is written down; independent
+    adversarial review of the coordinate and Clifford conventions is pending.
+  basis:
+    routes:
+    - gram-to-clifford
+frontier:
+  task-001:
+    task: Independently audit the pivot factorization, Pauli anticommutation, transpose convention, and correlator identity.
+    kind: review
+    since: '2026-08-29'
+events:
+  authored-2026-08-29:
+    date: '2026-08-29'
+    type: created
+    summary: Converted the exact rank-four Gram matrix into the requested state-and-measurement realization.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-exact-instance-certificate-20260829.md
+      kind: text
+      locator: D4-T4--D4-T5
+

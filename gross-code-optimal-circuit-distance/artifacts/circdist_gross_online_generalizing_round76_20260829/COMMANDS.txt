@@ -1,0 +1,13 @@
+# Source sealed quick verification
+PYTHONDONTWRITEBYTECODE=1 $VENV/bin/python source-package/verify.py --quick
+
+# One fresh serial online iteration (author loop used N=54..77)
+PYTHONDONTWRITEBYTECODE=1 $VENV/bin/python src/run_online_iteration.py --iteration N --engine-root PACKAGE --work-root PACKAGE --python $VENV/bin/python
+
+# Quick and full package verification
+PYTHONDONTWRITEBYTECODE=1 $VENV/bin/python verify.py --quick
+PYTHONDONTWRITEBYTECODE=1 $VENV/bin/python verify.py --full
+PYTHONDONTWRITEBYTECODE=1 $VENV/bin/python verify.py --full --repo-root /absolute/path/to/Claim-Centered-Research-Graph
+
+# External seal digest
+shasum -a 256 SHA256SUMS.txt

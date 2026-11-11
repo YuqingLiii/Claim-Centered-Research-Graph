@@ -1,0 +1,54 @@
+id: WHGAP.zero-capacity-application
+role: outcome
+aliases:
+- zero-from-half
+claim: >-
+  For every x in [1/2,1), Q(Lambda_x) = P(Lambda_x) = 0.
+routes:
+  signed-lift-capacity-pipeline:
+    premises:
+    - WHGAP.signed-lift-extension
+    assumptions:
+      zhu-wang-pipeline:
+        kind: external-theorem
+        statement: >-
+          The Zhu--Wang cBKM/cRE certificate and HRSF22 hybrid tensorization convert the signed-lift
+          CP defect into vanishing coherent and private information at every tensor power.
+        source:
+          note: >-
+            Zhu--Wang arXiv:2607.24693v2, Theorem 3.5, Lemma 3.2 and Corollaries 3.1/3.7;
+            Hirche--Rouze--Stilck Franca arXiv:2011.05949, Lemma 3.1. Legacy references to
+            Zhu--Wang Theorem 3.3 are pre-v2 numbering drift.
+    implication: >-
+      The signed lift exists throughout [1/2,1); applying the generic comparison and tensorization
+      pipeline gives zero regularized Q and P on the same interval.
+    proof:
+      sketch: Discharge CPTP, complement, faithfulness, lift, defect-CP and tensorization interfaces separately.
+      sources:
+      - path: werner-holevo-capacity-threshold/artifacts/legacy-record/notes/WHGAP_P4_ZERO_CAPACITY_NOTE_20260728.md
+        kind: text
+        locator: "#"
+    assessment:
+      level: CONJECTURED
+      summary: The old project recorded a completed reviewed assembly; exact new-format review binding is pending.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The x=1 endpoint is excluded from this claim and remains a separately sourced convention/result.
+  - The old PROVED stamp is not copied without a review hash for this exact migrated wording.
+  summary: >-
+    The legacy proof and reviews support the theorem and close the old (1/2,4/7) gap, but migration
+    retains a conservative evidence level until re-review.
+  basis:
+    routes:
+    - signed-lift-capacity-pipeline
+    evidence:
+    - path: werner-holevo-capacity-threshold/artifacts/PRIMARY_SOURCE_AUDIT_20260829.md
+      kind: text
+      locator: "## Current Zhu--Wang numbering"
+    - path: werner-holevo-capacity-threshold/artifacts/PRIMARY_SOURCE_AUDIT_20260829.md
+      kind: text
+      locator: "## External all-blocklength pipeline"
+    - path: werner-holevo-capacity-threshold/artifacts/legacy-record/nodes/WHGAP.zero-capacity-application.md
+      kind: text
+      locator: "## Current status"

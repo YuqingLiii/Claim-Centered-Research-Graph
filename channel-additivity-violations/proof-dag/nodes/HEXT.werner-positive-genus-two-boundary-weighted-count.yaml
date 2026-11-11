@@ -1,0 +1,73 @@
+id: HEXT.werner-positive-genus-two-boundary-weighted-count
+role: proof
+aliases:
+- werner-h-positive-weighted-constellation-count
+claim: >-
+  For every N>=2 and h>=1, the total minimal Catalan weight of all connected triples ABC=rho of
+  genus h is at most 4096^N N^(43h). Consequently, for every integer m>e^18, the fixed constant
+  D=4096 satisfies D<sqrt(18m).
+routes:
+  rooted-tree-cotree-code:
+    premises:
+    - HEXT.werner-contraction-skeleton-ribbon-injection
+    - HEXT.werner-minimal-catalan-weight
+    implication: >-
+      For every N>=2 and h>=1, the total minimal Catalan weight of all connected triples ABC=rho of
+      genus h is at most 4096^N N^(43h). Consequently, for every integer m>e^18, the fixed constant
+      D=4096 satisfies D<sqrt(18m).
+    proof:
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_TWO_BOUNDARY_CONSTELLATION_WEIGHTED_COUNT_20260830.md
+        kind: text
+        locator: "## 4. Positive genus: a spanning-tree/cotree counting code"
+    assessment:
+      level: PROVED
+      caveats:
+      - This statement excludes h=0 and counts structural connected triples, not compatible tuple labelings.
+      summary: >-
+        Independent review verified the rooted injection, canonical tree--cotree code, absence of
+        factorial/color multipliers, Catalan weight and exact 4096/43 constants.
+      basis:
+        evidence:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_TWO_BOUNDARY_CONSTELLATION_WEIGHTED_COUNT_20260830.md
+          kind: text
+          locator: "## 6. Constants"
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_TWO_BOUNDARY_CONSTELLATION_WEIGHTED_COUNT_INDEPENDENT_REVIEW_20260830.md
+          kind: review
+          locator: "Finding WTBC-IR-03"
+          scope: >-
+            Independently verified the positive-genus ordinary count, Catalan weighting, powers of
+            two and N, and the natural-log large-m threshold without using the defective planar formula.
+          reviewed_hash: sha256:300c642a7cab1717445a387e793666fa416ead65bd0731f9be684701d8f30cf6
+assessment:
+  level: PROVED
+  caveats:
+  - The h=0 case of the broader every-genus node still requires a repaired planar proof.
+  - Equality-graph component weights and the two-component sector are outside this structural theorem.
+  summary: >-
+    The complete positive-genus structural weighted count is independently proved with a
+    target-compatible base for every fixed integer m>e^18.
+  basis:
+    routes:
+    - rooted-tree-cotree-code
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_TWO_BOUNDARY_CONSTELLATION_WEIGHTED_COUNT_20260830.md
+      kind: text
+      locator: "## 4. Positive genus: a spanning-tree/cotree counting code"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_TWO_BOUNDARY_CONSTELLATION_WEIGHTED_COUNT_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WTBC-IR-03"
+      scope: >-
+        Independently proved the exact positive-genus claim while separating the invalid planar formula.
+      reviewed_hash: sha256:300c642a7cab1717445a387e793666fa416ead65bd0731f9be684701d8f30cf6
+events:
+  positive-genus-weighted-count-created-and-reviewed:
+    date: '2026-08-30'
+    type: created
+    summary: Registered the independently proved h>=1 two-boundary weighted count.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_TWO_BOUNDARY_CONSTELLATION_WEIGHTED_COUNT_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WTBC-IR-03"

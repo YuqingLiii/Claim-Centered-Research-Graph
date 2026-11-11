@@ -1,0 +1,46 @@
+id: HEXT.fixed-d-heterogeneous-selection
+role: constraint
+aliases:
+- heterogeneous-selection-theorem
+claim: >-
+  In any compact fixed-dimensional continuous channel family, a positive asymptotic MOE defect
+  rate certified for a heterogeneous product and its conjugate by the product of the layerwise Bell
+  inputs implies that one fixed channel in the family already has a positive Bell-certified
+  regularized surplus, and hence a positive regularized channel/conjugate-channel MOE defect.
+  Conversely, a fixed channel with that stronger Bell-certified surplus gives a positive rate by
+  repetition.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The selection theorem concerns the product of the layerwise maximally entangled inputs; a
+    genuinely collective non-Bell witness is outside its statement.
+  - The theorem is a reduction, not an existence or impossibility result for the selected fixed channel.
+  - The proof is proposer-side and has not received independent review.
+  summary: >-
+    Extract an empirical-measure limit along a subsequence attaining the heterogeneous gap rate.
+    The arbitrary-sequence regularization upper bound controls the side entropy by the average
+    fixed-channel regularized rate, while Bell entropy averages continuously. A positive average
+    surplus selects one channel with positive fixed-pair regularized surplus.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FIXED_DIMENSION_HETEROGENEOUS_SELECTION_THEOREM_20260830.md
+      kind: text
+      locator: "## Proof"
+frontier:
+  fixed-tuple-regularized-defect:
+    task: >-
+      Prove or refute positive regularized MOE defect for one fixed finite random-unitary tuple and
+      its conjugate; fixed-dimensional heterogeneous product-Bell schemes are now equivalent to
+      this target.
+    kind: gate
+    since: 2026-08-30
+events:
+  selection-reduction-recorded:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Reduced every fixed-dimensional heterogeneous product-Bell extensive rate to one fixed
+      finite regularized channel/conjugate-channel counterexample.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FIXED_DIMENSION_HETEROGENEOUS_SELECTION_THEOREM_20260830.md
+      kind: text

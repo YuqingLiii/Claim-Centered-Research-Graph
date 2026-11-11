@@ -1,0 +1,37 @@
+id: GROTHD4.cut.terminal-cut7-no-go
+role: obstruction
+aliases:
+- D4-TERMINAL-CUT7-NO-GO
+claim: >-
+  For each of the 712800 seven-coordinate clusters formed by adjoining one
+  coordinate to a terminal free six-set, no proper facet of CUT_7 can be
+  tight on all currently known C-level cuts.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    Each specified cluster contains a known terminal six-face whose
+    projection realizes all 64 vertices of CUT_7, so no proper local facet,
+    hypermetric or otherwise, can contain every known equality cut. An exact
+    checker verifies the 712800 clusters and their 73 H4-plus-swap orbits.
+    The author-side result awaits independent review and does not cover
+    arbitrary seven-coordinate clusters.
+  basis:
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-pentagonal-hypermetric-no-go-20260830.md
+      kind: text
+      locator: Seven-coordinate local-facet no-go
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_pentagonal_hypermetric_no_go_checker.py
+      kind: code
+frontier:
+  independent-review:
+    task: Independently audit the terminal-face projection and cluster census.
+    kind: review
+    since: '2026-08-31'
+events:
+  registered-2026-08-31:
+    date: '2026-08-31'
+    type: created
+    summary: Registered the exact author-side local CUT_7 obstruction.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-pentagonal-hypermetric-no-go-20260830.md
+      kind: text

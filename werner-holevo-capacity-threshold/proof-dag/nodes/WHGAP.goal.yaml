@@ -1,0 +1,67 @@
+id: WHGAP.goal
+role: outcome
+aliases:
+- capacity-threshold
+claim: >-
+  Determine the exact sets of x in [0,1] for which the qutrit noisy Werner--Holevo channel
+  Lambda_x has zero quantum capacity Q and zero private capacity P.
+routes:
+  two-threshold-assembly:
+    premises:
+    - WHGAP.qpositive-onset
+    - WHGAP.onset-two-fifths
+    - WHGAP.zero-capacity-application
+    - WHGAP.private-boundary
+    implication: >-
+      Positivity of Q below 2/5, vanishing of Q on the remaining strip [2/5,1/2), vanishing of Q
+      and P from 1/2 onward, and positivity of P below 1/2 determine the two threshold sets.
+    proof:
+      sketch: >-
+        Assemble interval statements only after checking endpoints and the x=1 convention. The
+        single-letter statement Q^(1)=0 on the strip cannot replace the regularized Q=0 premise.
+      sources:
+      - path: werner-holevo-capacity-threshold/artifacts/legacy-record/nodes/WHGAP.goal.md
+        kind: text
+        locator: "## Strategy blueprint"
+    assessment:
+      level: OPEN
+      summary: The interval assembly is straightforward, but the quantum strip premise remains open.
+assessment:
+  level: OPEN
+  summary: >-
+    The private-capacity boundary and the old named gap [1/2,4/7] are supported as closed in the
+    legacy dossier. The exact quantum threshold still depends on [2/5,1/2), so the root remains open.
+  basis:
+    routes:
+    - two-threshold-assembly
+    evidence:
+    - path: werner-holevo-capacity-threshold/artifacts/PRIMARY_SOURCE_AUDIT_20260829.md
+      kind: text
+      locator: "## Current interval ledger"
+    - path: werner-holevo-capacity-threshold/artifacts/RELATION_TO_HOLEVO_ADDITIVITY_20260829.md
+      kind: text
+      locator: "## Exact project relationship"
+    - path: werner-holevo-capacity-threshold/artifacts/primary-sources
+      kind: data
+      note: Hash-bound primary PDFs listed in PRIMARY_SOURCE_AUDIT_20260829.md.
+    - path: werner-holevo-capacity-threshold/artifacts/legacy-record
+      kind: text
+      note: "Complete migrated textual record: old nodes, notes, reviews, paper source and Lean source."
+    - path: werner-holevo-capacity-threshold/artifacts/MIGRATION_REPORT_20260829.md
+      kind: text
+      locator: "# Migration report — 2026-08-29"
+frontier:
+  quantum-strip:
+    task: Decide whether Q(Lambda_x) is zero or positive for every x in [2/5,1/2).
+    kind: gate
+    since: 2026-08-29
+  migration-review:
+    task: >-
+      Rebind the zero-capacity, private-boundary and positive-onset claims to exact new-format hashes
+      and commission independent reviews before restoring completion levels.
+    kind: review
+    since: 2026-08-29
+  lean-rerun:
+    task: Install the pinned Lean 4.31 toolchain and rerun the migrated lake build with a fresh log and hashes.
+    kind: review
+    since: 2026-08-29

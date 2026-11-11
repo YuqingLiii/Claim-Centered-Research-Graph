@@ -1,0 +1,45 @@
+id: GROTHD4.degree4.four-block-no-go
+role: obstruction
+aliases:
+- D4-SOS-FOUR-BLOCK-LINEAR-NO-GO
+claim: >-
+  The Boolean target C-x^T A y is outside the characteristic-zero Gram
+  coefficient image supported on H4 blocks {9,12,13,14}. Hence no
+  degree-four SOS certificate supported only on those four blocks exists.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    Party-swap averaging losslessly reduces the ansatz to eight parity PSD
+    blocks with 6665 symmetric parameters. An exact modular evaluation map
+    has Gram-column rank 6665, while adjoining the target gives rank 6666;
+    a certified augmented minor has determinant 5172 modulo 24001. Thus the
+    target is outside even the indefinite Gram image. The independent checker
+    replay passes, but the author-side theorem awaits adversarial review and
+    does not exclude SOS certificates using other H4 blocks.
+  basis:
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-sos-symmetry-20260830.md
+      kind: text
+      locator: D4-SOS-4BLOCK-LINEAR-NOGO
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_four_block_party_parity_nogo_checker.py
+      kind: code
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/certificates/d4-four-block-party-parity-linear-nogo-certificate-20260830.json
+      kind: run
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/certificates/d4-four-block-party-parity-augmented-minor-20260830.json
+      kind: run
+frontier:
+  independent-review:
+    task: >-
+      Independently audit the party-swap lossless reduction, modular
+      coefficient map, determinant certificate, and characteristic-zero lift.
+    kind: review
+    since: '2026-08-31'
+events:
+  registered-2026-08-31:
+    date: '2026-08-31'
+    type: created
+    summary: Registered the exact author-side four-block linear no-go.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-sos-symmetry-20260830.md
+      kind: text
+      locator: D4-SOS-4BLOCK-LINEAR-NOGO

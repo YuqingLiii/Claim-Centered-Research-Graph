@@ -1,0 +1,34 @@
+id: GROTHD4.spectral.p-psd-no-go
+role: obstruction
+aliases:
+- D4-P-LAPLACIAN-PSD-NO-GO
+claim: >-
+  The 217-variable p-gauge Laplacian is not positive semidefinite over the
+  reals, so ordinary quadratic PSD cannot certify the p-cell Boolean cut gate.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    A displayed 19-sparse integer direction has exact quadratic value
+    -1160483848923607. This refutes real PSD only; it is not a Boolean sign
+    counterexample and does not refute p-cut nonnegativity. The checker replay
+    passes and the author-side obstruction awaits review.
+  basis:
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-superlevel-cell-reduction-20260830.md
+      kind: text
+      locator: p-Laplacian PSD no-go
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_superlevel_cell_reduction_checker.py
+      kind: code
+frontier:
+  independent-review:
+    task: Independently verify the sparse direction and quadratic value.
+    kind: review
+    since: '2026-08-31'
+events:
+  registered-2026-08-31:
+    date: '2026-08-31'
+    type: created
+    summary: Registered the exact author-side real-PSD obstruction.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-superlevel-cell-reduction-20260830.md
+      kind: text

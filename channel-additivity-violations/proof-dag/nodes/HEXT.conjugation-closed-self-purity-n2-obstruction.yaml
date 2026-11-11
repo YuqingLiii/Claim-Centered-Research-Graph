@@ -1,0 +1,60 @@
+id: HEXT.conjugation-closed-self-purity-n2-obstruction
+role: obstruction
+aliases:
+- complex-conjugation-closed-bell-collision
+claim: >-
+  Let L(X)=q^(-1)sum_v W_v X W_v^* and let C be a complementary channel. If the finite unitary
+  tuple is closed under entrywise conjugation up to a permutation and phases, then a physical
+  maximally entangled input at copy number two gives
+  mu_2(C tensor C)>=2/q^2-1/q^3. Hence the physical self-purity target
+  mu_2(C tensor C)<=(A/q)^2 fails whenever A^2<2-1/q, even for genuinely complex tuples without a
+  common real orientation.
+assessment:
+  level: PROVED
+  caveats:
+  - Exact conjugation closure is a measure-zero dependent subclass of the independent complex-Haar
+    ensemble and does not refute the existential generic-complex all-copy node.
+  summary: >-
+    Pair each Kraus word with its conjugate partner. The q matched pairs produce the same Bell ray;
+    rank-purity convexity for the remaining q^2-q vectors gives the exact lower bound.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/PRODUCT_HAAR_PHYSICAL_SELF_PURITY_ALL_COPY_ATTACK_20260831.md
+      kind: text
+      locator: "## 7. A genuine complex physical obstruction subclass at `r=2`"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/PRODUCT_HAAR_PHYSICAL_SELF_PURITY_EXACT_ATOMS_INDEPENDENT_REVIEW_20260831.md
+      kind: review
+      locator: "Finding HEXT-PP-IR-02"
+      scope: >-
+        Independently verified the q matched ordered Kraus pairs, residual rank-purity bound,
+        complementarity transfer, exact threshold, and special-subclass boundary.
+      reviewed_hash: sha256:6eae14abe6af4beb91e413ec834b99ad9f155a270899757d2dc34fe7e7cc6b7e
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/PRODUCT_HAAR_PHYSICAL_SELF_PURITY_EXACT_ATOMS_SECONDARY_ADVERSARIAL_REVIEW_20260831.md
+      kind: review
+      locator: "Findings HEXT-PP-SAR-03--HEXT-PP-SAR-06"
+      scope: >-
+        A second independent audit rechecked ordered-pair counting, rank-purity, complementarity,
+        the q=1 endpoint, and the strict measure-zero subclass boundary.
+      reviewed_hash: sha256:6eae14abe6af4beb91e413ec834b99ad9f155a270899757d2dc34fe7e7cc6b7e
+events:
+  conjugation-closed-obstruction-created:
+    date: '2026-08-31'
+    type: created
+    summary: >-
+      Extended the exact real-tuple Bell collision to all conjugation-closed complex tuples while
+      preserving the generic independent-Haar existential problem.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/PRODUCT_HAAR_PHYSICAL_SELF_PURITY_ALL_COPY_ATTACK_20260831.md
+      kind: text
+      locator: "## 7. A genuine complex physical obstruction subclass at `r=2`"
+  independent-review-promotion:
+    date: '2026-08-31'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Independent review verified the Bell-ray collision, rank-purity bound, and strict subclass scope.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/PRODUCT_HAAR_PHYSICAL_SELF_PURITY_EXACT_ATOMS_INDEPENDENT_REVIEW_20260831.md
+      kind: review
+      locator: "Finding HEXT-PP-IR-02"

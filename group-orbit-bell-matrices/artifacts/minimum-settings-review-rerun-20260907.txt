@@ -1,0 +1,49 @@
+Independent reviewer replay for GROTHORB.minimum-settings-isotropic.
+Date: 2026-09-07.
+Reviewer: Codex agent /root/orbit_root_prior_art.
+Working root: /private/tmp/grothorb-classical-20260907-R0Shtu.
+Runtime: Python 3.9.6, Clang 21.0.0.
+Python optimize flag: 0; assertions enabled: True.
+Mathematical checker dependencies: fractions only; exact rational arithmetic.
+PyYAML 6.0.3 was used separately for extracting the registered claim.
+
+RUN MS-R1
+Command:
+python3 grothendieck-group-orbit/tools/check_minimum_settings_isotropic.py
+Exit code: 0.
+Standard output:
+r=1: m=1, n=1, total=2, rank(Sym_r map)=1, S=T=1; unit projectors, positivity, isotropy and trace relation exact; PASS
+r=2: m=2, n=2, total=4, rank(Sym_r map)=3, S=T=2; unit projectors, positivity, isotropy and trace relation exact; PASS
+r=3: m=3, n=4, total=7, rank(Sym_r map)=6, S=T=3; unit projectors, positivity, isotropy and trace relation exact; PASS
+r=4: m=4, n=7, total=11, rank(Sym_r map)=10, S=T=4; unit projectors, positivity, isotropy and trace relation exact; PASS
+r=5: m=5, n=11, total=16, rank(Sym_r map)=15, S=T=5; unit projectors, positivity, isotropy and trace relation exact; PASS
+r=6: m=6, n=16, total=22, rank(Sym_r map)=21, S=T=6; unit projectors, positivity, isotropy and trace relation exact; PASS
+r=7: m=7, n=22, total=29, rank(Sym_r map)=28, S=T=7; unit projectors, positivity, isotropy and trace relation exact; PASS
+r=8: m=8, n=29, total=37, rank(Sym_r map)=36, S=T=8; unit projectors, positivity, isotropy and trace relation exact; PASS
+r=9: m=9, n=37, total=46, rank(Sym_r map)=45, S=T=9; unit projectors, positivity, isotropy and trace relation exact; PASS
+r=10: m=10, n=46, total=56, rank(Sym_r map)=55, S=T=10; unit projectors, positivity, isotropy and trace relation exact; PASS
+Arithmetic: rational outer products and elimination only; no floating-point square roots.
+Scope: finite construction replay; the universal minimum is proved in MS-2--MS-4.
+
+The fresh replay agrees with the author record. It verifies the ten stated
+dimensions only. The reviewer separately checked the universal trace-rank
+lower bound, the all-r weighted construction, and a general invertible
+measurement submatrix; those mathematical checks are in the review F1.
+No general-r inference is drawn solely from these finite runs.
+
+Frozen input SHA-256:
+cace3e18258f0c97f099960d598b524ea32ee2e5c92dda8c981e1944f2c6ce1c  grothendieck-group-orbit/proof-dag/nodes/GROTHORB.minimum-settings-isotropic.yaml
+455e003a93386bdaa7a9a98e7d6ee4be2ebe655ae257757386e1776508735575  grothendieck-group-orbit/artifacts/minimum-settings-isotropic-20260907.md
+4d1e89152a577eb586fb31db9a694b10355de4eaf44f69ce1a1db5f34497ca3e  grothendieck-group-orbit/tools/check_minimum_settings_isotropic.py
+d02dd1cc45da3e9cd46aad71197be678d828933a98cd47af8d3e5170c0907816  grothendieck-group-orbit/artifacts/minimum-settings-isotropic-exact-check-20260907.txt
+
+Exact reviewed claim after yaml.safe_load and claim.strip():
+Fix an integer r>=1. Among pairs of nonempty finite positive weighted isotropic unit frames in R^r for which the map H -> ((a_i^T H a_i)_i,(b_j^T H b_j)_j) is injective on Sym_r, the minimum total number of frame vectors m+n is r(r+1)/2+1. It is attained with Alice vectors e_1,...,e_r of weight 1, Bob vectors (e_i-e_j)/sqrt(2) for i<j of weight 2/r, and (1,...,1)/sqrt(r) of weight 1.
+
+reviewed_hash: sha256:dc1b7a167caab8ad27dc638a70586b4bc98bd3f56fc3b4b66a2854e2e9a35aef
+Hash convention: hashlib.sha256(claim.strip().encode('utf-8')).hexdigest()
+applied to the parsed YAML string, not the file bytes.
+
+This replay supplies finite exact evidence. It is not a novelty assessment,
+proof-assistant formalization, or automatic node promotion. Author inputs
+and earlier frozen reports were not changed by this reviewer.

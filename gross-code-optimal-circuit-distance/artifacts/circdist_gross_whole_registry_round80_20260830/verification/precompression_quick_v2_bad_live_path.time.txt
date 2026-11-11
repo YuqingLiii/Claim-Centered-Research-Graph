@@ -1,0 +1,28 @@
+Traceback (most recent call last):
+  File "<home>/Documents/Codex/.scratch_circdist_gross_whole_registry_round80_20260830/package/circdist_gross_whole_registry_round80_20260830/verify.py", line 335, in <module>
+    main()
+  File "<home>/Documents/Codex/.scratch_circdist_gross_whole_registry_round80_20260830/package/circdist_gross_whole_registry_round80_20260830/verify.py", line 330, in main
+    result={'schema':'round80-whole-registry-self-contained-verification-v1','manifest':verify_manifest(a.allow_unsealed),'compression':verify_compression(a.allow_unsealed),'bindings':verify_bindings(a.repo_root.resolve() if a.repo_root else None),'state_and_ledgers':verify_state_and_ledgers(),'processes':verify_processes(),'negative_controls':verify_negative_controls(),'proof_checker_controls':verify_proof_controls()}
+  File "<home>/Documents/Codex/.scratch_circdist_gross_whole_registry_round80_20260830/package/circdist_gross_whole_registry_round80_20260830/verify.py", line 85, in verify_bindings
+    b=data(ROOT/r['snapshot']);q=repo_root/r['live_path'];assert q.is_file() and q.read_bytes()==b,r['live_path'];live+=1
+AssertionError: operations/circdist/claims/CIRCDIST.gross.yaml
+real 0.16
+user 0.14
+sys 0.01
+           115539968  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+               10054  page reclaims
+                  17  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                  17  involuntary context switches
+          2565084578  instructions retired
+           712698491  cycles elapsed
+           110444928  peak memory footprint

@@ -1,0 +1,81 @@
+id: CIRCDIST.cplx.sigma2
+role: proof
+aliases:
+- EFFP-SIGMA2
+claim: Eff-Preserve with d as part of the input is Sigma_2^P-hard (hence, with CIRCDIST.cplx.upper,
+  Sigma_2^P-complete).
+assessment:
+  level: OPEN
+  summary: 'Two candidate routes from the round-1 recon, both currently weak: qsat2-budget-gadget
+    (orders = existential variables, fault budget forcing one column per group = universal
+    variables, BMvT-style budget combinatorics; P 0.15, D 6 — the acceptance predicate is
+    F2-LINEAR, so all nonlinearity must hide in the budget, which is the hard part) and
+    covering-radius-transfer (import the Pi_2-complete linear-code covering-radius machinery;
+    P 0.2, D 5 — no natural dictionary found yet, and the Pi_2 attribution itself needs a primary
+    check). This is the risk-carrying half of the classification; the minimal acceptance for the
+    root does not require it.'
+frontier:
+  task-002:
+    task: 'Decisive gate Q1 (~1 session, no CSS machinery): does repetition padding C tensor
+      rep_m turn a McLoughlin covering-radius instance into a DEEP-FLAG instance with the same
+      answer? YES => the ladder obstruction dissolves and the node essentially closes via
+      Theorem D + wrappers; NO => the R4 dictionary route dies and R3 is the sole route. Either
+      answer settles the route choice.'
+    kind: gate
+    since: '2026-08-22'
+  task-001:
+    task: Verify the Pi_2-completeness attribution for linear-code covering radius against the
+      primary source before any reliance (recon flag — search-level only).
+    kind: task
+    since: '2026-08-20'
+events:
+  q1-seed-barrier-2026-08-22:
+    date: '2026-08-22'
+    type: repair-applied
+    summary: 'Gate Q1 fired reading (b) — THE R4 DICTIONARY ROUTE DIES
+      (artifacts/circdist_cplx_q1_20260822.md). Theorem Q1-1 (Seed Barrier, CONJECTURED): any
+      poly-time padding that is correct AND one-rung-preserving would place the Sigma_2-complete
+      covering-radius question in coNP, collapsing PH — Q1''s own side condition is the
+      impossibility hypothesis; no padding variant (repetition/dual/direct-sum/concatenation) can
+      transfer McLoughlin. Diagnosis exact (m even destroys, m odd preserved-hence-barred;
+      unconditional counterexample family; 11/19 padded-NO census). By-product Theorem Q1-2:
+      padding DOES kill the ladder — the parent artifact''s Horn 2 is RETRACTED: the seed, not
+      the ladder, was always the wall. R3 is the sole surviving route; R5 (deep-region
+      reconfiguration) registered with the binding design rule: the seed must be deep
+      UNCONDITIONALLY, all Sigma_2 content in the chain. STOP-LOSS APPLIED (campaign-4
+      discipline): sigma2 has burned 3 sessions this campaign without a level rise; the minimal
+      residual is precisely recorded (DEEP-FLAG + seed-barrier design rule); no further sigma2
+      funding this campaign absent a lead override. Node P stays 0.2; honest label OPEN.'
+    sources:
+    - path: artifacts/circdist_cplx_q1_20260822.md
+      kind: text
+  budget-transfer-structure-2026-08-22:
+    date: '2026-08-22'
+    type: repair-applied
+    summary: 'Campaign-4 wave 1 attack: BLOCKED per stop-loss, but the blockage is now
+      STRUCTURED (artifacts/circdist_cplx_sigma2_20260822.md). Theorem A (budget-transfer normal
+      form): the weight budget expresses EXACTLY the graded coset-leader relations w^nt(sum of
+      hook syndromes) >= d - h and nothing else (320 pairs verified). Theorem D: the dictionary
+      the recon said did not exist DOES — at k = 1, hook safety IS the covering-radius deep-point
+      question (6144 vectors verified); the Pi_2-completeness attribution (McLoughlin 1984) is
+      now peer-reviewed-secondary VERIFIED via GMR CompCplx 14 (2005) + arXiv:1602.05657
+      (Frances-Litman worry a false alarm — different input model); recon flag A9 discharges to
+      A9-prime. Theorem E (the obstruction, named): consecutive rungs step by one class, so a
+      flag needs a whole LADDER of deep holes, not one (3600 flags verified; explicit 0/720
+      witness). Two-horned barrier: weight-4 checks flag-neutral but depth-band too narrow;
+      unbounded weight has the band but the ladder. Bonus: Prop C, a new general-d tractable
+      island (d_X - d >= (d-1)(W-1) forces YES); Cor B2 cheap direct-sum promise padding.
+      Absence honestly scoped (260k random codes, 714 in regime, no flag witness). MINIMAL
+      RESIDUAL, one sub-claim: DEEP-FLAG (maximal chain with all prefix indicators r-deep in a
+      classical code); if DEEP-FLAG is Sigma_2^P-hard then Eff-Preserve is Sigma_2^P-complete
+      (plus three wrapper lemmas R1-R3). Node P 0.15 -> 0.2.'
+    sources:
+    - path: artifacts/circdist_cplx_sigma2_20260822.md
+      kind: text
+  created-2026-08-20:
+    date: '2026-08-20'
+    type: created
+    summary: Registered from the round-1 cplx recon as the hierarchy-hardness component.
+    sources:
+    - path: artifacts/circdist_cplx_recon_20260820.md
+      kind: text

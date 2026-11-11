@@ -1,0 +1,39 @@
+==============================================================================
+TARGET 3 -- rotated surface, uniform schedule family, class D
+==============================================================================
+
+  d=3 : n=9  X-checks=4  Z-checks=4  validation=['OK']  code distance=3
+
+  d=5 : n=25  X-checks=12  Z-checks=12  validation=['OK']  code distance=5
+
+==============================================================================
+SEARCH-SPACE FUNNEL (independently re-derived)
+==============================================================================
+  d=3 : 576 candidates -> 24 legal -> 0 legal AND (MC)   [RECORD: 96 -> 16]
+  d=5 : 576 candidates -> 24 legal -> 0 legal AND (MC)   [RECORD: 96 -> 16]
+
+  class-D member (piX=NW,SW,NE,SE, piZ=NW,NE,SW,SE) in the legal+(MC) set : False
+
+  hook geometry check (X-ancilla fault after its 2nd CNOT leaves {q3,q4}):
+    weight-4 X-check hooks : {'vertical': 8}   (X_L is a COLUMN -> parallel = misaligned)
+    weight-4 Z-check hooks : {'horizontal': 8}   (Z_L is a ROW    -> parallel = misaligned)
+
+==============================================================================
+THE HEADLINE CELL -- d=5 class D, d_R from stim DEMs, both sectors
+==============================================================================
+d   sector   R   d_search     d_stim_native    cols     dets
+  [depth=4 legal=False MC=[('X_top_0', 'Z_0_0', 1)]]
+3   Z        1    DEM REFUSED (stim refuses DEM (non-deterministic detectors))
+3   Z        2    DEM REFUSED (stim refuses DEM (non-deterministic detectors))
+3   Z        3    DEM REFUSED (stim refuses DEM (non-deterministic detectors))
+3   X        1    DEM REFUSED (stim refuses DEM (non-deterministic detectors))
+3   X        2    DEM REFUSED (stim refuses DEM (non-deterministic detectors))
+3   X        3    DEM REFUSED (stim refuses DEM (non-deterministic detectors))
+  [depth=4 legal=False MC=[('X_top_0', 'Z_0_0', 1), ('X_top_2', 'Z_0_2', 1)]]
+5   Z        1    DEM REFUSED (stim refuses DEM (non-deterministic detectors))
+5   Z        2    DEM REFUSED (stim refuses DEM (non-deterministic detectors))
+5   X        1    DEM REFUSED (stim refuses DEM (non-deterministic detectors))
+5   X        2    DEM REFUSED (stim refuses DEM (non-deterministic detectors))
+
+  min-over-sectors, d=5 :  d_1 = None   d_2 = None      [RECORD: d_1=4, d_2=3]
+  min-over-sectors, d=3 :  [None, None, None]      [RECORD: 2 at every R, R_stab=1]

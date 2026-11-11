@@ -1,0 +1,86 @@
+id: HEXT.qutrit-weyl-random-unitary-bell-no-go
+role: obstruction
+aliases:
+- qutrit-weyl-fixed-channel-conjugate-bell-no-go
+- f3-weyl-shannon-gate-closed
+claim: >-
+  Every qutrit Weyl random-unitary channel Phi_p satisfies
+  2 barS_min(Phi_p)<=S((Phi_p tensor bar(Phi_p))(Omega_3)); hence no channel in this family can
+  produce a positive regularized defect through the conjugate maximally entangled input.
+routes:
+  selected-line-majorization-route:
+    premises:
+    - HEXT.qutrit-weyl-random-unitary-bell-gate
+    - HEXT.f3-weyl-selected-line-majorization
+    implication: >-
+      The Bell-gate reduction identifies the joint entropy with H(p*tilde(p)) and bounds the
+      regularized side by the least line-quotient entropy. Selected-line majorization gives
+      H(p*tilde(p))>=2H(r_L*)>=2 min_L H(r_L), proving the claimed nonpositive defect.
+    proof:
+      sketch: >-
+        Apply Shannon Schur concavity to the selected-line majorization, then substitute the exact
+        Bell-output spectrum and tensor-stabilizer side bound from the reduction node.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/F3_WEYL_SELECTED_LINE_MAJORIZATION_THEOREM_20260830.md
+        kind: text
+        locator: "## 5. Completion of majorization"
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/QUTRIT_WEYL_RANDOM_UNITARY_BELL_GATE_20260830.md
+        kind: text
+        locator: "## 2. Four exact stabilizer side bounds"
+    assessment:
+      level: PROVED
+      summary: >-
+        Independent review passed the exact Weyl reduction, selected-line majorization and Shannon
+        implication for the stated regularized conjugate-Bell scope.
+      basis:
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-extensive-violation/F3_WEYL_SELECTED_LINE_MAJORIZATION_INDEPENDENT_REVIEW_20260830.md
+          kind: review
+          locator: F3W-IR-VERDICT-NOGO
+          scope: >-
+            Audited the full route implication from the direct Weyl spectra and selected-line
+            majorization to the regularized conjugate-Bell no-go.
+          reviewed_hash: sha256:7e38c098dc38df219e6c0c9047ae20b219932754775b2c7db9dfb9072a35e449
+assessment:
+  level: PROVED
+  caveats:
+  - This excludes only qutrit Weyl random-unitary factors with the conjugate maximally entangled
+    witness; it does not exclude non-Weyl qutrit Gram factors or non-Bell joint inputs.
+  - The result is bound to the independently reviewed current claim, premise and route hashes;
+    later changes require a new review.
+  - It is an obstruction theorem, not a construction or resolution of full-size extensive
+    violation.
+  summary: >-
+    The fixed-qutrit Weyl random-unitary conjugate-Bell candidate family is exactly excluded,
+    including the regularized side-entropy criterion, by independently reviewed proof.
+  basis:
+    routes:
+    - selected-line-majorization-route
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/F3_WEYL_SELECTED_LINE_MAJORIZATION_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: F3W-IR-VERDICT-NOGO
+      scope: >-
+        Independently reviewed the exact premises and complete downstream Shannon/no-go assembly,
+        explicitly limited to qutrit Weyl channels and the conjugate maximally entangled witness.
+      reviewed_hash: sha256:f502e1b657a950bf33225dc5c1dd551193a7040452ea50b4c211c9b545478276
+events:
+  independent-review-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      Independent adversarial review passed the complete selected-line Weyl conjugate-Bell no-go.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/F3_WEYL_SELECTED_LINE_MAJORIZATION_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+  qutrit-weyl-bell-route-closed:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Closed the qutrit Weyl random-unitary conjugate-Bell route by combining the exact Shannon
+      reduction with full selected-line majorization.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/F3_WEYL_SELECTED_LINE_MAJORIZATION_THEOREM_20260830.md
+      kind: text

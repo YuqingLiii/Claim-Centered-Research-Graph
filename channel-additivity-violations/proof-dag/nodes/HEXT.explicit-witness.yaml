@@ -1,0 +1,23 @@
+id: HEXT.explicit-witness
+role: proof
+aliases:
+- explicit-tensor-stable-family
+claim: >-
+  Construct a deterministic finite-dimensional p=1 channel family with explicit Kraus/Stinespring
+  data, rigorous global one-channel minimum-output-entropy lower bounds, matched joint upper bounds,
+  and tensor-stable leakage control sufficient for an extensive defect.
+assessment:
+  level: OPEN
+  summary: >-
+    No such explicit tensor-stable family is present in the migrated record. A one-shot explicit
+    witness alone would not discharge the extensive claim.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/legacy-nodes/ADDGAP.explicit-witness.md
+      kind: text
+      locator: "## Claim"
+disposition:
+  state: PARKED
+  reason: No bounded explicit ansatz and global certificate are currently frozen.
+  revive: Resume after a concrete p=1 witness family and certifiable single-side lower bound are specified.
+

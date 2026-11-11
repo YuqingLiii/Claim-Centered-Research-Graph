@@ -1,0 +1,28 @@
+id: HEXT.montanaro-gate
+role: obstruction
+aliases:
+- montanaro-gate
+claim: >-
+  Determine whether Montanaro's weak multiplicativity bound, with its exact exponent and dimension
+  dependence, makes the two single-side p=1 leakage terms sublinear relative to accumulated matched
+  defects for a growing tensor product of random channels.
+assessment:
+  level: OPEN
+  summary: >-
+    The audited estimate permits leakage linear in the number of factors and therefore does not pass
+    the required gate.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/MONTANARO_GATE_2026-08-29.md
+      kind: text
+      locator: "## Gate verdict"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/PRIMARY_SOURCE_AUDIT_20260829.md
+      kind: text
+      locator: "## Fixed-partner gate"
+disposition:
+  state: PARKED
+  reason: The available bound is quantitatively too weak for sublinear leakage.
+  revive: Resume if a stronger p=1 theorem with uniform growing-factor control is found.
+  source:
+    path: channel-additivity-violations/artifacts/holevo-extensive-violation/MONTANARO_GATE_2026-08-29.md
+    kind: text

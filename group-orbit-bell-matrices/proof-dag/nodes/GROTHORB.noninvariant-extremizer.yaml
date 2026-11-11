@@ -1,0 +1,43 @@
+id: GROTHORB.noninvariant-extremizer
+role: obstruction
+aliases:
+- ORBIT-NONINVARIANT-EXTREMIZER
+claim: For A=I_3 with simultaneous transitive S_3 row and column actions, the positive-definite matrix
+  with diagonal 1, H_12=H_21=1/2, and all other off-diagonal entries zero generates an optimal vector
+  strategy but does not commute with the S_3 action.
+assessment:
+  level: PROVED
+  summary: Complete scoped argument passed an independent fresh-context same-model-family adversarial
+    review. PSD spectrum, attaining Gram factor and explicit noncommuting permutation. Correctness does
+    not assert novelty or formal verification.
+  basis:
+    evidence:
+    - path: group-orbit-bell-matrices/artifacts/complete-extremizer-classification-20260829.md
+      kind: text
+      locator: GOC-T5
+    reviews:
+    - path: group-orbit-bell-matrices/reviews/spectral-classification-review-20260907.md
+      kind: review
+      locator: F8
+      scope: PSD spectrum, attaining Gram factor and explicit noncommuting permutation.
+      reviewed_hash: sha256:1bb2ea6fec7e1f1d5c420544a40a389aad09f2c72b88890235297935ed8faad6
+events:
+  authored-2026-08-29:
+    date: '2026-08-29'
+    type: created
+    summary: Recorded the exact counterexample that limits the R/C/H commutant classification to invariant
+      weights.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/complete-extremizer-classification-20260829.md
+      kind: counterexample
+      locator: GOC-T5
+  independent-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Promoted only after exact-statement independent review of the assembled scoped proof.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/spectral-classification-review-20260907.md
+      kind: review
+      locator: F8

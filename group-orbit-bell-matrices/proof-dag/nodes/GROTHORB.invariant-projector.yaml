@@ -1,0 +1,41 @@
+id: GROTHORB.invariant-projector
+role: proof
+aliases:
+- ORBIT-PROJECTOR
+claim: If a finite group acts transitively by permutation matrices on m points and an orthogonal rank-r
+  projector commutes with that action, every diagonal entry of the projector equals r/m.
+assessment:
+  level: PROVED
+  summary: Complete scoped argument passed an independent fresh-context same-model-family adversarial
+    review. Permutation conjugacy, transitivity and rank trace, including rank zero. Correctness does
+    not assert novelty or formal verification.
+  basis:
+    evidence:
+    - path: group-orbit-bell-matrices/artifacts/balanced-rank-theorem-draft-20260829.md
+      kind: text
+      locator: GO-T3
+    reviews:
+    - path: group-orbit-bell-matrices/reviews/spectral-classification-review-20260907.md
+      kind: review
+      locator: F3
+      scope: Permutation conjugacy, transitivity and rank trace, including rank zero.
+      reviewed_hash: sha256:bc24d83480c8b4750c42f0f7e8c52e5e4727bde1ee53323843606c5ba870e1e5
+events:
+  authored-2026-08-29:
+    date: '2026-08-29'
+    type: created
+    summary: Registered the constant-diagonal invariant-projector lemma.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/balanced-rank-theorem-draft-20260829.md
+      kind: text
+      locator: GO-T3
+  independent-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Promoted only after exact-statement independent review of the assembled scoped proof.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/spectral-classification-review-20260907.md
+      kind: review
+      locator: F3

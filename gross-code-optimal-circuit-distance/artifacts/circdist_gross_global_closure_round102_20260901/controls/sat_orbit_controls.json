@@ -1,0 +1,51 @@
+{
+  "negative_controls": {
+    "corrupt_assignment_mutation": {
+      "first_failing_clause": 1,
+      "operation": "flip variable 1",
+      "rejected": true
+    },
+    "missing_root_control": {
+      "other_70_nonidentity_roots_hold": true,
+      "second_orbit_schedule_sha256": "53814f251e5b20a965eb110946bad4e0e9147ae394725b5a46965d8d42111563",
+      "sole_failed_root_delta": [
+        0,
+        3
+      ]
+    },
+    "reversed_lex_direction_rejected": true,
+    "truncated_assignment": {
+      "missing_variable": 1029502,
+      "operation": "omit the last retained assignment literal",
+      "rejected_by_complete_domain_check": true
+    }
+  },
+  "orbit": {
+    "candidate_compressed_schedule_sha256": "2c8ce90954f7439947a6988d5a536533a44aeb6c3eda1ff5627a029790c8e958",
+    "candidate_is_lexicographically_least": true,
+    "candidate_raw_schedule_sha256": "5b4f340bb40e25d84d49db2f19df2a172632b316b7e8e39e97ba3ac910d8915e",
+    "distinct_schedule_vectors": 72,
+    "group_order": 72,
+    "orbit_stabilizer_product": 72,
+    "stabilizer_deltas": [
+      [
+        0,
+        0
+      ]
+    ],
+    "stabilizer_size": 1,
+    "strict_nonidentity_roots": 71
+  },
+  "positive_model": {
+    "all_clauses_satisfied": true,
+    "assigned_variables": 1029502,
+    "checked_clauses": 6324965,
+    "clauses": 6324965,
+    "primary_time_bits_checked": 8640,
+    "recurrence_values_checked": 613440,
+    "root_values_checked": 71,
+    "variables": 1029502
+  },
+  "schema": "circdist-gross-round102-sat-orbit-controls-v1",
+  "status": "PASS"
+}

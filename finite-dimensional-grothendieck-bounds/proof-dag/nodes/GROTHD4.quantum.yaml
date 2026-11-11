@@ -1,0 +1,50 @@
+id: GROTHD4.quantum
+role: proof
+aliases:
+- D4-QUANTUM
+claim: >-
+  For the archived instance A there are real unit-vector measurement directions in
+  dimension 4 attaining
+  1539823299061914600 + 706968072319078800 sqrt(5).
+assessment:
+  level: CONJECTURED
+  summary: >-
+    The exact Gram matrix is reconstructed over Q(sqrt(5)) from the frozen
+    integer matrix. Integer arithmetic proves P^2=75P, unit diagonal, rank four,
+    and the stated exact objective. Independent adversarial review is pending.
+  basis:
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-exact-instance-certificate-20260829.md
+      kind: text
+      locator: D4-T2--D4-T4
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_exact_instance_checker.py
+      kind: text
+    - node: GROTHD4.spectral.top
+      kind: node-evidence
+    runs:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-exact-instance-check-20260829.txt
+      kind: run
+      result: Exact rank-four Gram identity and radical objective both pass.
+frontier:
+  review-001:
+    task: Independently audit the exact level table, projector identity, pivot factorization, and objective evaluation.
+    kind: review
+    since: '2026-08-29'
+events:
+  migrated-2026-08-29:
+    date: '2026-08-29'
+    type: created
+    summary: Separated the quantum-value witness from the headline ratio during local migration.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/migration-state-20260829.md
+      kind: text
+  gram-witness-recovered-2026-08-29:
+    date: '2026-08-29'
+    type: repair-applied
+    summary: Replaced the inherited radical value with an exact rank-four Gram construction and deterministic checker.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-exact-instance-certificate-20260829.md
+      kind: text
+      locator: D4-T2--D4-T4
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-exact-instance-check-20260829.txt
+      kind: run

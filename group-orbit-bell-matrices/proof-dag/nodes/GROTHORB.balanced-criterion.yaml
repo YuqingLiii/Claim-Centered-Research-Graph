@@ -1,0 +1,42 @@
+id: GROTHORB.balanced-criterion
+role: proof
+aliases:
+- ORBIT-BALANCE
+claim: If paired orthonormal bases U,V of the top singular spaces of a nonzero real m by n matrix A have
+  projector diagonals r/m and r/n, then their normalized rows are unit-vector strategies attaining sqrt(mn)
+  times the operator norm of A.
+assessment:
+  level: PROVED
+  summary: Complete scoped argument passed an independent fresh-context same-model-family adversarial
+    review. Paired positive singular bases, all top multiplicities, row normalization and attaining trace.
+    Correctness does not assert novelty or formal verification.
+  basis:
+    evidence:
+    - path: group-orbit-bell-matrices/artifacts/balanced-rank-theorem-draft-20260829.md
+      kind: text
+      locator: GO-T2
+    reviews:
+    - path: group-orbit-bell-matrices/reviews/spectral-classification-review-20260907.md
+      kind: review
+      locator: F2
+      scope: Paired positive singular bases, all top multiplicities, row normalization and attaining trace.
+      reviewed_hash: sha256:69783511b8a93069122c7b208ea7a31478b0e03d2e8a2e3075f5c3b044b69a5b
+events:
+  authored-2026-08-29:
+    date: '2026-08-29'
+    type: created
+    summary: Extracted the balanced-rank saturation criterion from the local theorem draft.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/balanced-rank-theorem-draft-20260829.md
+      kind: text
+      locator: GO-T2
+  independent-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Promoted only after exact-statement independent review of the assembled scoped proof.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/spectral-classification-review-20260907.md
+      kind: review
+      locator: F2

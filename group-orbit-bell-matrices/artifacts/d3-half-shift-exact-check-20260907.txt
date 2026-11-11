@@ -1,0 +1,15 @@
+Fresh exact check, 2026-09-07.
+Command: python3 grothendieck-group-orbit/tools/check_d3_half_shift_value.py
+Working directory: candidate repository root.
+Dependencies: Python 3 standard library only (collections, fractions, itertools).
+Exit status: 0.
+Checker SHA-256: 5209d8ff0c92b33dd2b581d718c4aad08abc2ee4038ea0b1c1de1dc89ef12a87
+
+Exact U row order: 12-,12+,13-,13+,23-,23+; H=3UU^T-4I; B=H/12.
+All 64 Bob signs enumerated; exact Alice optimum=max_t ||Ht||_1/12=3; PASS
+Numerator histogram: 24 occurs 24 times; 36 occurs 40 times; PASS
+Cases: double agreeing=24, double canceling=24, balanced=16; PASS
+Every row-pair identity and signed-edge case classification checked; PASS
+All 4096 ordered Alice/Bob pairs enumerated; maximum numerator=36; PASS
+Witness s=t=(1,1,1,1,1,1), Ht=(2,14,8,8,2,2), value=3; PASS
+Scope: exact certificate for the registered six-root matrix at lambda=1/3.

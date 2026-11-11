@@ -1,0 +1,11 @@
+{
+  "schema": "circdist-round90-excluded-tool-failure-v1",
+  "failure_id": "F-06",
+  "status": "EXCLUDED",
+  "tool": "source/duplicate_yaml_scan.py",
+  "returncode": 1,
+  "failure": "The first validator wrapper invoked the dependency venv, which contains z3/pysat but not PyYAML; import failed before scanning.",
+  "stderr": "ModuleNotFoundError: No module named 'yaml'",
+  "effect": "No YAML verdict was produced by the failed attempt; the other eight validator dispositions were not used as a complete validator set.",
+  "correction": "The duplicate-key scan was rerun with /usr/bin/python3, inspected 777 YAML/YML files and 20,291 mappings, found zero duplicates, and the complete validator set passed."
+}

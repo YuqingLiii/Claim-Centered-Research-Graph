@@ -1,0 +1,53 @@
+id: CIRCDIST.gross.mc-equiv
+role: proof
+aliases:
+- GROSS-MC-EQUIV
+claim: For the Gross code [[144,12,12]], a single-ancilla CNOT syndrome-extraction schedule is
+  measurement-consistent if and only if it is non-interleaved in the SBB sense; consequently SBB
+  Theorem 1 (d_circ = d_ext of the extended code, independently re-derived in-house as Theorem 7.1
+  without graph-likeness) applies to every legal schedule in S_Gross, and D*_Gross equals the
+  maximum of d_ext(E(M)) over MC-schedulable residual assignments — a pure residual-set
+  optimization.
+assessment:
+  level: REFUTED
+  summary: 'REFUTED by the recovered independent SBB-certification review
+    (artifacts/circdist_sbbcert_review_20260820.md, section 6). The premise about Gross-code
+    overlaps is correct: every overlapping X/Z pair shares exactly one left and one right qubit.
+    But even back-propagation parity only requires the two shared comparisons to agree; it does
+    not force all CNOTs of one check to precede all CNOTs of the other. The reviewer gives an
+    explicit legal 12-layer translation-invariant Gross schedule with 0/648 MC violations but
+    288/648 SBB-interleaved pairs. Thus non-interleaved implies MC, but MC does not imply
+    non-interleaved, and the proposed collapse of D*_Gross to residual optimization fails.'
+  basis:
+    counterexamples:
+    - path: artifacts/circdist_sbbcert_review_20260820.md
+      kind: counterexample
+      locator: Section 6
+      note: Explicit legal Gross schedule with zero MC violations and 288 interleaved pairs.
+disposition:
+  state: DEAD
+  reason: The claimed equivalence is contradicted by an explicit legal Gross-code schedule.
+  source:
+    path: artifacts/circdist_sbbcert_review_20260820.md
+    kind: review
+events:
+  review-refuted-2026-08-20:
+    date: '2026-08-20'
+    type: level-change
+    from: CONJECTURED
+    to: REFUTED
+    summary: Independent adversarial review produced a legal MC-clean but SBB-interleaved Gross
+      schedule, refuting the converse implication and completing frontier task-001 negatively.
+      The task is removed from the active frontier; the D* collapse does not follow.
+    sources:
+    - path: artifacts/circdist_sbbcert_review_20260820.md
+      kind: counterexample
+      locator: Section 6
+  created-2026-08-20:
+    date: '2026-08-20'
+    type: created
+    summary: Registered at generation time (rule 8b) from the round-6 SBB certification session's
+      surprise finding; the sharpest known route to closing CIRCDIST.gross outright.
+    sources:
+    - path: artifacts/circdist_gross_sbbcert_20260820.md
+      kind: text

@@ -1,0 +1,13 @@
+PROBE INTEGRITY -- counting noise TARGETS (stim FUSES adjacent identical channels,
+so instruction counts are blind; target counts are not).
+
+Steane M_IL:
+   frozen    DEPOL1 targets=124  DEPOL2 pairs=48   noisy-meas=12   =>  1104 elementary faults, 149 DISTINCT DEM columns
+   compiler  DEPOL1 targets=152  DEPOL2 pairs=48   noisy-meas=12   =>  1188 elementary faults, 149 DISTINCT DEM columns
+   noisyro   DEPOL1 targets=124  DEPOL2 pairs=48   noisy-meas=19   =>  1111 elementary faults, 149 DISTINCT DEM columns
+
+surface d=5 classD:
+   frozen    DEPOL1 targets=120  DEPOL2 pairs=160  noisy-meas=48   =>  2808 elementary faults, 421 DISTINCT DEM columns
+   compiler  DEPOL1 targets=220  DEPOL2 pairs=160  noisy-meas=48   =>  3108 elementary faults, 421 DISTINCT DEM columns
+   noisyro   DEPOL1 targets=120  DEPOL2 pairs=160  noisy-meas=73   =>  2833 elementary faults, 421 DISTINCT DEM columns
+

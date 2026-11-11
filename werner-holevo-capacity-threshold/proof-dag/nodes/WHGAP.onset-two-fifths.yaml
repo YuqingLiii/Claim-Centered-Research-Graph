@@ -1,0 +1,65 @@
+id: WHGAP.onset-two-fifths
+role: proof
+aliases:
+- quantum-strip
+claim: >-
+  For every x in [2/5,1/2), Q(Lambda_x) = 0; equivalently, together with the proved positive and
+  zero intervals, the exact quantum-capacity threshold is x=2/5.
+routes:
+  regularized-order-collapse:
+    premises:
+    - WHGAP.order-converse
+    implication: >-
+      A family-specific collapse from regularized more-capable order to a tractable tensorizing
+      complete order would certify zero quantum capacity throughout the strip.
+    assessment:
+      level: OPEN
+      summary: No collapse theorem is known.
+  restricted-order:
+    premises:
+    - WHGAP.restricted-order
+    implication: >-
+      A tensorizing order restricted to exactly the purification pairs used by coherent information,
+      if valid throughout the strip, would imply zero regularized quantum capacity there.
+    assessment:
+      level: OPEN
+      summary: Candidate orders remain unproved and some subcandidates are refuted.
+  more-capable:
+    premises:
+    - WHGAP.more-capable-route
+    implication: >-
+      A tensorizing more-capable subclass containing the family would eliminate positive coherent
+      information at all blocklengths.
+    assessment:
+      level: OPEN
+      summary: The plain order restates the regularization problem and supplies no shortcut.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - Numerical null searches and one-shot Q^(1)=0 do not prove regularized Q=0.
+  summary: >-
+    The threshold x=2/5 is a structured conjecture. No registered route currently closes all
+    blocklengths in the strip. The one-copy all-state problem now has an exact five-real-parameter
+    normal form, all real one-copy inputs are analytically controlled, and product-basis diagonal
+    inputs are controlled at every blocklength. Complex coherent and entangled inputs remain open.
+  basis:
+    routes:
+    - regularized-order-collapse
+    - restricted-order
+    - more-capable
+    evidence:
+    - path: werner-holevo-capacity-threshold/artifacts/legacy-record/nodes/WHGAP.onset-two-fifths.md
+      kind: text
+      locator: "## Open obligations"
+    - path: werner-holevo-capacity-threshold/artifacts/ONE_COPY_FIVE_PARAMETER_REDUCTION_20260829.md
+      kind: text
+      locator: "## Exact reduced optimization problem"
+frontier:
+  one-copy-global-bound:
+    task: Extend the real-input proof to nonzero imaginary-antisymmetric a on the five-parameter domain.
+    kind: gate
+    since: 2026-08-29
+  all-blocklengths:
+    task: Control off-diagonal coherent and entangled n-copy inputs on [2/5,1/2).
+    kind: gate
+    since: 2026-08-29

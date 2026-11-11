@@ -1,0 +1,119 @@
+# Independent replay for registered C17/C18
+
+Date: 2026-09-07 (America/New_York). Reviewer: /root/orbit_root_prior_art.
+Stage: /private/tmp/grothorb-window-next-20260907-nzQdSy.
+This is a fresh reviewer replay, not a recovered historical run or a formal proof.
+Only the existing coordinator checker was rerun; the reviewer did not author it.
+
+## R1. Command, runtime, and exact output
+
+Command from the stage root:
+env PYTHONDONTWRITEBYTECODE=1 python3 grothendieck-group-orbit/tools/check_window_followups.py
+
+Exit code: 0
+Python: 3.9.6 (default, May 22 2026, 11:13:45)  [Clang 21.0.0 (clang-2100.1.1.101)]
+Assertions enabled: true; sys.flags.optimize=0.
+PyYAML used for statement parsing: 6.0.3.
+Python standard library only is needed by the checker.
+Arithmetic in the checker is integer/Fraction, with no floating-point comparison.
+
+C17 r=3 n=12 witness intercept=9 overlap=8 endpoint=1/4 PASS
+C17 r=4 n=24 witness intercept=18 overlap=20 endpoint=1/6 PASS
+C17 r=5 n=40 witness intercept=59/2 overlap=36 endpoint=1/8 PASS
+C17 r=6 n=60 witness intercept=218/5 overlap=56 endpoint=1/10 PASS
+C17 r=7 n=84 witness intercept=181/3 overlap=80 endpoint=1/12 PASS
+C17 r=8 n=112 witness intercept=558/7 overlap=108 endpoint=1/14 PASS
+C17 r=9 n=144 witness intercept=407/4 overlap=140 endpoint=1/16 PASS
+C17 r=10 n=180 witness intercept=1138/9 overlap=176 endpoint=1/18 PASS
+C17 r=11 n=220 witness intercept=769/5 overlap=216 endpoint=1/20 PASS
+C17 r=12 n=264 witness intercept=2022/11 overlap=260 endpoint=1/22 PASS
+C18 columns=((1,),) lambda=1/4 ordered_pairs=16 optimizers=2 PASS
+C18 columns=((2,),) lambda=1 ordered_pairs=16 optimizers=2 PASS
+C18 columns=((1,), (1,)) lambda=1/4 ordered_pairs=256 optimizers=2 PASS
+C18 columns=((1,), (-1,)) lambda=1/4 ordered_pairs=256 optimizers=2 PASS
+C18 columns=((1, 0), (0, 1)) lambda=1/4 ordered_pairs=256 optimizers=4 PASS
+C18 columns=((1, 0), (1, 1)) lambda=1/4 ordered_pairs=256 optimizers=2 PASS
+C18 columns=((1,), (1,), (1,)) lambda=1/4 ordered_pairs=4096 optimizers=2 PASS
+C18 columns=((1, 0), (0, 1), (1, 1)) lambda=1/4 ordered_pairs=4096 optimizers=2 PASS
+Scope: finite exact witness/equality sanity checks only; universal claims require proofs and independent reviews.
+
+## R2. Finite scope and implementation inspected
+
+The root branch constructs the complete signed roots for each r=3,...,12;
+checks the chosen two sign flips, common projected vector, rational intercept,
+overlap n-4, equality at lambda_*, and improvement at four offsets above it.
+It does not compute the optimum beyond lambda_* or establish the all-r theorem.
+
+The PSD branch constructs eight Gram matrices from the exact input tuples
+printed above. N is 1, 2, or 3. For each, lambda=d_min/4 is one strict-interior
+parameter. It exhausts every independent ordered pair of 2N-dimensional signs
+(16, 256, or 4096 pairs), retaining the entire maximizing-pair set. That set
+is compared with all pairs (z,-z),(z,-z) from sign-quadratic maximizers of C.
+These examples include singular PSD matrices, but are not a proof for arbitrary
+C, arbitrary N, or every interior lambda. Universal verdicts are in the separate
+window-maximality-equality-review-20260907.md analytic review.
+
+## R3. Inspected input snapshot (SHA-256)
+
+d8775b511431e6e9dc7a5be6200af80bd612e7e7d5f5ff10bb14ef748791a095  DAG_PROTOCOL.md
+6a2ea1af9bd14a4eaa8d158e304aee5e82cf907497addb17c2771782a4e6a329  FILE_PROTOCOL.md
+33e9a70f92c55b97a9c9d539aca64a24570864bf8368e9e868b0b104d198dd97  grothendieck-group-orbit/proof-dag/nodes/GROTHORB.root-shift-window-maximality.yaml
+2c05dd04eb30317d75281996de66bd1615aa03e532644cde8b5411c9feee604c  grothendieck-group-orbit/proof-dag/nodes/GROTHORB.psd-antipodal-interior-equality.yaml
+19be7480761515f657f68b5b33178e044958eb953a97b7cb0f91559f0c0cfb00  grothendieck-group-orbit/proof-dag/nodes/GROTHORB.root-extended-shift-window.yaml
+d49d9ea30af6722abde79d92acb2b7378626f6c7d0fe7a51534f206de984ffef  grothendieck-group-orbit/proof-dag/nodes/GROTHORB.psd-antipodal-linear-window.yaml
+e42746b017db8cf346795064b1f8f2ceda41ab9cef4dfde22f2e3da71b91a5f4  grothendieck-group-orbit/proof-dag/nodes/GROTHORB.root-classical.yaml
+7f71e16495b641883a3480434b5e2235c2ac3a6ec0a6537f2c0500bf447d878d  grothendieck-group-orbit/artifacts/root-shift-window-maximality-20260907.md
+892328079a880e9eb44e8b5eede13f3cc8708239ff8859b6db385d4e692dddff  grothendieck-group-orbit/artifacts/psd-antipodal-interior-equality-20260907.md
+72c4088b302b871bee2bd46aae4ca615d6bb1cf2e1f19903cf3e77b617ef413a  grothendieck-group-orbit/artifacts/root-extended-shift-window-20260907.md
+281a14deb972523865c22c196b7972c4b3f704a541e7ddfa36ec3c68e7ab22f0  grothendieck-group-orbit/artifacts/psd-antipodal-linear-window-20260907.md
+8ea014aa65b2af33bf5c15182eadec95d629d0970f8f816081b4497b6b6c3259  grothendieck-group-orbit/artifacts/root-classical-value-20260907.md
+fb1e4d331ba9c657d9cda1208cd51af6d836fd41afb79eb24ecb5e8072651c7d  grothendieck-group-orbit/reviews/psd-antipodal-window-review-20260907.md
+ac6200d1418254694977ed940ca56314c326621315e154e36e5b7be9f1864bc9  grothendieck-group-orbit/reviews/root-classical-review-20260907.md
+1c84ff3eb0f15b29a27b6896035a3d7c3f991c334aecd910d2f30384adb16ca0  grothendieck-group-orbit/tools/check_window_followups.py
+4e61fae5f159e7ac48310f8f0ef15e16f0ef791f541ba49f2b1285aa1716775f  grothendieck-group-orbit/artifacts/window-followups-exact-check-20260907.txt
+b77a1a721776e0f539e103c408a5bbfd3fa5d7a8295cd7a5ad878fb4ac3fe220  grothendieck-group-orbit/artifacts/window-next-registration-20260907.md
+4e178eacd9dec2be95fd8ee01ac1390608029f68a1891155691cc9b27c0555db  grothendieck-group-orbit/proof-dag/GRAPH.mmd
+d8b11a3a01b40a9743eff6aef2258b6d45f26d3bde15d29b59f311eb4d702111  grothendieck-group-orbit/proof-dag/NODE_INDEX.md
+
+## R4. Decoded statement bindings and premise lists
+
+Hashes are SHA-256 of UTF-8 parsed YAML claim.strip()/implication.strip().
+
+GROTHORB.root-shift-window-maximality/claim
+sha256:4a217aec965420ef7e2a71b13ee1170bcd9c9bbfa966f976c87b77e036d099ee
+For every integer r>=3, let W have as its rows all vectors epsilon e_i+eta e_j with 1<=i<j<=r and epsilon,eta in {+1,-1}, let n=2r(r-1), and put A_r=WW^T/[4(r-1)]. Among lambda>=0, beta_cl(A_r-lambda I_n)=2r(2r-1)/3-n lambda holds if and only if lambda<=1/[2(r-1)]. In particular, for every lambda>1/[2(r-1)] there is an explicit ordered sign pair scoring 2r(2r-1)/3-n lambda+4lambda-2/(r-1), strictly above that affine value.
+
+GROTHORB.root-shift-window-maximality/height-one-competitor
+sha256:b4042573a3c4cdb6b54b193e6b6a3b836098bce248af12275b22d71e5dca37bd
+The registered sufficient-window theorem proves equality up to the endpoint. In the positive-root order U, with C=UU^T/[2(r-1)] and W=[U;-U], construct a sign pair whose ternary coordinates agree with the all-positive pattern except at one height-one root, where both antisymmetric coordinates vanish and the symmetric signs are opposite. Direct evaluation must establish the claimed competing affine score and its strict improvement beyond the endpoint.
+premises: ["GROTHORB.root-extended-shift-window"]
+
+GROTHORB.psd-antipodal-interior-equality/claim
+sha256:746e10d42ef48a0bfe93d2cb1d504271c4778806a582dc5ca3d18949e9e5a97d
+Let C be a real symmetric PSD N by N matrix with N>=1 and d_min=min_i C_ii>0, and put D(C)=(1/2)[C,-C;-C,C]. For every 0<lambda<d_min/2, the ordered sign pairs (a,b) attaining beta_cl(D(C)-lambda I_{2N}) are exactly a=b=(z,-z), where z in {+1,-1}^N maximizes z^T C z.
+
+GROTHORB.psd-antipodal-interior-equality/strict-gap-coefficients
+sha256:efc78d327385e5bb26284efe100120667da70dc7b22540909eda65ce96e8669a
+Use the established optimum value and reconstruct the full nonnegative gap identity for arbitrary ordered signs. Strictly positive coefficients C_ii-2lambda force every averaged antisymmetric coordinate to have square one at equality; recover the full signs and check equivalence to maximizing z^T C z.
+premises: ["GROTHORB.psd-antipodal-linear-window"]
+
+GROTHORB.root-extended-shift-window/claim
+sha256:df62de9a7c9c2c2dd4e5512ea89a3374d63f3c3bbb6e6d41f4eff509732f05db
+For every integer r>=3, let W have as its rows all vectors epsilon e_i+eta e_j with 1<=i<j<=r and epsilon,eta in {+1,-1}, let n=2r(r-1), and put A_r=WW^T/[4(r-1)]. Then for every 0<=lambda<=1/[2(r-1)], beta_cl(A_r-lambda I_n)=2r(2r-1)/3-n lambda.
+
+GROTHORB.root-extended-shift-window/psd-duplication-window
+sha256:81735fbe09238f4c5e32f9448ef5d0e01af445de76cb04e4d7df5421e20545ca
+Select positive D_r roots U so that W is a simultaneous row permutation of [U;-U]. The matrix C=UU^T/[2(r-1)] is PSD with diagonal 1/(r-1), and D(C) is the full root projection up to simultaneous permutation. The PSD duplication-window theorem, its zero-shift identity, and the established full-root classical value give the claimed interval and formula.
+premises: ["GROTHORB.psd-antipodal-linear-window","GROTHORB.root-classical"]
+
+GROTHORB.psd-antipodal-linear-window/claim
+sha256:98c4958c91dace11088aaff1ecc7b590bb982f84cc5d26c027bc8a2603beda38
+Let C be a real symmetric PSD N by N matrix with N>=1, let D(C)=(1/2)[C,-C;-C,C], and define beta_cl(M)=max_{s,t in {+1,-1}^k} s^T M t for real square k by k matrices. For every 0<=lambda<=(1/2)min_i C_ii, beta_cl(D(C)-lambda I_{2N})=2 beta_cl(C)-2N lambda.
+
+GROTHORB.root-classical/claim
+sha256:5894fbd5f0998222db98bbe3cbef23b0a723716a30125952c2db60e748375fca
+For every integer r>=3, let W contain all roots +/-e_i +/-e_j with i<j, n=2r(r-1), and A_r=WW^T/[4(r-1)]. Then the classical Bell value max_{s,t in {+1,-1}^n} s^T A_r t equals 2r(2r-1)/3.
+
+Only this new run artifact and the corresponding new review are written.
+Existing coordinator log, checker, proofs, nodes, and old reviews remain inputs.
+

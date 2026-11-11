@@ -1,0 +1,125 @@
+id: HEXT.same-tuple-werner-centered-bound-4096-threshold
+role: proof
+aliases:
+- repeated-tuple-werner-centered-unabsorbed-planar
+claim: >-
+  For every integer m>=2 and every fixed eta>=0 satisfying
+  [18m(1+eta)^2+81(1+eta)^4](1-m^(-2))>4096^2, let
+  U_1^(d),...,U_m^(d) be independent Haar-distributed unitaries in U(d), define
+  R_U=m^(-2)sum_(v,a=1)^m U_v^*U_a tensor U_a^*U_v,
+  A=1+9(1+eta)^2/m, and H=sqrt((A^2-1)(1-m^(-2))). Then
+  lim_(d->infinity) Pr{||R_U-I_(d^2)/m||_infinity>H}=0. In particular, the condition holds
+  for every integer m>=932064 and every fixed eta>=0.
+routes:
+  unabsorbed-planar-log-moment:
+    premises:
+    - HEXT.werner-centered-reversal-return-bound
+    - HEXT.werner-contraction-skeleton-ribbon-injection
+    - HEXT.werner-planar-two-boundary-rooted-map-count
+    - HEXT.werner-minimal-catalan-weight
+    - HEXT.werner-positive-genus-two-boundary-weighted-count
+    - HEXT.werner-admissible-equality-component-genus-bound
+    - HEXT.werner-two-component-low-genus-return-separation
+    - HEXT.werner-two-component-nonreturn-weighted-count
+    - HEXT.werner-monotone-weingarten-tail-summability
+    - HEXT.werner-constellation-euler-deficit
+    implication: >-
+      Keep the proved planar bound 16N^2 4096^N separate instead of absorbing its polynomial
+      factor into 32768^N, and use the proved 4096^N N^(43h) bound only for connected h>=1.
+      With u=(3m-4)/(m^2H), a=4096/(mH), x_43=m^2N^43/d^2,
+      x_24=m^2N^24/d^2, and theta=6(2N)^(7/2)/d^2, the listed premises imply, for every even
+      N>=2 with x_43,x_24,theta<1, E Tr[(R_U-I_(d^2)/m)^N]/H^N <= 2d^2u^N +
+      m^2 a^N(1-theta)^(-1)[16N^2+x_43(1-x_43)^(-1)+N^24 x_24(1-x_24)^(-1)].
+      The displayed parameter hypothesis is exactly (mH)^2>4096^2, hence a<1; also u<1 for
+      every m>=2. A logarithmic even moment and Markov's inequality prove the probability claim.
+      The left side of the parameter condition is minimized at eta=0 and is strictly increasing
+      in m, while exact evaluation at m=932063 and m=932064 proves the stated uniform integer
+      corollary.
+    proof:
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_CENTERED_THRESHOLD_REFINEMENT_20260830.md
+        kind: text
+        locator: "## 3. Refined master inequality"
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_CENTERED_THRESHOLD_REFINEMENT_20260830.md
+        kind: text
+        locator: "## 5. Exact uniform integer corollary"
+    assessment:
+      level: PROVED
+      caveats:
+      - It keeps the planar structural polynomial explicit and does not improve the underlying 4096 exponential base.
+      summary: >-
+        Independent adversarial review reconstructed the complete sector partition, every power
+        and constant, the logarithmic moment and Markov step, and verified the exact threshold.
+      basis:
+        evidence:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_CENTERED_THRESHOLD_REFINEMENT_20260830.md
+          kind: text
+          locator: "## 3. Refined master inequality"
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_CENTERED_THRESHOLD_REFINEMENT_INDEPENDENT_REVIEW_20260830.md
+          kind: review
+          locator: "Findings WCTR-IR-01--WCTR-IR-09"
+          scope: >-
+            Independently checked the ten exact premises, exhaustive sector sums, planar 4096 base,
+            all m/N/d/H powers, strict parameter inequality, moment limit and integer endpoint.
+          reviewed_hash: sha256:266332d6f57b98cdc86296b077657794df14568453c0b8baafa92c4e74190877
+assessment:
+  level: PROVED
+  caveats:
+  - The exact sufficient condition is mH>4096; m>=932064 is only its eta-uniform integer corollary.
+  - This is restricted to the real-Werner centered two-leg sector and has no arbitrary-Hermitian, all-copy, or full-size consequence.
+  summary: >-
+    Independent review proves the centered-Werner probability bound under the exact condition
+    mH>4096 by retaining the planar polynomial, with smallest eta-uniform integer threshold 932064.
+  basis:
+    routes:
+    - unabsorbed-planar-log-moment
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_CENTERED_THRESHOLD_REFINEMENT_20260830.md
+      kind: text
+      locator: "## 1. Outcome"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_CENTERED_THRESHOLD_REFINEMENT_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Findings WCTR-IR-01--WCTR-IR-09"
+      scope: >-
+        Independently proved the exact centered claim and 932063/932064 boundary while prohibiting
+        propagation to arbitrary-Hermitian, physical, all-copy, absolute-unbounded or full-size claims.
+      reviewed_hash: sha256:4bbc6ff3ff3542426b8baf1b02361c071f7250c63538d1f3bc8cc557bcdd8991
+events:
+  centered-4096-threshold-route-independently-proved:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    route: unabsorbed-planar-log-moment
+    summary: >-
+      Independent adversarial review passed the ten-premise master inequality, exact threshold,
+      logarithmic moment and Markov implication.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_CENTERED_THRESHOLD_REFINEMENT_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Findings WCTR-IR-01--WCTR-IR-09"
+  centered-4096-threshold-claim-independently-proved:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      The reviewed route proves the exact mH>4096 centered theorem and the eta-uniform integer
+      corollary m>=932064, without changing any broader Question 3 node.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_CENTERED_THRESHOLD_REFINEMENT_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Findings WCTR-IR-01--WCTR-IR-09"
+  centered-4096-threshold-node-created:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Registered a proposer-side threshold refinement that exposes the unabsorbed planar
+      polynomial and strictly separates this Werner-sector result from every broader Question 3
+      target.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_CENTERED_THRESHOLD_REFINEMENT_20260830.md
+      kind: text
+      locator: "## 6. What determines the threshold, and what does not"

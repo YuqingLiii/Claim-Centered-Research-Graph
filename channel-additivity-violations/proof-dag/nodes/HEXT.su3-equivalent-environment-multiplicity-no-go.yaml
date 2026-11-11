@@ -1,0 +1,80 @@
+id: HEXT.su3-equivalent-environment-multiplicity-no-go
+role: obstruction
+aliases:
+- repeated-environment-irrep-no-go
+- equivalent-multiplicity-pieri-no-go
+claim: >-
+  Let the qutrit environment be V_(p,q) tensor C^m with arbitrary finite multiplicity and let R
+  be any invariant input subspace of 3 tensor V_(p,q) tensor C^m. Then the restricted partial-trace
+  channel satisfies 2 barS_min(Phi_R)<=2S_min(Phi_R)<=S((Phi_R tensor barPhi_R)(Omega_dim(R))).
+routes:
+  multiplicity-convex-gram-route:
+    premises:
+    - HEXT.su3-reducible-pieri-subspace-bell-no-go
+    implication: >-
+      With no highest sector, the only coherence is between middle- and third-sector multiplicity
+      subspaces. Its strength h=Tr(Q_m Q_c) makes the normalized Gram contraction a convex
+      combination of t_m, t_c, and the completely coherent t_low. Exact rational differences show
+      t_low is the largest, while a state in one middle copy supplies the same entropy upper bound
+      used in the completely coherent no-go.
+    proof:
+      sketch: >-
+        Expand Tr(P(X tensor I)P(X tensor I)) over representation and multiplicity projectors.
+        Principal angles give 0<=h<=min(r_m,r_c), yielding the convex formula. Monotonicity of the
+        isotropic Bell entropy then reduces every multiplicity choice to the already excluded
+        fully coherent lower direct sum.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_EQUIVALENT_ENVIRONMENT_MULTIPLICITY_NO_GO_20260830.md
+        kind: text
+        locator: "## 1. Multiplicity-space normal form through ## 3. Entropy comparison"
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/check_su3_equivalent_environment_multiplicity.py
+        kind: code
+        locator: deterministic rational and entropy audit on 4704 multiplicity parameter points
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The multiplicity-space reduction is complete proposer-side and has a deterministic
+        parameter audit, but it has not received independent review.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - Coherent mixtures of inequivalent environment irreps that share an input irrep are not covered.
+  - Noncovariant qutrit Gram factors and non-Bell collective inputs are not covered.
+  - The proof is proposer-side and has not received independent review.
+  summary: >-
+    Equivalent environment multiplicities do not reopen the SU(3)-covariant qutrit Bell route.
+  basis:
+    routes:
+    - multiplicity-convex-gram-route
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_EQUIVALENT_ENVIRONMENT_MULTIPLICITY_NO_GO_20260830.md
+      kind: text
+      locator: "## Theorem"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_EQUIVALENT_ENVIRONMENT_MULTIPLICITY_CHECK_20260830.txt
+      kind: text
+      locator: equivalent-environment multiplicity convex reduction passed
+frontier:
+  inequivalent-environment-mixtures:
+    task: >-
+      Classify convex mixtures of the distinct covariant extreme channels into one common input
+      irrep arising from inequivalent environment irreps.
+    kind: gate
+    since: 2026-08-30
+  noncovariant-qutrit-gram:
+    task: >-
+      Search nondepolarizing noncovariant qutrit Gram channels with a rectangular CP factor and a
+      global all-copy side-entropy lower bound.
+    kind: gate
+    since: 2026-08-30
+events:
+  equivalent-environment-multiplicity-closed:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Reduced arbitrary repeated-irrep multiplicity coherence to a convex Gram combination and
+      excluded it by the fully coherent two-lower-sector theorem.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_EQUIVALENT_ENVIRONMENT_MULTIPLICITY_NO_GO_20260830.md
+      kind: text
+    - path: channel-additivity-violations/tools/holevo-extensive-violation/check_su3_equivalent_environment_multiplicity.py
+      kind: code

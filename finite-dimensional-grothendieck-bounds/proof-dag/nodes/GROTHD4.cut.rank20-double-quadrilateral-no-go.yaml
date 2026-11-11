@@ -1,0 +1,40 @@
+id: GROTHD4.cut.rank20-double-quadrilateral-no-go
+role: obstruction
+aliases:
+- D4-RANK20-DOUBLE-QUADRILATERAL-NO-GO
+claim: >-
+  The known-equality CUT_7 feature matrix on the H4-plus-swap orbit of
+  (0,1,2,248,268,269,288) has rank 20, but its two-dimensional nullspace
+  intersects the cone of valid CUT_7 inequalities only at zero. Moreover no
+  seven-set contains three quadrilateral cores from the classified core orbit.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    Two independent quadrilateral identities explain the rank defect. Exact
+    CUT_7 witnesses realize both signs independently, excluding every
+    nonzero null combination as a valid inequality. A complete census of
+    359400 signed-pair events into 70 orbits and all intersecting core pairs
+    proves the quadrilateral mechanism cannot lower rank below 20. The
+    checker replay passes; independent review and non-quadrilateral defects
+    remain open.
+  basis:
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-rank20-double-quadrilateral-20260830.md
+      kind: text
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_rank20_double_quadrilateral_checker.py
+      kind: code
+frontier:
+  independent-review:
+    task: >-
+      Independently audit the rank-20 minor, nullspace witnesses, signed-pair
+      orbit classification, and core-union census.
+    kind: review
+    since: '2026-08-31'
+events:
+  registered-2026-08-31:
+    date: '2026-08-31'
+    type: created
+    summary: Registered the exact author-side rank-20 double-core obstruction.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-rank20-double-quadrilateral-20260830.md
+      kind: text

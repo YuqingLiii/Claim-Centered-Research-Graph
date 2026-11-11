@@ -1,0 +1,31 @@
+id: HEXT.noise-flag-damping
+role: proof
+aliases:
+- noise-flag-wrapper
+claim: >-
+  Wrap a known nonadditive channel pair with erasure/noise and classical flags so that both
+  single-side self-leakage rates are damped strictly faster than the matched cross advantage while
+  full dimension overhead stays linear.
+assessment:
+  level: OPEN
+  summary: >-
+    The visible-erasure specialization now has exact symbolic one-shot and all-copy formulas. Its
+    cross gap is at most bilinear in the two survival probabilities, while the self losses depend
+    on an unresolved binomial-surviving-subset functional. No channel-specific inequality has yet
+    shown that this functional decays faster than the matched cross advantage.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/legacy-nodes/ADDGAP.noise-flag-damping.md
+      kind: text
+      locator: "## Claim"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FLAGGED_ERASURE_DAMPING_GATE_20260830.md
+      kind: text
+      locator: "## Exact revival condition"
+disposition:
+  state: PARKED
+  reason: >-
+    Visible erasure reduces the problem to an exact thinning functional, but no bound on that
+    functional separates the self-leakage rate from the cross-gap rate.
+  revive: >-
+    Resume after proving inequality (12) in FLAGGED_ERASURE_DAMPING_GATE_20260830.md for a concrete
+    pair, or after a different wrapper yields a stronger symbolic rate separation.

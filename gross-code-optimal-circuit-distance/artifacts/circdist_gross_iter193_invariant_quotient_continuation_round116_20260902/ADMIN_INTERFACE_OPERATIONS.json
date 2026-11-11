@@ -1,0 +1,26 @@
+{
+  "schema": "circdist-gross-round116-admin-interface-operations-v1",
+  "status": "DISCLOSED",
+  "scientific_solver_or_checker_operations": 0,
+  "pid_capture_available": false,
+  "scope": [
+    "initial read-only file discovery and ordered reads before serial_exec.py was installed",
+    "patch creation and scratch-source editing through the tool interface",
+    "post-wrapper documentation snapshot copies used to avoid a self-referential process ledger",
+    "final source synchronization before sealing"
+  ],
+  "failed_interface_operations": [
+    {
+      "failure": "F116-011",
+      "disposition": "host rejected rm -rf style command before CreateProcess; no OS child and no mutation"
+    },
+    {
+      "failure": "F116-012",
+      "argv_summary": "cp with two source operands and /dev/null destination",
+      "returncode": 1,
+      "stderr": "cp: /dev/null: Not a directory",
+      "mutation": "none"
+    }
+  ],
+  "claim": "No missing-PID interface operation produced, checked, or adjudicated a scientific result. Every scientific solver/checker and the complete preseal replay have durable PID-bearing records."
+}

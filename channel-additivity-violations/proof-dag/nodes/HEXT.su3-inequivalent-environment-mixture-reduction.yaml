@@ -1,0 +1,84 @@
+id: HEXT.su3-inequivalent-environment-mixture-reduction
+role: constraint
+aliases:
+- su3-covariant-channel-simplex
+- inequivalent-environment-chi-square-reduction
+claim: >-
+  For an interior SU(3) input irrep V_(r,s), every irreducibly covariant qutrit-output channel is a
+  three-extreme convex mixture. If mu_i=e_i/(3 dim V_(r,s)), its depolarizing Gram parameter is
+  exactly t=(1/8) chi^2(lambda||mu), and one common highest-weight input has an explicit triangular
+  three-point output distribution q(lambda). Closing this covariant Bell route reduces to the
+  scalar inequality B(t)>=2H(q(lambda)).
+routes:
+  gram-simplex-route:
+    premises:
+    - HEXT.su3-boundary-environment-mixture-bell-no-go
+    implication: >-
+      Align the three equivalent input representations arising from the three inequivalent
+      environments. Their normalized traceless-adjoint Gram matrix has off-diagonal entries -1/8
+      and diagonal entries 1/(8mu_i)-1/8. The highest-weight Clebsch--Gordan spectra give an
+      explicit affine output distribution.
+    proof:
+      sketch: >-
+        Schur orthogonality and the dimension-weighted completely depolarizing barycenter determine
+        the rank-two Gram matrix. Direct highest-weight Clebsch--Gordan coefficients give the three
+        triangular rows. Substitution yields the chi-square formula and the sufficient scalar
+        entropy inequality.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_INEQUIVALENT_ENVIRONMENT_MIXTURE_REDUCTION_20260830.md
+        kind: text
+        locator: "## 1. The three extreme channels through ## 4. The exact remaining scalar inequality"
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/explore_su3_inequivalent_environment_mixtures.py
+        kind: code
+        locator: deterministic aligned-Stinespring candidate scan through input total weight 4
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/check_su3_interior_mixture_entropy_grid.py
+        kind: code
+        locator: formula-only entropy grid through input total weight 30
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The exact reduction is complete proposer-side and matrix-audited at low weight. The final
+        all-parameter scalar entropy inequality remains open.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The downstream all-parameter inequality proof is proposer-side and awaits independent review.
+  - Failure of the highest-weight inequality would not certify the global S_min needed for a gap.
+  - Noncovariant qutrit Gram factors and non-Bell collective inputs are not covered.
+  summary: >-
+    The last irreducible-input SU(3)-covariant qutrit Bell question is reduced to an explicit
+    two-variable classical entropy inequality, now proved in the downstream interior-mixture
+    no-go node.
+  basis:
+    routes:
+    - gram-simplex-route
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_INEQUIVALENT_ENVIRONMENT_MIXTURE_REDUCTION_20260830.md
+      kind: text
+      locator: "## 4. The exact remaining scalar inequality"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_INTERIOR_MIXTURE_ENTROPY_GRID_CHECK_20260830.txt
+      kind: text
+      locator: interior SU(3) mixture entropy grid found no violation
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_INEQUIVALENT_ENVIRONMENT_MATRIX_SCAN_20260830.txt
+      kind: text
+      locator: no positive sampled one-shot conjugate-Bell candidate found
+events:
+  covariant-mixture-reduced-to-classical-entropy:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Derived the exact chi-square Gram formula and triangular highest-weight output map for all
+      three-extreme interior SU(3) covariant mixtures.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_INEQUIVALENT_ENVIRONMENT_MIXTURE_REDUCTION_20260830.md
+      kind: text
+    - path: channel-additivity-violations/tools/holevo-extensive-violation/explore_su3_inequivalent_environment_mixtures.py
+      kind: code
+  interior-entropy-inequality-proved-downstream:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      The scalar entropy gate isolated here was proved by HEXT.su3-interior-environment-mixture-bell-no-go.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_INTERIOR_ENVIRONMENT_MIXTURE_BELL_NO_GO_20260830.md
+      kind: text

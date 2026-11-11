@@ -1,0 +1,86 @@
+id: HEXT.su3-irreducible-covariant-bell-no-go
+role: obstruction
+aliases:
+- su3-pieri-channel-no-go
+- all-irreducible-covariant-qutrit-bell-no-go
+claim: >-
+  Let Phi_R be any qutrit-output channel obtained by tracing the environment from one irreducible
+  summand R in the multiplicity-free SU(3) Pieri decomposition 3 tensor V_(p,q). Then
+  2 barS_min(Phi_R)<=2S_min(Phi_R)<=S((Phi_R tensor barPhi_R)(Omega_dim(R))); hence no such
+  irreducible covariant channel has a positive fixed-channel conjugate-Bell regularized defect.
+routes:
+  pieri-classification-route:
+    premises:
+    - HEXT.conjugate-bell-realignment-constraint
+    - HEXT.su3-symmetric-complement-bell-no-go
+    - HEXT.su3-conjugate-symmetric-complement-no-go
+    implication: >-
+      Exact Pieri-projector formulas classify the two lower branches. The middle branch has the
+      same side entropy as the symmetric boundary and a Gram contraction decreasing with the
+      second highest weight. The third branch has an exact three-point minimum-output spectrum,
+      and its Bell-minus-twice-side margin increases away from the conjugate-symmetric boundary.
+      The highest branch contains a product vector.
+    proof:
+      sketch: >-
+        Evaluate the Lagrange polynomial in the total quadratic Casimir on a Gelfand--Tsetlin
+        basis. This gives the two Gram contractions and the extremal spectra of the compressed
+        rank-one output projector. Majorization yields exact minimum output entropies. One rational
+        monotonicity calculation handles the middle branch; a one-variable entropy derivative
+        handles the third branch.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_IRREDUCIBLE_COVARIANT_BELL_NO_GO_20260830.md
+        kind: text
+        locator: "## 1. Exact Pieri-channel data through ## 4. The third-branch gap worsens monotonically away from the conjugate boundary"
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/check_su3_pieri_channel_formulas.py
+        kind: code
+        locator: deterministic mixed-weight formula audit through p+q=6
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The all-parameter Pieri and entropy argument is complete proposer-side and has a 30-branch
+        deterministic cross-check, but it has not received independent adversarial review.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - Reducible or multiplicity-bearing covariant Stinespring spaces are not classified.
+  - Noncovariant qutrit Gram factors and non-Bell collective inputs are not classified.
+  - The proof is proposer-side and has not received independent review.
+  summary: >-
+    Every single-irrep SU(3)-covariant qutrit Stinespring channel is closed for the conjugate-Bell
+    route. A surviving qutrit candidate must leave this entire Pieri class.
+  basis:
+    routes:
+    - pieri-classification-route
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_IRREDUCIBLE_COVARIANT_BELL_NO_GO_20260830.md
+      kind: text
+      locator: "## Theorem"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_PIERI_CHANNEL_FORMULA_CHECK_20260830.txt
+      kind: text
+      locator: SU(3) Pieri-channel formulas passed through total weight 6
+frontier:
+  reducible-covariant-channels:
+    task: >-
+      Determine whether reducible or multiplicity-bearing SU(3)-covariant qutrit Stinespring
+      spaces can evade the single-irrep Pieri no-go without introducing a low-entropy direct-sum
+      branch.
+    kind: gate
+    since: 2026-08-30
+  noncovariant-qutrit-gram:
+    task: >-
+      Search nondepolarizing, noncovariant qutrit Gram channels with a CP rectangular factor and a
+      global all-copy side-entropy lower bound.
+    kind: gate
+    since: 2026-08-30
+events:
+  irreducible-covariant-qutrit-class-closed:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Unified the symmetric, conjugate-symmetric and mixed-weight calculations into an
+      all-parameter Pieri theorem excluding every single-irrep SU(3)-covariant qutrit Bell factor.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_IRREDUCIBLE_COVARIANT_BELL_NO_GO_20260830.md
+      kind: text
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_PIERI_CHANNEL_FORMULA_CHECK_20260830.txt
+      kind: text

@@ -1,0 +1,126 @@
+id: HCPREV.full-support-probability-dichotomy
+role: outcome
+aliases:
+- fixed-dimension-full-support-law
+claim: >-
+  Fix finite channel dimensions and either the self-channel or channel-pair CPTP ambient space K.
+  For the strict p=1 minimum-output-entropy violation set or the strict Holevo additivity-violation
+  set V, every Borel probability measure mu with support equal to K satisfies: V is empty if and
+  only if mu(V)=0, while V nonempty implies 0<mu(V)<1.
+routes:
+  open-violation-and-open-additive-complement:
+    premises:
+    - HCPREV.open-set-stability
+    - HCPREV.additive-open-region
+    implication: >-
+      A nonempty strict-violation set contains a nonempty relatively open subset, while the
+      entanglement-breaking interior supplies a disjoint nonempty relatively open additive subset.
+      A full-support Borel probability assigns positive mass to both sets, so the violation
+      probability is strictly between zero and one; if no witness exists the probability is zero.
+    proof:
+      sketch: >-
+        Apply full support first to an open neighborhood of a strict witness and then to the open
+        entanglement-breaking additive region. The second mass lower bound subtracts from one.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/FULL_SUPPORT_FIXED_DIMENSION_PROBABILITY_DICHOTOMY_20260830.md
+        kind: text
+        locator: "## Proof of the implication"
+    assessment:
+      level: PROVED
+      summary: >-
+        Independent repair review passed the exact measure-theoretic implication after both
+        load-bearing topology premises became completion-level claims.
+      basis:
+        evidence:
+        - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/FULL_SUPPORT_FIXED_DIMENSION_PROBABILITY_DICHOTOMY_20260830.md
+          kind: text
+          locator: "## Conditional dichotomy"
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/FULL_SUPPORT_FIXED_DIMENSION_PROBABILITY_DICHOTOMY_INDEPENDENT_REVIEW_20260830.md
+          kind: review
+          locator: "Finding HCP-FS-IR-05"
+          scope: >-
+            Independently passed the exact measure-theoretic implication and all self/pair and
+            MOE/Holevo quantifiers, conditional on completion of the two canonical premises.
+          reviewed_hash: sha256:10eadfd4851f1fb6637ef01f264598c54a33223ef8583deda567b6ab7981461a
+        - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/FULL_SUPPORT_FIXED_DIMENSION_PROBABILITY_DICHOTOMY_REPAIR_AMENDMENT_REVIEW_20260830.md
+          kind: review
+          locator: "Finding HCP-FS-AMD-04"
+          scope: >-
+            Rechecked route completion after both exact premise promotions and preserved the
+            self/pair and MOE/Holevo quantifier boundaries.
+          reviewed_hash: sha256:10eadfd4851f1fb6637ef01f264598c54a33223ef8583deda567b6ab7981461a
+assessment:
+  level: PROVED
+  caveats:
+  - Full support is required on the entire fixed-dimensional ambient K, not merely on a proper random-model support.
+  - The claim gives no numerical probability bound uniform in dimension and no probability limit across dimensions.
+  - It does not transfer minimum-output-entropy prevalence to Holevo prevalence for the same random channels.
+  summary: >-
+    Independent review proves the fixed-dimensional qualitative full-support probability dichotomy
+    zero versus strictly between zero and one. It does not strengthen any named random-ensemble
+    asymptotic or supply a dimension-uniform numerical probability bound.
+  basis:
+    routes:
+    - open-violation-and-open-additive-complement
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/FULL_SUPPORT_FIXED_DIMENSION_PROBABILITY_DICHOTOMY_20260830.md
+      kind: text
+      locator: "## What full support does not quantify"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/FULL_SUPPORT_FIXED_DIMENSION_PROBABILITY_DICHOTOMY_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Findings HCP-FS-IR-01--HCP-FS-IR-07"
+      scope: >-
+        Independently passed the target mathematics and strict scope but withheld completion while
+        the two premise dossiers lacked machine-visible inputs and one d=1 branch.
+      reviewed_hash: sha256:4cf4c6718cac0081c6dd806e0042d2f908caa2ecc9819972de0ce05c44a54178
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/FULL_SUPPORT_FIXED_DIMENSION_PROBABILITY_DICHOTOMY_REPAIR_AMENDMENT_REVIEW_20260830.md
+      kind: review
+      locator: "Findings HCP-FS-AMD-04 and HCP-FS-AMD-05"
+      scope: >-
+        Independently passed target completion and retained all restrictions on ambient support,
+        dimension-uniform bounds, named ensembles, and MOE-to-Holevo prevalence transfer.
+      reviewed_hash: sha256:4cf4c6718cac0081c6dd806e0042d2f908caa2ecc9819972de0ce05c44a54178
+frontier:
+  quantitative-model-bound:
+    task: >-
+      For any named full-support ensemble of interest, derive model-specific lower and upper bounds
+      on the violation probability; full support alone cannot supply them.
+    kind: gate
+    since: 2026-08-30
+events:
+  full-support-route-independently-proved:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    route: open-violation-and-open-additive-complement
+    summary: >-
+      With both topology premises proved, independent repair review passed the exact full-support
+      measure implication.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/FULL_SUPPORT_FIXED_DIMENSION_PROBABILITY_DICHOTOMY_REPAIR_AMENDMENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding HCP-FS-AMD-04"
+  full-support-dichotomy-independently-proved:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      Independent repair review passed the exact target and its fixed-dimensional full-support
+      scope without promoting any named random-model probability claim.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-counterexample-prevalence/FULL_SUPPORT_FIXED_DIMENSION_PROBABILITY_DICHOTOMY_REPAIR_AMENDMENT_REVIEW_20260830.md
+      kind: review
+      locator: "Findings HCP-FS-AMD-04 and HCP-FS-AMD-05"
+  full-support-probability-bridge-created:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Registered the fixed-dimensional full-support probability dichotomy while preserving the
+      separation from named random-ensemble asymptotics and from whole-space genericity.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/FULL_SUPPORT_FIXED_DIMENSION_PROBABILITY_DICHOTOMY_20260830.md
+      kind: text

@@ -1,0 +1,37 @@
+id: GROTHE8.classical-witness
+role: proof
+aliases:
+- E8-6104-WITNESS
+claim: >-
+  The A1+A6 maximal-parabolic construction with a regular tournament on the A6 roots
+  gives explicit signs epsilon,eta satisfying epsilon^T B eta = 6104.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    The sign rule is human-readable and the independent exact checker constructs it,
+    verifies p^2=2366 and v^2=2, and evaluates the 120x120 objective to 6104.
+  basis:
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-e8/e8-exact-certificate-20260829.md
+      kind: text
+      locator: E8-T9
+    runs:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-e8/e8-dual-checker-run-20260829.txt
+      kind: run
+      result: A1+A6 witness has p^2=2366, v^2=2, and value 6104.
+frontier:
+  task-001:
+    task: Independently reconstruct the 120 signs from the stated tournament rule and re-evaluate B.
+    kind: review
+    since: '2026-08-29'
+events:
+  constructed-2026-08-29:
+    date: '2026-08-29'
+    type: created
+    summary: Added a compact exact equality witness for the classical optimum.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-e8/e8-exact-certificate-20260829.md
+      kind: text
+      locator: E8-T9
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-e8/e8-dual-checker-run-20260829.txt
+      kind: run

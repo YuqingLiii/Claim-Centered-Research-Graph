@@ -1,0 +1,141 @@
+id: GROTHORB.measurements
+role: outcome
+aliases:
+- ORBIT-PHYSICAL-REALIZATION
+claim: >-
+  If a feasible balance weight H for a nonzero transitive equivariant Bell
+  matrix has rank s, its associated extremizer has an explicit quantum
+  realization on a maximally entangled state using local dichotomic Clifford
+  observables, with local Hilbert-space dimension 2^floor(s/2).
+routes:
+  clifford-realization:
+    premises:
+    - GROTHORB.extremizer-classification
+    implication: >-
+      Map each real unit vector x to the Hermitian involution Gamma(x) in a Clifford
+      representation and use its transpose on Bob's side. The maximally entangled trace
+      identity reproduces every inner-product correlator.
+    proof:
+      sketch: The anticommutation and normalized trace identities give Gamma(x)^2=I and the required correlators.
+      sources:
+      - path: group-orbit-bell-matrices/artifacts/clifford-measurement-construction-20260829.md
+        kind: text
+        locator: CL-T1 through CL-T5
+      - path: group-orbit-bell-matrices/artifacts/complete-extremizer-classification-20260829.md
+        kind: text
+        locator: GOC-T7
+      - path: group-orbit-bell-matrices/artifacts/balanced-rank-theorem-draft-20260829.md
+        kind: text
+        locator: GO-T7
+    assessment:
+      level: PROVED
+      summary: >-
+        The unchanged implication and its feasible-weight interface passed a separate
+        author-independent all-rank review, with explicit tensor and transpose conventions.
+      basis:
+        reviews:
+        - path: group-orbit-bell-matrices/reviews/clifford-measurement-review-20260907.md
+          kind: review
+          locator: F2
+          scope: Rechecked the established premise's required forward interface and the complete Pauli, state, transpose and trace assembly for arbitrary rank s; no minimum physical-dimension claim.
+          reviewed_hash: sha256:d482793b04b0dfa5cff4f265631dae4e2c58d2eb70fc5617a63058c77defc077
+        evidence:
+        - path: group-orbit-bell-matrices/artifacts/clifford-measurement-construction-20260829.md
+          kind: text
+          locator: CL-T2 through CL-T5
+        - path: group-orbit-bell-matrices/artifacts/complete-extremizer-classification-20260829.md
+          kind: text
+          locator: GOC-T7
+        - path: group-orbit-bell-matrices/artifacts/balanced-rank-theorem-draft-20260829.md
+          kind: text
+          locator: GO-T7
+assessment:
+  level: PROVED
+  summary: >-
+    Explicit dimension 2^floor(s/2) realization passed author-independent same-model
+    shared-context review, including s=1, all odd/even ranks and every generator-pair case.
+    This is an existence construction, not a lower bound on physical dimension or self-testing.
+  basis:
+    routes:
+    - clifford-realization
+    reviews:
+    - path: group-orbit-bell-matrices/reviews/clifford-measurement-review-20260907.md
+      kind: review
+      locator: F1
+      scope: Complete unchanged claim, positive rank from feasibility, unit-vector factor, exact generator conventions and correlator identity; finite exact replays corroborate the all-rank argument.
+      reviewed_hash: sha256:9c0bdccd36c869618ea053986796b1ad618a29b2ea76f4d583ea9a595bc6e419
+    evidence:
+    - path: group-orbit-bell-matrices/tools/check_clifford_generators.py
+      kind: text
+      note: Exact small-rank checker for the tensor-Pauli convention; corroboration only.
+    runs:
+    - path: group-orbit-bell-matrices/artifacts/clifford-measurement-review-rerun-20260907.txt
+      kind: run
+      result: Author rerun s=1 through 9 and an independent integer-pair implementation covering 285 ordered generator pairs passed; initial reviewer Python compatibility failure is retained in the record.
+    - path: group-orbit-bell-matrices/artifacts/clifford-exact-check-20260829.txt
+      kind: run
+      result: >-
+        Exact Gaussian-integer checks pass for s=1 through 9, covering the
+        generator tensor order, Hermiticity, involutions, anticommutators,
+        trace orthogonality, and a nontrivial Gamma(v)^2 identity.
+events:
+  independent-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Exact current claim passed independent all-rank review. Nonblocking same-slot explanation and bounded-exactness qualifications are preserved in the report, not silently edited into historical author text.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/clifford-measurement-review-20260907.md
+      kind: review
+      locator: F1
+  clifford-route-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    route: clifford-realization
+    from: CONJECTURED
+    to: PROVED
+    summary: Promoted only after the unchanged route implication and its full supporting assembly were independently checked.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/clifford-measurement-review-20260907.md
+      kind: review
+      locator: F2
+  authored-2026-08-29:
+    date: '2026-08-29'
+    type: created
+    summary: Converted the abstract vector extremizer into the requested physical state-and-measurement problem.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/balanced-rank-theorem-draft-20260829.md
+      kind: text
+      locator: GO-T7
+  rank-bound-refined-2026-08-29:
+    date: '2026-08-29'
+    type: repair-applied
+    summary: >-
+      Replaced the ambient top-space rank by the rank s of the chosen feasible
+      balance weight, yielding the sharper explicit local-dimension bound.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/complete-extremizer-classification-20260829.md
+      kind: text
+      locator: GOC-T3 and GOC-T7
+  pauli-construction-completed-2026-08-29:
+    date: '2026-08-29'
+    type: repair-applied
+    summary: >-
+      Supplied explicit Jordan-Wigner Pauli strings and sharpened the local
+      Hilbert-space dimension from the former safe ceiling bound to
+      2^floor(s/2), including s=1 and odd-s cases.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/clifford-measurement-construction-20260829.md
+      kind: text
+      locator: CL-T1 through CL-T5
+  pauli-exact-check-2026-08-29:
+    date: '2026-08-29'
+    type: repair-applied
+    summary: >-
+      Added exact Gaussian-integer mechanized checks for ranks 1 through 9 as
+      corroboration of the all-rank tensor-Pauli proof, without treating the
+      finite run as an independent review.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/clifford-exact-check-20260829.txt
+      kind: run

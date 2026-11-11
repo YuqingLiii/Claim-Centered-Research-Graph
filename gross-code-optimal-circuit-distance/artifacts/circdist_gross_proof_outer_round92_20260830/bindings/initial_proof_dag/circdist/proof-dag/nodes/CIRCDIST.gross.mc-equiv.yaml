@@ -1,0 +1,39 @@
+id: CIRCDIST.gross.mc-equiv
+role: proof
+aliases:
+- GROSS-MC-EQUIV
+claim: For the Gross code [[144,12,12]], a single-ancilla CNOT syndrome-extraction schedule is measurement-consistent
+  if and only if it is non-interleaved in the SBB sense; consequently SBB Theorem 1 (d_circ = d_ext of
+  the extended code, independently re-derived in-house as Theorem 7.1 without graph-likeness) applies
+  to every legal schedule in S_Gross, and D*_Gross equals the maximum of d_ext(E(M)) over MC-schedulable
+  residual assignments — a pure residual-set optimization.
+assessment:
+  level: REFUTED
+  summary: 'REFUTED: the independent SBB review supplies a legal MC-clean schedule with interleaved check
+    pairs. Non-interleaving implies MC, but the converse claimed by this node fails. The node remains
+    DEAD; this does not refute the Gross root.'
+  basis:
+    counterexamples:
+    - path: circdist/reviews/circdist_sbbcert_review_20260820.md
+      kind: counterexample
+      locator: Section 6
+      note: Explicit legal Gross schedule with zero MC violations and 288 interleaved pairs.
+    evidence:
+    - path: circdist/artifacts/history/pre_protocol_20260826/nodes/CIRCDIST.gross.mc-equiv.yaml
+      kind: text
+      note: Immutable pre-migration record, including every original event, former summary and frontier;
+        historical evidence, not an additional completion review.
+    - path: circdist/reviews/circdist_sbbcert_review_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: circdist/artifacts/circdist_gross_sbbcert_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+disposition:
+  state: DEAD
+  reason: The claimed equivalence is contradicted by an explicit legal Gross-code schedule.
+  source:
+    path: circdist/reviews/circdist_sbbcert_review_20260820.md
+    kind: review

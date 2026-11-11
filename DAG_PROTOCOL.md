@@ -123,6 +123,10 @@ jointly required; the different routes of one node are alternatives. Thus premis
 AND within a route and routes are combined by OR across the node. Reverse dependencies, roots,
 indexes, and diagrams are derived views and are never copied into node files.
 
+Generated indexes report live and retired route counts separately. Generated diagrams retain
+retired routes as grey, dashed hyperedges labelled `RETIRED`; they remain visible provenance but
+are visually and semantically distinct from live support.
+
 Every route contains two logically separate obligations:
 
 1. the listed premise claims must be established to the level required by the parent; and
@@ -273,7 +277,7 @@ been reviewed.
 rebuilt without losing research state.
 
 The schema and semantic checks are implemented by `tools/proof_dag_check.py`. The repository's
-pull-request workflow validates both case studies and checks that their derived views are up to date.
+pull-request workflow validates every project and checks that their derived views are up to date.
 It does not regenerate or commit them.
 
 A single snapshot cannot establish that its event history is complete or append-only. To check

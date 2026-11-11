@@ -1,0 +1,14 @@
+%% CIRCUIT-DISTANCE-STABILIZATION proof hypergraph (generated)
+flowchart BT
+  n0["CIRCDIST.sat\nPROVED"]
+  n1["CIRCDIST.sat.instances\nPROVED"]
+  n2["CIRCDIST.sat.transfer\nPROVED"]
+  n3["CIRCDIST.sat.window\nPROVED"]
+  r1(("asymptotic-stability-assembly\nPROVED"))
+  n2 --> r1
+  n3 --> r1
+  n1 --> r1
+  r1 --> n0
+  r2(("finite-prefix-window-closure\nPROVED"))
+  n3 --> r2
+  r2 --> n1

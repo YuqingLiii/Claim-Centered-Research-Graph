@@ -1,0 +1,203 @@
+id: CIRCDIST.sat
+role: outcome
+aliases:
+- R-SAT
+- R-STAB
+claim: 'For every CSS code Q = [[n,k,d]] with k >= 1 and every fixed legal (conflict-free and measurement-consistent) single-round single-ancilla CSS syndrome-extraction schedule M for Q, let C_R^Z(M) and C_R^X(M) be the memory experiments formed by R verbatim repetitions of M with ideal initialization, ideal terminal data readout, and the uniform unit-cost full-Pauli per-location fault model, and let d_R(M) be the minimum of their circuit distances measured against, respectively, the canonical detector space of Definition 3.5 in the CIRCDIST.sat.transfer proof dossier and its section-8.1 mirror. Proposition 3.7 and that mirror give the same distance value in each sector when the corresponding Definition-2.7 detector set is used; this says neither that the two detector sets are equal nor that the value is invariant under any other detector/observable split. Define d_infinity(M) = lim_{R to infinity} d_R(M) and R_stab(M) = min{R_0 >= 1 : d_R(M) = d_infinity(M) for all R >= R_0}. Give a finite-state min-plus representation of d_R, prove an explicit finite-window theorem and algorithm deciding (d_infinity,R_stab), compute or rigorously bound that pair for a standard surface-code schedule, a legal hook-misaligned surface-code schedule, and at least one qLDPC schedule, and attribute the distance-limiting mechanism using auditable minimum witnesses.'
+assessment:
+  level: PROVED
+  caveats:
+  - 'R-P1: shared-definition dependence remains a provenance and trust-base limitation, not an unresolved mathematical premise. Transfer, window, and instances use the same frozen model reading and the lead-ratified Definition 3.5; their direct proofs independently rederive the consequences they use but do not derive that interpretation from the frozen Chinese text. Stim corroboration covers selected surface cells and conventions only, not the full universal or qLDPC scope.'
+  - 'R-P2: d_R and d_infinity use the aggregate minimum over the Z- and X-memory sectors. The per-sector ceiling d_R^sigma <= d is false for asymmetric CSS codes; the selected three schedules happen to have equal certified sector prefixes and do not test that asymmetry.'
+  - 'R-P3: the result is scoped to ideal initialization and terminal data readout, R verbatim copies with disjoint round locations and no cross-round compression, and the uniform unit-cost full-Pauli group at every named occupied location (15 nonidentity CNOT Paulis, three nonidentity one-qubit Paulis at idle/post-preparation locations, and record flips). Noisy boundaries, cross-round layout rewriting, non-group menus, or nonuniform costs are outside the claim.'
+  - 'R-P4: detector alignment is only the named ordered pair: canonical Definition 3.5 in Z-memory and its section-8.1 mirror in X-memory, with equality of minimum values to the corresponding Definition-2.7 sets. The sets need not be equal and arbitrary detector/observable splits can change the value, as the Steane-plus-redundant-row counterexample shows. Definition 3.5 is a lead-ratified interpretation of the frozen text, so detector-convention provenance and sensitivity remain explicit.'
+  - 'R-P5: the universal transfer statement rests on the reviewed finite-R derivation; archived d = 3 and later instance computations are corroboration, not extrapolative proof. The exact claim does not assert eventual constancy of matrix powers, Nerode minimality, polynomial construction time, or arbitrary-split invariance. The former A1 and T-G2/T-G4/T-G5 items are therefore not live completion blockers for this exact claim.'
+  - 'R-P6: the existential instance discharge is exactly the standard rotated-surface d = 5 member 1 with (d_infinity,R_stab) = (5,1), the legal doubly hook-misaligned d = 5 class-D member 2 with (3,2), and the explicitly specified BB [[18,4,4]] non-interleaved schedule with (3,1). Bonus d = 7/d = 9 cells, a family law, a second qLDPC code, depths 7 through 11, and universal schedule-space claims are excluded.'
+  - 'R-P7: mechanism attributions have the certificate package definitions and selected-cell scope. Standard has an audited single-round no-hook optimum and excludes measurement-class optima; class D is hook-required at R = 1 and, for R >= 2, mixed-multi-round, hook-required, and measurement-free; BB is single-round, hook-required, and measurement-free. No uniqueness, global temporal-boundary emptiness, or interpretive causal story is proved; the standard label describes an optimum witness rather than an obstruction excluding all hook optima.'
+  - 'R-P8: the route is not an independent three-way replication. The instances finite prefixes and mechanisms are certified independently of window, but their infinite tails import the PROVED window theorem through the machine-visible finite-prefix-window-closure route. A defect in the shared window/model semantics would therefore affect both the direct root premise and the child route.'
+  - 'R-P9: the root neither asserts nor uses the fitted law d_R = max(d - R,(d+1)/2), unbounded R_stab, tightness of R_stab <= d_infinity, a global explanation of why R_stab > 1 occurs, global absence of temporal-boundary mechanisms, or any result outside the exact universal theorem and three selected existential schedules.'
+  summary: Fresh strict-serial final completion review independently recomputed the exact root and route strings, current premise hashes and levels, and every decisive review binding; then re-derived the composition clause by clause without level inheritance. The exact PROVED transfer claim supplies the finite-state min-plus model and the occupied-location and detector-value bridges; the exact PROVED window claim supplies monotonicity, the finite d-round decision window, and the algorithm; and the exact PROVED instances claim and route supply the three selected schedules, exact pairs, minimum certificates, and scoped mechanism attributions. The unchanged 1,357-character root claim at sha256:513496daac6fa18bf96d1f2b6cf8768929eb62e45e103df1123479aadeeb7572 is therefore PROVED. The remaining caveats are scope, provenance, dependency, and explicit-exclusion notes rather than undischarged clauses.
+  basis:
+    routes:
+    - asymptotic-stability-assembly
+    reviews:
+    - path: circdist/reviews/circdist_sat_window_downstream_scope_rebind_review_20260826.md
+      kind: review
+      scope: Fresh strict-serial independent review of the exact 1,357-character root precision repair, including the explicit Q = [[n,k,d]], k >= 1, conflict-free plus measurement-consistent schedule domain, ideal boundaries, verbatim repetition, uniform unit-cost full-Pauli per-location model, aggregate two-sector minimum, canonical detector locators, value-only Definition-2.7 relation, positive-index stabilization definition, and full clause map.
+      locator: Finding F-ROOT-CLAIM
+      reviewed_hash: sha256:513496daac6fa18bf96d1f2b6cf8768929eb62e45e103df1123479aadeeb7572
+    - path: circdist/reviews/circdist_sat_root_final_completion_review_20260826.md
+      kind: review
+      scope: Fresh strict-serial independent final claim review and exact composition audit of the unchanged 1,357-character root against the unchanged exact PROVED implication and the current exact PROVED transfer, window, and instances premises. Recomputed duplicate-rejecting YAML semantics, lengths, hashes, levels, premise lists, and review reachability; independently checked every domain pin, both CSS sectors, aggregate minimum, ideal boundaries, verbatim layout, uniform full-Pauli occupied-location weight, named detector/value bridge, finite-state theorem, finite window and algorithm, the three explicit schedules, certificate witnesses, mechanism scopes, shared risks, stale-scope cleanup, and no-inheritance licensing. Licenses PROVED only for this exact root hash.
+      locator: Finding F-ROOT-CLAIM
+      reviewed_hash: sha256:513496daac6fa18bf96d1f2b6cf8768929eb62e45e103df1123479aadeeb7572
+    evidence:
+    - path: circdist/artifacts/history/pre_protocol_20260826/nodes/CIRCDIST.sat.yaml
+      kind: text
+      note: Immutable pre-migration record, including every original event, former summary and frontier; historical evidence, not an additional completion review.
+    - path: circdist/artifacts/history/legacy_DAG_PROTOCOL.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/artifacts/definitions/SAT_RESCOPE_20260822.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/reviews/circdist_lift_proofs_review_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/artifacts/circdist_lift_iff_proof_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/artifacts/circdist_lift_nonint_proof_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/artifacts/definitions/CIRCDIST_PROBLEMS.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/artifacts/circdist_sat_recon_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/artifacts/circdist_lift_iff_amendment3_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/artifacts/circdist_sat_root_assembly_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/reviews/circdist_sat_root_review_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/reviews/circdist_stim_crossval_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/reviews/circdist_sat_root_proved_adjudication_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its scope.
+    - path: circdist/artifacts/logs_circdist_stim_crossval_20260823
+      kind: text
+      note: Byte-preserved historical computation package (sources, inputs, outputs and original checksums). No mathematical computation was rerun during migration.
+    - path: circdist/reviews/circdist_sat_v3_exact_text_review_20260826.md
+      kind: text
+      note: Historical exact review of the superseded V3 root claim; its route-implication review remains current because the implication bytes and hash are unchanged.
+routes:
+  asymptotic-stability-assembly:
+    premises:
+    - CIRCDIST.sat.transfer
+    - CIRCDIST.sat.window
+    - CIRCDIST.sat.instances
+    implication: 'The transfer representation supplies a finite exact computational model, the window theorem proves that a bounded prefix decides d_infinity and R_stab, and the instance dossier applies both to every named code family with witness-level mechanism attribution; together these three premises establish every clause of the revised root claim. The premises are not independent: instances imports window''s window theorem for every statement outside its computed windows, and the three unit-fault counting conventions are reconciled by transfer Lemma 2.9. A defect in window propagates to two premises; the transfer premise is load-bearing for convention coherence even though no reported instance value depends on Theorem T.'
+    proof:
+      sketch: Use the eight-clause discharge and six-axis convention audit in the root assembly, together with the later transfer bridge fold and the V3 exact-text review, to derive the exact root claim from the three exact premise claims. The window premise is used both directly and through the instances tail conclusions; the transfer premise supplies the elementary-fault/location-count and Definition-2.7/Definition-3.5 bridges.
+      sources:
+      - path: circdist/artifacts/definitions/SAT_RESCOPE_20260822.md
+        kind: text
+      - path: circdist/artifacts/circdist_sat_root_assembly_20260823.md
+        kind: text
+      - path: circdist/reviews/circdist_transfer_bridgefold_20260823.md
+        kind: text
+    assessment:
+      level: PROVED
+      caveats:
+      - 'RI-P1: PROVED applies to this exact conditional implication only. All three exact premise claims are independently PROVED on their listed current hashes, but neither premise truth nor root truth is inherited automatically; the root has the separate fresh completion review linked above.'
+      - 'RI-P2: the premises are semantically non-independent. CIRCDIST.sat.instances imports CIRCDIST.sat.window only for the tail beyond its exhaustively certified first-d prefixes, through route finite-prefix-window-closure; a shared window/model defect would propagate along both dependency paths.'
+      - 'RI-P3: convention composition is limited to the uniform unit-cost full per-location Pauli groups, the aggregate minimum of the two CSS sectors, ideal boundaries and verbatim rounds, and the named Definition-3.5/section-8.1 versus Definition-2.7 value bridge. It asserts neither equality of detector sets nor invariance under other splits.'
+      summary: The unchanged 718-character implication at sha256:03549fb0f9856952319ee3dfc1d9bdbb11e49a47a9babbc65b7b9f87405763e1 remains PROVED after fresh independent re-adjudication against transfer sha256:11079eaf2fed2f580127075be12cb7e9fef6ef85e20f47eca9dcf5a68cb7ea33, window sha256:6c50b4049ae908d6646e87f7446f8fb7ea9583182fb79da3cb6b935c7011ccc4, and instances sha256:c71ac7cdbd8ddea97cd9916303566d00bc10b2b930ae00767857c5a6e22ec5f3, all now PROVED. The exact composition covers every root clause and records the window-to-instances dependency, the Lemma-2.9 occupied-location bridge, and the named detector-value bridge. No route text, premise, or premise level changes.
+      basis:
+        reviews:
+        - path: circdist/reviews/circdist_sat_v3_exact_text_review_20260826.md
+          kind: review
+          scope: Fresh independent review of the complete clause mapping and six convention axes after the V3 scope pin and verbatim R5 insertion, including the window-to-instances dependence, Lemma 2.9 counting bridge, Proposition 3.7 and the section-8.1 mirror; premise truth and premise levels were not re-adjudicated.
+          locator: Finding F-ROUTE
+          reviewed_hash: sha256:03549fb0f9856952319ee3dfc1d9bdbb11e49a47a9babbc65b7b9f87405763e1
+        - path: circdist/reviews/circdist_sat_window_downstream_scope_rebind_review_20260826.md
+          kind: review
+          scope: Fresh strict-serial independent rebind of the unchanged asymptotic-stability-assembly implication to repaired window claim sha256:6c50b4049ae908d6646e87f7446f8fb7ea9583182fb79da3cb6b935c7011ccc4 and repaired root claim sha256:513496daac6fa18bf96d1f2b6cf8768929eb62e45e103df1123479aadeeb7572, including every selected instance, transfer convention bridges, dependency direction, quantifiers, completion gates, and no inheritance.
+          locator: Finding F-ROOT-ROUTE
+          reviewed_hash: sha256:03549fb0f9856952319ee3dfc1d9bdbb11e49a47a9babbc65b7b9f87405763e1
+        - path: circdist/reviews/circdist_sat_root_final_completion_review_20260826.md
+          kind: review
+          scope: Fresh strict-serial independent re-adjudication of the unchanged 718-character asymptotic-stability-assembly implication against the current exact PROVED transfer, window, and instances claims and the PROVED instances child implication. Verifies exact quantifiers and domains, every root-clause entailment, the non-independent dependency direction, the unit-fault and detector bridges, premise freshness, shared single-point risks, and the absence of automatic level inheritance.
+          locator: Finding F-ROOT-ROUTE
+          reviewed_hash: sha256:03549fb0f9856952319ee3dfc1d9bdbb11e49a47a9babbc65b7b9f87405763e1
+        evidence:
+        - path: circdist/artifacts/circdist_sat_root_assembly_20260823.md
+          kind: text
+        - path: circdist/reviews/circdist_sat_root_review_20260823.md
+          kind: text
+        - path: circdist/reviews/circdist_sat_root_proved_adjudication_20260823.md
+          kind: text
+        - path: circdist/reviews/circdist_transfer_bridgefold_20260823.md
+          kind: text
+events:
+  detector-split-v3-2026-08-26:
+    date: '2026-08-26'
+    type: repair-applied
+    summary: The lead-authorized V3 revision pinned d_R to the Definition-3.5 canonical detector space and its section-8.1 X-memory mirror, stated only per-sector equality of distance values with the corresponding Definition-2.7 sets, adopted R5 to expose the window-to-instances dependency, and replaced the completed V3 frontier. The node remained CERTIFIED* because all three premises remain CERTIFIED*.
+    sources:
+    - path: circdist/reviews/circdist_sat_v3_exact_text_review_20260826.md
+      kind: review
+      locator: Finding F-CLAIM
+  route-implication-proved-2026-08-26:
+    date: '2026-08-26'
+    type: level-change
+    from: CERTIFIED*
+    to: PROVED
+    route: asymptotic-stability-assembly
+    summary: Fresh independent review established the exact revised conditional implication from the three premise claims to the V3 root claim. No premise level and no node level changed.
+    sources:
+    - path: circdist/reviews/circdist_sat_v3_exact_text_review_20260826.md
+      kind: review
+      locator: Finding F-ROUTE
+  instances-window-edge-synchronized-2026-08-26:
+    date: '2026-08-26'
+    type: repair-applied
+    summary: 'Synchronized the root bookkeeping after CIRCDIST.sat.instances registered route finite-prefix-window-closure: removed the completed missing-edge frontier and replaced the stale not-yet-encoded caveat sentence. The root claim, route implication, review hashes, and all levels remained unchanged.'
+    sources:
+    - path: circdist/reviews/circdist_sat_instances_window_edge_exact_review_20260826.md
+      kind: review
+      locator: Finding F-ROUTE
+  window-domain-root-claim-repaired-2026-08-26:
+    date: '2026-08-26'
+    type: repair-applied
+    summary: Replaced the broader 1,199-character V3 root claim at sha256:ed57c5f052cc009d29f8682c13512a6930f8eee68c0c8ec8f845b46660dba0fb with the exact 1,357-character standalone claim at sha256:513496daac6fa18bf96d1f2b6cf8768929eb62e45e103df1123479aadeeb7572. The repair explicitly binds Q = [[n,k,d]] with k >= 1, conflict legality plus measurement consistency, ideal boundaries, verbatim repetition, the uniform unit-cost full-Pauli per-location model, aggregate sector minimum, and R_0 >= 1. The old V3 claim review became historical evidence; the node remained CERTIFIED*.
+    sources:
+    - path: circdist/reviews/circdist_sat_window_downstream_scope_rebind_review_20260826.md
+      kind: review
+      locator: Finding F-ROOT-CLAIM
+  window-premise-root-route-rebound-2026-08-26:
+    date: '2026-08-26'
+    type: review-completed
+    route: asymptotic-stability-assembly
+    summary: Fresh strict-serial independent review re-adjudicated the unchanged asymptotic-stability-assembly implication against the repaired PROVED window premise and the repaired exact root claim. The implication text and hash did not change and remain PROVED; CIRCDIST.sat.transfer and CIRCDIST.sat.instances remain CERTIFIED*, so the root remains CERTIFIED*.
+    sources:
+    - path: circdist/reviews/circdist_sat_window_downstream_scope_rebind_review_20260826.md
+      kind: review
+      locator: Finding F-ROOT-ROUTE
+  root-completion-scope-synchronized-2026-08-26:
+    date: '2026-08-26'
+    type: repair-applied
+    summary: Replaced obsolete live summary and caveat prose saying transfer and instances were CERTIFIED*, that IW-C0 remained open, and that A1 or T-G2/T-G4/T-G5 blocked completion. Current exact transfer, window, instances, and the instances child route are all PROVED. Preserved the true shared-definition, aggregate-sector, verbatim-layout, detector-provenance, exact existential-instance, mechanism-scope, dependency, and explicit-exclusion cautions. No claim, route implication, premise, or premise level changed.
+    sources:
+    - path: circdist/reviews/circdist_sat_root_final_completion_review_20260826.md
+      kind: review
+      locator: Finding F-SCOPE-REBIND
+  root-final-completion-reviewed-2026-08-26:
+    date: '2026-08-26'
+    type: review-completed
+    route: asymptotic-stability-assembly
+    summary: Fresh strict-serial independent final review rechecked the unchanged exact root claim and route implication against all current exact PROVED premises, audited every composition clause and convention bridge from first principles, verified premise freshness and shared risks, and licensed root completion without inheritance. The route remains PROVED on its unchanged hash.
+    sources:
+    - path: circdist/reviews/circdist_sat_root_final_completion_review_20260826.md
+      kind: review
+      locator: Finding F-ROOT-ROUTE
+    - path: circdist/reviews/circdist_sat_root_final_completion_review_20260826.md
+      kind: review
+      locator: Finding F-ROOT-CLAIM
+  root-proved-2026-08-26:
+    date: '2026-08-26'
+    type: level-change
+    from: CERTIFIED*
+    to: PROVED
+    summary: Promoted only CIRCDIST.sat from CERTIFIED* to PROVED at the unchanged 1,357-character claim sha256:513496daac6fa18bf96d1f2b6cf8768929eb62e45e103df1123479aadeeb7572 after fresh exact composition review. The unchanged route was already PROVED and remains so; no premise or premise level was modified.
+    sources:
+    - path: circdist/reviews/circdist_sat_root_final_completion_review_20260826.md
+      kind: review
+      locator: Finding F-ROOT-CLAIM

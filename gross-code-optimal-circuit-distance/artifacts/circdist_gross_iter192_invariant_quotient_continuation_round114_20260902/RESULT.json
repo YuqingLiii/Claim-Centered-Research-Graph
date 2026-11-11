@@ -1,0 +1,994 @@
+{
+  "canonical_state_modified": false,
+  "distance_status": {
+    "CIRCDIST.gross": "CONJECTURED",
+    "D_star_Gross": [
+      11,
+      12
+    ],
+    "gap-via-lift": "CONJECTURED"
+  },
+  "failures": {
+    "disclosed_ids": [
+      "F114-001",
+      "F114-002",
+      "F114-003",
+      "F114-004",
+      "F114-005",
+      "F114-006",
+      "F114-007",
+      "F114-008",
+      "F114-009",
+      "F114-010",
+      "F114-011"
+    ],
+    "ledger": "FAILURE_LEDGER.md",
+    "scientific_failures_or_unknowns": 0
+  },
+  "fresh_frontier": {
+    "assertions": 869046,
+    "authorization_residual": {
+      "order144_quotient_not_built": true,
+      "skipped_nonfree_block_orbits": 9,
+      "skipped_nonfree_blocks": 324,
+      "skipped_nonfree_selector_orbits": 1,
+      "skipped_nonfree_selectors": 36
+    },
+    "authorized_additions": {
+      "free_css_dual_block_orbits": 4124,
+      "free_css_dual_blocks": 296928,
+      "free_css_dual_selector_orbits": 349,
+      "free_css_dual_selectors": 25128,
+      "mandatory_free_orbits": 4,
+      "mandatory_selectors": 288,
+      "total_new_selectors": 25416
+    },
+    "base": {
+      "assertions": 869046,
+      "clauses": 11393894,
+      "encoding_check": "PASS",
+      "path": "frontier/iter193_full_invariant/formula/outer.cnf",
+      "sha256": "f6500190061f611f41ec62c7d58a6abb5b5a07acb8fcfb013c6ff28abfb9aa76",
+      "variables": 3104384
+    },
+    "blocks": 814068,
+    "forbidden_solver_artifacts_absent": true,
+    "fresh_unstarted": true,
+    "iter193_solved": false,
+    "iteration": 193,
+    "quotient": {
+      "assertions": 869117,
+      "clauses": 16301485,
+      "independent_check": "PASS",
+      "lex_roots": 71,
+      "path": "frontier/iter193_full_invariant_quotient/outer.cnf",
+      "sha256": "cf9545d5cd9713b476f6b70962870c4701ed5ace8e73e20812fea412d7e939f1",
+      "variables": 3717824
+    },
+    "schema": "circdist-gross-round114-fresh-frontier-v1",
+    "selector_state_sha256": "8de44fbcf1ca81793b35ea24ee3f364e88ee195dbeaa698d97836429aaa68a37",
+    "selectors": 50580,
+    "smallest_honest_residual": "Solve the exact fresh iteration-193 71-root translation quotient proof-first; no iteration-193 solver disposition exists. The one selector and nine block nonfree D-image orbits remain explicitly inventoried for a future authorization decision.",
+    "source_file_sha256": "c01425b30638e65587e3afea63c85c6cc3eeab9eb29c605af7977ea64b125fb2",
+    "source_semantic_payload_sha256": "b374d942cd624f45e1a5aec1a885e6cec0a3e48994ef540dda03098bc31d7166",
+    "started": false,
+    "state_file_sha256": "52e6564c63f65588b0fd41707cf9d2ccaecb90d88558e6b636ff20446b59e7ab",
+    "status": "PASS",
+    "stop": null,
+    "translation_group": "Z_12 x Z_6",
+    "translation_group_order": 72
+  },
+  "global_mechanism": {
+    "action": {
+      "check": "g -> -g",
+      "conjugation_edge_cases": 62208,
+      "distinct_concrete_edge_permutations": 144,
+      "edge": "X:c:q <-> Z:-c:D(q)",
+      "extended_group_order": 144,
+      "involution_edge_cases": 864,
+      "name": "CSS duality D extending Z_12 x Z_6",
+      "qubit": "q<72 -> 72+(-q); q=72+r -> -r",
+      "relations": [
+        "D^2=1",
+        "D T_delta D=T_-delta"
+      ],
+      "residual_kind_action": "identity on k in {0,1,2}; order positions and layer labels unchanged",
+      "selector": "Xerr <-> Zerr; D:q -> D:D(q); R:c:k -> R:-c:k",
+      "translation_composition_edge_cases": 4478976,
+      "translation_subgroup_order": 72
+    },
+    "authorization_boundary": {
+      "extended_order144_quotient_built": false,
+      "reason": "skipped nonfree D-images leave the registry outside exact D-invariance; ordinary translation quotient remains exact",
+      "rule": "retain only new semantic mechanisms with free 72-element Z12xZ6 orbit",
+      "skipped_nonfree_block_orbits": [
+        {
+          "full_orbit_semantic_sha256": "4210e37f0edb8dbc995559cd2c0da2016abe2ebf6ab5d0e92e0ac5802a6961ec",
+          "orbit_size": 36,
+          "representative": [
+            [
+              "X:0:1",
+              "X:0:2"
+            ],
+            [
+              "X:0:1",
+              "X:0:78"
+            ],
+            [
+              "X:0:75",
+              "X:0:2"
+            ],
+            [
+              "X:0:75",
+              "X:0:78"
+            ],
+            [
+              "X:39:108",
+              "X:39:117"
+            ],
+            [
+              "X:39:108",
+              "X:39:41"
+            ],
+            [
+              "X:39:40",
+              "X:39:117"
+            ],
+            [
+              "X:39:40",
+              "X:39:41"
+            ]
+          ],
+          "representative_sha256": "12bb5fb948894541f7097e4fdece2be58baeb84d1712c939318e580216be569c"
+        },
+        {
+          "full_orbit_semantic_sha256": "43aaf9e7eb77508086e61193520f3b426b1aec3df96f195d137fe49b45667cd8",
+          "orbit_size": 36,
+          "representative": [
+            [
+              "X:0:18",
+              "X:0:1"
+            ],
+            [
+              "X:0:18",
+              "X:0:75"
+            ],
+            [
+              "X:0:78",
+              "X:0:1"
+            ],
+            [
+              "X:0:78",
+              "X:0:75"
+            ],
+            [
+              "X:36:114",
+              "X:36:111"
+            ],
+            [
+              "X:36:114",
+              "X:36:37"
+            ],
+            [
+              "X:36:54",
+              "X:36:111"
+            ],
+            [
+              "X:36:54",
+              "X:36:37"
+            ]
+          ],
+          "representative_sha256": "6ca414ecffa8973b9c4f91da699688c317d1b1fe250925433f4bfc908625c351"
+        },
+        {
+          "full_orbit_semantic_sha256": "1fad3fd3a052aa9d6a3d910aaa391270f28f3be6178e71e2fe0ea775e623de61",
+          "orbit_size": 36,
+          "representative": [
+            [
+              "X:0:18",
+              "X:0:2"
+            ],
+            [
+              "X:0:18",
+              "X:0:78"
+            ],
+            [
+              "X:0:75",
+              "X:0:1"
+            ],
+            [
+              "X:0:75",
+              "X:0:2"
+            ],
+            [
+              "X:0:75",
+              "X:0:78"
+            ],
+            [
+              "X:3:21",
+              "X:3:5"
+            ],
+            [
+              "X:3:21",
+              "X:3:81"
+            ],
+            [
+              "X:3:72",
+              "X:3:4"
+            ],
+            [
+              "X:3:72",
+              "X:3:5"
+            ],
+            [
+              "X:3:72",
+              "X:3:81"
+            ]
+          ],
+          "representative_sha256": "31196620120596123917609c5babeeb628c167b2a46777ddf7aab8a1f3452830"
+        },
+        {
+          "full_orbit_semantic_sha256": "570f64048ea30fbaac7bf59a51a2803c62e47720dd2aa26435e0e0ad3ad262f8",
+          "orbit_size": 36,
+          "representative": [
+            [
+              "X:0:18",
+              "X:0:2"
+            ],
+            [
+              "X:0:18",
+              "X:0:78"
+            ],
+            [
+              "X:0:75",
+              "X:0:2"
+            ],
+            [
+              "X:0:75",
+              "X:0:78"
+            ],
+            [
+              "X:0:75",
+              "X:0:84"
+            ],
+            [
+              "X:3:21",
+              "X:3:5"
+            ],
+            [
+              "X:3:21",
+              "X:3:81"
+            ],
+            [
+              "X:3:72",
+              "X:3:5"
+            ],
+            [
+              "X:3:72",
+              "X:3:81"
+            ],
+            [
+              "X:3:72",
+              "X:3:87"
+            ]
+          ],
+          "representative_sha256": "12033affc89cd64ac17ec1efebff42de0c1f55de60fe83ab380c77d4dae407b2"
+        },
+        {
+          "full_orbit_semantic_sha256": "294a3bbefd73840c75ede148a108333fa31e9db12fffad74434275b22a05a413",
+          "orbit_size": 36,
+          "representative": [
+            [
+              "Z:0:126",
+              "Z:0:60"
+            ],
+            [
+              "Z:0:126",
+              "Z:0:77"
+            ],
+            [
+              "Z:0:66",
+              "Z:0:60"
+            ],
+            [
+              "Z:0:66",
+              "Z:0:77"
+            ],
+            [
+              "Z:0:76",
+              "Z:0:60"
+            ],
+            [
+              "Z:0:76",
+              "Z:0:77"
+            ],
+            [
+              "Z:39:109",
+              "Z:39:110"
+            ],
+            [
+              "Z:39:109",
+              "Z:39:27"
+            ],
+            [
+              "Z:39:33",
+              "Z:39:110"
+            ],
+            [
+              "Z:39:33",
+              "Z:39:27"
+            ],
+            [
+              "Z:39:93",
+              "Z:39:110"
+            ],
+            [
+              "Z:39:93",
+              "Z:39:27"
+            ]
+          ],
+          "representative_sha256": "b995408f39c3c2d171513e38559c43c7de35b69da2298c5a7971a763bedeeb11"
+        },
+        {
+          "full_orbit_semantic_sha256": "42d1a1d1b41b496413a445a760863df87978216a9b5f3b4a877e16ded29109c9",
+          "orbit_size": 36,
+          "representative": [
+            [
+              "Z:0:3",
+              "Z:0:126"
+            ],
+            [
+              "Z:0:3",
+              "Z:0:60"
+            ],
+            [
+              "Z:0:3",
+              "Z:0:66"
+            ],
+            [
+              "Z:0:76",
+              "Z:0:126"
+            ],
+            [
+              "Z:0:76",
+              "Z:0:60"
+            ],
+            [
+              "Z:0:76",
+              "Z:0:66"
+            ],
+            [
+              "Z:3:0",
+              "Z:3:129"
+            ],
+            [
+              "Z:3:0",
+              "Z:3:63"
+            ],
+            [
+              "Z:3:0",
+              "Z:3:69"
+            ],
+            [
+              "Z:3:73",
+              "Z:3:129"
+            ],
+            [
+              "Z:3:73",
+              "Z:3:63"
+            ],
+            [
+              "Z:3:73",
+              "Z:3:69"
+            ]
+          ],
+          "representative_sha256": "698127a8be43c477e63bbd0832ad2548701f8a90acafe2648fc7804459189d13"
+        },
+        {
+          "full_orbit_semantic_sha256": "fb3dc1e481e9ee5d8b12189cdaa535300e8745154639b6489f51a6b841d1cae0",
+          "orbit_size": 36,
+          "representative": [
+            [
+              "Z:0:3",
+              "Z:0:126"
+            ],
+            [
+              "Z:0:3",
+              "Z:0:60"
+            ],
+            [
+              "Z:0:66",
+              "Z:0:126"
+            ],
+            [
+              "Z:0:66",
+              "Z:0:60"
+            ],
+            [
+              "Z:0:76",
+              "Z:0:126"
+            ],
+            [
+              "Z:0:76",
+              "Z:0:60"
+            ],
+            [
+              "Z:0:77",
+              "Z:0:126"
+            ],
+            [
+              "Z:0:77",
+              "Z:0:60"
+            ],
+            [
+              "Z:3:0",
+              "Z:3:129"
+            ],
+            [
+              "Z:3:0",
+              "Z:3:63"
+            ],
+            [
+              "Z:3:69",
+              "Z:3:129"
+            ],
+            [
+              "Z:3:69",
+              "Z:3:63"
+            ],
+            [
+              "Z:3:73",
+              "Z:3:129"
+            ],
+            [
+              "Z:3:73",
+              "Z:3:63"
+            ],
+            [
+              "Z:3:74",
+              "Z:3:129"
+            ],
+            [
+              "Z:3:74",
+              "Z:3:63"
+            ]
+          ],
+          "representative_sha256": "02c5382fc6a88ceac39b3fed61301701533f1868f89c918d91bd4903035610e5"
+        },
+        {
+          "full_orbit_semantic_sha256": "838ac65ceedab823b769606021a345f3d7c0ffb952e9b0b06dcd488eb3432518",
+          "orbit_size": 36,
+          "representative": [
+            [
+              "Z:0:66",
+              "Z:0:3"
+            ],
+            [
+              "Z:0:66",
+              "Z:0:77"
+            ],
+            [
+              "Z:0:76",
+              "Z:0:3"
+            ],
+            [
+              "Z:0:76",
+              "Z:0:77"
+            ],
+            [
+              "Z:39:109",
+              "Z:39:110"
+            ],
+            [
+              "Z:39:109",
+              "Z:39:36"
+            ],
+            [
+              "Z:39:33",
+              "Z:39:110"
+            ],
+            [
+              "Z:39:33",
+              "Z:39:36"
+            ]
+          ],
+          "representative_sha256": "85c9043f6f43eaa5b9092357f3a8eca5a4ed924d1a9df338dc0abd4220a5e602"
+        },
+        {
+          "full_orbit_semantic_sha256": "f589169b6b51addc6a11cafd34936e70168a98e41a4c14f6bbb18db863f107f0",
+          "orbit_size": 36,
+          "representative": [
+            [
+              "Z:0:76",
+              "Z:0:126"
+            ],
+            [
+              "Z:0:76",
+              "Z:0:3"
+            ],
+            [
+              "Z:0:76",
+              "Z:0:60"
+            ],
+            [
+              "Z:0:76",
+              "Z:0:66"
+            ],
+            [
+              "Z:0:77",
+              "Z:0:126"
+            ],
+            [
+              "Z:0:77",
+              "Z:0:3"
+            ],
+            [
+              "Z:0:77",
+              "Z:0:60"
+            ],
+            [
+              "Z:0:77",
+              "Z:0:66"
+            ],
+            [
+              "Z:3:73",
+              "Z:3:0"
+            ],
+            [
+              "Z:3:73",
+              "Z:3:129"
+            ],
+            [
+              "Z:3:73",
+              "Z:3:63"
+            ],
+            [
+              "Z:3:73",
+              "Z:3:69"
+            ],
+            [
+              "Z:3:74",
+              "Z:3:0"
+            ],
+            [
+              "Z:3:74",
+              "Z:3:129"
+            ],
+            [
+              "Z:3:74",
+              "Z:3:63"
+            ],
+            [
+              "Z:3:74",
+              "Z:3:69"
+            ]
+          ],
+          "representative_sha256": "7674a25d0a272a9005a896b88a22dd8b81f782052c36ee628c8f38a2083842b5"
+        }
+      ],
+      "skipped_nonfree_selector_orbits": [
+        {
+          "full_orbit_semantic_sha256": "dba05a7a26b3eb82b03c6be0728de25a9fce5b62a55c27ffc7d5bc4a22fb2102",
+          "orbit_size": 36,
+          "representative": [
+            "Zerr",
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              126,
+              129
+            ],
+            [
+              [
+                66,
+                [
+                  2
+                ]
+              ],
+              [
+                69,
+                [
+                  2
+                ]
+              ]
+            ]
+          ],
+          "representative_sha256": "45f114a5e2e0584e3016e06402e72e0a22d44f046ffbf3b1da40d142e0d09d47"
+        }
+      ]
+    },
+    "blocks": {
+      "already_dual_paired_count": 219888,
+      "closed_union_count": 814392,
+      "dual_image_count": 517140,
+      "identity_rule": "full sorted ordered-atom tuple",
+      "input_count": 517140,
+      "missing_by_parent_family": {
+        "dynamic": 13932,
+        "generalized": 282420,
+        "round62": 900
+      },
+      "missing_dual_image_count": 297252,
+      "missing_set_generator_cases": 594504,
+      "missing_translation_orbit_histogram": {
+        "36": 9,
+        "72": 4124
+      }
+    },
+    "fallback_activated": false,
+    "fallback_reason": "sound stronger global CSS-duality transport mechanism obtained and checked",
+    "information_gain_vs_round112": "349 retained free CSS-dual selector orbits plus 4 mandatory free orbits add 25,416 selectors; Round112 added 8 orbits/576 selectors",
+    "retained": {
+      "free_css_dual_block_orbits": 4124,
+      "free_css_dual_blocks": 296928,
+      "free_css_dual_selector_orbits": 349,
+      "free_css_dual_selectors": 25128,
+      "new_blocks_by_family": {
+        "dynamic": 13896,
+        "generalized": 282168,
+        "round62": 864
+      },
+      "new_selectors_by_sector": {
+        "Xerr": 12168,
+        "Zerr": 13248
+      }
+    },
+    "selectors": {
+      "already_dual_paired_count": 0,
+      "closed_union_count": 50328,
+      "dual_image_count": 25164,
+      "existing_translation_orbit_histogram": {
+        "36": 1,
+        "72": 349
+      },
+      "identity_rule": "full (sector,sorted data,sorted (check,sorted kinds)) tuple",
+      "input_count": 25164,
+      "missing_by_target_sector": {
+        "Xerr": 12024,
+        "Zerr": 13140
+      },
+      "missing_dual_image_count": 25164,
+      "missing_set_generator_cases": 50328,
+      "missing_translation_orbit_histogram": {
+        "36": 1,
+        "72": 349
+      }
+    },
+    "status": "PASS"
+  },
+  "iteration192": {
+    "candidate_sha256": "8ed991cb3b291900c947d703cb740b7718f462a96fa0bff9d477b0f9db4adca2",
+    "compressed_schedule_sha256": "823e67fa6250eaccb5e81f8e7f71457ba6b11d30447afd3a37f3358a9dfca9a1",
+    "direct": {
+      "Xerr": {
+        "all_clauses_checked": 23080,
+        "all_clauses_satisfied": true,
+        "all_columns_reconstructed": 360,
+        "assignment_sha256": "f4fe637812a863729b71dcd0fd6d7e6fcecf2c6d8733e74c8789d22c54e8cc46",
+        "canonical_net_support": [
+          24,
+          33,
+          47,
+          50,
+          59,
+          65,
+          81,
+          108,
+          109,
+          113,
+          115,
+          131,
+          136,
+          137
+        ],
+        "canonical_nonstabilizer": true,
+        "canonical_physical_parities_equal": true,
+        "canonical_syndrome": [],
+        "clauses": 23080,
+        "cnf_sha256": "573618ce20eb0600b9b2bfebf9e7d25f3efcc9398d3fcfe40a9db47d9f1cbed3",
+        "fault_count": 10,
+        "logical_parities": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0
+        ],
+        "logical_rows_reconstructed": 12,
+        "negative_control": {
+          "failed_clause_count": 5,
+          "first_failed_clause": 5517,
+          "flip_selected_var": 60
+        },
+        "physical_net_support": [
+          24,
+          33,
+          47,
+          50,
+          59,
+          65,
+          81,
+          108,
+          109,
+          113,
+          115,
+          131,
+          136,
+          137
+        ],
+        "physical_nonstabilizer": true,
+        "physical_syndrome": [],
+        "selected_indices": [
+          59,
+          65,
+          81,
+          108,
+          109,
+          115,
+          136,
+          232,
+          242,
+          305
+        ],
+        "selected_names": [
+          "D:59",
+          "D:65",
+          "D:81",
+          "D:108",
+          "D:109",
+          "D:115",
+          "D:136",
+          "R:29:1",
+          "R:32:2",
+          "R:53:2"
+        ],
+        "status": "SATISFIABLE",
+        "syndrome_rows_reconstructed": 72,
+        "variables": 6125
+      },
+      "Zerr": {
+        "all_clauses_checked": 23092,
+        "all_clauses_satisfied": true,
+        "all_columns_reconstructed": 360,
+        "assignment_sha256": "29dbef9c8080b457daba345b32ade833e0e876af48f737d859a933f50083d15f",
+        "canonical_net_support": [
+          55,
+          63,
+          67,
+          68,
+          69,
+          121,
+          127,
+          129,
+          134,
+          136,
+          140,
+          143
+        ],
+        "canonical_nonstabilizer": true,
+        "canonical_physical_parities_equal": true,
+        "canonical_syndrome": [],
+        "clauses": 23092,
+        "cnf_sha256": "a7c85cedafb290a68e9f59f1a14debef49bb46b4836545eb8d1a90e203796d57",
+        "fault_count": 10,
+        "logical_parities": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "logical_rows_reconstructed": 12,
+        "negative_control": {
+          "failed_clause_count": 5,
+          "first_failed_clause": 3618,
+          "flip_selected_var": 56
+        },
+        "physical_net_support": [
+          55,
+          63,
+          67,
+          68,
+          69,
+          121,
+          127,
+          129,
+          134,
+          136,
+          140,
+          143
+        ],
+        "physical_nonstabilizer": true,
+        "physical_syndrome": [],
+        "selected_indices": [
+          55,
+          68,
+          121,
+          127,
+          129,
+          134,
+          136,
+          143,
+          155,
+          356
+        ],
+        "selected_names": [
+          "D:55",
+          "D:68",
+          "D:121",
+          "D:127",
+          "D:129",
+          "D:134",
+          "D:136",
+          "D:143",
+          "R:3:2",
+          "R:70:2"
+        ],
+        "status": "SATISFIABLE",
+        "syndrome_rows_reconstructed": 72,
+        "variables": 6128
+      }
+    },
+    "orbit_lex_controls": {
+      "negative_controls": {
+        "corrupt_assignment_mutation": {
+          "first_failing_clause": 1,
+          "operation": "flip variable 1",
+          "rejected": true
+        },
+        "missing_root_control": {
+          "other_70_nonidentity_roots_hold": true,
+          "second_orbit_schedule_sha256": "711061155449485750dcd894a9eca6c004dfc0d6ac2984cac86034b9a91a2b5f",
+          "sole_failed_root_delta": [
+            9,
+            1
+          ]
+        },
+        "reversed_lex_direction_rejected": true,
+        "truncated_assignment": {
+          "missing_variable": 2488851,
+          "operation": "omit the last retained assignment literal",
+          "rejected_by_complete_domain_check": true
+        }
+      },
+      "orbit": {
+        "candidate_compressed_schedule_sha256": "823e67fa6250eaccb5e81f8e7f71457ba6b11d30447afd3a37f3358a9dfca9a1",
+        "candidate_is_lexicographically_least": true,
+        "candidate_raw_schedule_sha256": "fe9d5c3acd9228ebe30c6a5fd2703e4b32d6193c539b4af4dce03ab29f1dff9a",
+        "distinct_schedule_vectors": 72,
+        "group_order": 72,
+        "orbit_stabilizer_product": 72,
+        "stabilizer_deltas": [
+          [
+            0,
+            0
+          ]
+        ],
+        "stabilizer_size": 1,
+        "strict_nonidentity_roots": 71
+      },
+      "positive_model": {
+        "all_clauses_satisfied": true,
+        "assigned_variables": 2488851,
+        "checked_clauses": 11906732,
+        "clauses": 11906732,
+        "primary_time_bits_checked": 8640,
+        "recurrence_values_checked": 613440,
+        "root_values_checked": 71,
+        "variables": 2488851
+      },
+      "schema": "circdist-gross-round102-sat-orbit-controls-v1",
+      "status": "PASS"
+    },
+    "quotient": {
+      "all_clauses_satisfied": true,
+      "all_variables_assigned_exactly_once": true,
+      "assignment_sha256": "427b53e9ea673d56824d65c73bcc70a53587a7be9ec3b7b805cdca455e3e3a3b",
+      "clauses": 11906732,
+      "formula_sha256": "00baea753d8ef3d47bbd1e3ca149d39bd2a36ef6475e957633d00770c0071e71",
+      "status": "SATISFIABLE",
+      "variables": 2488851
+    },
+    "repair_entered": false,
+    "repair_reason": "forbidden because both complete unrestricted direct sectors are independently checked SAT",
+    "schedule": {
+      "conflicts": [],
+      "edge_count": 864,
+      "errors": [],
+      "global_interleaved": true,
+      "max_time": 499,
+      "mc_violations": [],
+      "min_time": 0,
+      "ok": true,
+      "overlap_interleaved_pairs": 103,
+      "overlaps": 648,
+      "used_layers": 500,
+      "whole_check_interleaved_pairs": 374
+    }
+  },
+  "mandatory_orbits": {
+    "css_dual": {
+      "all_dual_mechanisms_weight_at_most_10_zero_syndrome_nonstabilizer": true,
+      "all_dual_schedules_legal": true,
+      "all_four_orbits_collision_free_against_future_base": true,
+      "all_four_orbits_free_under_Z12xZ6": true,
+      "all_four_orbits_pairwise_disjoint": true,
+      "mandatory_orbit_count": 4,
+      "mandatory_selector_count": 288
+    },
+    "translation_Xerr": "PASS",
+    "translation_Zerr": "PASS"
+  },
+  "package": "circdist/artifacts/circdist_gross_iter192_invariant_quotient_continuation_round114_20260902",
+  "package_seal": {
+    "inventory": "FILE_INVENTORY.jsonl",
+    "payload": "PAYLOAD_SHA256SUMS.txt",
+    "root": "SHA256SUMS.txt",
+    "status": "SELF_AUTHENTICATING_MANIFESTS_TO_BE_WRITTEN_AFTER_THIS_RESULT"
+  },
+  "preseal_replay_binding": {
+    "all_children_reaped": true,
+    "bytes": 44642,
+    "child_count": 16,
+    "nested_proof_control_children": 6,
+    "path": "verification/preseal_replay.json",
+    "sha256": "d368de3a64114d8052babe493a22ecf7269f5376727f477eda35b532e3a7ac3d",
+    "status": "PASS",
+    "strict_serial": true
+  },
+  "proof_disposition": {
+    "actual_Gross_UNSAT": false,
+    "drat_or_lrat_claim_for_iteration192": false,
+    "empty_clause_lines": 0,
+    "proof_controls_scope": "tool-chain controls only; no Gross UNSAT occurred",
+    "proof_output_enabled_from_all_solver_launches": true,
+    "sat_stream_count": 3,
+    "sat_streams_are_search_traces_not_certificates": true,
+    "sat_trace_gzip_bytes": 2451678853,
+    "sat_trace_raw_bytes": 13776739136,
+    "valid_corrupt_truncated_toolchain_controls": "PASS"
+  },
+  "proposed_canonical_yaml": {
+    "identical_to_bound_canonical": true,
+    "installed": false,
+    "level": "CONJECTURED",
+    "path": "PROPOSED_CIRCDIST.gross.yaml",
+    "residual": [
+      11,
+      12
+    ],
+    "sha256": "25d39fbd9add4f5c0d9b7fea76ab2ede1f0c5c3711cd7a152ca98bbde351a834"
+  },
+  "repository_gates": {
+    "all_children_reaped": true,
+    "check_count": 8,
+    "evidence_closure": "preinstall canonical gates pass; post-install unlinked-package diagnostics are expected until independent review links this proposer package",
+    "path": "verification/repository_validators/summary.json",
+    "sha256": "41ae2c6b44a46b52388a33b04da9af72da8b69a8b9e2a81eba5bcf4be5c2eed2",
+    "status": "PASS",
+    "strict_serial": true
+  },
+  "root_branch_A_closed": false,
+  "root_branch_B_closed": false,
+  "root_closed": false,
+  "schema": "circdist-gross-round114-result-v1",
+  "status": "PASS"
+}

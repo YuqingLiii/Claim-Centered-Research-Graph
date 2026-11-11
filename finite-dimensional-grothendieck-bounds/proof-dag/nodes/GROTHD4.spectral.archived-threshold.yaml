@@ -1,0 +1,37 @@
+id: GROTHD4.spectral.archived-threshold
+role: constraint
+aliases:
+- D4-ARCHIVED-CG-THRESHOLD
+claim: >-
+  At support split 217+83, the exact CG closure threshold satisfies
+  0.000628<r_crit<0.000629. The archived equality witness has
+  w_9/(alpha beta)>r_crit, and its resulting block-weighted leakage penalty
+  strictly exceeds 7114830222845879.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    A complete author-side exact algebraic-number calculation derives the
+    threshold and verifies that the archived witness clears it, with an
+    annotated margin of about 3.06e12. The checker replay passes. This closes
+    the quantitative benchmark at the witness only; it does not force the
+    threshold on arbitrary competitors and awaits independent review.
+  basis:
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-near-extremizer-stability-20260830.md
+      kind: text
+      locator: Sections 1--2
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_near_extremizer_stability_checker.py
+      kind: code
+frontier:
+  independent-review:
+    task: Independently audit the exact threshold formula and witness comparison.
+    kind: review
+    since: '2026-08-31'
+events:
+  registered-2026-08-31:
+    date: '2026-08-31'
+    type: created
+    summary: Registered the exact archived CG threshold benchmark.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-near-extremizer-stability-20260830.md
+      kind: text

@@ -1,0 +1,93 @@
+id: HEXT.su3-adjacent-elementary-faces-bell-no-go
+role: obstruction
+aliases:
+- two-pieri-faces-no-go
+- adjacent-hexagons-no-go
+claim: >-
+  For every integer p>=0 and q>=2, every SU(3)-covariant qutrit channel supported on the union of
+  the elementary Pieri faces based at (p,q) and (p+1,q+1) satisfies
+  2 barS_min(Phi)<=2S_min(Phi)<S((Phi tensor barPhi)(Omega)) for all edge weights and phases.
+routes:
+  two-retained-block-route:
+    premises:
+    - HEXT.su3-all-elementary-cycles-bell-no-go
+    implication: >-
+      Separate convexity eliminates the shared input and two original-face outer weights at 12
+      endpoint patterns. A uniform four-variable entropy certificate for the two retained outer
+      blocks would exclude the complete adjacent-face union.
+    proof:
+      sketch: >-
+        Compactify p and q, reconstruct the 12 rational Gram branches in a common Bernstein form,
+        and compare their maximum against the smaller of two explicit highest-weight side
+        entropies over adaptive boxes in p,q,u,v.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_ADJACENT_ELEMENTARY_FACES_BELL_NO_GO_20260830.md
+        kind: text
+        locator: "## 1. Graph and exact convex reduction through ## 4. Certified side entropies and result"
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/certify_su3_adjacent_elementary_faces.py
+        kind: code
+        locator: exact 12-branch rational reconstruction and adaptive four-dimensional certificate
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_ADJACENT_ELEMENTARY_FACES_REDUCTION_20260830.md
+        kind: text
+        locator: "## Exact convex reduction"
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The continuous four-variable inequality now has a reproducible exact rational
+        Bernstein/logarithm certificate, but it has not received independent adversarial review.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - This node proves only the middle-edge orientation; the two other orientations are proved in
+    separate sibling nodes rather than by an assumed channel-level symmetry.
+  - The evidence is proposer-side and has not received independent review.
+  summary: >-
+    The canonical adjacent-face family is closed for all labels and weights by an exact 1,098-leaf
+    compact rational certificate; independent review remains pending.
+  basis:
+    routes:
+    - two-retained-block-route
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_ADJACENT_ELEMENTARY_FACES_REDUCTION_20260830.md
+      kind: text
+      locator: "## Exact convex reduction"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_ADJACENT_ELEMENTARY_FACES_BELL_NO_GO_20260830.md
+      kind: text
+      locator: "## 4. Certified side entropies and result"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_ADJACENT_ELEMENTARY_FACES_CERTIFICATE_20260830.txt
+      kind: text
+      locator: 12 branches and 1098 adaptive compact boxes certified
+    - path: channel-additivity-violations/tools/holevo-extensive-violation/scan_su3_adjacent_elementary_faces.py
+      kind: text
+      locator: reproducible 12-pattern compact formula scan using numpy
+    runs:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_ADJACENT_ELEMENTARY_FACES_SCAN_20260830.txt
+      kind: run
+      result: >-
+        The 31-by-31 compact label grid and 101-by-101 retained-weight grid found no candidate;
+        the smallest Bell-minus-twice-side margin was about 0.149904828738 bit.
+events:
+  adjacent-face-route-registered:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Registered the first two-face branching graph, reduced three input blocks to 12 exact convex
+      endpoints, and recorded a four-variable formula scan with a positive sampled no-go margin.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_ADJACENT_ELEMENTARY_FACES_REDUCTION_20260830.md
+      kind: text
+    - path: channel-additivity-violations/tools/holevo-extensive-violation/scan_su3_adjacent_elementary_faces.py
+      kind: code
+  canonical-adjacent-face-certified:
+    date: '2026-08-30'
+    type: level-change
+    from: NUMERICAL
+    to: CONJECTURED
+    summary: >-
+      Upgraded the canonical adjacent-face scan to an exact 12-branch, 1,098-leaf rational
+      Bernstein/logarithm certificate over all labels and weights.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_ADJACENT_ELEMENTARY_FACES_BELL_NO_GO_20260830.md
+      kind: text
+    - path: channel-additivity-violations/tools/holevo-extensive-violation/certify_su3_adjacent_elementary_faces.py
+      kind: code

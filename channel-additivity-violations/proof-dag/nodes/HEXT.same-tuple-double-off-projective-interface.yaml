@@ -1,0 +1,53 @@
+id: HEXT.same-tuple-double-off-projective-interface
+role: proof
+aliases:
+- repeated-tuple-double-off-projective-gain
+claim: >-
+  On the uniform one-leg trace-zero coefficient event, every coefficient E supported only on
+  entries changing both coefficient labels satisfies
+  ||M_U(E)||_infinity<=((A-1)/m) pi_X(E), where pi_X is the Hilbert projective norm over the two
+  zero-diagonal coefficient spaces.
+assessment:
+  level: PROVED
+  caveats:
+  - The uniform one-leg trace-zero event and the projective-norm convention are load-bearing.
+  - The projective norm may exceed the Hilbert--Schmidt norm by a rank-dependent factor.
+  summary: >-
+    Factorization on double-off simple tensors uses the trace-zero one-leg gain twice, producing
+    exactly the relative slack A-1 before projective completion.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SAME_TUPLE_POSITIVE_DOUBLE_OFF_NEIGHBORHOODS_20260830.md
+      kind: text
+      locator: "## 3. Exact two-use gain on the double-off sector"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_DOUBLE_OFF_WERNER_WEINGARTEN_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STDW-IR-01"
+      scope: >-
+        Independently verified the double-off projection, simple-tensor factorization, complex
+        trace-zero use and exact projective-norm constant.
+      reviewed_hash: sha256:7e150bfef0b4882e9c2858ce3dcf2523558be9a7122d7b08f5568cdb365ca403
+frontier:
+  independent-double-off-interface-review:
+    task: Verify support decomposition, complex trace-zero factorization and projective completion.
+    kind: review
+    since: 2026-08-30
+events:
+  double-off-interface-independent-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Independent review verified the conditional double-off projective interface.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_DOUBLE_OFF_WERNER_WEINGARTEN_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STDW-IR-01"
+  double-off-projective-interface-created:
+    date: '2026-08-30'
+    type: created
+    summary: Registered the proposer-side two-use trace-zero gain on the double-off sector.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SAME_TUPLE_POSITIVE_DOUBLE_OFF_NEIGHBORHOODS_20260830.md
+      kind: text

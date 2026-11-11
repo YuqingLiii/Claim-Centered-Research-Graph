@@ -1,0 +1,83 @@
+{
+  "all_children_reaped": true,
+  "child_count": 4,
+  "children": [
+    {
+      "command": [
+        "/private/tmp/circdist-r72-dispatcher-venv/bin/python",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round96_20260831/source/check_result.py",
+        "--root",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round96_20260831"
+      ],
+      "detached": false,
+      "ended_unix": 1788156305.1812758,
+      "name": "result",
+      "reaped": true,
+      "returncode": 0,
+      "started_unix": 1788156304.65841,
+      "stderr": "",
+      "stdout": "ROUND96_RESULT_CROSSCHECK_PASS 12 280\n",
+      "wall_seconds": 0.522866
+    },
+    {
+      "command": [
+        "/private/tmp/circdist-r72-dispatcher-venv/bin/python",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round96_20260831/source/check_process_ledger.py",
+        "--root",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round96_20260831"
+      ],
+      "detached": false,
+      "ended_unix": 1788156305.201888,
+      "name": "process",
+      "reaped": true,
+      "returncode": 0,
+      "started_unix": 1788156305.1813178,
+      "stderr": "",
+      "stdout": "ROUND96_PROCESS_LEDGER_PASS 204 36 2\n",
+      "wall_seconds": 0.020571
+    },
+    {
+      "command": [
+        "/private/tmp/circdist-r72-dispatcher-venv/bin/python",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round96_20260831/source/check_protected.py",
+        "--package",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round96_20260831",
+        "--repository",
+        "<repo>"
+      ],
+      "detached": false,
+      "ended_unix": 1788156305.5347881,
+      "name": "protected",
+      "reaped": true,
+      "returncode": 0,
+      "started_unix": 1788156305.201926,
+      "stderr": "",
+      "stdout": "ROUND96_PROTECTED_BINDINGS_PASS 8 8\n",
+      "wall_seconds": 0.332862
+    },
+    {
+      "command": [
+        "/private/tmp/circdist-r72-dispatcher-venv/bin/python",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round96_20260831/source/check_proof_controls.py",
+        "--root",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round96_20260831",
+        "--output",
+        "<tmpdir>/T/circdist-r96-final-preseal.9lhs4joc/proof.json"
+      ],
+      "detached": false,
+      "ended_unix": 1788156306.0169752,
+      "name": "proof_controls",
+      "reaped": true,
+      "returncode": 0,
+      "started_unix": 1788156305.534821,
+      "stderr": "",
+      "stdout": "{\"corrupt_drat_rejected\": true, \"corrupt_lrat_rejected\": true, \"fixture_cnf_sha256\": \"b8d28f511bbc3bc5d67e0fcda748b6ad85d5e543c64bc91d09f34ecb10805efd\", \"generated_lrat_accepted\": true, \"generated_lrat_sha256\": \"cf32dfff36b24ba36c3504765f29ecf3d7a8abaa59956ade4d24a4062caa6431\", \"schema\": \"circdist-round88-proof-controls-v1\", \"scope\": \"tool-chain controls only; no Gross UNSAT occurred\", \"status\": \"PASS\", \"truncated_drat_rejected\": true, \"truncated_lrat_rejected\": true, \"valid_drat_accepted\": true, \"valid_drat_sha256\": \"b6c2e560bb08c84d583ca94799951a21c8cae5de35d6d04d77bc4842e9c18ecd\"}\n",
+      "wall_seconds": 0.482154
+    }
+  ],
+  "detached_processes": 0,
+  "parent_pid": 70180,
+  "pid": 83671,
+  "schema": "circdist-round96-final-preseal-checks-v1",
+  "status": "PASS"
+}

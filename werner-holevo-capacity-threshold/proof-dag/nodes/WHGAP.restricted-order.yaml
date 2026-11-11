@@ -1,0 +1,31 @@
+id: WHGAP.restricted-order
+role: proof
+aliases:
+- restricted-order-program
+claim: >-
+  Construct a partial order weaker than complete relative-entropy domination that controls only the
+  purification pairs used in the coherent-information proof, tensorizes along the required channel
+  products, and holds for Lambda_x on some or all of [2/5,1/2).
+routes:
+  pure-anchor-candidate:
+    premises:
+    - WHGAP.pure-anchor-order
+    implication: >-
+      If the pure-first-argument domination class holds and tensorizes on the surviving strip, it is
+      a concrete restricted order satisfying the program.
+    assessment:
+      level: OPEN
+      summary: The candidate has a partially mapped failure boundary and no tensorization theorem.
+assessment:
+  level: OPEN
+  summary: >-
+    The design memo identifies necessary closure and calibration properties. No candidate currently
+    satisfies both validity and tensorization throughout the target strip.
+  basis:
+    routes:
+    - pure-anchor-candidate
+    evidence:
+    - path: werner-holevo-capacity-threshold/artifacts/legacy-record/nodes/WHGAP.restricted-order.md
+      kind: text
+      locator: "## Current status"
+

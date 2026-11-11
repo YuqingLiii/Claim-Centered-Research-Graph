@@ -1,0 +1,62 @@
+id: GROTHORB.d3-envelope-method
+role: tool
+claim: For A_3 the 12 by 12 full D_3 root projection, exhaustive enumeration of all Bob sign vectors t and
+  the rational upper envelope of sum_i |(A_3 t)_i-lambda*t_i| computes beta_cl(A_3-lambda I) exactly for every
+  lambda in [0,1/2], with a matching Alice sign vector on each affine piece.
+assessment:
+  level: PROVED
+  summary: Complete scoped argument and dependencies passed a separate author-independent same-model review.
+    Non-fresh-context limitation is disclosed; no novelty or formal-verification claim.
+  basis:
+    evidence:
+    - path: group-orbit-bell-matrices/artifacts/d3-classical-envelope-20260907.md
+      kind: text
+      locator: D3-1 through D3-5
+    - path: group-orbit-bell-matrices/artifacts/classical-root-literature-20260907.md
+      kind: text
+      locator: L1 through L4
+    - path: group-orbit-bell-matrices/artifacts/classical-exploration-summary-20260907.md
+      kind: text
+      locator: STATE and NEXT
+    - path: group-orbit-bell-matrices/tools/check_d3_classical_envelope.py
+      kind: text
+    - path: group-orbit-bell-matrices/tools/check_d3_envelope_review.py
+      kind: text
+    - path: group-orbit-bell-matrices/artifacts/d3-classical-envelope-certificate-20260907.json
+      kind: text
+    reviews:
+    - path: group-orbit-bell-matrices/reviews/d3-envelope-review-20260907.md
+      kind: review
+      locator: F1
+      scope: Inspected complete finite enumeration, absolute-value kinks, affine crossings, sign coverage,
+        endpoint handling, and exact implementation.
+      reviewed_hash: sha256:05cef7880b04166520d3a3ec4e6130492c7d64ff3057a987dc5529b1bd32dd8a
+    runs:
+    - path: group-orbit-bell-matrices/artifacts/d3-classical-envelope-exact-check-20260907.txt
+      kind: run
+      result: Exact scoped replay and mathematical-review provenance; finite runs do not prove all-r claims
+        by themselves.
+    - path: group-orbit-bell-matrices/artifacts/d3-envelope-review-rerun-20260907.txt
+      kind: run
+      result: Exact scoped replay and mathematical-review provenance; finite runs do not prove all-r claims
+        by themselves.
+events:
+  registered-20260907:
+    date: '2026-09-07'
+    type: created
+    summary: Registered the exact envelope method with full-sign coverage requirement.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/classical-family-registration-20260907.md
+      kind: text
+      locator: C3
+  independent-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: OPEN
+    to: PROVED
+    summary: Registered claim received an author proof and a separately assigned exact-statement adversarial
+      review; only then promoted.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/d3-envelope-review-20260907.md
+      kind: review
+      locator: F1

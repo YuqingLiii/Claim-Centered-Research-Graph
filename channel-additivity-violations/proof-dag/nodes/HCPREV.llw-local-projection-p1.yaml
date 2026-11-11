@@ -1,0 +1,57 @@
+id: HCPREV.llw-local-projection-p1
+role: proof
+aliases:
+- llw-almost-sure-eventual
+claim: >-
+  At p=1 there is an integer k_0 such that, for every fixed k>=k_0, some fixed
+  t in (k^(-2),1) has the following property. If P_n is a Haar projection of rank d_n in
+  C^n tensor C^k with d_n/(nk) tending to t, Phi_n:M_n -> M_k is the channel obtained by
+  locally normalizing P_n into a trace-preserving Choi matrix, and bar(Phi_n) is its conjugate,
+  then almost surely
+  S_min(Phi_n)+S_min(bar(Phi_n))-S_min(Phi_n tensor bar(Phi_n))>0 for every sufficiently
+  large n, witnessed by the maximally entangled input on C^n tensor C^n. Separately, the
+  high-precision numerical optimization of this ensemble's Bell criterion reports
+  k_high(1)=182; 182 is neither the analytic k_0 nor a universal threshold over all channels.
+assumptions:
+  llw-local-projection-bell-theorem:
+    kind: external-theorem
+    statement: >-
+      For fixed k>=2, t in (k^(-2),1) and 0<p<infinity, Proposition 5.1 gives almost-sure
+      eventual conjugate/Bell nonadditivity whenever its strict criterion holds. At p=1,
+      Lemma 5.2 and Proposition 5.3 analytically provide such a t for all sufficiently large k.
+      Separately, the finite-output-dimension numerical optimization defines k_high(p) only for
+      this ensemble and Bell witness and reports k_high(1)=182.
+    source:
+      path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/primary-sources/llw-2607.15210.pdf
+      kind: pdf
+      locator: Locally normalized projection model Eq. (9), PDF pp. 3--4; Corollary 4.2 and Proposition 5.1, PDF p. 13; Section 5 high-p threshold argument, Proposition 5.3, and finite-output-dimension numerics, PDF p. 14
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The analytic theorem gives a sufficiently-large-k threshold, not the exact integer 182.
+  - The value 182 is numerical and belongs only to this locally normalized projection/Bell criterion.
+  - This is a p=1 MOE statement and does not give same-law Holevo prevalence.
+  summary: >-
+    The LLW projection law, local normalization, dimensions, conjugate/Bell witness, almost-sure
+    eventual quantifier and analytic-versus-numerical threshold split are frozen for review.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/NAMED_RANDOM_MODEL_ATOMIC_ASSEMBLY_20260831.md
+      kind: text
+      locator: "## 6. Leung--Lovitz--Wu atom: analytic large-k theorem versus numerical 182"
+frontier:
+  independent-source-review:
+    task: >-
+      Independently check the exact claim and LLW source interface, including the analytic/numerical split.
+    kind: review
+    since: 2026-08-31
+events:
+  llw-local-projection-atom-created:
+    date: '2026-08-31'
+    type: created
+    summary: >-
+      Registered the LLW p=1 locally normalized projection theorem and its separate numerical 182 statement as one scoped named-model atom.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/NAMED_RANDOM_MODEL_ATOMIC_ASSEMBLY_20260831.md
+      kind: text
+      locator: "## 6. Leung--Lovitz--Wu atom: analytic large-k theorem versus numerical 182"

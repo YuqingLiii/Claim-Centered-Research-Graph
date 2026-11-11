@@ -1,0 +1,136 @@
+{
+  "evidence_closure_interpretation": "verification/evidence_closure_interpretation.json",
+  "rows": [
+    {
+      "name": "package_replay_preseal",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "env",
+        "CIRCDIST_PYTHON=/private/tmp/circdist-r72-dispatcher-venv/bin/python",
+        "<repo>/circdist/artifacts/circdist_gross_efssc_round86_20260830/replay.sh"
+      ],
+      "name": "round86_replay",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_seconds": 600,
+      "wall_seconds": 64.329269
+    },
+    {
+      "command": [
+        "python3",
+        "tools/proof_dag_check.py",
+        "--problem",
+        "circdist"
+      ],
+      "name": "proof_dag_circdist",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_seconds": 120,
+      "wall_seconds": 0.221579
+    },
+    {
+      "command": [
+        "python3",
+        "tools/proof_dag_check.py",
+        "--problem",
+        "circdist",
+        "--previous-state",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round88_20260830/bindings/initial_state"
+      ],
+      "name": "previous_state",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_seconds": 120,
+      "wall_seconds": 0.50988
+    },
+    {
+      "command": [
+        "python3",
+        "tools/check_circdist_migration.py"
+      ],
+      "name": "migration",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_seconds": 120,
+      "wall_seconds": 0.884259
+    },
+    {
+      "command": [
+        "python3",
+        "tools/test_release_contracts.py"
+      ],
+      "name": "release_contracts",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_seconds": 120,
+      "wall_seconds": 0.175868
+    },
+    {
+      "command": [
+        "python3",
+        "tools/test_dag_contracts.py"
+      ],
+      "name": "dag_contracts",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_seconds": 120,
+      "wall_seconds": 0.374298
+    },
+    {
+      "command": [
+        "python3",
+        "tools/lean_dag_check.py",
+        "--selftest"
+      ],
+      "name": "lean_selftest",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_seconds": 120,
+      "wall_seconds": 0.150072
+    },
+    {
+      "command": [
+        "python3",
+        "tools/evidence_closure_check.py",
+        "--problem",
+        "circdist"
+      ],
+      "name": "evidence_closure",
+      "returncode": 1,
+      "timed_out": false,
+      "timeout_seconds": 120,
+      "wall_seconds": 0.402627
+    },
+    {
+      "command": [
+        "python3",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round88_20260830/source/duplicate_yaml_scan.py",
+        "--root",
+        "<repo>",
+        "--output",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round88_20260830/verification/duplicate_yaml_scan.json"
+      ],
+      "name": "duplicate_yaml",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_seconds": 300,
+      "wall_seconds": 6.109198
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "name": "git_diff_check",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_seconds": 120,
+      "wall_seconds": 0.02012
+    }
+  ],
+  "schema": "round88-validation-summary-v1",
+  "status": "PASS-WITH-EXPECTED-UNLINKED-EVIDENCE"
+}

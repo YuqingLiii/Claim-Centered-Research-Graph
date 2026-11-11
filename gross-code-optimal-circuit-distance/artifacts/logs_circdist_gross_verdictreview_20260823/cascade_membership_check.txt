@@ -1,0 +1,27 @@
+REVIEWER CHECK: is the certified candidate actually IN the paper's own cascade survivor set?
+(45 -> 4 screening applied per colour, then the pair rules; if the candidate were NOT a
+ survivor, the campaign would have certified an object outside the family it claims.)
+
+--- phi=1a+1b (= a+b) ---
+  [Z] stage1 per-colour [45, 45, 45] -> 91125 triples ; after stage 2 = 44
+        candidate (1, 2, 62)   in survivor set : True  | both cyclic rotations in set : True
+  [X] stage1 per-colour [45, 45, 45] -> 91125 triples ; after stage 2 = 44
+        candidate (14, 0, 2)   in survivor set : True  | both cyclic rotations in set : True
+
+--- phi=1a+2b ---
+  [Z] stage1 per-colour [45, 45, 45] -> 91125 triples ; after stage 2 = 8
+        candidate (1, 2, 62)   in survivor set : False | both cyclic rotations in set : False
+  [X] stage1 per-colour [45, 45, 45] -> 91125 triples ; after stage 2 = 8
+        candidate (14, 0, 2)   in survivor set : False | both cyclic rotations in set : False
+
+--- phi=2a+1b ---
+  [Z] stage1 per-colour [45, 45, 45] -> 91125 triples ; after stage 2 = 8
+        candidate (1, 2, 62)   in survivor set : False | both cyclic rotations in set : False
+  [X] stage1 per-colour [45, 45, 45] -> 91125 triples ; after stage 2 = 8
+        candidate (14, 0, 2)   in survivor set : False | both cyclic rotations in set : False
+
+--- phi=2a+2b ---
+  [Z] stage1 per-colour [45, 45, 45] -> 91125 triples ; after stage 2 = 44
+        candidate (1, 2, 62)   in survivor set : True  | both cyclic rotations in set : True
+  [X] stage1 per-colour [45, 45, 45] -> 91125 triples ; after stage 2 = 44
+        candidate (14, 0, 2)   in survivor set : True  | both cyclic rotations in set : True

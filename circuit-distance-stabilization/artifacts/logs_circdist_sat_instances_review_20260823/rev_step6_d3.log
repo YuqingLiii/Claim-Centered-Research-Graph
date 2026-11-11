@@ -1,0 +1,57 @@
+=== d=3  standard  piX=NW,NE,SW,SE piZ=NW,SW,NE,SE  legal=True (MC)=True
+  R=1 sector=Z  columns=300 classes=23 detectors=8  E:>2  [0.0s]
+  R=1 sector=X  columns=300 classes=23 detectors=8  E:>2  [0.0s]
+  R=2 sector=Z  columns=776 classes=109 detectors=16  E:>2  [0.0s]
+  R=2 sector=X  columns=778 classes=107 detectors=16  E:>2  [0.0s]
+  R=3 sector=Z  columns=1196 classes=221 detectors=24  E:>2  [0.0s]
+  R=3 sector=X  columns=1198 classes=219 detectors=24  E:>2  [0.0s]
+  R=4 sector=Z  columns=1616 classes=333 detectors=32  E:>2  [0.0s]
+  R=4 sector=X  columns=1618 classes=331 detectors=32  E:>2  [0.0s]
+  R=5 sector=Z  columns=2036 classes=445 detectors=40  E:>2  [0.0s]
+  R=5 sector=X  columns=2038 classes=443 detectors=40  E:>2  [0.0s]
+=== d=3  classD  piX=NW,SW,NE,SE piZ=NW,NE,SW,SE  legal=True (MC)=True
+  R=1 sector=Z  columns=304 classes=23 detectors=8  E:2  [0.0s]
+     AUDIT weight=2 distinct_locations=2 detectors_all_silent=True observable=[1]  -> undetectable=True logical=True
+        ('cnot', 0, 2, (10, 1), (1, 1))
+        ('cnot', 0, 3, (7, 15), (1, 0))
+  R=1 sector=X  columns=304 classes=23 detectors=8  E:2  [0.0s]
+     AUDIT weight=2 distinct_locations=2 detectors_all_silent=True observable=[1]  -> undetectable=True logical=True
+        ('cnot', 0, 2, (6, 15), (2, 2))
+        ('cnot', 0, 3, (11, 8), (0, 2))
+  R=1  d_R^Z=2 d_R^X=2  min-over-sectors d_R=2
+  R=2 sector=Z  columns=778 classes=97 detectors=16  E:2  [0.0s]
+     AUDIT weight=2 distinct_locations=2 detectors_all_silent=True observable=[1]  -> undetectable=True logical=True
+        ('cnot', 1, 2, (10, 1), (1, 1))
+        ('cnot', 1, 3, (7, 15), (1, 0))
+  R=2 sector=X  columns=780 classes=103 detectors=16  E:2  [0.0s]
+     AUDIT weight=2 distinct_locations=2 detectors_all_silent=True observable=[1]  -> undetectable=True logical=True
+        ('cnot', 1, 2, (6, 15), (2, 2))
+        ('cnot', 1, 3, (11, 8), (0, 2))
+  R=2  d_R^Z=2 d_R^X=2  min-over-sectors d_R=2
+  R=3 sector=Z  columns=1202 classes=197 detectors=24  E:2  [0.0s]
+     AUDIT weight=2 distinct_locations=2 detectors_all_silent=True observable=[1]  -> undetectable=True logical=True
+        ('cnot', 2, 2, (10, 1), (1, 1))
+        ('cnot', 2, 3, (7, 15), (1, 0))
+  R=3 sector=X  columns=1204 classes=205 detectors=24  E:2  [0.0s]
+     AUDIT weight=2 distinct_locations=2 detectors_all_silent=True observable=[1]  -> undetectable=True logical=True
+        ('cnot', 2, 2, (6, 15), (2, 2))
+        ('cnot', 2, 3, (11, 8), (0, 2))
+  R=3  d_R^Z=2 d_R^X=2  min-over-sectors d_R=2
+  R=4 sector=Z  columns=1626 classes=297 detectors=32  E:2  [0.0s]
+     AUDIT weight=2 distinct_locations=2 detectors_all_silent=True observable=[1]  -> undetectable=True logical=True
+        ('cnot', 3, 2, (10, 1), (1, 1))
+        ('cnot', 3, 3, (7, 15), (1, 0))
+  R=4 sector=X  columns=1628 classes=307 detectors=32  E:2  [0.0s]
+     AUDIT weight=2 distinct_locations=2 detectors_all_silent=True observable=[1]  -> undetectable=True logical=True
+        ('cnot', 3, 2, (6, 15), (2, 2))
+        ('cnot', 3, 3, (11, 8), (0, 2))
+  R=4  d_R^Z=2 d_R^X=2  min-over-sectors d_R=2
+  R=5 sector=Z  columns=2050 classes=397 detectors=40  E:2  [0.0s]
+     AUDIT weight=2 distinct_locations=2 detectors_all_silent=True observable=[1]  -> undetectable=True logical=True
+        ('cnot', 4, 2, (10, 1), (1, 1))
+        ('cnot', 4, 3, (7, 15), (1, 0))
+  R=5 sector=X  columns=2052 classes=409 detectors=40  E:2  [0.0s]
+     AUDIT weight=2 distinct_locations=2 detectors_all_silent=True observable=[1]  -> undetectable=True logical=True
+        ('cnot', 4, 2, (6, 15), (2, 2))
+        ('cnot', 4, 3, (11, 8), (0, 2))
+  R=5  d_R^Z=2 d_R^X=2  min-over-sectors d_R=2

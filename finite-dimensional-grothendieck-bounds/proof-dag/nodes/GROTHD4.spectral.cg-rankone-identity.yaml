@@ -1,0 +1,40 @@
+id: GROTHD4.spectral.cg-rankone-identity
+role: constraint
+aliases:
+- D4-CG-RANKONE-IDENTITY
+claim: >-
+  For every pure tensor z=e tensor f in E tensor F, if w_30,w_25,w_9 are
+  its squared projection norms onto the three Hadamard tensor spectral
+  blocks, then w_25-w_9=(1/4)||e||_2^2||f||_2^2. Consequently the pure-tensor
+  Hadamard constant is at least c_*=(3 gamma_1+gamma_2)/4>1/720.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    A complete author-side exact proof writes the three projectors as
+    polynomials in the tensor Gram operator and verifies all 1360 polarized
+    biquadratic coefficients over the exact number field. The checker replay
+    passes. This strengthens the unrestricted tensor lower bound by more
+    than a factor of fifteen, but awaits independent adversarial review.
+  basis:
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-cg-rankone-identity-20260830.md
+      kind: text
+      locator: Section 2
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_cg_rankone_identity_checker.py
+      kind: code
+frontier:
+  independent-review:
+    task: >-
+      Independently audit the exact tensor projectors, polarization argument,
+      1360 coefficient identities, and radical comparison c_*>1/720.
+    kind: review
+    since: '2026-08-31'
+events:
+  registered-2026-08-31:
+    date: '2026-08-31'
+    type: created
+    summary: Registered the exact author-side pure-tensor CG identity.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-cg-rankone-identity-20260830.md
+      kind: text
+      locator: Section 2

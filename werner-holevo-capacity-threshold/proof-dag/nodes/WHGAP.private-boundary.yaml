@@ -1,0 +1,23 @@
+id: WHGAP.private-boundary
+role: outcome
+aliases:
+- private-threshold
+claim: >-
+  For every x in (0,1/2), P(Lambda_x) > 0, with the explicit two-point ensemble lower bound in the
+  legacy proof; together with zero capacity on [1/2,1), the private-capacity threshold is x=1/2 on
+  the open endpoint convention.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The exact x=1 endpoint depends on the separately cited endpoint result and is not included here.
+  summary: >-
+    An explicit closed-form positive lower bound and old independent review are preserved, but the
+    exact migrated claim has not yet received a new hash-bound review.
+  basis:
+    evidence:
+    - path: werner-holevo-capacity-threshold/artifacts/PRIMARY_SOURCE_AUDIT_20260829.md
+      kind: text
+      locator: "## What the external papers prove for this family"
+    - path: werner-holevo-capacity-threshold/artifacts/legacy-record/nodes/WHGAP.private-boundary.md
+      kind: text
+      locator: "## Claim"

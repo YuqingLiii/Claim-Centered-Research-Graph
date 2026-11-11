@@ -1,0 +1,87 @@
+id: HEXT.unbounded-family-self-leakage
+role: proof
+aliases:
+- large-gap-leakage-gate
+claim: >-
+  For the finite-dimensional product-Haar blocks L_J and their conjugates in
+  HEXT.finite-dimensional-unbounded-gap, prove that the sum of the two absolute self-regularization
+  losses is o(g_J), where g_J is their one-shot MOE pair gap; a uniform O(1) bound would suffice.
+assessment:
+  level: OPEN
+  caveats:
+  - Montanaro's weak-multiplicativity theorem is ensemble-specific and does not cover these product-Haar blocks.
+  - >-
+    Even a fictitious application of Montanaro's rate gives only about half the needed side entropy,
+    and its deterministic PPT relaxation has the exact floor ||P_J^Gamma||_infty>=m^(-J/2).
+  summary: >-
+    The exact bootstrap inequality is proved locally, but no all-tensor-power bound is known for a
+    fixed successful finite product-Haar block. Repeating the same sampled unitaries is not the
+    independent-leg model covered by Bordenave--Collins Theorem 9.2. Moreover a new explicit
+    matrix-amplification witness rules out the stronger shortcut based on small complete distortion
+    of one fixed finite unitary tuple. A post-2024 source audit also shows that the
+    quasi-exponential-representation strong-freeness theorem has the wrong order of limits and
+    controls only a diagonal representation window. Physical-output-specific control remains
+    possible. A strictly narrower alternative is now registered separately: physical-output
+    self-purity multiplicativity for one fixed successful block would suffice without proving this
+    stronger o(g_J) claim.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/TENSOR_COPY_LEAKAGE_PROOF_20260829.md
+      kind: text
+      locator: "## Large-gap versus absolute self-leakage bootstrap"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/MONTANARO_GATE_2026-08-29.md
+      kind: text
+      locator: "## Gate verdict"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FINITE_UNITARY_CB_DISTORTION_OBSTRUCTION_20260829.md
+      kind: text
+      locator: "## Scope limit"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FINITE_REGULARIZED_MOE_LITERATURE_GATE_20260830.md
+      kind: text
+      locator: "## Consequence for the current proof"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FINITE_SUBSPACE_SPATIALIZATION_GATE_20260830.md
+      kind: text
+      locator: "## Exact remaining requirement"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/TEMPERLEY_LIEB_REGULARIZATION_GATE_20260830.md
+      kind: text
+      locator: "## Gate verdict"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FIXED_DIMENSION_CONJUGATE_COLLISION_OBSTRUCTION_20260830.md
+      kind: text
+      locator: "## 5. Conflict with the side rate required by the unbounded-gap proof"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/IID_LAYER_REGULARIZATION_UPPER_BOUND_20260830.md
+      kind: text
+      locator: "## Removal of the iid assumption"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FIXED_DIMENSION_HETEROGENEOUS_SELECTION_THEOREM_20260830.md
+      kind: text
+      locator: "## Consequence for the product-Haar route"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FULL_SIZE_SELF_LEAKAGE_PARALLEL_ANALYSIS_20260830.md
+      kind: text
+      locator: "## 9. Failure ledger and status boundary"
+frontier:
+  repeated-tuple-control:
+    task: >-
+      Bound all tensor powers of one fixed successful product-Haar block, explicitly accounting for
+      correlations caused by reusing the same unitary tuples on every copy.
+    kind: gate
+    since: 2026-08-29
+  fixed-dimensional-selection:
+    task: >-
+      Decide the selected fixed-tuple regularized defect directly; arbitrary heterogeneous
+      fixed-dimensional layer selection is now known to be equivalent to this Bell-certified target.
+    kind: gate
+    since: 2026-08-30
+  compare-physical-purity-bypass:
+    task: >-
+      Determine whether the separate physical-output purity gate can be proved directly; it is a
+      sufficient bypass but does not by itself establish this node's stronger o(g_J) statement.
+    kind: task
+    since: 2026-08-30
+events:
+  large-gap-bootstrap-gate-created:
+    date: '2026-08-29'
+    type: created
+    summary: >-
+      Registered the precise all-tensor-power self-leakage estimate that would let an unbounded
+      one-shot gap overwhelm regularization losses and yield a fixed finite extensive pair.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/TENSOR_COPY_LEAKAGE_PROOF_20260829.md
+      kind: text

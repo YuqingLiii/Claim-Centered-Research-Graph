@@ -1,0 +1,106 @@
+id: HEXT.f3-weyl-selected-line-majorization
+role: constraint
+aliases:
+- qutrit-weyl-full-selected-line-majorization
+- f3-autocorrelation-line-product-majorization
+claim: >-
+  For every probability distribution p on F_3^2, select a direction containing a maximum-mass
+  affine line and let r be its three parallel-line masses. Then p*tilde(p) is majorized by r tensor
+  r at all nine cumulative indices.
+routes:
+  exact-odd-index-kkt-route:
+    premises:
+    - HEXT.f3-weyl-majorization-first-three
+    implication: >-
+      The paired nonzero autocorrelation values reduce full majorization to odd cumulative indices.
+      The premise gives k=1,3. Complete exact KKT-face enumeration proves a stronger k=5 bound and
+      the k=7 bound; sortedness of the product distribution then interpolates k=2,4,6,8.
+    proof:
+      sketch: >-
+        Normalize a selected maximum affine line to row zero with row masses a>=b>=c. Enumerate all
+        independent active faces of the resulting eight-dimensional, twenty-inequality rational
+        polytope. Solve the exact KKT systems for six stronger k=5 quadratics and four k=7
+        quadratics, retain all primal- and dual-feasible candidates, and verify nonnegative gaps.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/F3_WEYL_SELECTED_LINE_MAJORIZATION_THEOREM_20260830.md
+        kind: text
+        locator: "## 4. Exact polytope and KKT completeness"
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/certify_f3_weyl_majorization_k5.py
+        kind: script
+        locator: main
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/certify_f3_weyl_majorization_k7.py
+        kind: script
+        locator: main
+    assessment:
+      level: PROVED
+      summary: >-
+        Independent review reproduced both complete exact KKT certificates, audited active-face
+        completeness and exact linear algebra, and verified the odd-to-even interpolation.
+      basis:
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-extensive-violation/F3_WEYL_SELECTED_LINE_MAJORIZATION_INDEPENDENT_REVIEW_20260830.md
+          kind: review
+          locator: F3W-IR-VERDICT-MATH
+          scope: >-
+            Audited affine normalization including ties, sorted-spectrum interpolation, k=5 and
+            k=7 objectives, polytope completeness, KKT enumeration and exact solvers.
+          reviewed_hash: sha256:d203bc181d4d206ac2f02e91842116e8110705895bbc7ab1d03a9a8267c99b4a
+assessment:
+  level: PROVED
+  caveats:
+  - >-
+    The proof is computer-assisted and bound to the independently reviewed current theorem,
+    checker and certificate hashes; later modifications require a new review.
+  - The theorem closes one qutrit Weyl conjugate-Bell obstruction family, not the full-size
+    extensive Holevo/MOE problem.
+  - The rational-grid screen is route-selection evidence only and is not used by the exact KKT
+    proof.
+  summary: >-
+    All cumulative inequalities in the selected-line qutrit Weyl majorization are proved by exact
+    certificates and independent adversarial review.
+  basis:
+    routes:
+    - exact-odd-index-kkt-route
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/F3_WEYL_MAJOR_K5_CERTIFICATE_20260830.txt
+      kind: text
+      locator: selected-line Weyl majorization certified at cumulative k=5
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/F3_WEYL_MAJOR_K7_CERTIFICATE_20260830.txt
+      kind: text
+      locator: selected-line Weyl majorization certified at cumulative k=7
+    - path: channel-additivity-violations/tools/holevo-extensive-violation/screen_f3_weyl_majorization_grid.py
+      kind: script
+      locator: main
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/F3_WEYL_SELECTED_LINE_MAJORIZATION_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: F3W-IR-VERDICT-MATH
+      scope: >-
+        Full independent audit and fresh reproduction of all four exact certificate stages,
+        including every choice among tied maximum-line directions.
+      reviewed_hash: sha256:db13a888f41bd724df53a5c3cf03c27a682419a0171f1a29c5ec6bf85e62a507
+events:
+  independent-review-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      Independent adversarial review reproduced all four exact stages and passed the full selected-line
+      majorization theorem without mathematical repair.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/F3_WEYL_SELECTED_LINE_MAJORIZATION_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+  full-selected-line-majorization-certified:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Combined the exact k=1,2,3 result with complete rational KKT-face certificates at k=5,7 and
+      paired-spectrum interpolation to close every cumulative majorization inequality.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/F3_WEYL_SELECTED_LINE_MAJORIZATION_THEOREM_20260830.md
+      kind: text
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/F3_WEYL_MAJOR_K5_CERTIFICATE_20260830.txt
+      kind: text
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/F3_WEYL_MAJOR_K7_CERTIFICATE_20260830.txt
+      kind: text

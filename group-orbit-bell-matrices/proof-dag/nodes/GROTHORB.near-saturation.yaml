@@ -1,0 +1,72 @@
+id: GROTHORB.near-saturation
+role: proof
+claim: Let A be nonzero and real, sigma its top singular value, and tau<sigma the operator norm on the
+  orthogonal complement of its top right singular space (zero if the complement is zero). For unit-row
+  strategies X,Y with objective at least (1-epsilon)sigma sqrt(mn), 0<=epsilon<=1, and normalized x=X/sqrt(m),
+  y=Y/sqrt(n), the squared Frobenius mass of y outside the top right singular space is at most (2epsilon-epsilon^2)/(1-(tau/sigma)^2),
+  and ||x-Ay/sigma||_F^2 <= 2epsilon.
+assessment:
+  level: PROVED
+  summary: Complete scoped argument passed an independent fresh-context same-model-family adversarial
+    review. Universal inequalities, epsilon endpoints, rectangular top spaces and concentration-only scope.
+    Correctness does not assert novelty or formal verification.
+  basis:
+    evidence:
+    - &id001
+      path: group-orbit-bell-matrices/artifacts/spectral-stability-dimension-gap-20260907.md
+      kind: text
+      locator: ST1 and ST2
+    - path: group-orbit-bell-matrices/tools/check_spectral_stability.py
+      kind: text
+      locator: main
+    - path: group-orbit-bell-matrices/artifacts/group-orbit-literature-positioning-20260907.md
+      kind: text
+      locator: L1 through L6
+    - path: group-orbit-bell-matrices/artifacts/group-orbit-exploration-20260907.md
+      kind: text
+      locator: E1 through E4
+    runs:
+    - path: group-orbit-bell-matrices/artifacts/spectral-stability-exact-check-20260907.md
+      kind: run
+      result: Fresh exact rational finite examples passed; the universal claim relies on the reviewed
+        argument.
+    reviews:
+    - path: group-orbit-bell-matrices/reviews/stability-dimension-review-20260907.md
+      kind: review
+      locator: ST-AUD-1
+      scope: Universal inequalities, epsilon endpoints, rectangular top spaces and concentration-only
+        scope.
+      reviewed_hash: sha256:25645acde7aad5ca01d5957f0f2bac55e747f573b45c40fb8ba9c09cd29ee1e4
+events:
+  registered-20260907:
+    date: '2026-09-07'
+    type: created
+    summary: Registered a quantitative near-saturation candidate before derivation and testing.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/exploration-registration-20260907.md
+      kind: text
+      locator: R2
+  author-proof-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: OPEN
+    to: CONJECTURED
+    summary: Registered proposal received a complete author argument before independent review.
+    sources:
+    - *id001
+  independent-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Promoted only after exact-statement independent review of the assembled scoped proof.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/stability-dimension-review-20260907.md
+      kind: review
+      locator: ST-AUD-1
+frontier:
+  next-research-question:
+    task: Study distance to the feasible optimizer set beyond spectral concentration, declaring the metric
+      and any needed nondegeneracy conditions.
+    kind: task
+    since: '2026-09-07'

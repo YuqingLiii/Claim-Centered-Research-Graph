@@ -1,0 +1,1040 @@
+{
+  "candidate_sha256": "257fa5e7cace1cf7c5e14e3c9fe8767ef60fefb5e9ab19baebcfde8afaa06158",
+  "repair_gate": {
+    "entered": false,
+    "reason": "both complete direct-360 formulas are SAT; repair requires independently checked direct UNSAT in both sectors"
+  },
+  "schedule_audit": {
+    "conflicts": [],
+    "edge_count": 864,
+    "errors": [],
+    "global_interleaved": true,
+    "max_time": 133,
+    "mc_violations": [],
+    "min_time": 0,
+    "ok": true,
+    "overlap_interleaved_pairs": 179,
+    "overlaps": 648,
+    "used_layers": 134,
+    "whole_check_interleaved_pairs": 542
+  },
+  "schema": "round69-complete-direct360-replay-v1",
+  "sectors": {
+    "Xerr": {
+      "all_dimacs_clauses_satisfied": true,
+      "assignment_variables": 5942,
+      "failed_clause_count": 0,
+      "formula_summary": {
+        "W": 10,
+        "candidate_sha256": "257fa5e7cace1cf7c5e14e3c9fe8767ef60fefb5e9ab19baebcfde8afaa06158",
+        "clauses": 22348,
+        "complete_query": true,
+        "dimacs_sha256": "31fea0cf5c09b3633a82d9b1bc434a397f428699907bf583aaa12e2ec7eeeab5",
+        "excluded_restrictions": [
+          "no pool restriction",
+          "no residual-pattern restriction",
+          "no check-count restriction",
+          "no within-check order family restriction"
+        ],
+        "families": {
+          "cardinality_constraint": "exact prefix-threshold recurrence encoding of sum(select)<=10",
+          "logical_nonzero_disjunctions": 1,
+          "logical_parity_rows": 12,
+          "syndrome_xor_rows": 72
+        },
+        "formula_body_sha256": "115284e528edcf9413eb1e6288aeeecb3aefd34bababaf55455a8d10945d345d",
+        "logical_output_variables": 12,
+        "primary_selection_variables": 360,
+        "schema": "circdist-gross-direct360-formula-summary-v1",
+        "sector": "Xerr",
+        "variables": 5942
+      },
+      "mechanism": {
+        "canonical_physical_parities_equal": true,
+        "canonical_replay": {
+          "logical_parities": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "net_support": [
+            9,
+            49,
+            56,
+            75,
+            84,
+            85,
+            107,
+            123,
+            130,
+            131,
+            132,
+            139
+          ],
+          "net_weight": 12,
+          "nontrivial": true,
+          "ok": true,
+          "selected": [
+            9,
+            49,
+            56,
+            85,
+            107,
+            123,
+            131,
+            132,
+            146,
+            309
+          ],
+          "selected_names": [
+            "D:9",
+            "D:49",
+            "D:56",
+            "D:85",
+            "D:107",
+            "D:123",
+            "D:131",
+            "D:132",
+            "R:0:2",
+            "R:55:0"
+          ],
+          "syndrome": [],
+          "weight": 10
+        },
+        "fault_count": 10,
+        "faults": [
+          {
+            "column_index": 9,
+            "column_name": "D:9",
+            "data_support": [
+              9
+            ],
+            "elementary_fault": "data_singleton",
+            "schedule_dependency": "none"
+          },
+          {
+            "column_index": 49,
+            "column_name": "D:49",
+            "data_support": [
+              49
+            ],
+            "elementary_fault": "data_singleton",
+            "schedule_dependency": "none"
+          },
+          {
+            "column_index": 56,
+            "column_name": "D:56",
+            "data_support": [
+              56
+            ],
+            "elementary_fault": "data_singleton",
+            "schedule_dependency": "none"
+          },
+          {
+            "column_index": 85,
+            "column_name": "D:85",
+            "data_support": [
+              85
+            ],
+            "elementary_fault": "data_singleton",
+            "schedule_dependency": "none"
+          },
+          {
+            "column_index": 107,
+            "column_name": "D:107",
+            "data_support": [
+              107
+            ],
+            "elementary_fault": "data_singleton",
+            "schedule_dependency": "none"
+          },
+          {
+            "column_index": 123,
+            "column_name": "D:123",
+            "data_support": [
+              123
+            ],
+            "elementary_fault": "data_singleton",
+            "schedule_dependency": "none"
+          },
+          {
+            "column_index": 131,
+            "column_name": "D:131",
+            "data_support": [
+              131
+            ],
+            "elementary_fault": "data_singleton",
+            "schedule_dependency": "none"
+          },
+          {
+            "column_index": 132,
+            "column_name": "D:132",
+            "data_support": [
+              132
+            ],
+            "elementary_fault": "data_singleton",
+            "schedule_dependency": "none"
+          },
+          {
+            "canonical_representative_support": [
+              75,
+              84
+            ],
+            "check": 0,
+            "column_index": 146,
+            "column_name": "R:0:2",
+            "elementary_fault": "ancilla_hook_suffix",
+            "physical_suffix_positions_zero_based": [
+              4,
+              5
+            ],
+            "physical_suffix_support": [
+              75,
+              84
+            ],
+            "residual_kind": 2,
+            "within_check_order_edges": [
+              "X:0:78",
+              "X:0:18",
+              "X:0:1",
+              "X:0:2",
+              "X:0:84",
+              "X:0:75"
+            ],
+            "within_check_order_qubits": [
+              78,
+              18,
+              1,
+              2,
+              84,
+              75
+            ],
+            "within_check_times": [
+              1,
+              27,
+              81,
+              96,
+              107,
+              122
+            ]
+          },
+          {
+            "canonical_representative_support": [
+              130,
+              139
+            ],
+            "check": 55,
+            "column_index": 309,
+            "column_name": "R:55:0",
+            "elementary_fault": "ancilla_hook_suffix",
+            "physical_suffix_positions_zero_based": [
+              2,
+              3,
+              4,
+              5
+            ],
+            "physical_suffix_support": [
+              1,
+              56,
+              57,
+              133
+            ],
+            "residual_kind": 0,
+            "within_check_order_edges": [
+              "X:55:130",
+              "X:55:139",
+              "X:55:57",
+              "X:55:56",
+              "X:55:1",
+              "X:55:133"
+            ],
+            "within_check_order_qubits": [
+              130,
+              139,
+              57,
+              56,
+              1,
+              133
+            ],
+            "within_check_times": [
+              0,
+              1,
+              2,
+              3,
+              96,
+              112
+            ]
+          }
+        ],
+        "physical_logical_parities": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "physical_net_support": [
+          1,
+          9,
+          49,
+          57,
+          75,
+          84,
+          85,
+          107,
+          123,
+          131,
+          132,
+          133
+        ],
+        "physical_net_weight": 12,
+        "physical_nontrivial": true,
+        "physical_syndrome": [],
+        "sector": "Xerr",
+        "selected_indices": [
+          9,
+          49,
+          56,
+          85,
+          107,
+          123,
+          131,
+          132,
+          146,
+          309
+        ],
+        "selected_names": [
+          "D:9",
+          "D:49",
+          "D:56",
+          "D:85",
+          "D:107",
+          "D:123",
+          "D:131",
+          "D:132",
+          "R:0:2",
+          "R:55:0"
+        ],
+        "sound_outer_block": {
+          "antecedent_holds_on_source_candidate": true,
+          "atom_count": 16,
+          "atoms": [
+            [
+              "X:0:1",
+              "<",
+              "X:0:75"
+            ],
+            [
+              "X:0:1",
+              "<",
+              "X:0:84"
+            ],
+            [
+              "X:0:18",
+              "<",
+              "X:0:75"
+            ],
+            [
+              "X:0:18",
+              "<",
+              "X:0:84"
+            ],
+            [
+              "X:0:2",
+              "<",
+              "X:0:75"
+            ],
+            [
+              "X:0:2",
+              "<",
+              "X:0:84"
+            ],
+            [
+              "X:0:78",
+              "<",
+              "X:0:75"
+            ],
+            [
+              "X:0:78",
+              "<",
+              "X:0:84"
+            ],
+            [
+              "X:55:130",
+              "<",
+              "X:55:1"
+            ],
+            [
+              "X:55:130",
+              "<",
+              "X:55:133"
+            ],
+            [
+              "X:55:130",
+              "<",
+              "X:55:56"
+            ],
+            [
+              "X:55:130",
+              "<",
+              "X:55:57"
+            ],
+            [
+              "X:55:139",
+              "<",
+              "X:55:1"
+            ],
+            [
+              "X:55:139",
+              "<",
+              "X:55:133"
+            ],
+            [
+              "X:55:139",
+              "<",
+              "X:55:56"
+            ],
+            [
+              "X:55:139",
+              "<",
+              "X:55:57"
+            ]
+          ],
+          "semantics": "negation of the conjunction of listed strict comparisons; every schedule retaining the conjunction retains this exact direct mechanism"
+        }
+      },
+      "negative_controls": {
+        "flip_first_selected_primary": {
+          "failed_clause_count": 7,
+          "first_failed_clause": 535,
+          "variable": 10
+        },
+        "remove_first_fault": {
+          "logical_parities": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "net_support": [
+            49,
+            56,
+            75,
+            84,
+            85,
+            107,
+            123,
+            130,
+            131,
+            132,
+            139
+          ],
+          "net_weight": 11,
+          "nontrivial": true,
+          "ok": false,
+          "selected": [
+            49,
+            56,
+            85,
+            107,
+            123,
+            131,
+            132,
+            146,
+            309
+          ],
+          "selected_names": [
+            "D:49",
+            "D:56",
+            "D:85",
+            "D:107",
+            "D:123",
+            "D:131",
+            "D:132",
+            "R:0:2",
+            "R:55:0"
+          ],
+          "syndrome": [
+            6,
+            15,
+            21
+          ],
+          "weight": 9
+        }
+      },
+      "status": "SATISFIABLE"
+    },
+    "Zerr": {
+      "all_dimacs_clauses_satisfied": true,
+      "assignment_variables": 5897,
+      "failed_clause_count": 0,
+      "formula_summary": {
+        "W": 10,
+        "candidate_sha256": "257fa5e7cace1cf7c5e14e3c9fe8767ef60fefb5e9ab19baebcfde8afaa06158",
+        "clauses": 22168,
+        "complete_query": true,
+        "dimacs_sha256": "11febba288d2c77f008b3729b7e12632481984d728696210b00975eabd62509b",
+        "excluded_restrictions": [
+          "no pool restriction",
+          "no residual-pattern restriction",
+          "no check-count restriction",
+          "no within-check order family restriction"
+        ],
+        "families": {
+          "cardinality_constraint": "exact prefix-threshold recurrence encoding of sum(select)<=10",
+          "logical_nonzero_disjunctions": 1,
+          "logical_parity_rows": 12,
+          "syndrome_xor_rows": 72
+        },
+        "formula_body_sha256": "7a7ccb2c1093c9d4fa1fbd195c8dc06bf5ed1ec451107c9de17e18ab88161ac3",
+        "logical_output_variables": 12,
+        "primary_selection_variables": 360,
+        "schema": "circdist-gross-direct360-formula-summary-v1",
+        "sector": "Zerr",
+        "variables": 5897
+      },
+      "mechanism": {
+        "canonical_physical_parities_equal": true,
+        "canonical_replay": {
+          "logical_parities": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "net_support": [
+            0,
+            8,
+            15,
+            22,
+            23,
+            24,
+            46,
+            62,
+            63,
+            91,
+            98,
+            138
+          ],
+          "net_weight": 12,
+          "nontrivial": true,
+          "ok": true,
+          "selected": [
+            14,
+            22,
+            23,
+            24,
+            46,
+            62,
+            98,
+            155,
+            182,
+            205
+          ],
+          "selected_names": [
+            "D:14",
+            "D:22",
+            "D:23",
+            "D:24",
+            "D:46",
+            "D:62",
+            "D:98",
+            "R:3:2",
+            "R:12:2",
+            "R:20:1"
+          ],
+          "syndrome": [],
+          "weight": 10
+        },
+        "fault_count": 10,
+        "faults": [
+          {
+            "column_index": 14,
+            "column_name": "D:14",
+            "data_support": [
+              14
+            ],
+            "elementary_fault": "data_singleton",
+            "schedule_dependency": "none"
+          },
+          {
+            "column_index": 22,
+            "column_name": "D:22",
+            "data_support": [
+              22
+            ],
+            "elementary_fault": "data_singleton",
+            "schedule_dependency": "none"
+          },
+          {
+            "column_index": 23,
+            "column_name": "D:23",
+            "data_support": [
+              23
+            ],
+            "elementary_fault": "data_singleton",
+            "schedule_dependency": "none"
+          },
+          {
+            "column_index": 24,
+            "column_name": "D:24",
+            "data_support": [
+              24
+            ],
+            "elementary_fault": "data_singleton",
+            "schedule_dependency": "none"
+          },
+          {
+            "column_index": 46,
+            "column_name": "D:46",
+            "data_support": [
+              46
+            ],
+            "elementary_fault": "data_singleton",
+            "schedule_dependency": "none"
+          },
+          {
+            "column_index": 62,
+            "column_name": "D:62",
+            "data_support": [
+              62
+            ],
+            "elementary_fault": "data_singleton",
+            "schedule_dependency": "none"
+          },
+          {
+            "column_index": 98,
+            "column_name": "D:98",
+            "data_support": [
+              98
+            ],
+            "elementary_fault": "data_singleton",
+            "schedule_dependency": "none"
+          },
+          {
+            "canonical_representative_support": [
+              0,
+              63
+            ],
+            "check": 3,
+            "column_index": 155,
+            "column_name": "R:3:2",
+            "elementary_fault": "ancilla_hook_suffix",
+            "physical_suffix_positions_zero_based": [
+              4,
+              5
+            ],
+            "physical_suffix_support": [
+              0,
+              63
+            ],
+            "residual_kind": 2,
+            "within_check_order_edges": [
+              "Z:3:73",
+              "Z:3:129",
+              "Z:3:74",
+              "Z:3:69",
+              "Z:3:63",
+              "Z:3:0"
+            ],
+            "within_check_order_qubits": [
+              73,
+              129,
+              74,
+              69,
+              63,
+              0
+            ],
+            "within_check_times": [
+              79,
+              80,
+              88,
+              92,
+              95,
+              121
+            ]
+          },
+          {
+            "canonical_representative_support": [
+              15,
+              138
+            ],
+            "check": 12,
+            "column_index": 182,
+            "column_name": "R:12:2",
+            "elementary_fault": "ancilla_hook_suffix",
+            "physical_suffix_positions_zero_based": [
+              4,
+              5
+            ],
+            "physical_suffix_support": [
+              15,
+              138
+            ],
+            "residual_kind": 2,
+            "within_check_order_edges": [
+              "Z:12:89",
+              "Z:12:6",
+              "Z:12:0",
+              "Z:12:88",
+              "Z:12:138",
+              "Z:12:15"
+            ],
+            "within_check_order_qubits": [
+              89,
+              6,
+              0,
+              88,
+              138,
+              15
+            ],
+            "within_check_times": [
+              80,
+              95,
+              128,
+              130,
+              131,
+              132
+            ]
+          },
+          {
+            "canonical_representative_support": [
+              8,
+              14,
+              91
+            ],
+            "check": 20,
+            "column_index": 205,
+            "column_name": "R:20:1",
+            "elementary_fault": "ancilla_hook_suffix",
+            "physical_suffix_positions_zero_based": [
+              3,
+              4,
+              5
+            ],
+            "physical_suffix_support": [
+              8,
+              14,
+              91
+            ],
+            "residual_kind": 1,
+            "within_check_order_edges": [
+              "Z:20:90",
+              "Z:20:23",
+              "Z:20:74",
+              "Z:20:8",
+              "Z:20:91",
+              "Z:20:14"
+            ],
+            "within_check_order_qubits": [
+              90,
+              23,
+              74,
+              8,
+              91,
+              14
+            ],
+            "within_check_times": [
+              80,
+              92,
+              95,
+              115,
+              119,
+              121
+            ]
+          }
+        ],
+        "physical_logical_parities": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "physical_net_support": [
+          0,
+          8,
+          15,
+          22,
+          23,
+          24,
+          46,
+          62,
+          63,
+          91,
+          98,
+          138
+        ],
+        "physical_net_weight": 12,
+        "physical_nontrivial": true,
+        "physical_syndrome": [],
+        "sector": "Zerr",
+        "selected_indices": [
+          14,
+          22,
+          23,
+          24,
+          46,
+          62,
+          98,
+          155,
+          182,
+          205
+        ],
+        "selected_names": [
+          "D:14",
+          "D:22",
+          "D:23",
+          "D:24",
+          "D:46",
+          "D:62",
+          "D:98",
+          "R:3:2",
+          "R:12:2",
+          "R:20:1"
+        ],
+        "sound_outer_block": {
+          "antecedent_holds_on_source_candidate": true,
+          "atom_count": 25,
+          "atoms": [
+            [
+              "Z:12:0",
+              "<",
+              "Z:12:138"
+            ],
+            [
+              "Z:12:0",
+              "<",
+              "Z:12:15"
+            ],
+            [
+              "Z:12:6",
+              "<",
+              "Z:12:138"
+            ],
+            [
+              "Z:12:6",
+              "<",
+              "Z:12:15"
+            ],
+            [
+              "Z:12:88",
+              "<",
+              "Z:12:138"
+            ],
+            [
+              "Z:12:88",
+              "<",
+              "Z:12:15"
+            ],
+            [
+              "Z:12:89",
+              "<",
+              "Z:12:138"
+            ],
+            [
+              "Z:12:89",
+              "<",
+              "Z:12:15"
+            ],
+            [
+              "Z:20:23",
+              "<",
+              "Z:20:14"
+            ],
+            [
+              "Z:20:23",
+              "<",
+              "Z:20:8"
+            ],
+            [
+              "Z:20:23",
+              "<",
+              "Z:20:91"
+            ],
+            [
+              "Z:20:74",
+              "<",
+              "Z:20:14"
+            ],
+            [
+              "Z:20:74",
+              "<",
+              "Z:20:8"
+            ],
+            [
+              "Z:20:74",
+              "<",
+              "Z:20:91"
+            ],
+            [
+              "Z:20:90",
+              "<",
+              "Z:20:14"
+            ],
+            [
+              "Z:20:90",
+              "<",
+              "Z:20:8"
+            ],
+            [
+              "Z:20:90",
+              "<",
+              "Z:20:91"
+            ],
+            [
+              "Z:3:129",
+              "<",
+              "Z:3:0"
+            ],
+            [
+              "Z:3:129",
+              "<",
+              "Z:3:63"
+            ],
+            [
+              "Z:3:69",
+              "<",
+              "Z:3:0"
+            ],
+            [
+              "Z:3:69",
+              "<",
+              "Z:3:63"
+            ],
+            [
+              "Z:3:73",
+              "<",
+              "Z:3:0"
+            ],
+            [
+              "Z:3:73",
+              "<",
+              "Z:3:63"
+            ],
+            [
+              "Z:3:74",
+              "<",
+              "Z:3:0"
+            ],
+            [
+              "Z:3:74",
+              "<",
+              "Z:3:63"
+            ]
+          ],
+          "semantics": "negation of the conjunction of listed strict comparisons; every schedule retaining the conjunction retains this exact direct mechanism"
+        }
+      },
+      "negative_controls": {
+        "flip_first_selected_primary": {
+          "failed_clause_count": 6,
+          "first_failed_clause": 969,
+          "variable": 15
+        },
+        "remove_first_fault": {
+          "logical_parities": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "net_support": [
+            0,
+            8,
+            14,
+            15,
+            22,
+            23,
+            24,
+            46,
+            62,
+            63,
+            91,
+            98,
+            138
+          ],
+          "net_weight": 13,
+          "nontrivial": true,
+          "ok": false,
+          "selected": [
+            22,
+            23,
+            24,
+            46,
+            62,
+            98,
+            155,
+            182,
+            205
+          ],
+          "selected_names": [
+            "D:22",
+            "D:23",
+            "D:24",
+            "D:46",
+            "D:62",
+            "D:98",
+            "R:3:2",
+            "R:12:2",
+            "R:20:1"
+          ],
+          "syndrome": [
+            12,
+            13,
+            68
+          ],
+          "weight": 9
+        }
+      },
+      "status": "SATISFIABLE"
+    }
+  }
+}

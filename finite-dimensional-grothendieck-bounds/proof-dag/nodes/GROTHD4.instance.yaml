@@ -1,0 +1,69 @@
+id: GROTHD4.instance
+role: constraint
+aliases:
+- D4-INSTANCE
+claim: >-
+  Project-local evidence uniquely identifies the archived 300 by 300 Bell matrix A and
+  contains all inputs required to replay every claimed d=4 value and certificate.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    The original MAT-file, exact-system JSON, classical certificate data, and
+    complete-K data are now frozen project-locally. Their expected hashes and
+    the canonical integer-matrix hash are checked by a compact exact verifier;
+    independent adversarial review is pending.
+  basis:
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/frozen-instance/d4_n1_300x300.mat
+      kind: data
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/frozen-instance/d4_n1_300x300.mat.H4_level2_exact_system.json
+      kind: data
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/frozen-instance/d4_n1_300x300.mat.H4_level2_exact_system.json.gap_irreps_GF24001.json
+      kind: data
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/frozen-instance/d4_n1_300x300.mat.complete_K_isotypic.json
+      kind: data
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/frozen-instance/d4_n1_300x300.mat.true_H4_signed_orbitals.json
+      kind: data
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/frozen-instance/d4_n1_300x300.mat.classical_certdata.json
+      kind: data
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/frozen-instance/d4_n1_300x300.mat.H4_invariant_vanishing_probe.json
+      kind: data
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/frozen-instance/d4_n1_300x300.mat.degree4_equality_restriction_rank.json
+      kind: data
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/imported-bundles/h4_canonical_K_operator_bundle.tar.gz
+      kind: data
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/imported-bundles/h4_fd4_next_stage_bundle.tar.gz
+      kind: data
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/imported-bundles/h4_full_invariant_dual_spec_bundle.tar.gz
+      kind: data
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_exact_instance_checker.py
+      kind: text
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/source-manifest-20260829.yaml
+      kind: text
+      locator: frozen_instance
+    runs:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-exact-instance-check-20260829.txt
+      kind: run
+      result: Frozen file and matrix hashes, dimensions, exact levels, and load-bearing identities all pass.
+frontier:
+  review-001:
+    task: Independently audit the recovered bytes, canonical serialization, and compact verifier.
+    kind: review
+    since: '2026-08-29'
+events:
+  migrated-2026-08-29:
+    date: '2026-08-29'
+    type: created
+    summary: Registered the missing-instance obligation as a load-bearing claim rather than a prose caveat.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/source-manifest-20260829.yaml
+      kind: text
+  instance-recovered-2026-08-29:
+    date: '2026-08-29'
+    type: level-change
+    from: OPEN
+    to: CONJECTURED
+    summary: Recovered and froze the original instance and exact-system evidence, then verified all advertised hashes locally.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-exact-instance-check-20260829.txt
+      kind: run

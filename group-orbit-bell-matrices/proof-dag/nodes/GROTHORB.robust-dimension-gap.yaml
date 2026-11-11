@@ -1,0 +1,71 @@
+id: GROTHORB.robust-dimension-gap
+role: proof
+claim: Let A be a nonzero real m by n transitive equivariant matrix with top singular value sigma of multiplicity
+  r>=2, paired bases U,V, and largest remaining singular value tau<sigma (zero if there is none). Suppose
+  L(K)=(diag(UKU^T),diag(VKV^T)) is injective on Sym_r, and set s=min_{||K||_F=1}||L(K)||_2>0 and delta=1-tau/sigma.
+  Then every real unit-vector strategy of dimension d<r has value at most (1-delta*s^2/(16*r^2))*sigma*sqrt(m*n).
+assessment:
+  level: PROVED
+  summary: Complete scoped argument passed an independent fresh-context same-model-family adversarial
+    review. Dilation spectrum, balance conditioning, rank loss and constants; real-vector dimensions only.
+    Correctness does not assert novelty or formal verification.
+  basis:
+    evidence:
+    - &id001
+      path: group-orbit-bell-matrices/artifacts/spectral-stability-dimension-gap-20260907.md
+      kind: text
+      locator: ST1 and ST3 through ST5
+    - path: group-orbit-bell-matrices/tools/check_spectral_stability.py
+      kind: text
+      locator: main
+    - path: group-orbit-bell-matrices/artifacts/group-orbit-literature-positioning-20260907.md
+      kind: text
+      locator: L1 through L6
+    - path: group-orbit-bell-matrices/artifacts/group-orbit-exploration-20260907.md
+      kind: text
+      locator: E1 through E4
+    runs:
+    - path: group-orbit-bell-matrices/artifacts/spectral-stability-exact-check-20260907.md
+      kind: run
+      result: Fresh exact rational finite examples passed; the universal claim relies on the reviewed
+        argument.
+    reviews:
+    - path: group-orbit-bell-matrices/reviews/stability-dimension-review-20260907.md
+      kind: review
+      locator: ST-AUD-2
+      scope: Dilation spectrum, balance conditioning, rank loss and constants; real-vector dimensions
+        only.
+      reviewed_hash: sha256:5a80145414508268c490c4a89c775e6da0506f121f755a4e0242b3a225cf791e
+events:
+  registered-20260907:
+    date: '2026-09-07'
+    type: created
+    summary: Registered a conservative quantitative dimension gap before testing.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/exploration-registration-20260907.md
+      kind: text
+      locator: R3
+  author-proof-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: OPEN
+    to: CONJECTURED
+    summary: Registered proposal received a complete author argument before independent review.
+    sources:
+    - *id001
+  independent-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Promoted only after exact-statement independent review of the assembled scoped proof.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/stability-dimension-review-20260907.md
+      kind: review
+      locator: ST-AUD-2
+frontier:
+  next-research-question:
+    task: Compute exact family-dependent conditioning s, sharpen the conservative gap, and compare constants
+      and setting counts with prior robustness bounds.
+    kind: task
+    since: '2026-09-07'

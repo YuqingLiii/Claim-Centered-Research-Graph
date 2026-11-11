@@ -1,0 +1,125 @@
+{
+  "captured_utc": "2026-09-02T00:03:25.484649+00:00",
+  "cwd": "<repo>",
+  "machine": "arm64",
+  "network_used": false,
+  "os": {
+    "uname": [
+      "Darwin",
+      "MBP.local",
+      "25.6.0",
+      "Darwin Kernel Version 25.6.0: Fri Jul 31 19:19:08 PDT 2026; root:xnu-12377.161.14~5/RELEASE_ARM64_T6050",
+      "arm64",
+      "arm"
+    ]
+  },
+  "package": "<repo>/circdist/artifacts/circdist_gross_iter188_invariant_quotient_continuation_round106_20260901",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "python": {
+    "executable": "/Library/Developer/CommandLineTools/usr/bin/python3",
+    "sha256": "bdea59019a38eb6600cc9e71e984a97fedadc406448431281e7657030f54987e",
+    "version": "3.9.6"
+  },
+  "schema": "circdist-gross-round106-environment-v1",
+  "selected_environment": {
+    "LANG": "C.UTF-8",
+    "LC_ALL": "C.UTF-8",
+    "LC_CTYPE": "C.UTF-8",
+    "PATH": "/opt/local/bin:/opt/local/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/pkg/env/global/bin:/Applications/Privileges.app/Contents/MacOS:/Library/TeX/texbin:<home>/.codex/tmp/arg0/codex-arg02otew6:<home>/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override:<home>/bin:<home>/.local/bin:/opt/local/bin:/opt/local/sbin:<home>/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback:<home>/Applications/ChatGPT.app/Contents/Resources",
+    "SHELL": "/bin/zsh",
+    "TMPDIR": "<tmpdir>/T/"
+  },
+  "solver_processes": [
+    {
+      "child_maxrss_raw": 7438614528,
+      "child_pid": 70570,
+      "child_system_seconds": 18.024982,
+      "child_user_seconds": 816.270334,
+      "command": [
+        "circdist/artifacts/circdist_gross_iter188_invariant_quotient_continuation_round106_20260901/tooling/cadical-1.9.5-arm64-macos",
+        "-t",
+        "21600",
+        "--no-binary",
+        "circdist/artifacts/circdist_gross_iter188_invariant_quotient_continuation_round106_20260901/inputs/round104/frontier/iter188_full_invariant_quotient/outer.cnf",
+        "circdist/artifacts/circdist_gross_iter188_invariant_quotient_continuation_round106_20260901/solver/iter188/outer.drat"
+      ],
+      "detached": false,
+      "ended_utc": "2026-09-01T22:55:50.142850+00:00",
+      "name": "solve_iter188_full_invariant_quotient_cadical_proof",
+      "reaped": true,
+      "returncode": 10,
+      "started_utc": "2026-09-01T22:41:53.984160+00:00",
+      "timed_out": false,
+      "wall_seconds": 836.157983
+    },
+    {
+      "child_maxrss_raw": 236486656,
+      "child_pid": 70900,
+      "child_system_seconds": 4.3892,
+      "child_user_seconds": 619.980529,
+      "command": [
+        "circdist/artifacts/circdist_gross_iter188_invariant_quotient_continuation_round106_20260901/tooling/cadical-1.9.5-arm64-macos",
+        "--unsat",
+        "-t",
+        "7200",
+        "--no-binary",
+        "circdist/artifacts/circdist_gross_iter188_invariant_quotient_continuation_round106_20260901/solver/iter188/direct/direct360/Xerr.cnf",
+        "circdist/artifacts/circdist_gross_iter188_invariant_quotient_continuation_round106_20260901/solver/iter188/direct/solver/Xerr.drat"
+      ],
+      "detached": false,
+      "ended_utc": "2026-09-01T23:08:09.480427+00:00",
+      "name": "solve_iter188_Xerr_complete_direct360_cadical_proof",
+      "reaped": true,
+      "returncode": 10,
+      "started_utc": "2026-09-01T22:57:43.828848+00:00",
+      "timed_out": false,
+      "wall_seconds": 625.627899
+    },
+    {
+      "child_maxrss_raw": 261849088,
+      "child_pid": 71008,
+      "child_system_seconds": 1.056477,
+      "child_user_seconds": 136.442825,
+      "command": [
+        "circdist/artifacts/circdist_gross_iter188_invariant_quotient_continuation_round106_20260901/tooling/cadical-1.9.5-arm64-macos",
+        "--unsat",
+        "-t",
+        "7200",
+        "--no-binary",
+        "circdist/artifacts/circdist_gross_iter188_invariant_quotient_continuation_round106_20260901/solver/iter188/direct/direct360/Zerr.cnf",
+        "circdist/artifacts/circdist_gross_iter188_invariant_quotient_continuation_round106_20260901/solver/iter188/direct/solver/Zerr.drat"
+      ],
+      "detached": false,
+      "ended_utc": "2026-09-01T23:10:43.686941+00:00",
+      "name": "solve_iter188_Zerr_complete_direct360_cadical_proof",
+      "reaped": true,
+      "returncode": 10,
+      "started_utc": "2026-09-01T23:08:25.867183+00:00",
+      "timed_out": false,
+      "wall_seconds": 137.818738
+    }
+  ],
+  "status": "PASS",
+  "strict_serial": true,
+  "subagents_used": false,
+  "tooling": [
+    {
+      "bytes": 967144,
+      "executable": true,
+      "path": "tooling/cadical-1.9.5-arm64-macos",
+      "sha256": "fafdf4fb95a54ccee9b59f346544761896e40b076780a93f000e0357f20080c9"
+    },
+    {
+      "bytes": 70120,
+      "executable": true,
+      "path": "tooling/drat-trim-arm64-macos",
+      "sha256": "f58f63b0f76945d4c4c9ff6e87afaf870f579e67c0f7cca589492df8fc7ebd47"
+    },
+    {
+      "bytes": 36552,
+      "executable": true,
+      "path": "tooling/lrat-check-arm64-macos",
+      "sha256": "bd7eb8052623525814a0a37502b47f05375d9d9dfaf96ddc2fcd858958517cea"
+    }
+  ]
+}

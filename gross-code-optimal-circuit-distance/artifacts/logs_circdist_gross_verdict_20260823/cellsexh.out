@@ -1,0 +1,30 @@
+============================================================================================
+is cert4.cells(W) EXHAUSTIVE?  --  the analytic bound, with every ingredient checked
+============================================================================================
+
+(1) maximum weight of a single residual set  (RES_POS = r1={i1,i2}, r2={i4,i5,i6}, r3={i5,i6})
+    sector Z: weights by k = {(0, 2): 72, (1, 3): 72, (2, 2): 72}   -> wmax = 3
+    sector X: weights by k = {(0, 2): 72, (1, 3): 72, (2, 2): 72}   -> wmax = 3
+    wmax over both sectors = 3      (the bound needs wmax <= 3: True)
+
+(2) parity: is the all-ones vector in rowspace(H_X) and rowspace(H_Z)?
+    all-ones in rowspace(H_X): True     in rowspace(H_Z): True
+    => every stabiliser coset has constant weight parity, so |E| is EVEN: True
+    weight parities actually present in the weight-12 logical pools: {'Z': [0], 'X': [0]}
+
+(3) lower bound |E| >= 12
+    the gross code is [[144, 12, 12]]; the pools hold the weight-12 non-trivial logicals
+    pool sizes |PZ| = 1884, |PX| = 1884, all of weight 12: True
+    corroborated in-session by anchor2/anchor3: with residuals OFF,
+      [Z] W = 11 UNSAT, W = 12 SAT     [X] W = 11 UNSAT, W = 12 SAT
+    i.e. no non-trivial logical of weight <= 11 exists in either sector.
+
+(4) the two bounds vs. what cells(W) actually enumerates, W = 10
+    allowed by the analytic bounds : 55 cells
+    cert4.cells(10) returns         : 55 cells
+    cells() MISSES an allowed cell : []   <-- must be empty for exhaustiveness
+    cells() includes extra cells   : []   (harmless: extra cells are merely decided UNSAT)
+
+============================================================================================
+VERDICT: cells(10) is EXHAUSTIVE -- it covers every (K, |E|) a weight-<=10 solution can occupy.
+============================================================================================

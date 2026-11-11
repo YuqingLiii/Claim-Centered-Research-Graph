@@ -1,0 +1,64 @@
+Direction: bent-central-ternary-fixed-three
+Final status: stopped at user request; no terminal certificate verdict
+
+Attempt 1: registered driver depth 6
+Command:
+python3 holevo-extensive-violation/tools/certify_su3_chain_three_face_sixdim_covers.py bent-central-ternary
+Session: unified terminal 68175
+Process: PID 25007
+
+Terminal output:
+endpoint Gram branches reconstructed: 24; degrees=(12, 14, 2, 2, 2, 2)
+retained side distributions reconstructed: 3; degrees=(6, 6, 1, 1, 1, 1)
+bent-central-ternary-fixed-three: processed=1000, certified=491, pending=17
+bent-central-ternary-fixed-three: processed=2000, certified=993, pending=13
+bent-central-ternary-fixed-three: processed=3000, certified=1494, pending=11
+bent-central-ternary-fixed-three: processed=4000, certified=1995, pending=9
+bent-central-ternary-fixed-three: processed=5000, certified=2492, pending=15
+bent-central-ternary-fixed-three: processed=6000, certified=2992, pending=15
+bent-central-ternary-fixed-three: processed=7000, certified=3493, pending=13
+bent-central-ternary-fixed-three: processed=8000, certified=3993, pending=13
+Traceback (most recent call last):
+  File "<repo>/holevo-extensive-violation/tools/certify_su3_input_centered_triangle_sixdim.py", line 312, in main
+    raise AssertionError((
+AssertionError: ('uncertified box', ((Fraction(63, 64), Fraction(1, 1)), (Fraction(45, 64), Fraction(23, 32)), (Fraction(1, 2), Fraction(33, 64)), (Fraction(49, 64), Fraction(25, 32)), (Fraction(51, 64), Fraction(13, 16)), (Fraction(1, 32), Fraction(3, 64))), 0.6019964836747148, -0.00026545496304754106)
+Exit status: 1
+
+The six interval widths are all 1/64, so the registered run exhausted maximum per-axis depth 6.
+This enclosure failure is not a mathematical counterexample.
+
+Attempt 2: runtime-only depth 10 override; no source file modified
+Command:
+python3 -c 'import sys; sys.path.insert(0, "holevo-extensive-violation/tools"); import certify_su3_chain_three_face_sixdim_covers as driver; import certify_su3_input_centered_triangle_sixdim as core; core.CONFIG = driver.CONFIGURATIONS["bent-central-ternary"]; core.MAX_DEPTH_PER_AXIS = 10; core.main()'
+Session: unified terminal 31187
+Process: PID 40709
+
+Terminal output through the final complete checkpoint:
+endpoint Gram branches reconstructed: 24; degrees=(12, 14, 2, 2, 2, 2)
+retained side distributions reconstructed: 3; degrees=(6, 6, 1, 1, 1, 1)
+bent-central-ternary-fixed-three: processed=1000, certified=491, pending=17
+bent-central-ternary-fixed-three: processed=2000, certified=993, pending=13
+bent-central-ternary-fixed-three: processed=3000, certified=1494, pending=11
+bent-central-ternary-fixed-three: processed=4000, certified=1995, pending=9
+bent-central-ternary-fixed-three: processed=5000, certified=2492, pending=15
+bent-central-ternary-fixed-three: processed=6000, certified=2992, pending=15
+bent-central-ternary-fixed-three: processed=7000, certified=3493, pending=13
+bent-central-ternary-fixed-three: processed=8000, certified=3993, pending=13
+bent-central-ternary-fixed-three: processed=9000, certified=4490, pending=19
+bent-central-ternary-fixed-three: processed=10000, certified=4992, pending=15
+^CTraceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "<repo>/holevo-extensive-violation/tools/certify_su3_input_centered_triangle_sixdim.py", line 291, in main
+    t_upper = max(
+  File "<repo>/holevo-extensive-violation/tools/certify_su3_input_centered_triangle_sixdim.py", line 292, in <genexpr>
+    rational_range(value, box.gram_denominator, box.bounds)[1]
+  File "<repo>/holevo-extensive-violation/tools/su3_common_den_controls.py", line 137, in rational_range_common
+    if maximum is None or _less(maximum, candidate):
+  File "<repo>/holevo-extensive-violation/tools/su3_common_den_controls.py", line 114, in _less
+    return first[0] * second[1] < second[0] * first[1]
+KeyboardInterrupt
+Exit status: 1
+
+The depth-10 run was stopped explicitly at user request on 2026-08-31. It had passed the original
+depth-6 failure point and had not printed an uncertified box or a final success verdict. Therefore
+10000/4992/15 is a progress checkpoint, not a terminal certificate count.

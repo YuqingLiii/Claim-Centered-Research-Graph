@@ -1,0 +1,44 @@
+==============================================================================
+TARGET 4 -- surface [[9,1,3]], the four named transfer schedules
+==============================================================================
+code: rs d=3  validate=['OK']
+
+instance           depth  MC     Z: d_R (1..3)  X: d_R (1..3)  vs RECORD
+surface913/ilv0    4      yes    [3, 3, 3]      [2, 2, 2]      MATCH
+surface913/ilv1    4      yes    [2, 2, 2]      [3, 3, 3]      MATCH
+surface913/blkX    8      yes    [3, 3, 3]      [2, 2, 2]      MATCH
+surface913/blkZ    8      yes    [3, 3, 3]      [2, 2, 2]      MATCH
+
+==============================================================================
+STRUCTURAL CHECK -- all 16 legal+(MC) members, d=3 and d=5
+RECORD (Table 4.2): exactly 4 classes of 4, identical d_R within a class
+==============================================================================
+
+  d=3 : 16 legal+(MC) members -> 4 distinct (d_R^Z, d_R^X) signatures
+     Z[2, 2, 2] / X[2, 2, 2]   : 4 members
+     Z[2, 2, 2] / X[3, 3, 3]   : 4 members
+     Z[3, 3, 3] / X[2, 2, 2]   : 4 members
+     Z[3, 3, 3] / X[3, 3, 3]   : 4 members
+     class sizes: [4, 4, 4, 4]   [RECORD: four classes of four]
+
+  d=5 : 16 legal+(MC) members -> 4 distinct (d_R^Z, d_R^X) signatures
+     Z[3, 3] / X[5, 5]   : 4 members
+     Z[4, 3] / X[4, 3]   : 4 members
+     Z[5, 5] / X[3, 3]   : 4 members
+     Z[5, 5] / X[5, 5]   : 4 members
+     class sizes: [4, 4, 4, 4]   [RECORD: four classes of four]
+
+==============================================================================
+TARGET 5 -- LIFT' repair-0 spot check: non-interleaved => d_circ = d_eff
+==============================================================================
+Non-interleaved schedules are the repair-0 case; the criterion predicts
+d_circ = d_eff (公共定义: '非交错电路已知满足 d_circ = d_eff').
+d_eff values are IMPORTED from the campaign records (not recomputed here).
+
+instance (non-interleaved)         sector   d_eff    stim d_circ R=1..4 verdict
+Steane [[7,1,3]] M_NI              Z        2        [2, 2, 2, 2]     MATCH
+Steane [[7,1,3]] M_NI              X        2        [2, 2, 2, 2]     MATCH
+surface [[9,1,3]] blkX             Z        3        [3, 3, 3, 3]     MATCH
+surface [[9,1,3]] blkX             X        2        [2, 2, 2, 2]     MATCH
+[[4,2,2]] a-block then b-block     Z        1        [1, 1, 1, 1]     MATCH
+[[4,2,2]] a-block then b-block     X        1        [1, 1, 1, 1]     MATCH

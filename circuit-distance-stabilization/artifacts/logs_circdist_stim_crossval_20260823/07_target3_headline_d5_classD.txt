@@ -1,0 +1,36 @@
+==============================================================================
+TARGET 3 -- d=5 rotated surface, class D (piX=NW,SW,NE,SE ; piZ=NW,NE,SW,SE)
+==============================================================================
+  d=3  n=9  validate=['OK']  code_distance=3  funnel 576->96->16  classD in (MC) set: True  depth=4
+  d=5  n=25  validate=['OK']  code_distance=5  funnel 576->96->16  classD in (MC) set: True  depth=4
+
+  hook geometry (d=5, weight-4 checks): X-hooks {'vertical': 8} ; Z-hooks {'horizontal': 8}
+  X_L is a COLUMN, Z_L is a ROW -> both hook families PARALLEL = doubly misaligned
+  [RECORD: 'N-order for the X-checks makes every bulk X-hook vertical (8 of 8 at d=5)']
+
+==============================================================================
+d_R FROM STIM DEMs
+==============================================================================
+d   sector  R   cols    dets    d_search  d_stim_native    time
+3   Z       1   23      8       2         2                0.0s
+3   Z       2   103     16      2         2                0.0s
+3   Z       3   205     24      2         2                0.0s
+3   X       1   23      8       2         2                0.0s
+3   X       2   97      16      2         2                0.0s
+3   X       3   197     24      2         2                0.0s
+5   Z       1   77      24      4         4                0.0s
+5   Z       2   421     48      3         3                0.0s
+5   X       1   77      24      4         4                0.0s
+5   X       2   415     48      3         3                0.0s
+
+  d=5 min-over-sectors : d_1 = 4 , d_2 = 3     [RECORD: d_1=4, d_2=3, R_stab=2]
+  d=3 min-over-sectors : [2, 2, 2]     [RECORD: 2,2,2 -> R_stab=1]
+
+==============================================================================
+ADVERSARIAL CONVENTION PROBE on the discovery cell (d=5, R=1 and 2)
+==============================================================================
+sector  R   A=frozen       B=compiler     C=noisyro     
+Z       1   4 (77 cols)    4 (77 cols)    4 (77 cols)   
+Z       2   3 (421 cols)   3 (421 cols)   3 (421 cols)  
+X       1   4 (77 cols)    4 (77 cols)    4 (77 cols)   
+X       2   3 (415 cols)   3 (415 cols)   3 (415 cols)  

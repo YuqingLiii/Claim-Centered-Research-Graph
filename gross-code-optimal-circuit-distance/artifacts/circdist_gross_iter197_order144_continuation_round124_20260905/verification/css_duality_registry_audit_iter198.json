@@ -1,0 +1,88 @@
+{
+  "action": {
+    "check": "g -> -g",
+    "conjugation_edge_cases": 62208,
+    "distinct_concrete_edge_permutations": 144,
+    "edge": "X:c:q <-> Z:-c:D(q)",
+    "extended_group_order": 144,
+    "involution_edge_cases": 864,
+    "name": "CSS duality D extending Z_12 x Z_6",
+    "qubit": "q<72 -> 72+(-q); q=72+r -> -r",
+    "relations": [
+      "D^2=1",
+      "D T_delta D=T_-delta"
+    ],
+    "residual_kind_action": "identity on k in {0,1,2}; order positions and layer labels unchanged",
+    "selector": "Xerr <-> Zerr; D:q -> D:D(q); R:c:k -> R:-c:k",
+    "translation_composition_edge_cases": 4478976,
+    "translation_subgroup_order": 72
+  },
+  "bindings": {
+    "candidate_schedule_sha256": "46633e0c3b8073783d1aaf86fe4dea581e300be3152b3c2661b272efb3f87151",
+    "candidate_sha256": "86bd02cb2ef3a3788a9558773adf1f1e1f5f5015c1072bab1d3be7bf77814c65",
+    "source_semantic_payload_sha256": "d41be17da8e398e13b94cf38807d78187247e7318d61ebbeb6d21bc2e7f43f9d",
+    "source_sha256": "dd0e4f55943381e265b174a0360f2ee2dc0e9c93326b71c315632ffbda6d95a2",
+    "state_sha256": "a60e1e378283153a3f24611a9e33cbb97df19bcbe231a9fa515b13fae0ff7287"
+  },
+  "blocks": {
+    "already_dual_paired_count": 814392,
+    "closed_union_count": 814392,
+    "dual_image_count": 814392,
+    "identity_rule": "full sorted ordered-atom tuple",
+    "input_count": 814392,
+    "missing_by_parent_family": {},
+    "missing_dual_image_count": 0,
+    "missing_set_generator_cases": 0,
+    "missing_translation_orbit_histogram": {}
+  },
+  "geometry": {
+    "check_image_cases": 288,
+    "detector_plus_logical_rank_each": 78,
+    "detector_rank_each": 66,
+    "kernel_dimension": 66,
+    "logical_criterion": "within zero syndrome, all 12 logical parities vanish iff the support is in the sector stabilizer span",
+    "mc_overlap_image_cases": 648,
+    "named_edges": 864,
+    "sector_swap": "X hook/Z detector/stabilizer quotient maps exactly to Z hook/X detector/stabilizer quotient and conversely",
+    "stabilizer_rank_each": 66,
+    "status": "PASS"
+  },
+  "information_gain": "The iteration-198 registry is claimed closed under translations and the CSS involution.  The missing counts here are the exact opposite CSS coset exclusions added by D; the union supports all 144 generalized-dihedral images.",
+  "schedule_transport": {
+    "dual": {
+      "edge_count": 864,
+      "global_interleaved": true,
+      "mc_overlaps": 648,
+      "resource_occupancies": 1728,
+      "schedule_sha256": "4d86d3c74ca290f0e97f6c6a6a9c30d4a4255c08b64cd9a666c242adf613b5e7",
+      "used_layers": 228
+    },
+    "layer_multiset_preserved": true,
+    "original": {
+      "edge_count": 864,
+      "global_interleaved": true,
+      "mc_overlaps": 648,
+      "resource_occupancies": 1728,
+      "schedule_sha256": "46633e0c3b8073783d1aaf86fe4dea581e300be3152b3c2661b272efb3f87151",
+      "used_layers": 228
+    }
+  },
+  "schema": "circdist-gross-round124-iter198-css-duality-registry-audit-v1",
+  "selectors": {
+    "already_dual_paired_count": 51840,
+    "closed_union_count": 51840,
+    "dual_image_count": 51840,
+    "existing_translation_orbit_histogram": {
+      "36": 8,
+      "72": 716
+    },
+    "identity_rule": "full (sector,sorted data,sorted (check,sorted kinds)) tuple",
+    "input_count": 51840,
+    "missing_by_target_sector": {},
+    "missing_dual_image_count": 0,
+    "missing_set_generator_cases": 0,
+    "missing_translation_orbit_histogram": {}
+  },
+  "soundness_lemma": "D is a bijection of the frozen physical schedule space preserving resource conflicts, the equality of the two MC orientations, global interleaving, and layer labels.  It swaps the two CSS error sectors, maps residual order position k identically, maps zero syndrome to zero syndrome, and maps stabilizer span to stabilizer span.  Therefore the D-image of every reviewed order exclusion and exact selector exclusion is sound; translation closure of the missing image sets follows from D T_delta D=T_-delta.",
+  "status": "PASS"
+}

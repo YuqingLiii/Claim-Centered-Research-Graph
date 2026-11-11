@@ -1,0 +1,63 @@
+id: GROTHE8.classical
+role: proof
+aliases:
+- E8-CLASSICAL
+claim: The canonical E8 Bell matrix has exact classical sign optimum 6104.
+routes:
+  poset-congruence-and-witness:
+    premises:
+    - GROTHE8.matrix
+    - GROTHE8.root-poset
+    - GROTHE8.filter-reduction
+    - GROTHE8.exceptional-congruence
+    - GROTHE8.classical-witness
+    implication: >-
+      The signed-root reduction and exact F_k envelope bound every sign objective by
+      6104; the lattice congruence closes k=98,104; and the A1+A6 sign assignment
+      attains 6104.
+    proof:
+      sketch: Apply equation (8), the filter bound, exceptional congruences, and the explicit witness.
+      sources:
+      - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-e8/e8-exact-certificate-20260829.md
+        kind: text
+        locator: E8-T4--E8-T9
+    assessment:
+      level: CONJECTURED
+      summary: Complete author-level exact proof with independently replayed finite certificate.
+      basis:
+        evidence:
+        - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-e8/e8-exact-certificate-20260829.md
+          kind: text
+          locator: E8-T4--E8-T9
+assessment:
+  level: CONJECTURED
+  summary: >-
+    A complete exact upper bound and equality witness are now local. The load-bearing
+    reductions have been separated into reviewable nodes; independent adversarial review
+    is the remaining promotion gate.
+  basis:
+    routes:
+    - poset-congruence-and-witness
+frontier:
+  task-001:
+    task: Independently audit the signed-filter lemma, exceptional lattice congruence, and A1+A6 equality witness.
+    kind: review
+    since: '2026-08-29'
+events:
+  migrated-2026-08-29:
+    date: '2026-08-29'
+    type: created
+    summary: Isolated the classical optimum assertion and retained its unresolved status.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-e8/e8-reconstruction-20260829.md
+      kind: text
+  proof-assembled-2026-08-29:
+    date: '2026-08-29'
+    type: repair-applied
+    summary: Added a global upper bound and explicit sign assignment, both tied to B = 3G - 13I.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-e8/e8-exact-certificate-20260829.md
+      kind: text
+      locator: E8-T4--E8-T9
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-e8/e8-dual-checker-run-20260829.txt
+      kind: run

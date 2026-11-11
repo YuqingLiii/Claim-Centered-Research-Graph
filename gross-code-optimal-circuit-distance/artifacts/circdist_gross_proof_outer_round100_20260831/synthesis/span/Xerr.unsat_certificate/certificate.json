@@ -1,0 +1,137 @@
+{
+  "all_children_reaped": true,
+  "checker_parent_pid": 23694,
+  "checker_pid": 23695,
+  "corrupt_drat_rejected": true,
+  "corrupt_lrat_rejected": true,
+  "detached_processes": 0,
+  "drat_bytes": 6086647,
+  "drat_sha256": "b14ece4b00c0c0ade83e8477fc2b6b97a230cb8622c928b4d5bd3d616d34ebb8",
+  "formula_sha256": "c689883518b2abbf28aadbc9f13025d032f6f1e792e469b7a584517cfc4f48e5",
+  "generated_lrat_accepted": true,
+  "lrat_bytes": 10226266,
+  "lrat_sha256": "88cde84e0153be278136e17c5f2c733b134b20ec8b8142318da657566d4eb2b1",
+  "processes": [
+    {
+      "child_pid": 23696,
+      "command": [
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/tooling/drat-trim-arm64-macos",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/synthesis/span/Xerr.cnf",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/synthesis/span/Xerr.drat",
+        "-t",
+        "1700",
+        "-L",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/synthesis/span/Xerr.unsat_certificate/accepted.lrat"
+      ],
+      "detached": false,
+      "expected_returncode": 0,
+      "name": "valid_drat_generate_lrat",
+      "parent_pid": 23695,
+      "reaped": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "\nc parsing input formula with 12949 variables and 43827 clauses\n\nc WARNING: backward mode ignores deletion of (pseudo) unit clause [0] -4847 0\n\nc WARNING: backward mode ignores deletion of (pseudo) unit clause [0] -4898 0\n\nc WARNING: backward mode ignores deletion of (pseudo) unit clause [0] -4950 0\n\nc WARNING: backward mode ignores deletion of (pseudo) unit clause [0] -5018 0\n\nc WARNING: backward mode ignores deletion of (pseudo) unit clause [0] -5092 0\n\nc WARNING: backward mode ignores deletion of (pseudo) unit clause [0] -5158 0\n\nc WARNING: backward mode ignores deletion of (pseudo) unit clause [0] -5200 0\n\nc WARNING: backward mode ignores deletion of (pseudo) unit clause [0] -5242 0\n\nc WARNING: backward mode ignores deletion of (pseudo) unit clause [0] -5278 0\n\nc WARNING: backward mode ignores deletion of (pseudo) unit clause [0] -5342 0\n\nc WARNING: backward mode ignores deletion of (pseudo) unit clause [0] -5412 0\n\nc WARNING: backward mode ignores deletion of (pseudo) unit clause [0] -5450 0\n\nc finished parsing\n\nc detected empty clause; start verification via backward checking\n\nc 15819 of 43827 clauses in core                            \n\nc 19086 of 78739 lemmas in core using 1481307 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.469 seconds\n",
+      "timed_out": false,
+      "wall_seconds": 0.682498
+    },
+    {
+      "child_pid": 23697,
+      "command": [
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/tooling/lrat-check-arm64-macos",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/synthesis/span/Xerr.cnf",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/synthesis/span/Xerr.unsat_certificate/accepted.lrat"
+      ],
+      "detached": false,
+      "expected_returncode": 0,
+      "name": "valid_lrat",
+      "parent_pid": 23695,
+      "reaped": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "c parsed a formula with 12949 variables and 43827 clauses\nc VERIFIED\nc allocated 1024 295831 129490\nc Added clauses = 62913.  Deleted clauses = 62634.  Max live clauses = 43827\nc verification time = 0.10 secs\n",
+      "timed_out": false,
+      "wall_seconds": 0.25279
+    },
+    {
+      "child_pid": 23698,
+      "command": [
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/tooling/drat-trim-arm64-macos",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/synthesis/span/Xerr.cnf",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/synthesis/span/Xerr.unsat_certificate/truncated.drat",
+        "-t",
+        "1700"
+      ],
+      "detached": false,
+      "expected_returncode": 1,
+      "name": "truncated_drat_rejected",
+      "parent_pid": 23695,
+      "reaped": true,
+      "returncode": 1,
+      "stderr": "",
+      "stdout": "\nc parsing input formula with 12949 variables and 43827 clauses\n\nc WARNING: backward mode ignores deletion of (pseudo) unit clause [0] -4847 0\n\nc WARNING: backward mode ignores deletion of (pseudo) unit clause [0] -4898 0\n\nc WARNING: backward mode ignores deletion of (pseudo) unit clause [0] -4950 0\n\nc WARNING: backward mode ignores deletion of (pseudo) unit clause [0] -5018 0\n\nc WARNING: backward mode ignores deletion of (pseudo) unit clause [0] -5092 0\n\nc WARNING: backward mode ignores deletion of (pseudo) unit clause [0] -5158 0\n\nc WARNING: backward mode ignores deletion of (pseudo) unit clause [0] -5200 0\n\nc WARNING: backward mode ignores deletion of (pseudo) unit clause [0] -5242 0\n\nc WARNING: backward mode ignores deletion of (pseudo) unit clause [0] -5278 0\n\nc WARNING: backward mode ignores deletion of (pseudo) unit clause [0] -5342 0\n\nc WARNING: backward mode ignores deletion of (pseudo) unit clause [0] -5412 0\n\nc WARNING: backward mode ignores deletion of (pseudo) unit clause [0] -5450 0\n\nc finished parsing\n\nc ERROR: no conflict\n\ns NOT VERIFIED\n\nc verification time: 0.073 seconds\n",
+      "timed_out": false,
+      "wall_seconds": 0.076833
+    },
+    {
+      "child_pid": 23699,
+      "command": [
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/tooling/drat-trim-arm64-macos",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/synthesis/span/Xerr.cnf",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/synthesis/span/Xerr.unsat_certificate/corrupt.drat",
+        "-t",
+        "1700"
+      ],
+      "detached": false,
+      "expected_returncode": 1,
+      "name": "corrupt_drat_rejected",
+      "parent_pid": 23695,
+      "reaped": true,
+      "returncode": 1,
+      "stderr": "",
+      "stdout": "\nc turning on binary mode checking\n\nc parsing input formula with 12949 variables and 43827 clauses\n\nc WARNING: wrong binary prefix, stop reading proof\n\nc finished parsing\n\nc ERROR: no conflict\n\ns NOT VERIFIED\n\nc verification time: 0.031 seconds\n",
+      "timed_out": false,
+      "wall_seconds": 0.034076
+    },
+    {
+      "child_pid": 23700,
+      "command": [
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/tooling/lrat-check-arm64-macos",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/synthesis/span/Xerr.cnf",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/synthesis/span/Xerr.unsat_certificate/truncated.lrat"
+      ],
+      "detached": false,
+      "expected_returncode": 1,
+      "name": "truncated_lrat_rejected",
+      "parent_pid": 23695,
+      "reaped": true,
+      "returncode": 1,
+      "stderr": "",
+      "stdout": "c parsed a formula with 12949 variables and 43827 clauses\nc WARNING: Verification incomplete. Last line checked = 113817\nc NOT VERIFIED\nc allocated 1024 295831 129490\nc Added clauses = 58646.  Deleted clauses = 53163.  Max live clauses = 43827\nc verification time = 0.05 secs\n",
+      "timed_out": false,
+      "wall_seconds": 0.049999
+    },
+    {
+      "child_pid": 23701,
+      "command": [
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/tooling/lrat-check-arm64-macos",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/synthesis/span/Xerr.cnf",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/synthesis/span/Xerr.unsat_certificate/corrupt.lrat"
+      ],
+      "detached": false,
+      "expected_returncode": 1,
+      "name": "corrupt_lrat_rejected",
+      "parent_pid": 23695,
+      "reaped": true,
+      "returncode": 1,
+      "stderr": "",
+      "stdout": "c parsed a formula with 12949 variables and 43827 clauses\nc WARNING: Verification incomplete. Last line checked = 0\nc NOT VERIFIED\nc allocated 1024 295831 129490\nc Added clauses = 43827.  Deleted clauses = 0.  Max live clauses = 43827\nc verification time = 0.01 secs\n",
+      "timed_out": false,
+      "wall_seconds": 0.011052
+    }
+  ],
+  "schema": "circdist-round100-actual-unsat-certificate-v1",
+  "status": "PASS",
+  "truncated_drat_rejected": true,
+  "truncated_lrat_rejected": true,
+  "valid_drat_accepted": true
+}

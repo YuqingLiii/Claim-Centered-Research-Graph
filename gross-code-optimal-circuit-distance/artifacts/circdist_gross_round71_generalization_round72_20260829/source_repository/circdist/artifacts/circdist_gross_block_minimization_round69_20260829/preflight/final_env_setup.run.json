@@ -1,0 +1,41 @@
+{
+  "all_foreground_serial": true,
+  "schema": "round69-final-clean-env-v1",
+  "steps": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "venv",
+        "/tmp/circdist_round69_final_verify_venv_20260829"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "timeout_seconds": 180,
+      "wall_seconds": 1.1171955
+    },
+    {
+      "command": [
+        "/tmp/circdist_round69_final_verify_venv_20260829/bin/pip",
+        "install",
+        "--disable-pip-version-check",
+        "-r",
+        "<repo>/circdist/artifacts/circdist_gross_block_minimization_round69_20260829/requirements.txt"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "timeout_seconds": 180,
+      "wall_seconds": 2.5891573340000003
+    },
+    {
+      "command": [
+        "/tmp/circdist_round69_final_verify_venv_20260829/bin/pip",
+        "freeze"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "timeout_seconds": 180,
+      "wall_seconds": 0.11593987500000003
+    }
+  ]
+}

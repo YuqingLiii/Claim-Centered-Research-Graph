@@ -1,0 +1,80 @@
+id: HEXT.su3-reducible-pieri-subspace-bell-no-go
+role: obstruction
+aliases:
+- su3-invariant-subspace-no-go
+- reducible-pieri-input-no-go
+claim: >-
+  For an arbitrary irreducible SU(3) environment V_(p,q), every invariant input subspace R of
+  3 tensor V_(p,q), including an arbitrary direct sum of its multiplicity-free Pieri sectors,
+  satisfies 2 barS_min(Phi_R)<=2S_min(Phi_R)<=S((Phi_R tensor barPhi_R)(Omega_dim(R))).
+routes:
+  invariant-subspace-classification:
+    premises:
+    - HEXT.su3-irreducible-covariant-bell-no-go
+    implication: >-
+      Any subspace containing the highest Pieri sector has a product-output input. The only new
+      subspace is the sum of the middle and third sectors. Its exact Gram contraction is bounded
+      by 7/16 when p=1 and by 5/8 when p>=2, while the middle sector supplies an explicit side
+      output of entropy h2(1/(p+1)); two elementary isotropic-entropy comparisons exclude a Bell
+      gap.
+    proof:
+      sketch: >-
+        Use multiplicity-free Pieri classification. Evaluate the low-complement Casimir projector
+        quadratic form to obtain t_low=((5p+2)q+5p^2+9p-2)/(8(p+1)(p+q+2)). Compare the isotropic
+        Bell entropy at t_low with twice the entropy of the embedded middle highest-weight input.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_REDUCIBLE_PIERI_SUBSPACE_BELL_NO_GO_20260830.md
+        kind: text
+        locator: "## 1. Reduction to the sum of the two lower branches through ## 3. An explicit side input is already enough"
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/check_su3_reducible_pieri_subspaces.py
+        kind: code
+        locator: deterministic mixed-weight low-direct-sum formula audit through p+q=6
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The all-parameter projector and entropy argument is complete proposer-side and has a
+        deterministic mixed-weight cross-check, but it has not received independent review.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - Reducible environments and coherent equivalent-environment multiplicities are not classified.
+  - Noncovariant qutrit Gram factors and non-Bell collective inputs are not classified.
+  - The proof is proposer-side and has not received independent review.
+  summary: >-
+    Every invariant subspace inside one irreducible-environment SU(3) Pieri product is closed for
+    the conjugate-Bell route.
+  basis:
+    routes:
+    - invariant-subspace-classification
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_REDUCIBLE_PIERI_SUBSPACE_BELL_NO_GO_20260830.md
+      kind: text
+      locator: "## Theorem"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_REDUCIBLE_PIERI_SUBSPACE_FORMULA_CHECK_20260830.txt
+      kind: text
+      locator: SU(3) reducible Pieri-subspace formulas passed through total weight 6
+frontier:
+  environment-multiplicity:
+    task: >-
+      Classify reducible SU(3) environments with genuine coherent multiplicity coupling; external
+      orthogonal flags alone are insufficient to represent this case.
+    kind: gate
+    since: 2026-08-30
+  noncovariant-qutrit-gram:
+    task: >-
+      Search nondepolarizing noncovariant qutrit Gram channels with a rectangular CP factor and a
+      global all-copy side-entropy lower bound.
+    kind: gate
+    since: 2026-08-30
+events:
+  reducible-pieri-subspaces-closed:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Extended the single-sector Pieri obstruction to every invariant direct sum inside one
+      irreducible-environment product.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_REDUCIBLE_PIERI_SUBSPACE_BELL_NO_GO_20260830.md
+      kind: text
+    - path: channel-additivity-violations/tools/holevo-extensive-violation/check_su3_reducible_pieri_subspaces.py
+      kind: code

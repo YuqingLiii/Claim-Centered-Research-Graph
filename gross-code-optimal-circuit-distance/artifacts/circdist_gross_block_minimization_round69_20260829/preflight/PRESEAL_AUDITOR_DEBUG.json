@@ -1,0 +1,29 @@
+{
+  "attempts": [
+    {
+      "cause": "Python tuple/list mismatch in model_metadata comparison after JSON round trip",
+      "fix": "compare canonical JSON-normalized metadata",
+      "outcome": "FAIL",
+      "wall_seconds": 38.095314875
+    },
+    {
+      "cause": "Python tuple/list mismatch in freshly returned mechanism atoms versus stored JSON",
+      "fix": "compare canonical JSON-normalized replay objects",
+      "outcome": "FAIL",
+      "wall_seconds": 38.95624225
+    },
+    {
+      "cause": "same-process Z3 global AST numbering changes SMT-LIB let identifiers after iteration 0",
+      "fix": "reconstruct each outer SMT in a fresh foreground process; all six byte hashes pass",
+      "outcome": "FAIL",
+      "wall_seconds": 40.639688584
+    },
+    {
+      "outcome": "PASS",
+      "scope": "full classification, CEGAR, direct formulas, bindings, and checker controls",
+      "wall_seconds": 121.718334958
+    }
+  ],
+  "notice": "These were verifier implementation defects found before sealing; none changed mathematical payload or mechanisms.",
+  "schema": "round69-preseal-auditor-debug-v1"
+}

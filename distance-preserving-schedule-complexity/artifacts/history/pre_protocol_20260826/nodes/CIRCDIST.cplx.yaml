@@ -1,0 +1,130 @@
+id: CIRCDIST.cplx
+role: outcome
+aliases:
+- EFF-PRESERVE
+claim: The promise decision problem Eff-Preserve (input CSS check matrices H_X, H_Z with promised
+  static distance d, a CNOT interaction/conflict graph, and an optional depth bound T; question
+  whether a legal schedule M with d_eff(M) = d exists) is classified with proof, comprising
+  NP-completeness for a fixed small constant d under stated structural restrictions (bounded
+  stabilizer weight and Tanner degree, few allowed local CNOT orders per check), and a tight
+  polynomial-hierarchy classification (candidate Sigma_2^P-completeness) when d is part of the
+  input.
+assessment:
+  level: CONJECTURED
+  summary: 'Round-1 recon (2026-08-20, artifacts/circdist_cplx_recon_20260820.md) decomposed the
+    classification into upper bounds (CIRCDIST.cplx.upper, drafted), fixed-d hardness
+    (CIRCDIST.cplx.fixed-d, gate registered), hierarchy hardness (CIRCDIST.cplx.sigma2, weak), and
+    tractable islands (CIRCDIST.cplx.islands, mostly done). Two scope findings the LEAD must see:
+    (i) the commissioned hardness restriction "d=3 with two local orders per check" is provably in
+    P (2-SAT) — the corrected hardness frontier is (d=3, order-domain >= 3) or (d >= 4, binary
+    domain); (ii) the MODEL must be pinned — with an arbitrary conflict graph NP-hardness is free
+    from graph colouring and says nothing, so the meaningful problem fixes qubit-sharing conflicts
+    only (depth feasibility then poly via Koenig, d_eff depending only on local orders).
+    Circ-Preserve shares the Sigma_2^P upper bound, so it can differ only in lower bounds.'
+  basis:
+    routes:
+    - classification-assembly
+routes:
+  islands-floor:
+    premises:
+    - CIRCDIST.cplx.islands
+    implication: The root's minimal acceptance bar is disjunctive — "a nontrivial restricted-class
+      polynomial algorithm with proven correctness" alone meets it — so a completed islands node
+      establishes the root at its floor scope even if both hardness halves stall.
+    proof:
+      sketch: Definitional (the acceptance clause of the frozen problem statement); the only
+        content is scoping the root claim honestly to what this route delivers.
+      sources:
+      - path: research/circdist/notes/CIRCDIST_PROBLEMS.md
+        kind: text
+    assessment:
+      level: CONJECTURED
+      summary: Registered 2026-08-20 after the auction engine exposed that the islands node was
+        not wired to the root by any route (its computed v was zero despite carrying the realistic
+        headline). Blueprint is definitional; rule 8e satisfied.
+  classification-assembly:
+    premises:
+    - CIRCDIST.cplx.upper
+    - CIRCDIST.cplx.fixed-d
+    - CIRCDIST.cplx.sigma2
+    implication: Membership plus fixed-d hardness gives NP-completeness for fixed d; membership
+      plus hierarchy hardness gives the tight PH classification for input d; together they are the
+      claimed classification. Assembly is bookkeeping.
+    proof:
+      sketch: Standard completeness assembly; content lives entirely in the premises.
+      sources:
+      - path: artifacts/circdist_cplx_recon_20260820.md
+        kind: text
+    assessment:
+      level: CONJECTURED
+      summary: Blueprint registered at decomposition (rule 8e). Note the root's minimal acceptance
+        bar is disjunctive (any of fixed-d completeness, PH classification, or a proven island),
+        so CIRCDIST.cplx.islands alone can meet the floor even if both hardness halves stall.
+frontier:
+  task-001:
+    task: 'LEAD DECISION needed: pin the interaction model (qubit-sharing conflicts only vs
+      arbitrary conflict graph) — determines which hardness statements are meaningful; recon
+      recommends qubit-sharing only.'
+    kind: task
+    since: '2026-08-20'
+events:
+  migrated-canonical-home-2026-08-23:
+    date: '2026-08-23'
+    type: migration
+    summary: 'Lead directive 2026-08-23: canonical home moved to the Claim-Centered-Research-Graph
+      repository; the discovery-new-algorithms copy is a frozen snapshot. Levels are re-based on
+      THIS repository''s DAG_PROTOCOL §3 verbatim: CERTIFIED* marks a CONDITIONAL result
+      (unresolved premises or scope caveats); PROVED requires a complete argument plus independent
+      adversarial review of every load-bearing input, with NO cross-model-stack requirement — the
+      former "same-stack ceiling" convention is RETIRED. Existing levels are carried unchanged;
+      re-adjudication of starred nodes under the canonical semantics is registered as review work,
+      not hand-executed by the dispatcher.'
+    sources:
+    - path: research/DAG_PROTOCOL.md
+      kind: text
+  created-2026-08-20:
+    date: '2026-08-20'
+    type: created
+    summary: Registered the Eff-Preserve complexity-classification problem as a root of the
+      circdist project (lead commission; live test of the valuation/scheduling layer).
+    sources:
+    - path: research/circdist/notes/CIRCDIST_PROBLEMS.md
+      kind: text
+  route-islands-floor-2026-08-20:
+    date: '2026-08-20'
+    type: route-added
+    route: islands-floor
+    summary: Wired the tractable-islands node to the root via the disjunctive minimal-acceptance
+      clause; the gap was exposed by the new auction engine (islands computed v = 0 while being
+      the realistic headline).
+    sources:
+    - path: research/circdist/notes/CIRCDIST_PROBLEMS.md
+      kind: text
+  recon-2026-08-20:
+    date: '2026-08-20'
+    type: route-added
+    route: classification-assembly
+    summary: Round-1 recon decomposed the node into upper/fixed-d/sigma2/islands children,
+      discharged the commissioned warm-up gadget ([[9,1,3]], 16/24 safe orders — unary, hence not
+      decisive), corrected the commissioned hardness restriction (2-SAT tractability), registered
+      the controllable-coupling-gadget as the decisive gate, and raised the node OPEN ->
+      CONJECTURED on the registered blueprint.
+    sources:
+    - path: artifacts/circdist_cplx_recon_20260820.md
+      kind: text
+  interaction-model-pinned-2026-08-23:
+    date: '2026-08-23'
+    type: repair-applied
+    summary: 'LEAD RULING (2026-08-23, "可以" on the dispatcher recommendation): the
+      interaction model for schedule legality in this problem is PINNED to QUBIT-SHARING ONLY —
+      two CNOTs conflict iff they share a qubit, i.e. exactly the frozen 公共定义 reading (one
+      two-qubit gate per qubit per time step); arbitrary conflict graphs are OUT of the
+      canonical problem. Rationale recorded: consistency with 课题一/二/四 (which already live
+      in this model, and cross-root imports exist); no existing result is lost (all islands and
+      gadget constructions are realised through actual code structure, hence already live in
+      the qubit-sharing model); hardness theorems in the physical model are strictly stronger.
+      Any future hardness work in the arbitrary-conflict-graph model is a separate,
+      non-canonical variant and must say so. This closes the round-2 pending lead decision.'
+    sources:
+    - path: research/circdist/notes/SCHEDULER.yaml
+      kind: text

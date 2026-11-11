@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/source/replay_round100.py", line 70, in <module>
+    run(f'outer_verify_iter{iteration}',[PY,R/'source/verify_outer_sat_model.py','--solver-log',solver_log,'--cnf',F/'outer.cnf','--source',R/'formulas'/f'iter{iteration}'/'source.json.gz','--metadata',F/'metadata.json','--frozen',V,'--assignment',outer/'assignment.dimacs','--candidate',outer/'candidate.json','--output',outer/'replay.json'])
+  File "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/source/replay_round100.py", line 48, in run
+    assert not timed_out and child.returncode==expected,(name,child.returncode,stdout[-2000:],stderr[-2000:])
+AssertionError: ('outer_verify_iter172', 1, '', 'Traceback (most recent call last):\n  File "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/source/verify_outer_sat_model.py", line 89, in <module>\n    import round68_build as B\n  File "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/vendor/round80/src/round68_build.py", line 11, in <module>\n    from outer import OuterScheduler\n  File "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/vendor/round80/src/round63_src/outer.py", line 5, in <module>\n    import z3\nModuleNotFoundError: No module named \'z3\'\n')

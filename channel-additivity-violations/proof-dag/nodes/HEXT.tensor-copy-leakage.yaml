@@ -1,0 +1,32 @@
+id: HEXT.tensor-copy-leakage
+role: obstruction
+aliases:
+- self-defect-obstruction
+claim: >-
+  Tensor-copy amplification of a one-shot Holevo or minimum-output-entropy pair gap loses the two
+  single-side self-regularization defects; asymptotically linear amplification of a fixed pair is
+  equivalent to positivity of the corresponding regularized pair defect.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    The exact inequalities and regularized limits are derived locally. They explain why merely
+    copying a known counterexample is not an unconditional amplification theorem. Independent
+    review is still required before promotion.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/TENSOR_COPY_LEAKAGE_PROOF_20260829.md
+      kind: text
+      locator: "## Holevo leakage inequality"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/TENSOR_COPY_LEAKAGE_PROOF_20260829.md
+      kind: text
+      locator: "## Minimum-output-entropy leakage inequality"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/TENSOR_COPY_LEAKAGE_PROOF_20260829.md
+      kind: text
+      locator: "## Exact regularized limits"
+frontier:
+  self-leakage:
+    task: >-
+      Prove sublinear total self-leakage for a strict p=1 pair, or bound the absolute regularization
+      loss of the new unbounded-gap family by o(one-shot gap).
+    kind: gate
+    since: 2026-08-29

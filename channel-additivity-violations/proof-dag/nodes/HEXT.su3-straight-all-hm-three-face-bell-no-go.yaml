@@ -1,0 +1,106 @@
+id: HEXT.su3-straight-all-hm-three-face-bell-no-go
+role: obstruction
+aliases:
+- straight-all-hm-three-face-no-go
+claim: >-
+  Every SU(3)-covariant qutrit channel supported on the translated straight three-face cluster
+  ((-4,2),(-2,1),(0,0)) satisfies the registered Bell-input no-gap entropy inequality for all
+  allowed labels, weights, and phases.
+routes:
+  fixed-three-original-side-cover:
+    premises:
+    - HEXT.su3-three-face-cluster-classification
+    - HEXT.su3-fixed-original-side-endpoint-lemma
+    implication: >-
+      Retain the h/m binary blocks at (-3,2), (-1,1), and (1,0), convexify the other four blocks
+      to 36 correlated Gram endpoints, and certify the five-variable compact inequality.
+    proof:
+      sources:
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/certify_su3_straight_chain_all_hm_cover.py
+        kind: code
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CHAIN_THREE_FACE_SCAN_20260830.md
+        kind: text
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_STRAIGHT_ALL_HM_THREE_FACE_BELL_NO_GO_20260830.md
+        kind: text
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        Static independent review passes the 36-branch exact mathematics, but the historical
+        five-line transcript used an unarchived earlier backend and is not source- or exit-bound.
+        A fresh source-bound rerun is required.
+      basis:
+        evidence:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_STRAIGHT_ALL_HM_THREE_FACE_CERTIFICATE_20260830.txt
+          kind: text
+          locator: smallest certified natural-log margin
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-extensive-violation/SU3_STRAIGHT_ALL_HM_EXACT_CERTIFICATE_INDEPENDENT_REVIEW_20260830.md
+          kind: review
+          locator: "## Executive verdict"
+          scope: >-
+            Passed the static orientation, branch and exact-arithmetic design, but blocked the
+            route because the historical execution lacks its actual source bytes and exit record.
+          reviewed_hash: sha256:d066a51c863ea9d1d6fad760b9f4e760450a5f0238e1991532d9a82d73de2af7
+assessment:
+  level: CONJECTURED
+  caveats:
+  - Static mathematics passed review, but the historical run used an unarchived pre-optimization backend and lacks source/exit binding.
+  - The displayed decimal is a rounded float rendering; the intended certified fact is strict positivity of an exact Fraction.
+  - This is one atomic straight orientation and does not establish the aggregate straight-chain claim.
+  summary: >-
+    This straight all-h/m orientation has a passing static exact design but remains unproved until
+    a fresh source-bound execution reproduces the complete certificate.
+  basis:
+    routes:
+    - fixed-three-original-side-cover
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_STRAIGHT_ALL_HM_THREE_FACE_CERTIFICATE_20260830.txt
+      kind: text
+      locator: adaptive compact boxes certified
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SU3_STRAIGHT_ALL_HM_EXACT_CERTIFICATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "## Executive verdict"
+      scope: >-
+        Bound the exact atomic claim hash while blocking promotion solely on historical execution
+        provenance; no aggregate straight or Q3 conclusion is supported.
+      reviewed_hash: sha256:2945828cb0b572ab8de2e5c8e5b0b3348559ec66a7fb0a20cc97e05d03fcecbb
+frontier:
+  fresh-source-bound-rerun:
+    task: >-
+      Rerun the exact straight-all-h/m driver through the fail-closed source-bound wrapper in a new
+      directory, preserving the actual import closure, hashes, transcript, exact terminal fields,
+      source-drift check and exit status for amendment review.
+    kind: task
+    since: 2026-08-30
+events:
+  historical-execution-provenance-blocked:
+    date: '2026-08-30'
+    type: review-completed
+    summary: >-
+      Independent review passed the static exact design but found that the historical run used an
+      unarchived earlier backend and lacks command, exit and source binding; levels remain
+      CONJECTURED pending a fresh source-bound rerun.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SU3_STRAIGHT_ALL_HM_EXACT_CERTIFICATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "## Executive verdict"
+  orientation-node-created:
+    date: '2026-08-30'
+    type: created
+    summary: Split this orientation from the aggregate straight-chain claim.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CHAIN_THREE_FACE_COVER_COMPLEXITY_20260830.md
+      kind: text
+  exact-certificate-completed:
+    date: '2026-08-30'
+    type: level-change
+    from: NUMERICAL
+    to: CONJECTURED
+    route: fixed-three-original-side-cover
+    summary: >-
+      Recorded the exact 36-branch, 4165-box compact certificate with minimum natural-log margin
+      greater than 2.347448147888e-05.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_STRAIGHT_ALL_HM_THREE_FACE_BELL_NO_GO_20260830.md
+      kind: text

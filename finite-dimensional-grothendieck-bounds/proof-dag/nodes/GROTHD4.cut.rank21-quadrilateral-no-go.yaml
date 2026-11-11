@@ -1,0 +1,35 @@
+id: GROTHD4.cut.rank21-quadrilateral-no-go
+role: obstruction
+aliases:
+- D4-RANK21-QUADRILATERAL-NO-GO
+claim: >-
+  The known-equality CUT_7 feature matrix on the H4-plus-swap orbit of
+  (0,1,45,108,269,288,520) has rank 21, but its one-dimensional nullspace
+  contains no nonzero valid CUT_7 inequality.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    The rank defect is the quadrilateral identity
+    x_04-x_05-x_14+x_15. Exact CUT_7 witnesses give both signs, so neither
+    orientation is valid and the defect cannot strengthen the relaxation.
+    The 14400-cluster orbit and its 1800 four-point cores are checked exactly.
+    Independent review and other cluster orbits remain open.
+  basis:
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-rank21-quadrilateral-orbit-20260830.md
+      kind: text
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_rank21_quadrilateral_orbit_checker.py
+      kind: code
+frontier:
+  independent-review:
+    task: Independently audit the orbit, rank minor, nullspace, and two-sided witnesses.
+    kind: review
+    since: '2026-08-31'
+events:
+  registered-2026-08-31:
+    date: '2026-08-31'
+    type: created
+    summary: Registered the exact author-side rank-21 orbit obstruction.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-rank21-quadrilateral-orbit-20260830.md
+      kind: text

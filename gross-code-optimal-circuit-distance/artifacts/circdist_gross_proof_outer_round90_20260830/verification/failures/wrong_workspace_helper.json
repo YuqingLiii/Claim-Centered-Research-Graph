@@ -1,0 +1,10 @@
+{
+  "schema": "circdist-round90-excluded-tool-failure-v1",
+  "failure_id": "F-05",
+  "status": "EXCLUDED",
+  "tool": "package validator-helper creation/invocation",
+  "returncode": 2,
+  "failure": "A relative patch target was resolved in the session's unrelated initial workspace rather than the mandated Claim-Centered-Research-Graph repository; the subsequent invocation in the mandated repository found no script.",
+  "effect": "One helper source file only was created outside the target repository; no command from it ran and no science or canonical file changed.",
+  "correction": "The stray file and its empty Round90 directory were removed, absence was checked, and the helper was written explicitly in the mandated repository."
+}

@@ -1,0 +1,80 @@
+id: HEXT.werner-two-component-nonreturn-weighted-count
+role: proof
+aliases:
+- werner-c2-hge2-weighted-mass
+claim: >-
+  For every N>=2 and h>=2, the total minimal Catalan weight of all two-topological-component
+  structural Werner constellations of total genus h is at most 4096^N N^(24h). Every admissible
+  member has at most N+2h equality components. Consequently, after m^(-2N) moment normalization,
+  the admissible subset's total minimal-path genus-h absolute mass is at most
+  (4096/m)^N m^2 N^24 (m^2 N^24/d^2)^(h-1). A skeletonwise excess-path sum adds at most the
+  factor 1/(1-6(2N)^(7/2)/d^2) whenever the denominator is positive.
+routes:
+  two-unicellular-tree-cotree-code:
+    premises:
+    - HEXT.werner-contraction-skeleton-ribbon-injection
+    - HEXT.werner-constellation-euler-deficit
+    - HEXT.werner-minimal-catalan-weight
+    - HEXT.werner-monotone-weingarten-tail-summability
+    - HEXT.werner-admissible-equality-component-genus-bound
+    implication: >-
+      For every N>=2 and h>=2, the total minimal Catalan weight of all two-topological-component
+      structural Werner constellations of total genus h is at most 4096^N N^(24h). Every admissible
+      member has at most N+2h equality components. Consequently, after m^(-2N) moment normalization,
+      the admissible subset's total minimal-path genus-h absolute mass is at most
+      (4096/m)^N m^2 N^24 (m^2 N^24/d^2)^(h-1). A skeletonwise excess-path sum adds at most the
+      factor 1/(1-6(2N)^(7/2)/d^2) whenever the denominator is positive.
+    proof:
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_EQUALITY_COMPONENT_GENUS_GATE_20260830.md
+        kind: text
+        locator: "## 9. Weighted count for the residual two-component sector"
+    assessment:
+      level: PROVED
+      caveats:
+      - The displayed mass before the final factor is a minimal-path absolute mass bound.
+      summary: >-
+        Independent review verified both rooted one-face tree--cotree codes, genus split, Catalan
+        weighting, equality components, Euler normalization and the separate monotone-tail factor.
+      basis:
+        evidence:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_EQUALITY_COMPONENT_GENUS_GATE_20260830.md
+          kind: text
+          locator: "## 9. Weighted count for the residual two-component sector"
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_EQUALITY_COMPONENT_GENUS_GATE_INDEPENDENT_REVIEW_20260830.md
+          kind: review
+          locator: "Finding WECG-IR-09"
+          scope: >-
+            Independently verified the structural count, N/m/d powers, minimal-path qualifier and
+            exact skeletonwise excess-path multiplier with all five premises explicit.
+          reviewed_hash: sha256:16edb16e7ddcce4a044c0fe7608bc73bfe530a0fad52e02fc9f1a05fe7488c32
+assessment:
+  level: PROVED
+  caveats:
+  - This controls only the two-component h>=2 sector and is not a centered moment assembly.
+  summary: >-
+    The residual two-component nonreturn structural count and normalized absolute mass are
+    independently proved with the monotone excess-path factor explicit.
+  basis:
+    routes:
+    - two-unicellular-tree-cotree-code
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_EQUALITY_COMPONENT_GENUS_GATE_20260830.md
+      kind: text
+      locator: "## 9. Weighted count for the residual two-component sector"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_EQUALITY_COMPONENT_GENUS_GATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WECG-IR-09"
+      scope: Independently verified the exact repaired claim and all machine-visible dependencies.
+      reviewed_hash: sha256:16edb16e7ddcce4a044c0fe7608bc73bfe530a0fad52e02fc9f1a05fe7488c32
+events:
+  two-component-nonreturn-count-created-and-reviewed:
+    date: '2026-08-30'
+    type: created
+    summary: Registered the independently proved c=2,h>=2 weighted count and mass bound.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_EQUALITY_COMPONENT_GENUS_GATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WECG-IR-09"

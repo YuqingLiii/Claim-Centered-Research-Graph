@@ -1,0 +1,143 @@
+{
+  "all_children_reaped": true,
+  "children": [
+    {
+      "child_pid": 36244,
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/source/check_input_bindings_round100.py",
+        "--root",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831"
+      ],
+      "detached": false,
+      "name": "input_bindings",
+      "parent_pid": 36237,
+      "reaped": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"files_checked\": 69, \"status\": \"PASS\", \"tree_sha256\": \"4b82108c67f0288460de64fdf48a43efbdb0a07d4cb1bf5de735d93d253446ab\"}\n",
+      "timed_out": false,
+      "wall_seconds": 0.226634
+    },
+    {
+      "child_pid": 36245,
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/source/check_compression_round100.py",
+        "--root",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831"
+      ],
+      "detached": false,
+      "name": "compression",
+      "parent_pid": 36237,
+      "reaped": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"content_bytes\": 738519429, \"files_checked\": 222, \"status\": \"PASS\", \"stored_bytes\": 144726606}\n",
+      "timed_out": false,
+      "wall_seconds": 1.145592
+    },
+    {
+      "child_pid": 36253,
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/source/check_result.py",
+        "--root",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831"
+      ],
+      "detached": false,
+      "name": "result",
+      "parent_pid": 36237,
+      "reaped": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"D_star_Gross\": [11, 12], \"direct_sat\": 24, \"fresh_iteration\": 184, \"outer_sat\": 12, \"status\": \"PASS\", \"synthesis_unsat\": 2, \"verdict\": \"MATERIAL-CHECKED-PROGRESS-NOT-CLOSED\"}\n",
+      "timed_out": false,
+      "wall_seconds": 0.046241
+    },
+    {
+      "child_pid": 36254,
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/source/check_process_ledger.py",
+        "--root",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831"
+      ],
+      "detached": false,
+      "name": "process",
+      "parent_pid": 36237,
+      "reaped": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"all_reaped\": true, \"campaign_wrappers\": 192, \"pid_records\": 211, \"science_records\": 204, \"solver_intervals\": 38, \"span_proof_children\": 12, \"status\": \"PASS\"}\n",
+      "timed_out": false,
+      "wall_seconds": 0.02603
+    },
+    {
+      "child_pid": 36255,
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/source/check_live_protected_round100.py",
+        "--root",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831",
+        "--repository",
+        "<repo>"
+      ],
+      "detached": false,
+      "name": "live_protected",
+      "parent_pid": 36237,
+      "reaped": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"canonical_and_protocol_unchanged\": true, \"dispatch_files\": 5, \"proof_dag_files\": 20, \"status\": \"PASS\"}\n",
+      "timed_out": false,
+      "wall_seconds": 0.02192
+    },
+    {
+      "child_pid": 36256,
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/source/check_mixed_sector_round100.py",
+        "--root",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831"
+      ],
+      "detached": false,
+      "name": "mixed_sector",
+      "parent_pid": 36237,
+      "reaped": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"finite_set_controls\": 256, \"logical_cases\": 4, \"name_universe_count\": 360, \"status\": \"PASS\"}\n",
+      "timed_out": false,
+      "wall_seconds": 0.019622
+    },
+    {
+      "child_pid": 36257,
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831/source/check_proof_controls.py",
+        "--root",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round100_20260831",
+        "--output",
+        "<tmpdir>/T/circdist-r100-final-preseal.n_wwtv6g/proof.json"
+      ],
+      "detached": false,
+      "name": "proof_controls",
+      "parent_pid": 36237,
+      "reaped": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"corrupt_drat_rejected\": true, \"corrupt_lrat_rejected\": true, \"fixture_cnf_sha256\": \"b8d28f511bbc3bc5d67e0fcda748b6ad85d5e543c64bc91d09f34ecb10805efd\", \"generated_lrat_accepted\": true, \"generated_lrat_sha256\": \"cf32dfff36b24ba36c3504765f29ecf3d7a8abaa59956ade4d24a4062caa6431\", \"schema\": \"circdist-round88-proof-controls-v1\", \"scope\": \"tool-chain controls only; no Gross UNSAT occurred\", \"status\": \"PASS\", \"truncated_drat_rejected\": true, \"truncated_lrat_rejected\": true, \"valid_drat_accepted\": true, \"valid_drat_sha256\": \"b6c2e560bb08c84d583ca94799951a21c8cae5de35d6d04d77bc4842e9c18ecd\"}\n",
+      "timed_out": false,
+      "wall_seconds": 0.094596
+    }
+  ],
+  "detached_processes": 0,
+  "direct_child_count": 7,
+  "nested_proof_control_children": 6,
+  "parent_pid": 70180,
+  "pid": 36237,
+  "schema": "circdist-round100-final-preseal-checks-v1",
+  "status": "PASS",
+  "total_known_children": 13
+}

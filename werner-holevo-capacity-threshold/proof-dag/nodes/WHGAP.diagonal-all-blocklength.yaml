@@ -1,0 +1,44 @@
+id: WHGAP.diagonal-all-blocklength
+role: proof
+aliases:
+- classical-correlated-all-n
+claim: >-
+  For 2/5 <= x <= 1/2, every blocklength-n input diagonal in a real product basis, with arbitrary
+  classical correlations across copies, has nonpositive coherent information under
+  Lambda_x tensor n.
+routes:
+  classical-more-capable-tensorization:
+    premises:
+    - WHGAP.real-input-reduction
+    implication: >-
+      Equal conditional row entropies turn the one-copy diagonal entropy inequality into a
+      classical more-capable order; a coordinate-by-coordinate hybrid identity tensorizes that
+      order for arbitrary correlated input strings.
+    proof:
+      sketch: >-
+        Telescope I(J^n;E^n)-I(J^n;B^n) through hybrids (E^{i-1},B_{i+1}^n), reduce each term by
+        memorylessness, and condition on the hybrid variable before applying the one-copy order.
+      sources:
+      - path: werner-holevo-capacity-threshold/artifacts/DIAGONAL_ALL_BLOCKLENGTH_PROOF_20260829.md
+        kind: text
+        locator: "## Tensorization by a hybrid identity"
+    assessment:
+      level: CONJECTURED
+      summary: The proposer-side hybrid proof is complete; independent review is pending.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - Off-diagonal coherences and entangled superpositions are not controlled.
+  summary: >-
+    The all-real one-copy theorem induces a classical more-capable order, and an exact hybrid
+    identity tensorizes it for arbitrary correlated input strings. Independent review is pending.
+  basis:
+    routes:
+    - classical-more-capable-tensorization
+    evidence:
+    - path: werner-holevo-capacity-threshold/artifacts/DIAGONAL_ALL_BLOCKLENGTH_PROOF_20260829.md
+      kind: text
+      locator: "## Tensorization by a hybrid identity"
+    - path: werner-holevo-capacity-threshold/artifacts/REAL_INPUT_REDUCTION_20260829.md
+      kind: text
+      locator: "## Completion of the two-equal curve"

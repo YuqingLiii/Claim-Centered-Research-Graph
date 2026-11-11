@@ -1,0 +1,201 @@
+id: CIRCDIST.cplx.islands
+role: proof
+aliases:
+- EFFP-ISLANDS
+claim: Nontrivial restricted classes of Eff-Preserve are in P (or FPT) with proven correctness — including
+  factorising instances (no inter-check coupling; self-certifying), HGP codes (every schedule preserves
+  d_eff >= min(mu_X, mu_Z), so constant YES under the non-degeneracy proviso), bounded-treewidth Tanner
+  graphs (CMSO2/Courcelle FPT), and d = 3 with two allowed orders per check (2-SAT, no check-weight bound).
+assumptions:
+  courcelle-c1:
+    kind: external-theorem
+    statement: 'C1: Courcelle''s theorem — CMSO2-definable properties are FPT-decidable on bounded-treewidth
+      structures. Carries the Island III clause (a plain Boolean CMSO2 sentence; the former "optimization
+      extension" wording was over-registration, struck — unused by the argument). PRIMARY-VERIFIED 2026-08-23
+      via two disjoint chains (artifacts/circdist_courcelle_primary_20260823.md): [Cou90] Courcelle, Inform.
+      and Comput. 85 (1990) 12-75, full text read — Theorem (4.4) (every definable subset effectively
+      recognizable) + Proposition (4.14)(1) (deciding phi in CMS in O(size(e)) given a width-m expression);
+      note its parameter is HR-expression width, not "tree-width" by name. [CE12] Courcelle-Engelfriet,
+      EMA 138 — CITED EDITION: the April 2011 authors'' pre-publication draft (labri.fr; print pagination
+      unobtainable, wave-30 ruling: cite by number-and-name, pages surplus) — CORRECTED LOCATOR: Theorem
+      6.4(1) (draft p. 429, CMS2 model-checking FPT-linear in (twd(G), phi), no supplied decomposition
+      needed) with Theorem 5.68(2) (draft p. 397) and Definition 5.17 (draft p. 345); the previously pinned
+      Prop 5.13 is an MS1 INEXPRESSIBILITY result of opposite polarity (the book''s motivation for edge-set
+      quantification) — mis-citation caught only by reading the statement. [ALS91] J. Algorithms 12(2)
+      308-340: bibliographic data exact (DBLP + publisher DOI), full text unobtainable, theorem numbers
+      unverified — DEMOTED to corroborating, immaterial: not load-bearing, its role discharged twice by
+      the fully-read texts. Island III assumes LESS than these grant. R4 EDITS APPLIED (2026-08-23, per
+      Amendment 5 + its re-review): the CE12 verification read the April-2011 authors'' draft, not the
+      print EMA 138 — page numbers may shift in print; the HR-expression-width-to-treewidth bridge is
+      registered via CE12 Thm 2.83 with the amendment''s hedge (2.83 converts a tree decomposition to
+      an HR term; the wave-18 artifact describes rather than quotes it, and the Island III route actually
+      taken — CE12 Thm 6.4(1) — does not use it); "two disjoint chains" corrected to one chain plus corroboration.'
+    source:
+      path: distance-preserving-schedule-complexity/artifacts/circdist_courcelle_primary_20260823.md
+      kind: text
+      locator: Per-citation verdicts
+  def-13prime-em:
+    kind: model-fact
+    statement: 'Definition 1.3-prime (Amendment 5 §1): E(M) is the standard hook-error extended code —
+      the write-up itself never defined E(M). ADJUDICATED NON-ISSUE by the Amendment-5 re-review (no lead
+      ratification needed): 公共定义 lines 31/35/37 (d_circ counts |F|; d_eff <= d_circ; equality non-interleaved)
+      plus 课题二 lines 97-98 pin both scope-note conditions, and the weight-reading is excluded by line
+      35; the two variant encodings (adding chi_supp columns; one joint matrix) are identical on all 32
+      biting triples. Registered for machine visibility per the re-review''s instruction. LEAD-RATIFIED
+      2026-08-23 (verbatim: "批准 Definition 1.3′") — the definitional pin now carries both the reviewer''s
+      from-the-frozen-text adjudication and an explicit lead ratification; no residual of any kind remains
+      on this interface.'
+    source:
+      path: distance-preserving-schedule-complexity/reviews/circdist_islands_amendment5_review_20260823.md
+      kind: review
+      locator: Section 2
+assessment:
+  level: PROVED
+  caveats:
+  - 'Shared model design is not independence (systemic, permanent): every implementation in this node''s
+    verification chain — dossier, five reviews, three independent bridge implementations — re-implements
+    the same frozen 公共定义 fault menu and (M4) terminal boundary; a systematic model-vs-real-compiler mismatch
+    would survive all of them. NO stim cross-check exists anywhere in this node''s history. The 2026-08-25
+    stim cross-validation (artifacts/circdist_stim_crossval_20260823.md) validated the SHARED 公共定义 fault
+    menu and (M4) terminal boundary against stim 1.16.0 on the lift and sat arms — including a direct
+    demonstration that the (M4) ideal-readout boundary is not load-bearing for d_circ — but built NO island
+    gadget and NO reduction instance, so this node''s own constructions remain stim-untouched.'
+  - 'Island V stays OUT of the claim (task-004): the wave-19 Steane refutation stands and the Amendment-5
+    corrected V clause was itself found defective (dropped "choice-free").'
+  - All four islands are V1 statements (no depth bound) and are about d_eff, not d_circ; Island IV additionally
+    excludes the (Lambda-timing) reading.
+  - Island I is polynomial only for fixed d and bounded w; Corollary I.1-prime component 1 is the NP-hard
+    distance problem at general d; the clause parenthesis carries no qualifier of its own.
+  - 'Island II: Theorem II.4''s own hypothesis is a distance condition, not poly-time checkable; only
+    Lemma II.5''s proviso is; the necessity witness (46/1971) was not reproduced by the wave-30 reviewer.'
+  - 'Island III: f(t,w,d) is non-elementary (Frick-Grohe), possible near-vacuity at growing d; the hypothesis
+    is on the Tanner graph, not a layout; Phi_{t,w,d} is the dossier''s own construction, read not re-derived
+    by the wave-30 reviewer.'
+  - 'C1 citation layer: [ALS91] full text unobtainable (immaterial, corroborating only); [CE12] print-edition
+    numbering unverified — the April-2011 draft is the cited edition (wave-30 ruling: protocol wants a
+    theorem, not a page).'
+  - Islands I and III were not re-computed by the wave-30 reviewer (I by wave-19 own-code; III adjudicated
+    on the amended text + the primary-source verification).
+  summary: The narrowed four-island dossier and its universal Theorem B bridge passed the hash-bound end-to-end
+    review and are PROVED in their stated scopes. The former fifth clause was refuted and is excluded.
+    The retained caveats distinguish each island, the model, and the computational coverage.
+  basis:
+    reviews:
+    - path: distance-preserving-schedule-complexity/reviews/circdist_endtoend2_review_20260823.md
+      kind: review
+      scope: End-to-end four-island pass over the assembled dossier (amendments 1-5 applied in order,
+        byte-verified) against the exact claim — clause-by-clause tracing on the AMENDED text, own-code
+        re-verification of the Theorem B bridge (84 triples incl. a min = 4 regime, execution-based (<=)
+        test) and Islands II/IV on fresh families, wave-21 precisions folded, C1 draft-citation ruling;
+        verdict PROVED-QUALIFIES conditional on the §7.3 registration edit, executed at promotion.
+      locator: Section 8
+      reviewed_hash: sha256:2e786e9625b0223f52c70cb2b6521cfe9125ccf8d57834df37446211e1256346
+    - path: distance-preserving-schedule-complexity/reviews/circdist_islands_amendment5_review_20260823.md
+      kind: review
+      scope: Focused independent re-review of Amendment 5 — Lemma 1.4 derivation re-derived step by step
+        and verified with an independent-method simulator (no shared code, 104 fresh triples incl. dependent-generator
+        codes and interleaved schedules, 0 disagreements); Def 1.3-prime residual adjudicated a non-issue
+        from the frozen 公共定义 text; items 3-6 conformance-swept; the corrected V clause REJECTED (choice-free
+        hypothesis dropped, 32-schedule witness); licenses CERTIFIED* on the narrowed four-island claim.
+      locator: Verdict
+      reviewed_hash: sha256:2e786e9625b0223f52c70cb2b6521cfe9125ccf8d57834df37446211e1256346
+    runs:
+    - path: distance-preserving-schedule-complexity/reviews/circdist_endtoend2_review_20260823.md
+      kind: run
+      scope: Wave-30 own-code sweeps against the CURRENT claim — 84-triple bridge verification (21 codes,
+        24 triples at min >= 3, 8 at min = 4), 28-instance universal-form HGP census, 114-pair 2-SAT cross-check,
+        732-qubit P2 measurement.
+      result: 0 disagreements in every sweep; chi_supp outside Cols 1524/1524; the P2 precision folds
+        (V1 needed only for check-support-free qubits, widening Theorem B under a depth bound).
+    - path: distance-preserving-schedule-complexity/reviews/circdist_islands_endtoend_review_20260823.md
+      kind: run
+      scope: End-to-end review's own-code re-verification of all five islands from the §1 definitions
+        (no dossier code reused) — chain-realisability exhaustive w<=5; universal HGP census 1075 instances;
+        Sched-clause/bijection equivalence; 840-instance 2-SAT cross-check vs exhaustive truth; 108-code
+        V.4 sweep; the Steane refutation witness for the deleted clause (24^3 x 24^3 exhaustive).
+      result: Islands I-IV sound (0 disagreements in every census); Theorem V.4 sound; former Island V
+        clause REFUTED as worded (Steane NO-instance); Lemma 1.4 identified as underived and load-bearing.
+    evidence:
+    - path: distance-preserving-schedule-complexity/reviews/circdist_amendments2_review_20260820.md
+      kind: text
+    - path: distance-preserving-schedule-complexity/reviews/circdist_amendments4_review_20260822.md
+      kind: text
+    - path: distance-preserving-schedule-complexity/reviews/circdist_islands_endtoend_review_20260823.md
+      kind: text
+    - path: distance-preserving-schedule-complexity/artifacts/circdist_cplx_islands_amendment5_20260823.md
+      kind: text
+    - path: distance-preserving-schedule-complexity/artifacts/history/pre_protocol_20260826/nodes/CIRCDIST.cplx.islands.yaml
+      kind: text
+      note: Immutable pre-migration record, including every original event, former summary and frontier;
+        historical evidence, not an additional completion review.
+    - path: distance-preserving-schedule-complexity/reviews/circdist_readjudication_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: distance-preserving-schedule-complexity/artifacts/circdist_cplx_islands_amendment4_20260822.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: distance-preserving-schedule-complexity/reviews/circdist_islands_amendment3_review_20260822.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: distance-preserving-schedule-complexity/artifacts/circdist_cplx_islands_amendment3_20260822.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: distance-preserving-schedule-complexity/artifacts/circdist_cplx_islands_amendment2_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: distance-preserving-schedule-complexity/reviews/circdist_amendments_review_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: distance-preserving-schedule-complexity/artifacts/circdist_cplx_islands_amendment1_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: distance-preserving-schedule-complexity/reviews/circdist_islands_review_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: distance-preserving-schedule-complexity/artifacts/circdist_cplx_islands_writeup_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: distance-preserving-schedule-complexity/artifacts/circdist_cplx_gadget_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: distance-preserving-schedule-complexity/artifacts/circdist_cplx_recon_20260820.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: distance-preserving-schedule-complexity/artifacts/history/legacy_DAG_PROTOCOL.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: distance-preserving-schedule-complexity/artifacts/circdist_courcelle_primary_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: distance-preserving-schedule-complexity/reviews/circdist_islands_amendment5_review_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: distance-preserving-schedule-complexity/reviews/circdist_endtoend2_review_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+    - path: distance-preserving-schedule-complexity/reviews/circdist_stim_crossval_20260823.md
+      kind: text
+      note: Historical event source; see the unchanged pre-migration node for the exact event and its
+        scope.
+frontier:
+  task-004:
+    task: 'Island V general case (weight <= 4, k >= 2, without hypothesis (D)): decide whether code-realizable
+      instances express general list-section hardness or collapse to matching — 1-2 sessions, both outcomes
+      useful (poly algorithm or the reopened weight-4 hardness).'
+    kind: task
+    since: '2026-08-20'

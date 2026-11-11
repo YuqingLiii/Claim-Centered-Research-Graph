@@ -1,0 +1,99 @@
+id: HEXT.werner-boundary-preserving-genus-reduction
+role: proof
+aliases:
+- werner-local-handle-surgery
+claim: >-
+  There exist universal integers a and L such that every connected minimal Werner skeleton of
+  loop deficit 2h can be transformed into a genus-zero forward/reversal skeleton by at most ah
+  local permutation surgeries, each changing at most L tuple-label equality incidences while
+  keeping both rooted trace permutations fixed.
+assessment:
+  level: OPEN
+  caveats:
+  - Ordinary unicellular trisection proves only the unrooted topological analogue.
+  - Any finite aL would suffice asymptotically, but no such trace-preserving local surgery is proved.
+  - >-
+    An independently proved admissible N=4 skeleton rules out every one-step fixed-rho structural
+    move of union support at most four; this normal-form route must allow support at least five or
+    use multiple preparatory moves/a different interface.
+  summary: >-
+    This weaker alternative to an explicit b<=2+4h paired-stack slicing is the smallest sufficient
+    live genus-reduction lemma.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_MINIMAL_SKELETON_MAP_COUNT_20260830.md
+      kind: text
+      locator: "## 8. Exact remaining bridge"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_20260830.md
+      kind: text
+      locator: "## 10. Smallest next lemma"
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.werner-pairwise-surgery-obstruction.yaml
+      kind: node-evidence
+      note: Independently proved route obstruction showing support-two common-cycle surgery is not universal.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.werner-boundary-surgery-normal-form.yaml
+      kind: node-evidence
+      note: Independently proved unique fixed-rho structural-move coordinates and exact arrow-defect cost.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.werner-support-four-surgery-obstruction.yaml
+      kind: node-evidence
+      note: Independently proved singleton obstruction ruling out every one-step move on four or fewer darts.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.werner-support-five-genus-one-base-case.yaml
+      kind: node-evidence
+      note: >-
+        Independently proved support-five structural move for the obstructing singleton only; this
+        is a feasibility base case, not a universal construction.
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WPCS-IR-08"
+      scope: >-
+        Independently confirmed that common-cycle surgery is conditional, the support-two route
+        stalls, and no universal bounded-support replacement has yet been proved.
+      reviewed_hash: sha256:da2372c1444105ffdc94c2170774c956ce455e70d63c013b3d0ac9f2fcf0644b
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_BOUNDARY_PRESERVING_SUPPORT_FIVE_GATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WBPS5-IR-07"
+      scope: >-
+        Independently verified the support-at-most-four obstruction and support-five singleton
+        base case, while confirming that no universal bounded-support theorem follows.
+      reviewed_hash: sha256:da2372c1444105ffdc94c2170774c956ce455e70d63c013b3d0ac9f2fcf0644b
+frontier:
+  prove-local-trace-preserving-surgery:
+    task: >-
+      Construct or refute a universal fixed-rho handle reduction allowing support at least five,
+      possibly with a bounded number of neutral preparatory moves and fully counted arrow/Catalan costs.
+    kind: gate
+    since: 2026-08-30
+events:
+  support-five-threshold-singleton-reviewed:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Independent review raised the one-step normal-form support floor from at least three to at
+      least five and verified a support-five move only for the obstructing N=4 singleton.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_BOUNDARY_PRESERVING_SUPPORT_FIVE_GATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WBPS5-IR-07"
+  boundary-surgery-open-status-independently-confirmed:
+    date: '2026-08-30'
+    type: review-completed
+    summary: Independent review confirmed that universal boundary-preserving genus reduction remains OPEN.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WPCS-IR-08"
+  support-two-surgery-obstruction-linked:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: Linked the repeated-edge stall and narrowed the live surgery target to support at least three.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_20260830.md
+      kind: text
+      locator: "## 8. A repeated-edge obstruction to pairwise overlap surgery"
+  boundary-preserving-genus-gate-created:
+    date: '2026-08-30'
+    type: created
+    summary: Registered the weakest sufficient local genus-reduction conjecture.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_MINIMAL_SKELETON_MAP_COUNT_20260830.md
+      kind: text

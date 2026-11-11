@@ -1,0 +1,73 @@
+Fresh run date: 2026-09-07
+Working directory: isolated grothorb-exploration-20260907-hLCZqw staging root
+Command: python3 grothendieck-group-orbit/tools/check_balance_rigidity.py
+Dependencies: Python 3.9.6 standard library only
+Checker SHA-256: fadcd7cedfe89ba4eddf22de3653a6a0206344086303c3d30cc146412bc7a9d9
+Exit code: 0
+Scope: finite exact examples only, not proof of the universal theorem/family.
+Captured stdout follows:
+{
+  "arithmetic": "fractions.Fraction; no floating-point arithmetic",
+  "identity_example": {
+    "balance_map_rank": 3,
+    "checked_simultaneous_permutations": 6,
+    "endpoint_rank": 2,
+    "kernel_dimension": 3,
+    "matrix": "I_3",
+    "n": 3,
+    "objective": 3,
+    "smaller_feasible_rank": 1,
+    "top_rank": 3
+  },
+  "python_version": "3.9.6",
+  "root_frame_examples": [
+    {
+      "balance_map_rank": 6,
+      "exact_strategy_gram_rank": 3,
+      "frame_constant": 8,
+      "generator_count": 3,
+      "kernel_dimension": 0,
+      "n": 12,
+      "objective": 12,
+      "orbit_size": 12,
+      "projection_rank": 3,
+      "r": 3
+    },
+    {
+      "balance_map_rank": 10,
+      "exact_strategy_gram_rank": 4,
+      "frame_constant": 12,
+      "generator_count": 4,
+      "kernel_dimension": 0,
+      "n": 24,
+      "objective": 24,
+      "orbit_size": 24,
+      "projection_rank": 4,
+      "r": 4
+    },
+    {
+      "balance_map_rank": 15,
+      "exact_strategy_gram_rank": 5,
+      "frame_constant": 16,
+      "generator_count": 5,
+      "kernel_dimension": 0,
+      "n": 40,
+      "objective": 40,
+      "orbit_size": 40,
+      "projection_rank": 5,
+      "r": 5
+    }
+  ],
+  "scope": "Finite exact example checks; universal proofs require separate review",
+  "simplex_example": {
+    "balance_map_rank": 3,
+    "checked_simultaneous_permutations": 6,
+    "exact_strategy_gram_rank": 2,
+    "kernel_dimension": 0,
+    "matrix": "I_3-J_3/3",
+    "n": 3,
+    "objective": 3,
+    "top_rank": 2
+  },
+  "status": "all assertions passed"
+}

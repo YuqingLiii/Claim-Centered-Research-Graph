@@ -1,0 +1,79 @@
+id: HEXT.moe-to-holevo-transfer
+role: proof
+aliases:
+- weyl-flag-transfer
+claim: >-
+  For every finite-dimensional channel pair Phi,Omega, Fukuda's Weyl-flag extensions preserve the
+  numerical p=1 minimum-output-entropy pair defect exactly as a Holevo pair defect, while adding
+  only linear overhead in logarithmic input/output dimension.
+assumptions:
+  fukuda-weyl-extension-identity:
+    kind: external-theorem
+    statement: >-
+      For finite channels Phi:L(C^l)->L(C^k) and Omega:L(C^l')->L(C^k'), Fukuda Lemma 6.2
+      constructs finite Weyl-flag extensions tilde(Phi),tilde(Omega) such that for every
+      m,n in N union {0}, chi(tilde(Phi)^m tensor tilde(Omega)^n)=
+      log_2(k^m(k')^n)-S_min(Phi^m tensor Omega^n); moreover tilde(Phi) maps
+      L(C^(k^2) tensor C^l) to L(C^k), and analogously for Omega.
+    source:
+      path: channel-additivity-violations/artifacts/holevo-extensive-violation/primary-sources/fukuda-1307.0707.pdf
+      kind: pdf
+      locator: Lemma 6.2 and Eqs. (6.9)-(6.17), PDF pp. 11-12
+assessment:
+  level: PROVED
+  caveats:
+  - The extension changes the channels and input spaces; it is not a pointwise statement about the original pair.
+  summary: >-
+    Fukuda Lemma 6.2 is page- and hash-bound and its three-case subtraction and dimension budget
+    are written out locally. Independent review passed the exact exponent-zero interface,
+    subtraction identity and dimension budget.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/MOE_TO_HOLEVO_TRANSFER_PROOF_20260829.md
+      kind: text
+      locator: "## Pair-gap identity"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/MOE_TO_HOLEVO_TRANSFER_PROOF_20260829.md
+      kind: text
+      locator: "## Dimension budget"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/PRIMARY_SOURCE_AUDIT_20260829.md
+      kind: text
+      locator: "## Exact quantitative transfer to Holevo"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/ABSOLUTE_UNBOUNDED_CHAIN_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Finding AU-IR-04
+      scope: >-
+        Independently checked Fukuda Lemma 6.2 including exponent-zero cases, exact defect
+        subtraction and finite logarithmic dimension overhead; completion awaits amendment review
+        of the newly registered theorem interface.
+      reviewed_hash: sha256:b0e4b8570c8fc050c7d7a3b5f8527a0aa9594221f8e5112aff2b7492039a373f
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/ABSOLUTE_UNBOUNDED_CHAIN_REPAIR_AMENDMENT_REVIEW_20260830.md
+      kind: review
+      locator: Finding AUR-A02
+      scope: >-
+        Independently passed the registered Fukuda Lemma 6.2 interface, including exponent-zero
+        cases, extension dimensions and exact defect cancellation.
+      reviewed_hash: sha256:b0e4b8570c8fc050c7d7a3b5f8527a0aa9594221f8e5112aff2b7492039a373f
+events:
+  moe-to-holevo-transfer-independently-proved:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      Independent amendment review passed the exact Weyl-flag identity and finite logarithmic
+      dimension interface at the reviewed claim hash.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/ABSOLUTE_UNBOUNDED_CHAIN_REPAIR_AMENDMENT_REVIEW_20260830.md
+      kind: review
+      locator: Finding AUR-A02
+  fukuda-source-interface-registered:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Registered the exact exponent-zero Weyl-extension identity and dimension interface requested
+      by independent review; level remains CONJECTURED pending amendment review.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/ABSOLUTE_UNBOUNDED_CHAIN_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Finding AU-IR-04

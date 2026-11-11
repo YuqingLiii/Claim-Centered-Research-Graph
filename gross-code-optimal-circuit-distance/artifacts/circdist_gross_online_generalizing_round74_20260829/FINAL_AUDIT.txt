@@ -1,0 +1,25 @@
+Round 74 final preseal audit
+
+Verdict: MATERIAL-CHECKED-PROGRESS-NOT-CLOSED
+Licensed start: iteration 42; 5,306 merged reviewed generalized terms; 84 inherited exact dynamic blocks; 6,850 installed blocks.
+Frozen predecessor bindings: round-72 root seal bc2bf8bdc2da199e348b0471ef4f0367e52e1a7e5eefe1294adb51ab25a4f7f6; round-73 review 92e2b6306f7181b2c61fa02b3eba0624a74864f19045e6e72b208754115224d3.
+Required-input recursive read: PASS (2,536 physical files; 1,268 gzip members; 1,888 regular tar members; zero errors).
+Round-72 clean full predecessor replay: PASS (wrapper wall seconds 1326.432404875).
+Round-74 CEGAR full replay: PASS (iterations 42-53; 12 fresh-process outer SAT; 24 unrestricted direct360 SAT formulas/complete assignments/raw canonical+physical replays; 24 exact blocks).
+Round-74 online-generalization full replay: PASS (111x720 catalogs; 249 structural pair relations; 24 exact joint multi-check relations; 188 raw terms; 134 retained terms; all 1,137,096 pair tuples literally replayed; all 2,985,984 retained multi tuples universally proved by exhaustive signature classes and joint GF(2) DP).
+Frozen restart: unstarted iteration 54; 5,440 generalized terms; 108 exact dynamic blocks; 7,008 total installed blocks.
+Initial successful full replay before pair-count assertion strengthening: PASS (wrapper wall seconds 1432.186330542; archived and non-canonical).
+Strengthened preseal quick: PASS (wrapper wall seconds 16.005182792).
+Final strengthened clean preseal full: PASS (wrapper wall seconds 1399.920048417; verifier-reported wall seconds 1399.803450167; 12 fresh outer processes; 24 direct formulas/assignments; 168 regenerated generalization files; final state byte-equal).
+Proof controls: PASS (fresh valid DRAT and LRAT accepted; deterministic corrupt/truncated DRAT and LRAT rejected).
+Negative controls: PASS (24 assignment flips; 24 fault removals; 12 schedule collisions; one truncated assignment; 1,372 term-deletion controls).
+Deterministic gzip: PASS (1,274 members; 1,867,796,460 uncompressed bytes; 102,280,661 compressed bytes; mtime zero; compressed and uncompressed SHA-256 bound).
+Repository package-excluding preservation before copy: PASS (5,550 entries; 221,448,853 regular-file bytes; stream SHA-256 06e727413b67ce6dc800839ad24b48f74a20cd6ddb5a927d45273076302ac253).
+Matching round-74 processes before copy: 0.
+Staging files before this audit and the two final manifests: 2,253.
+Staging regular-file bytes before this audit and the two final manifests: 123,301,225.
+No canonical node, scheduler, protocol, generated view, review, or existing artifact was modified. No commit or push is made.
+The only licensed repository write is the final same-device atomic rename of this sealed package directory.
+The first manifest draft used a basename filter, omitted nested same-named predecessor manifests, and was rejected before copy; its exact files and disposition are retained under verification/manifest_generation.failed_basename_filter_v1.*. The accepted generator excludes only exact package-root relative paths and must pass complete manifest coverage.
+The package-root SHA256SUMS.txt hash, post-copy preservation, sealed full replay with live bindings, final process scan, and scratch cleanup are reported externally so the immutable seal is not changed afterward.
+Fresh independent exact review is required before canonical installation or exercising the restart license.

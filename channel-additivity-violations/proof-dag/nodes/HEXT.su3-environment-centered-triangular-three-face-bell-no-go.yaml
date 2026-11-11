@@ -1,0 +1,99 @@
+id: HEXT.su3-environment-centered-triangular-three-face-bell-no-go
+role: obstruction
+aliases:
+- environment-centered-triangle-no-go
+claim: >-
+  Every SU(3)-covariant qutrit channel supported on the environment-centered triangular cluster
+  ((-2,1),(-1,2),(0,0)) satisfies the Bell-input no-gap entropy inequality for all labels,
+  weights, and phases.
+routes:
+  fixed-binary-ternary-original-side-cover:
+    premises:
+    - HEXT.su3-three-face-cluster-classification
+    - HEXT.su3-fixed-original-side-endpoint-lemma
+    implication: >-
+      Retain the original binary block at (0,2) and ternary block at (1,0), reduce all other blocks
+      to 36 Gram endpoints, and certify the five-variable compact entropy inequality.
+    proof:
+      sources:
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/certify_su3_triangular_three_face_clusters.py
+        kind: code
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_ENVIRONMENT_CENTERED_TRIANGLE_BELL_NO_GO_20260830.md
+        kind: text
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        Static independent review passes the 36-branch exact mathematics, but the historical
+        five-line transcript is not source- or exit-bound and cannot support promotion. A fresh
+        source-bound rerun is required.
+      basis:
+        evidence:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_ENVIRONMENT_CENTERED_TRIANGLE_CERTIFICATE_20260830.txt
+          kind: text
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-extensive-violation/SU3_ENVIRONMENT_CENTERED_TRIANGULAR_EXACT_CERTIFICATE_INDEPENDENT_REVIEW_20260830.md
+          kind: review
+          locator: "## Executive verdict"
+          scope: >-
+            Passed the static orientation, branch and exact-arithmetic design, but blocked the
+            route because the historical execution lacks command, exit and source provenance.
+          reviewed_hash: sha256:782c8fe291601d1afe46d47c133b6a5c32f17d3d69c6da678d38df60c4e095f4
+assessment:
+  level: CONJECTURED
+  caveats:
+  - Static mathematics passed review, but the historical run is not bound to an immutable source closure or exit record.
+  - The displayed decimal is a rounded float rendering; the intended certified fact is strict positivity of an exact Fraction.
+  summary: >-
+    The environment-centered orientation has a passing static proof design but remains unproved
+    until a fresh source-bound execution reproduces the complete exact certificate.
+  basis:
+    routes:
+    - fixed-binary-ternary-original-side-cover
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_ENVIRONMENT_CENTERED_TRIANGLE_CERTIFICATE_20260830.txt
+      kind: text
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SU3_ENVIRONMENT_CENTERED_TRIANGULAR_EXACT_CERTIFICATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "## Executive verdict"
+      scope: >-
+        Bound the exact atomic claim hash while blocking promotion solely on historical execution
+        provenance; no aggregate triangular or Q3 conclusion is supported.
+      reviewed_hash: sha256:dcbaba81a7479ab6a98860ef46bde5486fc6aef6c1249c4b1f53347ca75c4582
+frontier:
+  fresh-source-bound-rerun:
+    task: >-
+      Rerun the exact environment-centered driver through the fail-closed source-bound wrapper in
+      a new directory, preserving command, interpreter, import closure, hashes, transcript, exact
+      terminal fields, source-drift check and exit status for amendment review.
+    kind: task
+    since: 2026-08-30
+events:
+  historical-execution-provenance-blocked:
+    date: '2026-08-30'
+    type: review-completed
+    summary: >-
+      Independent review passed the static exact design but found that the five-line historical
+      transcript predates current source and lacks all execution/source binding; levels remain
+      CONJECTURED pending a fresh source-bound rerun.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SU3_ENVIRONMENT_CENTERED_TRIANGULAR_EXACT_CERTIFICATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "## Executive verdict"
+  orientation-node-created:
+    date: '2026-08-30'
+    type: created
+    summary: Split the environment-centered orientation from the aggregate triangular claim.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_ENVIRONMENT_CENTERED_TRIANGLE_BELL_NO_GO_20260830.md
+      kind: text
+  exact-certificate-completed:
+    date: '2026-08-30'
+    type: level-change
+    from: NUMERICAL
+    to: CONJECTURED
+    route: fixed-binary-ternary-original-side-cover
+    summary: Recorded the exact 36-branch, 2263-leaf compact certificate.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_ENVIRONMENT_CENTERED_TRIANGLE_BELL_NO_GO_20260830.md
+      kind: text

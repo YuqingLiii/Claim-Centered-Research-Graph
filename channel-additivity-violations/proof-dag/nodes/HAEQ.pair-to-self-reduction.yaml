@@ -1,0 +1,85 @@
+id: HAEQ.pair-to-self-reduction
+role: proof
+aliases:
+- direct-sum-reduction
+claim: >-
+  A strict finite-dimensional Holevo additivity violation for some pair of channels can be
+  converted, by a classical-flag direct-sum construction, into a finite-dimensional channel T with
+  chi(T tensor T) > 2 chi(T).
+assumptions:
+  fukuda-wolf-2007:
+    kind: external-theorem
+    statement: >-
+      For every finite family of finite-dimensional channels T_i, the one-shot Holevo quantity of
+      their classical-flag direct sum satisfies
+      chi(direct_sum_i T_i)=log_2(sum_i 2^(chi(T_i))).
+    source:
+      path: channel-additivity-violations/artifacts/holevo-additivity-equality/primary-sources/fukuda-wolf-0704.1092.pdf
+      locator: Section 2, Proposition 1(4) and Eq. (6), PDF pp. 1-2
+      kind: pdf
+assessment:
+  level: PROVED
+  summary: >-
+    Independent review passed the exact Fukuda--Wolf direct-sum identity, strict four-block algebra,
+    swap invariance, finite-dimensionality and existential quantifiers after the source interface
+    was made machine-visible exactly as prescribed.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-additivity-equality/PAIR_TO_SELF_PROOF_20260829.md
+      kind: text
+      locator: "## Proof"
+    - path: channel-additivity-violations/artifacts/holevo-additivity-equality/PRIMARY_SOURCE_AUDIT_20260829.md
+      kind: text
+      locator: "## Fukuda-Wolf quantifiers"
+    - path: channel-additivity-violations/artifacts/holevo-additivity-equality/round-1-audit.md
+      kind: text
+      locator: "## 关键 reduction"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-additivity-equality/Q1_UPSTREAM_DEPENDENCY_AND_QUANTIFIER_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Finding Q1UD-03
+      scope: >-
+        Independently checked the four flagged blocks, log-sum-exp inequality, swap invariance,
+        strictness and finite existential quantifiers; completion is withheld until the exact
+        direct-sum formula is machine-visible in the assumption block.
+      reviewed_hash: sha256:0fc7daa37324f6e68dc4987f959c831fc4dc48ad8c6c4054df16a397d9143c9f
+    - path: channel-additivity-violations/reviews/holevo-additivity-equality/Q1_UPSTREAM_REPAIR_AMENDMENT_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Finding Q1RA-01
+      scope: >-
+        Post-repair review verified the exact finite direct-sum Holevo identity against Fukuda-Wolf
+        Section 2, Proposition 1(4), equations (5)-(6), and confirmed the unchanged strict claim.
+      reviewed_hash: sha256:0fc7daa37324f6e68dc4987f959c831fc4dc48ad8c6c4054df16a397d9143c9f
+events:
+  pair-to-self-independently-proved:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      Applied the reviewer-prescribed exact Fukuda--Wolf source interface and promoted the
+      unchanged reviewed pair-to-self claim.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-additivity-equality/Q1_UPSTREAM_DEPENDENCY_AND_QUANTIFIER_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Finding Q1UD-03
+  pair-to-self-quantifier-review-completed:
+    date: '2026-08-30'
+    type: review-completed
+    summary: >-
+      Independent review passed the claim algebra but identified an exact external-assumption
+      interface repair required before completion-tier promotion.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-additivity-equality/Q1_UPSTREAM_DEPENDENCY_AND_QUANTIFIER_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Finding Q1UD-03
+  pair-to-self-repair-amendment-completed:
+    date: '2026-08-30'
+    type: review-completed
+    summary: >-
+      Post-repair review verified the exact primary-source assumption and retained the current
+      completion level without changing the claim.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-additivity-equality/Q1_UPSTREAM_REPAIR_AMENDMENT_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Finding Q1RA-01

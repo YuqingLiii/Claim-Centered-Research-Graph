@@ -1,0 +1,39 @@
+id: HCPREV.explicit-witness-frontier
+role: outcome
+aliases:
+- explicit-p1-witness
+claim: >-
+  Construct or locate a concrete deterministic finite-dimensional p=1 additivity counterexample
+  with printable Kraus or Stinespring matrices and a rigorous global certificate for the one-channel
+  lower bounds and joint-channel upper bound.
+assessment:
+  level: OPEN
+  summary: >-
+    LLW's July 2026 introduction states that the p=1 mechanisms remain probabilistic and a
+    compact deterministic finite-dimensional realization remains elusive. A new topology/
+    computability argument shows that algebraic witnesses exist and that exhaustive certified
+    search terminates in principle, but supplies no actual small matrix tuple or feasible resource
+    bound. This supports a practical date-bounded frontier, not an impossibility theorem.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/PRIMARY_SOURCE_AUDIT_20260829.md
+      kind: text
+      locator: "## Explicitness frontier"
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/ALGEBRAIC_WITNESS_EXISTENCE_PROOF_20260829.md
+      kind: text
+      locator: "## Why the practical explicit-witness frontier remains open"
+    - path: channel-additivity-violations/artifacts/holevo-counterexample-prevalence/ALGEBRAIC_WITNESS_ADVERSARIAL_AUDIT_20260830.md
+      kind: text
+      locator: "## 5. Verdict"
+frontier:
+  bounded-search-design:
+    task: >-
+      Freeze an explicit ansatz and a global-certification method before running numerical search.
+    kind: gate
+    since: 2026-08-29
+  date-bounded-literature-review:
+    task: >-
+      Search primary literature after arXiv:2607.15210 for a deterministic finite-dimensional p=1
+      witness with printable data and a rigorous global certificate.
+    kind: review
+    since: 2026-08-29

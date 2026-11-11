@@ -1,0 +1,32 @@
+================================================================================================
+d_ext <= 11 on the CANDIDATE, independently re-derived and re-verified
+================================================================================================
+
+[Z]  candidate triple (1, 2, 62)
+  (A) re-derivation: weight-12 logicals in the pool containing a weight-2 residual
+      pool size 1884;  (L, check, k) hits: 720;  distinct logicals L: 624;  distinct checks: 72
+      first hit: logical #0, check 48, k 0, r = [54, 60]
+      -> weight 11 = 10 data + 1 hook, |E| = 12, decomposition_ok=True zero_syndrome=True nontrivial_logical=True
+  (B) the recorded anchor3 witness: check 48, k 0, residual r = [54, 60]   (r re-derived from ctx.res: True)
+      E = [49, 54, 57, 59, 60, 120, 125, 127, 131, 135, 137, 138]
+      d = [49, 57, 59, 120, 125, 127, 131, 135, 137, 138]
+      (1) dext.verify_witness : weight=11 = 10 data + 1 hook, |E|=12, decomposition_ok=True zero_syndrome=True nontrivial_logical=True
+      (2) independent F2      : E = d xor r : True    H_det.E = 0 : True    E not in rowspace(H_stab) : True
+      (3) bookkeeping         : |d| + |R| = 10 + 1 = 11,  |E| = 12  -> True
+      ==> PASS :  d_ext(candidate, sector Z) <= 11
+
+[X]  candidate triple (14, 0, 2)
+  (A) re-derivation: weight-12 logicals in the pool containing a weight-2 residual
+      pool size 1884;  (L, check, k) hits: 720;  distinct logicals L: 624;  distinct checks: 72
+      first hit: logical #0, check 18, k 0, r = [0, 22]
+      -> weight 11 = 10 data + 1 hook, |E| = 12, decomposition_ok=True zero_syndrome=True nontrivial_logical=True
+  (B) the recorded anchor3 witness: check 18, k 0, residual r = [0, 22]   (r re-derived from ctx.res: True)
+      E = [0, 15, 22, 39, 47, 83, 84, 102, 107, 109, 117, 133]
+      d = [15, 39, 47, 83, 84, 102, 107, 109, 117, 133]
+      (1) dext.verify_witness : weight=11 = 10 data + 1 hook, |E|=12, decomposition_ok=True zero_syndrome=True nontrivial_logical=True
+      (2) independent F2      : E = d xor r : True    H_det.E = 0 : True    E not in rowspace(H_stab) : True
+      (3) bookkeeping         : |d| + |R| = 10 + 1 = 11,  |E| = 12  -> True
+      ==> PASS :  d_ext(candidate, sector X) <= 11
+
+================================================================================================
+BOTH SECTORS: PASS -- d_ext <= 11 on the candidate in both sectors, by explicit witness

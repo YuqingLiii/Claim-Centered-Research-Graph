@@ -1,0 +1,107 @@
+id: HEXT.f3-weyl-majorization-first-three
+role: constraint
+aliases:
+- qutrit-weyl-majorization-k123
+- f3-selected-line-first-three-cumulatives
+claim: >-
+  For every probability distribution p on F_3^2, select a direction containing a maximum-mass
+  affine line and let r be its three parallel-line masses. The autocorrelation p*tilde(p) is
+  majorized by r tensor r at cumulative indices k=1,2,3.
+routes:
+  exact-k3-parametric-route:
+    premises:
+    - HEXT.f3-affine-line-l2-maximal
+    implication: >-
+      The top-three autocorrelation sum is the largest collision probability among the four line
+      quotients. After fixing ordered selected-line masses a>=b>=c, complete exact enumeration of
+      the six-dimensional point-distribution vertices proves every quotient collision is at most
+      a^2+2ab, the top-three product sum. The k=2 condition is the average of k=1 and k=3.
+    proof:
+      sketch: >-
+        Parameterize every fixed-(a,b) vertex affinely over Q, construct its exact feasibility
+        polygon, minimize four rational quadratic gaps at all boundary and interior candidates,
+        then interpolate the paired second cumulative sum.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/F3_WEYL_MAJOR_FIRST_THREE_THEOREM_20260830.md
+        kind: text
+        locator: "## 1. Reduction of k=3 to four collision bounds"
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/F3_WEYL_MAJOR_FIRST_THREE_THEOREM_20260830.md
+        kind: text
+        locator: "## 3. Exact affine families and polygon minima"
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/certify_f3_weyl_majorization_first_three.py
+        kind: script
+        locator: main
+    assessment:
+      level: PROVED
+      summary: >-
+        Independent review reproduced the complete 18564-active-set k=3 certificate, verified the
+        separately proved k=1 premise, and checked the paired interpolation giving k=2.
+      basis:
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-extensive-violation/F3_WEYL_SELECTED_LINE_MAJORIZATION_INDEPENDENT_REVIEW_20260830.md
+          kind: review
+          locator: Finding F3W-IR-08
+          scope: >-
+            Audited the route implication, including vertex/polygon completeness, exact quadratic
+            minima and the dependence of k=2 on the separately certified k=1 premise.
+          reviewed_hash: sha256:5d8bcd407b75e5642f76a96975eef0e8657348e49cd98f0cdc882dfbdf40357b
+assessment:
+  level: PROVED
+  caveats:
+  - This atomic node covers only k=1,2,3; the separate
+    HEXT.f3-weyl-selected-line-majorization node assembles the full theorem.
+  - >-
+    The archived first-three run directly certifies k=3; k=1 comes from its separate proved
+    premise, and k=2 follows by paired interpolation. The old terminal run wording is not a
+    standalone k=1 certificate.
+  summary: >-
+    The selected-line majorization through its first three cumulative indices passed independent
+    adversarial review.
+  basis:
+    routes:
+    - exact-k3-parametric-route
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/F3_WEYL_MAJOR_FIRST_THREE_CERTIFICATE_20260830.txt
+      kind: text
+      locator: majorization certified for cumulative k=1,2,3
+      note: >-
+        Accurate scope: this run certifies k=3; together with the separate proved k=1 premise,
+        paired interpolation gives k=2.
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/F3_WEYL_SELECTED_LINE_MAJORIZATION_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Finding F3W-IR-08
+      scope: >-
+        Reproduced the exact first-three checker and audited the k=1 premise and k=2 interpolation.
+      reviewed_hash: sha256:7a525abb25032b1fdce84fc07c5bf171abe3b74102c9a36fb4948829a4b216c8
+events:
+  evidence-scope-repaired:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Clarified that the first-three run directly proves k=3; its proved k=1 premise and paired
+      interpolation supply k=2.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/F3_WEYL_SELECTED_LINE_MAJORIZATION_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+  independent-review-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      Independent adversarial review passed the exact k=1,2,3 dependency chain.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/F3_WEYL_SELECTED_LINE_MAJORIZATION_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+  first-three-cumulatives-certified:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Certified k=3 by complete exact parametric vertex enumeration and combined it with k=1 to
+      obtain k=2, closing the first three selected-line majorization inequalities.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/F3_WEYL_MAJOR_FIRST_THREE_THEOREM_20260830.md
+      kind: text
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/F3_WEYL_MAJOR_FIRST_THREE_CERTIFICATE_20260830.txt
+      kind: text

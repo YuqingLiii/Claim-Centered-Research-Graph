@@ -1,0 +1,50 @@
+ROUND-80 GROSS WHOLE-REGISTRY FINAL AUDIT
+
+Generated UTC: 2026-08-30T09:18:53.127473+00:00
+Status: READY FOR IMMUTABLE ATOMIC PUBLICATION
+Verdict: MATERIAL-CHECKED-PROGRESS-NOT-CLOSED
+
+SOURCE BINDINGS
+dispatcher: 51,391 bytes / 7e49c500c7102c7df933bb406aa88dae75c47594b9f7b956e8786c9b6278b48a
+accepted Round-78 root seal: db82c387493285e56eeddcef6e7bafc3e48954c4034e6ec2fc699cea1699c987
+accepted Round-78 payload manifest: 1c9b1bf35b0adba900cf188c3bf6098ff8a19b2cf1729396e2ce7ef7f60f24fb
+fresh Round-79 review: 39,463 bytes / e90dc1a23c5c1740267c0ed21920ef4b4af05dab1aecd5eeef934c2a25d2a17a
+final Round-77 compressor: 2,760 bytes / d4abdf75b066d8a2507d5c010f96c1c1760f36c6d1d242048fb45c5928cb8dde
+defective Round-78 seals or stale compressor rows used: 0
+
+MATHEMATICAL RESULT
+whole-registry star candidates: raw sound 457; dominated-old 77; covered 54; retained strict union expansions 24; sound budget-not-selected 302; zero-domain 2,461; unsound 0.
+whole-registry proof domains: 304,704 literal raw-selector pair cells; 35,294,400 complete factorized tuples; strict-outside witnesses 24.
+outer iterations 90..101: 12 SAT, 0 UNSAT, 0 UNKNOWN/TIMEOUT; all 12 atomic commits PASS.
+direct sectors: 24 SAT, 0 UNSAT, 0 UNKNOWN/TIMEOUT; every clause/canonical/physical raw replay PASS.
+additions: whole 24, online 94, cross-registry 2,107, candidate-exact 24.
+branch closure: NO. D*_Gross changed: NO. Remaining set: {11,12}. Repair entered: NO.
+
+FROZEN RESTART
+fresh unstarted outer iteration: 102
+G=12,820; D=204; registry/raw mechanisms=120; total installed sound blocks=14,484.
+dynamic hash: 62cabe5f2925fc0caadd340848ea439219c13dc3d397c67762f852d36b6560e2
+generalized hash: 4547a39d560358ce24c1615f5db99f17735c717a2b10d67ad2cfac515731acf3
+registry hash: b9816477e347ed095e26fd4a521be8a951e92e1b3aa66c668cd2fa315d652604
+raw hash: fff897136200a97d12ae1756ca07a8aadd10e80cf11e4cce8e7ba30f8e428600
+
+VERIFICATION AND CONTROLS
+precompression quick PASS (0.673 s).
+postcompression quick PASS (7.981 s).
+preinstall full PASS (862.580 s; max RSS 3,338,452,992 B).
+postcopy quick PASS (8.267 s; max RSS 2,380,234,752 B).
+postcopy full PASS (847.331 s; max RSS 3,338,665,984 B; mismatch 0).
+proof controls: fresh UNSAT generation 1; valid DRAT/LRAT accepts 2; corrupt rejects 2; truncated rejects 2; candidate Gross UNSAT proofs 0.
+deterministic gzip: 942 objects; 10,108,629,063 uncompressed bytes -> 294,398,854 compressed bytes; dual-hash mismatches 0.
+
+REPOSITORY INTEGRITY
+package-excluding inventory: 10,958 files / f013dc072fd4ba87cecbca2cf034659e77d2ee221d6e663e2ba65f5bf5be4663 before; 11,016 files / a0acf42b811cfcdd629a4c0ed0611542635a87ed8eeee97af1d87efe934e633b postcopy.
+unrelated concurrent drift preserved: added 58, changed 7, removed 0.
+protected files: 23 / 23 unchanged. Canonical edits by proposer: 0.
+
+REVIEW LICENSE
+Fresh independent review is required.
+The only canonical delta a later reviewer could license is evidence/frontier linkage to this sealed package plus the exact fresh restart at iteration 102. No mathematical conclusion, scheduler, protocol, review, or generated-view mutation is licensed here.
+
+SEAL/PUBLICATION NOTE
+This audit is payload. Final package-root-relative seal hashes, exact post-seal file/byte counts, atomic rename, official-path quick verification, scratch deletion, and the final external survivor scan are checked after this audit freezes and are reported externally. No package file may be changed after final reseal.

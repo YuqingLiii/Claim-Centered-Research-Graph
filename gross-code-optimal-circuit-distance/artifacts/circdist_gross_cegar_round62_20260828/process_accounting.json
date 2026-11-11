@@ -1,0 +1,75 @@
+{
+  "fix_2_status": "CLEAN_AT_SEAL",
+  "background_or_detached_processes_started": [],
+  "handoff_compute": [],
+  "foreground_processes": [
+    {
+      "kind": "solver",
+      "result": "UNKNOWN",
+      "output": "outputs/bounded_direct_effective_unknown.json",
+      "scope": "C1 Zerr direct-360 d_eff<=10",
+      "solver": "CaDiCaL 1.9.5 via python-sat",
+      "limit": "200000 conflicts",
+      "solver_seconds": 6.85512,
+      "formula_sha256": "e6d7da4baa4812306d27009e6775abef16d35111353381613957177e8294fd74",
+      "clauses": 16173,
+      "evidentiary_use": "none; UNKNOWN cannot support absence"
+    },
+    {
+      "kind": "solver",
+      "result": "REJECTED_IMPLEMENTATION_OUTPUT",
+      "output": "outputs/rejected_pre_fix_repair_unsat_DO_NOT_USE.json",
+      "scope": "pre-fix C2 Xerr arbitrary-round repair=0",
+      "solver": "CaDiCaL 1.9.5 via python-sat",
+      "reported_seconds": 0.786649,
+      "reported_status": "UNSAT",
+      "reason_rejected": "CardEnc auxiliaries aliased later IDPool variables; the raw C2 repair-zero witness contradicts this output",
+      "evidentiary_use": "none"
+    },
+    {
+      "kind": "solver",
+      "result": "INTERRUPTED_NO_VERDICT",
+      "output": null,
+      "scope": "post-fix C2 Xerr arbitrary-round repair=0",
+      "process_id": 63915,
+      "approximate_wall_seconds": 120,
+      "termination": "foreground SIGINT; shell and child exited",
+      "evidentiary_use": "none"
+    },
+    {
+      "kind": "solver_and_raw_replay",
+      "result": "COMPLETED_BOUNDED_FRONTIER",
+      "output": "outputs/cegar20.json",
+      "scope": "20 exact-outer CEGAR iterations",
+      "wall_seconds": 6.333751209,
+      "iterations": 20,
+      "evidentiary_use": "positive counterexamples and sound outer blocks only"
+    },
+    {
+      "kind": "negative_control_scan",
+      "result": "INTERRUPTED_AND_REPLACED",
+      "scope": "brute-force search for an MC-only corrupting timestamp swap",
+      "process_id": 60665,
+      "wall_seconds_before_interrupt": 30.0,
+      "termination": "foreground SIGINT, exit 130",
+      "replacement": "deterministic first-overlap X/Z timestamp swap",
+      "replacement_result": "PASS",
+      "evidentiary_use": "none from interrupted scan; deterministic control retained"
+    }
+  ],
+  "historical_scheduler_processes_checked": [
+    {"process_id": 43443, "name": "drive10.py", "running": false},
+    {"process_id": 5675, "name": "drive7.py", "running": false}
+  ],
+  "failed_launches_without_compute": [
+    "system Python lacked z3",
+    "two argparse invocations omitted or misspelled required arguments"
+  ],
+  "seal_process_scan": "no run.py, negative_controls.py, CaDiCaL, drive10.py, or drive7.py process remained (excluding the scan command itself)",
+  "scratch_directory": "/tmp/circdist_gross_cegar_round62_20260828",
+  "scratch_retention": "retained at seal for diagnosis; no process uses it",
+  "repository_mutations": [
+    "<repo>/circdist/artifacts/circdist_gross_cegar_round62_20260828/"
+  ],
+  "repository_mutation_policy": "exactly one new package directory; no pre-existing repository file modified"
+}

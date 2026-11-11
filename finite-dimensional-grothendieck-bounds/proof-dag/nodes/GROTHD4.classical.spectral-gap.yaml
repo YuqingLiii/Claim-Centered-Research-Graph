@@ -1,0 +1,108 @@
+id: GROTHD4.classical.spectral-gap
+role: constraint
+aliases:
+- D4-SPECTRAL-SIGN-GAP
+claim: >-
+  For every x,y in {-1,+1}^300, with E=P/75,
+  R=A-(5132744330206382+2356560241063596 sqrt(5))E, and
+  C=2081044153087351400, one has
+  lambda <Ex,Ey> + <(I-E)x,R(I-E)y> <= C.
+assessment:
+  level: OPEN
+  summary: >-
+    This is the exact discrete gap left after separating the strict
+    four-dimensional top eigenspace. The generic operator-norm estimate for R
+    is too weak, so no global sign-profile proof is currently present. The
+    simplest top-space sign-lock ansatz is exactly false even on the archived
+    equality witness: sign(P by) and sign(P ax) have respectively 37 and 40
+    opposite coordinates, plus six zero coordinates each.
+  basis:
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-spectral-geometry-reduction-20260829.md
+      kind: text
+      locator: D4-S4
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-top-sign-lock-refutation-20260830.md
+      kind: text
+      locator: D4-TL1--D4-TL3
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.spectral.complementary-leakage.yaml
+      kind: node-evidence
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.spectral.tensor-leakage.yaml
+      kind: node-evidence
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.spectral.cg-leakage.yaml
+      kind: node-evidence
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.spectral.support-only-no-go.yaml
+      kind: node-evidence
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.spectral.archived-threshold.yaml
+      kind: node-evidence
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.spectral.coarse-stability-no-go.yaml
+      kind: node-evidence
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.spectral.local-radius2.yaml
+      kind: node-evidence
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.spectral.q-cell-minimum.yaml
+      kind: node-evidence
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.spectral.p-cell-gate.yaml
+      kind: node-evidence
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.spectral.p-psd-no-go.yaml
+      kind: node-evidence
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.spectral.local-radius3.yaml
+      kind: node-evidence
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.spectral.same-channel-no-go.yaml
+      kind: node-evidence
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.spectral.exact-spectrum.yaml
+      kind: node-evidence
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.spectral.top-energy-bound.yaml
+      kind: node-evidence
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.fixed-support.upper.yaml
+      kind: node-evidence
+frontier:
+  exact-profile-certificate:
+    task: >-
+      Construct a finite exact certificate for the joint H4 Fourier/projection
+      profiles of sign vectors and prove the displayed inequality on every
+      resulting cell; record any failed finite ansatz rather than extrapolating it.
+    kind: task
+    since: '2026-08-29'
+  quantitative-hadamard-leakage:
+    task: >-
+      Supply the final less-than-one-percent spectral correction by coupling
+      the nine-dimensional CG weight to the Bell objective, a degree-twelve
+      nonradial invariant, or near-extremizer stability. Pure CG geometry now
+      covers more than 99 percent, while support size alone is refuted.
+    kind: task
+    since: '2026-08-31'
+  sharp-superlevel-stability:
+    task: >-
+      Extend the exact archived 217+83 fixed-support bound to all complementary
+      support splits, or produce an exact support-changing B>C competitor. The
+      archived p and q sign cells are both closed at author level, but the
+      unrestricted support-changing case remains open.
+    kind: task
+    since: '2026-09-07'
+events:
+  registered-2026-08-29:
+    date: '2026-08-29'
+    type: created
+    summary: Registered the discrete spectral gap separately from the exact top-eigenspace theorem.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-spectral-geometry-reduction-20260829.md
+      kind: text
+      locator: D4-S4
+  top-sign-lock-refuted-2026-08-30:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Exact Q(sqrt(5)) coordinate checks refuted both naive identities
+      ax=sign(P by) and by=sign(P ax) on the archived equality witness.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-top-sign-lock-refutation-20260830.md
+      kind: text
+      locator: D4-TL2
+  fixed-support-cell-closed-2026-09-07:
+    date: '2026-09-07'
+    type: repair-applied
+    summary: >-
+      Updated the frontier after exact author-side p and q certificates closed
+      the archived support cell; only support-changing profiles remain in this route.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/proof-dag/nodes/GROTHD4.fixed-support.upper.yaml
+      kind: node-evidence

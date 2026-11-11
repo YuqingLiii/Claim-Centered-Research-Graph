@@ -1,0 +1,73 @@
+CIRCDIST ROUND 66 SOURCE BINDINGS
+==================================
+
+Hash convention for files: SHA-256 of current raw file bytes.
+Hash convention for exact theorem/claim strings: SHA-256 of UTF-8 text with no terminal LF.
+Repository root: <repo>
+Repository HEAD read at authoring: e40a7ac40972ad5186018797efa390a8e3f784f0
+Binding date: 2026-08-29
+
+EXACT STRINGS
+-------------
+new 999-character theorem
+  sha256:49cf956fe5afa49caa8707f15fd157ab27fedadc79c56bdec0a57c0a89a0e184
+licensed 883-character X-EFF3 theorem
+  sha256:01cf8fd10f48db13e23a09f884eb24b0b17c860c121c336c324123ff222594c0
+unchanged CIRCDIST.cplx.fixed-d claim (390 characters)
+  sha256:7adfe7c8356f6151e0da203826f9868cb414f193a4dfd5d63721b20e900e91cf
+CIRCDIST.cplx.upper claim (301 characters)
+  sha256:1c2b9d0fed28591066e3fccba2578b00d179535a0aba048d1423b0397cee32b1
+CIRCDIST.cplx root claim (556 characters)
+  sha256:0d9572ec3c4b58be6c824c1445c8bb6c3db76736a73aea9111d5c39586984c60
+
+CURRENT PROTOCOLS AND DEFINITIONS
+---------------------------------
+d8775b511431e6e9dc7a5be6200af80bd612e7e7d5f5ff10bb14ef748791a095  DAG_PROTOCOL.md
+d9d6fb57a26fef3b70fc05bda74a29101d83a43df60e06eaeb345e76980fc595  FILE_PROTOCOL.md
+bbc60ecec306fb7706ea4bdde2d6f4b22eec765f636bbcf1c9aae22041dc3faa  circdist/README.md
+43598d69c4bae55e4e386cabf31e39d531a8e9e54196b293f9e93c0ac45e7c90  circdist/proof-dag/README.md
+d4bc4a7415344a1577a45f7277f71eef914f26203dfad5a71ef7065fa2995e12  operations/circdist/README.md
+5f6dc37fcc33c0eb9f90e6267864740fc53b65c4acf1ee870c8d29ffd6d46c64  circdist/artifacts/definitions/CIRCDIST_PROBLEMS.md
+5cddf206809ece661b313fd0a648cad81c4d41a2e567c74892bacdbb36152a4d  operations/circdist/SCHEDULER.yaml
+
+CURRENT CANONICAL NODES (READ ONLY)
+-----------------------------------
+5ff45afe7156dc96b4ea807563940cde9ea82a805a92b7e85a8f9ced9c01920a  circdist/proof-dag/nodes/CIRCDIST.cplx.fixed-d.yaml
+47260df53e4491c86e10f6ccdebadf47b1161d2533339fd9c499f389a8eb2321  circdist/proof-dag/nodes/CIRCDIST.cplx.upper.yaml
+e5fa3667bd9dec3b36f808f927156bd060a8ffcc35ea918ff5e1d353cf558b6a  circdist/proof-dag/nodes/CIRCDIST.cplx.yaml
+25196ae04048e64f5db785c06ebaee8768704c6b60de6aa5ae17dc57b436396a  circdist/proof-dag/nodes/CIRCDIST.cplx.islands.yaml
+89e2f92228c1a886636b807e8d838c3155d3029b7eca4a8d5cd3ba03dd97c791  circdist/proof-dag/nodes/CIRCDIST.cplx.sigma2.yaml
+
+FROZEN TERMINAL-RESIDUAL MODEL DOSSIER
+--------------------------------------
+af7560f28a9c9fff6bba46349f01aa7095855cff7cee4276c7186a6a54bb2f9f  circdist/artifacts/circdist_cplx_islands_writeup_20260820.md
+66ce9ac5f4b38474055137f578edd84fe3b0c075a4a076b449767ea7b05e9d60  circdist/artifacts/circdist_cplx_islands_amendment1_20260820.md
+33f7f5d801c941a305da062c9d38f0a9a3eef1824818d13c7f61079c2f7f348b  circdist/artifacts/circdist_cplx_islands_amendment2_20260820.md
+f2bcf171605e4a5b9838e8b331d8d44b0ae6ec2bb35b712bd06842c54397c81f  circdist/artifacts/circdist_cplx_islands_amendment3_20260822.md
+9eb27e0710b83a9cc147ee05315d3e949661b1e95e325ba5c94f76f0756c575c  circdist/artifacts/circdist_cplx_islands_amendment4_20260822.md
+426f281316a102bdc1d520ac5cbc2a60ea7e77fc70ebac8a533b32992ce1dddf  circdist/artifacts/circdist_cplx_islands_amendment5_20260823.md
+93dec6252f6fc992a15e2d3f06862001d4f499df52e0a82bc04d0e55c419954d  circdist/artifacts/circdist_cplx_gadget_20260820.md
+a0f930c63c734bf036ddc73cce65089c28751a11e7b36777a010554c053a21e4  circdist/artifacts/history/pre_protocol_20260826/nodes/CIRCDIST.cplx.fixed-d.yaml
+
+SEALED ROUND-64 PACKAGE (ENTIRE DIRECTORY READ; CHECKSUM -c PASSED)
+------------------------------------------------------------------
+package: circdist/artifacts/circdist_cplx_fixed_d_x_reduction_round64_20260828/
+external seal (raw SHA256SUMS.txt bytes)
+17b539c0d7d16cb85d7df083579e5f74d5fba8578f84c250f861eae8efab0a17  SHA256SUMS.txt
+payloads:
+f859e9f6f2f12398c7245ae577535786ae5926fc1d6d2d365a341dcc3dc5599a  PROCESS_LEDGER.txt
+0606b8b6377fae42a20f606250f7186258cccbd9d04aa7a4ca288cd6371639b5  README.md
+bb04df47c033d692abea9a2b0624da533fb2ea4c63873d5652b90aa2fb35946a  SOURCE_BINDINGS.txt
+4a882e62d4ba78ca8da4b9989e2433c28f9daec0a106ced9e6cfea7970daa88d  construction.py
+5a41d27f1367ff315d29437fb668020a77e29b96453aece9e2c1d15ef386929b  requirements.txt
+4f7c3a56dbe6307f450ff88db941902e6853e8b877bdff2d44b8be35c3a897ca  verifier_output.txt
+053a581a5a0a27a07040711bcc983f64c1f9b6e8555d3806e3c747e183619e1c  verify.py
+
+FRESH INDEPENDENT ROUND-65 REVIEW
+---------------------------------
+5a9cd8d600871515f85151691e24bd92b3573e9cb79ccdca697f5af01730de54  circdist/reviews/circdist_cplx_fixed_d_x_reduction_exact_review_20260828.md
+
+Interpretation boundary: the round-65 review independently clears only the exact 883-character
+X-EFF3 theorem. Its F-NO-INHERITANCE finding forbids fixed-d or root promotion without a separate
+effective-Z premise. This package proposes that separate premise and full composition; it has not
+yet been independently reviewed.

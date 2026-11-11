@@ -1,0 +1,63 @@
+{
+  "negative_controls": {
+    "corrupt_assignment_mutation": {
+      "first_failing_clause": 1,
+      "operation": "flip variable 1",
+      "rejected": true
+    },
+    "missing_root_control": {
+      "all_other_nonidentity_roots_hold": true,
+      "failed_root_count_equals_stabilizer_size": true,
+      "failed_root_elements": [
+        {
+          "delta": [
+            7,
+            3
+          ],
+          "epsilon": 0
+        }
+      ],
+      "second_orbit_schedule_sha256": "89d98e45fae557e55d10a27b50694e521c3ad0d9e9fdde511b652e3a6475a7cb"
+    },
+    "reversed_lex_direction_rejected": true,
+    "truncated_assignment": {
+      "missing_variable": 4365826,
+      "operation": "omit the last retained assignment literal",
+      "rejected_by_complete_domain_check": true
+    }
+  },
+  "orbit": {
+    "candidate_compressed_schedule_sha256": "32ed7de5031979c256cc085819f168e11e5a0b7adc22ef52229fbd6598e332a3",
+    "candidate_is_lexicographically_least": true,
+    "candidate_raw_schedule_sha256": "aff437a3dea42fcb043590df0b99f1e39c7c91954f0eaec93a1db88feaabd70b",
+    "distinct_schedule_vectors": 144,
+    "group_order": 144,
+    "orbit_stabilizer_product": 144,
+    "stabilizer_elements": [
+      {
+        "delta": [
+          0,
+          0
+        ],
+        "epsilon": 0
+      }
+    ],
+    "stabilizer_size": 1,
+    "strict_nonidentity_roots": 143
+  },
+  "positive_model": {
+    "all_clauses_satisfied": true,
+    "assigned_variables": 4365826,
+    "base_prefix_clauses": 11477997,
+    "base_prefix_variables": 3130306,
+    "checked_clauses": 21362300,
+    "clauses": 21362300,
+    "edge_map_hashes_checked": 143,
+    "primary_time_bits_checked": 8640,
+    "recurrence_values_checked": 1235520,
+    "root_values_checked": 143,
+    "variables": 4365826
+  },
+  "schema": "circdist-gross-round118-order144-sat-orbit-controls-v1",
+  "status": "PASS"
+}

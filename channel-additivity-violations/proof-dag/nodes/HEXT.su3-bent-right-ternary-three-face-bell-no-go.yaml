@@ -1,0 +1,111 @@
+id: HEXT.su3-bent-right-ternary-three-face-bell-no-go
+role: obstruction
+aliases:
+- bent-right-ternary-three-face-no-go
+claim: >-
+  Every SU(3)-covariant qutrit channel supported on the bent cluster
+  ((-3,3),(-1,2),(0,0)) satisfies the Bell-input no-gap inequality for all labels and weights.
+routes:
+  fixed-three-original-side-cover:
+    premises:
+    - HEXT.su3-three-face-cluster-classification
+    - HEXT.su3-fixed-original-side-endpoint-lemma
+    implication: >-
+      Retain h/m, h/m, and ternary h/c/m blocks, reduce the rest to 24 Gram endpoints, and certify
+      the resulting six-variable inequality.
+    proof:
+      sources:
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/certify_su3_chain_three_face_sixdim_covers.py
+        kind: code
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_BENT_RIGHT_TERNARY_THREE_FACE_BELL_NO_GO_20260830.md
+        kind: text
+    assessment:
+      level: PROVED
+      summary: >-
+        Independent review passed the exact 24-branch, 13744-box compact rational certificate,
+        including source provenance, orientation mapping and strict exact positivity.
+      basis:
+        evidence:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_BENT_RIGHT_TERNARY_THREE_FACE_BELL_NO_GO_20260830.md
+          kind: text
+          locator: "## Exact reconstruction and certificate"
+        runs:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_BENT_RIGHT_TERNARY_THREE_FACE_CERTIFICATE_20260830.txt
+          kind: run
+          result: >-
+            Exit-zero exact run certified 13744 adaptive compact boxes with strictly positive exact
+            margin, displayed in floating form as approximately 4.870629792869e-05.
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-extensive-violation/SU3_BENT_RIGHT_TERNARY_EXACT_CERTIFICATE_INDEPENDENT_REVIEW_20260830.md
+          kind: review
+          locator: Findings BRT-IR-01--BRT-IR-06
+          scope: >-
+            Independently passed the source-bound orientation, 24 endpoint branches, retained side
+            distributions, exact compact arithmetic, directed logs and complete exit-zero run.
+          reviewed_hash: sha256:02a709500dbf3586b1fc662cb4d0af4c7e1e84b7bd2f3801c5d41beba5ed5119
+assessment:
+  level: PROVED
+  caveats:
+  - The displayed decimal margin is a rounded rendering; the certified fact is strict positivity of the exact Fraction.
+  - This is one atomic bent orientation and does not establish the aggregate bent-chain claim.
+  - The shared core's hard-coded final text label is a presentation defect; command, configuration and progress prefixes identify bent-right.
+  summary: >-
+    This bent-right ternary orientation is independently closed by an exact all-label,
+    all-weight compact certificate.
+  basis:
+    routes:
+    - fixed-three-original-side-cover
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_BENT_RIGHT_TERNARY_THREE_FACE_BELL_NO_GO_20260830.md
+      kind: text
+      locator: "## Scope and fixed-three cover"
+    runs:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_BENT_RIGHT_TERNARY_THREE_FACE_CERTIFICATE_20260830.txt
+      kind: run
+      result: >-
+        Exact run certified all 13744 adaptive boxes; the exact minimum is strictly positive and
+        its floating display is approximately 4.870629792869e-05.
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SU3_BENT_RIGHT_TERNARY_EXACT_CERTIFICATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Findings BRT-IR-01--BRT-IR-06
+      scope: >-
+        Independently passed the exact atomic orientation claim and prohibited propagation to the
+        aggregate bent parent or any broader Q3 target.
+      reviewed_hash: sha256:c092936f897c27fb7ff19e1c62fd380e9f7b7a5d06b59a74abb46ea484cc2e4e
+events:
+  bent-right-ternary-independently-proved:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    route: fixed-three-original-side-cover
+    summary: >-
+      Independent review passed the exact route and atomic orientation hashes, including all
+      branch, arithmetic, provenance and completion checks; aggregate parents remain unpromoted.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SU3_BENT_RIGHT_TERNARY_EXACT_CERTIFICATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Findings BRT-IR-01--BRT-IR-06
+  orientation-node-created:
+    date: '2026-08-30'
+    type: created
+    summary: Split this orientation from the aggregate bent-chain claim.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CHAIN_THREE_FACE_COVER_COMPLEXITY_20260830.md
+      kind: text
+  exact-certificate-completed:
+    date: '2026-08-30'
+    type: level-change
+    from: NUMERICAL
+    to: CONJECTURED
+    route: fixed-three-original-side-cover
+    summary: >-
+      Recorded the exact 24-branch, 13744-box compact certificate with minimum natural-log margin
+      greater than 4.870629792869e-05; independent review remains pending.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_BENT_RIGHT_TERNARY_THREE_FACE_BELL_NO_GO_20260830.md
+      kind: text
+      locator: "## Exact reconstruction and certificate"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_BENT_RIGHT_TERNARY_THREE_FACE_CERTIFICATE_20260830.txt
+      kind: run

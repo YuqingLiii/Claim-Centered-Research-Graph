@@ -1,0 +1,56 @@
+INDEPENDENT PIXEL READ OF FIGURE 12, arXiv:2603.05481, by the 2026-08-23 verdict reviewer.
+Method: Apple PDFKit/CoreGraphics rasteriser (src/pdftool.swift, built with /usr/bin/swiftc -O),
+NOT the content-stream operator parse used by circdist_gross_phicert_20260822.md.
+PDF sha256 aebb4b0e4673714daeb1370650d62f9453d72e6ff203d14224b3867f654b0d80
+Figure 12 is on PAGE 21 (page 19 only *references* it). Rendered page at 150 dpi; panels cropped
+at 900 dpi (crop boxes in PDF points: upper 78,668-290,742 ; lower 78,588-290,664).
+Labels below were read BY EYE from the 900-dpi rasters, before re-reading phicert's table.
+
+Edge naming (offset from the check square, as drawn):
+  e1 = long diagonal up-right   e2 = vertical up      e3 = horizontal left
+  e4 = horizontal right         e5 = vertical down    e6 = long diagonal down-left
+
+UPPER PANEL  -- printed title "Z-check CNOT schedule"; squares are FILLED (blue/red/green)
+  blue : e1=6 e2=3(hollow) e3=5 e4=7 e5=4(hollow) e6=2(hollow)
+  red  : e1=4 e2=3(hollow) e3=6 e4=5 e5=1(hollow) e6=2(hollow)
+  green: e1=5 e2=3(hollow) e3=4 e4=6 e5=1(hollow) e6=2(hollow)
+  hollow-circle set = {e2,e5,e6} = 2 vertical + 1 diagonal   (identical in all 3 cells)
+
+LOWER PANEL  -- printed title "X-check CNOT residuals"; squares are HOLLOW/outlined
+  blue : e1=3 e2=2 e3=6(hollow) e4=7(hollow) e5=4 e6=5(hollow)
+  red  : e1=3 e2=2 e3=5(hollow) e4=6(hollow) e5=1 e6=4(hollow)
+  green: e1=3 e2=2 e3=4(hollow) e4=5(hollow) e5=1 e6=6(hollow)
+  hollow-circle set = {e3,e4,e6} = 2 horizontal + 1 diagonal (identical in all 3 cells)
+
+COMPARISON WITH phicert §2.2 TABLE: all 36 labels agree, edge for edge, both panels.
+  phicert upper: blue e6=2 e2=3 e5=4 | e3=5 e1=6 e4=7 ; red e5=1 e6=2 e2=3 | e1=4 e4=5 e3=6 ;
+                 green e5=1 e6=2 e2=3 | e3=4 e1=5 e4=6                      -> MATCH 18/18
+  phicert lower: blue e2=2 e1=3 e5=4 | e6=5 e3=6 e4=7 ; red e5=1 e2=2 e1=3 | e6=4 e3=5 e4=6 ;
+                 green e5=1 e2=2 e1=3 | e3=4 e4=5 e6=6                      -> MATCH 18/18
+
+STRUCTURAL FACTS, INDEPENDENTLY CONFIRMED AT PIXEL LEVEL:
+ (i) every cell's six labels are six consecutive integers;
+ (ii) they split into two contiguous 3-blocks and that split IS the hollow/filled circle split
+      (upper blue: hollow {2,3,4} filled {5,6,7}; upper red/green: hollow {1,2,3} filled {4,5,6};
+       lower blue: hollow {5,6,7} filled {2,3,4}; lower red/green: hollow {4,5,6} filled {1,2,3});
+ (iii) blue is offset one step from red and green in BOTH panels (blue 2..7, red/green 1..6)
+       -- so the three colour classes are NOT aligned. Confirms phicert's fact 3 and the
+       refutation of the "aligned" model.
+ NOTE the 3-block/hollow correspondence is INVERTED between panels: upper panel hollow = LOW block,
+ lower panel hollow = HIGH block. phicert's "white = LEFT half in both panels" therefore requires
+ the hollow set to mean different halves in the two panels, or the block order to flip; phicert
+ says both LEFT/RIGHT assignments were swept anyway.
+
+*** AMBIGUITY FOUND AT PIXEL LEVEL (this is a defect of the SOURCE PAPER, not of phicert) ***
+ Figure 10's caption states the convention: "Filled squares are X-type checks, empty squares are
+ Z-type checks." In Figure 12 the UPPER panel's squares are FILLED (=> X-type by that convention)
+ but its printed title says "Z-check CNOT schedule"; the LOWER panel's squares are EMPTY (=> Z-type)
+ but its title says "X-check CNOT residuals". The titles and the fill convention CONTRADICT.
+ The same contradiction is present in Figure 11 (page 20): upper "Z-check residuals" = FILLED
+ squares, lower "X-check residuals" = EMPTY squares. So the conflict is systematic across both
+ figures, not a one-off. The lower Fig-12 title also says "residuals" although the panel plainly
+ shows CNOT times, which suggests the titles were copied from Figure 11.
+ phicert assigns upper=X (following the FILL convention, against the printed titles) and states it
+ swept "which panel is which check type (2)" as a free parameter. Whether the ambiguity is harmless
+ therefore rests entirely on that sweep being real and the surviving object being invariant under
+ the swap. That is checked separately in the review.

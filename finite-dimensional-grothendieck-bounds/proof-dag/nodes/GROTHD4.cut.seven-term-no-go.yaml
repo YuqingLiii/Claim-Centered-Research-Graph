@@ -1,0 +1,41 @@
+id: GROTHD4.cut.seven-term-no-go
+role: obstruction
+aliases:
+- D4-SEVEN-TERM-HYPERMETRIC-NO-GO
+claim: >-
+  No integer vector b with exactly seven nonzero coefficients in {-1,+1}
+  satisfies b^T M b=307200 for the exact correlation matrix M of the 307200
+  currently known C-level cuts. In particular no four-positive,
+  three-negative seven-term hypermetric is tight on all those cuts.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    A complete author-side H4-plus-swap meet-in-the-middle census checks
+    178939832 signed triples, 3457621250 exact-signature pairings, and all
+    4800 terminal faces, leaving no compatible seven-term vector. The exact
+    C++ kernel and Python wrapper replay pass. Independent review is still
+    required, and equality-set completeness remains open.
+  basis:
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-seven-hypermetric-no-go-20260830.md
+      kind: text
+      locator: Sections 2--4
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_seven_hypermetric_no_go_checker.py
+      kind: code
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_seven_hypermetric_mitm.cpp
+      kind: code
+frontier:
+  independent-review:
+    task: >-
+      Independently audit the exact signature encoding, symmetry reduction,
+      meet-in-the-middle completeness, and all-face terminal test.
+    kind: review
+    since: '2026-08-31'
+events:
+  registered-2026-08-31:
+    date: '2026-08-31'
+    type: created
+    summary: Registered the exact author-side seven-term hypermetric no-go.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-seven-hypermetric-no-go-20260830.md
+      kind: text

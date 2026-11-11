@@ -70,9 +70,28 @@ def claim_hash(claim: str) -> str:
     return "sha256:" + hashlib.sha256(frozen.encode("utf-8")).hexdigest()
 
 
+class UniqueKeyLoader(yaml.SafeLoader):
+    """Reject silent last-key-wins changes to claims, reviews, and events."""
+
+
+def _unique_mapping(loader, node, deep=False):
+    seen = {}
+    for key_node, _ in node.value:
+        key = loader.construct_object(key_node, deep=deep)
+        if key in seen:
+            raise yaml.constructor.ConstructorError(
+                "duplicate mapping key", seen[key], str(key), key_node.start_mark
+            )
+        seen[key] = key_node.start_mark
+    return yaml.SafeLoader.construct_mapping(loader, node, deep=deep)
+
+
+UniqueKeyLoader.add_constructor(yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG, _unique_mapping)
+
+
 def _load_yaml(path: Path) -> Any:
     with path.open("r", encoding="utf-8") as handle:
-        return yaml.safe_load(handle)
+        return yaml.load(handle, Loader=UniqueKeyLoader)
 
 
 def load_problem(problem_root: Path) -> LoadedProblem:
@@ -178,6 +197,24 @@ def _locator_anchors(locator: str) -> list[str]:
     return list(dict.fromkeys(anchor.strip(".,;:()[]") for anchor in anchors if anchor))
 
 
+DECLARED_GAPS_USED: set[str] = set()
+_GAP_CACHE: dict[Path, set[str]] = {}
+
+
+def declared_gaps(root: Path) -> set[str]:
+    """Paths listed in EVIDENCE_GAPS.yaml: linked evidence deliberately not present in this repository."""
+    root = Path(root)
+    if root not in _GAP_CACHE:
+        registry = root / "EVIDENCE_GAPS.yaml"
+        entries = set()
+        if registry.is_file():
+            data = _load_yaml(registry) or {}
+            for item in data.get("declared_missing_paths") or []:
+                entries.add(str(item["path"]).rstrip("/"))
+        _GAP_CACHE[root] = entries
+    return _GAP_CACHE[root]
+
+
 def _check_path_locator(
     source: dict[str, Any], label: str, root: Path, errors: list[str]
 ) -> None:
@@ -237,7 +274,10 @@ def _check_source(
             )
         path = root / source_path
         if not path.exists():
-            errors.append(f"{label}: missing path {source['path']}")
+            if str(source["path"]).rstrip("/") in declared_gaps(root):
+                DECLARED_GAPS_USED.add(str(source["path"]).rstrip("/"))
+            else:
+                errors.append(f"{label}: missing path {source['path']}")
     if "node" in source and _resolve_node_ref(str(source["node"]), loaded) is None:
         errors.append(f"{label}: unknown node reference {source['node']}")
 
@@ -712,6 +752,9 @@ def validate_problem(
         errors.append(f"{problem}: generated NODE_INDEX.md is stale; run --write-generated")
     if not graph_path.exists() or graph_path.read_text(encoding="utf-8") != expected_graph:
         errors.append(f"{problem}: generated GRAPH.mmd is stale; run --write-generated")
+    for gap in sorted(DECLARED_GAPS_USED):
+        if gap.split("/", 1)[0] == problem_root.name:
+            warnings.append(f"{problem}: declared evidence gap (not in repository): {gap}")
     return errors, warnings, len(loaded.nodes)
 
 
@@ -796,8 +839,16 @@ def render_index(problem: str, loaded: LoadedProblem) -> str:
         role = node.get("role", "proof")
         level = node["assessment"]["level"]
         disposition = (node.get("disposition") or {}).get("state", "-")
+        routes = node.get("routes") or {}
+        live_count = sum(not route.get("retired") for route in routes.values())
+        retired_count = len(routes) - live_count
+        route_summary = (
+            f"{live_count} live; {retired_count} retired"
+            if retired_count
+            else str(live_count)
+        )
         lines.append(
-            f"| `{node_id}` | {role} | {level} | {derived_shape(node)} | {disposition} | {len(node.get('routes') or {})} |"
+            f"| `{node_id}` | {role} | {level} | {derived_shape(node)} | {disposition} | {route_summary} |"
         )
     return "\n".join(lines) + "\n"
 
@@ -810,17 +861,28 @@ def render_mermaid(problem: str, loaded: LoadedProblem) -> str:
         label = f"{node_id}\\n{level}".replace('"', "'")
         lines.append(f"  {ids[node_id]}[\"{label}\"]")
     edge_index = 0
+    retired_joins: list[str] = []
     for parent_id, node in sorted(loaded.nodes.items()):
         for route_id, route in (node.get("routes") or {}).items():
             edge_index += 1
             join = f"r{edge_index}"
             route_level = route["assessment"]["level"]
-            lines.append(f"  {join}((\"{route_id}\\n{route_level}\"))")
+            retired = bool(route.get("retired"))
+            route_status = f"RETIRED ({route_level})" if retired else route_level
+            arrow = "-.->" if retired else "-->"
+            lines.append(f"  {join}((\"{route_id}\\n{route_status}\"))")
             for premise in route["premises"]:
                 resolved = _resolve_node_ref(premise, loaded)
                 if resolved:
-                    lines.append(f"  {ids[resolved]} --> {join}")
-            lines.append(f"  {join} --> {ids[parent_id]}")
+                    lines.append(f"  {ids[resolved]} {arrow} {join}")
+            lines.append(f"  {join} {arrow} {ids[parent_id]}")
+            if retired:
+                retired_joins.append(join)
+    if retired_joins:
+        lines.append(
+            "  classDef retiredRoute fill:#f2f2f2,stroke:#777,stroke-dasharray:5 5,color:#666"
+        )
+        lines.append(f"  class {','.join(retired_joins)} retiredRoute")
     return "\n".join(lines) + "\n"
 
 

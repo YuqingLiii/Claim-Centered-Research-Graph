@@ -1,0 +1,90 @@
+id: HEXT.su3-triangular-three-face-clusters-bell-no-go
+role: obstruction
+aliases:
+- triangular-three-face-no-go
+claim: >-
+  Every SU(3)-covariant qutrit channel supported on three mutually adjacent elementary Pieri faces
+  satisfies 2 barS_min(Phi)<=2S_min(Phi)<S((Phi tensor barPhi)(Omega)) for both branch-oriented
+  triangular clusters and all allowed labels, weights, and phases.
+routes:
+  orientation-conjunction:
+    premises:
+    - HEXT.su3-input-centered-triangular-three-face-bell-no-go
+    - HEXT.su3-environment-centered-triangular-three-face-bell-no-go
+    implication: >-
+      The classification has exactly two triangular orientations with exchanged incidence-degree
+      signatures; the universal claim follows only after both atomic nodes are established.
+    assessment:
+      level: OPEN
+      summary: >-
+        The environment-centered premise is proposer-side exact, while the input-centered exact
+        certificate is still running.
+  full-incidence-two-orientation-scan:
+    premises:
+    - HEXT.su3-three-face-cluster-classification
+    implication: >-
+      Evaluate both complete labelled triangular incidences, their Gram correlations, and every
+      original block-highest side output over the registered finite grids.
+    proof:
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_TRIANGULAR_THREE_FACE_SCAN_20260830.md
+        kind: text
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/scan_su3_triangular_three_face_clusters.py
+        kind: code
+    assessment:
+      level: NUMERICAL
+      summary: A formula-audited 11.76-million-point scan found positive margins in both directions.
+      basis:
+        runs:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_TRIANGULAR_THREE_FACE_SCAN_RUN_20260830.txt
+          kind: run
+          result: Neither orientation produced a sampled Bell candidate.
+assessment:
+  level: NUMERICAL
+  caveats:
+  - The input-centered orientation still lacks a completed exact certificate.
+  - Positive sampled margins alone do not control all weights and labels.
+  summary: >-
+    Both orientations are numerically excluded; only the environment-centered direction is
+    proposer-side exact.
+  basis:
+    routes:
+    - full-incidence-two-orientation-scan
+    runs:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_TRIANGULAR_THREE_FACE_SCAN_RUN_20260830.txt
+      kind: run
+      result: The complete-incidence scan found positive margins in both orientations.
+frontier:
+  finish-input-centered-atomic-node:
+    task: >-
+      Finish and independently review the 12-endpoint, four-original-side six-dimensional
+      certificate; then combine it with the environment-centered atomic node.
+    kind: task
+    since: 2026-08-30
+events:
+  atomic-orientations-split:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Split the two oriented triangles into atomic claims and made the parent an explicit
+      conjunction, so one exact direction cannot upgrade the universal statement.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_TRIANGULAR_THREE_FACE_SCAN_20260830.md
+      kind: text
+  triangular-three-face-route-registered:
+    date: '2026-08-30'
+    type: created
+    summary: Registered both triangular orientation classes without assuming a channel duality.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_THREE_FACE_CLUSTER_CLASSIFICATION_20260830.md
+      kind: text
+  triangular-three-face-scan-completed:
+    date: '2026-08-30'
+    type: level-change
+    from: OPEN
+    to: NUMERICAL
+    route: full-incidence-two-orientation-scan
+    summary: A formula-audited full-incidence scan found no candidate in either orientation.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_TRIANGULAR_THREE_FACE_SCAN_20260830.md
+      kind: text

@@ -1,0 +1,76 @@
+id: HEXT.su3-conjugate-edge-adjacent-faces-bell-no-go
+role: obstruction
+aliases:
+- c-edge-two-face-no-go
+claim: >-
+  For every integer p>=0 and q>=3, every SU(3)-covariant qutrit channel supported on the union of
+  the elementary Pieri faces based at (p,q) and (p+2,q-1) satisfies
+  2 barS_min(Phi)<=2S_min(Phi)<S((Phi tensor barPhi)(Omega)) for all edge weights and phases.
+routes:
+  two-binary-side-block-route:
+    premises:
+    - HEXT.su3-all-elementary-cycles-bell-no-go
+    implication: >-
+      Retaining the binary input blocks with offsets (1,0) and (3,-1) reduces the other three
+      blocks by separate convexity to 12 endpoint Gram branches. An exact four-variable entropy
+      comparison for those branches would establish the claim.
+    proof:
+      sketch: >-
+        Clear one positive common denominator, reconstruct all 12 exact rational branches, and
+        compactify p,q. Rational Bernstein subdivision bounds their maximum while monotone binary
+        entropy intervals retain the shared p,u,v dependence.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CONJUGATE_EDGE_ADJACENT_FACES_BELL_NO_GO_20260830.md
+        kind: text
+        locator: "## 1. Orientation and convex reduction through ## 3. Exact rational certificate"
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/certify_su3_conjugate_edge_adjacent_faces.py
+        kind: code
+        locator: exact 12-branch four-dimensional rational certificate
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The exact continuous certificate passes with a strict rational-log margin, but it has not
+        received independent adversarial review.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The proof is proposer-side and has not received independent review.
+  - This node covers only the conjugate-edge orientation; larger graphs, noncovariant factors and
+    non-Bell inputs are not covered.
+  summary: >-
+    The conjugate-edge adjacent-face family is closed over all labels and weights by an exact
+    996-leaf rational certificate; the highest-edge orientation is proved in a sibling node.
+  basis:
+    routes:
+    - two-binary-side-block-route
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CONJUGATE_EDGE_ADJACENT_FACES_BELL_NO_GO_20260830.md
+      kind: text
+      locator: "## 3. Exact rational certificate"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CONJUGATE_EDGE_ADJACENT_FACES_CERTIFICATE_20260830.txt
+      kind: text
+      locator: 12 branches and 996 adaptive compact boxes certified
+events:
+  c-edge-orientation-registered:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Split the conjugate-edge adjacent orientation from the canonical middle-edge theorem and
+      registered its 12-branch two-binary-block certificate route.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_ADJACENT_ELEMENTARY_FACES_BELL_NO_GO_20260830.md
+      kind: text
+      locator: "## 5. Scope"
+  c-edge-orientation-certified:
+    date: '2026-08-30'
+    type: level-change
+    from: OPEN
+    to: CONJECTURED
+    summary: >-
+      Closed all labels and weights by an exact 12-branch, 996-leaf compact rational
+      Bernstein/logarithm certificate.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CONJUGATE_EDGE_ADJACENT_FACES_BELL_NO_GO_20260830.md
+      kind: text
+    - path: channel-additivity-violations/tools/holevo-extensive-violation/certify_su3_conjugate_edge_adjacent_faces.py
+      kind: code

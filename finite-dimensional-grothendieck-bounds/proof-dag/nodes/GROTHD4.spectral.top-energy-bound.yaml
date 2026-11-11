@@ -1,0 +1,57 @@
+id: GROTHD4.spectral.top-energy-bound
+role: constraint
+aliases:
+- D4-TOP-ENERGY-228
+claim: >-
+  For the rank-four top spectral projector E=P/75 and every sign vector
+  x in {+1,-1}^300, one has the strict universal bound x^T E x < 228.
+routes:
+  degree-ten-h4-moment-majorant:
+    premises:
+    - GROTHD4.instance
+    - GROTHD4.spectral.top
+    implication: >-
+      The H4 orbit moments through degree ten and the exact three-node
+      Gauss-Jacobi/Hermite majorant for sqrt(z) bound the top-space sign
+      projection energy strictly below 228.
+    proof:
+      sketch: >-
+        Evaluate the exact invariant moments, apply the degree-five Hermite
+        majorant at the three quadrature nodes, and certify the final algebraic
+        comparison with a rational Sturm interval.
+      sources:
+      - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-spectral-gap-20260830.md
+        kind: text
+        locator: A degree-ten strengthening
+      - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_spectral_gap_checker.py
+        kind: code
+    assessment:
+      level: CONJECTURED
+      summary: Exact author-side derivation and checker replay pass; review is pending.
+      basis:
+        evidence:
+        - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-fixed-support-replay-20260907.txt
+          kind: run
+          result: pass
+assessment:
+  level: CONJECTURED
+  summary: >-
+    A genuine analytic sign-profile restriction, but still insufficient by
+    itself to prove the classical upper bound; independent review is absent.
+  basis:
+    routes:
+    - degree-ten-h4-moment-majorant
+frontier:
+  independent-review:
+    task: Independently verify the invariant moments, majorant sign, and strictness step.
+    kind: review
+    since: '2026-09-07'
+events:
+  retrospective-registration-2026-09-07:
+    date: '2026-09-07'
+    type: created
+    summary: Registered the exact 2026-08-30 top-energy bound during normalization.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-spectral-gap-20260830.md
+      kind: text
+      locator: A degree-ten strengthening

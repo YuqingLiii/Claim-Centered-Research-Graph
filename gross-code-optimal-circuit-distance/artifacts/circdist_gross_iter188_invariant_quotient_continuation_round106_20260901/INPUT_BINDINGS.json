@@ -1,0 +1,98 @@
+{
+  "canonical": {
+    "circdist/proof-dag/nodes/CIRCDIST.gross.yaml": {
+      "bytes": 106352,
+      "sha256": "3fe41bc65891f94f65be55931c40f37cf3bbb3c5bdb7cca9cfa70a73489526ae"
+    },
+    "circdist/reviews/circdist_gross_iter187_invariant_continuation_round104_exact_review_round105_20260901.md": {
+      "bytes": 141726,
+      "sha256": "01d14be78fc75362c16340b4ba32df783a645084a819fc18a96f432d9a45e932"
+    },
+    "operations/circdist/SCHEDULER.yaml": {
+      "bytes": 292577,
+      "sha256": "89767aecd57e32608cc75010c26a5d415af3330964c42e572aefed86796c259b"
+    }
+  },
+  "canonical_state_modified": false,
+  "copied_input_files": {
+    "frontier/iter188_full_invariant/formula/assertion_map.jsonl": "c086f78c2c240a8a8118a804eeea5ab162bbb9eb3135add0de30512efd979f53",
+    "frontier/iter188_full_invariant/formula/definitions.json.gz": "13adb8d76eaac1a1a60c10020ebf3898c496b4e0b41e7aa91aa07cd9679c5674",
+    "frontier/iter188_full_invariant/formula/encoding_check.json": "204fbd8e2636a872e27aaa4488febaf27225ab6147877d3ec16de93b8769b81d",
+    "frontier/iter188_full_invariant/formula/metadata.json": "617570b725a111fed713e5d02390e79d99c775a872b457db2d31e487eee1510f",
+    "frontier/iter188_full_invariant/formula/outer.cnf": "051dbece97d9cd94a69de7bff644dbb31b35076d0c43558b5408d9f3cc86b257",
+    "frontier/iter188_full_invariant/orbit_audit.json": "f835f14e5af070eb4109d65f706fbaff1fdc781ce331460986ba46b04c6311df",
+    "frontier/iter188_full_invariant/source.json.gz": "bb6605e47b541fccd8c33a4b8f3ae56e1ac298ab4be591fbc4c388dc102e0647",
+    "frontier/iter188_full_invariant/state.json": "ac4140e37f855fe37c1403c645e08d600d7ab70a6aee725f707b74a9721a30cd",
+    "frontier/iter188_full_invariant_quotient/independent_check.json": "04a593cff5ffe23ccb7e7e3656fb90a315423884086093babc75bf0c9dc2d6b4",
+    "frontier/iter188_full_invariant_quotient/metadata.json": "12201127dbc27d61657b264cc86b9cd01e46503cc5e30a461ef62531c50421de",
+    "frontier/iter188_full_invariant_quotient/outer.cnf": "29b16602aa5cdf0e4207271cb50045454ea0aba9254396d732414459a4029215",
+    "frontier/iter188_full_invariant_quotient/translation_roots.jsonl": "a6ee98b77066df8657bdd9b6be3f808492f9df81095d6a8b2ac9e3dd754dc065",
+    "frontier/iter188_full_invariant_quotient/translation_trace.json.gz": "b6b1b5cedd15edda6485b83056d2c0939c32b88eb614ec0a5a89360a7f4757fd"
+  },
+  "reviewed_frontier": {
+    "base": {
+      "all_lines_zero_terminated": true,
+      "clauses": 6890981,
+      "sha256": "051dbece97d9cd94a69de7bff644dbb31b35076d0c43558b5408d9f3cc86b257",
+      "variables": 1841756
+    },
+    "base_formula_allowlist": [
+      "assertion_map.jsonl",
+      "definitions.json.gz",
+      "encoding_check.json",
+      "metadata.json",
+      "outer.cnf"
+    ],
+    "blocks": 517140,
+    "forbidden_artifact_names": [],
+    "iteration": 188,
+    "lex_leaders": 71,
+    "quotient": {
+      "all_lines_zero_terminated": true,
+      "clauses": 11798572,
+      "sha256": "29b16602aa5cdf0e4207271cb50045454ea0aba9254396d732414459a4029215",
+      "variables": 2455196
+    },
+    "quotient_allowlist": [
+      "independent_check.json",
+      "metadata.json",
+      "outer.cnf",
+      "translation_roots.jsonl",
+      "translation_trace.json.gz"
+    ],
+    "selectors": 24156,
+    "started": false,
+    "stop": null,
+    "translation_group": "Z_12 x Z_6",
+    "translation_group_order": 72
+  },
+  "reviewed_package": {
+    "all_rows_verified": true,
+    "manifest_rows": 383,
+    "manifest_sha256": "410807a787005a0fb5ebb1753f8b75712c798d9a15e9101f1265d0be25206ebb",
+    "path": "circdist/artifacts/circdist_gross_iter187_invariant_continuation_round104_20260901"
+  },
+  "schema": "circdist-gross-round106-input-bindings-v1",
+  "scope": "Round106 binds the reviewed fresh iteration-188 full-invariant quotient and no other start formula.",
+  "status": "PASS",
+  "tooling": [
+    {
+      "bytes": 967144,
+      "executable": true,
+      "path": "tooling/cadical-1.9.5-arm64-macos",
+      "sha256": "fafdf4fb95a54ccee9b59f346544761896e40b076780a93f000e0357f20080c9"
+    },
+    {
+      "bytes": 70120,
+      "executable": true,
+      "path": "tooling/drat-trim-arm64-macos",
+      "sha256": "f58f63b0f76945d4c4c9ff6e87afaf870f579e67c0f7cca589492df8fc7ebd47"
+    },
+    {
+      "bytes": 36552,
+      "executable": true,
+      "path": "tooling/lrat-check-arm64-macos",
+      "sha256": "bd7eb8052623525814a0a37502b47f05375d9d9dfaf96ddc2fcd858958517cea"
+    }
+  ]
+}

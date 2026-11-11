@@ -1,0 +1,55 @@
+id: HEXT.same-tuple-positive-rook-plus-double-off-direction
+role: proof
+aliases:
+- repeated-tuple-rook-one-double-off-direction
+claim: >-
+  On the uniform one-leg trace-zero event, a positive Hilbert--Schmidt unit coefficient satisfies
+  the A/m target whenever it is the orthogonal sum of a separately positive rook-supported core
+  and one Hermitian simple tensor whose two factors are zero-diagonal. No separate smallness bound
+  on the double-off Hilbert--Schmidt norm is required beyond positivity of the total coefficient.
+assessment:
+  level: PROVED
+  caveats:
+  - Separate positivity of the rook core is load-bearing because rook truncation is not positive.
+  - The uniform one-leg trace-zero event is load-bearing.
+  summary: >-
+    Orthogonality combines the reviewed sqrt(2A-1) rook constant and the A-1 double-off gain through
+    the exact identity (2A-1)+(A-1)^2=A^2.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SAME_TUPLE_POSITIVE_DOUBLE_OFF_NEIGHBORHOODS_20260830.md
+      kind: text
+      locator: "## 4. A positive rook core plus one double-off Schmidt direction"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_DOUBLE_OFF_WERNER_WEINGARTEN_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STDW-IR-02"
+      scope: >-
+        Independently verified homogeneous use of the rook theorem, orthogonal Hilbert--Schmidt
+        budget and the exact identity closing the A/m constant.
+      reviewed_hash: sha256:d25db65f677c5e7732801360cbbe4def6fc525b17b80d18092a71fd818044d54
+frontier:
+  independent-rook-double-off-review:
+    task: >-
+      Verify homogeneous use of the rook theorem, projective norm of the simple tensor,
+      orthogonal Hilbert--Schmidt budget and positivity neighborhood.
+    kind: review
+    since: 2026-08-30
+events:
+  rook-double-off-independent-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Independent review verified the positive rook-plus-one-double-off theorem.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_DOUBLE_OFF_WERNER_WEINGARTEN_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STDW-IR-02"
+  rook-plus-double-off-created:
+    date: '2026-08-30'
+    type: created
+    summary: Registered a stable positive neighborhood with genuine double-off entries.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SAME_TUPLE_POSITIVE_DOUBLE_OFF_NEIGHBORHOODS_20260830.md
+      kind: text

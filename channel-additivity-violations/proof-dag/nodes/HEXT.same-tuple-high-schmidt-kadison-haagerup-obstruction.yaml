@@ -1,0 +1,53 @@
+id: HEXT.same-tuple-high-schmidt-kadison-haagerup-obstruction
+role: obstruction
+aliases:
+- repeated-tuple-flat-square-function-nuclear-loss
+claim: >-
+  Applying the operator Haagerup inequality followed only by Kadison's inequality retains the
+  coefficient nuclear sum even when both coefficient square functions are perfectly flat. For a
+  Hilbert--Schmidt unit direction of equal operator-Schmidt rank Theta(m^2), this route gives only
+  an order-one bound rather than the required order 1/m. This obstructs that proof route only,
+  not the original same-tuple target.
+assessment:
+  level: PROVED
+  caveats:
+  - Exact tuple-specific cancellation can beat the Kadison relaxation for structured families.
+  summary: >-
+    Flat square functions do not remove the nuclear-sum loss in an unrefined
+    Haagerup--Kadison argument at maximal Schmidt rank.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SAME_TUPLE_HIGH_SCHMIDT_SPECTRAL_FLAT_EXTENSION_20260830.md
+      kind: text
+      locator: "## 6. Why a naive square-function refinement does not solve the whole sector"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_HIGH_SCHMIDT_SPECTRAL_FLAT_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding HSSF-IR-06"
+      scope: >-
+        Independently verified the Haagerup--Kadison square-function calculation, retained nuclear
+        sum and route-only order-one obstruction at rank Theta(m^2).
+      reviewed_hash: sha256:a457d528ff40e5f77764cb47ed0d8840bfcf2f51b75c699f5df400bb9f57d127
+frontier:
+  cancellation-sensitive-high-schmidt-control:
+    task: Seek tuple-specific cancellation or a structural norm stronger than the unrefined square-function bound.
+    kind: gate
+    since: 2026-08-30
+events:
+  kadison-haagerup-independent-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Independent review verified the high-Schmidt nuclear-sum route obstruction.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_HIGH_SCHMIDT_SPECTRAL_FLAT_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding HSSF-IR-06"
+  kadison-haagerup-obstruction-created:
+    date: '2026-08-30'
+    type: created
+    summary: Registered the exact proposer-side nuclear-sum loss for the unrefined route.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SAME_TUPLE_HIGH_SCHMIDT_SPECTRAL_FLAT_EXTENSION_20260830.md
+      kind: text

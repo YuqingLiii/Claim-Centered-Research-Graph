@@ -1,0 +1,82 @@
+{
+  "all_children_reaped": true,
+  "child_count": 3,
+  "children": [
+    {
+      "child_pid": 71972,
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "<repo>/circdist/artifacts/circdist_gross_iter188_invariant_quotient_continuation_round106_20260901/source/check_result_round106.py",
+        "--root",
+        "<repo>/circdist/artifacts/circdist_gross_iter188_invariant_quotient_continuation_round106_20260901",
+        "--output",
+        "<repo>/circdist/artifacts/circdist_gross_iter188_invariant_quotient_continuation_round106_20260901/verification/result_consistency.json"
+      ],
+      "detached": false,
+      "ended_unix": 1788307312.235779,
+      "ended_utc": "2026-09-02T00:01:52.235779+00:00",
+      "name": "result_consistency",
+      "parent_pid": 71971,
+      "reaped": true,
+      "returncode": 0,
+      "started_unix": 1788307312.054453,
+      "started_utc": "2026-09-02T00:01:52.054453+00:00",
+      "stderr": "",
+      "stdout": "{\"canonical_yaml_unchanged\": true, \"fresh_iteration\": 189, \"fresh_quotient_sha256\": \"3ece12a1ea0ee6502982fecfcaf75debae985ea2ddff93ea3b875552c0714df7\", \"root_closed\": false, \"schema\": \"circdist-gross-round106-result-consistency-check-v1\", \"solver_statuses\": {\"Xerr\": \"SATISFIABLE\", \"Zerr\": \"SATISFIABLE\", \"outer\": \"SATISFIABLE\"}, \"status\": \"PASS\", \"symlink_count\": 0, \"verdict\": \"MATERIAL-CHECKED-CONTINUATION-NOT-CLOSED\"}\n",
+      "timed_out": false,
+      "wall_seconds": 0.181326
+    },
+    {
+      "child_pid": 71973,
+      "command": [
+        "/usr/bin/python3",
+        "<repo>/circdist/artifacts/circdist_gross_iter188_invariant_quotient_continuation_round106_20260901/source/duplicate_yaml_scan.py",
+        "--root",
+        "<repo>",
+        "--output",
+        "<repo>/circdist/artifacts/circdist_gross_iter188_invariant_quotient_continuation_round106_20260901/verification/duplicate_yaml_final.json"
+      ],
+      "detached": false,
+      "ended_unix": 1788307320.989619,
+      "ended_utc": "2026-09-02T00:02:00.989619+00:00",
+      "name": "duplicate_yaml_final",
+      "parent_pid": 71971,
+      "reaped": true,
+      "returncode": 0,
+      "started_unix": 1788307312.236053,
+      "started_utc": "2026-09-02T00:01:52.236053+00:00",
+      "stderr": "",
+      "stdout": "{\"duplicates\": [], \"files\": 982, \"mappings\": 28839, \"schema\": \"round88-duplicate-yaml-scan-v1\", \"status\": \"PASS\"}\n",
+      "timed_out": false,
+      "wall_seconds": 8.753566
+    },
+    {
+      "child_pid": 71974,
+      "command": [
+        "/usr/bin/git",
+        "diff",
+        "--check"
+      ],
+      "detached": false,
+      "ended_unix": 1788307321.013206,
+      "ended_utc": "2026-09-02T00:02:01.013206+00:00",
+      "name": "git_diff_check_final",
+      "parent_pid": 71971,
+      "reaped": true,
+      "returncode": 0,
+      "started_unix": 1788307320.989666,
+      "started_utc": "2026-09-02T00:02:00.989666+00:00",
+      "stderr": "",
+      "stdout": "",
+      "timed_out": false,
+      "wall_seconds": 0.02354
+    }
+  ],
+  "detached_processes": 0,
+  "duplicate_yaml": "PASS",
+  "git_diff_check": "PASS",
+  "result_consistency": "PASS",
+  "schema": "circdist-gross-round106-final-preseal-checks-v1",
+  "status": "PASS",
+  "strict_serial": true
+}

@@ -1,0 +1,76 @@
+Independent reviewer replay, 2026-09-07
+Reviewer: /root/orbit_d3_envelope; separate author/reviewer roles, non-fresh context.
+Working root: /private/tmp/grothorb-classical-20260907-R0Shtu
+Runtime: Python 3.9.6.
+Mathematical checkers: standard library only.
+Statement-hash extraction: PyYAML 6.0.3; SHA-256 of the UTF-8 encoding of
+yaml.safe_load(node_text)["claim"].strip(), or the corresponding
+["routes"][route_id]["implication"].strip().
+
+R1. Base-value checker rerun
+Command:
+python3 grothendieck-group-orbit/tools/check_root_classical_value.py
+Exit code: 0
+Standard output:
+r=3: n=12, exact witness value=10; PASS
+r=4: n=24, exact witness value=56/3; PASS
+r=5: n=40, exact witness value=30; PASS
+r=6: n=60, exact witness value=44; PASS
+r=7: n=84, exact witness value=182/3; PASS
+r=8: n=112, exact witness value=80; PASS
+r=9: n=144, exact witness value=102; PASS
+r=10: n=180, exact witness value=380/3; PASS
+r=11: n=220, exact witness value=154; PASS
+r=12: n=264, exact witness value=184; PASS
+r=3: enumerated all 4096 Bob signs; exact bilinear maximum=10; PASS
+Scope: finite exact checks only; the all-r argument is in RC-2--RC-4.
+
+R2. Equality checker rerun
+Command:
+PYTHONDONTWRITEBYTECODE=1 python3 grothendieck-group-orbit/tools/check_root_classical_equality.py
+Exit code: 0
+Standard output:
+r=3: 48 signed permutations, 24 orbit vectors and distinct optimal patterns; multiplicity exactly 2, nonzero root products and W^T s=4y; PASS
+r=4: 384 signed permutations, 192 orbit vectors and distinct optimal patterns; multiplicity exactly 2, nonzero root products and W^T s=4y; PASS
+r=5: 3840 signed permutations, 1920 orbit vectors and distinct optimal patterns; multiplicity exactly 2, nonzero root products and W^T s=4y; PASS
+r=3: all 4096 Bob vectors enumerated; exactly 24 maximizing Bob vectors, each with unique Alice=Bob; predicted family exact; PASS
+Scope: finite exact replay only; all-r equality proof is RE-2--RE-6.
+
+R3. Exact statement hashes
+5894fbd5f0998222db98bbe3cbef23b0a723716a30125952c2db60e748375fca  GROTHORB.root-classical claim
+d6fbde6d93fc9c2ba39009177571a2b05dd268f94b21da4250d82c8fdc13ba3a  GROTHORB.root-classical-equality claim
+81878c54dfe7e3b4aec018401e7be9c89d943429321013f5501611711ce02464  GROTHORB.root-classical-equality/support-equality implication
+9a872e7354e9445bc8dd2722bd106fc849de9b3b7649eedb9159a607194fd688  GROTHORB.root-small-shift claim
+ff5cd598382d45f215c5a4f16c8ed50ab0b964215afeb6e6e9684b171107945c  GROTHORB.root-small-shift/discrete-gap implication
+
+R4. Frozen input-file SHA-256 inventory
+e72a38888d997073d17cf6295f21c30475a08a3073b773443519af488fc1d7fa  grothendieck-group-orbit/proof-dag/nodes/GROTHORB.root-classical.yaml
+a5c81384bee3c3fb4ad69e45a1eb3f9853897b8d61aab25e457e56e82047f19d  grothendieck-group-orbit/proof-dag/nodes/GROTHORB.root-classical-equality.yaml
+7e0c87a1a8356374b59d64a363a92b2fb9ed962307fac917c917735cb93e3961  grothendieck-group-orbit/proof-dag/nodes/GROTHORB.root-small-shift.yaml
+8ea014aa65b2af33bf5c15182eadec95d629d0970f8f816081b4497b6b6c3259  grothendieck-group-orbit/artifacts/root-classical-value-20260907.md
+f0600088adda036abb502afaf59dcaf6202b70b9cdac7814d696cf072c80343e  grothendieck-group-orbit/artifacts/root-classical-equality-20260907.md
+137c49deea6f5a6f34259cb89b060ea198b7d4fe734c34ee52f4a1674df1d9b4  grothendieck-group-orbit/artifacts/root-small-shift-proof-20260907.md
+628761288b907a3ca4cf2b16f63944352beff4c147d0913534dbce244dde9228  grothendieck-group-orbit/artifacts/root-classical-exact-check-20260907.txt
+b702e1dc7221bd6281f5248468a9a5ba6cbbecdb032ea0203420981dbd21fd81  grothendieck-group-orbit/artifacts/root-classical-equality-exact-check-20260907.txt
+9bf5afdc0dea0ab8a02b3795c3d06bf858ccabac255291070b8f9448ed2b93e6  grothendieck-group-orbit/artifacts/classical-family-registration-20260907.md
+f742a86bee611484f7803bbcaa83619d1bbb494c6c8d634e092e61e46b350a71  grothendieck-group-orbit/tools/check_root_classical_value.py
+14884629352db3cc595171fb3cb95b8469cf919b03ced4ee157433a958b9020e  grothendieck-group-orbit/tools/check_root_classical_equality.py
+d8775b511431e6e9dc7a5be6200af80bd612e7e7d5f5ff10bb14ef748791a095  DAG_PROTOCOL.md
+6a2ea1af9bd14a4eaa8d158e304aee5e82cf907497addb17c2771782a4e6a329  FILE_PROTOCOL.md
+400468f185a31dfce6be612bc5f8fb53f201beaca4e5aab3c91d10ff7bf459c8  grothendieck-group-orbit/proof-dag/NODE_INDEX.md
+22254db90fb74568e9c91dd8ffb4d862290743b7f8165140669d5450cc88fd3e  grothendieck-group-orbit/proof-dag/GRAPH.mmd
+
+Finite replay is a normalization and implementation check. The universal
+verdicts rely on the separate symbolic review in root-classical-review-20260907.md,
+not on extrapolating either checker. No D3 envelope result is a proof input.
+
+R5. Closeout statement binding and concurrent registration check
+PASS: all five exact statement quotations and hashes match current parsed YAML.
+Fourteen of the fifteen R4 input files were unchanged at closeout. The shared
+registration document acquired appended C8/C9/C10 entries during this review;
+its original inspected hash is preserved in R4. Reinspection confirmed the
+C1/C5/C6 registrations remain unchanged. The new registration hash is
+57ae81442c4ba937b917b002a52445b66a0ec8836fa97fd6ed5f2816ca59be12.
+Those additional entries are outside this report's verdict scope. All three
+reviewed node files, both route implications, all three author proofs, both
+checkers, both author run records, and both generated views remained unchanged.

@@ -1,0 +1,58 @@
+id: HEXT.fixed-d-haar-conjugate-collision
+role: obstruction
+aliases:
+- fixed-d-conjugate-collision
+claim: >-
+  For iid product-Haar random-unitary layers with fixed tuple size m and fixed matrix dimension D,
+  almost surely the per-layer minimum output entropy of their J-fold heterogeneous product has
+  limsup at most log(m)-(log(m))/(2m); hence for ln(m)>18 the fixed-D hierarchy cannot satisfy the
+  larger Collins--Youn side rate log(m)-log(1+9/m) as J tends to infinity.
+assumptions:
+  audenaert-continuity:
+    kind: external-theorem
+    statement: >-
+      For d-dimensional states rho and sigma with T=(1/2)||rho-sigma||_1, their base-two entropy
+      difference is at most T log_2(d-1)+h_2(T) in the nontrivial range.
+    source:
+      path: channel-additivity-violations/artifacts/holevo-extensive-violation/primary-sources/audenaert-0610146.pdf
+      kind: text
+      locator: Theorem 1
+  finite-partition-strong-law:
+    kind: external-theorem
+    statement: >-
+      For iid samples and any fixed finite measurable partition, all empirical cell frequencies
+      converge almost surely to their probabilities.
+    source:
+      note: Standard strong law of large numbers applied to finitely many cell-indicator variables.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The claim concerns iid conjugation-invariant layers; it is not a no-go theorem for deterministic or oriented ensembles.
+  - The argument is proposer-side and has not received independent adversarial review.
+  summary: >-
+    Conjugation-invariant empirical frequencies allow all but o(J) layers to be paired with an
+    epsilon-close conjugate. Bell inputs on those within-side pairs give the entropy rate upper
+    bound, which is strictly below the side lower rate required by the current fixed-m construction.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FIXED_DIMENSION_CONJUGATE_COLLISION_OBSTRUCTION_20260830.md
+      kind: text
+      locator: "## 5. Conflict with the side rate required by the unbounded-gap proof"
+frontier:
+  oriented-or-growing-gain:
+    task: >-
+      Test whether an oriented non-conjugation-invariant ensemble can retain the free side bound
+      without creating repeated-channel leakage, or replace the constant Bell gain by a gain of
+      order log D per layer.
+    kind: gate
+    since: 2026-08-30
+events:
+  fixed-d-collision-obstruction-recorded:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Proved a model-specific fixed-dimension obstruction by almost-perfect matching of iid Haar
+      layers to approximate conjugates within the same side.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FIXED_DIMENSION_CONJUGATE_COLLISION_OBSTRUCTION_20260830.md
+      kind: text

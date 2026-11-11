@@ -1,0 +1,25 @@
+|E| = 12 slots: which are solver-decided and which are enum-only?
+sector K   solver-decided / 9   enum-only   covered by MY enumeration (K<=4)?
+  Z    1      9              0           YES
+  Z    2      9              0           YES
+  Z    3      9              0           YES
+  Z    4      9              0           YES
+  Z    5      9              0           no
+  Z    6      0              9           no
+  Z    7      0              9           no
+  Z    8      0              9           no
+  Z    9      0              9           no
+  Z   10      0              9           no
+  X    1      9              0           YES
+  X    2      0              9           YES
+  X    3      0              9           YES
+  X    4      0              9           YES
+  X    5      0              9           no
+  X    6      0              9           no
+  X    7      0              9           no
+  X    8      0              9           no
+  X    9      0              9           no
+  X   10      0              9           no
+total enum-only slots: 126  (artifact says 126)
+of the enum-only slots, covered by my K<=4 exhaustive enumeration: 27
+total |E|=12 slots my enumeration closes outright (regardless of how they were decided): 72

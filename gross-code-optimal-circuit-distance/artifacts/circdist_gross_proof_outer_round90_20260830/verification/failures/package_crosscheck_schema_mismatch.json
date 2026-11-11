@@ -1,0 +1,10 @@
+{
+  "schema": "circdist-round90-excluded-tool-failure-v1",
+  "failure_id": "F-04",
+  "status": "EXCLUDED",
+  "tool": "source/check_result.py",
+  "returncode": 1,
+  "failure": "Initial packaging checker treated RESULT.iterations[*].new_selectors as integer 2 although the durable schema stores the exact two-element mechanism-id list.",
+  "effect": "Checker assertion stopped; no evidence or continuation state changed.",
+  "correction": "Require exact list equality with record.new_selectors and length two. Corrected checker passed before pre-seal replay."
+}

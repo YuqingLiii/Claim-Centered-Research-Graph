@@ -1,0 +1,62 @@
+id: HEXT.su3-fixed-original-side-endpoint-lemma
+role: proof
+aliases:
+- fixed-original-side-cover-lemma
+claim: >-
+  For a labelled finite union of elementary SU(3) Pieri face channels in which each pair of input
+  blocks shares at most one environment, a uniform entropy inequality using retained
+  original-channel side outputs and an explicitly certified correlated endpoint maximum T<1
+  implies the Bell-input no-gap inequality for all continuous block weights and phases.
+assessment:
+  level: PROVED
+  caveats:
+  - Endpoint-channel side outputs are explicitly excluded; only retained original-channel outputs
+    satisfy the required minimum-output-entropy bound.
+  summary: >-
+    Separate convexity and Bell-entropy monotonicity justify every registered fixed-original-side
+    endpoint certificate without changing the original channel in the side bound.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_FIXED_ORIGINAL_SIDE_ENDPOINT_LEMMA_20260830.md
+      kind: text
+    - path: channel-additivity-violations/tools/holevo-extensive-violation/audit_su3_three_face_phase_independence.py
+      kind: code
+    - path: channel-additivity-violations/tools/holevo-extensive-violation/audit_su3_cross_coefficient_positivity.py
+      kind: code
+    runs:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_THREE_FACE_PHASE_INDEPENDENCE_RUN_20260830.txt
+      kind: run
+      result: Every input pair in all 11 connected three-face classes shares at most one environment.
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CROSS_COEFFICIENT_POSITIVITY_RUN_20260830.txt
+      kind: run
+      result: >-
+        All coefficients of the three exact denominator-cleared shared-environment polynomials are
+        nonnegative.
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SU3_BENT_LEFT_TERNARY_EXACT_CERTIFICATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "FINDING-SU3-ENDPOINT-01"
+      scope: >-
+        Independently verified phase independence, nonnegative cross coefficients, separate
+        convexity, Bell-entropy monotonicity and the original-side-output quantifier.
+      reviewed_hash: sha256:7435a8e46d009acbe7dabce7c520d1cbbbb45f7943c7b98cdbeef7065ff71398
+events:
+  endpoint-lemma-independent-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Independent review verified the common fixed-original-side endpoint lemma.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SU3_BENT_LEFT_TERNARY_EXACT_CERTIFICATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "FINDING-SU3-ENDPOINT-01"
+  endpoint-lemma-created:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Isolated the common endpoint reduction and the original-side-output quantifier condition as
+      an atomic lemma.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_FIXED_ORIGINAL_SIDE_ENDPOINT_LEMMA_20260830.md
+      kind: text

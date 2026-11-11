@@ -1,0 +1,36 @@
+id: GROTHD4.spectral.same-channel-no-go
+role: obstruction
+aliases:
+- D4-SAME-H-MOMENT-NO-GO
+claim: >-
+  On pure tensors, every statistic obtained from a polynomial in the same
+  Hadamard Gram operator H=E o F is an affine combination of alpha beta and
+  w_9; higher powers of H cannot supply a second independent nonradial CG
+  statistic.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    The rank-one identities determine all three spectral weights from total
+    mass and w_9, so polynomial functional calculus in H yields no additional
+    invariant. This exact author-side structural no-go awaits independent
+    review and directs the search to a different CG channel or H4 tensor.
+  basis:
+    evidence:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-superlevel-cell-reduction-20260830.md
+      kind: text
+      locator: Same-channel no-go
+    - path: finite-dimensional-grothendieck-bounds/tools/grothendieck-d4/h4_superlevel_cell_reduction_checker.py
+      kind: code
+frontier:
+  independent-review:
+    task: Independently verify the rank-one spectral-weight reduction.
+    kind: review
+    since: '2026-08-31'
+events:
+  registered-2026-08-31:
+    date: '2026-08-31'
+    type: created
+    summary: Registered the exact author-side same-channel invariant no-go.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-superlevel-cell-reduction-20260830.md
+      kind: text

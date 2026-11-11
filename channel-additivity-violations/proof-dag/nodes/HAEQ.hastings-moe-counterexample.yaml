@@ -1,0 +1,65 @@
+id: HAEQ.hastings-moe-counterexample
+role: outcome
+aliases:
+- hastings
+claim: >-
+  There exist finite-dimensional quantum channels N and M for which von-Neumann minimum output
+  entropy is strictly subadditive: Smin(N tensor M) < Smin(N) + Smin(M).
+assumptions:
+  hastings-2009:
+    kind: external-theorem
+    statement: >-
+      Hastings' finite-dimensional random-channel theorem disproves universal additivity of
+      minimum output von-Neumann entropy: for sufficiently large finite D and then sufficiently
+      large finite N, a random-unitary channel E and its conjugate have a strict violation with
+      nonzero probability.
+    source:
+      path: channel-additivity-violations/artifacts/holevo-additivity-equality/PRIMARY_SOURCE_AUDIT_20260829.md
+      locator: "`Hastings quantifiers`"
+      kind: text
+assessment:
+  level: PROVED
+  summary: >-
+    Independent source-and-quantifier review verified that Hastings Theorem 1 gives exactly the
+    finite-dimensional existential pair claim, with the finite-D then finite-N order and no
+    typicality or same-witness Holevo overclaim.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-additivity-equality/PRIMARY_SOURCE_AUDIT_20260829.md
+      kind: text
+      locator: "## Hastings quantifiers"
+    - path: channel-additivity-violations/artifacts/holevo-additivity-equality/round-1-audit.md
+      kind: text
+      locator: "## 原始来源"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-additivity-equality/Q1_UPSTREAM_DEPENDENCY_AND_QUANTIFIER_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Finding Q1UD-02
+      scope: >-
+        Independently checked Hastings Theorem 1 on the local primary PDF, the finite D then finite
+        N quantifiers, nonzero-probability-to-existence step, conjugate-channel witness, and the
+        boundary excluding typicality or same-witness Holevo claims.
+      reviewed_hash: sha256:e6f972b2ec4389be96a66d39628b67af0d0c053573a4184e5b63d2c897f14374
+events:
+  hastings-existential-claim-independently-proved:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      Independent primary-source review passed the exact finite-dimensional existential claim and
+      its ordered random-channel quantifiers.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-additivity-equality/Q1_UPSTREAM_DEPENDENCY_AND_QUANTIFIER_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Finding Q1UD-02
+  hastings-quantifier-review-completed:
+    date: '2026-08-30'
+    type: review-completed
+    summary: >-
+      Independent review passed the exact finite-dimensional existential Hastings claim and bound
+      the verdict to its current hash; no level was changed by the reviewer.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-additivity-equality/Q1_UPSTREAM_DEPENDENCY_AND_QUANTIFIER_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Finding Q1UD-02

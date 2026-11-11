@@ -1,0 +1,39 @@
+id: HEXT.werner-boundary-surgery-normal-form
+role: proof
+aliases:
+- werner-fixed-rho-surgery-normal-form
+claim: >-
+  Fix permutations J and rho. If ABC=rho, then every structural triple A'B'C'=rho is uniquely
+  A'=Ap, B'=p^(-1)Bq, C'=q^(-1)C. Under sigma=A^(-1)J and
+  tau=C^(-1)A^(-1)J, exactly |supp(p)| row arrows and |supp(qp^(-1))| column
+  arrows change. Thus a move with s=|supp(p) union supp(q)| changes at most 2s tuple-label
+  equality incidences and costs at most m^(2s) in label summation.
+assessment:
+  level: PROVED
+  caveats:
+  - The output is a structural fixed-boundary constellation and need not preserve an input coloring.
+  summary: >-
+    Independent review verified the unique breakpoint-coordinate normal form for every fixed-rho
+    structural move and its exact recovered-arrow and label-summation costs.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_BOUNDARY_PRESERVING_SUPPORT_FIVE_GATE_20260830.md
+      kind: text
+      locator: "## 2. Exact normal form for every boundary-preserving move"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_BOUNDARY_PRESERVING_SUPPORT_FIVE_GATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WBPS5-IR-01"
+      scope: >-
+        Independently verified uniqueness of p,q, exact product preservation, recovered sigma/tau
+        arrow changes and the at-most-m^(2s) equality-component loss.
+      reviewed_hash: sha256:911646e9e5f10a79e820d1f8b46621265300f405cfb687ee537aea87e3d4ff2b
+events:
+  fixed-boundary-normal-form-created-and-reviewed:
+    date: '2026-08-30'
+    type: created
+    summary: Registered the independently proved fixed-rho surgery normal form and defect cost.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_BOUNDARY_PRESERVING_SUPPORT_FIVE_GATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WBPS5-IR-01"

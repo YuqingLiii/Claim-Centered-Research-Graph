@@ -1,0 +1,96 @@
+{
+  "corrupt_drat_rejected": true,
+  "corrupt_lrat_rejected": true,
+  "fixture_cnf_sha256": "b8d28f511bbc3bc5d67e0fcda748b6ad85d5e543c64bc91d09f34ecb10805efd",
+  "generated_lrat_accepted": true,
+  "generated_lrat_sha256": "cf32dfff36b24ba36c3504765f29ecf3d7a8abaa59956ade4d24a4062caa6431",
+  "runs": [
+    {
+      "command": [
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round98_20260831/tooling/drat-trim-arm64-macos",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round98_20260831/controls/proof_checker/php6_5.cnf",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round98_20260831/controls/proof_checker/php6_5.fresh.drat",
+        "-t",
+        "170",
+        "-L",
+        "/private/tmp/circdist-r98-work-20260831/circdist-r96-proof-control.auaa8x5l/generated.lrat"
+      ],
+      "name": "valid_drat_generate_lrat",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "\nc parsing input formula with 30 variables and 141 clauses\n\nc finished parsing\n\nc detected empty clause; start verification via backward checking\n\nc 87 of 141 clauses in core                            \n\nc 135 of 165 lemmas in core using 1985 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.031 seconds\n",
+      "wall_seconds": 0.260615
+    },
+    {
+      "command": [
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round98_20260831/tooling/lrat-check-arm64-macos",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round98_20260831/controls/proof_checker/php6_5.cnf",
+        "/private/tmp/circdist-r98-work-20260831/circdist-r96-proof-control.auaa8x5l/generated.lrat"
+      ],
+      "name": "valid_generated_lrat",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "c parsed a formula with 30 variables and 141 clauses\nc VERIFIED\nc allocated 1024 634 300\nc Added clauses = 276.  Deleted clauses = 251.  Max live clauses = 141\nc verification time = 0.00 secs\n",
+      "wall_seconds": 0.115307
+    },
+    {
+      "command": [
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round98_20260831/tooling/drat-trim-arm64-macos",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round98_20260831/controls/proof_checker/php6_5.cnf",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round98_20260831/controls/proof_checker/php6_5.corrupt.drat",
+        "-t",
+        "170"
+      ],
+      "name": "corrupt_drat",
+      "returncode": 1,
+      "stderr": "",
+      "stdout": "\nc turning on binary mode checking\n\nc parsing input formula with 30 variables and 141 clauses\n\nc WARNING: wrong binary prefix, stop reading proof\n\nc finished parsing\n\nc ERROR: no conflict\n\ns NOT VERIFIED\n\nc verification time: 0.026 seconds\n",
+      "wall_seconds": 0.029485
+    },
+    {
+      "command": [
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round98_20260831/tooling/drat-trim-arm64-macos",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round98_20260831/controls/proof_checker/php6_5.cnf",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round98_20260831/controls/proof_checker/php6_5.truncated.drat",
+        "-t",
+        "170"
+      ],
+      "name": "truncated_drat",
+      "returncode": 1,
+      "stderr": "",
+      "stdout": "\nc parsing input formula with 30 variables and 141 clauses\n\nc finished parsing\n\nc ERROR: no conflict\n\ns NOT VERIFIED\n\nc verification time: 0.023 seconds\n",
+      "wall_seconds": 0.02597
+    },
+    {
+      "command": [
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round98_20260831/tooling/lrat-check-arm64-macos",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round98_20260831/controls/proof_checker/php6_5.cnf",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round98_20260831/controls/proof_checker/php6_5.corrupt.lrat"
+      ],
+      "name": "corrupt_lrat",
+      "returncode": 1,
+      "stderr": "",
+      "stdout": "c parsed a formula with 30 variables and 141 clauses\nc WARNING: Verification incomplete. Last line checked = 0\nc NOT VERIFIED\nc allocated 1024 634 300\nc Added clauses = 141.  Deleted clauses = 0.  Max live clauses = 141\nc verification time = 0.00 secs\n",
+      "wall_seconds": 0.003985
+    },
+    {
+      "command": [
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round98_20260831/tooling/lrat-check-arm64-macos",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round98_20260831/controls/proof_checker/php6_5.cnf",
+        "<repo>/circdist/artifacts/circdist_gross_proof_outer_round98_20260831/controls/proof_checker/php6_5.truncated.lrat"
+      ],
+      "name": "truncated_lrat",
+      "returncode": 1,
+      "stderr": "",
+      "stdout": "c parsed a formula with 30 variables and 141 clauses\nc WARNING: Verification incomplete. Last line checked = 147\nc NOT VERIFIED\nc allocated 1024 634 300\nc Added clauses = 147.  Deleted clauses = 59.  Max live clauses = 141\nc verification time = 0.00 secs\n",
+      "wall_seconds": 0.003955
+    }
+  ],
+  "schema": "circdist-round88-proof-controls-v1",
+  "scope": "tool-chain controls only; no Gross UNSAT occurred",
+  "status": "PASS",
+  "truncated_drat_rejected": true,
+  "truncated_lrat_rejected": true,
+  "valid_drat_accepted": true,
+  "valid_drat_sha256": "b6c2e560bb08c84d583ca94799951a21c8cae5de35d6d04d77bc4842e9c18ecd"
+}

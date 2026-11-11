@@ -1,0 +1,43 @@
+{
+  "schema": "round69-final-quick-manifest-verification-v1",
+  "steps": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "venv",
+        "/tmp/circdist_round69_seal_check_venv_20260829"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "timeout_seconds": 180,
+      "wall_seconds": 1.0812532080000001
+    },
+    {
+      "command": [
+        "/tmp/circdist_round69_seal_check_venv_20260829/bin/pip",
+        "install",
+        "--disable-pip-version-check",
+        "-r",
+        "<repo>/circdist/artifacts/circdist_gross_block_minimization_round69_20260829/requirements.txt"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "timeout_seconds": 180,
+      "wall_seconds": 2.512361042
+    },
+    {
+      "command": [
+        "/tmp/circdist_round69_seal_check_venv_20260829/bin/python",
+        "<repo>/circdist/artifacts/circdist_gross_block_minimization_round69_20260829/verify.py",
+        "--quick",
+        "--repo-root",
+        "<repo>"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "timeout_seconds": 180,
+      "wall_seconds": 0.5869632919999996
+    }
+  ]
+}

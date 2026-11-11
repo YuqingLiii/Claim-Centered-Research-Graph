@@ -1,0 +1,101 @@
+id: HEXT.su3-minimal-covariant-cycle-bell-no-go
+role: obstruction
+aliases:
+- smallest-pieri-cycle-no-go
+- six-edge-covariant-cycle-no-go
+claim: >-
+  The 24-dimensional reducible-input SU(3)-covariant qutrit channel family supported on the
+  smallest six-edge input/environment Pieri branching cycle satisfies
+  2 barS_min(Phi)<=2S_min(Phi)<S((Phi tensor barPhi)(Omega)) for every choice of its three edge
+  weights and phases.
+routes:
+  certified-cube-route:
+    premises:
+    - HEXT.su3-interior-environment-mixture-bell-no-go
+    implication: >-
+      The cycle has an exact quadratic Gram parameter in three edge weights and three explicit
+      block-highest side spectra. A 16-by-16-by-16 rational box partition gives a strictly positive
+      Bell-minus-twice-side lower bound on every box.
+    proof:
+      sketch: >-
+        Align the six Clebsch--Gordan embeddings, compute the Gram quadratic, and restrict to one
+        highest-weight input in each of the three input irreps. Bound the Gram polynomial and all
+        four entropies by rational interval endpoints; certify logarithms by atanh-series
+        enclosures. Unique shared environments make all edge phases irrelevant.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_MINIMAL_COVARIANT_CYCLE_BELL_NO_GO_20260830.md
+        kind: text
+        locator: "## 2. Exact Gram polynomial through ## 4. Certified box proof"
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/certify_su3_minimal_covariant_cycle.py
+        kind: code
+        locator: certified 4096-box rational interval proof
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/explore_su3_minimal_covariant_cycle.py
+        kind: code
+        locator: direct matrix reconstruction and 29791-point scan
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The finite-family proof has a strict rational interval certificate and matrix audit, but it
+        has not received independent adversarial review.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - Larger branching graphs, repeated cycles, and arbitrary cycle multiplicities are not covered.
+  - Noncovariant qutrit Gram factors and non-Bell collective inputs are not covered.
+  - The proof is proposer-side and has not received independent review.
+  summary: >-
+    The first reducible-input cross-irrep coherence cycle is closed for the conjugate-Bell route.
+  basis:
+    routes:
+    - certified-cube-route
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_MINIMAL_COVARIANT_CYCLE_BELL_NO_GO_20260830.md
+      kind: text
+      locator: "## 4. Certified box proof"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_MINIMAL_COVARIANT_CYCLE_CERTIFICATE_20260830.txt
+      kind: text
+      locator: minimal SU(3) covariant branching cycle certified Bell-no-go
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_MINIMAL_COVARIANT_CYCLE_SCAN_20260830.txt
+      kind: text
+      locator: minimal SU(3) covariant cycle has no block-certified positive Bell candidate
+frontier:
+  larger-branching-graphs:
+    task: >-
+      Extend the now-uniform translated-elementary-cycle theorem to two adjacent faces, repeated
+      vertices, and nontrivial cycle multiplicities in the SU(3) Pieri branching graph.
+    kind: gate
+    since: 2026-08-30
+events:
+  minimal-cycle-closed:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Closed the first non-star reducible-input covariant family by an exact Gram polynomial and a
+      certified 4096-box entropy proof.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_MINIMAL_COVARIANT_CYCLE_BELL_NO_GO_20260830.md
+      kind: text
+    - path: channel-additivity-violations/tools/holevo-extensive-violation/certify_su3_minimal_covariant_cycle.py
+      kind: code
+  translated-cycle-scan-added:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Added a formula-only 1225-cycle scan through total base weight 50. No translated elementary
+      cycle candidate was found; the result remains numerical routing evidence.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_TRANSLATED_ELEMENTARY_CYCLE_SCAN_20260830.txt
+      kind: text
+    - path: channel-additivity-violations/tools/holevo-extensive-violation/scan_su3_elementary_cycle_formulas.py
+      kind: code
+    - path: channel-additivity-violations/tools/holevo-extensive-violation/explore_su3_translated_covariant_cycles.py
+      kind: code
+  translated-cycle-theorem-added:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Superseded the finite translation scan by an exact compact rational certificate covering
+      every translated elementary Pieri cycle and every edge-weight point.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_ALL_TRANSLATED_ELEMENTARY_CYCLES_BELL_NO_GO_20260830.md
+      kind: text

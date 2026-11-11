@@ -1,0 +1,85 @@
+{
+  "clean_environment_keys": [
+    "LANG",
+    "LC_ALL",
+    "PATH",
+    "PYTHONDONTWRITEBYTECODE",
+    "TMPDIR",
+    "TZ"
+  ],
+  "machine": "arm64",
+  "network_required": false,
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "python": "3.9.6 (default, May 22 2026, 11:13:45) \n[Clang 21.0.0 (clang-2100.1.1.101)]",
+  "schema": "circdist-gross-round118-environment-v1",
+  "solver_checker_overlap": false,
+  "solver_processes": {
+    "Xerr": {
+      "argv": [
+        "<repo>/circdist/artifacts/circdist_gross_iter193_invariant_quotient_continuation_round116_20260902/tooling/cadical-1.9.5-arm64-macos",
+        "-t",
+        "21600",
+        "--no-binary",
+        "/private/tmp/circdist-round118-iter194-order144-work/output/iter194/direct/direct360/Xerr.cnf",
+        "/private/tmp/circdist-round118-iter194-order144-work/output/iter194/direct/solver/Xerr.drat"
+      ],
+      "child_pid": 62875,
+      "detached": false,
+      "duration_ns": 6874935512875,
+      "end_utc": "2026-09-03T04:25:23.469368Z",
+      "reaped": true,
+      "returncode": 10,
+      "start_utc": "2026-09-03T02:30:48.469536Z",
+      "stderr_bytes": 0,
+      "stdout_bytes": 134809,
+      "tag": "solve-iter194-Xerr-complete-direct360",
+      "wrapper_pid": 62872
+    },
+    "Zerr": {
+      "argv": [
+        "<repo>/circdist/artifacts/circdist_gross_iter193_invariant_quotient_continuation_round116_20260902/tooling/cadical-1.9.5-arm64-macos",
+        "-t",
+        "21600",
+        "--no-binary",
+        "/private/tmp/circdist-round118-iter194-order144-work/output/iter194/direct/direct360/Zerr.cnf",
+        "/private/tmp/circdist-round118-iter194-order144-work/output/iter194/direct/solver/Zerr.drat"
+      ],
+      "child_pid": 73240,
+      "detached": false,
+      "duration_ns": 656566918375,
+      "end_utc": "2026-09-03T04:37:35.148906Z",
+      "reaped": true,
+      "returncode": 10,
+      "start_utc": "2026-09-03T04:26:38.576299Z",
+      "stderr_bytes": 0,
+      "stdout_bytes": 87793,
+      "tag": "solve-iter194-Zerr-complete-direct360",
+      "wrapper_pid": 73237
+    },
+    "outer": {
+      "argv": [
+        "<repo>/circdist/artifacts/circdist_gross_iter193_invariant_quotient_continuation_round116_20260902/tooling/cadical-1.9.5-arm64-macos",
+        "-t",
+        "21600",
+        "--no-binary",
+        "<repo>/circdist/artifacts/circdist_gross_iter193_invariant_quotient_continuation_round116_20260902/frontier/iter194/order144_quotient/outer.cnf",
+        "/private/tmp/circdist-round118-iter194-order144-work/output/iter194/solver/outer.drat"
+      ],
+      "child_pid": 58943,
+      "detached": false,
+      "duration_ns": 992393031833,
+      "end_utc": "2026-09-03T02:23:26.811178Z",
+      "reaped": true,
+      "returncode": 10,
+      "start_utc": "2026-09-03T02:06:54.412027Z",
+      "stderr_bytes": 0,
+      "stdout_bytes": 37639261,
+      "tag": "solve-iter194-exact-order144-quotient-proof-first",
+      "wrapper_pid": 58939
+    }
+  },
+  "solver_proof_output_enabled_from_start": true,
+  "solver_timeout_seconds": 21600,
+  "status": "PASS",
+  "strict_process_serialization": true
+}

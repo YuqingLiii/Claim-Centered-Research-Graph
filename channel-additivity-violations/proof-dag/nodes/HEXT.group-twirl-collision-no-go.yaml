@@ -1,0 +1,49 @@
+id: HEXT.group-twirl-collision-no-go
+role: obstruction
+aliases:
+- group-twirl-no-go
+claim: >-
+  Every uniform finite-group twirling channel has minimum output entropy equal to the logarithm
+  of the smallest irreducible representation dimension occurring in its defining representation,
+  and the minimum output entropy is exactly additive for every pair of uniform finite-group twirls;
+  hence multiplication-table Kraus collisions do not yield an extensive p=1 defect.
+assumptions:
+  finite-group-schur-decomposition:
+    kind: external-theorem
+    statement: >-
+      A finite-dimensional unitary representation of a finite group decomposes into irreducible
+      representation spaces tensored with multiplicity spaces, and uniform conjugation averaging
+      acts as normalized identity on each irreducible factor tensored with partial trace over that factor.
+    source:
+      note: Standard finite-group isotypic decomposition and Schur orthogonality theorem.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The result covers uniform group twirls, not nonuniform weights or approximate non-group Kraus sets.
+  - The derivation is proposer-side and has not received independent adversarial review.
+  summary: >-
+    The conditional-expectation block formula gives S_min exactly. Product twirls are twirls of the
+    product group, whose smallest occurring irrep dimension is the product of the two minima, so
+    the MOE sum is exact despite the large Bell-label collision multiplicity.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/GROUP_TWIRL_COLLISION_NO_GO_20260830.md
+      kind: text
+      locator: "## Exact strong additivity inside the twirl class"
+frontier:
+  nonuniform-collision-tradeoff:
+    task: >-
+      Quantify the joint collision gain versus one-side entropy loss for nonuniform group weights
+      or approximate multiplication tables that are not conditional expectations.
+    kind: gate
+    since: 2026-08-30
+events:
+  uniform-group-collision-route-closed:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Evaluated the maximal multiplication-table collision proposal and proved exact MOE additivity
+      for the resulting uniform finite-group twirling channels.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/GROUP_TWIRL_COLLISION_NO_GO_20260830.md
+      kind: text

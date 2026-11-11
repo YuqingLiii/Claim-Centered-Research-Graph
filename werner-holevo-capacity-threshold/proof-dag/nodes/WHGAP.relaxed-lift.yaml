@@ -1,0 +1,25 @@
+id: WHGAP.relaxed-lift
+role: proof
+aliases:
+- two-sided-defect
+claim: >-
+  If a complex-linear lift J intertwines two faithful channels and both left and right
+  operator-valued BKM defects are completely positive, then the required complete BKM domination
+  follows without assuming that J preserves adjoints.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - Completeness of this criterion is a separate conjecture and is not part of the claim.
+  summary: >-
+    A proposer-side proof skeleton is preserved. The target complete order itself fails below 1/2,
+    so this relaxation cannot close the remaining quantum strip even if sound.
+  basis:
+    evidence:
+    - path: werner-holevo-capacity-threshold/artifacts/legacy-record/nodes/WHGAP.relaxed-lift.md
+      kind: text
+      locator: "## Current status"
+disposition:
+  state: PARKED
+  reason: The general lemma may be useful, but every certificate implying the failed complete order is blocked below 1/2.
+  revive: Resume for an independent proof review or an application outside the below-1/2 strip.
+

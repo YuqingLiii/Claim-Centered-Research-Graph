@@ -1,0 +1,88 @@
+id: HEXT.werner-ab-reducible-subclass-count
+role: proof
+aliases:
+- werner-recursive-common-cycle-subclass
+claim: >-
+  For the recursively A--B-reducible connected genus-h constellation subclass whose planar
+  endpoints have at most N+2 label components, reverse surgery histories number at most
+  binom(2N,2)^h, every original equality graph has at most N+2+4h components, and the local
+  surgery cost per handle is at most 2m^4N^2/d^2=o_m(1) uniformly for N<=c_m log d.
+routes:
+  exact-common-cycle-recursion:
+    premises:
+    - HEXT.werner-contraction-skeleton-ribbon-injection
+    - HEXT.werner-constellation-euler-deficit
+    - HEXT.werner-common-cycle-local-surgery
+    implication: >-
+      For the recursively A--B-reducible connected genus-h constellation subclass whose planar
+      endpoints have at most N+2 label components, reverse surgery histories number at most
+      binom(2N,2)^h, every original equality graph has at most N+2+4h components, and the local
+      surgery cost per handle is at most 2m^4N^2/d^2=o_m(1) uniformly for N<=c_m log d.
+    proof:
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_20260830.md
+        kind: text
+        locator: "### Proposition 3"
+    assessment:
+      level: PROVED
+      caveats:
+      - This route counts only the recursively A--B-reducible connected subclass.
+      summary: >-
+        Independent review verified injective inverse surgery histories, the four-incidence
+        component loss and the exact 2m^4N^2/d^2 per-handle cost from the three proved premises.
+      basis:
+        evidence:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_20260830.md
+          kind: text
+          locator: "### Proposition 3"
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_INDEPENDENT_REVIEW_20260830.md
+          kind: review
+          locator: "Finding WPCS-IR-05"
+          scope: >-
+            Independently verified the recursive history injection, component-loss accounting,
+            unchanged minimal Catalan weight, exact genus factor and logarithmic-order asymptotic.
+          reviewed_hash: sha256:836a4585dce43dffab7d92921a711a5f376d5c15ade83e491439f2866a817eec
+assessment:
+  level: PROVED
+  caveats:
+  - This is a nontrivial subclass theorem, not a count of all positive-genus Werner skeletons.
+  summary: >-
+    Independently reviewed exact inverse transposition histories and bounded pairing-arrow changes
+    close the recursively reducible positive-genus subclass at logarithmic moment order.
+  basis:
+    routes:
+    - exact-common-cycle-recursion
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_20260830.md
+      kind: text
+      locator: "### Proposition 3"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WPCS-IR-05"
+      scope: >-
+        Independently verified the reviewed claim with its encoding, Euler and surgery dependencies
+        made machine-visible as route premises.
+      reviewed_hash: sha256:836a4585dce43dffab7d92921a711a5f376d5c15ade83e491439f2866a817eec
+events:
+  reducible-subclass-independent-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    route: exact-common-cycle-recursion
+    summary: >-
+      Added the three load-bearing proved premises and promoted the independently verified
+      recursively A--B-reducible subclass bound.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WPCS-IR-05"
+  reducible-subclass-count-created:
+    date: '2026-08-30'
+    type: created
+    summary: Registered the proposer-side recursively reducible subclass bound.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_20260830.md
+      kind: text

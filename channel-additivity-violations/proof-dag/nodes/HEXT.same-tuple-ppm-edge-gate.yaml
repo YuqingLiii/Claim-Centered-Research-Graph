@@ -1,0 +1,48 @@
+id: HEXT.same-tuple-ppm-edge-gate
+role: constraint
+aliases:
+- repeated-tuple-symmetric-antisymmetric-edge-test
+claim: >-
+  The normalized P_+ coefficient satisfies the A/m target exactly when
+  lambda_max(R_U)<=A*sqrt(2(1+1/m))-1, and the normalized P_- coefficient satisfies it exactly
+  when lambda_min(R_U)>=-[A*sqrt(2(1-1/m))-1]. At large m these thresholds approach
+  plus-or-minus (sqrt(2)-1).
+assessment:
+  level: PROVED
+  caveats:
+  - The normalized antisymmetric coefficient is nonzero only for m>=2; this is the intended regime.
+  - Passing these two edge tests does not imply the full Werner sector or arbitrary coefficients.
+  summary: >-
+    The two first unresolved flip-symmetry projectors reduce to explicit upper and lower spectral
+    edges of the same repeated-tuple operator R_U.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_FLIP_SECTOR_SAME_TUPLE_GATE_20260830.md
+      kind: text
+      locator: "## 2. Exact `P_+` and `P_-` spectral thresholds"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_GRAM_WERNER_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STGW-IR-05"
+      scope: >-
+        Independently verified Hermiticity, positivity, both normalized projector formulas and both
+        edge thresholds for m>=2; no Werner-sector or general-coefficient inference was reviewed.
+      reviewed_hash: sha256:33a54f48d45ea1dfd0e6d10b8efc1e0ec0dd820628325ce08aee77c3084472a4
+events:
+  ppm-edge-independent-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Independent review verified both normalized projector edge criteria in the m>=2 regime.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_GRAM_WERNER_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STGW-IR-05"
+  ppm-edge-gate-created:
+    date: '2026-08-30'
+    type: created
+    summary: Registered exact spectral edge criteria for normalized P_+ and P_- coefficients.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_FLIP_SECTOR_SAME_TUPLE_GATE_20260830.md
+      kind: text

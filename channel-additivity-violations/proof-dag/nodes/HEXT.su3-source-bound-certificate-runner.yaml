@@ -1,0 +1,91 @@
+id: HEXT.su3-source-bound-certificate-runner
+role: tool
+aliases:
+- source-bound-python-certificate-wrapper
+claim: >-
+  For a Python certificate whose project-local imports are statically resolvable, the source-bound
+  runner recursively freezes and hashes the complete local import closure before launch, executes
+  the frozen entry while teeing its merged stdout/stderr, records reproducibility and terminal-tree
+  metadata, and fails closed if a closure file drifts or required terminal output is absent.
+assessment:
+  level: NUMERICAL
+  caveats:
+  - >-
+    The implementation and fixtures are proposer-side and have not received independent review;
+    this operational level cannot promote any mathematical certificate or route.
+  - >-
+    Nonliteral dynamic imports and unresolved relative imports are rejected. External Python
+    packages are recorded through the interpreter environment rather than copied into the snapshot.
+  - >-
+    The two actual-driver dossiers are preparation-only closure checks; no heavy SU(3) certificate
+    was launched and no entropy inequality follows from them.
+  summary: >-
+    Temporary fixtures passed the successful manifest/tree-count path and fail-closed branches for
+    source drift, missing terminal fields, nonzero child exit, nonliteral dynamic import and run-
+    directory overwrite. Preparation-only checks froze exactly the seven-file closure independently
+    enumerated for each affected SU(3) driver.
+  basis:
+    runs:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_SOURCE_BOUND_CERTIFICATE_RUNNER_20260830.md
+      kind: run
+      locator: SBCR-02
+      result: >-
+        A mock two-leaf certificate produced a PASS dossier with exact (2,1,3,0) full-binary counts;
+        five negative fixtures exercised source drift, missing terminal fields, nonzero child exit,
+        nonliteral dynamic import and overwrite refusal with the expected fail-closed status.
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/source-bound-wrapper-dry-run-input-centered-20260830-2256/manifest.final.json
+      kind: run
+      result: PREPARED_ONLY_NOT_EXECUTED with exactly seven frozen project-local sources.
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/source-bound-wrapper-dry-run-weakest-bent-20260830-2256/manifest.final.json
+      kind: run
+      result: PREPARED_ONLY_NOT_EXECUTED with exactly seven frozen project-local sources.
+    evidence:
+    - path: channel-additivity-violations/tools/holevo-extensive-violation/run_source_bound_certificate.py
+      kind: script
+      locator: discover_import_closure, freeze_sources, tee_child, parse_terminal_fields, and run
+    - path: channel-additivity-violations/tools/holevo-extensive-violation/test_source_bound_certificate.py
+      kind: script
+      locator: main
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_SOURCE_BOUND_CERTIFICATE_RUNNER_20260830.md
+      kind: text
+      locator: SBCR-01
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/source-bound-wrapper-dry-run-input-centered-20260830-2256/manifest.prelaunch.json
+      kind: data
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/source-bound-wrapper-dry-run-weakest-bent-20260830-2256/manifest.prelaunch.json
+      kind: data
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SU3_SOURCE_BOUND_CERTIFICATE_RUNNER_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Findings SBCR-IR-01--SBCR-IR-04"
+      scope: >-
+        Independently reviewed the intended drivers' static closure, prelaunch binding, snapshot
+        isolation, source-drift policy, transcript, terminal parsing and six success/failure fixtures;
+        no entropy mathematics or existing legacy run was reviewed.
+      reviewed_hash: sha256:ff2d6776ce8a490247e6c9fa9954da77aa3b62d784c91f5807bf0f67b72d6c05
+frontier:
+  first-heavy-source-bound-run:
+    task: >-
+      After current heavy processes free capacity, use a new run directory for one affected driver;
+      independently review its full exit-zero dossier before changing any mathematical node.
+    kind: task
+    since: 2026-08-30
+events:
+  source-bound-runner-independently-reviewed:
+    date: '2026-08-30'
+    type: review-completed
+    summary: >-
+      Independent operational review passed the wrapper at its static-driver scope and added
+      fail-closed fixtures; no mathematical orientation level changed.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SU3_SOURCE_BOUND_CERTIFICATE_RUNNER_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Findings SBCR-IR-01--SBCR-IR-04"
+  source-bound-runner-registered:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Added a generic prehashed immutable-source runner, a success/source-drift fixture, and
+      preparation-only seven-file closure dossiers for the two stopped stale-source certificates.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_SOURCE_BOUND_CERTIFICATE_RUNNER_20260830.md
+      kind: text

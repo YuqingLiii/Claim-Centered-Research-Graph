@@ -1,0 +1,154 @@
+{
+  "accepted_processes": [
+    {
+      "command": "/private/tmp/circdist-r72-dispatcher-venv/bin/python efssc_outer.py --package <round80> --output <scratch>/run_all120_v2 --timeout-ms 600000",
+      "expected_runtime": "at most 600 seconds solver time plus compilation",
+      "final_status": "EXIT_0_SAT_HARVESTED",
+      "job": "seed EFSSC outer solve over reviewed 120 selectors",
+      "kill_or_harvest": "foreground process completed and all outputs were harvested",
+      "log_paths": [
+        "logs/seed_outer_stdout.log",
+        "logs/seed_outer_time.log",
+        "logs/seed_outer_process_snapshot.txt"
+      ],
+      "max_rss_bytes": 700907520,
+      "pid": 95828,
+      "wall_seconds_external": 215.22,
+      "wrapper_pid": 95825
+    },
+    {
+      "command": "/private/tmp/circdist-r72-dispatcher-venv/bin/python efssc_cegar.py --package <round80> --seed-candidate <iter102> --seed-domains <iter102-domains> --output <scratch>/cegar_run/work --start-iteration 103 --max-candidates 6 --outer-timeout-ms 600000",
+      "expected_runtime": "six serial outer/direct/replay transitions, each outer capped at 600 seconds",
+      "final_status": "EXIT_0_HARVESTED_ITERATIONS_103_108",
+      "job": "strict-serial EFSSC iterations 103 through 108",
+      "kill_or_harvest": "foreground process completed and final unstarted state was harvested",
+      "log_paths": [
+        "logs/cegar_stdout.log",
+        "logs/cegar_time.log",
+        "logs/cegar_process_snapshot.txt"
+      ],
+      "max_rss_bytes": 1077493760,
+      "pid": 96156,
+      "wall_seconds_external": 1058.05,
+      "wrapper_pid": 96152
+    },
+    {
+      "command": "rebuild_final_formula.py --root <staged-package> --compiler-smt2 formulas/final_outer.smt2",
+      "expected_runtime": "under 60 seconds; no solver check",
+      "final_status": "EXIT_0_PASS",
+      "job": "independent formula rebuild and semantic parser control",
+      "kill_or_harvest": "foreground process completed",
+      "log_paths": [
+        "logs/formula_rebuild_stdout.log",
+        "logs/formula_rebuild_time.log"
+      ],
+      "max_rss_bytes": 295043072,
+      "wall_seconds_external": 39.75
+    },
+    {
+      "command": "independent_state_replay.py --root <staged-package>",
+      "expected_runtime": "under 60 seconds; exact positive replay only",
+      "final_status": "EXIT_0_PASS",
+      "job": "independent state and mechanism replay",
+      "kill_or_harvest": "foreground process completed",
+      "log_paths": [
+        "logs/state_replay_stdout.log",
+        "logs/state_replay_time.log"
+      ],
+      "max_rss_bytes": 185204736,
+      "wall_seconds_external": 16.13
+    },
+    {
+      "command": "CIRCDIST_PYTHON=<venv-python> ./replay.sh",
+      "expected_runtime": "approximately 65 seconds; no solver check except positive seed DIMACS assignment replay",
+      "final_status": "EXIT_0_ROUND86_PACKAGE_REPLAY_PASS",
+      "job": "complete package-local replay",
+      "kill_or_harvest": "foreground process completed",
+      "log_paths": [
+        "logs/package_replay_preseal_stdout.log",
+        "logs/package_replay_preseal_time.log"
+      ],
+      "max_rss_bytes": 295550976,
+      "wall_seconds_external": 64.29
+    }
+  ],
+  "accepted_unsat_results": 0,
+  "background_processes_handed_off": 0,
+  "canonical_repository_mutated": false,
+  "concurrent_load_bearing_processes": 0,
+  "development_incidents": [
+    {
+      "command": "first efssc_outer.py seed attempt",
+      "final_status": "EXIT_1_BEFORE_SOLVE",
+      "incident": "Z3 5.1 Xor arity API rejection",
+      "log_paths": [
+        "development/seed_compiler_api_failure_stdout.log",
+        "development/seed_compiler_api_failure_time.log"
+      ],
+      "max_rss_bytes": 188956672,
+      "rollback": "no output state or canonical state was mutated; parity was replaced by a binary XOR fold and the run restarted cleanly",
+      "wall_seconds": 16.24
+    },
+    {
+      "command": "analyze_all_new_selector_domains.py (first full-DP implementation)",
+      "expected_runtime": "initially estimated a few minutes; stopped when memory growth invalidated that estimate",
+      "final_status": "SIGTERM_BY_PROPOSER_NO_AGGREGATE",
+      "incident": "full terminal-state DP memory growth at nine-check selector",
+      "kill_or_harvest": "PID 97169 received TERM; wrapper and parent exited; the absent aggregate was asserted and no partial result was accepted",
+      "log_paths": [
+        "development/full_dp_domain_census_stdout.log",
+        "development/full_dp_domain_census_time.log"
+      ],
+      "max_rss_bytes": 14361591808,
+      "parent_shell_pid": 97165,
+      "peak_memory_footprint_bytes": 49598090208,
+      "pid": 97169,
+      "rollback": "no solver or continuation state was touched; replaced by exact meet-in-the-middle detector-bucket join",
+      "wall_seconds": 140.7,
+      "wrapper_pid": 97168
+    },
+    {
+      "command": "first rebuild_final_formula.py run",
+      "final_status": "EXIT_1_CHECKER_REJECTION",
+      "incident": "independent checker over-strong raw SMT-LIB byte-hash assertion",
+      "log_paths": [
+        "development/formula_byte_hash_failed_stdout.log",
+        "development/formula_byte_hash_failed_time.log",
+        "development/formula_byte_diagnostic_stdout.log",
+        "development/formula_byte_diagnostic_stderr.log",
+        "development/formula_serialization_diagnosis.txt"
+      ],
+      "max_rss_bytes": 271728640,
+      "rollback": "no state mutation; raw printer difference was diagnosed as let-abbreviation serialization only, then the checker was strengthened to exact parsed structural and normalized-AST identity",
+      "wall_seconds": 38.13
+    }
+  ],
+  "final_survivor_scan": "PASS: verification/process_survivor_scan_preseal.txt is empty; no Round86 compiler, analyzer, checker, or CaDiCaL process remains",
+  "foreground_external_sat_processes": [
+    {
+      "command": "cadical -t 600 data/seed_iter102/direct360/Xerr.cnf",
+      "expected_runtime": "at most 600 seconds",
+      "final_status": "EXIT_10_SATISFIABLE_HARVESTED",
+      "job": "seed Xerr direct-360",
+      "log_path": "data/seed_iter102/solver/Xerr.solver.log",
+      "solver": "CaDiCaL 1.9.5",
+      "wall_seconds": 23.41
+    },
+    {
+      "command": "cadical -t 600 data/seed_iter102/direct360/Zerr.cnf",
+      "expected_runtime": "at most 600 seconds",
+      "final_status": "EXIT_10_SATISFIABLE_HARVESTED",
+      "job": "seed Zerr direct-360",
+      "log_path": "data/seed_iter102/solver/Zerr.solver.log",
+      "solver": "CaDiCaL 1.9.5",
+      "wall_seconds": 2.35
+    }
+  ],
+  "network_used": false,
+  "round80_package_mutated": false,
+  "schema": "round86-process-ledger-v1",
+  "status": "PASS_WITH_DISCLOSED_INCIDENTS",
+  "strict_serial_execution": true,
+  "timeouts": 0,
+  "unknowns": 0
+}

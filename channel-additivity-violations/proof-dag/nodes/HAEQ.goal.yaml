@@ -1,0 +1,156 @@
+id: HAEQ.goal
+role: outcome
+aliases:
+- equality-question
+claim: >-
+  Universal finite-dimensional Holevo additivity is false: there exists a finite-dimensional
+  channel T with chi(T tensor T) > 2 chi(T), and consequently C(T) > chi(T).
+routes:
+  hastings-direct-transfer-direct-sum:
+    premises:
+    - HAEQ.hastings-moe-counterexample
+    - HAEQ.direct-moe-to-holevo-transfer
+    - HAEQ.pair-to-self-reduction
+    - HAEQ.fixed-channel-regularization
+    implication: >-
+      Hastings supplies a finite von-Neumann minimum-output-entropy pair defect; Shor's explicit
+      Weyl-labelled extension preserves that numerical defect as a finite Holevo pair defect; the
+      direct-sum reduction turns it into a single-channel two-copy counterexample, which implies
+      strict regularization gain.
+    proof:
+      sketch: >-
+        Apply the output-dimension Holevo upper bound and Weyl-orbit achievability to the one-channel
+        and joint MOE minimizers, subtract the exact identities, then apply the four-block flagged
+        direct-sum calculation. The independently proved fixed-channel regularization equivalence
+        then turns the exhibited n=2 failure into C(T)>chi(T). Do not identify the Hastings pair
+        with either extended channel.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-additivity-equality/DIRECT_MOE_TO_HOLEVO_TRANSFER_20260830.md
+        kind: text
+        locator: "## Product identity"
+      - path: channel-additivity-violations/artifacts/holevo-additivity-equality/PRIMARY_SOURCE_AUDIT_20260829.md
+        kind: text
+        locator: "## Resulting logic"
+      - path: channel-additivity-violations/artifacts/holevo-additivity-equality/PAIR_TO_SELF_PROOF_20260829.md
+        kind: text
+        locator: "## Proof"
+      - path: channel-additivity-violations/artifacts/holevo-additivity-equality/round-1-audit.md
+        kind: text
+        locator: "## 关键 reduction"
+    assessment:
+      level: PROVED
+      summary: >-
+        Independent review passed the exact existential quantifier composition. The three witness
+        premises and the separately reviewed fixed-channel regularization lemma are PROVED, so the
+        capacity consequence is machine-visible without duplicating its HSW assumption here.
+      basis:
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-additivity-equality/Q1_UPSTREAM_DEPENDENCY_AND_QUANTIFIER_INDEPENDENT_REVIEW_20260830.md
+          kind: review
+          locator: Finding Q1UD-04
+          scope: >-
+            Independently checked the existential/universal composition, witness changes and final
+            two-copy-to-capacity implication; completion is withheld for two unfinished premises
+            and the missing route-level HSW assumption.
+          reviewed_hash: sha256:2b2940d578ed8f68e77161ff1b093258781ac2e90f365b97953b0f8206ad3d4d
+        - path: channel-additivity-violations/reviews/holevo-additivity-equality/Q1_UPSTREAM_REPAIR_AMENDMENT_INDEPENDENT_REVIEW_20260830.md
+          kind: review
+          locator: Finding Q1RA-03
+          scope: >-
+            Post-repair review verified the exact Shor capacity-limit interface, the explicit local
+            superadditivity/Fekete step, and closure of all three PROVED premises.
+          reviewed_hash: sha256:2b2940d578ed8f68e77161ff1b093258781ac2e90f365b97953b0f8206ad3d4d
+assessment:
+  level: PROVED
+  summary: >-
+    Universal finite-dimensional Holevo additivity is independently disproved by the fully closed
+    Hastings-to-Weyl-to-direct-sum route, and the registered HSW formula gives a finite channel
+    with strict classical-capacity regularization gain.
+  basis:
+    routes:
+    - hastings-direct-transfer-direct-sum
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-additivity-equality/PRIMARY_SOURCE_AUDIT_20260829.md
+      kind: text
+      locator: "## Resulting logic"
+    - path: channel-additivity-violations/artifacts/holevo-additivity-equality/PAIR_TO_SELF_PROOF_20260829.md
+      kind: text
+      locator: "## Consequence for classical capacity"
+    - path: channel-additivity-violations/artifacts/holevo-additivity-equality/round-1-audit.md
+      kind: text
+      locator: "## 结论"
+    - path: channel-additivity-violations/artifacts/holevo-additivity-equality
+      kind: text
+      note: Migrated historical source bundle; retained for auditability, not as a verdict.
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-additivity-equality/Q1_UPSTREAM_DEPENDENCY_AND_QUANTIFIER_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Findings Q1UD-04--Q1UD-06
+      scope: >-
+        Independently checked the exact existential root claim and its dependency closure while
+        excluding original-channel, all-channel, prevalence, gap-size and other capacity claims.
+      reviewed_hash: sha256:9e8fb7187a75cbc4455edea653a8c7f241bf0af92d3f8d9cb25094457dadea11
+    - path: channel-additivity-violations/reviews/holevo-additivity-equality/Q1_UPSTREAM_REPAIR_AMENDMENT_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Finding Q1RA-04
+      scope: >-
+        Post-repair review verified dependency-ordered promotion and the existential root boundary;
+        fixed-channel all-copy equivalence is separately proved but is not a root premise.
+      reviewed_hash: sha256:9e8fb7187a75cbc4455edea653a8c7f241bf0af92d3f8d9cb25094457dadea11
+events:
+  post-audit-regularization-node-connected:
+    date: '2026-09-07'
+    type: repair-applied
+    summary: >-
+      Connected the separately PROVED fixed-channel regularization lemma to the root route and
+      removed the duplicate route-local HSW assumption. This makes the already reviewed capacity
+      consequence visible in the DAG without changing the root claim or implication.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-additivity-equality/POST_AUDIT_CLEANUP_20260907.md
+      kind: text
+      locator: "## Repairs"
+  equality-route-independently-proved:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    route: hastings-direct-transfer-direct-sum
+    summary: >-
+      After proving the Hastings and pair-to-self premises and registering the exact HSW interface,
+      the independently reviewed existential route is completion-level closed.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-additivity-equality/Q1_UPSTREAM_DEPENDENCY_AND_QUANTIFIER_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Finding Q1UD-04
+  universal-holevo-additivity-independently-refuted:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      The sole root route now proves existence of a finite channel with strict two-copy Holevo
+      superadditivity and hence strict regularization gain in classical capacity.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-additivity-equality/Q1_UPSTREAM_DEPENDENCY_AND_QUANTIFIER_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Findings Q1UD-04--Q1UD-06
+  upstream-dependency-review-completed:
+    date: '2026-08-30'
+    type: review-completed
+    summary: >-
+      Independent review passed the root's existential quantifier composition conditionally and
+      identified the exact unfinished premises and hidden HSW route input; no level was changed.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-additivity-equality/Q1_UPSTREAM_DEPENDENCY_AND_QUANTIFIER_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Findings Q1UD-04--Q1UD-06
+  upstream-repair-amendment-completed:
+    date: '2026-08-30'
+    type: review-completed
+    summary: >-
+      Post-repair amendment verified the exact Fukuda and HSW source interfaces, explicit Fekete
+      step and dependency-ordered completion of the root route and claim.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-additivity-equality/Q1_UPSTREAM_REPAIR_AMENDMENT_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Findings Q1RA-01--Q1RA-04

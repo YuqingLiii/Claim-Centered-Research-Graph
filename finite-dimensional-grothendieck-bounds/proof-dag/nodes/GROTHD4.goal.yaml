@@ -1,0 +1,80 @@
+id: GROTHD4.goal
+role: outcome
+aliases:
+- D4-BOUND
+claim: >-
+  The archived d=4 Bell instance A gives the explicit lower bound
+  K_G(4) >= (1539823299061914600 + 706968072319078800 sqrt(5)) /
+  2081044153087351400 = 1.499560671050487541027064... .
+routes:
+  exact-value-assembly:
+    premises:
+    - GROTHD4.instance
+    - GROTHD4.quantum
+    - GROTHD4.classical.lower
+    - GROTHD4.classical.upper
+    implication: >-
+      Once the archived matrix is identified, an attainable d-dimensional value N and
+      exact classical value C imply K_G(4) >= N/C for this instance; the displayed
+      radical expression is the exact quotient N/C.
+    proof:
+      sketch: >-
+        Divide the certified d-dimensional Bell value by the matching classical optimum.
+        This elementary assembly is not the current bottleneck; the matrix identity and
+        the classical upper bound are.
+      sources:
+      - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/migration-state-20260829.md
+        kind: text
+        locator: Reconstructed headline claim
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The instance, dimension-four Gram witness, and classical equality
+        witness now have complete local author-level certificates. The sole
+        unresolved mathematical premise is the global classical upper bound.
+      basis:
+        evidence:
+        - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/migration-state-20260829.md
+          kind: text
+          locator: Reconstructed headline claim
+assessment:
+  level: CONJECTURED
+  summary: >-
+    The exact matrix, rank-four value, classical witness, and physical
+    measurements are now locally closed at author level. The unrestricted
+    classical upper bound remains open, so this is not yet a certified
+    Grothendieck lower bound.
+  basis:
+    routes:
+    - exact-value-assembly
+frontier:
+  close-classical-upper:
+    task: >-
+      Produce an exact primal Boolean SOS certificate, an exact global cut/branch
+      certificate, or an analytic sign-vector bound using the exact spectral
+      decomposition. A feasible separating dual would instead refute the SOS route.
+    kind: task
+    since: '2026-08-29'
+  independent-review:
+    task: Commission an independent adversarial review after all load-bearing premises close.
+    kind: review
+    since: '2026-08-29'
+events:
+  migrated-2026-08-29:
+    date: '2026-08-29'
+    type: created
+    summary: >-
+      Reconstructed the d=4 research line from local artifacts after retiring the web-chat
+      workflow; status was deliberately capped below completion pending missing evidence.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/migration-state-20260829.md
+      kind: text
+  exact-witness-chain-assembled-2026-08-29:
+    date: '2026-08-29'
+    type: repair-applied
+    summary: Closed the formerly missing instance, vector witness, classical witness, and measurement realization; isolated the classical upper bound as the only theorem gate.
+    sources:
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-exact-instance-certificate-20260829.md
+      kind: text
+    - path: finite-dimensional-grothendieck-bounds/artifacts/grothendieck-d4/d4-exact-instance-check-20260829.txt
+      kind: run

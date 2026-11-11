@@ -1,0 +1,81 @@
+id: HEXT.su3-bent-central-ternary-three-face-bell-no-go
+role: obstruction
+aliases:
+- bent-central-ternary-three-face-no-go
+claim: >-
+  Every SU(3)-covariant qutrit channel supported on the bent cluster
+  ((-1,-1),(-1,2),(0,0)) satisfies the Bell-input no-gap inequality for all labels and weights.
+routes:
+  fixed-three-original-side-cover:
+    premises:
+    - HEXT.su3-three-face-cluster-classification
+    - HEXT.su3-fixed-original-side-endpoint-lemma
+    implication: >-
+      Retain h/m, ternary h/c/m, and h/c blocks, reduce the rest to 24 Gram endpoints, and certify
+      the resulting six-variable inequality.
+    proof:
+      sources:
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/certify_su3_chain_three_face_sixdim_covers.py
+        kind: code
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_BENT_CENTRAL_TERNARY_THREE_FACE_CERTIFICATE_STOPPED_20260831.md
+        kind: text
+    assessment:
+      level: NUMERICAL
+      caveats:
+      - >-
+        The registered depth-6 exact run reached an uncertified full-depth box; a depth-10 replay
+        was stopped at user request and produced no terminal certificate verdict.
+      summary: >-
+        The fixed cover stayed positive under million-label stress, but exact certification
+        remains incomplete after the stopped depth-10 replay.
+      basis:
+        evidence:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_BENT_CENTRAL_TERNARY_THREE_FACE_CERTIFICATE_STOPPED_20260831.md
+          kind: text
+          locator: "## Stopped depth-10 replay"
+        runs:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CHAIN_THREE_FACE_FIXED_THREE_STRESS_RUN_20260830.txt
+          kind: run
+          result: The selected cover retained a sampled margin at least 0.175629949999 bit.
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_BENT_CENTRAL_TERNARY_THREE_FACE_CERTIFICATE_STOPPED_20260831.txt
+          kind: run
+          result: >-
+            Depth 6 failed at a width-1/64 box; the depth-10 replay was user-stopped after the
+            10000/4992/15 progress checkpoint with no terminal verdict.
+assessment:
+  level: NUMERICAL
+  caveats:
+  - The depth-10 replay was interrupted at user request and is not a completed certificate.
+  - The depth-6 enclosure failure is not a mathematical counterexample.
+  summary: >-
+    Exact six-dimensional certification remains pending; the latest replay stopped after
+    processed=10000, certified=4992, pending=15.
+  basis:
+    routes:
+    - fixed-three-original-side-cover
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_BENT_CENTRAL_TERNARY_THREE_FACE_CERTIFICATE_STOPPED_20260831.md
+      kind: text
+      locator: "## Exact depth-6 failure"
+    runs:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CHAIN_THREE_FACE_FIXED_THREE_STRESS_RUN_20260830.txt
+      kind: run
+      result: The selected cover retained a sampled margin at least 0.175629949999 bit.
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_BENT_CENTRAL_TERNARY_THREE_FACE_CERTIFICATE_STOPPED_20260831.txt
+      kind: run
+      result: The depth-10 prefix was stopped by user request and supplies no terminal verdict.
+frontier:
+  complete-source-bound-depth10-run:
+    task: >-
+      If work resumes, complete a fresh source-bound depth-10 run or first sharpen the exact
+      enclosure near the registered depth-6 failure box; do not reuse the interrupted prefix.
+    kind: gate
+    since: 2026-08-31
+events:
+  orientation-node-created:
+    date: '2026-08-30'
+    type: created
+    summary: Split this orientation from the aggregate bent-chain claim.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CHAIN_THREE_FACE_COVER_COMPLEXITY_20260830.md
+      kind: text

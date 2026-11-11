@@ -1,0 +1,59 @@
+{
+  "all_task_children_reaped": true,
+  "checked_unix": 1788231353.592154,
+  "checked_utc": "2026-09-01T02:55:53.592161+00:00",
+  "cleanup_process": {
+    "parent_pid": 36186,
+    "pid": 36190,
+    "ps_child_pid": 36191,
+    "ps_child_reaped": true,
+    "ps_child_returncode": 0
+  },
+  "detached_processes": 0,
+  "disposition": "removed only after complete evidence had been copied into the sole permitted package",
+  "meaning": "Round100 scratch is absent and no matching science, synthesis, replay, or solver process survived.",
+  "preseal_replay": {
+    "all_reaped": true,
+    "direct_children": 126,
+    "nested_children": 18,
+    "total_known_children": 144
+  },
+  "process_scan_command": [
+    "/bin/ps",
+    "-axo",
+    "pid=,ppid=,stat=,etime=,command="
+  ],
+  "process_scan_stderr": "",
+  "replay_temp_glob_matches": [],
+  "repository_validators": {
+    "all_reaped": true,
+    "children": 12
+  },
+  "retained_external_dependency": {
+    "disposition": "pre-existing dispatcher replay environment; not Round100 scratch",
+    "exists": true,
+    "path": "/private/tmp/circdist-r72-dispatcher-venv/bin/python",
+    "sha256": "bdea59019a38eb6600cc9e71e984a97fedadc406448431281e7657030f54987e"
+  },
+  "retained_pid_records_before_cleanup_wrapper": 210,
+  "schema": "circdist-round100-fix2-closure-v1",
+  "scratch_before": {
+    "bytes": 986934,
+    "exists": true,
+    "files": 12,
+    "tree_sha256": "59538b7aa96c66d14eece5bdc53f7b5f47c1190b8b5ac77540f6f685ef1761b7"
+  },
+  "scratch_exists_after": false,
+  "scratch_path": "/private/tmp/circdist_round100_gross_20260831",
+  "status": "PASS",
+  "survivors": 0,
+  "task_process_matches": [],
+  "task_process_patterns": [
+    "/private/tmp/circdist_round100_gross_20260831",
+    "circdist-r100-full-replay.",
+    "run_round100_campaign.py",
+    "replay_round100.py",
+    "order6_mitm",
+    "circdist_gross_proof_outer_round100_20260831/tooling/cadical"
+  ]
+}

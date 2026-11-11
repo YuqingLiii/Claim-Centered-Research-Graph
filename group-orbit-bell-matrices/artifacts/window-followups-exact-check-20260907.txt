@@ -1,0 +1,29 @@
+# Exact finite replay of registered C17/C18
+
+Date: 2026-09-07 (America/New_York). Coordinator replay, not independent review.
+Registered first in artifacts/window-next-registration-20260907.md.
+Command, from repository root: env PYTHONDONTWRITEBYTECODE=1 python3 grothendieck-group-orbit/tools/check_window_followups.py
+Checker SHA-256: 1c84ff3eb0f15b29a27b6896035a3d7c3f991c334aecd910d2f30384adb16ca0
+Dependencies: Python 3.9+ standard library; integer and Fraction arithmetic.
+Exit code: 0
+
+C17 r=3 n=12 witness intercept=9 overlap=8 endpoint=1/4 PASS
+C17 r=4 n=24 witness intercept=18 overlap=20 endpoint=1/6 PASS
+C17 r=5 n=40 witness intercept=59/2 overlap=36 endpoint=1/8 PASS
+C17 r=6 n=60 witness intercept=218/5 overlap=56 endpoint=1/10 PASS
+C17 r=7 n=84 witness intercept=181/3 overlap=80 endpoint=1/12 PASS
+C17 r=8 n=112 witness intercept=558/7 overlap=108 endpoint=1/14 PASS
+C17 r=9 n=144 witness intercept=407/4 overlap=140 endpoint=1/16 PASS
+C17 r=10 n=180 witness intercept=1138/9 overlap=176 endpoint=1/18 PASS
+C17 r=11 n=220 witness intercept=769/5 overlap=216 endpoint=1/20 PASS
+C17 r=12 n=264 witness intercept=2022/11 overlap=260 endpoint=1/22 PASS
+C18 columns=((1,),) lambda=1/4 ordered_pairs=16 optimizers=2 PASS
+C18 columns=((2,),) lambda=1 ordered_pairs=16 optimizers=2 PASS
+C18 columns=((1,), (1,)) lambda=1/4 ordered_pairs=256 optimizers=2 PASS
+C18 columns=((1,), (-1,)) lambda=1/4 ordered_pairs=256 optimizers=2 PASS
+C18 columns=((1, 0), (0, 1)) lambda=1/4 ordered_pairs=256 optimizers=4 PASS
+C18 columns=((1, 0), (1, 1)) lambda=1/4 ordered_pairs=256 optimizers=2 PASS
+C18 columns=((1,), (1,), (1,)) lambda=1/4 ordered_pairs=4096 optimizers=2 PASS
+C18 columns=((1, 0), (0, 1), (1, 1)) lambda=1/4 ordered_pairs=4096 optimizers=2 PASS
+Scope: finite exact witness/equality sanity checks only; universal claims require proofs and independent reviews.
+

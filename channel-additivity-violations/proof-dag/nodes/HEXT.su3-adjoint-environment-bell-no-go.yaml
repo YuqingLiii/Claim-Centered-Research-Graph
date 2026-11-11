@@ -1,0 +1,76 @@
+id: HEXT.su3-adjoint-environment-bell-no-go
+role: obstruction
+aliases:
+- su3-three-tensor-eight-no-go
+- qutrit-adjoint-environment-bar6
+claim: >-
+  Let Phi_bar6:M_6->M_3 be the partial-trace channel from the bar6 irreducible summand in
+  3 tensor 8. Its Gram channel is Delta_{5/32}, its minimum output entropy is one bit, and
+  2 barS_min(Phi_bar6)<S((Phi_bar6 tensor barPhi_bar6)(Omega_6)); consequently every summand in
+  the coupling 3 tensor 8 fails the fixed-channel conjugate-Bell route.
+routes:
+  casimir-schmidt-route:
+    premises:
+    - HEXT.conjugate-bell-realignment-constraint
+    - HEXT.depolarizing-gram-small-input-no-go
+    implication: >-
+      The Casimir projector for bar6 gives Gram contraction 5/32 and maximum product overlap 1/2.
+      A highest-weight vector attains Schmidt spectrum (1/2,1/2,0), so S_min=1, while the
+      depolarizing Choi entropy is h_2(1/4)+9/4>2. The 15 summand contains a product vector and the
+      3 summand is covered by the depolarizing d<=k no-go premise.
+    proof:
+      sketch: >-
+        Use the multiplicity-free Casimir polynomial for P_bar6. The unique adjoint in End(bar6)
+        and the quadratic-Casimir coupling identity give the Gram contraction. The fixed-output
+        product-overlap block has exact spectrum (1/2 repeated three, 1/4 repeated two, 0 repeated
+        three), which gives the sharp Schmidt bound and exact minimum output entropy.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_ADJOINT_ENVIRONMENT_BELL_NO_GO_20260830.md
+        kind: text
+        locator: "## 1. Casimir projectors through ## 4. Bell comparison"
+      - path: channel-additivity-violations/tools/holevo-extensive-violation/check_su3_adjoint_coupling.py
+        kind: code
+        locator: deterministic Casimir and product-overlap audit
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The exact Casimir/Schmidt calculation and deterministic cross-check are complete
+        proposer-side, but the implication has not received independent adversarial review.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The classification is restricted to the three summands in 3 tensor 8.
+  - The result concerns the conjugate-Bell witness and does not exclude non-Bell collective inputs.
+  - The proof is proposer-side and has not received independent review.
+  summary: >-
+    The first nonsymmetric-environment SU(3) coupling is completely closed for the Bell route; its
+    only new oversized summand has exact side entropy one and Bell entropy greater than three bits.
+  basis:
+    routes:
+    - casimir-schmidt-route
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_ADJOINT_ENVIRONMENT_BELL_NO_GO_20260830.md
+      kind: text
+      locator: "## Theorem"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_ADJOINT_COUPLING_CHECK_20260830.txt
+      kind: text
+      locator: SU(3) 3 x 8 coupling checks passed
+frontier:
+  next-environment-irrep:
+    task: >-
+      Analyze the lower summands in 3 tensor 6bar and then the first multiplicity-free couplings
+      with p,q both nonzero beyond the adjoint, using Casimir projectors and product-overlap blocks.
+    kind: task
+    since: 2026-08-30
+events:
+  adjoint-environment-coupling-excluded:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Classified the bar6 oversized summand by exact Casimir and Schmidt calculations and combined
+      it with the existing small-input theorem and product-vector observation to close 3 tensor 8.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_ADJOINT_ENVIRONMENT_BELL_NO_GO_20260830.md
+      kind: text
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_ADJOINT_COUPLING_CHECK_20260830.txt
+      kind: text

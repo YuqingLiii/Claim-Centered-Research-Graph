@@ -1,0 +1,30 @@
+id: HEXT.growing-level-rate
+role: proof
+aliases:
+- growing-matrix-level
+claim: >-
+  For the hierarchical matched random-channel family, prove a quantitative rate strong enough that
+  sum_{j<=J}(g_j - 2 ell_j) is at least c times sum_{j<=J} c_j minus O(1), where c_j is the full
+  input/output/environment qubit cost introduced by layer j.
+assessment:
+  level: OPEN
+  summary: >-
+    Existing strong convergence controls each fixed matrix coefficient level, not a level growing
+    with the accumulated partner. Pointwise fixed-partner convergence is compatible with
+    super-exponential auxiliary thresholds and therefore does not imply this claim. More strongly,
+    for the fixed-output BCN hierarchy, any choice n_j tending to infinity is ruled out by the
+    universal output-entropy upper bound; a viable extensive route must reuse bounded-cost layers
+    or make the certified gap/output dimension grow with the environment cost.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/round-5-audit.md
+      kind: text
+      locator: "### 6. The claimed HP-style extensive implication fails — important correction accepted"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FIXED_OUTPUT_HIERARCHY_OBSTRUCTION_20260829.md
+      kind: text
+      locator: "## Consequences for the research routes"
+frontier:
+  quantitative-rate:
+    task: Find a bounded-cost reusable layer or a family whose certified gap/output scale pays for environment cost.
+    kind: gate
+    since: 2026-08-29

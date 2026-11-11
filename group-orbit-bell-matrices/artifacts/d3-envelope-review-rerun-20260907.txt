@@ -1,0 +1,68 @@
+Independent reviewer replay, 2026-09-07
+Reviewer: Codex agent /root/orbit_root_prior_art
+Working root: /private/tmp/grothorb-classical-20260907-R0Shtu
+Runtime: Python 3.9.6, Clang 21.0.0; Python optimize flag 0; assertions enabled.
+Mathematical runs use the Python standard library only.
+PyYAML 6.0.3 was used separately to parse and hash registered statements.
+
+RUN R1: full author certificate replay
+Command:
+python3 grothendieck-group-orbit/tools/check_d3_classical_envelope.py --check grothendieck-group-orbit/artifacts/d3-classical-envelope-certificate-20260907.json
+Exit code: 0
+Standard output:
+PASS: frozen certificate equals exhaustive exact rational envelope replay
+
+RUN R2: independently implemented integer endpoint/witness check
+Command:
+python3 grothendieck-group-orbit/artifacts/d3-envelope-review-endpoints-20260907.py
+Exit code: 0
+Standard output:
+witness 1 8*s^T*A*t = 80 ; s^T*t = 12
+witness 2 8*s^T*A*t = 64 ; s^T*t = 4
+roots = 12; full antipodal coverage; W^T W = 8 I; A^2 = A
+Bob vectors independently exhausted = 4096
+lambda = 0/8 ; max 8*f_t = 80 ; prescribed cap = 80 ; maximizing Bob count = 24
+lambda = 2/8 ; max 8*f_t = 56 ; prescribed cap = 56 ; maximizing Bob count = 120
+lambda = 4/8 ; max 8*f_t = 48 ; prescribed cap = 48 ; maximizing Bob count = 256
+continuum proof: each f_t is convex; endpoint caps imply each affine secant cap
+fixed witnesses attain 10-12*lambda and 8-4*lambda; both equal 7 at 1/4
+counterexample: at lambda=1/2, witnessed value 48/8 = 6 > 32/8 = 4
+PASS: independent integer endpoint upper bounds and fixed-sign lower bounds
+
+R2 imports no author checker or JSON certificate. It constructs roots from
+the full {-1,0,1}^3 cube by squared norm 2, uses a distinct lexical root
+order, enumerates sign vectors by all integer masks 0,...,4095, and forms
+the integer matrix M=8A directly. Dossier witnesses are reindexed by their
+root vectors and evaluated as full bilinear forms. There is no float,
+numeric tolerance, solver, sampling, symmetry quotient, kink enumeration,
+line deduplication, or affine-crossing code in R2.
+
+R2 verifies endpoint upper bounds for each f_t separately. Convexity of
+f_t(lambda)=sum_i |(At)_i-lambda*t_i| implies its graph is below the chord
+on each of [0,1/4] and [1/4,1/2]. Those chords are the claimed affine
+upper bounds. The two fixed (s,t) pairs give matching lower bounds on
+the respective intervals. This covers every real lambda in the domain.
+
+Input SHA-256 digests (matched again after both runs):
+586f0088e9c755b8da958667b1798f5b5781a5dfedf1439a39c33e31f524ffef  grothendieck-group-orbit/proof-dag/nodes/GROTHORB.d3-envelope-method.yaml
+b6ae358b6f21e2a9b2a2993b441db9ca30256f6f09d5d54ce98aef834fe1ed96  grothendieck-group-orbit/proof-dag/nodes/GROTHORB.d3-shift-envelope.yaml
+9601f9b7dae807bd9cd3343f19c95975ea3710e3ecb95e0369c5c59701538dc1  grothendieck-group-orbit/proof-dag/nodes/GROTHORB.shift-linear-candidate.yaml
+6ad6e414f575b27881c193181375d4134ec84cf234a5a8aa4dfacf3958072c57  grothendieck-group-orbit/artifacts/d3-classical-envelope-20260907.md
+f3461a1682c90bc52bc13a1b3a54f2e000d1b30b3ae7cd910d28bc4d912c4c12  grothendieck-group-orbit/artifacts/d3-classical-envelope-certificate-20260907.json
+a31c7a9e8fb903d2ca608a2ce03ece4105e57120966c88253f4641e7a174898b  grothendieck-group-orbit/tools/check_d3_classical_envelope.py
+b5d62d13c20457b86a92264b05b73422b82c75b0e4174e64f355e10e2bece575  grothendieck-group-orbit/artifacts/d3-classical-envelope-exact-check-20260907.txt
+e01974a1678631c98b3f4117b82ab4dc0527fecd76203cefb4bdd64d51abcbf1  grothendieck-group-orbit/artifacts/d3-envelope-review-endpoints-20260907.py
+
+Claim/route hashing convention:
+data = yaml.safe_load(path.read_text())
+text = data['claim'].strip()
+or text = data['routes']['exact-envelope']['implication'].strip()
+reviewed_hash = 'sha256:' + hashlib.sha256(text.encode('utf-8')).hexdigest()
+
+05cef7880b04166520d3a3ec4e6130492c7d64ff3057a987dc5529b1bd32dd8a  GROTHORB.d3-envelope-method claim
+260cf713d4cd254ef432bf6fa2130718be433b157e0186f6f5cc386973b105d5  GROTHORB.d3-shift-envelope claim
+d32e8679073f1f96fb3eeca4f9ce966656f5c75eb74e835f152adcecb98a81cf  GROTHORB.d3-shift-envelope routes.exact-envelope.implication
+8f149d1b408a8f98ed180b5d0dc1a260d437dc81c46dc91ef77fd58c5b64c269  GROTHORB.shift-linear-candidate claim
+
+Scope limitation: same-model non-formal review. Neither successful replay
+nor this log independently constitutes a protocol status promotion.

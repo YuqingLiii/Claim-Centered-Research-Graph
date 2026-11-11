@@ -1,0 +1,666 @@
+id: HEXT.goal
+role: outcome
+aliases:
+- extensive-gap
+claim: >-
+  Determine whether there exist finite-dimensional channel pairs whose p=1 minimum-output-entropy
+  additivity defect, and therefore after quantitative reductions a Holevo additivity defect, is
+  Omega(m) where m is the natural full logarithmic size of the primitive input/output/environment
+  systems; in particular determine whether the absolute defect is unbounded.
+routes:
+  product-haar-physical-purity-bootstrap:
+    premises:
+    - HEXT.product-haar-physical-self-purity-multiplicativity
+    - HEXT.moe-to-holevo-transfer
+    - HEXT.pair-to-self
+    implication: >-
+      The all-copy physical purity estimate lower-bounds each side's regularized minimum output
+      entropy by J*log_2(m)-log_2(A_{J,eta}). The product Bell witness upper-bounds the regularized
+      joint entropy by J*(2*log_2(m)-log_2(m)/m). The stated strict parameter inequality therefore
+      gives one fixed finite pair a positive regularized MOE defect; tensor powers, the finite
+      MOE-to-Holevo transfer and the constant-loss pair-to-self reduction yield full-size extensive
+      same-channel Holevo violations.
+    proof:
+      sketch: >-
+        Apply S>=S_2 to the purity estimate at every copy number, use the same product Bell witness
+        on every outer copy, subtract the two rates, and then invoke the registered finite transfer
+        reductions.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FULL_SIZE_SELF_LEAKAGE_PARALLEL_ANALYSIS_20260830.md
+        kind: text
+        locator: "## 6. The next lemma: physical self-purity, not complete distortion"
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The conditional implication is complete proposer-side, but its physical-purity premise is
+        OPEN and the implication has not received independent hash-bound review.
+  large-gap-regularized-bootstrap:
+    premises:
+    - HEXT.finite-dimensional-unbounded-gap
+    - HEXT.unbounded-family-self-leakage
+    - HEXT.moe-to-holevo-transfer
+    - HEXT.pair-to-self
+    implication: >-
+      Select a finite block whose one-shot gap dominates both absolute self-regularization losses.
+      The resulting fixed pair has positive regularized MOE defect; its tensor powers have gap
+      linear in their full logarithmic dimension. The finite-dimensional transfer and pair-to-self
+      reductions preserve that extensive scaling.
+    proof:
+      sketch: >-
+        Use the lower bound regularized_defect >= one_shot_gap-ell_L-ell_R. Positivity makes the
+        tensor-power defect converge to a positive linear rate, while all block dimensions scale
+        linearly in copy count in qubit terms.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/TENSOR_COPY_LEAKAGE_PROOF_20260829.md
+        kind: text
+        locator: "## Large-gap versus absolute self-leakage bootstrap"
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The implication is complete proposer-side, but the new self-leakage premise is open.
+  finite-unbounded-route:
+    premises:
+    - HEXT.finite-dimensional-unbounded-gap
+    - HEXT.moe-to-holevo-transfer
+    - HEXT.pair-to-self
+    implication: >-
+      The tensor-strong-convergence construction gives unbounded finite-dimensional MOE pair gaps;
+      exact Weyl-flag transfer and constant-loss pair-to-self conversion give unbounded
+      finite-dimensional Holevo pair and same-channel gaps. This settles the absolute-unbounded
+      subquestion but not the stronger full-size-extensive subquestion.
+    proof:
+      sketch: >-
+        At depth J the MOE pair defect grows as J*c_m-o(1) for fixed m>e^18. Transfer preserves
+        the pair defect exactly. Because the transferred conjugate pair has equal one-shot Holevo
+        quantities, the same-channel conversion loses at most one bit.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FINITE_DIMENSIONAL_UNBOUNDED_GAP_PROOF_20260829.md
+        kind: text
+        locator: "## Step 5: transfer to Holevo and to one channel"
+    assessment:
+      level: CONJECTURED
+      caveats:
+      - This implication proves only the absolute-unbounded subquestion and is invalid as a completing route to the full-size parent.
+      summary: >-
+        Independent review passed the absolute-unbounded mathematics but found that this route does
+        not imply the full-size parent. It is retired here; the scoped theorem is rehomed in
+        HEXT.absolute-unbounded-finite-dimensional-defects.
+      basis:
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-extensive-violation/ABSOLUTE_UNBOUNDED_CHAIN_INDEPENDENT_REVIEW_20260830.md
+          kind: review
+          locator: Findings AU-IR-06--AU-IR-07
+          scope: >-
+            Independently passed the partial mathematics and blocked this exact implication as a
+            route to the combined full-size parent.
+          reviewed_hash: sha256:3a1fac337de0f1d3061be345463ea90c9248100a70331d062f9f9b5a757bcdde
+    retired:
+      date: '2026-08-30'
+      sources:
+      - path: channel-additivity-violations/reviews/holevo-extensive-violation/ABSOLUTE_UNBOUNDED_CHAIN_INDEPENDENT_REVIEW_20260830.md
+        kind: review
+        locator: Finding AU-IR-07
+  matched-tensor-route:
+    premises:
+    - HEXT.matched-independent-tensors
+    - HEXT.moe-to-holevo-transfer
+    - HEXT.pair-to-self
+    implication: >-
+      An extensive heterogeneous pair defect, followed by the constant-loss balanced direct-sum
+      reduction, gives an extensive same-channel Holevo defect with constant gap loss and at most
+      linear overhead in the original logarithmic dimensions, hence preserves extensivity up to a
+      constant-factor change of the full size.
+    proof:
+      sketch: >-
+        First prove the pair defect with the full dimension cost included. Then balance one-shot
+        Holevo quantities by a bounded classical side channel and apply the direct-sum log-sum-exp
+        identity; the reduction must not be used to manufacture the missing pair amplification.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/MOE_TO_HOLEVO_TRANSFER_PROOF_20260829.md
+        kind: text
+        locator: "## Pair-gap identity"
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/PAIR_TO_SELF_REDUCTION_2026-08-29.md
+        kind: text
+        locator: "## 3. The two-copy same-channel defect"
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The implication has a complete proposer-side derivation, but the pair premise is open and
+        the implication has not received independent hash-bound review. Its dimension bookkeeping
+        uses the repaired linear-logarithmic overhead statement, not a constant-overhead claim.
+  explicit-tensor-stable-route:
+    premises:
+    - HEXT.explicit-witness
+    implication: >-
+      A certified explicit tensor-stable family with linear defect directly establishes the goal.
+    assessment:
+      level: OPEN
+      summary: Blueprint registered; no such family is known in the migrated record.
+  holographic-toy-route:
+    premises:
+    - HEXT.holographic-toy
+    implication: >-
+      A finite-dimensional toy family satisfying the stated one-side lower and TFD-like joint upper
+      bounds is an extensive p=1 counterexample family.
+    assessment:
+      level: OPEN
+      summary: Blueprint registered; no certifiable toy family is available.
+  ef-flag-route:
+    premises:
+    - HEXT.ef-flag-amplification
+    implication: >-
+      A tensor-stable flagged entanglement-of-formation construction transfers through the
+      constrained-Holevo equivalence to an extensive channel violation.
+    assessment:
+      level: OPEN
+      summary: Blueprint registered; the tensor-stable state ansatz is missing.
+  noise-flag-route:
+    premises:
+    - HEXT.noise-flag-damping
+    implication: >-
+      A wrapper whose matched cross advantage dominates both self-leakage rates yields an extensive
+      additivity defect.
+    assessment:
+      level: OPEN
+      summary: Blueprint registered; no symbolic two-rate inequality has passed.
+assessment:
+  level: OPEN
+  summary: >-
+    A new proposer-side tensor-strong-convergence construction settles the absolute-unbounded
+    finite-dimensional subquestion, and the existing quantitative reductions transfer it to
+    unbounded Holevo pair and same-channel defects. The overall node remains OPEN because no route
+    yet proves growth linear in the full input/output/environment logarithmic cost. The fixed-depth
+    convergence theorem does not control the required matrix-dimension growth with hierarchy depth.
+  basis:
+    routes:
+    - product-haar-physical-purity-bootstrap
+    - large-gap-regularized-bootstrap
+    - matched-tensor-route
+    - explicit-tensor-stable-route
+    - holographic-toy-route
+    - ef-flag-route
+    - noise-flag-route
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/PRIMARY_SOURCE_AUDIT_20260829.md
+      kind: text
+      locator: "## Literature-status boundary"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/PRIMARY_SOURCE_AUDIT_20260829.md
+      kind: text
+      locator: "## Hayden--Penington target and dichotomy"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/TENSOR_COPY_LEAKAGE_PROOF_20260829.md
+      kind: text
+      locator: "## Fixed-channel cumulative defect is a different quantity"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FIXED_OUTPUT_HIERARCHY_OBSTRUCTION_20260829.md
+      kind: text
+      locator: "## Consequences for the research routes"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FINITE_DIMENSIONAL_UNBOUNDED_GAP_PROOF_20260829.md
+      kind: text
+      locator: "## What this does not prove"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/TENSOR_STRONG_CONVERGENCE_RATE_GATE_20260829.md
+      kind: text
+      locator: "## Dimension consequence"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FIXED_DIMENSION_CONJUGATE_COLLISION_OBSTRUCTION_20260830.md
+      kind: text
+      locator: "## 5. Conflict with the side rate required by the unbounded-gap proof"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FIXED_DIMENSION_HETEROGENEOUS_SELECTION_THEOREM_20260830.md
+      kind: text
+      locator: "## Consequence for the product-Haar route"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FULL_SIZE_SELF_LEAKAGE_PARALLEL_ANALYSIS_20260830.md
+      kind: text
+      locator: "## 9. Failure ledger and status boundary"
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.product-haar-physical-self-purity-multiplicativity.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing frontier cross-reference: the broad fixed-tuple leakage problem has been
+        narrowed to an explicit physical-output purity multiplicativity gate, which is load-bearing
+        only in its separate root route.
+    - node: HEXT.absolute-unbounded-finite-dimensional-defects
+      kind: node-evidence
+      note: >-
+        Non-completing progress owner: the absolute-unbounded finite-dimensional MOE and Holevo
+        subquestion has been rehomed to its own atomic outcome; it does not prove the full-size root.
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation
+      kind: text
+      note: Migrated legacy DAG, proof notes and web-history bundle; not an assessment by itself.
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/REMAINING_FRONTIER_20260830.md
+      kind: text
+      locator: "## Ranked live targets"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/BELL_GAP_CLASSICAL_CORRELATION_BOUND_20260830.md
+      kind: text
+      locator: "## 5. Research consequence"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/CONJUGATE_BELL_REALIGNMENT_CONSTRAINT_20260830.md
+      kind: text
+      locator: "## 5. Consequence for the data-hiding route"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/GRAM_CHANNEL_CORRELATION_IDENTITIES_20260830.md
+      kind: text
+      locator: "## 4. Research consequence"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/GRAM_CHANNEL_ENTANGLEMENT_COST_GATE_20260830.md
+      kind: text
+      locator: "## 4. Research consequence"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FLOWER_STATE_GRAM_REALIZATION_GATE_20260830.md
+      kind: text
+      locator: "## Gate verdict"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/QUTRIT_ANTISYMMETRIC_GRAM_OBSTRUCTION_20260830.md
+      kind: text
+      locator: "## Gate verdict"
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.antisymmetric-projector-family-no-go.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing candidate-screening result: every normalized full antisymmetric projector
+        fails the fixed-channel conjugate-Bell route, by a dimension split.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.four-dimensional-antisymmetric-square-support-no-go.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing candidate-screening result: every rank-four proper antisymmetric support
+        with maximally mixed d=4 marginals fails the strict regularized cost gate.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.antisymmetric-slater-convex-cost-no-go.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing candidate-screening result: Slater-convex antisymmetric states fail the
+        strict regularized cost gate in every dimension d>=4.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.g2-antisymmetric-square-support-no-go.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing candidate-screening result: the rank-seven G2 cross-product support
+        crosses the one-shot state threshold but fails every Gram-positive local orientation.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.partial-support-polar-orientation-criterion.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing algebraic gate: a singular self-adjoint support channel needs a
+        support-preserving inner extension of its partial polar sign.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.octonionic-hurwitz-support-no-go.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing candidate-screening result: the rank-eight octonionic support crosses the
+        one-shot state threshold but fails the kernel-compatible Gram-orientation gate.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.qutrit-weyl-random-unitary-bell-gate.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing exact reduction: the qutrit Weyl fixed-channel Bell route is controlled
+        by a classical autocorrelation-versus-projection entropy inequality, now resolved in a
+        separate downstream majorization node.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.f3-affine-line-l2-maximal.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing exact classical lemma: the first cumulative condition of the selected-line
+        qutrit Weyl majorization holds by a complete parametric-vertex certificate.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.f3-weyl-majorization-first-three.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing exact classical lemma: cumulative conditions one through three of the
+        selected-line qutrit Weyl majorization hold by complete parametric active-set certificates
+        and the paired-spectrum interpolation.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.f3-weyl-selected-line-majorization.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing exact classical theorem: all selected-line qutrit Weyl majorization
+        cumulatives hold by exact odd-index certificates and paired-spectrum interpolation.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.qutrit-weyl-random-unitary-bell-no-go.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing candidate-screening result: full selected-line majorization excludes the
+        regularized qutrit Weyl conjugate-Bell route, without closing non-Weyl or non-Bell routes.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.su3-common-den-controls-tool.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing exact-tool record for the common-denominator Bernstein backend used by
+        future SU(3) compact certificates.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.su3-bent-cm-hm-hc-three-face-bell-no-go.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing atomic orientation result: the bent c/m,h/m,h/c three-face cluster is
+        closed proposer-side by a 36-branch, 10783-box compact exact certificate.
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SUPPORT_CHANNEL_POLAR_ORIENTATION_CRITERION_20260830.md
+      kind: text
+      locator: "## Research consequence"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/PAULI_GRAM_HIGH_COST_SIDE_ENTROPY_OBSTRUCTION_20260830.md
+      kind: text
+      locator: "## Gate verdict"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/QUBIT_OUTPUT_GRAM_BELL_NO_GO_20260830.md
+      kind: text
+      locator: "## Research consequence"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/DEPOLARIZING_GRAM_SMALL_INPUT_NO_GO_20260830.md
+      kind: text
+      locator: "## 4. Research consequence"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_SYMMETRIC_COMPLEMENT_BELL_NO_GO_20260830.md
+      kind: text
+      locator: "## 4. Research consequence"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_ADJOINT_ENVIRONMENT_BELL_NO_GO_20260830.md
+      kind: text
+      locator: "## 5. Scope and reproducibility"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CONJUGATE_SYMMETRIC_COMPLEMENT_NO_GO_20260830.md
+      kind: text
+      locator: "## 4. Research consequence"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_IRREDUCIBLE_COVARIANT_BELL_NO_GO_20260830.md
+      kind: text
+      locator: "## 5. Scope and reproducibility"
+frontier:
+  tensor-strong-convergence-rate:
+    task: >-
+      Replace the current quantitative tensor strong-convergence certificate, which forces
+      log D(J)=Omega(log J), by a cost-paying gap mechanism. Fixed-D iid Haar layers are now also
+      ruled out by within-side approximate-conjugate collisions.
+    kind: gate
+    since: 2026-08-29
+  fixed-partner-gate:
+    task: Decide FCEA-2 for the BCN free-compression limit or construct a fixed-partner counterexample.
+    kind: gate
+    since: 2026-08-29
+  fixed-dimensional-regularized-pair:
+    task: >-
+      Decide whether one fixed finite channel has positive Bell-certified regularized defect with
+      its conjugate. Every compact fixed-dimensional heterogeneous product-Bell route now reduces
+      to this single-channel target, whose Gram-channel Stinespring state must first pass the
+      necessary entanglement-cost gate E_C>S(E)/2. On the depolarizing Gram branch, every factor
+      with input dimension d no larger than output dimension k is now excluded.
+    kind: gate
+    since: 2026-08-30
+  data-hiding-bell-output:
+    task: >-
+      Realize an extensive hidden-correlation surplus I(A:B)-2J_{A->B} using a non-Werner,
+      non-maximally-correlated, realignment-positive finite channel/conjugate-channel Bell output
+      with a CPTP-compatible Liouville Gram factor, equivalently an extensive
+      2E_F(B:E)-S(E) surplus for its Gram channel, while proving the same channel's global side
+      entropy lower bound, or rule out this joint realization. For an invertible support channel,
+      first require its polar unitary to be an inner automorphism. The output dimension must be at
+      least three by the qubit-output Gram Bell no-go theorem; a depolarizing qutrit Gram factor
+      must additionally have input dimension at least four. More strongly, every qutrit channel
+      coming from any invariant subspace of 3 tensor V_(p,q), for one irreducible environment, is
+      now excluded. Repeating one environment irrep with arbitrary multiplicity is excluded too;
+      boundary-input mixtures of inequivalent environment irreps are excluded too. The interior
+      three-extreme inequality B((1/8)chi^2(lambda||mu))>=2H(lambda K_(r,s)) is now proved by a
+      sharp KL/collision contraction and certified high-parameter endpoint bounds. Every
+      irreducible-input SU(3)-covariant qutrit channel is therefore excluded; a covariant survivor
+      must use reducible-input cross-irrep coherence. Every translated elementary six-edge
+      cross-irrep cycle is now excluded by an exact compact rational certificate, so a survivor
+      must use overlapping faces, repeated vertices, or nontrivial cycle multiplicity. All three
+      unoriented adjacent elementary two-face types are now excluded by separate exact compact
+      certificates. A covariant survivor must therefore use at least three faces, repeated
+      vertices, or nontrivial cycle multiplicity.
+    kind: gate
+    since: 2026-08-30
+  unbounded-family-self-leakage:
+    task: >-
+      Prove an o(g_J), preferably uniform O(1), absolute regularization-loss bound for the new
+      product-Haar blocks; this would turn unbounded one-shot gaps into full-size extensivity.
+    kind: gate
+    since: 2026-08-29
+  growing-level-rate:
+    task: >-
+      Obtain a dimension-dependent leakage rate strong enough for the full cost-weighted extensive
+      inequality.
+    kind: gate
+    since: 2026-08-29
+  independent-source-review:
+    task: >-
+      Review the new finite-dimensional unbounded-gap proof together with the Fukuda transfer,
+      pair-to-self reduction and Hayden--Penington dimension convention.
+    kind: review
+    since: 2026-08-29
+events:
+  matched-tensor-overhead-scope-repaired:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Replaced the stale constant-overhead wording by the proved constant gap loss plus
+      linear-logarithmic dimension overhead; the route remains CONJECTURED and its pair premise
+      remains open.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/ABSOLUTE_UNBOUNDED_CHAIN_REPAIR_AMENDMENT_REVIEW_20260830.md
+      kind: review
+      locator: "## 7. Finding AUR-A05"
+  finite-unbounded-partial-route-retired:
+    date: '2026-08-30'
+    type: route-retired
+    route: finite-unbounded-route
+    summary: >-
+      Independent review showed that the route proves only absolute unboundedness and therefore
+      cannot complete the full-size parent; its exact theorem is now owned by a separate atomic node.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/ABSOLUTE_UNBOUNDED_CHAIN_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Finding AU-IR-07
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/ABSOLUTE_UNBOUNDED_OUTCOME_ASSEMBLY_20260830.md
+      kind: text
+      locator: "## 3. Why the full-size root route is retired"
+  product-haar-physical-purity-route-added:
+    date: '2026-08-30'
+    type: route-added
+    route: product-haar-physical-purity-bootstrap
+    summary: >-
+      Registered the exact fixed-block physical-purity multiplicativity gate and its conditional
+      derivation of full-size extensive Holevo scaling; the new premise remains OPEN.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FULL_SIZE_SELF_LEAKAGE_PARALLEL_ANALYSIS_20260830.md
+      kind: text
+  large-gap-bootstrap-route-added:
+    date: '2026-08-29'
+    type: route-added
+    route: large-gap-regularized-bootstrap
+    summary: >-
+      Added the exact route showing that an o(g_J) absolute self-leakage bound for the new
+      unbounded-gap blocks would imply full-size extensivity via one selected finite pair.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/TENSOR_COPY_LEAKAGE_PROOF_20260829.md
+      kind: text
+  absolute-unbounded-route-added:
+    date: '2026-08-29'
+    type: route-added
+    route: finite-unbounded-route
+    summary: >-
+      Added a proposer-side proof that finite-dimensional absolute gaps are unbounded; retained OPEN
+      status because the stronger full-size-extensive target is unresolved.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FINITE_DIMENSIONAL_UNBOUNDED_GAP_PROOF_20260829.md
+      kind: text
+  flower-state-candidate-excluded:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Used the exact 2026 flower-state entanglement cost to screen the most natural
+      maximally-correlated locking candidates. They fail positive realignment as Bell outputs, and
+      their canonical rank-correct Stinespring completion has zero entanglement-cost surplus.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FLOWER_STATE_GRAM_REALIZATION_GATE_20260830.md
+      kind: text
+  antisymmetric-state-candidate-excluded:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Showed that the entanglement-cost gate is attainable at the required rank, but that the
+      qutrit antisymmetric support fails every Gram-positive input/output orientation by a polar
+      sign obstruction.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/QUTRIT_ANTISYMMETRIC_GRAM_OBSTRUCTION_20260830.md
+      kind: text
+  antisymmetric-projector-family-closed:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Extended the qutrit near-miss audit to the full normalized antisymmetric-projector family:
+      d>=4 fails the necessary entanglement-cost surplus, d=2 is constant, and d=3 fails the
+      existing polar-orientation gate.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/ANTISYMMETRIC_PROJECTOR_FAMILY_NO_GO_20260830.md
+      kind: text
+  d4-antisymmetric-proper-supports-closed:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Classified the first square proper-support extension: every rank-four maximally-mixed-
+      marginal subspace of wedge^2 C^4 has a one-ebit Slater ensemble and fails the strict
+      entanglement-cost gate.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FOUR_DIMENSIONAL_ANTISYMMETRIC_SQUARE_SUPPORT_NO_GO_20260830.md
+      kind: text
+  antisymmetric-slater-convex-screen-added:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Generalized the one-ebit obstruction to every maximally-mixed-marginal antisymmetric state
+      in the Slater convex hull; any higher-dimensional proper-support survivor must be
+      fermionically entangled.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/ANTISYMMETRIC_SLATER_CONVEX_HULL_COST_NO_GO_20260830.md
+      kind: text
+  support-polar-orientation-gate-added:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Replaced brute-force input/output basis search for invertible support channels by the exact
+      requirement that the Hilbert-Schmidt polar unitary be an inner automorphism.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SUPPORT_CHANNEL_POLAR_ORIENTATION_CRITERION_20260830.md
+      kind: text
+  pauli-gram-factor-family-excluded:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Constructed a qubit Gram channel with positive entanglement-cost surplus and an explicit
+      rectangular CP factor, then proved that every factor fails the side-entropy requirement.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/PAULI_GRAM_HIGH_COST_SIDE_ENTROPY_OBSTRUCTION_20260830.md
+      kind: text
+  qubit-output-bell-route-closed:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Generalized the Pauli near-miss to a CP-polytope theorem excluding every qubit-output
+      conjugate-Bell factor for every finite input dimension.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/QUBIT_OUTPUT_GRAM_BELL_NO_GO_20260830.md
+      kind: text
+  depolarizing-small-input-bell-route-closed:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Used the exact Haar-average output purity, the sharp entropy extremizer at fixed purity, and
+      arbitrary-dimensional depolarizing strong additivity to exclude all depolarizing Gram
+      factors with d<=k; the qutrit depolarizing branch now starts at d=4.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/DEPOLARIZING_GRAM_SMALL_INPUT_NO_GO_20260830.md
+      kind: text
+  su3-symmetric-complement-family-closed:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Classified the lower SU(3) summand in 3 tensor Sym^n(3): its exact depolarizing Gram
+      parameter and minimum output entropy give a strictly negative conjugate-Bell defect for
+      every n, including the first oversized M_8->M_3 factor.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_SYMMETRIC_COMPLEMENT_BELL_NO_GO_20260830.md
+      kind: text
+  su3-adjoint-environment-coupling-closed:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Closed all three summands in 3 tensor 8. The only new oversized bar6 channel has exact Gram
+      contraction 5/32 and minimum output entropy one, while its Bell output entropy exceeds three
+      bits.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_ADJOINT_ENVIRONMENT_BELL_NO_GO_20260830.md
+      kind: text
+  su3-conjugate-symmetric-tower-closed:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Classified the lower summands in 3 tensor Sym^n(bar3) by an explicit bosonic creation
+      isometry. The first member saturates the Bell inequality and every nontrivial member fails it
+      strictly.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_CONJUGATE_SYMMETRIC_COMPLEMENT_NO_GO_20260830.md
+      kind: text
+  su3-irreducible-covariant-class-closed:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Unified the special qutrit families into an all-parameter Pieri calculation. Every channel
+      from a single irreducible summand in 3 tensor V_(p,q) fails the conjugate-Bell inequality.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_IRREDUCIBLE_COVARIANT_BELL_NO_GO_20260830.md
+      kind: text
+  su3-reducible-pieri-subspaces-closed:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Extended the Pieri obstruction from single sectors to every invariant direct sum inside
+      3 tensor V_(p,q) for one irreducible environment. The only new two-lower-sector subspace has
+      an exact Gram formula and a strict explicit-input entropy no-go.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_REDUCIBLE_PIERI_SUBSPACE_BELL_NO_GO_20260830.md
+      kind: text
+  su3-equivalent-environment-multiplicity-closed:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Reduced arbitrary multiplicities of one environment irrep to a convex Gram combination of
+      the middle, third, and fully coherent lower-sum channels, all already excluded.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_EQUIVALENT_ENVIRONMENT_MULTIPLICITY_NO_GO_20260830.md
+      kind: text
+  su3-boundary-environment-mixtures-closed:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Closed both boundary input towers under arbitrary mixtures of their two inequivalent
+      environment extremes by a depolarizing-square entropy comparison.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_BOUNDARY_ENVIRONMENT_MIXTURE_BELL_NO_GO_20260830.md
+      kind: text
+  su3-interior-mixture-classical-reduction:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Reduced every interior three-extreme covariant mixture to an exact chi-square Gram parameter
+      and triangular highest-weight output distribution. The resulting scalar entropy inequality
+      was subsequently proved and has also passed a 3.21-million-point grid audit.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_INEQUIVALENT_ENVIRONMENT_MIXTURE_REDUCTION_20260830.md
+      kind: text
+  su3-interior-environment-mixtures-closed:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Proved the exact interior three-extreme entropy inequality using a sharp qutrit
+      KL/collision lemma, a uniform 8/5 collision contraction, and certified rational-log
+      endpoint bounds. All irreducible-input SU(3)-covariant qutrit channels are now excluded.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_INTERIOR_ENVIRONMENT_MIXTURE_BELL_NO_GO_20260830.md
+      kind: text
+  su3-minimal-covariant-cycle-closed:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Closed the smallest reducible-input six-edge Pieri branching cycle by an exact quadratic
+      Gram formula, three block-highest side spectra, and a certified 4096-box entropy proof.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_MINIMAL_COVARIANT_CYCLE_BELL_NO_GO_20260830.md
+      kind: text
+  su3-all-translated-elementary-cycles-closed:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Replaced the finite translated-cycle scan by an exact 204-leaf compact rational
+      Bernstein/logarithm certificate covering all integer labels and all continuous edge weights.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_ALL_TRANSLATED_ELEMENTARY_CYCLES_BELL_NO_GO_20260830.md
+      kind: text
+  su3-canonical-adjacent-face-pair-closed:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Closed the adjacent family with bases (p,q) and (p+1,q+1) by an exact 12-branch,
+      1,098-leaf four-dimensional rational Bernstein/logarithm certificate.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_ADJACENT_ELEMENTARY_FACES_BELL_NO_GO_20260830.md
+      kind: text
+  su3-all-adjacent-face-pairs-closed:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Completed the two-face orientation cover: separate exact certificates close the middle,
+      conjugate, and highest shared-edge types, with the last retaining a shared three-edge
+      simplex rather than assuming a channel-level Weyl equivalence.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_HIGHEST_EDGE_ADJACENT_FACES_BELL_NO_GO_20260830.md
+      kind: text

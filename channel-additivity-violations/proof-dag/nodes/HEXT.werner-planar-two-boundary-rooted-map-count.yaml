@@ -1,0 +1,51 @@
+id: HEXT.werner-planar-two-boundary-rooted-map-count
+role: proof
+aliases:
+- werner-planar-doubly-face-rooted-count
+claim: >-
+  For every integer e>=1, the number R_(e,0)^(2) of isomorphism classes of connected oriented
+  planar maps with e edges, exactly two ordered faces, and one distinguished directed boundary
+  halfedge on each face satisfies R_(e,0)^(2)<=e^2 binom(2e,e).
+assessment:
+  level: PROVED
+  caveats:
+  - This is an ordinary rooted-map count, not a label-compatible physical surgery.
+  summary: >-
+    Independent adversarial review reconstructed the canonical unicyclic-edge deletion code,
+    including loops, parallel cores, bridges, repeated corners, automorphisms, both directed face
+    roots and the e=1 endpoint, and proved the exact doubly face-rooted inequality.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_TWO_BOUNDARY_PLANAR_ROOTED_MAP_REPAIR_20260830.md
+      kind: text
+      locator: "## 9. Adding the second ordered face root"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_TWO_BOUNDARY_PLANAR_ROOTED_MAP_REPAIR_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WTPR-IR-03"
+      scope: >-
+        Findings WTPR-IR-01--03 independently reconstructed the unicyclic selector, all
+        loop/parallel/bridge and repeated-corner decoders, the Catalan root convention,
+        automorphism handling, both directed face roots and the e=1 endpoint.
+      reviewed_hash: sha256:0f07c313c810842eb7e0eb912962eea4b0895adedaa10ba4cac9dea0aaaf42c8
+events:
+  planar-rooted-map-repair-independently-proved:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      Independent adversarial review proved the exact planar two-face deletion code and all
+      endpoint, rooting and automorphism cases at the unchanged claim hash.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_TWO_BOUNDARY_PLANAR_ROOTED_MAP_REPAIR_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WTPR-IR-03"
+  planar-rooted-map-repair-created:
+    date: '2026-08-30'
+    type: created
+    summary: Registered the proposer-side self-contained planar two-face deletion-code repair.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_TWO_BOUNDARY_PLANAR_ROOTED_MAP_REPAIR_20260830.md
+      kind: text
+      locator: "## 9. Adding the second ordered face root"

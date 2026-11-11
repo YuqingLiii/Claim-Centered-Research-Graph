@@ -1,0 +1,64 @@
+id: HAEQ.weyl-extension-moe-preservation
+role: proof
+aliases:
+- weyl-extension-global-moe
+claim: >-
+  Let N1 and N2 be finite-dimensional channels whose outputs are isometrically embedded in a
+  common d-dimensional space, and let N1' and N2' be their completely dephasing classical
+  Weyl-label extensions. Then Smin(Ni') = Smin(Ni) for i=1,2 and
+  Smin(N1' tensor N2') = Smin(N1 tensor N2), where every minimum is over all input states,
+  including label-input-correlated states and states entangled across the two extended channels.
+assessment:
+  level: PROVED
+  caveats:
+  - The statement concerns the explicitly dephasing classical-label extension, not an arbitrary
+    coherent controlled-unitary extension.
+  summary: >-
+    Independent review passed the exact current claim: diagonal label blocks express every
+    extended-channel output as a convex mixture of Weyl-conjugated original-channel outputs,
+    entropy concavity gives the global lower bounds, and fixed labels attain them.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-additivity-equality/WEYL_EXTENSION_GLOBAL_MOE_PRESERVATION_20260830.md
+      kind: text
+      locator: "## Product-channel minimum-output entropy"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-additivity-equality/WEYL_EXTENSION_GLOBAL_MOE_AND_HOLEVO_TRANSFER_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Findings Q1WR-01--Q1WR-03
+      scope: >-
+        Independently checked CPTP normalization and dimensions, arbitrary coherent-label and
+        cross-channel-entangled inputs, entropy-concavity lower bounds, and fixed-label global
+        achievability for the exact dephasing extension only.
+      reviewed_hash: sha256:d6001ff040d7a0282b64842132b530f2f4b181e5cfbde87ac9a82f9f5c034e53
+events:
+  preservation-atom-independently-proved:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      Independent review verified CPTP normalization, arbitrary coherent-label and entangled
+      inputs, and both global minimum-output-entropy equalities for the dephasing extension.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-additivity-equality/WEYL_EXTENSION_GLOBAL_MOE_AND_HOLEVO_TRANSFER_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: Findings Q1WR-01--Q1WR-03
+  preservation-atom-registered:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Registered the previously implicit global minimum-output-entropy preservation step as a
+      separate load-bearing atom and supplied a proposer-side proof for single and product channels.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-additivity-equality/WEYL_EXTENSION_GLOBAL_MOE_PRESERVATION_20260830.md
+      kind: text
+  preservation-review-completed:
+    date: '2026-08-30'
+    type: review-completed
+    summary: >-
+      An independent adversarial review passed the exact dephasing-extension preservation claim
+      and bound the verdict to its current claim hash; no level was changed by the reviewer.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-additivity-equality/WEYL_EXTENSION_GLOBAL_MOE_AND_HOLEVO_TRANSFER_INDEPENDENT_REVIEW_20260830.md
+      kind: review

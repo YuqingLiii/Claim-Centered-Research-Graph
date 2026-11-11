@@ -1,0 +1,72 @@
+FIX-2 FINAL AUDIT — CIRCDIST Gross round 68
+Generated: 2026-08-29T06:04:44.922058+00:00
+Authorized package: <repo>/circdist/artifacts/circdist_gross_direct360_proof_round68_20260829
+
+VERDICT
+  MATERIAL-CHECKED-PROGRESS-NOT-CLOSED
+  Exact residual: D*_Gross in {11,12}
+  Primary exact candidate count: 1
+  Positive continuation exact candidate count: 5
+  Total exact outer schedules examined in this package: 6
+  New raw-replayed sound blocks: 12 (2 primary + 10 continuation)
+  Total retained blocks at frontier: 1472 (1440 static + 20 round62 + 12 round68)
+  Direct Xerr: SAT, 10 faults, raw verified
+  Direct Zerr: SAT, 8 faults, raw verified
+  Arbitrary-round repair: not entered, as required by the direct-SAT gate
+  Outer exhaustion: not obtained
+
+FINAL FULL REPLAY
+  Command: PYTHONDONTWRITEBYTECODE=1 /tmp/circdist_round68_final_replay_venv/bin/python verify.py --repo-root <repo>
+  Enclosing timeout: 180 seconds
+  Exit code: 0
+  Wall time: 20.441493 seconds
+  Package manifest entries checked: 101
+  Live source bindings: 49 paths / 424 expanded files
+  Frozen outer model: 864 edges / 648 MC overlaps
+  Frozen logical pools: 1884 X words / 1884 Z words
+  Retained static clauses: 1440
+  Replayed round62 blocks: 20
+  Candidate legality/MC/interleaving: PASS
+  Both complete direct DIMACS plus raw assignments: PASS
+  Five-step continuation / ten mechanisms: PASS
+  DRAT positive control: VERIFIED by independent drat-trim
+  LRAT positive control: VERIFIED by independent lrat-check
+  Strongly truncated DRAT control: REJECTED
+  Strongly truncated LRAT control: REJECTED
+  Independent Glucose42 Zerr SAT/raw replay: PASS, distinct weight-10 model
+  Final verifier status: PASS
+
+REPOSITORY CHECKS
+  proof_dag_check command: python3 tools/proof_dag_check.py --problem circdist
+  proof_dag_check exit: 0; 16 node files structurally valid
+  evidence_closure_check command: python3 tools/evidence_closure_check.py --problem circdist
+  evidence_closure_check exit: 1
+  evidence_closure disposition: expected and preserved. This proposer package is intentionally unlinked because no canonical promotion was authorized. The complete diagnostics are in evidence_closure_check.log.
+  Baseline git status --short: 112 lines, SHA-256 c4152c4df421abc0728ce2b2892c1262a704c71d272e8685080a2e0eb8f6a918
+  Final git status --short: 112 lines, SHA-256 c4152c4df421abc0728ce2b2892c1262a704c71d272e8685080a2e0eb8f6a918
+  Status comparison: byte-identical
+  Audit caveat: the pre-existing top-level `circdist/` path is untracked, so Git status does not enumerate the nested new package. The live 49-path/424-file binding replay and this package-only manifest supplement that blind spot.
+  Current canonical Gross node SHA-256: c12bf58563ffb5275c1957a9893d55af70866724634d80fd79173b9d1a170260
+  Current scheduler SHA-256: 812bdad9b29bf95e79ae47f6abbd06d94b9497b838b4e0339694f92c1a46f1fc
+  Protected live bindings at final full replay: all matched
+  Authorized repository mutation by this worker: this package directory only
+  Canonical nodes/routes/scheduler/protocols/generated views/reviews/existing artifacts edited: none
+  Commit/push performed: none
+
+PROCESS AND SCRATCH CLEANUP
+  Worker sessions: 1
+  Sub-agents/delegated workers: 0
+  Worker pools: 0
+  Detached/background jobs: 0
+  Verdict-bearing solver/checker execution: foreground, serial, bounded
+  Main scratch root exists after cleanup: false
+  Final replay venv exists after cleanup: false
+  Matching process scan after cleanup: NO_MATCHING_COMPUTE_PROCESSES
+  Processes scanned for: round68 scratch/package tokens, final replay venv, cadical, drat-trim, lrat-check, glucose42
+  No compute process was handed off.
+
+SEAL DISCIPLINE
+  PAYLOAD_SHA256SUMS.txt freezes every nonstructural package payload.
+  SHA256SUMS.txt covers every regular package file except itself, including tooling/SHA256SUMS.txt.
+  After the final full replay, only FINAL_AUDIT.txt, MANIFEST.md, and top-level SHA256SUMS.txt are resealed; the frozen payload is unchanged and rechecked.
+  No absence proof is claimed for either direct sector; the retained direct .drat.gz streams are SAT-run traces only.

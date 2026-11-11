@@ -1,0 +1,53 @@
+id: HEXT.same-tuple-rank-one-gram-contraction
+role: proof
+aliases:
+- repeated-tuple-rank-one-gram-contraction
+claim: >-
+  For every deterministic unitary tuple and every unit rank-one coefficient vector z with matrix
+  Z, the same-tuple output obeys
+  ||M_U(|z><z|)||_infinity<=min{||C^*(overline(Z^*Z))||_infinity,||C^*(ZZ^*)||_infinity}.
+  Consequently ||M_U(|z><z|)||_infinity<=1/m whenever either coefficient Gram is diagonal,
+  including every dense maximally entangled coefficient Z=V/sqrt(m).
+assessment:
+  level: PROVED
+  caveats:
+  - >-
+    The claim covers a dense full coefficient-Schmidt-rank subclass but not arbitrary rank-one or
+    arbitrary Hermitian coefficients.
+  summary: >-
+    Matrix Cauchy--Schwarz followed by an exact one-leg square-function identity contracts the
+    two-leg rank-one problem to either coefficient Gram and proves the sharp deterministic bound
+    for orthogonal rows or columns.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SAME_TUPLE_RANK_ONE_GRAM_CONTRACTION_20260830.md
+      kind: text
+      locator: "## 2. Exact rank-one Gram contraction lemma"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_GRAM_WERNER_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STGW-IR-01"
+      scope: >-
+        Independently reconstructed both Gram contractions, the load-bearing conjugation and the
+        diagonal-Gram/maximally-entangled corollaries without extending them to general z.
+      reviewed_hash: sha256:0f7e0fc7ba6dadd1be87364480a46a6e5ea6652d51e6df667cd11dac1723a78a
+events:
+  gram-contraction-independent-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Independent review verified the deterministic Gram contraction and its exact scope.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_GRAM_WERNER_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STGW-IR-01"
+  rank-one-gram-contraction-created:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Registered the exact Gram contraction and its dense deterministic subclasses without
+      promoting the general same-tuple claim.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SAME_TUPLE_RANK_ONE_GRAM_CONTRACTION_20260830.md
+      kind: text

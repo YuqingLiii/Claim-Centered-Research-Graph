@@ -1,0 +1,202 @@
+id: HEXT.same-tuple-two-leg-scalar-strong-norm
+role: proof
+aliases:
+- repeated-haar-tuple-two-leg-strong-convergence
+claim: >-
+  For every fixed Kraus count m and fixed Hermitian coefficient matrix Y in M_(m^2), if one Haar
+  unitary tuple U_1,...,U_m is reused on both tensor legs, then the norm of
+  m^(-2) sum_(v,a,w,b) Y_((v,a),(w,b)) (U_v^*U_w) tensor (U_a^*U_b)
+  converges in probability as d tends to infinity to the corresponding scalar-coefficient norm in
+  the left-regular representation of F_m x F_m.
+assessment:
+  level: OPEN
+  caveats:
+  - >-
+    Bordenave--Collins tensor strong convergence uses independently sampled tuples on distinct
+    tensor legs and does not establish this same-tuple repeated-representation statement.
+  - >-
+    This scalar fixed-coefficient claim is narrower than arbitrary completely bounded or
+    matrix-level convergence, but no proof or counterexample is known.
+  - >-
+    Exact base cases cover diagonal, one-leg-diagonal, simple-tensor, sparse rank-one,
+    low coefficient-Schmidt-rank, canonical Bell and normalized-flip coefficients, but they do not
+    control the dense high-rank or general Hermitian coefficient classes needed by this claim.
+  summary: >-
+    This is the precise two-leg strong-norm lemma left after output duality removes the d^2-dimensional
+    input-state net. Together with the Collins--Youn free bound and a finite coefficient net, it
+    would establish the generic complex-Haar global n=2 purity bound only.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/COMPLEX_HAAR_GLOBAL_N2_CONCENTRATION_GATE_20260830.md
+      kind: text
+      locator: "## 9. Minimal viable replacement: dualize the output, not the input sphere"
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.same-tuple-two-leg-scalar-base-cases.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing partial progress: substantial strict coefficient subclasses satisfy the
+        target, but the general repeated-tuple convergence claim remains OPEN.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.same-tuple-rank-one-gram-contraction.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing dense rank-one progress: exact Gram contraction covers all diagonal-Gram
+        matrices, including dense full-rank maximally entangled coefficients, but not general z.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.same-tuple-near-orthogonal-gram-base-case.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing conditional neighborhood: one-leg trace-zero control settles rank-one
+        coefficients whose left or right Gram is sufficiently close to diagonal.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.same-tuple-werner-spectral-reduction.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing symmetry reduction: the full real Werner sector becomes one centered
+        spectral bound on R_U, whose high-probability version remains unresolved.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.same-tuple-werner-centered-bound.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing frontier specialization: proving this centered extreme-spectrum estimate
+        would close the real Werner sector only, not arbitrary Hermitian coefficients.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.same-tuple-real-werner-sector-large-m.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing PROVED scoped progress: the fixed-m>e^18 real Werner two-dimensional
+        coefficient sector is closed, without covering arbitrary Hermitian Y.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.same-tuple-positive-partial-trace-contraction.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing positive-coefficient reduction: the two-leg output contracts to either
+        coefficient partial trace, but the induced trace/nuclear factor remains too large in general.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.same-tuple-gram-safe-spectral-nuclear-base-case.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing non-rank-one progress: polarization covers a small spectral nuclear-norm
+        neighborhood of Gram-safe singular vectors, not arbitrary Hermitian coefficients.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.same-tuple-positive-rook-support-base-case.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing broad positive subclass: rook-supported positive coefficients are
+        target-tight without a trace restriction, but double-off-diagonal entries remain open.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.same-tuple-double-off-projective-interface.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing reviewed interface: on the uniform one-leg trace-zero event,
+        double-off coefficients are controlled by their projective norm. This does not control
+        the full double-off Hilbert--Schmidt sphere.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.same-tuple-positive-rook-plus-double-off-direction.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing reviewed positive extension: a separately positive rook core plus
+        one Hermitian double-off simple-tensor direction reaches the target; the general positive
+        and Hermitian coefficient classes remain unresolved.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.same-tuple-positive-diagonal-core-projective-neighborhood.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing reviewed neighborhood: explicit full-rank positive coefficients of
+        operator-Schmidt rank Theta(m) are covered under a projective/Frobenius condition.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.same-tuple-double-off-projective-frobenius-obstruction.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing reviewed route boundary: the projective/Frobenius ratio can grow as
+        sqrt(r), so projective triangle summation alone does not settle the full coefficient sphere.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.same-tuple-positive-spectral-flat-base-case.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing reviewed deterministic cone: spectral-flat positive coefficients are
+        safe independently of support and operator-Schmidt rank.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.same-tuple-maximal-schmidt-complement-projector.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing reviewed example: one explicit positive coefficient has maximal
+        operator-Schmidt rank and satisfies the target deterministically.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.same-tuple-positive-maximal-schmidt-double-off-neighborhood.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing reviewed family: an amplitude-restricted positive double-off
+        neighborhood of operator-Schmidt rank Theta(m^2) is target-safe deterministically.
+    - path: channel-additivity-violations/proof-dag/nodes/HEXT.same-tuple-high-schmidt-kadison-haagerup-obstruction.yaml
+      kind: node-evidence
+      note: >-
+        Non-load-bearing reviewed route boundary: unrefined Haagerup--Kadison control retains
+        an order-one nuclear-sum loss at maximal Schmidt rank.
+frontier:
+  prove-or-refute-same-tuple-convergence:
+    task: >-
+      Prove the fixed-Y same-tuple scalar strong-norm convergence, or exhibit one fixed Hermitian
+      Y whose repeated-representation norm has a different limit.
+    kind: gate
+    since: 2026-08-30
+events:
+  high-schmidt-spectral-flat-progress-registered:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Linked an independently reviewed support-independent spectral-flat positive cone, explicit
+      maximal-OSR examples, a high-Schmidt double-off neighborhood and the Haagerup--Kadison route
+      obstruction, while preserving the arbitrary Hermitian node at OPEN.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SAME_TUPLE_HIGH_SCHMIDT_SPECTRAL_FLAT_EXTENSION_20260830.md
+      kind: text
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_HIGH_SCHMIDT_SPECTRAL_FLAT_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding HSSF-IR-01"
+  positive-double-off-neighborhoods-registered:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Linked independently reviewed double-off projective control, two structured positive
+      neighborhoods, and the exact projective/Frobenius route obstruction while preserving the
+      general node at OPEN.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SAME_TUPLE_POSITIVE_DOUBLE_OFF_NEIGHBORHOODS_20260830.md
+      kind: text
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_DOUBLE_OFF_WERNER_WEINGARTEN_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STDW-IR-01"
+  positive-rook-subclass-registered:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Linked a broad trace-unrestricted positive rook-support class and its truncation obstruction
+      while keeping arbitrary positive and Hermitian coefficients unresolved.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SAME_TUPLE_POSITIVE_ROOK_SUPPORT_20260830.md
+      kind: text
+  positive-and-polarized-subclasses-registered:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Linked positive partial-trace contraction, near-diagonal positive classes and polarized
+      spectral nuclear-norm progress while preserving the general node at OPEN.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SAME_TUPLE_POSITIVE_POLARIZED_GRAM_EXTENSION_20260830.md
+      kind: text
+  dense-rank-one-and-werner-subroutes-registered:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Linked the exact Gram-contraction subclasses and Werner spectral specialization while keeping
+      the general strong-norm claim OPEN and separating expectation/bulk evidence from extreme-norm
+      control.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SAME_TUPLE_RANK_ONE_GRAM_CONTRACTION_20260830.md
+      kind: text
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_FLIP_SECTOR_SAME_TUPLE_GATE_20260830.md
+      kind: text
+  strict-base-cases-registered:
+    date: '2026-08-30'
+    type: repair-applied
+    summary: >-
+      Linked exact proposer-side base cases while preserving the general node at OPEN; no base case
+      is used to infer dense full-rank or arbitrary Hermitian coefficients.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SAME_TUPLE_TWO_LEG_SCALAR_BASE_CASES_20260830.md
+      kind: text
+      locator: "## 9. Base-case table"
+  same-tuple-two-leg-gate-created:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Registered the exact fixed-coefficient repeated-Haar-tuple convergence statement needed by
+      the output-dual global n=2 route.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/COMPLEX_HAAR_GLOBAL_N2_CONCENTRATION_GATE_20260830.md
+      kind: text

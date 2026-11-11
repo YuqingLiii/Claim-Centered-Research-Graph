@@ -1,0 +1,96 @@
+id: HEXT.flower-state-gram-gate
+role: obstruction
+aliases:
+- flower-state-realignment-gate
+- flower-state-rank-completion-gate
+claim: >-
+  The generalized flower-state family cannot supply the current fixed-channel conjugate-Bell
+  construction in either natural role. A non-permutation flower state has nonpositive
+  realignment and therefore cannot be a conjugate-Bell output. As a Gram-channel Stinespring
+  candidate it has rank only half the square-channel input dimension; the canonical local-qubit
+  rank completion of the Fourier flower state exactly saturates 2E_C-S(E)=0 rather than giving
+  the required strict surplus.
+routes:
+  realignment-route:
+    premises:
+    - HEXT.conjugate-bell-realignment-constraint
+    implication: >-
+      Realignment of a maximally correlated state M(rho) is diagonal with entries rho_ij. For the
+      generalized flower state, positivity therefore makes every entry of V nonnegative; a
+      nonnegative unitary is a permutation matrix. The Fourier flower state is not a permutation.
+    proof:
+      sketch: >-
+        Realign each matrix unit |ii><jj| to |ij><ij|, then use row orthogonality of a nonnegative
+        unitary to force disjoint singleton supports.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FLOWER_STATE_GRAM_REALIZATION_GATE_20260830.md
+        kind: text
+        locator: "## 1. Exact realignment formula for maximally correlated states"
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FLOWER_STATE_GRAM_REALIZATION_GATE_20260830.md
+        kind: text
+        locator: "## 2. Nontrivial flower states cannot be conjugate-Bell outputs"
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The elementary realignment calculation and nonnegative-unitary argument are complete
+        proposer-side but have not received independent adversarial review.
+  rank-completion-route:
+    premises:
+    - HEXT.gram-channel-entanglement-cost-gate
+    implication: >-
+      The Fourier flower state is a rank-k projector on local dimension 2k. Tensoring an
+      environment-local maximally mixed qubit raises the rank to 2k without changing E_C. The
+      primary-source value E_C=log(2 sqrt(k)) then equals S(E)/2 for the completed state.
+    proof:
+      sketch: >-
+        Use rank multiplicativity, invariance of entanglement cost under appending a local state,
+        and the maximally mixed flower marginal to compute S(E)=log(4k).
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FLOWER_STATE_GRAM_REALIZATION_GATE_20260830.md
+        kind: text
+        locator: "## 3. Rank obstruction when the flower state is used as the Stinespring state"
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/primary-sources/sen-lami-flower-states-2608.02587.pdf
+        kind: pdf
+        locator: "pages 2-3, equations (1)-(4) and the paragraph before Section III"
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The source supplies the state definition, rank facts, and exact entanglement cost; the
+        rank-completion entropy calculation is elementary proposer-side.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The result excludes this candidate family, not every locking or data-hiding state.
+  - A different nonlocal rank completion is not ruled out by the canonical local-flag calculation.
+  - Realignment positivity is necessary but not sufficient for a conjugate-Bell realization.
+  - The proof is proposer-side and has not received independent review.
+  summary: >-
+    The newly available exact flower-state entanglement cost does not pass the channel-realization
+    pipeline: the high-cost Fourier state fails positive realignment, and its natural rank-correct
+    Stinespring completion only reaches the zero-surplus boundary.
+  basis:
+    routes:
+    - realignment-route
+    - rank-completion-route
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FLOWER_STATE_GRAM_REALIZATION_GATE_20260830.md
+      kind: text
+      locator: "## Gate verdict"
+frontier:
+  non-mc-locking-state:
+    task: >-
+      Find a non-maximally-correlated normalized rank-D projector with maximally mixed B marginal,
+      positive entanglement-cost surplus, and a support orientation compatible with a
+      self-adjoint superoperator-positive CP-square channel.
+    kind: task
+    since: 2026-08-30
+events:
+  flower-candidate-screened:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Audited the 2026 exact flower-state entanglement cost and proved that the family fails the
+      positive-realignment or strict-surplus gates required by the fixed-channel Bell route.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FLOWER_STATE_GRAM_REALIZATION_GATE_20260830.md
+      kind: text

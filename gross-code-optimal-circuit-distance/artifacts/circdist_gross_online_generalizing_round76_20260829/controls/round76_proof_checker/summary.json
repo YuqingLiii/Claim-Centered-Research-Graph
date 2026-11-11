@@ -1,0 +1,103 @@
+{
+  "fixtures": {
+    "php6_5.cnf": {
+      "bytes": 1445,
+      "sha256": "d9357f5203d4bd8315b7287b7543ad97072386a92980d498d1b36b3d39fb1fa9"
+    },
+    "php6_5.drat": {
+      "bytes": 3114,
+      "sha256": "b6c2e560bb08c84d583ca94799951a21c8cae5de35d6d04d77bc4842e9c18ecd"
+    },
+    "php6_5.generated.lrat": {
+      "bytes": 10851,
+      "sha256": "0723e34b24bfa7b1b8432f1606f5ba9c43e325e1c8e9eab6195b45d3cedcfd0f"
+    },
+    "php6_5_corrupted_truncated_10_lines.drat": {
+      "bytes": 158,
+      "sha256": "16960f5aa9d84658b25c9b0544e51d6dc848a96a97cae19549a585421a660081"
+    },
+    "php6_5_corrupted_truncated_10_lines.lrat": {
+      "bytes": 646,
+      "sha256": "4e749aa5afffba5c1bfa0444021170527ad83b2bcd0857f845b1a5bcb73fdee7"
+    }
+  },
+  "records": [
+    {
+      "argv": [
+        "PACKAGE/tooling/drat-trim-arm64-macos",
+        "PACKAGE/controls/round76_proof_checker/php6_5.cnf",
+        "PACKAGE/controls/round76_proof_checker/php6_5.drat",
+        "-t",
+        "170",
+        "-L",
+        "PACKAGE/controls/round76_proof_checker/php6_5.generated.lrat"
+      ],
+      "ended_utc": "2026-08-29T20:04:49.916097+00:00",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "log": "controls/round76_proof_checker/drat_valid.log",
+      "log_sha256": "940932dca350ffc4d207936f773f7f2a2b29571f65fcd30c177b79365c1a6553",
+      "marker": "VERIFIED",
+      "name": "drat_valid",
+      "schema": "round76-proof-control-run-v1",
+      "started_utc": "2026-08-29T20:04:49.622426+00:00",
+      "wall_seconds": 0.29392658299999996
+    },
+    {
+      "argv": [
+        "PACKAGE/tooling/lrat-check-arm64-macos",
+        "PACKAGE/controls/round76_proof_checker/php6_5.cnf",
+        "PACKAGE/controls/round76_proof_checker/php6_5.generated.lrat"
+      ],
+      "ended_utc": "2026-08-29T20:04:50.029106+00:00",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "log": "controls/round76_proof_checker/lrat_valid.log",
+      "log_sha256": "54b78d5976475e8834663f5cc7cc530ff2338fd46f3d678f0feac39315512c1c",
+      "marker": "VERIFIED",
+      "name": "lrat_valid",
+      "schema": "round76-proof-control-run-v1",
+      "started_utc": "2026-08-29T20:04:49.916513+00:00",
+      "wall_seconds": 0.11284170900000001
+    },
+    {
+      "argv": [
+        "PACKAGE/tooling/drat-trim-arm64-macos",
+        "PACKAGE/controls/round76_proof_checker/php6_5.cnf",
+        "PACKAGE/controls/round76_proof_checker/php6_5_corrupted_truncated_10_lines.drat",
+        "-t",
+        "170"
+      ],
+      "ended_utc": "2026-08-29T20:04:50.050249+00:00",
+      "exit_code": 1,
+      "expected_exit": 1,
+      "log": "controls/round76_proof_checker/drat_corrupt.log",
+      "log_sha256": "45a12f215ee6d656cd05a07b787de689257389a31bcc6d35ed126ea5a5e79a98",
+      "marker": "NOT VERIFIED",
+      "name": "drat_corrupt",
+      "schema": "round76-proof-control-run-v1",
+      "started_utc": "2026-08-29T20:04:50.029513+00:00",
+      "wall_seconds": 0.020989415999999983
+    },
+    {
+      "argv": [
+        "PACKAGE/tooling/lrat-check-arm64-macos",
+        "PACKAGE/controls/round76_proof_checker/php6_5.cnf",
+        "PACKAGE/controls/round76_proof_checker/php6_5_corrupted_truncated_10_lines.lrat"
+      ],
+      "ended_utc": "2026-08-29T20:04:50.055548+00:00",
+      "exit_code": 1,
+      "expected_exit": 1,
+      "log": "controls/round76_proof_checker/lrat_corrupt.log",
+      "log_sha256": "ec5553864144a099068519043983a9fa1272d0bf1c246a663a9fe3e6b0f55094",
+      "marker": "NOT VERIFIED",
+      "name": "lrat_corrupt",
+      "schema": "round76-proof-control-run-v1",
+      "started_utc": "2026-08-29T20:04:50.050684+00:00",
+      "wall_seconds": 0.005067541000000009
+    }
+  ],
+  "schema": "round76-proof-checker-controls-v1",
+  "scope": "toolchain valid/corrupt controls only; no candidate returned UNSAT, so these are not Gross absence proofs",
+  "status": "PASS"
+}

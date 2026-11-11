@@ -1,0 +1,68 @@
+id: HEXT.su3-symmetric-complement-bell-no-go
+role: obstruction
+aliases:
+- su3-lower-irrep-no-go
+- qutrit-symmetric-complement-family
+claim: >-
+  For every n>=1, let Phi_n:M_{n(n+2)}->M_3 be the partial-trace channel from the lower
+  irreducible summand R_n in C^3 tensor Sym^n(C^3). Then its Gram channel is depolarizing with
+  contraction (5n-1)/[8(n+1)], its minimum output entropy is h_2(1/(n+1)), and
+  2 barS_min(Phi_n)<S((Phi_n tensor barPhi_n)(Omega_{n(n+2)})).
+routes:
+  bosonic-splitting-route:
+    premises:
+    - HEXT.conjugate-bell-realignment-constraint
+    implication: >-
+      The bosonic splitting projector gives the Gram contraction by an occupation-number trace.
+      Product overlap with the complementary projector bounds every largest Schmidt coefficient
+      by n/(n+1), with equality on a projected orthogonal monomial. The resulting exact side
+      entropy is strictly below half the isotropic Choi entropy for every n.
+    proof:
+      sketch: >-
+        Write the lower projector as I-W_n W_n^*. Compress a normalized traceless qutrit
+        observable, use W_n^*(X tensor I)W_n=dGamma(X)/(n+1), and sum occupation numbers to obtain
+        t_n=(5n-1)/[8(n+1)]. The bosonic number-operator identity gives maximum product overlap
+        n/(n+1), hence exact S_min=h_2(1/(n+1)). Compare with the nine-point isotropic Choi
+        spectrum and use t_n<5/8.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_SYMMETRIC_COMPLEMENT_BELL_NO_GO_20260830.md
+        kind: text
+        locator: "## 1. Exact depolarizing Gram parameter through ## 3. Exact Bell spectrum and strict failure"
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The exact family calculation is complete proposer-side but has not received independent
+        adversarial review.
+assessment:
+  level: CONJECTURED
+  caveats:
+  - Only the lower summand in 3 tensor Sym^n(3) is classified.
+  - The theorem concerns the conjugate-Bell witness and does not exclude non-Bell collective inputs.
+  - The proof is proposer-side and has not received independent review.
+  summary: >-
+    The natural SU(3) symmetric-complement family, including the first oversized M_8->M_3 factor,
+    has an exact negative Bell defect and cannot provide a fixed-channel extensive seed.
+  basis:
+    routes:
+    - bosonic-splitting-route
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_SYMMETRIC_COMPLEMENT_BELL_NO_GO_20260830.md
+      kind: text
+      locator: "## Theorem"
+frontier:
+  other-su3-couplings:
+    task: >-
+      Test lower summands in 3 tensor V_(p,q) beyond the symmetric-power environment, prioritizing
+      cases whose exact minimum Schmidt spectrum can remain high while the Gram Choi entropy falls.
+    kind: task
+    since: 2026-08-30
+events:
+  symmetric-complement-family-excluded:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Derived exact Gram contraction, minimum output entropy, and Bell spectrum for every lower
+      summand in 3 tensor Sym^n(3), proving strict failure of the Bell inequality throughout.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/SU3_SYMMETRIC_COMPLEMENT_BELL_NO_GO_20260830.md
+      kind: text

@@ -1,0 +1,23 @@
+id: HEXT.fixed-output-hierarchy-obstruction
+role: obstruction
+aliases:
+- fixed-k-cost-obstruction
+claim: >-
+  In a J-layer hierarchy with fixed primitive output dimension k, the true conjugate-pair
+  minimum-output-entropy defect is at most 2 J log2(k). Therefore any version with primitive
+  environment dimensions n_j tending to infinity has defect sublinear in the full logarithmic
+  input/output/environment size.
+assessment:
+  level: CONJECTURED
+  summary: >-
+    An elementary proposer-side entropy/dimension proof closes the fixed-k, n_j-to-infinity route to
+    full-size extensivity. It leaves the conditional absolute-unbounded route intact and awaits
+    independent review.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FIXED_OUTPUT_HIERARCHY_OBSTRUCTION_20260829.md
+      kind: text
+      locator: "## Proof of the universal upper bound"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/FIXED_OUTPUT_HIERARCHY_OBSTRUCTION_20260829.md
+      kind: text
+      locator: "## Comparison with full channel cost"

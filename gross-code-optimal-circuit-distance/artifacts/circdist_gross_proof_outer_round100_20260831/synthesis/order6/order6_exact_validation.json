@@ -1,0 +1,87 @@
+{
+  "collision_controls": {
+    "checksums_used_for_decision": false,
+    "decision_key_bits": 256,
+    "decision_key_words": 4,
+    "full_named_result_words": 6,
+    "hash_used_for_decision": false,
+    "meaningful_syndrome_bits": 144
+  },
+  "endianness_controls": {
+    "big_endian_row_count_differs_and_is_rejected": true,
+    "input_and_output_parsed_explicit_little_endian": true,
+    "unused_high_bits_zero": true
+  },
+  "exact_reduced_domain_statement": "For every sorted six-set i0<...<i5, the unique pair (i0,i1,i2),(i3,i4,i5) has max(lower)<min(upper). The six-set has zero canonical and physical syndrome exactly when these two triples have equal complete canonical-plus-physical syndrome vectors. Sorting all triples by that full vector and checking every separated equal-key pair therefore enumerates all and only potentially conservative-valid six-distinct tuples once.",
+  "full_domain_size": 6715648864,
+  "full_domain_streamed": false,
+  "input_binding": {
+    "row_input_metadata_sha256": "72dc13cf928d3611eb04100e384aaf9197958a3560fb60195c1bbe476f95a136",
+    "selector_state_sha256": "47792a8f8e757482604723abb0e08916f49b252f4ba07deae03cf4295159d0b6",
+    "source_schedule_sha256": "45051af0b08e6647d50c6fb0535894173016fd013279e7a0eaee8b2e69ee2e44"
+  },
+  "overflow_controls": {
+    "binomials_cross_checked_with_python_arbitrary_precision": true,
+    "every_reported_histogram_sums_to_its_exact_domain": true,
+    "largest_full_domain": 4690625500,
+    "uint64_max": 18446744073709551615
+  },
+  "retained_term_count": 0,
+  "retained_terms": [],
+  "schema": "circdist-round100-exact-order6-mitm-validation-v1",
+  "seconds": 6.626273,
+  "sector_results": {
+    "Xerr": {
+      "big_endian_count_rejected": true,
+      "canonical_syndrome_zero": 0,
+      "combined_syndrome_zero": 0,
+      "conservative_valid_occurrences": 0,
+      "eligible_file_bytes": 24,
+      "eligible_file_sha256": "6fd4de01a7468bd5168151f88e13ac082db3505ce8163d0edd17231c7e65707e",
+      "eligible_occurrences": 0,
+      "eligible_unique_replayed": 0,
+      "full_domain": 4690625500,
+      "physical_syndrome_zero": 0,
+      "row_file_sha256": "2a04ab8d705ad117d2923b6971152256a031e5a4ac528cda886ebe407032e8ff",
+      "selector_count": 125,
+      "summary_file_sha256": "0a86fa755009e5dc31050201a4827d3b5484958e7466614625735338616db45e",
+      "triple_count": 317750
+    },
+    "Zerr": {
+      "big_endian_count_rejected": true,
+      "canonical_syndrome_zero": 0,
+      "combined_syndrome_zero": 0,
+      "conservative_valid_occurrences": 0,
+      "eligible_file_bytes": 24,
+      "eligible_file_sha256": "6fd4de01a7468bd5168151f88e13ac082db3505ce8163d0edd17231c7e65707e",
+      "eligible_occurrences": 0,
+      "eligible_unique_replayed": 0,
+      "full_domain": 2025023364,
+      "physical_syndrome_zero": 0,
+      "row_file_sha256": "26dce46a0779a6d2950cf1f9410704ddd6865bbe9af0e081c11f8d635d13fea1",
+      "selector_count": 109,
+      "summary_file_sha256": "804567a2236a6a1856414f49568b19e0e6fe0a3d814d77bed5a33881d57ac996",
+      "triple_count": 209934
+    }
+  },
+  "small_n_bijection_controls": {
+    "10": 210,
+    "11": 462,
+    "12": 924,
+    "6": 1,
+    "7": 7,
+    "8": 28,
+    "9": 84
+  },
+  "status": "PASS",
+  "theorem": {
+    "scope_exclusions": [
+      "mixed sectors",
+      "other selector bases",
+      "other schedules",
+      "seven or more distinct indices",
+      "arbitrary mechanisms outside the reviewed selector span"
+    ],
+    "statement": "On the reviewed post-iteration-136 frozen schedule, every potentially valid XOR of six distinct same-sector selectors from the 125 Xerr or 109 Zerr bases is covered exactly once by the exact MITM reduction, and every named-weight-1..10 result is replayed in canonical and physical semantics."
+  }
+}

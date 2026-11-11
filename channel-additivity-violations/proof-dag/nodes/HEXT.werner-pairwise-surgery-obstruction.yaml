@@ -1,0 +1,52 @@
+id: HEXT.werner-pairwise-surgery-obstruction
+role: obstruction
+aliases:
+- werner-repeated-edge-support-two-stall
+claim: >-
+  For every odd N>=5, the admissible repeated-edge skeleton sigma=tau=id has genus (N-1)/2; after
+  any first A--B common-cycle split it remains connected with genus (N-3)/2>0, but no further
+  A--B or B--C common-cycle transposition surgery is available. Thus support-two split/split
+  induction is not universal, without ruling out support-three or more general local surgery.
+assessment:
+  level: PROVED
+  caveats:
+  - This obstructs only the named support-two surgery family, not the centered-spectrum target.
+  summary: >-
+    Independent review verified that the explicit repeated-edge family stalls every permitted
+    pairwise common-cycle surgery while positive genus remains.
+  basis:
+    counterexamples:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_20260830.md
+      kind: counterexample
+      locator: "## 8. A repeated-edge obstruction to pairwise overlap surgery"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WPCS-IR-06"
+      scope: >-
+        Independently verified the odd-N cycle identities, all possible first splits, retained
+        connectedness, residual genus and absence of any second common-cycle move.
+      reviewed_hash: sha256:9ae3d0d9e612b1a5e965a9438e02577b0ffa038ad35bd570999ef227ba048d1b
+frontier:
+  higher-support-surgery:
+    task: Seek a support-three trisection or lifted four-endpoint chord switch preserving the rooted boundaries.
+    kind: gate
+    since: 2026-08-30
+events:
+  pairwise-surgery-obstruction-independent-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Independent review verified the universal first-split obstruction family.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WPCS-IR-06"
+  pairwise-surgery-obstruction-created:
+    date: '2026-08-30'
+    type: created
+    summary: Registered the proposer-side repeated-edge obstruction to universal support-two induction.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_20260830.md
+      kind: counterexample

@@ -1,0 +1,61 @@
+id: HEXT.werner-contraction-skeleton-ribbon-injection
+role: proof
+aliases:
+- werner-two-boundary-ribbon-encoding
+claim: >-
+  Every balanced Werner contraction skeleton on the E=2N physical slots has a lossless encoding
+  by permutations A=J sigma^(-1), B=sigma K tau sigma^(-1), C=sigma tau^(-1) satisfying
+  ABC=rho, where rho is the fixed rooted two-cycle physical boundary permutation; conversely
+  sigma=A^(-1)J and tau=C^(-1)A^(-1)J. Its canonical orientable incidence ribbon realization has
+  E darts, 2E=4N ordinary ribbon edges and exactly the two rooted rho faces, with no factorial
+  edge-ordering decoration.
+assessment:
+  level: PROVED
+  caveats:
+  - The exact object has 4N ordinary incidence edges, so it does not instantiate the earlier favorable 2N-edge generic-map count.
+  summary: >-
+    Independent review verified the exact constellation coordinates, inverse map, rooted physical
+    face order, no-factorial conclusion and corrected 4N ordinary-edge count.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_20260830.md
+      kind: text
+      locator: "## 3. Lossless two-boundary constellation"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WPCS-IR-01"
+      scope: >-
+        Independently reconstructed the finite index model, inverse constellation coordinates,
+        halfedge face walk, two rooted faces, 4N ordinary edges and absence of factorial decoration.
+      reviewed_hash: sha256:288e0f5df3ca6a53915325c487648184b9be0ff950c1e52c5db7689468c730f7
+events:
+  exact-constellation-encoding-independent-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Independent review verified the exact lossless constellation and ribbon encoding.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WPCS-IR-01"
+  exact-constellation-encoding-registered:
+    date: '2026-08-30'
+    type: level-change
+    from: OPEN
+    to: CONJECTURED
+    summary: >-
+      Proposer-side permutation algebra supplied a lossless rooted constellation encoding and
+      corrected the provisional 2N-edge ordinary-map interpretation to 4N incidence edges.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_20260830.md
+      kind: text
+      locator: "## 3. Lossless two-boundary constellation"
+  ribbon-injection-gate-created:
+    date: '2026-08-30'
+    type: created
+    summary: Isolated the lossless genus-preserving Werner ribbon-encoding gate.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_MINIMAL_SKELETON_MAP_COUNT_20260830.md
+      kind: text

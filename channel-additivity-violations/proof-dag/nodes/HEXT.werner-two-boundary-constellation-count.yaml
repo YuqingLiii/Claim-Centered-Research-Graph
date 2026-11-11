@@ -1,0 +1,189 @@
+id: HEXT.werner-two-boundary-constellation-count
+role: proof
+aliases:
+- werner-target-compatible-weighted-constellation-count
+claim: >-
+  There exist constants D and alpha with D<sqrt(18m) in the project regime such that, for every
+  N and h, the total minimal Catalan weight of connected admissible triples ABC=rho of genus h is
+  at most D^N N^(alpha h).
+routes:
+  repaired-rooted-two-face-map-code:
+    premises:
+    - HEXT.werner-contraction-skeleton-ribbon-injection
+    - HEXT.werner-planar-two-boundary-rooted-map-count
+    - HEXT.werner-positive-genus-two-boundary-weighted-count
+    - HEXT.werner-minimal-catalan-weight
+    implication: >-
+      The lossless rooted Werner constellation injection, the planar doubly face-rooted map bound, the
+      positive-genus tree-cotree count, and the minimal Catalan weight bound jointly imply that in the
+      regime m>e^18 the total minimal Catalan weight of connected admissible genus-h triples ABC=rho
+      is at most 32768^N N^(43h) for every N and h, with 32768<sqrt(18m).
+    proof:
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_TWO_BOUNDARY_PLANAR_ROOTED_MAP_REPAIR_20260830.md
+        kind: text
+        locator: "## 10. Repair of the Werner planar constant"
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_TWO_BOUNDARY_CONSTELLATION_WEIGHTED_COUNT_20260830.md
+        kind: text
+        locator: "## 4. Positive genus: a spanning-tree/cotree counting code"
+    assessment:
+      level: PROVED
+      summary: >-
+        Independent adversarial review verified the four-premise assembly, the N=1 endpoint,
+        the constants D=32768 and alpha=43, and the comparison D<sqrt(18m) for m>e^18.
+      basis:
+        evidence:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_TWO_BOUNDARY_PLANAR_ROOTED_MAP_REPAIR_20260830.md
+          kind: text
+          locator: "## 10. Repair of the Werner planar constant"
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_TWO_BOUNDARY_PLANAR_ROOTED_MAP_REPAIR_INDEPENDENT_REVIEW_20260830.md
+          kind: review
+          locator: "Finding WTPR-IR-04"
+          scope: >-
+            Independently checked the complete four-premise assembly, including the N=1 case,
+            planar and positive-genus branches, constants and the large-m comparison.
+          reviewed_hash: sha256:64b8e9fb8161425c5f94b416af059f8e5ce623c14bc58f3fa7137198a5f1bc99
+  rooted-two-face-map-code:
+    premises:
+    - HEXT.werner-contraction-skeleton-ribbon-injection
+    - HEXT.werner-minimal-catalan-weight
+    implication: >-
+      There exist constants D and alpha with D<sqrt(18m) in the project regime such that, for every
+      N and h, the total minimal Catalan weight of connected admissible triples ABC=rho of genus h is
+      at most D^N N^(alpha h).
+    proof:
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_TWO_BOUNDARY_CONSTELLATION_WEIGHTED_COUNT_20260830.md
+        kind: text
+        locator: "## 1. Outcome"
+    assessment:
+      level: CONJECTURED
+      caveats:
+      - >-
+        The positive-genus tree--cotree code is independently proved, but the artifact's planar
+        coefficient is false as written; the h=0 inequality requires a separate repaired proof.
+      summary: >-
+        The proposed constants D=32768 and alpha=43 have independently checked algebra conditional
+        on a corrected planar two-face estimate; only that h=0 repair remains in this route.
+      basis:
+        evidence:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_TWO_BOUNDARY_CONSTELLATION_WEIGHTED_COUNT_20260830.md
+          kind: text
+          locator: "## 6. Constants"
+        reviews:
+        - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_TWO_BOUNDARY_CONSTELLATION_WEIGHTED_COUNT_INDEPENDENT_REVIEW_20260830.md
+          kind: review
+          locator: "Finding WTBC-IR-04"
+          scope: >-
+            Independently verified the injection, positive-genus code, weights and constants, but
+            refuted the stated planar equality and withheld completion pending its local repair.
+          reviewed_hash: sha256:918abca3f6ba28a5ad1d894a5b9e917cc5114081c8a7fcdd16dc28c78d0bb603
+assessment:
+  level: PROVED
+  caveats:
+  - >-
+    This is a structural connected-constellation theorem. It does not control equality-graph
+    label components, the two-topological-component sector, a centered spectral bound, or a
+    full-size extensive-violation theorem.
+  summary: >-
+    The repaired planar deletion code and the already proved positive-genus, lossless-encoding
+    and Catalan-weight premises give an independently reviewed every-genus structural count with
+    D=32768 and alpha=43 in the project regime.
+  basis:
+    routes:
+    - repaired-rooted-two-face-map-code
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_20260830.md
+      kind: text
+      locator: "## 9. What the exact encoding does to the previous map route"
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_TWO_BOUNDARY_CONSTELLATION_WEIGHTED_COUNT_20260830.md
+      kind: text
+      locator: "## 10. Status recommendation and limitations"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WPCS-IR-08"
+      scope: >-
+        Independently confirmed that neither the generic 4N-edge count nor the reducible-subclass
+        theorem supplies the target-compatible weighted all-constellation count.
+      reviewed_hash: sha256:918abca3f6ba28a5ad1d894a5b9e917cc5114081c8a7fcdd16dc28c78d0bb603
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_TWO_BOUNDARY_CONSTELLATION_WEIGHTED_COUNT_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WTBC-IR-04"
+      scope: >-
+        Independently passed every positive-genus and constant component but found the planar
+        equality false, licensing at most CONJECTURED until a planar repair is reviewed.
+      reviewed_hash: sha256:918abca3f6ba28a5ad1d894a5b9e917cc5114081c8a7fcdd16dc28c78d0bb603
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_TWO_BOUNDARY_PLANAR_ROOTED_MAP_REPAIR_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WTPR-IR-04"
+      scope: >-
+        Independently verified the repaired four-premise route, including N=1 and all constants,
+        and approved the unchanged every-genus target only through that repaired route.
+      reviewed_hash: sha256:918abca3f6ba28a5ad1d894a5b9e917cc5114081c8a7fcdd16dc28c78d0bb603
+events:
+  repaired-every-genus-route-independently-proved:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    route: repaired-rooted-two-face-map-code
+    summary: >-
+      Independent adversarial review proved the repaired four-premise implication while preserving
+      the earlier defective route as CONJECTURED historical evidence.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_TWO_BOUNDARY_PLANAR_ROOTED_MAP_REPAIR_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WTPR-IR-04"
+  every-genus-structural-count-independently-proved:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      The independently reviewed repaired route proves the unchanged target with D=32768 and
+      alpha=43; no centered or full-size consequence is inferred.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_TWO_BOUNDARY_PLANAR_ROOTED_MAP_REPAIR_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WTPR-IR-04"
+  planar-two-face-repair-proposed:
+    date: '2026-08-30'
+    type: repair-applied
+    route: repaired-rooted-two-face-map-code
+    summary: >-
+      Added a self-contained proposer-side planar deletion-code replacement for the false refined
+      coefficient; the route and node remain CONJECTURED pending independent review.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_TWO_BOUNDARY_PLANAR_ROOTED_MAP_REPAIR_20260830.md
+      kind: text
+      locator: "## 10. Repair of the Werner planar constant"
+  weighted-count-positive-genus-review:
+    date: '2026-08-30'
+    type: level-change
+    from: OPEN
+    to: CONJECTURED
+    route: rooted-two-face-map-code
+    summary: >-
+      Independent review proved the positive-genus count and constants but found the artifact's
+      planar equality false; the every-h node is promoted only to CONJECTURED pending h=0 repair.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_TWO_BOUNDARY_CONSTELLATION_WEIGHTED_COUNT_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WTBC-IR-04"
+  weighted-count-open-status-independently-confirmed:
+    date: '2026-08-30'
+    type: review-completed
+    summary: Independent review confirmed that the target-compatible weighted count remains OPEN.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WPCS-IR-08"
+  weighted-constellation-count-created:
+    date: '2026-08-30'
+    type: created
+    summary: Replaced the provisional generic-map count application by the exact structured weighted-count target.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_PERMUTATION_CONSTELLATION_SURGERY_GATE_20260830.md
+      kind: text

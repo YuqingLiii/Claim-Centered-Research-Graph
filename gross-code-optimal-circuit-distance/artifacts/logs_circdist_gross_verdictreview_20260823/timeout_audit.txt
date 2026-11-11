@@ -1,0 +1,16 @@
+TIMEOUT AUDIT, on the DEDUPLICATED file set (23 distinct jsonl files)
+TIMEOUT records: 44   (raw across directories: 48)
+records with no identifiable sub-query: 0
+distinct TIMEOUT sub-queries: 18      (artifact claims 18)
+  now decided: 18 ; still undecided: 0 ; any decided SAT: 0
+  undecided list: []
+total wall recorded as TIMEOUT (deduplicated): 460811 s = 128.0 CPU-hours
+  artifact states 212403 s = 59.0 CPU-hours
+
+--- where does the 59 CPU-hour figure come from? ---
+dedup TIMEOUT records: 44 ; sum(wall) = 460811 s = 128.0 h
+on candidate triples : 7 records ; sum(wall) = 61199 s = 17.0 h
+by file: {'final.jsonl': 9, 'live_final.jsonl': 28, 'live_mine.jsonl': 2, 'live_mine2.jsonl': 2, 'wave6_d10.jsonl': 3}
+distinct (sector,K,Ew,orbit,wall) tuples: 13
+wall values: {7198: 4, 10800: 34, 10801: 3, 10802: 3}
+sum over DISTINCT (subquery, wall) pairs: 126001 s = 35.0 h

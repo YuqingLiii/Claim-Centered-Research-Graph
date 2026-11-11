@@ -1,0 +1,31 @@
+{
+  "schema": "circdist-gross-round62-reproduction-v1",
+  "source_package": "circdist/artifacts/circdist_gross_cegar_round62_20260828",
+  "source_manifest_sha256": "e888e7be694e2ef11b4148aa7f01a75ec9990d7b79b5c97cc36734686265eea1",
+  "source_manifest_entries": 26,
+  "source_manifest_check": "26/26 OK",
+  "source_verify_return_code": 0,
+  "source_verify_status": "PASS",
+  "source_verify": {
+    "cegar_iterations_replayed": 20,
+    "unique_schedules": 20,
+    "unique_counterexample_traces": 20,
+    "prior_block_exclusions_checked": 190,
+    "frozen_pool_sizes": {"X": 1884, "Z": 1884},
+    "named_controls_rebuilt": ["C1/Zerr effective", "C2/Xerr repair0", "C2/Zerr repair0"],
+    "negative_controls_pass": true
+  },
+  "fresh_reruns": {
+    "audit": {"return_code": 0, "byte_equal": true},
+    "cegar20": {
+      "return_code": 0,
+      "equal_after_deleting_only_seconds_fields": true,
+      "schedule_hashes_equal": "20/20",
+      "trace_hashes_equal": "20/20",
+      "outer_smt_hashes_equal": "20/20"
+    },
+    "negative_controls": {"return_code": 0, "status": "PASS"}
+  },
+  "round62_block_atom_counts": [16, 16, 16, 16, 16, 16, 9, 16, 16, 16, 16, 16, 16, 16, 16, 16, 9, 16, 16, 16],
+  "round62_total_block_atoms": 306
+}

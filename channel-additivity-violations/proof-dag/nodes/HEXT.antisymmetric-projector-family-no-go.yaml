@@ -1,0 +1,87 @@
+id: HEXT.antisymmetric-projector-family-no-go
+role: obstruction
+aliases:
+- antisymmetric-projector-cost-orientation-no-go
+claim: >-
+  For every d>=2, the normalized projector onto the antisymmetric subspace of C^d tensor C^d
+  fails the fixed-channel conjugate-Bell candidate route: d=2 gives a constant channel with zero
+  defect, d=3 fails every Gram-positive orientation, and d>=4 fails the necessary
+  entanglement-cost surplus.
+routes:
+  dimension-split-route:
+    premises:
+    - HEXT.gram-channel-entanglement-cost-gate
+    - HEXT.qutrit-antisymmetric-gram-obstruction
+    implication: >-
+      The Slater-basis ensemble proves E_C(alpha_d)<=E_F(alpha_d)<=1, while the environment
+      marginal is maximally mixed with entropy log_2 d. Thus d>=4 cannot satisfy the strict cost
+      gate. The rank-one d=2 support induces a constant channel with zero defect, and the remaining
+      d=3 case is excluded by the qutrit polar-sign premise.
+    proof:
+      sketch: >-
+        Decompose the normalized antisymmetric projector uniformly into the orthonormal Slater
+        basis, each member of which has one ebit. Use regularization to bound E_C by one, split the
+        dimensions at d=2, d=3 and d>=4, and apply the existing qutrit obstruction in the sole
+        nontrivial dimension not eliminated by the cost bound.
+      sources:
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/ANTISYMMETRIC_PROJECTOR_FAMILY_NO_GO_20260830.md
+        kind: text
+        locator: "## 2. A dimension-independent one-ebit upper bound on entanglement cost"
+      - path: channel-additivity-violations/artifacts/holevo-extensive-violation/ANTISYMMETRIC_PROJECTOR_FAMILY_NO_GO_20260830.md
+        kind: text
+        locator: "## 3. The two exceptional small dimensions"
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The dimension split and entropy inequalities form a complete proposer-side implication;
+        independent adversarial review is pending.
+      basis:
+        evidence:
+        - path: channel-additivity-violations/artifacts/holevo-extensive-violation/ANTISYMMETRIC_PROJECTOR_FAMILY_NO_GO_20260830.md
+          kind: text
+          locator: "## Verdict and scope"
+assessment:
+  level: CONJECTURED
+  caveats:
+  - The result excludes normalized full antisymmetric projectors, not arbitrary proper-support
+    antisymmetric states or coherent mixtures with other representation sectors.
+  - It is specific to the fixed-channel conjugate-Bell certificate and does not exclude collective
+    non-Bell witnesses.
+  - The proof is proposer-side and has not received independent review.
+  summary: >-
+    A one-ebit Slater decomposition closes every d>=4 member at the necessary cost gate; the
+    d=2 member is trivial and the qutrit-only survivor is already excluded by its polar sign.
+  basis:
+    routes:
+    - dimension-split-route
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/ANTISYMMETRIC_PROJECTOR_FAMILY_NO_GO_20260830.md
+      kind: text
+      locator: "## Verdict and scope"
+frontier:
+  independent-review:
+    task: >-
+      Independently verify the Slater decomposition, E_C<=E_F bound, strict d>=4 cost-gate
+      failure, d=2 constant-channel case, and use of the qutrit polar obstruction.
+    kind: review
+    since: 2026-08-30
+  proper-antisymmetric-supports:
+    task: >-
+      For d>=5, test rank-d proper subspaces of the antisymmetric sector with maximally mixed
+      d-dimensional marginal. The d=4 case is now separately excluded. A viable higher-dimensional
+      square-support candidate must lack any low-entanglement ensemble that forces
+      E_C<=log_2(d)/2, pass the inner-polar orientation gate, admit the required CP factor, and
+      retain an all-copy side-entropy lower bound.
+    kind: task
+    since: 2026-08-30
+events:
+  family-no-go-registered:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Combined a dimension-independent one-ebit entanglement-cost upper bound with the qutrit
+      polar obstruction to exclude the entire normalized antisymmetric-projector family from the
+      fixed-channel conjugate-Bell route.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/ANTISYMMETRIC_PROJECTOR_FAMILY_NO_GO_20260830.md
+      kind: text

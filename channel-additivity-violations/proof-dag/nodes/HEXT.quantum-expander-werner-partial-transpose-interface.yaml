@@ -1,0 +1,63 @@
+id: HEXT.quantum-expander-werner-partial-transpose-interface
+role: obstruction
+aliases:
+- expander-gap-partial-transpose-loss
+claim: >-
+  The exact factorization R_U^Gamma=G_U^*G_U converts a standard random-quantum-expander second
+  singular-value estimate into control before partial transpose, but the return map can lose a
+  factor d in operator norm. Positivity and orthogonality to the maximally entangled projector do
+  not remove this loss, so the standard expander gap alone does not imply the target centered
+  Werner spectral bound.
+assessment:
+  level: PROVED
+  caveats:
+  - >-
+    This obstruction does not rule out an instance-specific delocalization theorem for the actual
+    random expander eigenprojections.
+  summary: >-
+    Quantum expansion controls the partial-transposed positive operator, but a sharp deterministic
+    example shows that positivity and maximally-entangled orthogonality do not prevent dimension-d
+    norm amplification under partial transpose.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_FLIP_SECTOR_SAME_TUPLE_GATE_20260830.md
+      kind: text
+      locator: "## 7. Quantum-expander factorization and its exact interface failure"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_GRAM_WERNER_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STGW-IR-08"
+      scope: >-
+        Independently verified the factorization, worst-case partial-transpose loss and positive
+        orthogonal witness; no exact expander constant or random-instance delocalization theorem
+        was used.
+      reviewed_hash: sha256:ba3f076f3eb0ebd6c4cb0c53b9115b7eeda37970a58357ebe13b6339f7ba320c
+frontier:
+  random-eigenprojection-delocalization:
+    task: >-
+      Prove additional delocalization for the actual positive remainder H_U sufficient to control
+      ||H_U^Gamma||_infinity without the worst-case factor d.
+    kind: gate
+    since: 2026-08-30
+events:
+  expander-interface-independent-promotion:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      Independent review verified the exact partial-transpose interface obstruction while
+      preserving instance-specific delocalization as an OPEN frontier.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/SAME_TUPLE_GRAM_WERNER_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding STGW-IR-08"
+  expander-partial-transpose-interface-created:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Registered the exact partial-transpose interface loss without treating it as a refutation of
+      the Werner or general same-tuple claims.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_FLIP_SECTOR_SAME_TUPLE_GATE_20260830.md
+      kind: text

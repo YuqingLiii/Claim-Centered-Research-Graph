@@ -1,0 +1,70 @@
+id: HEXT.werner-centered-reversal-return-bound
+role: proof
+aliases:
+- werner-forward-reversal-return-sector
+claim: >-
+  For every integer m>=2 and independent complex Haar U_1,...,U_m in U(d), set
+  A_(v,a)=U_v^*U_a and S_U=m^(-2)sum_(v!=a) A_(v,a) tensor A_(v,a)^*. For every integer
+  N>=1, Tr(S_U^N)=m^(-2N)sum_e Tr(W_U(e)) overline(Tr(check W_U(e))), where W_U is the
+  forward product and check W_U reverses its N edge blocks. For every even N, the total absolute
+  contribution of all edge sequences whose forward or block-reversed free word is the identity is
+  at most 2d^2((3m-4)/m^2)^N.
+assumptions:
+  akemann-ostrand-free-generator-norm:
+    kind: external-theorem
+    statement: >-
+      For the left-regular representation lambda of the free group F_m on standard generators
+      g_1,...,g_m, ||sum_(v=1)^m lambda(g_v)||=2sqrt(m-1) for every integer m>=2.
+    source:
+      path: channel-additivity-violations/artifacts/holevo-extensive-violation/AKEMANN_OSTRAND_FREE_GENERATOR_NORM_SOURCE_NOTE_20260830.md
+      kind: text
+      locator: Bibliographic source entry `Computing norms in group C*-algebras`
+assessment:
+  level: PROVED
+  summary: >-
+    Independent mathematical review verified the exact forward/block-reversal trace identity,
+    the return-union estimate, the constant 3m-4, the factor 2d^2, and the machine-visible
+    Akemann--Ostrand source assumption.
+  basis:
+    evidence:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_CENTERED_GROWING_TRACE_METHOD_GATE_20260830.md
+      kind: text
+      locator: "## 3. The return sector is rigorously safe"
+    reviews:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_CENTERED_MOMENT_FINAL_CONDITIONAL_ASSEMBLY_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WCMF-IR-08"
+      scope: >-
+        Independently checked the exact trace expansion, forward/block-reversed return union,
+        numerical constant, dimension factor, and the locatable free-generator norm assumption.
+      reviewed_hash: sha256:a8936d811867eacbe9a4b2d13a61063479d3558ce15174c6d0dc2e035198bc3a
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_CENTERED_CANONICAL_INTEGRATION_AMENDMENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WCCIA-01"
+      scope: >-
+        Independently confirmed that the final mathematical review binds to the exact canonical
+        claim hash and licenses only this atomic return statement.
+      reviewed_hash: sha256:a8936d811867eacbe9a4b2d13a61063479d3558ce15174c6d0dc2e035198bc3a
+events:
+  reversal-return-atom-independently-proved:
+    date: '2026-08-30'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: >-
+      Final independent review hash-bound the exact return atom and approved it as a load-bearing
+      premise for the scoped large-m centered-moment route.
+    sources:
+    - path: channel-additivity-violations/reviews/holevo-extensive-violation/WERNER_CENTERED_MOMENT_FINAL_CONDITIONAL_ASSEMBLY_INDEPENDENT_REVIEW_20260830.md
+      kind: review
+      locator: "Finding WCMF-IR-08"
+  reversal-return-atom-created:
+    date: '2026-08-30'
+    type: created
+    summary: >-
+      Registered the already reviewed trace and return calculation as a machine-visible atomic
+      premise, with the exact free-generator norm theorem sourced explicitly.
+    sources:
+    - path: channel-additivity-violations/artifacts/holevo-extensive-violation/WERNER_CENTERED_GROWING_TRACE_METHOD_GATE_20260830.md
+      kind: text
+      locator: "## 3. The return sector is rigorously safe"
