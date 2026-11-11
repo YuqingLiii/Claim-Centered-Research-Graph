@@ -1,0 +1,172 @@
+Clifford measurement independent-review rerun
+Local date: 2026-09-07 (America/New_York)
+Completion timestamp observed: 2026-09-08 00:26:27 UTC
+Working directory: /private/tmp/grothorb-classical-20260907-R0Shtu
+Reviewer: author-independent Codex review agent using inherited model.
+This is a new review run, not a recovered 2026-08-29 execution.
+
+RUN A: unchanged author checker
+command: python3 grothendieck-group-orbit/tools/check_clifford_generators.py
+exit_status: 0
+stdout/stderr:
+s=1 D=1 all_exact_identities=PASS test_norm_sq=1
+s=2 D=2 all_exact_identities=PASS test_norm_sq=5
+s=3 D=2 all_exact_identities=PASS test_norm_sq=14
+s=4 D=4 all_exact_identities=PASS test_norm_sq=30
+s=5 D=4 all_exact_identities=PASS test_norm_sq=55
+s=6 D=8 all_exact_identities=PASS test_norm_sq=91
+s=7 D=8 all_exact_identities=PASS test_norm_sq=140
+s=8 D=16 all_exact_identities=PASS test_norm_sq=204
+s=9 D=16 all_exact_identities=PASS test_norm_sq=285
+
+Scope: s=1,...,9 only. Review report independently proves all-s identities.
+The author checker represents Gaussian integers by Python complex values.
+Its bounded intermediate integer components stay below 2^53; exactness is
+justified for this run, not for arbitrary unbounded complex arithmetic.
+
+RUN B0: retained reviewer-harness compatibility failure
+The first independent script was the RUN B script below with exactly this
+one replacement: bin(i).count("1") was written as i.bit_count().
+exit_status: 1
+stdout/stderr:
+Python: 3.9.6 (default, May 22 2026, 11:13:45)  [Clang 21.0.0 (clang-2100.1.1.101)]
+s=0 rejected=PASS
+Traceback (most recent call last):
+  File "<stdin>", line 51, in <module>
+  File "<stdin>", line 35, in bit_generators
+  File "<stdin>", line 14, in mat
+  File "<stdin>", line 14, in <genexpr>
+  File "<stdin>", line 14, in <genexpr>
+  File "<stdin>", line 35, in <lambda>
+AttributeError: 'int' object has no attribute 'bit_count'
+
+Classification: review-harness Python-version incompatibility, not an
+author-checker failure or mathematical counterexample. Replaced only the
+bit count expression for compatibility with Python 3.9.6.
+
+RUN B: independent computational-basis / Gaussian integer-pair checker
+command: python3 - <<'PY'
+from pathlib import Path
+import runpy
+import sys
+
+author = runpy.run_path("grothendieck-group-orbit/tools/check_clifford_generators.py")
+Z0, ONE = (0, 0), (1, 0)
+def ga(a, b): return (a[0]+b[0], a[1]+b[1])
+def gm(a, b): return (a[0]*b[0]-a[1]*b[1], a[0]*b[1]+a[1]*b[0])
+def gc(a): return (a[0], -a[1])
+def total(xs):
+    t = Z0
+    for x in xs: t = ga(t, x)
+    return t
+def mat(d, f): return tuple(tuple(f(i,j) for j in range(d)) for i in range(d))
+def ident(d): return mat(d, lambda i,j: ONE if i==j else Z0)
+def plus(a,b): return mat(len(a), lambda i,j: ga(a[i][j],b[i][j]))
+def times(a,b): return mat(len(a), lambda i,j: total(gm(a[i][k],b[k][j]) for k in range(len(a))))
+def scale(c,a): return mat(len(a), lambda i,j: gm((c,0),a[i][j]))
+def trans(a): return mat(len(a), lambda i,j: a[j][i])
+def adj(a): return mat(len(a), lambda i,j: gc(a[j][i]))
+def trace(a): return total(a[i][i] for i in range(len(a)))
+def lc(cs,gs): return mat(len(gs[0]), lambda i,j: total(gm((c,0),g[i][j]) for c,g in zip(cs,gs)))
+def bit_generators(s):
+    q=s//2; d=1<<q; out=[]
+    for j in range(q):
+        for pauli in ("X","Y"):
+            a=[[Z0 for _ in range(d)] for _ in range(d)]
+            for col in range(d):
+                bits=[(col>>(q-1-k))&1 for k in range(q)]
+                sign=(-1)**sum(bits[:j])
+                row=col^(1<<(q-1-j))
+                a[row][col]=(sign,0) if pauli=="X" else (0,sign*(1-2*bits[j]))
+            out.append(tuple(tuple(row) for row in a))
+    if s%2:
+        out.append(mat(d,lambda i,j: (((-1)**bin(i).count("1"),0) if i==j else Z0)))
+    return out
+def author_pairs(g):
+    return tuple(tuple((int(x.real),int(x.imag)) for x in row) for row in g)
+
+print("Python:",sys.version.replace("\n"," "))
+try:
+    author["generators"](0)
+except ValueError:
+    print("s=0 rejected=PASS")
+else:
+    raise AssertionError("author generator accepted s=0")
+
+pair_total=0
+for s in range(1,10):
+    q=s//2; d=1<<q
+    gs=bit_generators(s)
+    assert len(gs)==s and all(len(g)==d and all(len(row)==d for row in g) for g in gs)
+    assert gs==[author_pairs(g) for g in author["generators"](s)]
+    ii=ident(d); nil=scale(0,ii)
+    for a,g in enumerate(gs):
+        assert adj(g)==g and times(g,g)==ii
+        assert adj(trans(g))==trans(g) and times(trans(g),trans(g))==ii
+        assert trace(g)==((d,0) if s==1 else Z0)
+        for b,h in enumerate(gs):
+            gh=times(g,h)
+            assert plus(gh,times(h,g))==(scale(2,ii) if a==b else nil)
+            assert trace(gh)==((d,0) if a==b else Z0)
+            bh=trans(h)
+            # D times the direct computational-basis state expectation.
+            direct=total(gm(g[i][j],bh[i][j]) for i in range(d) for j in range(d))
+            assert direct==((d,0) if a==b else Z0)
+            pair_total+=1
+    u=list(range(1,s+1)); v=[(-1)**a*(a+2) for a in range(s)]
+    gu,gv=lc(u,gs),lc(v,gs)
+    assert adj(gu)==gu and adj(trans(gv))==trans(gv)
+    assert times(gu,gu)==scale(sum(c*c for c in u),ii)
+    assert times(trans(gv),trans(gv))==scale(sum(c*c for c in v),ii)
+    direct=total(gm(gu[i][j],trans(gv)[i][j]) for i in range(d) for j in range(d))
+    assert direct==(d*sum(a*b for a,b in zip(u,v)),0)
+    if s>=2:
+        gy=gs[1]
+        wrong=total(gm(gy[i][j],gy[i][j]) for i in range(d) for j in range(d))
+        assert wrong==(-d,0)
+    print(f"s={s} D={d} integer_pair_all_checks=PASS ordered_pairs={s*s}")
+assert pair_total==285
+print("all_ordered_generator_pairs=285 PASS")
+print("scope: independent bit-action construction; all matrix arithmetic uses integer pairs; s=1..9 only")
+PY
+exit_status: 0
+stdout/stderr:
+Python: 3.9.6 (default, May 22 2026, 11:13:45)  [Clang 21.0.0 (clang-2100.1.1.101)]
+s=0 rejected=PASS
+s=1 D=1 integer_pair_all_checks=PASS ordered_pairs=1
+s=2 D=2 integer_pair_all_checks=PASS ordered_pairs=4
+s=3 D=2 integer_pair_all_checks=PASS ordered_pairs=9
+s=4 D=4 integer_pair_all_checks=PASS ordered_pairs=16
+s=5 D=4 integer_pair_all_checks=PASS ordered_pairs=25
+s=6 D=8 integer_pair_all_checks=PASS ordered_pairs=36
+s=7 D=8 integer_pair_all_checks=PASS ordered_pairs=49
+s=8 D=16 integer_pair_all_checks=PASS ordered_pairs=64
+s=9 D=16 integer_pair_all_checks=PASS ordered_pairs=81
+all_ordered_generator_pairs=285 PASS
+scope: independent bit-action construction; all matrix arithmetic uses integer pairs; s=1..9 only
+
+Scope: independently builds each generator by its action on computational
+basis bit strings, cross-checks tensor order against the author's matrices,
+and verifies all 285 ordered generator pairs for s=1,...,9. Matrix arithmetic
+uses pairs of Python integers, with no floating-point operations. Includes
+Hermiticity, Alice/Bob squares, transpose, trace orthogonality, individual
+generator traces, direct state-sum correlators, and two integer-vector tests.
+The untransposed Y/Y state sum is -D, confirming the sign-sensitive transpose
+test is nonvacuous. These finite tests corroborate, not prove, the all-s claim.
+
+INPUT FILE SHA-256 SNAPSHOT
+d8775b511431e6e9dc7a5be6200af80bd612e7e7d5f5ff10bb14ef748791a095  DAG_PROTOCOL.md
+6a2ea1af9bd14a4eaa8d158e304aee5e82cf907497addb17c2771782a4e6a329  FILE_PROTOCOL.md
+aad42bce01452d668ebebf0020f6dbc5702c7a3548e15084e6336bc23530709f  grothendieck-group-orbit/proof-dag/nodes/GROTHORB.measurements.yaml
+1dbac3b4479ed340529a0140b1f42840b089c52676beedc2e5996a34fcb8f234  grothendieck-group-orbit/proof-dag/nodes/GROTHORB.extremizer-classification.yaml
+23024138fe8577a78c8767afee62ba8c4f73b36e1d46fa33bd4fd625e021842b  grothendieck-group-orbit/artifacts/clifford-measurement-construction-20260829.md
+b52a22592bf30e6896c459b8700aac99d07d4034cb0dc099a5be787753e27d7c  grothendieck-group-orbit/tools/check_clifford_generators.py
+b4985d87c4b1f8dabb0f6ce6e04669c2e40cd531f9cf407f167211f7d3de5497  grothendieck-group-orbit/artifacts/clifford-exact-check-20260829.txt
+44ac28ada792471f5ff014f763a94da16929ac2f6d99df01b2a056f52a47cd99  grothendieck-group-orbit/artifacts/complete-extremizer-classification-20260829.md
+c6b7bd87193b34ad6e5c05d20971fba2722ba202c3e87e2bd6717a951d5dfef4  grothendieck-group-orbit/artifacts/balanced-rank-theorem-draft-20260829.md
+0b2d2f2980932519da758a050531571f8fbcf15b3a7bb16855e1d891dab071a4  grothendieck-group-orbit/reviews/spectral-classification-repair-review-20260907.md
+310ed176e035bba8c0b57d90680656a6a50b3b3e1ab8b83d1448468ae2a93473  grothendieck-group-orbit/artifacts/group-orbit-literature-positioning-20260907.md
+bfcf8c92aa62106e659e950bd52d4d9120d730ee952e913c445092eeb7db5873  grothendieck-group-orbit/artifacts/group-orbit-exploration-20260907.md
+3bc90a10b8adcc3b149c1fe2b31b12e984ff3a1fecae3102b1c8b2f32dd32903  grothendieck-group-orbit/proof-dag/GRAPH.mmd
+da90f36a54946536ea8e17553c74d72242df32e3e3691c984736c55b1a708683  grothendieck-group-orbit/proof-dag/NODE_INDEX.md
+

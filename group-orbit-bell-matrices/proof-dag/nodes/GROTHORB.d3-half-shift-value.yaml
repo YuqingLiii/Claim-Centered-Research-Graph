@@ -1,0 +1,56 @@
+id: GROTHORB.d3-half-shift-value
+role: proof
+claim: Let U have the six rows e_i-e_j and e_i+e_j for 1<=i<j<=3, and C=UU^T/4. Then beta_cl(C-(1/3)I_6)=3.
+assessment:
+  level: PROVED
+  summary: Complete scoped argument and dependencies passed a separate author-independent same-model review.
+    Non-fresh-context limitation is disclosed; no novelty or formal-verification claim.
+  basis:
+    evidence:
+    - path: group-orbit-bell-matrices/artifacts/d3-half-shift-value-20260907.md
+      kind: text
+      locator: HS-1 through HS-4
+    - path: group-orbit-bell-matrices/artifacts/classical-root-literature-20260907.md
+      kind: text
+      locator: L1 through L4
+    - path: group-orbit-bell-matrices/artifacts/classical-exploration-summary-20260907.md
+      kind: text
+      locator: STATE and NEXT
+    - path: group-orbit-bell-matrices/tools/check_d3_half_shift_value.py
+      kind: text
+    reviews:
+    - path: group-orbit-bell-matrices/reviews/antipodal-half-shift-review-20260907.md
+      kind: review
+      locator: F2
+      scope: Checked the exact six-root matrix, exhaustive signed-edge cases, upper bound and matching signs;
+        independently enumerated all pairs.
+      reviewed_hash: sha256:3905d276721ac794d0a04007c4ccaa948d1e392d904198da6899c70c81e24406
+    runs:
+    - path: group-orbit-bell-matrices/artifacts/d3-half-shift-exact-check-20260907.txt
+      kind: run
+      result: Exact scoped replay and mathematical-review provenance; finite runs do not prove all-r claims
+        by themselves.
+    - path: group-orbit-bell-matrices/artifacts/antipodal-half-shift-review-rerun-20260907.txt
+      kind: run
+      result: Exact scoped replay and mathematical-review provenance; finite runs do not prove all-r claims
+        by themselves.
+events:
+  registered-20260907:
+    date: '2026-09-07'
+    type: created
+    summary: Registered a half-root comparison point to distinguish diagonal shift from mere duplication.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/classical-family-registration-20260907.md
+      kind: text
+      locator: C9
+  independent-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: OPEN
+    to: PROVED
+    summary: Registered claim received an author proof and a separately assigned exact-statement adversarial
+      review; only then promoted.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/antipodal-half-shift-review-20260907.md
+      kind: review
+      locator: F2

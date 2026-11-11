@@ -1,0 +1,97 @@
+id: GROTHORB.root-classical-equality
+role: proof
+claim: For every r>=3 and the full D_r root projection A_r=WW^T/[4(r-1)], every pair attaining beta_cl(A_r)
+  has s=t with s_w=sign(w dot g*rho), rho=(r-1,r-2,...,0), for a signed coordinate permutation g; conversely
+  all such pairs attain the optimum. The number of distinct maximizing sign pairs is 2^(r-1)*r!.
+routes:
+  support-equality:
+    premises:
+    - GROTHORB.root-classical
+    implication: Equality in the sorted-coordinate support bound fixes the signed-sum direction to a signed
+      permutation of rho, whose root inner products are nonzero; equality in the PSD bilinear bound identifies
+      both signs.
+    assessment:
+      level: PROVED
+      summary: Author-independent same-model review of this exact implication and supporting assembly passed.
+      basis:
+        reviews:
+        - path: group-orbit-bell-matrices/reviews/root-classical-review-20260907.md
+          kind: review
+          locator: F2R
+          scope: Checked maximal-image equality, termwise sign recovery, the converse, zero-coordinate stabilizer,
+            and complete ordered-pair count.
+          reviewed_hash: sha256:81878c54dfe7e3b4aec018401e7be9c89d943429321013f5501611711ce02464
+    proof:
+      sketch: Complete implication and its assembled dependencies are checked in the linked proof and independent
+        review.
+      sources:
+      - &id001
+        path: group-orbit-bell-matrices/artifacts/root-classical-equality-20260907.md
+        kind: text
+        locator: RE-1 through RE-7
+assessment:
+  level: PROVED
+  summary: Complete scoped argument and dependencies passed a separate author-independent same-model review.
+    Non-fresh-context limitation is disclosed; no novelty or formal-verification claim.
+  basis:
+    evidence:
+    - *id001
+    - path: group-orbit-bell-matrices/artifacts/classical-root-literature-20260907.md
+      kind: text
+      locator: L1 through L4
+    - path: group-orbit-bell-matrices/artifacts/classical-exploration-summary-20260907.md
+      kind: text
+      locator: STATE and NEXT
+    - path: group-orbit-bell-matrices/tools/check_root_classical_equality.py
+      kind: text
+    - path: group-orbit-bell-matrices/tools/check_root_classical_value.py
+      kind: text
+    reviews:
+    - path: group-orbit-bell-matrices/reviews/root-classical-review-20260907.md
+      kind: review
+      locator: F2
+      scope: Checked maximal-image equality, termwise sign recovery, the converse, zero-coordinate stabilizer,
+        and complete ordered-pair count.
+      reviewed_hash: sha256:d6fbde6d93fc9c2ba39009177571a2b05dd268f94b21da4250d82c8fdc13ba3a
+    runs:
+    - path: group-orbit-bell-matrices/artifacts/root-classical-equality-exact-check-20260907.txt
+      kind: run
+      result: Exact scoped replay and mathematical-review provenance; finite runs do not prove all-r claims
+        by themselves.
+    - path: group-orbit-bell-matrices/artifacts/root-classical-review-rerun-20260907.txt
+      kind: run
+      result: Exact scoped replay and mathematical-review provenance; finite runs do not prove all-r claims
+        by themselves.
+    routes:
+    - support-equality
+events:
+  registered-20260907:
+    date: '2026-09-07'
+    type: created
+    summary: Registered the classical equality-pattern theorem before relying on it.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/classical-family-registration-20260907.md
+      kind: text
+      locator: C5
+  route-reviewed-20260907:
+    date: '2026-09-07'
+    type: level-change
+    route: support-equality
+    from: OPEN
+    to: PROVED
+    summary: Exact-statement independent review passed; no automatic promotion from premise labels.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/root-classical-review-20260907.md
+      kind: review
+      locator: F2R
+  independent-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: OPEN
+    to: PROVED
+    summary: Registered claim received an author proof and a separately assigned exact-statement adversarial
+      review; only then promoted.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/root-classical-review-20260907.md
+      kind: review
+      locator: F2

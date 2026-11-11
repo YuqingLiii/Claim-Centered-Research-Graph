@@ -1,0 +1,156 @@
+id: GROTHORB.extremizer-classification
+role: outcome
+aliases:
+- ORBIT-ALL-EXTREMIZERS
+claim: For every nonzero transitive equivariant real Bell matrix A, all vector extremizers are classified
+  up to ambient orthogonal equivalence by the positive-semidefinite matrices H on its paired top singular
+  space satisfying diag(VHV^T)=1_n and diag(UHU^T)=(n/m)1_m; the minimum extremizing vector dimension
+  is the minimum rank of such an H.
+routes:
+  commutant-classification:
+    premises:
+    - GROTHORB.balanced-criterion
+    - GROTHORB.rch-reduction
+    implication: Equality in the spectral upper bound confines every extremizer to paired top singular
+      spaces; group averaging and real Schur theory then reduce invariant Gram weights to R/C/H multiplicity
+      variables, while row norms become explicit balance constraints.
+    proof:
+      sketch: Combine equality conditions for the norm bound with the isotypic commutant decomposition.
+        The current draft only sketches the necessity direction.
+      sources:
+      - path: group-orbit-bell-matrices/artifacts/balanced-rank-theorem-draft-20260829.md
+        kind: text
+        locator: GO-T2 and GO-T6
+    assessment:
+      level: REFUTED
+      summary: This implication is false for all extremizers. For A=I_3, feasible unit-diagonal correlation
+        matrices give noninvariant extremizers outside the S_3 commutant. The route remains useful only
+        after restricting its conclusion to invariant averaged weights.
+      basis:
+        counterexamples:
+        - path: group-orbit-bell-matrices/artifacts/complete-extremizer-classification-20260829.md
+          kind: counterexample
+          locator: GOC-T5
+    retired:
+      date: '2026-08-29'
+      sources:
+      - path: group-orbit-bell-matrices/artifacts/complete-extremizer-classification-20260829.md
+        kind: counterexample
+        locator: GOC-T5
+  spectrahedral-classification:
+    premises:
+    - GROTHORB.transitive-optimum
+    - GROTHORB.equality-characterization
+    implication: Transitive equivariance guarantees saturation of the spectral bound, so the general equality-condition
+      theorem parameterizes every extremizer and identifies the least possible vector dimension by minimum
+      feasible rank.
+    proof:
+      sketch: Apply the equality-condition theorem to the saturated transitive matrix; orthogonal Gram-factor
+        equivalence gives the stated quotient.
+      sources:
+      - path: group-orbit-bell-matrices/artifacts/complete-extremizer-classification-20260829.md
+        kind: text
+        locator: GOC-T3 and GOC-T4
+    assessment:
+      level: PROVED
+      summary: The implication and its current target assembly passed independent adversarial review.
+      basis:
+        evidence:
+        - path: group-orbit-bell-matrices/artifacts/complete-extremizer-classification-20260829.md
+          kind: text
+          locator: GOC-T2 through GOC-T5
+        reviews:
+        - path: group-orbit-bell-matrices/reviews/spectral-classification-repair-review-20260907.md
+          kind: review
+          locator: F3R
+          scope: Checked the implication against its current target, supporting premises and all relevant
+            boundary cases.
+          reviewed_hash: sha256:d82439273a03af85a1bbb295a4a27d5e45f493c3b1ec1f10c2caeb73035bf547
+assessment:
+  level: PROVED
+  summary: Complete scoped argument passed an independent fresh-context same-model-family adversarial
+    review. Full Gram equivalence, nonempty feasible weights and all repaired supporting statements. Correctness
+    does not assert novelty or formal verification.
+  basis:
+    routes:
+    - spectrahedral-classification
+    reviews:
+    - path: group-orbit-bell-matrices/reviews/spectral-classification-repair-review-20260907.md
+      kind: review
+      locator: F3
+      scope: Full Gram equivalence, nonempty feasible weights and all repaired supporting statements.
+      reviewed_hash: sha256:5cbc9e0d89f69f0929510b7592b1480185c5efcf320a3b619d3da4f41c5d02e3
+    evidence:
+    - path: group-orbit-bell-matrices/artifacts/group-orbit-literature-positioning-20260907.md
+      kind: text
+      locator: L1 through L6
+    - path: group-orbit-bell-matrices/artifacts/group-orbit-exploration-20260907.md
+      kind: text
+      locator: E1 through E4
+events:
+  authored-2026-08-29:
+    date: '2026-08-29'
+    type: created
+    summary: Split the full-extremizer question from the already available canonical extremizer theorem.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/balanced-rank-theorem-draft-20260829.md
+      kind: text
+      locator: GO-T6 and GO-T9
+  commutant-route-refuted-2026-08-29:
+    date: '2026-08-29'
+    type: route-refuted
+    route: commutant-classification
+    summary: The exact I_3/S_3 example gives an optimal noninvariant Gram weight, refuting the claim that
+      the R/C/H commutant describes all extremizers.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/complete-extremizer-classification-20260829.md
+      kind: counterexample
+      locator: GOC-T5
+  spectrahedral-route-added-2026-08-29:
+    date: '2026-08-29'
+    type: route-added
+    route: spectrahedral-classification
+    summary: Added the exact top-singular-space balance spectrahedron as the replacement route, including
+      a complete equality-condition and minimum-rank argument.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/complete-extremizer-classification-20260829.md
+      kind: text
+      locator: GOC-T1 through GOC-T4
+  classification-promoted-author-level-2026-08-29:
+    date: '2026-08-29'
+    type: level-change
+    from: OPEN
+    to: CONJECTURED
+    summary: Promoted from registered open problem to complete author-level argument; independent review
+      remains mandatory before any completion label.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/complete-extremizer-classification-20260829.md
+      kind: text
+      locator: GOC-T2 and GOC-T3
+  independent-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Promoted only after exact-statement independent review of the assembled scoped proof.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/spectral-classification-repair-review-20260907.md
+      kind: review
+      locator: F3
+  route-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    route: spectrahedral-classification
+    from: CONJECTURED
+    to: PROVED
+    summary: Independently reviewed route implication and supporting assembly.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/spectral-classification-repair-review-20260907.md
+      kind: review
+      locator: F3R
+frontier:
+  next-research-question:
+    task: Compare selected unique-correlation orbit families with existing solution-algebra and XOR self-testing
+      results, retaining parity and physical equivalence hypotheses.
+    kind: task
+    since: '2026-09-07'

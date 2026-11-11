@@ -1,0 +1,60 @@
+id: GROTHORB.wreath
+role: outcome
+aliases:
+- ORBIT-WREATH
+claim: >-
+  Any Bell matrix equivariant under transitive natural row and column actions of G wreath S_k
+  satisfies the transitive optimum theorem; in the tensor case A_k = A tensor k, its top
+  singular value and canonical extremizer factor as k-fold tensor powers.
+routes:
+  transitive-corollary:
+    premises:
+    - GROTHORB.transitive-optimum
+    implication: >-
+      The wreath-product statement is an immediate specialization once its natural actions
+      are transitive and equivariance is checked; tensor singular values and paired top
+      spaces multiply under Kronecker products.
+    proof:
+      sketch: Verify the hypotheses of the transitive theorem and apply standard singular-value tensor identities.
+      sources:
+      - path: group-orbit-bell-matrices/artifacts/balanced-rank-theorem-draft-20260829.md
+        kind: text
+        locator: GO-T8
+    assessment:
+      level: CONJECTURED
+      summary: >-
+        The scoped corollary is complete at author level; the broader orbit-algebra
+        classification mentioned in the draft is expressly excluded from this claim.
+      basis:
+        evidence:
+        - path: group-orbit-bell-matrices/artifacts/balanced-rank-theorem-draft-20260829.md
+          kind: text
+          locator: GO-T8
+assessment:
+  level: CONJECTURED
+  summary: >-
+    The transitive and tensor-product corollary is written but not independently reviewed.
+    Arbitrary wreath-orbit extremizer classification remains open under the separate
+    classification root.
+  basis:
+    routes:
+    - transitive-corollary
+frontier:
+  task-001:
+    task: State the exact natural actions and verify transitivity/equivariance for each intended wreath family.
+    kind: task
+    since: '2026-08-29'
+  task-002:
+    task: Independently review the tensor singular-space and normalization argument.
+    kind: review
+    since: '2026-08-29'
+events:
+  authored-2026-08-29:
+    date: '2026-08-29'
+    type: created
+    summary: Scoped the wreath-product result to a clean theorem while keeping the broader classification open.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/balanced-rank-theorem-draft-20260829.md
+      kind: text
+      locator: GO-T8
+

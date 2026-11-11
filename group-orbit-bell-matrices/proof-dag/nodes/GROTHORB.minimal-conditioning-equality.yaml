@@ -1,0 +1,61 @@
+id: GROTHORB.minimal-conditioning-equality
+role: proof
+claim: >-
+  Let r>=2 and m>=n>=1 be integers. Let a_i,b_j be unit vectors in R^r
+  with positive weights u_i,v_j such that each weighted second moment is I_r,
+  m+n=r(r+1)/2+1, and the combined map H -> ((a_i^T H a_i)_i,
+  (b_j^T H b_j)_j) is injective on Sym_r. On traceless Sym_r put
+  f_i=a_i a_i^T-I_r/r, g_j=b_j b_j^T-I_r/r, F_A=sum_i u_i |f_i><f_i|,
+  F_B=sum_j v_j |g_j><g_j|, and c=(r-1)/(m-1), with the Frobenius inner
+  product defining these operators. Then lambda_min(F_A+F_B)=c if and
+  only if all u_i=r/m, all distinct Alice pairs satisfy
+  (a_i^T a_k)^2=(m-r)/(r(m-1)), every cross pair satisfies
+  (a_i^T b_j)^2=1/r, and the restriction of F_B to span{g_j} has
+  smallest eigenvalue at least c.
+assessment:
+  level: PROVED
+  summary: Both directions and every supporting rank, trace, support, and Gram-kernel step passed author-independent same-model shared-context review. Neither frame existence in every dimension nor originality is established.
+  basis:
+    evidence:
+    - path: group-orbit-bell-matrices/artifacts/minimal-conditioning-equality-literature-20260907.md
+      kind: text
+      locator: EL-1 through EL-7
+    - path: group-orbit-bell-matrices/artifacts/minimal-conditioning-equality-20260907.md
+      kind: text
+      locator: CE-1 through CE-7
+    - path: group-orbit-bell-matrices/artifacts/classical-exploration-summary-20260907.md
+      kind: text
+      locator: NEXT
+    reviews:
+    - path: group-orbit-bell-matrices/reviews/minimal-conditioning-equality-review-20260907.md
+      kind: review
+      locator: F1
+      scope: Checked the exact iff, including all prerequisites, necessity of support orthogonality, Gram-kernel recovery of equal weights, sufficiency, m=n and r=2; no existence or novelty claim reviewed.
+      reviewed_hash: sha256:1808e5956926e46c72702359a6273694b3c8bfbbc3389693fd67ce358b6660e1
+events:
+  bounded-literature-comparison-20260907:
+    date: '2026-09-07'
+    type: review-completed
+    summary: Compared four primary sources on ETF, MUETF, unbiased frames and grouped projective designs; standard structural ingredients have clear predecessors, while bounded non-retrieval of the complete asymmetric iff is not an originality certificate.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/minimal-conditioning-equality-literature-20260907.md
+      kind: text
+      locator: EL-3 through EL-7
+  registered-20260907:
+    date: '2026-09-07'
+    type: created
+    summary: Registered exact attainment criteria before author assignment or dimension-specific testing.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/classical-family-registration-20260907.md
+      kind: text
+      locator: C14
+  independent-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: OPEN
+    to: PROVED
+    summary: Promoted the unchanged self-contained claim only after a separate author-independent exact-statement adversarial review; shared-context limitations remain explicit.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/minimal-conditioning-equality-review-20260907.md
+      kind: review
+      locator: F1

@@ -1,0 +1,21 @@
+command: python3 grothendieck-group-orbit/tools/check_clifford_generators.py
+date: 2026-08-29
+arithmetic: exact Gaussian-integer matrix equality; no numerical tolerance
+exit_status: 0
+
+s=1 D=1 all_exact_identities=PASS test_norm_sq=1
+s=2 D=2 all_exact_identities=PASS test_norm_sq=5
+s=3 D=2 all_exact_identities=PASS test_norm_sq=14
+s=4 D=4 all_exact_identities=PASS test_norm_sq=30
+s=5 D=4 all_exact_identities=PASS test_norm_sq=55
+s=6 D=8 all_exact_identities=PASS test_norm_sq=91
+s=7 D=8 all_exact_identities=PASS test_norm_sq=140
+s=8 D=16 all_exact_identities=PASS test_norm_sq=204
+s=9 D=16 all_exact_identities=PASS test_norm_sq=285
+
+Scope: checks the stated tensor order, Hermiticity of Alice and transposed Bob
+generators, involution identities, all pairwise anticommutators, normalized
+trace orthogonality, and Gamma(v)^2 for a nontrivial integer vector in each
+rank s=1,...,9.  This is exact corroboration of the general algebraic proof,
+not an independent review and not a proof for untested s.
+

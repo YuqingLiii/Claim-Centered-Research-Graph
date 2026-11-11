@@ -1,0 +1,58 @@
+id: GROTHORB.equality-characterization
+role: proof
+aliases:
+- ORBIT-EQUALITY-CLASSIFICATION
+claim: Let A be a nonzero real m by n matrix with top singular value sigma of multiplicity r and paired
+  top singular bases U,V. A unit-row vector strategy X,Y attains sigma sqrt(mn) if and only if, for some
+  T, one has Y=VT, X=sqrt(m/n)UT, and H=TT^T is positive semidefinite with diag(VHV^T)=1_n and diag(UHU^T)=(n/m)1_m.
+  Whenever such strategies exist, the minimum real vector dimension among them is the minimum rank of
+  a feasible H.
+assessment:
+  level: PROVED
+  summary: Complete scoped argument passed an independent fresh-context same-model-family adversarial
+    review. Both equality conditions, empty feasible sets and qualified minimum dimension, after scope
+    repair. Correctness does not assert novelty or formal verification.
+  basis:
+    evidence:
+    - path: group-orbit-bell-matrices/artifacts/complete-extremizer-classification-20260829.md
+      kind: text
+      locator: GOC-T1 through GOC-T3
+    - path: group-orbit-bell-matrices/artifacts/spectral-classification-scope-repair-20260907.md
+      kind: text
+      locator: SC1 and SC2
+    reviews:
+    - path: group-orbit-bell-matrices/reviews/spectral-classification-repair-review-20260907.md
+      kind: review
+      locator: F1
+      scope: Both equality conditions, empty feasible sets and qualified minimum dimension, after scope
+        repair.
+      reviewed_hash: sha256:57801178adf2f68edec4a8eeb6fb5fe319462b63eb7d2addbe98028ec314143c
+events:
+  authored-2026-08-29:
+    date: '2026-08-29'
+    type: created
+    summary: Replaced the attempted commutant-only classification with an exact spectrahedral characterization
+      of every spectral-bound extremizer.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/complete-extremizer-classification-20260829.md
+      kind: text
+      locator: GOC-T2 and GOC-T3
+  nonempty-minimum-repaired-20260907:
+    date: '2026-09-07'
+    type: repair-applied
+    summary: Made the nonempty feasibility condition explicit for the minimum-dimension clause. The unrestricted
+      if-and-only-if saturation criterion is unchanged.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/spectral-classification-review-20260907.md
+      kind: review
+      locator: F4
+  independent-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Promoted only after exact-statement independent review of the assembled scoped proof.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/spectral-classification-repair-review-20260907.md
+      kind: review
+      locator: F1

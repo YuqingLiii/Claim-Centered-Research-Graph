@@ -1,0 +1,59 @@
+id: GROTHORB.antipodal-shift-comparison
+role: proof
+claim: For every real m by m matrix C and lambda>=0, set D(C)=(1/2)[C,-C;-C,C]. Then beta_cl(D(C)-lambda I_(2m))/2
+  equals the maximum over z in {-1,0,1}^m of sum_{i:z_i!=0}|(Cz)_i-lambda*z_i|+ sum_{i:z_i=0}max(|(Cz)_i|,lambda).
+  In particular beta_cl(D(C)-lambda I_(2m))>=2*beta_cl(C-lambda I_m), with equality when lambda=0.
+assessment:
+  level: PROVED
+  summary: Complete scoped argument and dependencies passed a separate author-independent same-model review.
+    Non-fresh-context limitation is disclosed; no novelty or formal-verification claim.
+  basis:
+    evidence:
+    - path: group-orbit-bell-matrices/artifacts/antipodal-shift-comparison-20260907.md
+      kind: text
+      locator: AD-1 through AD-4
+    - path: group-orbit-bell-matrices/artifacts/classical-root-literature-20260907.md
+      kind: text
+      locator: L1 through L4
+    - path: group-orbit-bell-matrices/artifacts/classical-exploration-summary-20260907.md
+      kind: text
+      locator: STATE and NEXT
+    reviews:
+    - path: group-orbit-bell-matrices/reviews/antipodal-half-shift-review-20260907.md
+      kind: review
+      locator: F1
+      scope: Checked the coordinatewise sign/ternary correspondence for arbitrary real C, the row identity,
+        restriction lower bound and zero-shift convexity.
+      reviewed_hash: sha256:35ebd90ccd09ddcd28a125ed777c2e4dd11a76a66c27e1b144536cc0c4fce49b
+    runs:
+    - path: group-orbit-bell-matrices/artifacts/antipodal-half-shift-review-rerun-20260907.txt
+      kind: run
+      result: Exact scoped replay and mathematical-review provenance; finite runs do not prove all-r claims
+        by themselves.
+events:
+  registered-20260907:
+    date: '2026-09-07'
+    type: created
+    summary: Registered a general comparison theorem before further tests or downstream reliance; blueprint
+      arose during normalization checks.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/classical-family-registration-20260907.md
+      kind: text
+      locator: C8
+  independent-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: OPEN
+    to: PROVED
+    summary: Registered claim received an author proof and a separately assigned exact-statement adversarial
+      review; only then promoted.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/antipodal-half-shift-review-20260907.md
+      kind: review
+      locator: F1
+frontier:
+  zero-elimination-criterion:
+    task: Find checkable sufficient conditions for the ternary shifted optimum to admit a no-zero maximizer,
+      and distinguish them from mere unshifted PSD arguments.
+    kind: task
+    since: '2026-09-07'

@@ -1,0 +1,72 @@
+id: GROTHORB.weighted-isotropic-optimum
+role: proof
+claim: Let r,m,n be positive integers, a_1,...,a_m and b_1,...,b_n unit vectors in R^r, and u_i,v_j positive
+  real weights. Write S=sum_i u_i and T=sum_j v_j. If sum_i u_i a_i a_i^T=(S/r)I_r and sum_j v_j b_j b_j^T=(T/r)I_r,
+  then the real vector Bell optimum of M_ij=u_i v_j (a_i dot b_j) is S*T/r, attained by the strategy x_i=a_i,y_j=b_j.
+assessment:
+  level: PROVED
+  summary: Complete scoped argument and dependencies passed a separate author-independent same-model review.
+    Non-fresh-context limitation is disclosed; no novelty or formal-verification claim. Prior-art comparison
+    identifies this as a standard consequence or a known construction, not an original result.
+  basis:
+    evidence:
+    - path: group-orbit-bell-matrices/artifacts/weighted-isotropic-optimum-20260907.md
+      kind: text
+      locator: WI-1 through WI-5
+    - path: group-orbit-bell-matrices/artifacts/classical-root-literature-20260907.md
+      kind: text
+      locator: L1 through L4
+    - path: group-orbit-bell-matrices/artifacts/classical-exploration-summary-20260907.md
+      kind: text
+      locator: STATE and NEXT
+    - path: group-orbit-bell-matrices/tools/check_weighted_isotropic_optimum.py
+      kind: text
+    - path: group-orbit-bell-matrices/artifacts/weighted-orbit-literature-20260907.md
+      kind: text
+    - path: group-orbit-bell-matrices/artifacts/weighted-orbit-literature-correction-20260907.md
+      kind: text
+    reviews:
+    - path: group-orbit-bell-matrices/reviews/weighted-isotropic-review-20260907.md
+      kind: review
+      locator: F1
+      scope: Checked arbitrary strategy dimension, square-root weight factors, rectangular and scalar cases,
+        matching value and the PSD upper certificate.
+      reviewed_hash: sha256:efc68dff78220733c250b60537c17019339c6229129c7cd7235e033a06f83490
+    runs:
+    - path: group-orbit-bell-matrices/artifacts/weighted-isotropic-exact-check-20260907.txt
+      kind: run
+      result: Exact scoped replay and mathematical-review provenance; finite runs do not prove all-r claims
+        by themselves.
+    - path: group-orbit-bell-matrices/artifacts/weighted-isotropic-review-rerun-20260907.txt
+      kind: run
+      result: Exact scoped replay and mathematical-review provenance; finite runs do not prove all-r claims
+        by themselves.
+events:
+  registered-20260907:
+    date: '2026-09-07'
+    type: created
+    summary: Registered a next-round multi-orbit weighted optimum theorem before proof and testing.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/classical-family-registration-20260907.md
+      kind: text
+      locator: C11
+  dimension-domain-clarified-20260907:
+    date: '2026-09-07'
+    type: repair-applied
+    summary: Explicitly wrote the positive integer dimension and nonempty finite side domains before review;
+      no mathematical generalization or test-based narrowing.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/classical-family-registration-20260907.md
+      kind: text
+      locator: C11
+  independent-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: OPEN
+    to: PROVED
+    summary: Registered claim received an author proof and a separately assigned exact-statement adversarial
+      review; only then promoted.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/weighted-isotropic-review-20260907.md
+      kind: review
+      locator: F1

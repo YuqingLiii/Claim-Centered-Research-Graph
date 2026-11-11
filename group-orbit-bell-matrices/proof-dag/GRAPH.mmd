@@ -1,0 +1,86 @@
+%% GROUP-ORBIT-BELL-MATRICES proof hypergraph (generated)
+flowchart BT
+  n0["GROTHORB.antipodal-shift-comparison\nPROVED"]
+  n1["GROTHORB.balance-rigidity\nPROVED"]
+  n2["GROTHORB.balanced-criterion\nPROVED"]
+  n3["GROTHORB.counterexample\nPROVED"]
+  n4["GROTHORB.d3-envelope-method\nPROVED"]
+  n5["GROTHORB.d3-half-shift-value\nPROVED"]
+  n6["GROTHORB.d3-shift-envelope\nPROVED"]
+  n7["GROTHORB.equality-characterization\nPROVED"]
+  n8["GROTHORB.extremizer-classification\nPROVED"]
+  n9["GROTHORB.invariant-projector\nPROVED"]
+  n10["GROTHORB.measurements\nPROVED"]
+  n11["GROTHORB.minimal-conditioning-equality\nPROVED"]
+  n12["GROTHORB.minimal-setting-conditioning\nPROVED"]
+  n13["GROTHORB.minimum-settings-isotropic\nPROVED"]
+  n14["GROTHORB.near-saturation\nPROVED"]
+  n15["GROTHORB.noninvariant-extremizer\nPROVED"]
+  n16["GROTHORB.psd-antipodal-interior-equality\nPROVED"]
+  n17["GROTHORB.psd-antipodal-linear-window\nPROVED"]
+  n18["GROTHORB.rch-reduction\nPROVED"]
+  n19["GROTHORB.robust-dimension-gap\nPROVED"]
+  n20["GROTHORB.root-classical\nPROVED"]
+  n21["GROTHORB.root-classical-equality\nPROVED"]
+  n22["GROTHORB.root-extended-shift-window\nPROVED"]
+  n23["GROTHORB.root-frame-dimension\nPROVED"]
+  n24["GROTHORB.root-shift-window-maximality\nPROVED"]
+  n25["GROTHORB.root-small-shift\nPROVED"]
+  n26["GROTHORB.shift-duplication-gap\nPROVED"]
+  n27["GROTHORB.shift-linear-candidate\nREFUTED"]
+  n28["GROTHORB.spectral-upper\nPROVED"]
+  n29["GROTHORB.transitive-optimum\nPROVED"]
+  n30["GROTHORB.weighted-isotropic-optimum\nPROVED"]
+  n31["GROTHORB.wreath\nCONJECTURED"]
+  r1(("balance-kernel\nPROVED"))
+  n8 --> r1
+  r1 --> n1
+  r2(("exact-envelope\nPROVED"))
+  n4 --> r2
+  r2 --> n6
+  r3(("commutant-classification\nRETIRED (REFUTED)"))
+  n2 -.-> r3
+  n18 -.-> r3
+  r3 -.-> n8
+  r4(("spectrahedral-classification\nPROVED"))
+  n29 --> r4
+  n7 --> r4
+  r4 --> n8
+  r5(("clifford-realization\nPROVED"))
+  n8 --> r5
+  r5 --> n10
+  r6(("strict-gap-coefficients\nPROVED"))
+  n17 --> r6
+  r6 --> n16
+  r7(("support-equality\nPROVED"))
+  n20 --> r7
+  r7 --> n21
+  r8(("psd-duplication-window\nPROVED"))
+  n17 --> r8
+  n20 --> r8
+  r8 --> n22
+  r9(("root-frame-rigidity\nPROVED"))
+  n1 --> r9
+  n29 --> r9
+  r9 --> n23
+  r10(("height-one-competitor\nPROVED"))
+  n22 --> r10
+  r10 --> n24
+  r11(("discrete-gap\nPROVED"))
+  n20 --> r11
+  n21 --> r11
+  r11 --> n25
+  r12(("exact-comparison\nPROVED"))
+  n6 --> r12
+  n5 --> r12
+  r12 --> n26
+  r13(("balanced-top-space\nPROVED"))
+  n28 --> r13
+  n2 --> r13
+  n9 --> r13
+  r13 --> n29
+  r14(("transitive-corollary\nCONJECTURED"))
+  n29 --> r14
+  r14 --> n31
+  classDef retiredRoute fill:#f2f2f2,stroke:#777,stroke-dasharray:5 5,color:#666
+  class r3 retiredRoute

@@ -1,0 +1,43 @@
+Independent reviewer replay for GROTHORB.weighted-isotropic-optimum.
+Date: 2026-09-07.
+Reviewer: Codex agent /root/orbit_root_prior_art.
+Working root: /private/tmp/grothorb-classical-20260907-R0Shtu.
+Runtime: Python 3.9.6, Clang 21.0.0.
+Python optimize flag: 0; assertions enabled: True.
+The mathematical checker imports fractions only and uses exact arithmetic.
+PyYAML 6.0.3 was used separately to parse the claim for hashing.
+
+RUN WI-R1
+Command:
+python3 grothendieck-group-orbit/tools/check_weighted_isotropic_optimum.py
+Exit code: 0.
+Standard output:
+scalar: r=1, m=2, n=3, S=3, T=6; unit frames, positive weights and isotropy exact; PASS
+scalar: matching value=diagonal upper certificate=18; PASS
+scalar: exact PSD elimination pivots=12,6,11/8,36/11,0; PASS
+rectangular: r=2, m=3, n=4, S=4, T=6; unit frames, positive weights and isotropy exact; PASS
+rectangular: matching value=diagonal upper certificate=12; PASS
+rectangular: exact PSD elimination pivots=21/8,75/16,75/16,4/3,4/3,0,0; PASS
+Scope: two exact finite examples; the all-frame theorem is proved in WI-2--WI-3.
+
+Scope of this run: the two declared examples, including the stated
+nonuniform rational weights, rectangular setting counts, matching value,
+and exact PSD upper certificate. This finite replay does not prove the
+universal theorem by extrapolation. The universal argument was reviewed
+separately in weighted-isotropic-review-20260907.md, F1.
+
+Frozen input SHA-256:
+615926411bcc94dff2297ad72e7bdb1043365b0f23fa7f8b36e8ebb9484c310c  grothendieck-group-orbit/proof-dag/nodes/GROTHORB.weighted-isotropic-optimum.yaml
+3a727e8513dd2dba75464bca7c7fac3507673e65e31d927598d30cd5f7e0bb9a  grothendieck-group-orbit/artifacts/weighted-isotropic-optimum-20260907.md
+df6837dc09a88dfe4287eecb234635fa04f6beeaa41474b0b0f94fcdb8b3aa24  grothendieck-group-orbit/tools/check_weighted_isotropic_optimum.py
+2fb48e403e0f54b646647965fd446f6ebb5380a47e9354a545386eba8e9b8775  grothendieck-group-orbit/artifacts/weighted-isotropic-exact-check-20260907.txt
+
+Exact reviewed claim after yaml.safe_load and claim.strip():
+Let r,m,n be positive integers, a_1,...,a_m and b_1,...,b_n unit vectors in R^r, and u_i,v_j positive real weights. Write S=sum_i u_i and T=sum_j v_j. If sum_i u_i a_i a_i^T=(S/r)I_r and sum_j v_j b_j b_j^T=(T/r)I_r, then the real vector Bell optimum of M_ij=u_i v_j (a_i dot b_j) is S*T/r, attained by the strategy x_i=a_i,y_j=b_j.
+
+reviewed_hash: sha256:efc68dff78220733c250b60537c17019339c6229129c7cd7235e033a06f83490
+Hash convention: hashlib.sha256(claim.strip().encode('utf-8')).hexdigest()
+applied to the string parsed from the exact current YAML, not to the file.
+
+No author artifact or node was modified during review. The report
+documents author/reviewer separation and same-context limitations.

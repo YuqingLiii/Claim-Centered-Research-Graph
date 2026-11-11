@@ -1,0 +1,92 @@
+id: GROTHORB.psd-antipodal-interior-equality
+role: proof
+claim: Let C be a real symmetric PSD N by N matrix with N>=1 and d_min=min_i C_ii>0, and put D(C)=(1/2)[C,-C;-C,C].
+  For every 0<lambda<d_min/2, the ordered sign pairs (a,b) attaining beta_cl(D(C)-lambda I_{2N}) are exactly
+  a=b=(z,-z), where z in {+1,-1}^N maximizes z^T C z.
+routes:
+  strict-gap-coefficients:
+    premises:
+    - GROTHORB.psd-antipodal-linear-window
+    implication: Use the established optimum value and reconstruct the full nonnegative gap identity for arbitrary
+      ordered signs. Strictly positive coefficients C_ii-2lambda force every averaged antisymmetric coordinate
+      to have square one at equality; recover the full signs and check equivalence to maximizing z^T C z.
+    assessment:
+      level: PROVED
+      summary: The exact implication and every load-bearing input passed author-independent review.
+      basis:
+        reviews:
+        - path: group-orbit-bell-matrices/reviews/window-maximality-equality-review-20260907.md
+          kind: review
+          locator: F4
+          reviewed_hash: sha256:efc78d327385e5bb26284efe100120667da70dc7b22540909eda65ce96e8669a
+          scope: Checked the exact implication separately from its parent and premise, including the explicit
+            all-r competitor or full gap reconstruction and recovery of literal ordered signs.
+    proof:
+      sketch: The complete argument is in the linked frozen author proof.
+      sources:
+      - &id001
+        path: group-orbit-bell-matrices/artifacts/psd-antipodal-interior-equality-20260907.md
+        kind: text
+        locator: IE-1 through IE-8
+assessment:
+  level: PROVED
+  summary: The unchanged claim passed author-independent same-model shared-context review; finite exact checks
+    are supplementary rather than the universal proof.
+  basis:
+    routes:
+    - strict-gap-coefficients
+    evidence:
+    - *id001
+    - path: group-orbit-bell-matrices/tools/check_window_followups.py
+      kind: text
+    runs:
+    - path: group-orbit-bell-matrices/artifacts/window-followups-exact-check-20260907.txt
+      kind: run
+      result: Exhaustive exact checks recover the claimed optimizer set for eight Gram inputs of size N<=3 at one strict-interior parameter; this is not the arbitrary-C proof.
+    - path: group-orbit-bell-matrices/artifacts/window-maximality-equality-review-rerun-20260907.txt
+      kind: run
+      result: Reviewer reproduced the finite optimizer checks and audited their limited scope; the universal conclusion relies on the reviewed analytic proof.
+    reviews:
+    - path: group-orbit-bell-matrices/reviews/window-maximality-equality-review-20260907.md
+      kind: review
+      locator: F3
+      reviewed_hash: sha256:746e10d42ef48a0bfe93d2cb1d504271c4778806a582dc5ca3d18949e9e5a97d
+      scope: Checked the full assembled proof, exact sign domains, all quantified parameters, boundary cases
+        and finite-check scope; no novelty or unregistered extension reviewed.
+frontier:
+  upper-endpoint:
+    task: Register the upper-endpoint optimizer classification separately from this strict-interior theorem
+      and zero-diagonal cases.
+    kind: task
+    since: '2026-09-07'
+events:
+  registered-20260907:
+    date: '2026-09-07'
+    type: created
+    summary: Registered as a distinct claim before author assignment, independent checking, or computational
+      tests; no endpoint classification asserted.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/window-next-registration-20260907.md
+      kind: text
+      locator: C18
+  independent-route-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    route: strict-gap-coefficients
+    from: OPEN
+    to: PROVED
+    summary: Promoted the exact frozen implication after separate author-independent review.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/window-maximality-equality-review-20260907.md
+      kind: review
+      locator: F4
+  independent-claim-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: OPEN
+    to: PROVED
+    summary: Promoted the unchanged registered claim after author-independent review; no novelty conclusion.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/window-maximality-equality-review-20260907.md
+      kind: review
+      locator: F3

@@ -1,0 +1,95 @@
+id: GROTHORB.root-shift-window-maximality
+role: proof
+claim: For every integer r>=3, let W have as its rows all vectors epsilon e_i+eta e_j with 1<=i<j<=r and epsilon,eta
+  in {+1,-1}, let n=2r(r-1), and put A_r=WW^T/[4(r-1)]. Among lambda>=0, beta_cl(A_r-lambda I_n)=2r(2r-1)/3-n
+  lambda holds if and only if lambda<=1/[2(r-1)]. In particular, for every lambda>1/[2(r-1)] there is an explicit
+  ordered sign pair scoring 2r(2r-1)/3-n lambda+4lambda-2/(r-1), strictly above that affine value.
+routes:
+  height-one-competitor:
+    premises:
+    - GROTHORB.root-extended-shift-window
+    implication: The registered sufficient-window theorem proves equality up to the endpoint. In the positive-root
+      order U, with C=UU^T/[2(r-1)] and W=[U;-U], construct a sign pair whose ternary coordinates agree with
+      the all-positive pattern except at one height-one root, where both antisymmetric coordinates vanish and
+      the symmetric signs are opposite. Direct evaluation must establish the claimed competing affine score
+      and its strict improvement beyond the endpoint.
+    assessment:
+      level: PROVED
+      summary: The exact implication and every load-bearing input passed author-independent review.
+      basis:
+        reviews:
+        - path: group-orbit-bell-matrices/reviews/window-maximality-equality-review-20260907.md
+          kind: review
+          locator: F2
+          reviewed_hash: sha256:b4042573a3c4cdb6b54b193e6b6a3b836098bce248af12275b22d71e5dca37bd
+          scope: Checked the exact implication separately from its parent and premise, including the explicit
+            all-r competitor or full gap reconstruction and recovery of literal ordered signs.
+    proof:
+      sketch: The complete argument is in the linked frozen author proof.
+      sources:
+      - &id001
+        path: group-orbit-bell-matrices/artifacts/root-shift-window-maximality-20260907.md
+        kind: text
+        locator: WM-1 through WM-6
+assessment:
+  level: PROVED
+  summary: The unchanged claim passed author-independent same-model shared-context review; finite exact checks
+    are supplementary rather than the universal proof.
+  basis:
+    routes:
+    - height-one-competitor
+    evidence:
+    - *id001
+    - path: group-orbit-bell-matrices/tools/check_window_followups.py
+      kind: text
+    runs:
+    - path: group-orbit-bell-matrices/artifacts/window-followups-exact-check-20260907.txt
+      kind: run
+      result: Exact rational checks confirm the proposed competitor for r=3 through 12; this finite run does not prove the all-r claim.
+    - path: group-orbit-bell-matrices/artifacts/window-maximality-equality-review-rerun-20260907.txt
+      kind: run
+      result: Reviewer reproduced the same finite checks and audited their limited scope; the universal conclusion relies on the reviewed analytic proof.
+    reviews:
+    - path: group-orbit-bell-matrices/reviews/window-maximality-equality-review-20260907.md
+      kind: review
+      locator: F1
+      reviewed_hash: sha256:4a217aec965420ef7e2a71b13ee1170bcd9c9bbfa966f976c87b77e036d099ee
+      scope: Checked the full assembled proof, exact sign domains, all quantified parameters, boundary cases
+        and finite-check scope; no novelty or unregistered extension reviewed.
+frontier:
+  outside-envelope:
+    task: Register a scoped post-window envelope claim before testing; the reviewed theorem supplies a strict
+      competitor, not the full outside optimum.
+    kind: task
+    since: '2026-09-07'
+events:
+  registered-20260907:
+    date: '2026-09-07'
+    type: created
+    summary: Registered after exploratory algebra but before author assignment, independent checking, or computational
+      tests.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/window-next-registration-20260907.md
+      kind: text
+      locator: C17
+  independent-route-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    route: height-one-competitor
+    from: OPEN
+    to: PROVED
+    summary: Promoted the exact frozen implication after separate author-independent review.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/window-maximality-equality-review-20260907.md
+      kind: review
+      locator: F2
+  independent-claim-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: OPEN
+    to: PROVED
+    summary: Promoted the unchanged registered claim after author-independent review; no novelty conclusion.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/window-maximality-equality-review-20260907.md
+      kind: review
+      locator: F1

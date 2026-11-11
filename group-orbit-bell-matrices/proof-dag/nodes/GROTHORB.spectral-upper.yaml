@@ -1,0 +1,41 @@
+id: GROTHORB.spectral-upper
+role: proof
+aliases:
+- ORBIT-SPECTRAL-UB
+claim: For every real m by n matrix A, its unrestricted real-vector Bell value satisfies beta_vec(A) <=
+  sqrt(mn) times the operator norm of A.
+assessment:
+  level: PROVED
+  summary: Complete scoped argument passed an independent fresh-context same-model-family adversarial
+    review. Trace normalization, Frobenius inequalities, arbitrary dimensions and zero matrix. Correctness
+    does not assert novelty or formal verification.
+  basis:
+    evidence:
+    - path: group-orbit-bell-matrices/artifacts/balanced-rank-theorem-draft-20260829.md
+      kind: text
+      locator: GO-T1
+    reviews:
+    - path: group-orbit-bell-matrices/reviews/spectral-classification-review-20260907.md
+      kind: review
+      locator: F1
+      scope: Trace normalization, Frobenius inequalities, arbitrary dimensions and zero matrix.
+      reviewed_hash: sha256:5eb3c78d20d4431b223f760c4edbe64239e63fc50894feb6e0ec20a8e98adea1
+events:
+  authored-2026-08-29:
+    date: '2026-08-29'
+    type: created
+    summary: Wrote the universal spectral upper bound as an independently auditable claim.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/balanced-rank-theorem-draft-20260829.md
+      kind: text
+      locator: GO-T1
+  independent-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Promoted only after exact-statement independent review of the assembled scoped proof.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/spectral-classification-review-20260907.md
+      kind: review
+      locator: F1

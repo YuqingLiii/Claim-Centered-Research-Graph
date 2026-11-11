@@ -1,0 +1,41 @@
+id: GROTHORB.counterexample
+role: obstruction
+aliases:
+- ORBIT-IMBALANCE
+claim: For A = diag(2,1), beta_vec(A) = 3 while sqrt(4) times the operator norm of A equals 4; therefore
+  invariance without transitivity or top-space balance need not saturate the spectral bound.
+assessment:
+  level: PROVED
+  summary: Complete scoped argument passed an independent fresh-context same-model-family adversarial
+    review. Exact value three versus spectral bound four; existential obstruction only. Correctness does
+    not assert novelty or formal verification.
+  basis:
+    evidence:
+    - path: group-orbit-bell-matrices/artifacts/balanced-rank-theorem-draft-20260829.md
+      kind: text
+      locator: GO-T5
+    reviews:
+    - path: group-orbit-bell-matrices/reviews/spectral-classification-review-20260907.md
+      kind: review
+      locator: F7
+      scope: Exact value three versus spectral bound four; existential obstruction only.
+      reviewed_hash: sha256:476117bcd924f0401966beadaab247fb8a83d20d90d8c33e4c946a141c61aa9f
+events:
+  authored-2026-08-29:
+    date: '2026-08-29'
+    type: created
+    summary: Added a minimal counterexample delimiting the transitivity hypothesis.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/balanced-rank-theorem-draft-20260829.md
+      kind: text
+      locator: GO-T5
+  independent-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Promoted only after exact-statement independent review of the assembled scoped proof.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/spectral-classification-review-20260907.md
+      kind: review
+      locator: F7

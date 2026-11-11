@@ -1,0 +1,53 @@
+id: GROTHORB.psd-antipodal-linear-window
+role: proof
+claim: Let C be a real symmetric PSD N by N matrix with N>=1, let D(C)=(1/2)[C,-C;-C,C], and define beta_cl(M)=max_{s,t
+  in {+1,-1}^k} s^T M t for real square k by k matrices. For every 0<=lambda<=(1/2)min_i C_ii, beta_cl(D(C)-lambda
+  I_{2N})=2 beta_cl(C)-2N lambda.
+assessment:
+  level: PROVED
+  summary: Complete scoped proof passed author-independent same-model shared-context adversarial review. This
+    is a sufficient interval, not a maximality or novelty certificate.
+  basis:
+    evidence:
+    - path: group-orbit-bell-matrices/artifacts/psd-antipodal-linear-window-20260907.md
+      kind: text
+      locator: PW-1 through PW-6
+    - path: group-orbit-bell-matrices/artifacts/psd-antipodal-window-literature-20260907.md
+      kind: text
+    - path: group-orbit-bell-matrices/artifacts/classical-exploration-summary-20260907.md
+      kind: text
+      locator: NEXT
+    reviews:
+    - path: group-orbit-bell-matrices/reviews/psd-antipodal-window-review-20260907.md
+      kind: review
+      locator: F1
+      reviewed_hash: sha256:98c4958c91dace11088aaff1ecc7b590bb982f84cc5d26c027bc8a2603beda38
+      scope: Checked the unchanged full claim and every supporting input, including all signs, exact factors,
+        PSD degeneracies and both interval endpoints; no maximality or novelty conclusion.
+frontier:
+  window-equality:
+    task: The strict-interior classification is reviewed in GROTHORB.psd-antipodal-interior-equality. Register
+      upper-endpoint and zero-diagonal equality cases separately.
+    kind: task
+    since: '2026-09-07'
+events:
+  registered-20260907:
+    date: '2026-09-07'
+    type: created
+    summary: Registered a general PSD duplication window suggested by exploratory algebra; unlike the earlier
+      failed whole-interval root extrapolation, the parameter range is tied to the half-matrix diagonal.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/classical-family-registration-20260907.md
+      kind: text
+      locator: C15
+  independent-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: OPEN
+    to: PROVED
+    summary: Promoted the unchanged registered statement only after independent verification of its assembled
+      argument.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/psd-antipodal-window-review-20260907.md
+      kind: review
+      locator: F1

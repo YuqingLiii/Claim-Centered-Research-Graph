@@ -1,0 +1,98 @@
+id: GROTHORB.d3-shift-envelope
+role: proof
+claim: For the 12 by 12 full D_3 root projection A_3=WW^T/8, beta_cl(A_3-lambda I)=10-12*lambda for 0<=lambda<=1/4,
+  and beta_cl(A_3-lambda I)=8-4*lambda for 1/4<=lambda<=1/2.
+routes:
+  exact-envelope:
+    premises:
+    - GROTHORB.d3-envelope-method
+    implication: Exhausting all 4096 Bob sign vectors with exact rational row breakpoints and affine-line crossings
+      leaves these two upper-envelope pieces, each attained by an explicit Alice and Bob sign pair.
+    assessment:
+      level: PROVED
+      summary: Author-independent same-model review of this exact implication and supporting assembly passed.
+      basis:
+        reviews:
+        - path: group-orbit-bell-matrices/reviews/d3-envelope-review-20260907.md
+          kind: review
+          locator: F3
+          scope: Replayed the full certificate and independently checked all endpoint upper bounds plus fixed
+            witnesses; used convexity for continuum coverage.
+          reviewed_hash: sha256:d32e8679073f1f96fb3eeca4f9ce966656f5c75eb74e835f152adcecb98a81cf
+    proof:
+      sketch: Complete implication and its assembled dependencies are checked in the linked proof and independent
+        review.
+      sources:
+      - &id001
+        path: group-orbit-bell-matrices/artifacts/d3-classical-envelope-20260907.md
+        kind: text
+        locator: D3-1 through D3-5
+assessment:
+  level: PROVED
+  summary: Complete scoped argument and dependencies passed a separate author-independent same-model review.
+    Non-fresh-context limitation is disclosed; no novelty or formal-verification claim.
+  basis:
+    evidence:
+    - *id001
+    - path: group-orbit-bell-matrices/artifacts/classical-root-literature-20260907.md
+      kind: text
+      locator: L1 through L4
+    - path: group-orbit-bell-matrices/artifacts/classical-exploration-summary-20260907.md
+      kind: text
+      locator: STATE and NEXT
+    - path: group-orbit-bell-matrices/tools/check_d3_classical_envelope.py
+      kind: text
+    - path: group-orbit-bell-matrices/tools/check_d3_envelope_review.py
+      kind: text
+    - path: group-orbit-bell-matrices/artifacts/d3-classical-envelope-certificate-20260907.json
+      kind: text
+    reviews:
+    - path: group-orbit-bell-matrices/reviews/d3-envelope-review-20260907.md
+      kind: review
+      locator: F2
+      scope: Replayed the full certificate and independently checked all endpoint upper bounds plus fixed witnesses;
+        used convexity for continuum coverage.
+      reviewed_hash: sha256:260cf713d4cd254ef432bf6fa2130718be433b157e0186f6f5cc386973b105d5
+    runs:
+    - path: group-orbit-bell-matrices/artifacts/d3-classical-envelope-exact-check-20260907.txt
+      kind: run
+      result: Exact scoped replay and mathematical-review provenance; finite runs do not prove all-r claims
+        by themselves.
+    - path: group-orbit-bell-matrices/artifacts/d3-envelope-review-rerun-20260907.txt
+      kind: run
+      result: Exact scoped replay and mathematical-review provenance; finite runs do not prove all-r claims
+        by themselves.
+    routes:
+    - exact-envelope
+events:
+  registered-20260907:
+    date: '2026-09-07'
+    type: created
+    summary: Registered the formula obtained by the already registered exploratory finite method; not a prior
+      prediction.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/classical-family-registration-20260907.md
+      kind: text
+      locator: C7
+  route-reviewed-20260907:
+    date: '2026-09-07'
+    type: level-change
+    route: exact-envelope
+    from: OPEN
+    to: PROVED
+    summary: Exact-statement independent review passed; no automatic promotion from premise labels.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/d3-envelope-review-20260907.md
+      kind: review
+      locator: F3
+  independent-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: OPEN
+    to: PROVED
+    summary: Registered claim received an author proof and a separately assigned exact-statement adversarial
+      review; only then promoted.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/d3-envelope-review-20260907.md
+      kind: review
+      locator: F2

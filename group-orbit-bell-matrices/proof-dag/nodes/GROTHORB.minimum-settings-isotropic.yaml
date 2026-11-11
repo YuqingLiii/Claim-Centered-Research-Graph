@@ -1,0 +1,74 @@
+id: GROTHORB.minimum-settings-isotropic
+role: proof
+claim: Fix an integer r>=1. Among pairs of nonempty finite positive weighted isotropic unit frames in R^r for
+  which the map H -> ((a_i^T H a_i)_i,(b_j^T H b_j)_j) is injective on Sym_r, the minimum total number of frame
+  vectors m+n is r(r+1)/2+1. It is attained with Alice vectors e_1,...,e_r of weight 1, Bob vectors (e_i-e_j)/sqrt(2)
+  for i<j of weight 2/r, and (1,...,1)/sqrt(r) of weight 1.
+assessment:
+  level: PROVED
+  summary: Complete scoped argument and dependencies passed a separate author-independent same-model review.
+    Non-fresh-context limitation is disclosed; no novelty or formal-verification claim. Prior-art comparison
+    identifies this as a standard consequence or a known construction, not an original result.
+  basis:
+    evidence:
+    - path: group-orbit-bell-matrices/artifacts/minimum-settings-isotropic-20260907.md
+      kind: text
+      locator: MS-1 through MS-6
+    - path: group-orbit-bell-matrices/artifacts/classical-root-literature-20260907.md
+      kind: text
+      locator: L1 through L4
+    - path: group-orbit-bell-matrices/artifacts/classical-exploration-summary-20260907.md
+      kind: text
+      locator: STATE and NEXT
+    - path: group-orbit-bell-matrices/tools/check_minimum_settings_isotropic.py
+      kind: text
+    - path: group-orbit-bell-matrices/artifacts/weighted-orbit-literature-20260907.md
+      kind: text
+    - path: group-orbit-bell-matrices/artifacts/weighted-orbit-literature-correction-20260907.md
+      kind: text
+    reviews:
+    - path: group-orbit-bell-matrices/reviews/minimum-settings-review-20260907.md
+      kind: review
+      locator: F1
+      scope: Checked the nonempty-frame trace relation, the scoped lower count and exact weighted construction,
+        including r=1 and r=2.
+      reviewed_hash: sha256:dc1b7a167caab8ad27dc638a70586b4bc98bd3f56fc3b4b66a2854e2e9a35aef
+    runs:
+    - path: group-orbit-bell-matrices/artifacts/minimum-settings-isotropic-exact-check-20260907.txt
+      kind: run
+      result: Exact scoped replay and mathematical-review provenance; finite runs do not prove all-r claims
+        by themselves.
+    - path: group-orbit-bell-matrices/artifacts/minimum-settings-review-rerun-20260907.txt
+      kind: run
+      result: Exact scoped replay and mathematical-review provenance; finite runs do not prove all-r claims
+        by themselves.
+events:
+  registered-20260907:
+    date: '2026-09-07'
+    type: created
+    summary: Registered a precise alternative research target about measurement-setting economy, before testing
+      its formula.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/classical-family-registration-20260907.md
+      kind: text
+      locator: C12
+  nonempty-frame-domain-20260907:
+    date: '2026-09-07'
+    type: repair-applied
+    summary: Made finite nonempty frame domains explicit before independent review, ruling out an unintended
+      vacuous empty side in the setting-count definition.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/classical-family-registration-20260907.md
+      kind: text
+      locator: C12
+  independent-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: OPEN
+    to: PROVED
+    summary: Registered claim received an author proof and a separately assigned exact-statement adversarial
+      review; only then promoted.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/minimum-settings-review-20260907.md
+      kind: review
+      locator: F1

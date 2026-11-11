@@ -1,0 +1,95 @@
+id: GROTHORB.root-small-shift
+role: proof
+claim: For every r>=3, n=2r(r-1), and A_r the full D_r root projection, beta_cl(A_r-lambda I)=2r(2r-1)/3-n*lambda
+  for every real lambda satisfying 0<=lambda<=1/[2n(r-1)].
+routes:
+  discrete-gap:
+    premises:
+    - GROTHORB.root-classical
+    - GROTHORB.root-classical-equality
+    implication: All maximizing unshifted pairs are diagonal and every unshifted score lies in (1/(r-1))Z,
+      so off-diagonal pairs lose at least 1/(r-1). Bounding the shift advantage by 2n*lambda preserves diagonal
+      optimality throughout the stated interval.
+    assessment:
+      level: PROVED
+      summary: Author-independent same-model review of this exact implication and supporting assembly passed.
+      basis:
+        reviews:
+        - path: group-orbit-bell-matrices/reviews/root-classical-review-20260907.md
+          kind: review
+          locator: F3R
+          scope: Checked all load-bearing premises, exact parity lattice, off-diagonal loss, shift comparison,
+            and both interval endpoints.
+          reviewed_hash: sha256:ff5cd598382d45f215c5a4f16c8ed50ab0b964215afeb6e6e9684b171107945c
+    proof:
+      sketch: Complete implication and its assembled dependencies are checked in the linked proof and independent
+        review.
+      sources:
+      - &id001
+        path: group-orbit-bell-matrices/artifacts/root-small-shift-proof-20260907.md
+        kind: text
+        locator: S1 through S4
+assessment:
+  level: PROVED
+  summary: Complete scoped argument and dependencies passed a separate author-independent same-model review.
+    Non-fresh-context limitation is disclosed; no novelty or formal-verification claim.
+  basis:
+    evidence:
+    - *id001
+    - path: group-orbit-bell-matrices/artifacts/classical-root-literature-20260907.md
+      kind: text
+      locator: L1 through L4
+    - path: group-orbit-bell-matrices/artifacts/classical-exploration-summary-20260907.md
+      kind: text
+      locator: STATE and NEXT
+    reviews:
+    - path: group-orbit-bell-matrices/reviews/root-classical-review-20260907.md
+      kind: review
+      locator: F3
+      scope: Checked all load-bearing premises, exact parity lattice, off-diagonal loss, shift comparison,
+        and both interval endpoints.
+      reviewed_hash: sha256:9a872e7354e9445bc8dd2722bd106fc849de9b3b7649eedb9159a607194fd688
+    runs:
+    - path: group-orbit-bell-matrices/artifacts/root-classical-review-rerun-20260907.txt
+      kind: run
+      result: Exact scoped replay and mathematical-review provenance; finite runs do not prove all-r claims
+        by themselves.
+    routes:
+    - discrete-gap
+events:
+  registered-20260907:
+    date: '2026-09-07'
+    type: created
+    summary: Registered a conservative all-r exact parameter interval.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/classical-family-registration-20260907.md
+      kind: text
+      locator: C6
+  route-reviewed-20260907:
+    date: '2026-09-07'
+    type: level-change
+    route: discrete-gap
+    from: OPEN
+    to: PROVED
+    summary: Exact-statement independent review passed; no automatic promotion from premise labels.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/root-classical-review-20260907.md
+      kind: review
+      locator: F3R
+  independent-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: OPEN
+    to: PROVED
+    summary: Registered claim received an author proof and a separately assigned exact-statement adversarial
+      review; only then promoted.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/root-classical-review-20260907.md
+      kind: review
+      locator: F3
+frontier:
+  sharp-parameter-range:
+    task: Determine the maximal all-r interval preserving the unshifted classical equality family; retain this
+      conservative interval and the refuted whole-interval claim.
+    kind: task
+    since: '2026-09-07'

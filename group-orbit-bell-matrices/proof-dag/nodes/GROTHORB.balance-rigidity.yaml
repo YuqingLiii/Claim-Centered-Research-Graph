@@ -1,0 +1,104 @@
+id: GROTHORB.balance-rigidity
+role: proof
+claim: For a nonzero transitive equivariant real m by n matrix with paired top singular bases U,V of width
+  r, define L(K)=(diag(UKU^T),diag(VKV^T)) on Sym_r. The feasible balance weight is unique if and only
+  if L is injective; in that case it equals (n/r)I and every optimal real vector strategy has dimension
+  at least r. If L is not injective, an optimal strategy exists in dimension at most r-1.
+routes:
+  balance-kernel:
+    premises:
+    - GROTHORB.extremizer-classification
+    implication: The strictly positive scalar feasible weight can be perturbed along the balance kernel;
+      uniqueness and boundary rank reduction translate to vector dimensions through the extremizer classification.
+    assessment:
+      level: PROVED
+      summary: The implication and its current target assembly passed independent adversarial review.
+      basis:
+        reviews:
+        - path: group-orbit-bell-matrices/reviews/balance-rigidity-review-20260907.md
+          kind: review
+          locator: F1R
+          scope: Checked the implication against its current target, supporting premises and all relevant
+            boundary cases.
+          reviewed_hash: sha256:e08ddabcea9e8dfb69f8f8415efe19300b54fb0b43e4ea90a1ea9fdf7a72aa54
+    proof:
+      sketch: Complete argument in the linked proof, independently reviewed.
+      sources:
+      - &id001
+        path: group-orbit-bell-matrices/artifacts/balance-rigidity-20260907.md
+        kind: text
+        locator: BR-1 through BR-6
+assessment:
+  level: PROVED
+  summary: Complete scoped argument passed an independent fresh-context same-model-family adversarial
+    review. Kernel uniqueness, traceless boundary construction and unrestricted optimal vector rank. Correctness
+    does not assert novelty or formal verification.
+  basis:
+    evidence:
+    - *id001
+    - path: group-orbit-bell-matrices/tools/check_balance_rigidity.py
+      kind: text
+      locator: main
+    - path: group-orbit-bell-matrices/artifacts/group-orbit-literature-positioning-20260907.md
+      kind: text
+      locator: L1 through L6
+    - path: group-orbit-bell-matrices/artifacts/group-orbit-exploration-20260907.md
+      kind: text
+      locator: E1 through E4
+    routes:
+    - balance-kernel
+    runs:
+    - path: group-orbit-bell-matrices/artifacts/balance-rigidity-exact-check-20260907.txt
+      kind: run
+      result: Fresh exact rational finite examples passed; the universal claim relies on the reviewed
+        argument.
+    reviews:
+    - path: group-orbit-bell-matrices/reviews/balance-rigidity-review-20260907.md
+      kind: review
+      locator: F1
+      scope: Kernel uniqueness, traceless boundary construction and unrestricted optimal vector rank.
+      reviewed_hash: sha256:1048c444851e7ad620c1db6724fe83c562a70ecd600d8888d934dbce233dd683
+events:
+  registered-20260907:
+    date: '2026-09-07'
+    type: created
+    summary: Registered the uniqueness and rank-reduction candidate before proof work.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/exploration-registration-20260907.md
+      kind: text
+      locator: R1
+  author-proof-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: OPEN
+    to: CONJECTURED
+    summary: Registered proposal received a complete author argument before independent review.
+    sources:
+    - *id001
+  independent-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: CONJECTURED
+    to: PROVED
+    summary: Promoted only after exact-statement independent review of the assembled scoped proof.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/balance-rigidity-review-20260907.md
+      kind: review
+      locator: F1
+  route-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    route: balance-kernel
+    from: OPEN
+    to: PROVED
+    summary: Independently reviewed route implication and supporting assembly.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/balance-rigidity-review-20260907.md
+      kind: review
+      locator: F1R
+frontier:
+  next-research-question:
+    task: Compare the criterion and required settings with prior dimension witnesses; identify a family
+      with a demonstrably new rank tradeoff.
+    kind: task
+    since: '2026-09-07'

@@ -1,0 +1,57 @@
+id: GROTHORB.root-classical
+role: proof
+claim: For every integer r>=3, let W contain all roots +/-e_i +/-e_j with i<j, n=2r(r-1), and A_r=WW^T/[4(r-1)].
+  Then the classical Bell value max_{s,t in {+1,-1}^n} s^T A_r t equals 2r(2r-1)/3.
+assessment:
+  level: PROVED
+  summary: Complete scoped argument and dependencies passed a separate author-independent same-model review.
+    Non-fresh-context limitation is disclosed; no novelty or formal-verification claim.
+  basis:
+    evidence:
+    - path: group-orbit-bell-matrices/artifacts/root-classical-value-20260907.md
+      kind: text
+      locator: RC-1 through RC-5
+    - path: group-orbit-bell-matrices/artifacts/classical-root-literature-20260907.md
+      kind: text
+      locator: L1 through L4
+    - path: group-orbit-bell-matrices/artifacts/classical-exploration-summary-20260907.md
+      kind: text
+      locator: STATE and NEXT
+    - path: group-orbit-bell-matrices/tools/check_root_classical_value.py
+      kind: text
+    reviews:
+    - path: group-orbit-bell-matrices/reviews/root-classical-review-20260907.md
+      kind: review
+      locator: F1
+      scope: Reconstructed the all-r support-function upper bound, exact witness, and full-root scaling; replayed
+        finite checks.
+      reviewed_hash: sha256:5894fbd5f0998222db98bbe3cbef23b0a723716a30125952c2db60e748375fca
+    runs:
+    - path: group-orbit-bell-matrices/artifacts/root-classical-exact-check-20260907.txt
+      kind: run
+      result: Exact scoped replay and mathematical-review provenance; finite runs do not prove all-r claims
+        by themselves.
+    - path: group-orbit-bell-matrices/artifacts/root-classical-review-rerun-20260907.txt
+      kind: run
+      result: Exact scoped replay and mathematical-review provenance; finite runs do not prove all-r claims
+        by themselves.
+events:
+  registered-20260907:
+    date: '2026-09-07'
+    type: created
+    summary: Registered the full-root classical denominator candidate.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/classical-family-registration-20260907.md
+      kind: text
+      locator: C1
+  independent-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: OPEN
+    to: PROVED
+    summary: Registered claim received an author proof and a separately assigned exact-statement adversarial
+      review; only then promoted.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/root-classical-review-20260907.md
+      kind: review
+      locator: F1

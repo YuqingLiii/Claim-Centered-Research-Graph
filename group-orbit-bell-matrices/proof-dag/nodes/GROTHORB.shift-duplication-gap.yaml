@@ -1,0 +1,91 @@
+id: GROTHORB.shift-duplication-gap
+role: obstruction
+claim: Let U have rows e_i-e_j and e_i+e_j for 1<=i<j<=3, C=UU^T/4, and D(C)=(1/2)[C,-C;-C,C]. At lambda=1/3,
+  beta_cl(D(C)-lambda I_12)=20/3 is strictly larger than 2*beta_cl(C-lambda I_6)=6.
+routes:
+  exact-comparison:
+    premises:
+    - GROTHORB.d3-shift-envelope
+    - GROTHORB.d3-half-shift-value
+    implication: Reordering the full roots as W=[U;-U] identifies A_3 with D(C) up to a simultaneous row and
+      column permutation. Evaluating the full envelope at lambda=1/3 gives 20/3, whereas the half-root value
+      gives twice 3, and 20/3>6.
+    assessment:
+      level: PROVED
+      summary: Author-independent same-model review of this exact implication and supporting assembly passed.
+      basis:
+        reviews:
+        - path: group-orbit-bell-matrices/reviews/shift-duplication-gap-review-20260907.md
+          kind: review
+          locator: F2
+          scope: Checked simultaneous root reordering, both exact denominator premises, and the strict value
+            difference; no unshifted identity is refuted.
+          reviewed_hash: sha256:c85fc4d43b22decda291f3e58ee4ab0d81de1654c8b864910b694e2adce749ab
+    proof:
+      sketch: Complete implication and its assembled dependencies are checked in the linked proof and independent
+        review.
+      sources:
+      - &id001
+        path: group-orbit-bell-matrices/artifacts/shift-duplication-gap-20260907.md
+        kind: text
+        locator: GAP-1 and GAP-2
+assessment:
+  level: PROVED
+  summary: Complete scoped argument and dependencies passed a separate author-independent same-model review.
+    Non-fresh-context limitation is disclosed; no novelty or formal-verification claim.
+  basis:
+    evidence:
+    - *id001
+    - path: group-orbit-bell-matrices/artifacts/classical-root-literature-20260907.md
+      kind: text
+      locator: L1 through L4
+    - path: group-orbit-bell-matrices/artifacts/classical-exploration-summary-20260907.md
+      kind: text
+      locator: STATE and NEXT
+    - path: group-orbit-bell-matrices/tools/check_shift_duplication_gap_review.py
+      kind: text
+    reviews:
+    - path: group-orbit-bell-matrices/reviews/shift-duplication-gap-review-20260907.md
+      kind: review
+      locator: F1
+      scope: Checked simultaneous root reordering, both exact denominator premises, and the strict value difference;
+        no unshifted identity is refuted.
+      reviewed_hash: sha256:42ca35b7e34cad8f2c9527c0bf27cd279313da1375ee93dcdcb71a591ae722bf
+    runs:
+    - path: group-orbit-bell-matrices/artifacts/shift-duplication-gap-review-rerun-20260907.txt
+      kind: run
+      result: Exact scoped replay and mathematical-review provenance; finite runs do not prove all-r claims
+        by themselves.
+    routes:
+    - exact-comparison
+events:
+  registered-20260907:
+    date: '2026-09-07'
+    type: created
+    summary: Registered the precise shifted-duplication gap before relying on it.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/classical-family-registration-20260907.md
+      kind: text
+      locator: C10
+  route-reviewed-20260907:
+    date: '2026-09-07'
+    type: level-change
+    route: exact-comparison
+    from: OPEN
+    to: PROVED
+    summary: Exact-statement independent review passed; no automatic promotion from premise labels.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/shift-duplication-gap-review-20260907.md
+      kind: review
+      locator: F2
+  independent-promotion-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: OPEN
+    to: PROVED
+    summary: Registered claim received an author proof and a separately assigned exact-statement adversarial
+      review; only then promoted.
+    sources:
+    - path: group-orbit-bell-matrices/reviews/shift-duplication-gap-review-20260907.md
+      kind: review
+      locator: F1

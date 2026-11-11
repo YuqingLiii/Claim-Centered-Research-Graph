@@ -1,0 +1,51 @@
+Independent review replay, 2026-09-07
+Reviewer: /root/orbit_d3_envelope, separate Codex review agent using the inherited model.
+Working root: /private/tmp/grothorb-classical-20260907-R0Shtu
+Runtime: Python 3.9.6; arithmetic checks use only the standard library.
+Scope: C8 antipodal-shift identity and C9 six-root value; no C10 verdict.
+
+R1. Author checker independently rerun
+Command:
+PYTHONDONTWRITEBYTECODE=1 python3 grothendieck-group-orbit/tools/check_d3_half_shift_value.py
+Exit code: 0
+Standard output:
+Exact U row order: 12-,12+,13-,13+,23-,23+; H=3UU^T-4I; B=H/12.
+All 64 Bob signs enumerated; exact Alice optimum=max_t ||Ht||_1/12=3; PASS
+Numerator histogram: 24 occurs 24 times; 36 occurs 40 times; PASS
+Cases: double agreeing=24, double canceling=24, balanced=16; PASS
+Every row-pair identity and signed-edge case classification checked; PASS
+All 4096 ordered Alice/Bob pairs enumerated; maximum numerator=36; PASS
+Witness s=t=(1,1,1,1,1,1), Ht=(2,14,8,8,2,2), value=3; PASS
+Scope: exact certificate for the registered six-root matrix at lambda=1/3.
+
+R2. Reviewer independent implementation
+The following complete command was run separately. It imports no author
+checker, forms the rational B matrix directly from U, and directly maximizes
+over all 4096 ordered pairs rather than using an absolute-value shortcut.
+
+python3 -c 'from fractions import Fraction as F; from itertools import product; from collections import Counter; roots=((1,-1,0),(1,1,0),(1,0,-1),(1,0,1),(0,1,-1),(0,1,1)); B=tuple(tuple(sum(F(x*y,4) for x,y in zip(u,v))-(F(1,3) if i==j else 0) for j,v in enumerate(roots)) for i,u in enumerate(roots)); signs=tuple(product((-1,1),repeat=6)); bob_values={t:tuple(sum(B[i][j]*t[j] for j in range(6)) for i in range(6)) for t in signs}; histogram=Counter(max(sum(s[i]*bt[i] for i in range(6)) for s in signs) for bt in bob_values.values()); all_pair_max=max(sum(s[i]*bt[i] for i in range(6)) for s in signs for bt in bob_values.values()); ones=(1,)*6; witness=sum(bob_values[ones]); assert histogram=={F(2):24,F(3):40}; assert all_pair_max==witness==3; print("Reviewer independent Fraction construction and direct 4096-pair optimization: PASS"); print("Bob-optimum histogram:",dict(sorted(histogram.items()))); print("Global maximum:",all_pair_max,"all-ones witness:",witness)'
+
+Exit code: 0
+Standard output:
+Reviewer independent Fraction construction and direct 4096-pair optimization: PASS
+Bob-optimum histogram: {Fraction(2, 1): 24, Fraction(3, 1): 40}
+Global maximum: 3 all-ones witness: 3
+
+R3. Exact claim binding
+Hashes use SHA-256 of UTF-8 yaml.safe_load(file)["claim"].strip(),
+with PyYAML 6.0.3 used only to parse the canonical statement text.
+35ebd90ccd09ddcd28a125ed777c2e4dd11a76a66c27e1b144536cc0c4fce49b  GROTHORB.antipodal-shift-comparison
+3905d276721ac794d0a04007c4ccaa948d1e392d904198da6899c70c81e24406  GROTHORB.d3-half-shift-value
+Both targets are route-free, with no unresolved project premise.
+
+R4. Frozen mathematical input-file SHA-256
+c2b11bcdaac458e813a9e4ea05e64a67d442d6b1e9a3615be3fbf56b2c6750cc  grothendieck-group-orbit/proof-dag/nodes/GROTHORB.antipodal-shift-comparison.yaml
+ff0e8978b86a7874264720194fb4a0719a28362190b44581a09e7ec078c0e334  grothendieck-group-orbit/proof-dag/nodes/GROTHORB.d3-half-shift-value.yaml
+a26f1cc2f4e561bb4bb46698bd2e9d458cb40d4972429049b21d0d90e51a6a05  grothendieck-group-orbit/artifacts/antipodal-shift-comparison-20260907.md
+41645cd84a2f70822e90b1ba41e984aaad54b61e16cd72503d229895fc28860a  grothendieck-group-orbit/artifacts/d3-half-shift-value-20260907.md
+a6e470a095214f0f07d920ab9e516499e36085614c3eab56f11315180760050d  grothendieck-group-orbit/artifacts/d3-half-shift-exact-check-20260907.txt
+5209d8ff0c92b33dd2b581d718c4aad08abc2ee4038ea0b1c1de1dc89ef12a87  grothendieck-group-orbit/tools/check_d3_half_shift_value.py
+
+No finite test is used to infer the arbitrary-real-matrix C8 identity.
+Its universal argument is reviewed algebraically in F1 of the report.
+The C9 hand certificate is checked independently of either machine run.

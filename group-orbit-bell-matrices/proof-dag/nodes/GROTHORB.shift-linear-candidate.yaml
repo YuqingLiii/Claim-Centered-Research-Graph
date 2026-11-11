@@ -1,0 +1,56 @@
+id: GROTHORB.shift-linear-candidate
+role: proof
+claim: For every r>=3 and 0<=lambda<=1/2, the full D_r root projection A_r=WW^T/[4(r-1)], n=2r(r-1), satisfies
+  beta_cl(A_r-lambda I)=2r(2r-1)/3-n*lambda.
+assessment:
+  level: REFUTED
+  summary: 'The universal whole-interval formula is false: an explicit full-root D3 pair gives 6 at lambda=1/2,
+    while it predicts 4. This does not refute any smaller-domain or other-family theorem.'
+  basis:
+    counterexamples:
+    - &id001
+      path: group-orbit-bell-matrices/artifacts/d3-classical-envelope-20260907.md
+      kind: counterexample
+      locator: D3-4
+    reviews:
+    - path: group-orbit-bell-matrices/reviews/d3-envelope-review-20260907.md
+      kind: review
+      locator: F4
+      scope: Directly checked the explicit allowed r=3, lambda=1/2 sign pair, whose score 6 exceeds the predicted
+        4; no upper-envelope assumption is needed.
+      reviewed_hash: sha256:8f149d1b408a8f98ed180b5d0dc1a260d437dc81c46dc91ef77fd58c5b64c269
+    evidence:
+    - path: group-orbit-bell-matrices/artifacts/d3-classical-envelope-certificate-20260907.json
+      kind: text
+      locator: linear_proposal_counterexample
+    - path: group-orbit-bell-matrices/artifacts/classical-exploration-summary-20260907.md
+      kind: text
+      locator: STATE
+disposition:
+  state: DEAD
+  reason: The precise all-r whole-interval claim has an independently checked counterexample. Smaller domains are separate nodes, not repairs that erase this failure.
+  source:
+    path: group-orbit-bell-matrices/reviews/d3-envelope-review-20260907.md
+    kind: review
+    locator: F4
+events:
+  registered-20260907:
+    date: '2026-09-07'
+    type: created
+    summary: Registered the linear-shift proposal before testing, so any failure remains scoped.
+    sources:
+    - path: group-orbit-bell-matrices/artifacts/classical-family-registration-20260907.md
+      kind: text
+      locator: C2
+  exact-refutation-20260907:
+    date: '2026-09-07'
+    type: level-change
+    from: OPEN
+    to: REFUTED
+    summary: Preserved the failed full-interval conjecture with an independently checked exact counterexample;
+      did not over-propagate its failure.
+    sources:
+    - *id001
+    - path: group-orbit-bell-matrices/reviews/d3-envelope-review-20260907.md
+      kind: review
+      locator: F4
