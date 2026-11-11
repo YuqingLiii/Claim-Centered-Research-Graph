@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the current Set Equality and k-Sum proof DAGs."""
+"""Validate every proof-DAG project in this repository (directories with proof-dag/PROJECT.yaml)."""
 
 from __future__ import annotations
 
@@ -11,15 +11,12 @@ from proof_dag_schema import load_problem, validate_preservation, validate_probl
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PROBLEMS = {
-    "se": ROOT / "se",
-    "ksum": ROOT / "ksum",
-}
+PROBLEMS = {p.parent.parent.name: p.parent.parent for p in sorted(ROOT.glob("*/proof-dag/PROJECT.yaml"))}
 
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--problem", choices=("se", "ksum", "all"), default="all")
+    parser.add_argument("--problem", choices=tuple(PROBLEMS) + ("all",), default="all")
     parser.add_argument(
         "--previous-state",
         type=Path,
@@ -55,7 +52,9 @@ def main() -> int:
             if not retention_errors:
                 print(f"{name}: prior nodes, routes, and events retained")
         if not errors:
-            print(f"{name}: {count} node files structurally valid")
+            gaps = sum("declared evidence gap" in w for w in warnings)
+            note = f"; {gaps} linked paths are declared gaps in EVIDENCE_GAPS.yaml (not present)" if gaps else ""
+            print(f"{name}: {count} node files structurally valid{note}")
 
     for warning in all_warnings:
         print(f"WARNING: {warning}")

@@ -89,6 +89,27 @@ class ValidatorIntegrationTests(unittest.TestCase):
             root = Path(directory)
             self.assertEqual(self.validate(root, self.make_problem(root)), [])
 
+    def test_duplicate_yaml_key_is_rejected(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory); problem = self.make_problem(root)
+            node = problem / "proof-dag/nodes/TEST.child.yaml"
+            node.write_text(node.read_text() + "\nassessment:\n  level: OPEN\n  summary: Hidden overwrite.\n")
+            self.assertTrue(any("duplicate mapping key" in error for error in self.validate(root, problem)))
+
+    def test_evidence_closure_detects_orphans_and_foreign_paths(self) -> None:
+        from evidence_closure_check import check_project
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory); problem = self.make_problem(root)
+            self.assertEqual(check_project(root, 'test')[0], [])
+            orphan = problem / 'artifacts/orphan.txt'
+            orphan.parent.mkdir(); orphan.write_text('Unlinked output')
+            self.assertTrue(any('unlinked evidence' in e for e in check_project(root, 'test')[0]))
+            node_path = problem / 'proof-dag/nodes/TEST.child.yaml'
+            node = yaml.safe_load(node_path.read_text())
+            node['assessment']['basis']['evidence'] = [{'path':'other/artifact.md','kind':'text'}]
+            write_yaml(node_path, node)
+            self.assertTrue(any('nonlocal structured path' in e for e in check_project(root, 'test')[0]))
+
     def test_completion_rejects_unfinished_or_refuted_route(self) -> None:
         for level in ("OPEN", "CONJECTURED", "NUMERICAL", "REFUTED"):
             with self.subTest(level=level), tempfile.TemporaryDirectory() as directory:
@@ -114,6 +135,23 @@ class ValidatorIntegrationTests(unittest.TestCase):
             proof_dag_schema.write_generated(problem, "test")
             self.assertTrue(any("completion basis cites retired route" in e
                                 for e in self.validate(root, problem)))
+
+    def test_generated_views_distinguish_retired_routes(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory); problem = self.make_problem(root)
+            path = problem / "proof-dag/nodes/TEST.parent.yaml"
+            node = yaml.safe_load(path.read_text())
+            node["routes"]["joint"]["retired"] = {
+                "date": "2026-08-25", "reason": "Superseded route.",
+                "sources": [{"path": "test/reviews/review.md", "kind": "review"}],
+            }
+            write_yaml(path, node)
+            proof_dag_schema.write_generated(problem, "test")
+            index = (problem / "proof-dag/NODE_INDEX.md").read_text()
+            graph = (problem / "proof-dag/GRAPH.mmd").read_text()
+            self.assertIn("0 live; 1 retired", index)
+            self.assertIn("RETIRED (PROVED)", graph)
+            self.assertIn("-.->", graph)
 
     def test_proved_parent_cannot_hide_unproved_inputs_in_caveats(self) -> None:
         for child_level, route_level in (("OPEN", "PROVED"), ("CERTIFIED*", "PROVED"),
